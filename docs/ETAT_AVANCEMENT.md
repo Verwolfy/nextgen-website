@@ -105,3 +105,14 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Schéma `sql/003_site_demandes_PROPOSITION_NON_EXECUTEE.sql` : **non appliqué en PROD**. Les évolutions RLS/GRANT doivent recevoir autorisation spécifique. Aucune table CRM existante modifiée.
 - CI du backend https://github.com/Verwolfy/nextgen-website/actions/runs/41245795152 **completed/success** : 38 tests Python et 6 tests Node simulés, `npm ci`, build trilingue, vérifications d'absence de contenu fictif public.
 - Prochaines tâches : validation juridique de l'information/consentement et de la durée de conservation, revue du SQL, tests de préproduction, Turnstile et anti-abus, workflow CRM après qualification humaine, test multi-navigateurs / mobile / accessibilité. Aucun déploiement Cloudflare ou DNS autorisé à ce stade.
+
+## 31 octobre 2026 — Application autorisée SQL 003 en production
+
+- Accord utilisateur : **« SQL 003 VALIDÉ »**. Projet Supabase PROD : `wenydirqtmkywbxbxfal` ; projet TEST inchangé.
+- Migration **appliquée**, résultat `success=true` : `20261031220121_nextgen_site_demandes_private_20261031` ; SQL source : `sql/003_site_demandes_PROPOSITION_NON_EXECUTEE.sql` (nom historique conservé, **ne pas rejouer**).
+- Création **additive** de `public.site_demandes` (20 colonnes) et `site_demandes_statut_cree_idx`. **0 ligne**, aucune demande réelle ou simulée introduite. Aucune table ERP préexistante touchée.
+- Post-contrôles SQL : RLS activé, 0 politique publique, accès SELECT/INSERT/UPDATE/DELETE refusé à `anon` et `authenticated` ; `service_role` dispose d'accès serveur. 90/90 tables du schéma `public` avec RLS, 0 table publique directement lisible par `anon`.
+- **Réserve de privilèges :** les privilèges par défaut Supabase ont conservé `DELETE` et `TRUNCATE` (ainsi que d'autres droits) à `service_role` malgré l'intention `GRANT SELECT, INSERT, UPDATE` du SQL. **Aucun REVOKE correctif appliqué** : changement supplémentaire de GRANT/ACL soumis à autorisation distincte.
+- Conseiller Supabase : 86 avis INFO `rls_enabled_no_policy`, aucun WARN/ERROR. https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy
+- Site et backend : `functions/api/lead.js` renvoie toujours **503** sans `NEXTGEN_LEADS_ENABLED=true`, formulaires Astro désactivés. Aucun e-mail envoyé, aucune mise en ligne Cloudflare, aucun DNS touché.
+- **À faire avant collecte réelle** : notice confidentialité et version approuvée, registre des traitements, durée de conservation, revue transfrontalière, secrets serveur + Turnstile, limitation de débit, tests en préproduction et revue opérateur CRM. Les tests d'intégration REST avec clés réelles ne sont pas réalisés.

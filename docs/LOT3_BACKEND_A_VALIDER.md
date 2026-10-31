@@ -9,13 +9,13 @@
 - Les formulaires visibles restent **désactivés** indépendamment du backend.
 
 ## Schéma proposé
-- Fichier `sql/003_site_demandes_PROPOSITION_NON_EXECUTEE.sql` **non appliqué**.
+- Fichier `sql/003_site_demandes_PROPOSITION_NON_EXECUTEE.sql` **appliqué sur PROD après autorisation SQL 003 VALIDÉ** (migration `20261031220121_nextgen_site_demandes_private_20261031`). Le fichier garde son nom historique ; ne pas rejouer.
 - `site_demandes` doit rester strictement privé (RLS activé, aucun GRANT public).
 - Historique de consentement (`consent_notice_version` et `consentement_le`) et statut de qualification ; aucun effacement automatique tant que la durée de conservation n'est pas légalement décidée.
 
 ## Prérequis obligatoires avant mise en service
 1. Validation juridique de la notice, de la base légale, du transfert éventuel hors Algérie, des droits des demandeurs et de la durée de conservation.
-2. Approbation expresse du SQL et contrôle de ses droits après application.
+2. SQL approuvé et appliqué ; RLS/GRANT public contrôlés. Réserve : privilèges Supabase hérités permettent aussi DELETE/TRUNCATE à `service_role` malgré le GRANT explicite limité ; toute réduction supplémentaire est soumise à validation.
 3. Configuration sécurisée Cloudflare Turnstile, secrets Cloudflare (`SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `TURNSTILE_SECRET_KEY`, `NEXTGEN_PRIVACY_NOTICE_VERSION`) et règles de limitation de fréquence ; aucune clé serveur dans les variables publiques Astro.
 4. Tests de bout en bout en environnement isolé, contrôles des réponses et traitement des erreurs, décision d'activation `NEXTGEN_LEADS_ENABLED` seulement après résultats concluants.
 5. Définition du traitement ERP : revue humaine d'une demande avant conversion en prospect/client, journaux d'audit et notification par un prestataire autorisé si nécessaire.
