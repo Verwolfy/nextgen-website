@@ -96,3 +96,12 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - CI `41244943125` **completed/success** : 34 tests Python, npm ci, build Astro FR/AR/EN, GLBs et aperçus dans dist, garde d'exclusion produits fictifs. https://github.com/Verwolfy/nextgen-website/actions/runs/41244943125
 - Dépendances verrouillées : `@google/model-viewer@4.4.0` / `three@0.183.0`, correction d'un conflit ERESOLVE initial. Sources dans `docs/LOT2_3D.md`.
 - Aucun déploiement, DNS, accès public Cloudflare, changement Supabase ou ERP. Vérification en navigateurs réels et rendus photoréalistes à réaliser ultérieurement.
+
+## 31 octobre 2026 — Lot 3 : formulaires et backend B2B préparatoire
+
+- Formulaires distincts devis / candidature distributeur intégrés en FR/AR/EN dans `src/components/LeadForm.astro` et `src/data/lead-forms.ts`. Tous les champs, la case de consentement et le bouton sont **désactivés** ; aucun envoi ni collecte depuis le navigateur. Contacts `mailto:` / WhatsApp disponibles.
+- Commit formulaires `5ad6766d3e291f056605de6806a0d8fee2416bca`. Preuve : CI https://github.com/Verwolfy/nextgen-website/actions/runs/41245582877 **completed/success** (38 tests Python, build Astro, contrôles sécurité).
+- Endpoint Cloudflare Pages `functions/api/lead.js` ajouté au commit `6da7f865edac83ed56ce9a16a0e18969145454d5` : **503 par défaut**. Pas d'écriture ni d'e-mail ; protection origine + JSON limité + consentement + Turnstile et serveur secret requis seulement après activation volontaire.
+- Schéma `sql/003_site_demandes_PROPOSITION_NON_EXECUTEE.sql` : **non appliqué en PROD**. Les évolutions RLS/GRANT doivent recevoir autorisation spécifique. Aucune table CRM existante modifiée.
+- CI du backend https://github.com/Verwolfy/nextgen-website/actions/runs/41245795152 **completed/success** : 38 tests Python et 6 tests Node simulés, `npm ci`, build trilingue, vérifications d'absence de contenu fictif public.
+- Prochaines tâches : validation juridique de l'information/consentement et de la durée de conservation, revue du SQL, tests de préproduction, Turnstile et anti-abus, workflow CRM après qualification humaine, test multi-navigateurs / mobile / accessibilité. Aucun déploiement Cloudflare ou DNS autorisé à ce stade.
