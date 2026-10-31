@@ -1,0 +1,13 @@
+{
+  "company": "NextGen Building Solutions",
+  "identity": {"navy_approved": "#12295C", "green_approved": "#0E9A5B", "light_gray_from_jpg_approx": "#D3D7D8", "white": "#FFFFFF"},
+  "ranges": {
+    "bond": {"label": "Fenek-Bond", "color": "#12295C"},
+    "proof": {"label": "Fenek-Proof", "color": "#0E9A5B"},
+    "flow": {"label": "Fenek-Flow", "color": "#71899B"},
+    "paint": {"label": "Fenek-Paint", "color": "#971B38"}
+  },
+  "typography": {"headings": "Inter Tight ExtraBold (à obtenir sous licence libre)", "body": "Inter Regular", "arabic": "Noto Sans Arabic"},
+  "logo_policy": "Logo1.jpg utilisé tel quel, jamais reconstruit par IA, vectorisation à valider",
+  "status": "DRAFT NON VALIDATED - color tolerance depends on source JPG and printer"
+}

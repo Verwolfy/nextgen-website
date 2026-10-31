@@ -1,0 +1,43 @@
+name: NextGen catalogue - synchronization (private server side)
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [site_publish_requested]
+  schedule:
+    - cron: '15 2 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: nextgen-site-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: requirements-sync.txt
+      - run: python -m pip install -r requirements-sync.txt
+      - name: Test publication security
+        run: python -m unittest discover -s tests -v
+      - name: Synchronize only fully approved products
+        run: python scripts/sync_catalogue.py
+      - name: Reject secrets and forbidden price fields
+        run: python scripts/check_public_content.py
+      - name: Commit only deterministic public data and assets
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A -- public
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore(site): synchronize validated public catalogue'
+            git push
+          fi
