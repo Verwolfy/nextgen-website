@@ -22,6 +22,8 @@ jobs:
         run: node scripts/copy_public_assets.mjs
       - name: Run strict publication tests
         run: python -m unittest discover -s tests -v && python scripts/check_public_content.py
+      - name: Run disabled-by-default lead endpoint tests
+        run: node --test tests/lead_endpoint.test.mjs
       - name: Install locked Astro dependencies
         run: npm ci --no-audit --no-fund
       - name: Compile static trilingual site
