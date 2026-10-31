@@ -58,8 +58,11 @@ function validate(input) {
 export async function onRequestPost({ request, env }) {
   // Explicit server-side fail-closed gate, independent of the disabled UI.
   if (env?.NEXTGEN_LEADS_ENABLED !== 'true') return reply(503, 'LEADS_NOT_ACTIVE');
-  if (!env.TURNSTILE_SECRET_KEY || !env.SUPABASE_SERVICE_ROLE_KEY || !env.SUPABASE_URL || !env.NEXTGEN_PRIVACY_NOTICE_VERSION) return reply(503, 'NOT_CONFIGURED');
-  const origin = new URL(request.url).origin;
+  if (!env.TURNSTILE_SECRET_KEY || !env.SUPABASE_SERVICE_ROLE_KEY || !env.SUPABASE_URL || !env.NEXTGEN_PRIVACY_NOTICE_VERSION || !env.NEXTGEN_EXPECTED_HOSTNAME || !env.NEXTGEN_TURNSTILE_ACTION) return reply(503, 'NOT_CONFIGURED');
+  const requestURL = new URL(request.url);
+  const origin = requestURL.origin;
+  // Host binding ensures a preview or rogue hostname cannot reuse production secrets.
+  if (requestURL.protocol !== 'https:' || requestURL.hostname !== env.NEXTGEN_EXPECTED_HOSTNAME) return reply(403, 'INVALID_HOST');
   if (request.headers.get('origin') !== origin) return reply(403, 'INVALID_ORIGIN');
   if (!/^application\/json(?:;|$)/i.test(request.headers.get('content-type') || '')) return reply(415, 'JSON_REQUIRED');
   const length = Number(request.headers.get('content-length') || 0);
@@ -78,13 +81,14 @@ export async function onRequestPost({ request, env }) {
   try {
     const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      signal: AbortSignal.timeout(8000),
       body: new URLSearchParams({ secret: env.TURNSTILE_SECRET_KEY, response: parsed.token }),
     });
     if (!response.ok) return reply(503, 'VERIFICATION_UNAVAILABLE');
     verified = await response.json();
   } catch { return reply(503, 'VERIFICATION_UNAVAILABLE'); }
   // A token issued for another website must not authorize this site's API.
-  if (verified?.success !== true || verified.hostname !== new URL(origin).hostname) return reply(403, 'VERIFICATION_FAILED');
+  if (verified?.success !== true || verified.hostname !== env.NEXTGEN_EXPECTED_HOSTNAME || verified.action !== env.NEXTGEN_TURNSTILE_ACTION) return reply(403, 'VERIFICATION_FAILED');
 
   const payload = {
     type_demande: parsed.kind,
@@ -107,6 +111,7 @@ export async function onRequestPost({ request, env }) {
   try {
     const stored = await fetch(`${url.origin}/rest/v1/site_demandes`, {
       method: 'POST',
+      signal: AbortSignal.timeout(8000),
       headers: { 'apikey': env.SUPABASE_SERVICE_ROLE_KEY, 'authorization': `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}`, 'content-type': 'application/json', 'prefer': 'return=minimal' },
       body: JSON.stringify(payload),
     });
