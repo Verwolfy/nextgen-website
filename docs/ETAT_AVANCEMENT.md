@@ -62,3 +62,10 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Source du logo officielle, duo Nexo/Geno transféré en version WebP optimisée.
 - CI GitHub prévue pour installer dépendances et tester le build. En attente de preuve CI.
 - Statut public: BLOQUÉ en attente approbation DNS, documents légaux, sécurité des formulaires.
+
+## 31 octobre 2026 — GitHub confirmé, site en lot 2
+
+- Dépôt : `Verwolfy/nextgen-website` privé, branche `main`, sources du lot 1 et assets vérifiés sur GitHub.
+- Commit Astro `0d5d8a3883436af2c0447901003dc57288314dd4`, CI `41242720347` **completed/success**, tests Python, installation npm, build Astro et assertions de non-publication réussis.
+- Lot 2 incomplet : aucun GLB / 3D, aucun formulaire, aucun distributeur réel, pas de publication Cloudflare.
+- Prochaine action : protéger sync, générer package-lock, puis avancer progressivement vers 3D et contenu validé.

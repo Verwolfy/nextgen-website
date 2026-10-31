@@ -29,6 +29,8 @@ class TestAstroScaffold(unittest.TestCase):
     def test_non_indexing_until_public_go(self):
         self.assertIn('Disallow: /',(BASE/'public/robots.txt').read_text())
         self.assertIn('noindex,nofollow',(BASE/'src/layouts/Layout.astro').read_text())
+    def test_sync_guard_requires_explicit_configuration(self):
+        self.assertIn("vars.NEXTGEN_SYNC_ENABLED == 'true'",(BASE/'.github/workflows/sync-site.yml').read_text())
     def test_logo_file_unchanged(self):
         self.assertEqual((BASE/'supports/assets/Logo1.jpg').read_bytes(), (BASE/'public/images/Logo1.jpg').read_bytes())
     def test_assets_for_mascots(self):

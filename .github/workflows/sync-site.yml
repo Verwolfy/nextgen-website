@@ -12,6 +12,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   sync:
+    # Fail-closed: no scheduled/private export until secrets and legal review exist.
+    if: ${{ vars.NEXTGEN_SYNC_ENABLED == 'true' }}
     runs-on: ubuntu-latest
     env:
       SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
