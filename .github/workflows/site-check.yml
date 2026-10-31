@@ -1,0 +1,36 @@
+name: NextGen Astro build + security checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Python sync requirements
+        run: python -m pip install -r requirements-sync.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare original brand images
+        run: node scripts/copy_public_assets.mjs
+      - name: Run strict publication tests
+        run: python -m unittest discover -s tests -v && python scripts/check_public_content.py
+      - name: Install Astro dependencies (build-only; lockfile to finalize)
+        run: npm install --no-audit --no-fund
+      - name: Compile static trilingual site
+        run: npm run build
+      - name: Assert non-publication guardrails
+        run: |
+          test -f dist/fr/index.html
+          test -f dist/ar/index.html
+          test -f dist/en/index.html
+          test -f dist/images/Logo1.jpg
+          ! grep -R -i 'SUPABASE_SERVICE_ROLE_KEY' dist
+          ! grep -R -i 'ISO 9001' dist

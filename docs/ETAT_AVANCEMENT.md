@@ -54,3 +54,11 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Import des sources du lot 1 en cours ; les assets binaires internes non validés sont volontairement séparés du site public.
 - Prochaine étape : import source, vérification du commit distant et CI ; puis lot 2 Astro.
 - Aucune nouvelle modification SQL / ERP / DNS dans cette étape.
+
+## Lot 2 — base Astro éditée, non déployée
+
+- Ajout squelette Astro 6.4.6, 3 langues, 4 gammes, catalogue vide, pages produit statiques générées uniquement depuis JSON approuvé.
+- Aucun formulaire actif, aucun prix, aucune mention ISO ni référence chantier inventée.
+- Source du logo officielle, duo Nexo/Geno transféré en version WebP optimisée.
+- CI GitHub prévue pour installer dépendances et tester le build. En attente de preuve CI.
+- Statut public: BLOQUÉ en attente approbation DNS, documents légaux, sécurité des formulaires.

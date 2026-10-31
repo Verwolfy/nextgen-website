@@ -1,0 +1,44 @@
+---
+import { brand, languages, messages, type Lang } from '../data/site';
+import '../styles/site.css';
+interface Props { lang:Lang; title:string; description:string; }
+const {lang,title,description}=Astro.props;
+const t=messages[lang];
+const suffix=Astro.url.pathname.replace(/^\/(?:fr|ar|en)/,'') || '/';
+const translate=(next:Lang)=>`/${next}${suffix}`.replace(/\/+/g,'/');
+const canonical=Astro.url.origin+Astro.url.pathname;
+const whats=`https://wa.me/${brand.whatsapp}`;
+---
+<!doctype html>
+<html lang={lang} dir={lang==='ar'?'rtl':'ltr'}>
+ <head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content={description} />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" />
+  <link rel="canonical" href={canonical} />
+  {languages.map(l=><link rel="alternate" hreflang={l} href={Astro.url.origin+translate(l)} />)}
+  <link rel="alternate" hreflang="x-default" href={Astro.url.origin+translate('fr')} />
+  <title>{title} · NextGen Building Solutions</title>
+ </head>
+ <body>
+  <a class="skip" href="#main">{lang==='ar'?'انتقل إلى المحتوى':'Aller au contenu / Skip to content'}</a>
+  <header class="header">
+   <div class="container header-row">
+    <a href={`/${lang}/`} class="brand" aria-label="NextGen Building Solutions">
+      <img src="/images/Logo1.jpg" alt="Logo NextGen Building Solutions" width="148" height="82" />
+    </a>
+    <nav aria-label={lang==='ar'?'القائمة الرئيسية':'Navigation principale'} class="nav">
+      {(['gammes','catalogue','distributeurs','a-propos','contact'] as const).map(s=><a href={`/${lang}/${s}/`} aria-current={Astro.url.pathname===`/${lang}/${s}/`?'page':undefined}>{t.menu[s]}</a>)}
+    </nav>
+    <div class="locale" aria-label="Langue / Language">{languages.map(l=><a aria-current={l===lang?'page':undefined} href={translate(l)}>{l.toUpperCase()}</a>)}</div>
+   </div>
+  </header>
+  <main id="main"><slot /></main>
+  <footer class="footer"><div class="container footer-grid">
+    <div><h2>NextGen Building Solutions</h2><p>{brand.location}</p><a href={`tel:${brand.phone.replaceAll(' ','')}`}>{brand.phone}</a><p><a href={`mailto:${brand.email}`}>{brand.email}</a></p></div>
+    <div><strong>{t.menu.ressources}</strong><p><a href={`/${lang}/ressources/`}>{t.menu.ressources}</a></p><p><a href={`/${lang}/mentions-legales/`}>{t.menu['mentions-legales']}</a></p><p><a href={`/${lang}/confidentialite/`}>{t.menu.confidentialite}</a></p></div>
+    <div><strong>Fenek</strong><p>{t.noPrices}</p><a class="btn btn-outline" href={whats} rel="noopener noreferrer" target="_blank">WhatsApp</a></div>
+   </div><div class="container footnote">© {new Date().getFullYear()} NextGen Building Solutions · {t.mark}</div></footer>
+ </body>
+</html>

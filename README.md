@@ -42,3 +42,13 @@ Le bouton Streamlit « Publier » n'est pas implanté au lot 1. Dans un lot ult�
 - FTP/FT labo, FDS et marque : aucune donnée validée ; ne pas mettre les exemples en ligne.
 - Le logo source est un JPG ; usage du fichier exact, sans redessin IA. Les documents ne sont pas des étiquettes industrielles de production.
 - Génération de formulaires avec accusé + CRM à 0 € : à valider juridiquement et techniquement en lot 3.
+
+## Lot 2 — squelette Astro FR/AR/EN (en cours)
+
+- Astro 6.4.6, sorties 100% statiques, aucune API Supabase navigateur.
+- Pages /fr, /ar (RTL), /en, gamme, catalogue, fiche produit, distributeurs, contact et mentions non définitives.
+- Aucune fiche de produit fictif ; les documents présents dans `supports/` ne sont pas servis par `public`.
+- Build : `npm install && npm run build` sur Node 22.
+- Pas encore de build local exécuté : installation npm impossible dans l'environnement de génération ; CI GitHub chargée de l'évaluer.
+- `package-lock.json` à générer et committer après CI avant toute mise en ligne.
+- Robots et meta noindex activés jusqu'à l'autorisation de lancement.

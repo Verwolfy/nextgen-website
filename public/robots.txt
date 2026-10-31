@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+# Draft site: remove Disallow after public launch approval and legal review.

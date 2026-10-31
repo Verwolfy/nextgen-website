@@ -1,0 +1,11 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import {languages,ranges,messages,rangeName,rangeColor,type Lang,type Range} from '../../../data/site';
+import {products} from '../../../lib/products';
+export function getStaticPaths(){return languages.flatMap(lang=>ranges.map(slug=>({params:{lang,slug}})))}
+const lang=Astro.params.lang as Lang;const slug=Astro.params.slug as Range;const t=messages[lang];const items=products.filter(p=>p.gamme===slug);
+---
+<Layout lang={lang} title={rangeName[slug]} description={t.ranges[slug]}>
+<div class="page-head"><div class="container"><span class="eyebrow">FENEK / {slug.toUpperCase()}</span><h1>{rangeName[slug]}</h1><p>{t.ranges[slug]}</p></div></div>
+<section class="section"><div class="container"><div class="breadcrumbs"><a href={`/${lang}/gammes/`}>{t.menu.gammes}</a> / {rangeName[slug]}</div>{items.length===0?<div class="notice"><h2>{t.empty}</h2><p>{t.emptyInfo}</p></div>:<div class="products-grid">{items.map(p=><a href={`/${lang}/produits/${p.slug}/`} class="product"><span class="bar" style={`display:block;background:${rangeColor[slug]};height:5px;width:70px`}></span><h3>{p.nom}</h3><p>{p.contenu[lang].accroche}</p></a>)}</div>}</div></section>
+</Layout>
