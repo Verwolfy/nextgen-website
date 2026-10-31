@@ -116,3 +116,15 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Conseiller Supabase : 86 avis INFO `rls_enabled_no_policy`, aucun WARN/ERROR. https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy
 - Site et backend : `functions/api/lead.js` renvoie toujours **503** sans `NEXTGEN_LEADS_ENABLED=true`, formulaires Astro désactivés. Aucun e-mail envoyé, aucune mise en ligne Cloudflare, aucun DNS touché.
 - **À faire avant collecte réelle** : notice confidentialité et version approuvée, registre des traitements, durée de conservation, revue transfrontalière, secrets serveur + Turnstile, limitation de débit, tests en préproduction et revue opérateur CRM. Les tests d'intégration REST avec clés réelles ne sont pas réalisés.
+
+## 31 octobre 2026 — Lot 4 : préparation CRM, contrôle anti-abus et confidentialité
+
+- SQL 003 **déjà appliqué** sous migration `20261031220121_nextgen_site_demandes_private_20261031`. Aucun nouveau SQL, DML, GRANT ou RLS exécuté durant ce lot. Dernier relevé SQL en lecture seule : `site_demandes=0`, `site_products=0`.
+- `scripts/crm_qualification.py` : outil **lecture seule** de métadonnées B2B `demande_id,type_demande,statut,cree_le` avec résumé de volumes non nominatif ; projet de conversion vers `clients` et `interactions` **sans écriture** et avec approbation humaine.
+- `functions/api/lead.js` : toujours inactif par défaut (503) ; ajoute `NEXTGEN_EXPECTED_HOSTNAME` et `NEXTGEN_TURNSTILE_ACTION` obligatoires, compare aussi l'hostname/action Siteverify et borne les appels réseau à 8 secondes.
+- `docs/CONFIDENTIALITE_BROUILLON_FR_AR_EN.md` : notice trilingue uniquement interne, **non validée et non publiée** ; les informations légales, durée de conservation et transferts restent à confirmer.
+- `docs/LOT4_CRM_GOUVERNANCE.md` et `docs/LOT4_POINT_INTEGRATION_ERP.md` : gouvernance et lecture seule du CRM existant dans `Verwolfy/erp-mortier` ; aucun code ERP modifié.
+- Commit de code `8ed290c3bb97c0a802185ec0706bb2b0868f4975` ; CI https://github.com/Verwolfy/nextgen-website/actions/runs/41246868156 **success** : **47 tests Python + 9 tests JavaScript, build Astro, garde de non-publication**.
+- Second commit documentaire `4d3701d2d54ee489912f901132df3ca4580703fd` ; aucun déploiement Cloudflare/DNS, aucun formulaire actif, aucun envoi d'e-mail, aucun produit fictif publié.
+- Point critique inchangé : `service_role` conserve des droits `DELETE` et `TRUNCATE` par héritage Supabase. Changement ACL seulement après autorisation SQL distincte.
+- Prochain lot : panneau CRM ERP en lecture seule puis workflow de qualification à double contrôle ; validation juridique, anti-abus, préproduction et tests réels avant toute activation commerciale.
