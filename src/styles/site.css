@@ -14,3 +14,18 @@ model-viewer{display:block;width:100%;height:clamp(260px,35vw,450px);--poster-co
 .model-hint{margin:0;padding:10px 14px;text-align:center;font-size:.81rem;color:#425b70;background:#f3f6f7}
 .model-progress{height:4px;background:#0e9a5b;transform-origin:left}
 @media(max-width:680px){.showcase-grid{grid-template-columns:1fr}model-viewer{height:320px}}
+
+/* Quote and distributor form previews: controls deliberately disabled until legal/CRM go-live. */
+.lead-panel{margin-top:32px;padding:clamp(20px,4vw,36px);background:#fff;border:1px solid #dbe4e8;border-radius:16px;box-shadow:0 14px 40px #1128510d}
+.lead-header{display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:start}
+.lead-header h2{font-size:clamp(1.5rem,2.8vw,2.2rem);margin:8px 0}
+.lead-state{border-inline-start:4px solid #71899b;padding:12px 16px;background:#eef3f5;border-radius:5px;color:#263e50;margin-top:0;font-size:.94rem}
+.lead-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px;margin:24px 0}
+.lead-field{display:flex;flex-direction:column;gap:6px;font-size:.89rem;font-weight:680}
+.lead-field input,.lead-field textarea{width:100%;border:1px solid #d4dde3;border-radius:7px;padding:12px 13px;font:inherit;min-height:48px;color:#405366;background:#f2f5f6;opacity:1;resize:vertical}
+.lead-field textarea{min-height:120px}
+.lead-field.wide,.lead-consent{grid-column:1/-1}
+.lead-consent{display:flex;gap:10px;align-items:center;font-size:.86rem;color:#526577}
+.lead-disabled{cursor:not-allowed;opacity:.55;justify-self:start;min-width:180px;transform:none!important}
+.lead-whatsapp{background:#102e50;border:1px solid #102e50}
+@media(max-width:680px){.lead-header,.lead-fields{grid-template-columns:1fr}.lead-panel{padding:18px}}
