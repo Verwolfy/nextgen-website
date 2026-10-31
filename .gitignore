@@ -15,3 +15,7 @@ __pycache__/
 /public/images/Logo1.jpg
 /public/images/Nexo.webp
 /public/images/Nexo-Geno.webp
+
+# Deterministically copied on build; original approved design references in supports/3d
+/public/models-demo/
+/public/images/3d-demo/

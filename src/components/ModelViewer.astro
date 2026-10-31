@@ -1,0 +1,45 @@
+---
+interface Props {
+  src: string;
+  poster?: string;
+  label: string;
+  language: 'fr' | 'ar' | 'en';
+}
+const {src,poster,label,language}=Astro.props;
+if (!/^\/(?:models|models-demo)\/[a-z0-9/-]+\.glb$/.test(src)) {
+  throw new Error('Refused untrusted 3D model URL');
+}
+if (poster && !/^\/images\/3d-demo\/[a-z0-9-]+\.webp$/.test(poster)) {
+  throw new Error('Refused untrusted 3D poster URL');
+}
+const buttonText={fr:'Afficher la 3D interactive',ar:'عرض المجسم التفاعلي',en:'Load interactive 3D'}[language];
+const help={fr:'Glisser pour tourner · défiler ou pincer pour zoomer',ar:'اسحب للتدوير · استخدم التكبير للتقريب',en:'Drag to rotate · scroll or pinch to zoom'}[language];
+---
+<div class="model-frame">
+  <model-viewer
+    src={src}
+    poster={poster}
+    alt={label}
+    camera-controls
+    auto-rotate
+    rotation-per-second="14deg"
+    interaction-prompt="auto"
+    reveal="interaction"
+    loading="lazy"
+    shadow-intensity="0.8"
+    exposure="1.15"
+    environment-image="neutral"
+    camera-orbit="0deg 75deg 110%"
+    min-camera-orbit="auto auto 65%"
+    max-camera-orbit="auto auto 250%"
+    touch-action="pan-y"
+    aria-label={label}
+  >
+    <button slot="poster" class="model-load" type="button">{buttonText}</button>
+    <div slot="progress-bar" class="model-progress" aria-hidden="true"></div>
+  </model-viewer>
+  <p class="model-hint">{help}</p>
+</div>
+<script>
+  import '@google/model-viewer';
+</script>

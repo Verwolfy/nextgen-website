@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ModelViewer from '../../components/ModelViewer.astro';
+import {languages, type Lang} from '../../data/site';
+import manifest from '../../../supports/3d/manifest.json';
+export function getStaticPaths(){return languages.map(lang=>({params:{lang}}));}
+const lang=Astro.params.lang as Lang;
+const copy={
+ fr:{title:'Maquettes 3D des conditionnements',lead:'Présentations indicatives de cinq formats d’emballages NextGen.',notice:'SIMULATION — BROUILLON NON VALIDÉ. Dimensions, formulations, emballages et mentions réglementaires indicatifs. Ces maquettes ne correspondent pas à des produits disponibles à la vente.',names:['Sac 25 kg','Seau 20 kg','Bidon 20 L','Fût 200 L','Cubi IBC 1 000 L'],back:'Retour aux gammes'},
+ ar:{title:'نماذج ثلاثية الأبعاد للعبوات',lead:'عرض توضيحي لخمسة أنواع من عبوات NextGen.',notice:'محاكاة — مسودة غير معتمدة. الأبعاد والمواصفات والعبوات والبيانات التنظيمية إرشادية. هذه النماذج لا تمثل منتجات معروضة للبيع.',names:['كيس 25 كغ','دلو 20 كغ','عبوة 20 لترًا','برميل 200 لتر','خزان IBC سعة 1000 لتر'],back:'العودة إلى المجموعات'},
+ en:{title:'3D packaging design previews',lead:'Illustrative concept renders of five NextGen packaging formats.',notice:'SIMULATION — NOT APPROVED. Dimensions, formulations, packaging and regulatory details are illustrative. These models do not represent products available for sale.',names:['25 kg bag','20 kg pail','20 L jerrycan','200 L drum','1,000 L IBC tote'],back:'Back to product ranges'},
+}[lang];
+const order=['sac-25kg','seau-20kg','bidon-20l','fut-200l','ibc-1000l'];
+const display=order.map((slug,index)=>({...manifest.find(x=>x.code===slug),slug,name:copy.names[index]}));
+---
+<Layout lang={lang} title={copy.title} description={copy.lead}>
+<div class="page-head"><div class="container"><span class="eyebrow">NextGen · Design study</span><h1>{copy.title}</h1><p>{copy.lead}</p></div></div>
+<section class="section"><div class="container">
+ <p class="notice" role="note"><strong>{copy.notice}</strong></p>
+ <div class="showcase-grid">{display.map(item=><article class="showcase-card">
+  <h2>{item.name}</h2>
+  <ModelViewer language={lang} src={`/models-demo/${item.slug}.glb`} poster={`/images/3d-demo/${item.slug}-30.webp`} label={`${item.name} — ${copy.notice}`} />
+ </article>)}</div>
+ <p><a class="btn" href={`/${lang}/gammes/`}>{copy.back}</a></p>
+</div></section>
+</Layout>

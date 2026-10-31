@@ -1,5 +1,6 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import ModelViewer from '../../../components/ModelViewer.astro';
 import {languages,messages,rangeName,type Lang} from '../../../data/site';
 import {products} from '../../../lib/products';
 export function getStaticPaths(){return languages.flatMap(lang=>products.map(p=>({params:{lang,slug:p.slug},props:{product:p}})))}
@@ -10,5 +11,6 @@ const t=messages[lang];const description=product.contenu[lang].description;
 ---
 <Layout lang={lang} title={product.nom} description={description}>
 <div class="page-head"><div class="container"><span class="eyebrow">{rangeName[product.gamme]}</span><h1>{product.nom}</h1><p>{product.contenu[lang].accroche}</p></div></div>
-<section class="section"><div class="container"><div class="breadcrumbs"><a href={`/${lang}/catalogue/`}>{t.back}</a></div><div class="columns"><div><h2>{t.uses}</h2><p>{description}</p><ul>{product.contenu[lang].usages.map(v=><li>{v}</li>)}</ul><h2>{t.packaging}</h2><div class="info-list">{product.conditionnements.map(c=><span class="chip">{c.format}</span>)}</div><p>{t.noPrices}</p><a class="btn" href={`/${lang}/contact/`}>{t.quote}</a></div><div><p class="notice">{t.notCertified}</p>{product.image&&<img src={product.image} alt={product.nom} loading="lazy" />}{product.fiche_technique&&<p><a href={product.fiche_technique} download>{t.menu.ressources} · PDF</a></p>}{product.fds&&<p><a href={product.fds} download>FDS / SDS</a></p>}</div></div></div></section>
+<section class="section"><div class="container"><div class="breadcrumbs"><a href={`/${lang}/catalogue/`}>{t.back}</a></div><div class="columns"><div><h2>{t.uses}</h2><p>{description}</p><ul>{product.contenu[lang].usages.map(v=><li>{v}</li>)}</ul><h2>{t.packaging}</h2><div class="info-list">{product.conditionnements.map(c=><span class="chip">{c.format}</span>)}</div><p>{t.noPrices}</p><a class="btn" href={`/${lang}/contact/`}>{t.quote}</a></div><div><p class="notice">{t.notCertified}</p>{product.modele_3d&&<ModelViewer src={product.modele_3d} label={product.nom} language={lang} />}
+{product.image&&<img src={product.image} alt={product.nom} loading="lazy" />}{product.fiche_technique&&<p><a href={product.fiche_technique} download>{t.menu.ressources} · PDF</a></p>}{product.fds&&<p><a href={product.fds} download>FDS / SDS</a></p>}</div></div></div></section>
 </Layout>

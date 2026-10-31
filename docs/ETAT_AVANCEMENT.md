@@ -75,3 +75,15 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Workflow lockfile `41242871708` : completed/success, commit automatique du `package-lock.json`, SHA main `5c82718e9f35b3613bf5813114ad0ea5806c1b26`.
 - Workflow Astro `41242871617` : completed/success, tests et compilation statique sur commit `0b046a01...` ; 28 tests locaux réussis.
 - Build CI passe désormais à `npm ci` pour imposer le lockfile. Aucune publication Cloudflare/DNS.
+
+## 31 octobre 2026 — Lot 2 : 3D (suite du GO)
+
+- Accès GitHub : `Verwolfy/nextgen-website` privé, `main` déjà poussé, dernier CI pré-3D `41243033941` réussi avec npm ci.
+- Génération locale de cinq modèles GLB (sac 25 kg, seau 20 kg, bidon 20 L, fût 200 L, cuve IBC 1000 L), tous <3 Mio et validés par import trimesh ; géométrie simplifiée non contractuelle.
+- Textures d'étiquettes provenant des originaux de la phase 1, logo utilisateur inchangé ; étiquettes explicitement fictives.
+- Deux angles rendus pour chaque modèle, PNG et WebP ; optimisation légère pour les mobiles.
+- Page Astro de présentation conceptuelle FR/AR/EN et visionneuse réutilisable uniquement pour modèles source approuvée dans les fiches produits.
+- `@google/model-viewer` et `three` fixés dans les dépendances du site ; fichier lockfile GitHub doit être régénéré en CI.
+- Tests locaux `python -m unittest discover -s tests -v` : 34 réussis ; cela ne prouve pas encore le nouveau build CI ni l'interface réelle.
+- Aucune modification de Supabase, du dépôt ERP, Cloudflare ou du DNS ; aucune fiche fictive publiée.
+- Prochaine action : transfert GitHub des sources et binaires, validation CI `npm ci` + build trilingue + vérification post-build des 5 GLB/10 WebP. Ensuite, tests navigateur et éventuel déploiement de prévisualisation protégé avant feu vert public.
