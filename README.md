@@ -50,5 +50,5 @@ Le bouton Streamlit « Publier » n'est pas implanté au lot 1. Dans un lot ult�
 - Aucune fiche de produit fictif ; les documents présents dans `supports/` ne sont pas servis par `public`.
 - Build : `npm install && npm run build` sur Node 22.
 - Pas encore de build local exécuté : installation npm impossible dans l'environnement de génération ; CI GitHub chargée de l'évaluer.
-- `package-lock.json` à générer et committer après CI avant toute mise en ligne.
+- `package-lock.json` présent sur GitHub ; utiliser `npm ci && npm run build` pour reproduire le build.
 - Robots et meta noindex activés jusqu'à l'autorisation de lancement.

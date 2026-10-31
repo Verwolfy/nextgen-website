@@ -69,3 +69,9 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Commit Astro `0d5d8a3883436af2c0447901003dc57288314dd4`, CI `41242720347` **completed/success**, tests Python, installation npm, build Astro et assertions de non-publication réussis.
 - Lot 2 incomplet : aucun GLB / 3D, aucun formulaire, aucun distributeur réel, pas de publication Cloudflare.
 - Prochaine action : protéger sync, générer package-lock, puis avancer progressivement vers 3D et contenu validé.
+
+## 31 octobre 2026 — verrouillage npm confirmé
+
+- Workflow lockfile `41242871708` : completed/success, commit automatique du `package-lock.json`, SHA main `5c82718e9f35b3613bf5813114ad0ea5806c1b26`.
+- Workflow Astro `41242871617` : completed/success, tests et compilation statique sur commit `0b046a01...` ; 28 tests locaux réussis.
+- Build CI passe désormais à `npm ci` pour imposer le lockfile. Aucune publication Cloudflare/DNS.
