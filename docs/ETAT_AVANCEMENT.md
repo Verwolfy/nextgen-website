@@ -87,3 +87,12 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Tests locaux `python -m unittest discover -s tests -v` : 34 réussis ; cela ne prouve pas encore le nouveau build CI ni l'interface réelle.
 - Aucune modification de Supabase, du dépôt ERP, Cloudflare ou du DNS ; aucune fiche fictive publiée.
 - Prochaine action : transfert GitHub des sources et binaires, validation CI `npm ci` + build trilingue + vérification post-build des 5 GLB/10 WebP. Ensuite, tests navigateur et éventuel déploiement de prévisualisation protégé avant feu vert public.
+
+## 31 octobre 2026 — Lot 2 / 3D publiée dans GitHub (pas sur Internet)
+
+- GitHub main: 5 GLB et 10 aperçus WebP committés dans `supports/3d/`; commit `680a91fcbbf981802ff2a40b085cd474d2564306`.
+- Modèles indicatifs et non contractuels : sac 25 kg, seau 20 kg, bidon 20 L, fût 200 L, IBC 1000 L ; texture issue des vraies étiquettes NG (logo utilisateur conservé).
+- Visionneuse Web 360° et 3 langues sur /fr/emballages/, /ar/emballages/, /en/emballages/ ; fiche produit affiche seulement un GLB autorisé par l'export validé, aucun modèle fictif remplacé silencieusement.
+- CI `41244943125` **completed/success** : 34 tests Python, npm ci, build Astro FR/AR/EN, GLBs et aperçus dans dist, garde d'exclusion produits fictifs. https://github.com/Verwolfy/nextgen-website/actions/runs/41244943125
+- Dépendances verrouillées : `@google/model-viewer@4.4.0` / `three@0.183.0`, correction d'un conflit ERESOLVE initial. Sources dans `docs/LOT2_3D.md`.
+- Aucun déploiement, DNS, accès public Cloudflare, changement Supabase ou ERP. Vérification en navigateurs réels et rendus photoréalistes à réaliser ultérieurement.
