@@ -48,6 +48,8 @@ def check() -> None:
                         assert page.locator("main").count() == 1, path
                         assert page.locator("form").count() == 0, path
                         if section == "":
+                            if lang == "ar":
+                                assert "فئات FENEK" in page.locator(".section .eyebrow").all_inner_texts(), path
                             assert page.locator(".hero-status[role='note']").count() == 1, path
                             assert page.locator(".hero-mascot-card img").count() == 1, path
                             assert page.locator(".home-approach .editorial-caution").count() == 1, path
@@ -64,6 +66,8 @@ def check() -> None:
                                 assert "الملاط" in page.locator(".range-overview").inner_text(), path
                             assert page.locator(".editorial-caution").count() >= 1, path
                         if section == "emballages":
+                            if lang == "ar":
+                                assert "تصاميم أولية" in page.locator(".page-head .eyebrow").inner_text(), path
                             assert page.locator("model-viewer").count() == 5, path
                             posters = page.locator("button[slot='poster'] img")
                             assert posters.count() == 5, path
