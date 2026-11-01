@@ -1,3 +1,19 @@
+## 1er novembre 2026 — Lot 14 : parcours Contact et Distributeurs, aucune collecte
+
+- **[PR #9](https://github.com/Verwolfy/nextgen-website/pull/9)** fusionnée sur `main`, commit merge `827adc374685c0193e440b7de7e465afa314d005`.
+- Pages Contact et Distributeurs désormais centrées sur **trois canaux directs** (`mailto:`, `tel:`, WhatsApp) dans les trois langues FR/AR/EN. Coordonnées reprises du dictionnaire `brand`, sans inventer d'identités ou de nouveaux numéros. Les liens ouvrent seulement les applications choisies par l'utilisateur.
+- Mention explicite que l'e-mail et WhatsApp sont des services externes et que **la réception effective des messages n'a pas été vérifiée** dans cette préproduction. Ne pas présenter un numéro affiché comme testé fonctionnellement.
+- `src/components/LeadForm.astro` : champs et bouton **tous désactivés**, désormais contenus dans un accordéon `details` fermé par défaut ; aucune balise `form`, aucun envoi, aucun script, aucun nouvel appel API.
+- Sur Distributeurs, CTA prioritaire vers les canaux actifs et second lien vers l'aperçu de candidature désactivé. Nouveaux fichiers : `src/components/ContactChannels.astro`, `src/data/contact-channels.ts`, `tests/test_lot14_contact_journey.py`, `docs/LOT14_PARCOURS_CONTACT_DISTRIBUTEURS.md`. CSS responsive/RTL/focus.
+- Recette Chromium élargie : liens e-mail/téléphone/WhatsApp, absence de formulaire actif, contrôles disabled, affichage replié / ouvert, absence de débordement à 390px et 320px, captures internes supplémentaires Contact/Distributeurs. Mise à jour `tests/test_lead_forms.py` conformément à la séparation des canaux et de l'aperçu.
+- **2 CI sur PR réussies avant fusion**, head `d2933640e630a09d9ec943718e4ff2d78c080155` : [Astro + sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41338615668), [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41338615721).
+- **Aucun** produit, prix, dossier fiscal/comptable, qualification réglementaire ou FT/FDS inventé ; `public/data/products.json = []`. Réception `/api/lead` non activée. **Aucun** SQL/RLS, secret, ERP, DNS, Cloudflare Pages ou Access modifié. Publication Cloudflare et collecte restent NO-GO sans approbations.
+
+### Suite prioritaire
+Vérifier les CI du dernier commit `main` après mise à jour du journal, consulter les captures du parcours Contact en particulier à 320px FR/AR/EN, puis préparer les prérequis de confidentialité et la protection effective Cloudflare Access **avant tout déploiement**.
+
+---
+
 ## 1er novembre 2026 — Lot site 13 : accueil contrôlé visuellement
 
 - **[PR #8](https://github.com/Verwolfy/nextgen-website/pull/8) fusionnée**, SHA merge `6e11017b227a1bcbbf0f1951c2133daa144205cf`.
