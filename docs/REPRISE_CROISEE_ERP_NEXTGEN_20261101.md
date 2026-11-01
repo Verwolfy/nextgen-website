@@ -89,3 +89,13 @@
 - Tests intégrés : `tests/test_mobile_navigation.py`, `tests/test_home_showcase.py`; outil Chromium vérifie menu fermé/ouvert au clavier et absence de débordement à 320px. Docs : `docs/LOT10_NAVIGATION_MOBILE.md`, `docs/LOT11_ACCUEIL_GALERIE_3D.md` et `docs/ETAT_AVANCEMENT.md`.
 - **Aucune publication publique :** Cloudflare Access principal/préviews non attesté, aucun compte Pages ou DNS modifié, formulaires de collecte toujours désactivés, produits publiables `[]`, pas de conformité juridique ou technique inventée, aucun SQL/RLS/secret modifié.
 - Suite : vérifier la dernière CI après commits documentaires ; inspecter les captures internes CI, peaufiner la présentation et garder le statut NO-GO pour toute connexion/déploiement Pages avant authentification et approbation ciblée.
+
+## Addendum priorité site — lot 12 / 1er novembre 2026
+
+- Nouvelle PR [NextGen #7](https://github.com/Verwolfy/nextgen-website/pull/7) **fusionnée** sur `main`, SHA de merge `9f35c1a71c350613830423d59efe44593b3014b0`.
+- Pages Gammes, À propos, Ressources refondues sur les routes FR/AR/EN existantes, via `src/data/editorial.ts` et `RangeOverview.astro`, `AboutStory.astro`, `ResourcesHub.astro`; pages détail FENEK également enrichies. **Aucune performance, référence commerciale ou homologation inventée**. Les FT/FDS ne sont pas présentées comme disponibles ; seul l'accès aux modèles 3D de simulation existants est proposé.
+- Adaptation mobile/RTL/focus, 48 contrôles Chromium route/langue/viewport et captures mobiles supplémentaires ; `tests/test_editorial_hubs.py`, `tests/test_mobile_navigation.py` mis à jour pour le composant extrait. Le premier run CI a détecté un test de chemin devenu obsolète, corrigé avant merge.
+- **Deux CI de PR sur SHA `1f36a66bde2f699caf53a6f6bf43a0bd652b8537` réussies** : [build/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41331612676) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41331612642).
+- `docs/LOT12_HUBS_EDITORIAUX_FR_AR_EN.md` explique les changements et les blocages. `docs/ETAT_AVANCEMENT.md` synchronisé.
+- Invariants : dépôt privé, catalogue `public/data/products.json=[]`, aucun formulaire actif, aucune collecte, aucun changement ERP/Supabase/SQL/RLS, aucun déploiement Cloudflare/DNS/secrets. Préproduction/publication **NO-GO** sans protection Access effective sur toutes les URL et validation juridique/commerciale.
+- Prochaine action : contrôler les dernières CI `main`, inspecter les captures internes, optimiser les défauts visibles du site. Ne pas affirmer qu'un build GitHub implique un déploiement Pages.
