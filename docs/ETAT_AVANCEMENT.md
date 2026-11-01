@@ -1,3 +1,15 @@
+## 1er novembre 2026 — Lot 18 : relecture arabe BTP, audit des captures
+
+- **[PR #14](https://github.com/Verwolfy/nextgen-website/pull/14)** fusionnée sur `main` (merge SHA `1ba3c5088e224ad61f8446840933dc11752dfb4b`) après correction et deux CI réussies sur head `071913a8a2ddb51b901c994f57c24ad11cd7e570` : [Astro/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41349078803) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41349079000).
+- Sept captures utilisateur ont servi à l'audit visuel : accueils, cartes de maquettes, ressources, galerie 3D initialement grise, À propos et gamme arabe RTL. **Important** : une partie de ces captures représente un état plus ancien que `main` : les lots 16 et 17 avaient déjà corrigé les posters 3D avant interaction, les marques bidi et les intitulés anglais sur les pages AR.
+- Correction de formulations arabes BTP : `حلول مبتكرة لقطاع البناء`, `كتالوج المنتجات`, `الموارد والوثائق الفنية`, `النشرات الفنية للمنتجات`, `قيد المراجعة` ; avertissement explicite qu'aucun produit n'est approuvé pour publication/vente ; CTA 3D simplifié.
+- `AboutStory.astro` : suppression du doublon d'introduction tout en conservant le processus et la réserve sur les services/produits. Tests arabes historiques réconciliés avec les libellés améliorés, ajout `tests/test_lot18_arabic_polish.py` et `docs/LOT18_ARABE_BTP_RELECTURE.md`.
+- PR #13 fermée car sa tête PR restait `3ab89d3` malgré une branche mise à jour ; PR #14 a été créée au **SHA final exact** pour déclencher les CI. Ne pas fusionner à nouveau PR #13.
+- Les étiquettes imprimées sur les maquettes et autres visuels contractuels restent de simples simulations non approuvées ; validation humaine francophone/arabophone BTP recommandée avant mise en ligne commerciale.
+- Invariants conservés : dépôt privé, catalogue `public/data/products.json=[]`, `noindex`, formulaires/API désactivés, aucun prix, certification, FT/FDS ou donnée technique inventé, aucun déploiement Cloudflare ou modification DNS/ERP/Supabase/SQL/RLS/secrets. Les CI `main` après ce journal doivent être vérifiées séparément.
+
+---
+
 ## 1er novembre 2026 — Lot 17 : finitions des légendes éditoriales FR/AR/EN
 
 - **[PR #12](https://github.com/Verwolfy/nextgen-website/pull/12)** fusionnée au commit `d817ecee2809a6e02c2323f65772685c180bd51d`.
