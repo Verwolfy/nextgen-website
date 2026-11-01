@@ -1,3 +1,26 @@
+## 1 novembre 2026 — Site prioritaire : lots 10 et 11, navigation et accueil 3D
+
+### Développements fusionnés sur `main`
+- **Lot 10, navigation mobile accessible** : PR [#5](https://github.com/Verwolfy/nextgen-website/pull/5), commit `875ec757c3c642ec9a5f3e6d75ae9ff62d2146cd`. Menu natif `details/summary` sans JS sous 980px, rubriques Ressources incluses, support clavier et RTL, lisibilité à 320px, focus visible, libellés et textes alternatifs FR/AR/EN.
+- Lot 10 **CI sur la fusion** : [build/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41329332313) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41329332312) : `completed/success`. Un premier test de navigation trop immédiat a été corrigé avec `wait_for_url` avant la fusion.
+- **Lot 11, galerie 3D visible dès l'accueil** : PR [#6](https://github.com/Verwolfy/nextgen-website/pull/6), commit `270382fbc3fc7851ffb91bae8c17e5a3a4a572c1`. Trois aperçus WebP locaux (sac 25 kg, bidon 20 L, IBC 1 000 L), liens vers les 5 maquettes GLB. Notices FR/AR/EN sans ambiguïté : simulations non approuvées et non commercialisées.
+- Lot 11 **CI sur la branche PR** : [build/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41329533696) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41329533617) : `completed/success`. Les contrôles du commit de fusion doivent être confirmés séparément.
+- Tests nouveaux : `tests/test_mobile_navigation.py`, `tests/test_home_showcase.py` ; recette navigateur élargie. Documentation : `docs/LOT10_NAVIGATION_MOBILE.md`, `docs/LOT11_ACCUEIL_GALERIE_3D.md`.
+
+### Garde-fous inchangés
+- `public/data/products.json` reste `[]`. Pas de produit fictif, de tarif ni de garantie technique ou homologation inventée.
+- Formulaires de devis et distributeurs **désactivés** ; réception des demandes inactivée. Pas d'échange automatique de données ERP ou Supabase au navigateur.
+- **Aucun déploiement Cloudflare, DNS, activation de collecte, modification RLS/GRANT, migration SQL ou secret**, et aucune approbation juridique prétendue.
+- La CI GitHub prouve un build statique contrôlé, **pas** une mise en ligne effective. Le site reste en développement, déploiement externe NO-GO jusqu'à protection Access et validations métier/juridiques.
+
+### Prochaine priorité site
+1. Confirmer les CI du dernier commit `main`.
+2. Revoir les captures internes desktop/mobile après la galerie et corriger d'éventuels défauts visuels réels.
+3. Préparer la préproduction accessible uniquement après protection Cloudflare Access explicitement confirmée pour URL principale et previews ; vérifier la partie légale avant collecte ou publication officielle.
+4. Poursuivre le contenu FR/AR/EN, mais uniquement sur des caractéristiques et produits documentés.
+
+---
+
 # NEXTGEN — Etat d'avancement (Phase 4, lot 1)
 
 Date : 31 octobre 2026. Décisions : **GO PHASE 4** reçu ; **SQL VALIDÉ** reçu et migration privée du site appliquée sur la production Supabase.
