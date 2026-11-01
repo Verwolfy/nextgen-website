@@ -27,3 +27,19 @@ Date : 1er novembre 2026.
 5. Validation qualité, technique et commerciale datée pour chaque fiche, et **protection Cloudflare Access** et revue de diffusion préalable.
 
 Objectif utilisateur : qualité 9/10. **Il s'agit d'un objectif de revue, pas d'un score technique ou graphique indépendant attesté aujourd'hui.** Les simulations sont soumises à approbation humaine.
+
+## Résultat d'exécution complémentaire — Supabase Production
+
+**Écriture effectivement réalisée** sur le projet `wenydirqtmkywbxbxfal` le 1er novembre 2026 : 33 modèles de modes d'emploi fournis par l'Excel, appliqués par ID exact aux **50 fiches** dans la clé JSONB `contenu.fr.mode_emploi_brouillon` de `public.site_produits`. Cette écriture conserve le contenu source avec les repères `[LABO]` et n'affecte aucun statut de confirmation, aucune date de validation ni aucun champ `publie`.
+
+La mise à jour SQL n'était autorisée que pour les 50 lignes `statut_technique=brouillon`, `produit_reel_confirme=false`, `publie=false`, avec une condition transactionnelle exigeant exactement 50 mises à jour (échec et annulation sinon). **Requête de vérification exécutée ensuite** : 50/50 modes FR brouillons présents, 50/50 contiennent `[LABO]`, 50/50 toujours brouillons techniques, 0 confirmés, 0 publiés, 0 FT validées, 0 FDS validées. Les descriptions FR/AR/EN préexistantes ont été conservées.
+
+**Formats illustratifs après nouvelle passe QA** : 16 sacs 25 kg Bond, 14 seaux 20 kg (3 Proof + 11 Paint), 12 bidons 20 L Flow, 7 kits résines dont la contenance est non définie, 1 conditionnement Proof manquant. Les autres formats SKU demeurent listés dans les fiches. Les images sont des concepts non contractuels, **sans classe normative/mentions de sécurité artificielles**, et ne peuvent pas être imprimées comme emballages commerciaux.
+
+### GitHub et contrôles
+- [PR #15](https://github.com/Verwolfy/nextgen-website/pull/15) fusionnée sur `main` : commit `c5ef0e2660862238510d811b6649a38107c4590c`.
+- Deux CI de PR réussies sur `08af5e48d4ed6d1609dacdb2928a966e0763d957` : [Astro/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41352258702) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41352258745).
+- Deux CI après fusion réussies au SHA `c5ef0e2` : [Astro/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41352515834) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41352515874).
+- 50 visuels 900 × 900 WebP contrôlés ; archive privée avec 50 visuels + `index.html` + JSON (52 fichiers), intégrité ZIP vérifiée, classeur enrichi 50 lignes et source Excel conservée.
+
+**Note qualité** : 50/50 complétude de préparation, mais le niveau esthétique `9/10` n'a pas été attesté par une évaluation indépendante ; des vérifications d'impression/étiquetage, retouches 3D individuelles et validation BTP sont encore nécessaires. Aucune publication des 50 références sur le site live ni Cloudflare.
