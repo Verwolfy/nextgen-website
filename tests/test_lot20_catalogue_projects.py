@@ -53,7 +53,6 @@ class TestLot20CatalogueProjects(unittest.TestCase):
         cards=(ROOT/'src/components/ConceptCatalogue.astro').read_text()
         self.assertIn('<ConceptCatalogue lang={lang} />',section)
         self.assertIn('languages.flatMap(lang=>catalogueProjects.map',detail)
-        self.assertIn('p.conditionnements.length',detail) if False else None
         self.assertIn('product.conditionnements.length',detail)
         self.assertIn('t.sourceNote',detail)
         self.assertIn('guidance(lang,product.code)',detail)
@@ -64,7 +63,7 @@ class TestLot20CatalogueProjects(unittest.TestCase):
 
     def test_draft_methods_not_misrepresented_as_translated_field_directions(self):
         copy=(ROOT/'src/data/catalogue-content.ts').read_text()
-        for token in ('mode d’emploi source', 'بالفرنسية', 'French instructions',
+        for token in ('Mode d’emploi source', 'بالفرنسية', 'French instructions',
                       'لم يُحدّد حجم العبوة', 'no certification', 'methodDisclaimer:'):
             # Some phrases have different casing depending on locale; prove the relevant semantics.
             if token=='no certification':
