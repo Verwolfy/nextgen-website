@@ -44,3 +44,11 @@ Recette navigateur Chromium (locale/CI) : `python scripts/check_browser_pages.py
 ## Démarrage public : NO-GO
 
 Aucun changement DNS, accès Internet Cloudflare, activation de formulaires, e-mail automatique, nouveau droit RLS/GRANT ou publication de produit n'a été autorisé dans ce lot. La vérification de la version réellement déployée dans Streamlit Cloud reste non confirmée (réponse HTTP anonyme 303).
+
+## Lot 9 — Audit Access préparé, aucun déploiement (01/11/2026)
+
+- Contrôle anonyme et manuel des URL Cloudflare Pages : `scripts/audit_preview_access.py` (sans réseau par défaut ; option `--execute` nécessaire ; aucune authentification, cookie ni suivi de redirection).
+- Blocage CI des commandes usuelles Cloudflare/Wrangler non approuvées : `scripts/check_no_unapproved_deployment.py`, tests unitaires sans réseau.
+- Consignes complètes et limites de validation : `docs/LOT9_ACCESS_VERIFICATION.md`.
+- **Aucun compte Cloudflare connecté, aucune Access policy vérifiée, aucun déploiement créé.** La plateforme Pages publie par défaut des URL visibles sur Internet ; `noindex` ne rend pas un site privé.
+- ERP Streamlit : PR #33 fusionnée, repère `SOF-NEXTGEN-CRM-20261101-L9` dans l'onglet CRM pour une vérification future après connexion. La présence réelle du repère en production **n'est pas confirmée**.

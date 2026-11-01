@@ -160,3 +160,12 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Cloudflare Pages : les previews sont publiques par défaut ; Cloudflare Access doit être établi AVANT de créer ou connecter le site. L'Access de preview ne protège pas automatiquement le domaine principal pages.dev. `docs/LOT8_CLOUDFLARE_PREPROD.md` détaille les vérifications et les autorisations.
 - Streamlit ERP : observation anonyme HTTP **303**, déploiement de l'onglet après authentification **non vérifié**.
 - Aucun appel Cloudflare, aucune migration/écriture Supabase, aucun secret, aucune collecte, aucune modification DNS ni publication réelle.
+
+## 1 novembre 2026 — Lot 9 : contrôles d'accès préproduction et repère ERP
+
+- Site PR [#3](https://github.com/Verwolfy/nextgen-website/pull/3) **fusionnée** en squash : `c1f12d85499f42d48056ba2e0b78cd77808fa160`.
+- Six tests offline nouveaux sur les hostnames, redirections Access, erreurs anonymes et déploiements non autorisés ; CI PR `41298541770` **success**. Contrôle intégré au workflow principal.
+- Site : `audit_preview_access.py` valide les origines hors réseau par défaut, puis seulement avec `--execute` peut lancer des GET anonymes sur des domaines Pages précisément fournis. Pas de Cloudflare intégré ni de domaine de test connu ; **aucun GET réel effectué**.
+- ERP : PR [#33](https://github.com/Verwolfy/erp-mortier/pull/33) **fusionnée**, commit `222bffb7e10f4c244475390d3f63cacc979e8d68`. Onglet CRM avec `SOF-NEXTGEN-CRM-20261101-L9`, sans ouverture du flag ni données privées.
+- ERP CI `41298643013` **success** : 37 tests ciblés et **2 144 tests ERP**, 1 warning non bloquant. Présence effective dans Streamlit Cloud toujours non confirmée (HTTP 303 anonyme).
+- Préproduction Access, publication Cloudflare Pages, DNS, SQL, secrets, e-mails et formulaire de collecte : **aucune activation**. Conformité juridique et durée de conservation toujours à approuver.
