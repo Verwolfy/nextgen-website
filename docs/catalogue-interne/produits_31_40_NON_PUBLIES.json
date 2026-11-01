@@ -1,0 +1,472 @@
+[
+  {
+    "pf_id": "FLOW-SP-PF",
+    "nom": "FENEK-FLOW SP-PF",
+    "gamme": "flow",
+    "categorie": "Superplastifiants",
+    "slug": "fenek-flow-sp-pf",
+    "contenu_source_fr": {
+      "produit": "Superplastifiant pour préfabrication, résistances précoces",
+      "description": "Superplastifiant à résistances précoces élevées pour préfabrication et décoffrage rapide.",
+      "normes_de_reference_indicatives": "EN 934-2 ; EN 934-1",
+      "exigences_non_verifiees": "Réduction d'eau ≥ 12 % ; compression à 1 j ≥ 140 % du témoin ; compression à 28 j ≥ 115 %.",
+      "mode_emploi_brouillon": "1) Ajouter en fin de malaxage ou dans l'eau de gâchage. 2) Dosage [LABO] % du poids de liant. 3) Malaxer [LABO] min. 4) Valider par essais préalables sur le ciment et les granulats du chantier. Ne pas surdoser (ressuage, ségrégation).",
+      "consignes_securite_indicatives_non_fds": "Produit aqueux pouvant irriter yeux et peau : gants et lunettes. Ne pas ingérer. Ne pas rejeter dans les réseaux ni dans le sol. Stocker à l'abri du gel et de la chaleur. Épandages : absorber avec un matériau inerte."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Éther polycarboxylate (PCE) en solution aqueuse, eau, antimousse, conservateur",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Superplastifiant pour préfabrication, résistances précoces",
+        "description": "Superplastifiant à résistances précoces élevées pour préfabrication et décoffrage rapide.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "FLOW-RT",
+    "nom": "FENEK-FLOW RT",
+    "gamme": "flow",
+    "categorie": "Retardateurs",
+    "slug": "fenek-flow-rt",
+    "contenu_source_fr": {
+      "produit": "Retardateur de prise",
+      "description": "Retarde la prise du béton par temps chaud ou en cas de transport long.",
+      "normes_de_reference_indicatives": "EN 934-2 ; EN 934-1",
+      "exigences_non_verifiees": "Début de prise retardé de ≥ 90 min et ≤ 360 min par rapport au témoin ; compression à 28 j ≥ 90 % du témoin.",
+      "mode_emploi_brouillon": "1) Ajouter à l'eau de gâchage. 2) Dosage [LABO] % du poids de liant selon température. 3) Valider par essais préalables. 4) Surveiller les temps de prise en cas de forte chaleur.",
+      "consignes_securite_indicatives_non_fds": "Produit aqueux pouvant irriter yeux et peau : gants et lunettes. Ne pas ingérer. Ne pas rejeter dans les réseaux ni dans le sol. Stocker à l'abri du gel et de la chaleur. Épandages : absorber avec un matériau inerte."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Gluconate de sodium / acides hydroxycarboxyliques / phosphonates, eau",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Retardateur de prise",
+        "description": "Retarde la prise du béton par temps chaud ou en cas de transport long.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "FLOW-AC",
+    "nom": "FENEK-FLOW AC",
+    "gamme": "flow",
+    "categorie": "Accélérateurs",
+    "slug": "fenek-flow-ac",
+    "contenu_source_fr": {
+      "produit": "Accélérateur de prise",
+      "description": "Accélère la prise et le durcissement du béton par temps froid ou pour décoffrage rapide.",
+      "normes_de_reference_indicatives": "EN 934-2 ; EN 934-1",
+      "exigences_non_verifiees": "Début de prise à 20 °C ≤ 50 % de celui du témoin ; compression à 28 j ≥ 80 % du témoin ; chlorures ≤ 0,10 %.",
+      "mode_emploi_brouillon": "1) Ajouter à l'eau de gâchage. 2) Dosage [LABO] % du poids de liant selon température. 3) Mettre en œuvre rapidement. 4) Valider par essais ; vérifier l'absence de chlorures si béton armé.",
+      "consignes_securite_indicatives_non_fds": "Accélérateur de prise : peut être irritant/corrosif selon la formule (nitrates, thiocyanates) ; gants et lunettes obligatoires. Éviter le contact avec l'aluminium. Ne pas rejeter dans les réseaux. Stocker à l'abri du gel."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Formiate de calcium, nitrates ou thiocyanates (sans chlorures), eau",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Accélérateur de prise",
+        "description": "Accélère la prise et le durcissement du béton par temps froid ou pour décoffrage rapide.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "FLOW-AE",
+    "nom": "FENEK-FLOW AE",
+    "gamme": "flow",
+    "categorie": "Entraîneurs d'air",
+    "slug": "fenek-flow-ae",
+    "contenu_source_fr": {
+      "produit": "Entraîneur d'air",
+      "description": "Entraîne des microbulles d'air pour la résistance au gel-dégel et aux sels de déverglaçage.",
+      "normes_de_reference_indicatives": "EN 934-2 ; EN 934-1",
+      "exigences_non_verifiees": "Teneur en air du béton d'essai ≥ 2,5 % au-dessus du témoin (total 4 à 6 %) ; facteur d'espacement ≤ 0,200 mm ; compression à 28 j ≥ 75 %.",
+      "mode_emploi_brouillon": "1) Ajouter à l'eau de gâchage ou en cours de malaxage. 2) Dosage [LABO] % du poids de liant. 3) Contrôler la teneur en air du béton frais à chaque gâchée. 4) Maintenir un temps de malaxage constant.",
+      "consignes_securite_indicatives_non_fds": "Produit aqueux pouvant irriter yeux et peau : gants et lunettes. Ne pas ingérer. Ne pas rejeter dans les réseaux ni dans le sol. Stocker à l'abri du gel et de la chaleur. Épandages : absorber avec un matériau inerte."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Tensioactif entraîneur d'air (savons/résines synthétiques), eau",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Entraîneur d'air",
+        "description": "Entraîne des microbulles d'air pour la résistance au gel-dégel et aux sels de déverglaçage.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "FLOW-WP",
+    "nom": "FENEK-FLOW WP",
+    "gamme": "flow",
+    "categorie": "Hydrofuges de masse",
+    "slug": "fenek-flow-wp",
+    "contenu_source_fr": {
+      "produit": "Hydrofuge de masse",
+      "description": "Réduit l'absorption capillaire du béton et du mortier.",
+      "normes_de_reference_indicatives": "EN 934-2 ; EN 934-1",
+      "exigences_non_verifiees": "Absorption capillaire à 7 et 28 j ≤ 50 % du témoin ; compression à 28 j ≥ 85 % du témoin.",
+      "mode_emploi_brouillon": "1) Ajouter à l'eau de gâchage. 2) Dosage [LABO] % du poids de liant. 3) Bien malaxer pour une répartition homogène. 4) Vibrer et cure normaux.",
+      "consignes_securite_indicatives_non_fds": "Produit aqueux pouvant irriter yeux et peau : gants et lunettes. Ne pas ingérer. Ne pas rejeter dans les réseaux ni dans le sol. Stocker à l'abri du gel et de la chaleur. Épandages : absorber avec un matériau inerte."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Stéarates / oléates ou émulsion hydrofuge (silanes, siliconates), eau",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Hydrofuge de masse",
+        "description": "Réduit l'absorption capillaire du béton et du mortier.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "FLOW-VMA",
+    "nom": "FENEK-FLOW VMA",
+    "gamme": "flow",
+    "categorie": "Agents de viscosité",
+    "slug": "fenek-flow-vma",
+    "contenu_source_fr": {
+      "produit": "Agent de viscosité (béton autoplaçant)",
+      "description": "Stabilise les bétons très fluides et réduit la ségrégation et le ressuage.",
+      "normes_de_reference_indicatives": "EN 934-2 ; EN 934-1 (à confirmer) ; EN 12350-8",
+      "exigences_non_verifiees": "Critères à définir par le labo : étalement, stabilité (ségrégation), temps d'écoulement ; chlorures ≤ 0,10 %.",
+      "mode_emploi_brouillon": "1) Ajouter pendant le malaxage, après les granulats et le ciment. 2) Dosage [LABO] % du poids de liant. 3) Malaxer [LABO] min. 4) Contrôler l'étalement et la stabilité avant mise en œuvre.",
+      "consignes_securite_indicatives_non_fds": "Produit aqueux pouvant irriter yeux et peau : gants et lunettes. Ne pas ingérer. Ne pas rejeter dans les réseaux ni dans le sol. Stocker à l'abri du gel et de la chaleur. Épandages : absorber avec un matériau inerte."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Biopolymère (gomme diutan/welan) ou éther de cellulose, eau",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Agent de viscosité (béton autoplaçant)",
+        "description": "Stabilise les bétons très fluides et réduit la ségrégation et le ressuage.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "FLOW-CI",
+    "nom": "FENEK-FLOW CI",
+    "gamme": "flow",
+    "categorie": "Inhibiteurs de corrosion",
+    "slug": "fenek-flow-ci",
+    "contenu_source_fr": {
+      "produit": "Inhibiteur de corrosion des armatures",
+      "description": "Retarde la corrosion des armatures dans le béton exposé aux chlorures ou à la carbonatation.",
+      "normes_de_reference_indicatives": "EN 1504-9 (principes) ; ASTM C1582 (spécification)",
+      "exigences_non_verifiees": "Pas de seuils EN 934-2 spécifiques : essais de corrosion et de durabilité selon la référence retenue.",
+      "mode_emploi_brouillon": "1) Ajouter à l'eau de gâchage du béton/mortier. 2) Dosage [LABO] % du poids de liant. 3) Option : application en surface sur béton existant selon fiche. 4) Valider par essais de durabilité.",
+      "consignes_securite_indicatives_non_fds": "Inhibiteur de corrosion : peut irriter yeux et peau, nocif pour le milieu aquatique selon la formule. Gants et lunettes ; ne pas rejeter dans les réseaux ; stocker à l'abri du gel."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Inhibiteur organique (amino-alcools) ou nitrite de calcium, eau",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Inhibiteur de corrosion des armatures",
+        "description": "Retarde la corrosion des armatures dans le béton exposé aux chlorures ou à la carbonatation.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "FLOW-CURE",
+    "nom": "FENEK-FLOW CURE",
+    "gamme": "flow",
+    "categorie": "Produits de cure",
+    "slug": "fenek-flow-cure",
+    "contenu_source_fr": {
+      "produit": "Produit de cure du béton",
+      "description": "Forme un film temporaire qui retient l'eau du béton frais.",
+      "normes_de_reference_indicatives": "NF P18-370 (réf. française) ; ASTM C309",
+      "exigences_non_verifiees": "Perte d'eau limitée (ASTM C309 : ≤ 0,55 kg/m² à 72 h) ; compatibilité avec revêtements ultérieurs à vérifier.",
+      "mode_emploi_brouillon": "1) Appliquer sur le béton frais dès la disparition de l'eau de ressuage. 2) Pulvériser en couche uniforme, consommation [LABO] m²/L. 3) Ne pas appliquer si le béton doit recevoir un revêtement sans décapage.",
+      "consignes_securite_indicatives_non_fds": "Produit de cure : selon la formule (eau ou solvant), peut être inflammable. Pulvérisation : lunettes, masque adapté, ventilation. Éviter flammes et étincelles. Ne pas rejeter dans les réseaux."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Émulsion de cire / résine hydrocarbonée ou acrylique, eau, pigment fugitif (option)",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Produit de cure du béton",
+        "description": "Forme un film temporaire qui retient l'eau du béton frais.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "FLOW-LAT",
+    "nom": "FENEK-FLOW LAT",
+    "gamme": "flow",
+    "categorie": "Résines d'adhérence",
+    "slug": "fenek-flow-lat",
+    "contenu_source_fr": {
+      "produit": "Résine d'adhérence et d'amélioration des mortiers",
+      "description": "Résine en dispersion servant de pont d'adhérence et d'additif d'amélioration des mortiers.",
+      "normes_de_reference_indicatives": "EN 1542 (adhérence) ; EN 1504-3 (usage en mortier de réparation)",
+      "exigences_non_verifiees": "Pas de norme produit unique : adhérence par arrachement ≥ 0,8 à 2,0 MPa selon la classe de mortier visée ; essais comparatifs.",
+      "mode_emploi_brouillon": "1) Support propre, humidifié. 2) Utiliser pur en pont d'adhérence ([LABO] kg/m²) ou dilué dans l'eau de gâchage ([LABO] %). 3) Appliquer le mortier frais sur pont encore frais. 4) Cure normale.",
+      "consignes_securite_indicatives_non_fds": "Produit aqueux pouvant irriter yeux et peau : gants et lunettes. Ne pas ingérer. Ne pas rejeter dans les réseaux ni dans le sol. Stocker à l'abri du gel et de la chaleur. Épandages : absorber avec un matériau inerte."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Dispersion styrène-butadiène (SBR) ou acrylique, stabilisants, eau",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Résine d'adhérence et d'amélioration des mortiers",
+        "description": "Résine en dispersion servant de pont d'adhérence et d'additif d'amélioration des mortiers.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PAINT-INT-M",
+    "nom": "FENEK-PAINT INT-M",
+    "gamme": "paint",
+    "categorie": "Peintures intérieures",
+    "slug": "fenek-paint-int-m",
+    "contenu_source_fr": {
+      "produit": "Peinture acrylique intérieure mate",
+      "description": "Peinture acrylique mate pour murs et plafonds intérieurs.",
+      "normes_de_reference_indicatives": "EN 13300 ; ISO 11998 ; ISO 6504-3 ; ISO 2813",
+      "exigences_non_verifiees": "Classes à déclarer : abrasion humide (1 à 5), pouvoir masquant (1 à 4), brillant (mat), granulométrie, COV.",
+      "mode_emploi_brouillon": "1) Support propre, sec, dépoussiéré, réparé. 2) Appliquer une sous-couche [LABO]. 3) Diluer si nécessaire ([LABO] % d'eau). 4) Appliquer en [LABO] couches au rouleau/brosse/pistolet. 5) Délai entre couches [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Peinture à l'eau, danger faible : peut irriter yeux et peau. Gants, lunettes si projection. Bien ventiler pendant l'application et le séchage. Ne pas jeter les restes à l'égout. Stocker à l'abri du gel, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Liant acrylique ou styrène-acrylique en dispersion, TiO₂, carbonate de calcium, épaississants, agents de coalescence, dispersants, biocides, eau",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Peinture acrylique intérieure mate",
+        "description": "Peinture acrylique mate pour murs et plafonds intérieurs.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  }
+]

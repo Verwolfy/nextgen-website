@@ -1,0 +1,472 @@
+[
+  {
+    "pf_id": "BOND-C1T",
+    "nom": "FENEK-BOND C1T",
+    "gamme": "bond",
+    "categorie": "Colles carrelage",
+    "slug": "fenek-bond-c1t",
+    "contenu_source_fr": {
+      "produit": "Colle carrelage standard",
+      "description": "Colle cimentaire en poudre pour la pose de carrelage en sol et en mur intérieurs, sans glissement en pose murale.",
+      "normes_de_reference_indicatives": "EN 12004-1 (exigences) ; EN 12004-2 (méthodes d'essai)",
+      "exigences_non_verifiees": "C1 : adhérence initiale ≥ 0,5 N/mm² (aussi après immersion, vieillissement thermique et gel-dégel) ; T : glissement ≤ 0,5 mm.",
+      "mode_emploi_brouillon": "1) Support propre, sain, plan, stable. 2) Gâcher [LABO] L d'eau propre par sac de [LABO] kg jusqu'à pâte homogène. 3) Repos [LABO] min, remalaxer. 4) Appliquer à la spatule crantée ([LABO]) ; double encollage si nécessaire. 5) Poser dans le temps ouvert [LABO] min. 6) Jointoyer après [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland, sable siliceux calibré, éther de cellulose (rétention d'eau), poudre polymère redispersable (RDP), additifs de performance (amidon éther, formiate de calcium selon classe) ; épaississant anti-glissement",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Colle carrelage standard",
+        "description": "Colle cimentaire en poudre pour la pose de carrelage en sol et en mur intérieurs, sans glissement en pose murale.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "BOND-C1TE",
+    "nom": "FENEK-BOND C1TE",
+    "gamme": "bond",
+    "categorie": "Colles carrelage",
+    "slug": "fenek-bond-c1te",
+    "contenu_source_fr": {
+      "produit": "Colle carrelage standard, temps ouvert allongé",
+      "description": "Colle cimentaire pour carrelage avec temps ouvert allongé, utile pour grands formats ou chantiers chauds.",
+      "normes_de_reference_indicatives": "EN 12004-1 (exigences) ; EN 12004-2 (méthodes d'essai)",
+      "exigences_non_verifiees": "C1 : adhérence ≥ 0,5 N/mm² ; T : glissement ≤ 0,5 mm ; E : adhérence ≥ 0,5 N/mm² après temps ouvert ≥ 30 min.",
+      "mode_emploi_brouillon": "1) Support propre, sain, plan, stable. 2) Gâcher [LABO] L d'eau propre par sac de [LABO] kg jusqu'à pâte homogène. 3) Repos [LABO] min, remalaxer. 4) Appliquer à la spatule crantée ([LABO]) ; double encollage si nécessaire. 5) Poser dans le temps ouvert [LABO] min. 6) Jointoyer après [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland, sable siliceux calibré, éther de cellulose (rétention d'eau), poudre polymère redispersable (RDP), additifs de performance (amidon éther, formiate de calcium selon classe) ; agents d'allongement du temps ouvert",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Colle carrelage standard, temps ouvert allongé",
+        "description": "Colle cimentaire pour carrelage avec temps ouvert allongé, utile pour grands formats ou chantiers chauds.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "BOND-C2TE",
+    "nom": "FENEK-BOND C2TE",
+    "gamme": "bond",
+    "categorie": "Colles carrelage",
+    "slug": "fenek-bond-c2te",
+    "contenu_source_fr": {
+      "produit": "Colle carrelage améliorée",
+      "description": "Colle cimentaire améliorée à adhérence renforcée pour carrelages peu poreux, sols, façades et zones humides.",
+      "normes_de_reference_indicatives": "EN 12004-1 (exigences) ; EN 12004-2 (méthodes d'essai)",
+      "exigences_non_verifiees": "C2 : adhérence ≥ 1,0 N/mm² (état initial, immersion, vieillissement thermique, gel-dégel) ; T ≤ 0,5 mm ; E ≥ 30 min.",
+      "mode_emploi_brouillon": "1) Support propre, sain, plan, stable. 2) Gâcher [LABO] L d'eau propre par sac de [LABO] kg jusqu'à pâte homogène. 3) Repos [LABO] min, remalaxer. 4) Appliquer à la spatule crantée ([LABO]) ; double encollage si nécessaire. 5) Poser dans le temps ouvert [LABO] min. 6) Jointoyer après [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland, sable siliceux calibré, éther de cellulose (rétention d'eau), poudre polymère redispersable (RDP), additifs de performance (amidon éther, formiate de calcium selon classe) ; taux de RDP renforcé",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Colle carrelage améliorée",
+        "description": "Colle cimentaire améliorée à adhérence renforcée pour carrelages peu poreux, sols, façades et zones humides.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "BOND-C2TE-S1",
+    "nom": "FENEK-BOND C2TE-S1",
+    "gamme": "bond",
+    "categorie": "Colles carrelage",
+    "slug": "fenek-bond-c2te-s1",
+    "contenu_source_fr": {
+      "produit": "Colle carrelage améliorée déformable",
+      "description": "Colle améliorée déformable pour supports soumis à de faibles mouvements (chauffage au sol, grands formats).",
+      "normes_de_reference_indicatives": "EN 12004-1 (exigences) ; EN 12004-2 (méthodes d'essai)",
+      "exigences_non_verifiees": "C2 : adhérence ≥ 1,0 N/mm² ; T ; E ; S1 : déformation transversale ≥ 2,5 mm et < 5 mm.",
+      "mode_emploi_brouillon": "1) Support propre, sain, plan, stable. 2) Gâcher [LABO] L d'eau propre par sac de [LABO] kg jusqu'à pâte homogène. 3) Repos [LABO] min, remalaxer. 4) Appliquer à la spatule crantée ([LABO]) ; double encollage si nécessaire. 5) Poser dans le temps ouvert [LABO] min. 6) Jointoyer après [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland, sable siliceux calibré, éther de cellulose (rétention d'eau), poudre polymère redispersable (RDP), additifs de performance (amidon éther, formiate de calcium selon classe) ; RDP à taux élevé (déformabilité)",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Colle carrelage améliorée déformable",
+        "description": "Colle améliorée déformable pour supports soumis à de faibles mouvements (chauffage au sol, grands formats).",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "BOND-C2FT",
+    "nom": "FENEK-BOND C2FT",
+    "gamme": "bond",
+    "categorie": "Colles carrelage",
+    "slug": "fenek-bond-c2ft",
+    "contenu_source_fr": {
+      "produit": "Colle carrelage améliorée prise rapide",
+      "description": "Colle améliorée à prise rapide pour remise en service rapide des sols.",
+      "normes_de_reference_indicatives": "EN 12004-1 (exigences) ; EN 12004-2 (méthodes d'essai)",
+      "exigences_non_verifiees": "C2 : adhérence ≥ 1,0 N/mm² ; F : adhérence ≥ 0,5 N/mm² dès 6 h ; T : glissement ≤ 0,5 mm.",
+      "mode_emploi_brouillon": "1) Support propre, sain, plan, stable. 2) Gâcher [LABO] L d'eau propre par sac de [LABO] kg jusqu'à pâte homogène. 3) Repos [LABO] min, remalaxer. 4) Appliquer à la spatule crantée ([LABO]) ; double encollage si nécessaire. 5) Poser dans le temps ouvert [LABO] min. 6) Jointoyer après [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland, sable siliceux calibré, éther de cellulose (rétention d'eau), poudre polymère redispersable (RDP), additifs de performance (amidon éther, formiate de calcium selon classe) ; accélérateur de prise (ciment à prise rapide)",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Colle carrelage améliorée prise rapide",
+        "description": "Colle améliorée à prise rapide pour remise en service rapide des sols.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "BOND-CG1",
+    "nom": "FENEK-BOND CG1",
+    "gamme": "bond",
+    "categorie": "Joints de carrelage",
+    "slug": "fenek-bond-cg1",
+    "contenu_source_fr": {
+      "produit": "Joint de carrelage standard",
+      "description": "Mortier de jointoiement cimentaire pour joints de carrelage intérieurs et extérieurs.",
+      "normes_de_reference_indicatives": "EN 13888",
+      "exigences_non_verifiees": "CG1 : résistance en flexion ≥ 2,5 N/mm² et en compression ≥ 15 N/mm² à 28 j ; abrasion ≤ 2000 mm³ ; retrait ≤ 3 mm/m ; absorption d'eau ≤ 5 g (30 min) et ≤ 10 g (240 min).",
+      "mode_emploi_brouillon": "1) Joints propres, vides et secs. 2) Gâcher [LABO] d'eau par [LABO] kg de poudre jusqu'à consistance lisse. 3) Repos [LABO] min. 4) Remplir à la raclette caoutchouc en diagonale. 5) Nettoyer à l'éponge humide avant durcissement ([LABO] min). 6) Polir le voile après séchage.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland (gris/blanc), charges minérales (sable fin, filler calcaire), éther de cellulose, RDP, agent hydrofuge, pigments minéraux",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Joint de carrelage standard",
+        "description": "Mortier de jointoiement cimentaire pour joints de carrelage intérieurs et extérieurs.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "BOND-CG2WA",
+    "nom": "FENEK-BOND CG2WA",
+    "gamme": "bond",
+    "categorie": "Joints de carrelage",
+    "slug": "fenek-bond-cg2wa",
+    "contenu_source_fr": {
+      "produit": "Joint de carrelage amélioré, hydrofuge, résistant à l'abrasion",
+      "description": "Joint amélioré, hydrofuge, pour zones humides et à fort passage.",
+      "normes_de_reference_indicatives": "EN 13888",
+      "exigences_non_verifiees": "CG2 : résistances ≥ 2,5 / ≥ 15 N/mm² ; A : abrasion ≤ 1000 mm³ ; W : absorption d'eau ≤ 2 g (30 min) et ≤ 5 g (240 min) ; retrait ≤ 2 mm/m.",
+      "mode_emploi_brouillon": "1) Joints propres, vides et secs. 2) Gâcher [LABO] d'eau par [LABO] kg de poudre jusqu'à consistance lisse. 3) Repos [LABO] min. 4) Remplir à la raclette caoutchouc en diagonale. 5) Nettoyer à l'éponge humide avant durcissement ([LABO] min). 6) Polir le voile après séchage.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland (gris/blanc), charges minérales (sable fin, filler calcaire), éther de cellulose, RDP, agent hydrofuge, pigments minéraux ; quartz pour l'abrasion",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Joint de carrelage amélioré, hydrofuge, résistant à l'abrasion",
+        "description": "Joint amélioré, hydrofuge, pour zones humides et à fort passage.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "BOND-CT-C25-F5",
+    "nom": "FENEK-BOND CT-C25-F5",
+    "gamme": "bond",
+    "categorie": "Ragréage",
+    "slug": "fenek-bond-ct-c25-f5",
+    "contenu_source_fr": {
+      "produit": "Ragréage autolissant de sol",
+      "description": "Mortier autolissant pour rattraper les défauts de planéité avant revêtement de sol.",
+      "normes_de_reference_indicatives": "EN 13813 (désignation CT-C25-F5)",
+      "exigences_non_verifiees": "Résistance à la compression ≥ 25 N/mm² et à la flexion ≥ 5 N/mm² à 28 j ; teneur en eau et fluidité à définir.",
+      "mode_emploi_brouillon": "1) Support résistant, dépoussiéré, primaire si requis. 2) Verser la poudre dans [LABO] L d'eau mesurée en malaxant jusqu'à fluidité homogène. 3) Couler, étaler à la raclette, débuller au rouleau à pointes. 4) Épaisseur [LABO] mm. 5) Protéger des courants d'air ; praticable après [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Liant hydraulique (ciment, sulfoaluminates selon formule), sable siliceux fin, superplastifiant en poudre, RDP, agent anti-ségrégation, antimousse",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Ragréage autolissant de sol",
+        "description": "Mortier autolissant pour rattraper les défauts de planéité avant revêtement de sol.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "BOND-R2",
+    "nom": "FENEK-BOND R2",
+    "gamme": "bond",
+    "categorie": "Réparation du béton",
+    "slug": "fenek-bond-r2",
+    "contenu_source_fr": {
+      "produit": "Mortier de réparation du béton (non structurel)",
+      "description": "Mortier de réparation et de reprofilage du béton, usage non structurel.",
+      "normes_de_reference_indicatives": "EN 1504-3 (classe R2) ; EN 1542 (adhérence)",
+      "exigences_non_verifiees": "R2 : compression ≥ 15 MPa ; adhérence ≥ 0,8 MPa ; teneur en chlorures ≤ 0,05 %.",
+      "mode_emploi_brouillon": "1) Préparer le support (piquage, dépoussiérage, traitement des armatures). 2) Humidifier à refus, support mat. 3) Gâcher [LABO] L d'eau par [LABO] kg. 4) Appliquer à la truelle ou par projection, épaisseur max par passe [LABO] mm. 5) Serrer, talocher. 6) Cure humide [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland, sable siliceux calibré, fumée de silice, superplastifiant en poudre, RDP, agent compensateur de retrait, inhibiteur de corrosion (option)",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Mortier de réparation du béton (non structurel)",
+        "description": "Mortier de réparation et de reprofilage du béton, usage non structurel.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "BOND-R3",
+    "nom": "FENEK-BOND R3",
+    "gamme": "bond",
+    "categorie": "Réparation du béton",
+    "slug": "fenek-bond-r3",
+    "contenu_source_fr": {
+      "produit": "Mortier de réparation structurelle",
+      "description": "Mortier de réparation du béton à caractère structurel pour ouvrages courants.",
+      "normes_de_reference_indicatives": "EN 1504-3 (classe R3) ; EN 1542",
+      "exigences_non_verifiees": "R3 : compression ≥ 25 MPa ; adhérence ≥ 1,5 MPa ; chlorures ≤ 0,05 %.",
+      "mode_emploi_brouillon": "1) Préparer le support (piquage, dépoussiérage, traitement des armatures). 2) Humidifier à refus, support mat. 3) Gâcher [LABO] L d'eau par [LABO] kg. 4) Appliquer à la truelle ou par projection, épaisseur max par passe [LABO] mm. 5) Serrer, talocher. 6) Cure humide [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland, sable siliceux calibré, fumée de silice, superplastifiant en poudre, RDP, agent compensateur de retrait, inhibiteur de corrosion (option)",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Mortier de réparation structurelle",
+        "description": "Mortier de réparation du béton à caractère structurel pour ouvrages courants.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  }
+]

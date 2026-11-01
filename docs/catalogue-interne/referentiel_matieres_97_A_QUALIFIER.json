@@ -1,0 +1,681 @@
+[
+  {
+    "mp_id": "NG-MP-001",
+    "nom": "Ciment Portland",
+    "categorie_mp": "Liants minéraux",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-002",
+    "nom": "Ciment Portland blanc",
+    "categorie_mp": "Liants minéraux",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-003",
+    "nom": "Ciment à prise rapide",
+    "categorie_mp": "Liants minéraux",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-004",
+    "nom": "Liant hydraulique sulfoaluminate",
+    "categorie_mp": "Liants minéraux",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-005",
+    "nom": "Chaux hydratée",
+    "categorie_mp": "Liants minéraux",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-006",
+    "nom": "Sable siliceux calibré",
+    "categorie_mp": "Charges et granulats",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-007",
+    "nom": "Sable siliceux fin",
+    "categorie_mp": "Charges et granulats",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-008",
+    "nom": "Sable fin",
+    "categorie_mp": "Charges et granulats",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-009",
+    "nom": "Quartz calibré",
+    "categorie_mp": "Charges et granulats",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-010",
+    "nom": "Charges de marbre calibrées",
+    "categorie_mp": "Charges et granulats",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-011",
+    "nom": "Filler calcaire / carbonate de calcium",
+    "categorie_mp": "Charges et granulats",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-012",
+    "nom": "Charges minérales renforçantes",
+    "categorie_mp": "Charges et granulats",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-013",
+    "nom": "Talc",
+    "categorie_mp": "Charges et granulats",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-014",
+    "nom": "Fumée de silice",
+    "categorie_mp": "Charges et granulats",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-015",
+    "nom": "Charges siliceuses thixotropes",
+    "categorie_mp": "Charges et granulats",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-016",
+    "nom": "Poudre polymère redispersable RDP",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-017",
+    "nom": "Dispersion acrylique",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-018",
+    "nom": "Dispersion styrène-acrylique",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-019",
+    "nom": "Dispersion styrène-butadiène SBR",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-020",
+    "nom": "Liant acrylique pur",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-021",
+    "nom": "Liant acrylique élastomère",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-022",
+    "nom": "Liant vinylique",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-023",
+    "nom": "Émulsion de résine siloxane",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-024",
+    "nom": "Résine acrylique en dispersion",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-025",
+    "nom": "Résine époxy bisphénol A",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-026",
+    "nom": "Résine époxy bisphénol F",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-027",
+    "nom": "Résine époxy basse viscosité",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-028",
+    "nom": "Résine vinylester",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-029",
+    "nom": "Résine méthacrylate",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-030",
+    "nom": "Prépolymère polyuréthane à isocyanate",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-031",
+    "nom": "Résine hydrocarbonée",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-032",
+    "nom": "Résine de pénétration",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-033",
+    "nom": "Résine polyuréthane-acrylique",
+    "categorie_mp": "Polymères et résines",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-034",
+    "nom": "Durcisseur polyamine",
+    "categorie_mp": "Agents de réticulation",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-035",
+    "nom": "Durcisseur polyamide",
+    "categorie_mp": "Agents de réticulation",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-036",
+    "nom": "Durcisseur amine",
+    "categorie_mp": "Agents de réticulation",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-037",
+    "nom": "Initiateur / durcisseur de résine réactive",
+    "categorie_mp": "Agents de réticulation",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-038",
+    "nom": "Catalyseur / accélérateur polyuréthane",
+    "categorie_mp": "Agents de réticulation",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-039",
+    "nom": "Diluant réactif époxy",
+    "categorie_mp": "Agents de réticulation",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-040",
+    "nom": "Éther de cellulose",
+    "categorie_mp": "Agents de rhéologie",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-041",
+    "nom": "Amidon éther",
+    "categorie_mp": "Agents de rhéologie",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-042",
+    "nom": "Épaississant anti-glissement",
+    "categorie_mp": "Agents de rhéologie",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-043",
+    "nom": "Gomme diutan",
+    "categorie_mp": "Agents de rhéologie",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-044",
+    "nom": "Gomme welan",
+    "categorie_mp": "Agents de rhéologie",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-045",
+    "nom": "Agent thixotrope",
+    "categorie_mp": "Agents de rhéologie",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-046",
+    "nom": "Agent anti-ségrégation",
+    "categorie_mp": "Agents de rhéologie",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-047",
+    "nom": "Agent anti-ressuage",
+    "categorie_mp": "Agents de rhéologie",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-048",
+    "nom": "Modificateur de viscosité",
+    "categorie_mp": "Agents de rhéologie",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-049",
+    "nom": "Superplastifiant en poudre",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-050",
+    "nom": "Éther polycarboxylate PCE en solution",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-051",
+    "nom": "Lignosulfonate",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-052",
+    "nom": "Naphtalène sulfonate",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-053",
+    "nom": "Gluconate de sodium",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-054",
+    "nom": "Acide hydroxycarboxylique",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-055",
+    "nom": "Phosphonate",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-056",
+    "nom": "Formiate de calcium",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-057",
+    "nom": "Nitrate (sans chlorures)",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-058",
+    "nom": "Thiocyanate (sans chlorures)",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-059",
+    "nom": "Entraîneur d'air tensioactif",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-060",
+    "nom": "Entraîneur d'air en poudre",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-061",
+    "nom": "Agent accélérateur de prise",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-062",
+    "nom": "Agent retardateur de prise",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-063",
+    "nom": "Agent compensateur de retrait",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-064",
+    "nom": "Agent expansif",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-065",
+    "nom": "Inhibiteur de corrosion organique / amino-alcool",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-066",
+    "nom": "Nitrite de calcium",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-067",
+    "nom": "Agent hydrofuge",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-068",
+    "nom": "Stéarates hydrofuges",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-069",
+    "nom": "Oléates hydrofuges",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-070",
+    "nom": "Silanes hydrofuges",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-071",
+    "nom": "Siliconates hydrofuges",
+    "categorie_mp": "Adjuvants béton",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-072",
+    "nom": "Dioxyde de titane TiO2",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-073",
+    "nom": "Pigments minéraux",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-074",
+    "nom": "Pigment fugitif",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-075",
+    "nom": "Agent de coalescence",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-076",
+    "nom": "Dispersant pour peinture",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-077",
+    "nom": "Biocide en pot",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-078",
+    "nom": "Biocide de film sec",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-079",
+    "nom": "Algicide de film sec",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-080",
+    "nom": "Conservateur de formulation",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-081",
+    "nom": "Charges durcissantes",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-082",
+    "nom": "Charges anti-abrasion",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-083",
+    "nom": "Additif anti-dérapant",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-084",
+    "nom": "Émulsion de cire",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-085",
+    "nom": "Additif de nivellement",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-086",
+    "nom": "Additif de dégazage",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-087",
+    "nom": "Agent d'adhérence",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-088",
+    "nom": "Additif anti-bulles",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-089",
+    "nom": "Promoteur d'adhérence",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-090",
+    "nom": "Stabilisant UV",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-091",
+    "nom": "Plastifiant",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-092",
+    "nom": "Antimousse",
+    "categorie_mp": "Peintures et traitement de surface",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-093",
+    "nom": "Fibres synthétiques",
+    "categorie_mp": "Autres composants",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-094",
+    "nom": "Eau",
+    "categorie_mp": "Autres composants",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-095",
+    "nom": "Solvant (optionnel)",
+    "categorie_mp": "Autres composants",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-096",
+    "nom": "Régulateur de pH",
+    "categorie_mp": "Autres composants",
+    "unite_stock": null,
+    "actif": "NON"
+  },
+  {
+    "mp_id": "NG-MP-097",
+    "nom": "Additif d'allongement du temps ouvert",
+    "categorie_mp": "Autres composants",
+    "unite_stock": null,
+    "actif": "NON"
+  }
+]

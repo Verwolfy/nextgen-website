@@ -1,0 +1,472 @@
+[
+  {
+    "pf_id": "PROOF-EP-PRIM",
+    "nom": "FENEK-PROOF EP-PRIM",
+    "gamme": "proof",
+    "categorie": "Résines époxy",
+    "slug": "fenek-proof-ep-prim",
+    "contenu_source_fr": {
+      "produit": "Primaire époxy",
+      "description": "Primaire d'accrochage et de fermeture des pores du béton avant revêtement de sol ou résine.",
+      "normes_de_reference_indicatives": "EN 1504-2 ; EN 13813 ; EN 1542",
+      "exigences_non_verifiees": "Adhérence par arrachement ≥ 1,5 N/mm² (avec trafic) ou rupture dans le support ; temps de travail à déclarer.",
+      "mode_emploi_brouillon": "1) Support propre, sec, préparé mécaniquement. 2) Mélanger A et B au rapport [LABO] exact (malaxeur lent). 3) Appliquer au rouleau/raclette, consommation [LABO] g/m². 4) Saupoudrer de sable si recouvrement tardif. 5) Recouvrir dans [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Résine et durcisseur : irritants, sensibilisants cutanés, durcisseur potentiellement corrosif ; nocif pour le milieu aquatique. EPI : gants nitrile, lunettes, vêtements couvrants. Ventiler, respecter le rapport de mélange, éviter flammes. Ne pas rejeter à l'égout. Projection oculaire : rincer 15 min et consulter."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Résine époxy (bisphénol A/F), durcisseur polyamine/polyamide, diluant réactif, charges, solvants (option)",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Primaire époxy",
+        "description": "Primaire d'accrochage et de fermeture des pores du béton avant revêtement de sol ou résine.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PROOF-EP-SR",
+    "nom": "FENEK-PROOF EP-SR",
+    "gamme": "proof",
+    "categorie": "Résines époxy",
+    "slug": "fenek-proof-ep-sr",
+    "contenu_source_fr": {
+      "produit": "Revêtement de sol époxy autolissant",
+      "description": "Revêtement de sol époxy autolissant pour ateliers, parkings et locaux industriels.",
+      "normes_de_reference_indicatives": "EN 13813 (type SR) ; EN 1504-2",
+      "exigences_non_verifiees": "Désignation SR (adhérence B, usure AR, choc IR) à fixer selon l'usage ; adhérence ≥ 1,5 N/mm² ; antidérapance à définir.",
+      "mode_emploi_brouillon": "1) Support sec, résistant, primarisé. 2) Mélanger A et B au rapport [LABO], ajouter la charge si requise. 3) Couler et étaler à la raclette dentée, débuller au rouleau. 4) Épaisseur [LABO] mm. 5) Circulation piétonne après [LABO] h, pleine charge après [LABO] j.",
+      "consignes_securite_indicatives_non_fds": "Résine et durcisseur : irritants, sensibilisants cutanés, durcisseur potentiellement corrosif ; nocif pour le milieu aquatique. EPI : gants nitrile, lunettes, vêtements couvrants. Ventiler, respecter le rapport de mélange, éviter flammes. Ne pas rejeter à l'égout. Projection oculaire : rincer 15 min et consulter."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Résine époxy, durcisseur amine, charges minérales / quartz, pigments, additifs de nivellement et de dégazage",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Revêtement de sol époxy autolissant",
+        "description": "Revêtement de sol époxy autolissant pour ateliers, parkings et locaux industriels.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PROOF-EP-SB",
+    "nom": "FENEK-PROOF EP-SB",
+    "gamme": "proof",
+    "categorie": "Résines époxy",
+    "slug": "fenek-proof-ep-sb",
+    "contenu_source_fr": {
+      "produit": "Colle structurelle époxy",
+      "description": "Colle époxy pour collage structurel béton-béton, béton-acier, béton-composite.",
+      "normes_de_reference_indicatives": "EN 1504-4",
+      "exigences_non_verifiees": "Adhérence, résistance au cisaillement, transition vitreuse, retrait et durée pratique d'utilisation selon EN 1504-4.",
+      "mode_emploi_brouillon": "1) Surfaces propres, sèches, rugueuses. 2) Mélanger A et B au rapport [LABO] jusqu'à teinte homogène. 3) Appliquer en couche continue sur les deux faces. 4) Assembler et maintenir en pression [LABO] h. 5) Durcissement complet [LABO] j.",
+      "consignes_securite_indicatives_non_fds": "Résine et durcisseur : irritants, sensibilisants cutanés, durcisseur potentiellement corrosif ; nocif pour le milieu aquatique. EPI : gants nitrile, lunettes, vêtements couvrants. Ventiler, respecter le rapport de mélange, éviter flammes. Ne pas rejeter à l'égout. Projection oculaire : rincer 15 min et consulter."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Résine époxy, durcisseur amine, charges thixotropes (silice), additifs d'adhérence",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Colle structurelle époxy",
+        "description": "Colle époxy pour collage structurel béton-béton, béton-acier, béton-composite.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PROOF-EP-INJ",
+    "nom": "FENEK-PROOF EP-INJ",
+    "gamme": "proof",
+    "categorie": "Résines époxy",
+    "slug": "fenek-proof-ep-inj",
+    "contenu_source_fr": {
+      "produit": "Résine d'injection époxy (fissures)",
+      "description": "Résine époxy basse viscosité pour injection et recollement des fissures structurelles.",
+      "normes_de_reference_indicatives": "EN 1504-5",
+      "exigences_non_verifiees": "Classe d'injection (F : transmission d'efforts) ; viscosité, adhérence et résistance à la compression à définir par le labo selon EN 1504-5.",
+      "mode_emploi_brouillon": "1) Repérer et nettoyer la fissure, poser les packers ([LABO] cm). 2) Obturer la fissure en surface. 3) Mélanger A et B au rapport [LABO]. 4) Injecter à la pompe, de bas en haut, jusqu'au refus. 5) Retirer les packers après durcissement [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Résine et durcisseur : irritants, sensibilisants cutanés, durcisseur potentiellement corrosif ; nocif pour le milieu aquatique. EPI : gants nitrile, lunettes, vêtements couvrants. Ventiler, respecter le rapport de mélange, éviter flammes. Ne pas rejeter à l'égout. Projection oculaire : rincer 15 min et consulter."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Résine époxy basse viscosité, durcisseur amine, diluants réactifs",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Résine d'injection époxy (fissures)",
+        "description": "Résine époxy basse viscosité pour injection et recollement des fissures structurelles.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PROOF-EP-ANC",
+    "nom": "FENEK-PROOF EP-ANC",
+    "gamme": "proof",
+    "categorie": "Résines époxy",
+    "slug": "fenek-proof-ep-anc",
+    "contenu_source_fr": {
+      "produit": "Résine d'ancrage et scellement chimique",
+      "description": "Résine pour le scellement d'armatures en attente et de tiges d'ancrage dans le béton.",
+      "normes_de_reference_indicatives": "EN 1504-6 ; EAD 330499 (ancrages chimiques, à vérifier)",
+      "exigences_non_verifiees": "Essai d'arrachement : glissement ≤ 0,6 mm sous 75 kN (EN 1504-6) ; durée de travail et charges d'ancrage à définir.",
+      "mode_emploi_brouillon": "1) Percer au diamètre [LABO], nettoyer (soufflage/brossage/soufflage). 2) Mélanger la cartouche (buse mélangeuse), écarter les premières doses. 3) Injecter du fond du trou. 4) Insérer l'armature en tournant. 5) Ne pas charger avant [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Résine et durcisseur : irritants, sensibilisants cutanés, durcisseur potentiellement corrosif ; nocif pour le milieu aquatique. EPI : gants nitrile, lunettes, vêtements couvrants. Ventiler, respecter le rapport de mélange, éviter flammes. Ne pas rejeter à l'égout. Projection oculaire : rincer 15 min et consulter."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Résine époxy ou vinylester/méthacrylate, durcisseur/initiateur, charges minérales",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Résine d'ancrage et scellement chimique",
+        "description": "Résine pour le scellement d'armatures en attente et de tiges d'ancrage dans le béton.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PROOF-PU-INJ",
+    "nom": "FENEK-PROOF PU-INJ",
+    "gamme": "proof",
+    "categorie": "Résines polyuréthane",
+    "slug": "fenek-proof-pu-inj",
+    "contenu_source_fr": {
+      "produit": "Résine d'injection polyuréthane (venues d'eau)",
+      "description": "Résine polyuréthane à gonflement pour arrêter les venues d'eau et colmater les fissures.",
+      "normes_de_reference_indicatives": "EN 1504-5",
+      "exigences_non_verifiees": "Classe S (étanchement ductile) : étanchéité à l'eau sous pression, taux de gonflement et temps de réaction à définir.",
+      "mode_emploi_brouillon": "1) Repérer la venue d'eau ou la fissure, poser les packers. 2) Préparer le produit (et accélérateur si requis, dosage [LABO]). 3) Injecter à la pompe jusqu'à arrêt de la fuite. 4) Contrôler, ré-injecter si besoin. 5) Retirer les packers, reboucher.",
+      "consignes_securite_indicatives_non_fds": "Contient des isocyanates : sensibilisant respiratoire et cutané, irritant. Forte ventilation, masque adapté (selon FDS) en milieu confiné, gants, lunettes. Exclure de la mise en œuvre les personnes asthmatiques ou sensibilisées. Réagit à l'humidité : ne pas refermer hermétiquement un emballage entamé sans précaution."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Prépolymère polyuréthane (isocyanate), catalyseur/accélérateur, plastifiant",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Résine d'injection polyuréthane (venues d'eau)",
+        "description": "Résine polyuréthane à gonflement pour arrêter les venues d'eau et colmater les fissures.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PROOF-PU-SEAL",
+    "nom": "FENEK-PROOF PU-SEAL",
+    "gamme": "proof",
+    "categorie": "Résines polyuréthane",
+    "slug": "fenek-proof-pu-seal",
+    "contenu_source_fr": {
+      "produit": "Mastic polyuréthane pour joints",
+      "description": "Mastic polyuréthane élastique pour joints de dilatation et de façade.",
+      "normes_de_reference_indicatives": "EN 15651-1 (façades) ; ISO 11600",
+      "exigences_non_verifiees": "Classe de mouvement (ex. 25 = ±25 %), module (LM/HM), reprise élastique, adhérence/cohésion après allongement.",
+      "mode_emploi_brouillon": "1) Joint propre, sec, dépoussiéré ; primaire si requis. 2) Poser fond de joint de diamètre [LABO]. 3) Extruder le mastic en remplissant sans bulles. 4) Lisser à l'outil avant formation de peau ([LABO] min). 5) Éviter les mouvements durant le durcissement.",
+      "consignes_securite_indicatives_non_fds": "Contient des isocyanates : sensibilisant respiratoire et cutané, irritant. Forte ventilation, masque adapté (selon FDS) en milieu confiné, gants, lunettes. Exclure de la mise en œuvre les personnes asthmatiques ou sensibilisées. Réagit à l'humidité : ne pas refermer hermétiquement un emballage entamé sans précaution."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Prépolymère polyuréthane, charges (carbonate de calcium), plastifiant, agent thixotrope, promoteur d'adhérence, stabilisants UV",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Mastic polyuréthane pour joints",
+        "description": "Mastic polyuréthane élastique pour joints de dilatation et de façade.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "FLOW-WR-N",
+    "nom": "FENEK-FLOW WR-N",
+    "gamme": "flow",
+    "categorie": "Plastifiants",
+    "slug": "fenek-flow-wr-n",
+    "contenu_source_fr": {
+      "produit": "Plastifiant réducteur d'eau",
+      "description": "Réduit l'eau de gâchage et améliore la maniabilité des bétons et mortiers courants.",
+      "normes_de_reference_indicatives": "EN 934-2 ; EN 934-1",
+      "exigences_non_verifiees": "Réduction d'eau ≥ 5 % ; compression à 7 et 28 j ≥ 110 % du témoin ; chlorures ≤ 0,10 %.",
+      "mode_emploi_brouillon": "1) Ajouter à l'eau de gâchage ou en fin de malaxage. 2) Dosage [LABO] % du poids de liant. 3) Malaxer [LABO] min pour homogénéiser. 4) Contrôler consistance et résistance par essais préalables.",
+      "consignes_securite_indicatives_non_fds": "Produit aqueux pouvant irriter yeux et peau : gants et lunettes. Ne pas ingérer. Ne pas rejeter dans les réseaux ni dans le sol. Stocker à l'abri du gel et de la chaleur. Épandages : absorber avec un matériau inerte."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Lignosulfonates ou naphtalène sulfonate, eau, régulateur de pH, antimousse, biocide",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Plastifiant réducteur d'eau",
+        "description": "Réduit l'eau de gâchage et améliore la maniabilité des bétons et mortiers courants.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "FLOW-SP-HR",
+    "nom": "FENEK-FLOW SP-HR",
+    "gamme": "flow",
+    "categorie": "Superplastifiants",
+    "slug": "fenek-flow-sp-hr",
+    "contenu_source_fr": {
+      "produit": "Superplastifiant haut réducteur d'eau",
+      "description": "Superplastifiant haute performance pour bétons fluides et à faible rapport E/C.",
+      "normes_de_reference_indicatives": "EN 934-2 ; EN 934-1",
+      "exigences_non_verifiees": "Réduction d'eau ≥ 12 % ; compression à 1 j ≥ 140 % et à 28 j ≥ 115 % du témoin ; chlorures ≤ 0,10 %.",
+      "mode_emploi_brouillon": "1) Ajouter en fin de malaxage ou dans l'eau de gâchage. 2) Dosage [LABO] % du poids de liant. 3) Malaxer [LABO] min. 4) Valider par essais préalables sur le ciment et les granulats du chantier. Ne pas surdoser (ressuage, ségrégation).",
+      "consignes_securite_indicatives_non_fds": "Produit aqueux pouvant irriter yeux et peau : gants et lunettes. Ne pas ingérer. Ne pas rejeter dans les réseaux ni dans le sol. Stocker à l'abri du gel et de la chaleur. Épandages : absorber avec un matériau inerte."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Éther polycarboxylate (PCE) en solution aqueuse, eau, antimousse, conservateur",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Superplastifiant haut réducteur d'eau",
+        "description": "Superplastifiant haute performance pour bétons fluides et à faible rapport E/C.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "FLOW-SP-RT",
+    "nom": "FENEK-FLOW SP-RT",
+    "gamme": "flow",
+    "categorie": "Superplastifiants",
+    "slug": "fenek-flow-sp-rt",
+    "contenu_source_fr": {
+      "produit": "Superplastifiant à maintien de rhéologie",
+      "description": "Superplastifiant à maintien d'ouvrabilité prolongé pour béton transporté (BPE).",
+      "normes_de_reference_indicatives": "EN 934-2 ; EN 934-1",
+      "exigences_non_verifiees": "Critères du superplastifiant (réduction d'eau ≥ 12 %) ; maintien d'étalement/affaissement à définir (ex. 60 à 90 min).",
+      "mode_emploi_brouillon": "1) Ajouter en fin de malaxage ou dans l'eau de gâchage. 2) Dosage [LABO] % du poids de liant. 3) Malaxer [LABO] min. 4) Valider par essais préalables sur le ciment et les granulats du chantier. Ne pas surdoser (ressuage, ségrégation).",
+      "consignes_securite_indicatives_non_fds": "Produit aqueux pouvant irriter yeux et peau : gants et lunettes. Ne pas ingérer. Ne pas rejeter dans les réseaux ni dans le sol. Stocker à l'abri du gel et de la chaleur. Épandages : absorber avec un matériau inerte."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Éther polycarboxylate (PCE) en solution aqueuse, eau, antimousse, conservateur ; retardateur léger",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Superplastifiant à maintien de rhéologie",
+        "description": "Superplastifiant à maintien d'ouvrabilité prolongé pour béton transporté (BPE).",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  }
+]

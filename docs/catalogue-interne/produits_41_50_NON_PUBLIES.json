@@ -1,0 +1,472 @@
+[
+  {
+    "pf_id": "PAINT-INT-S",
+    "nom": "FENEK-PAINT INT-S",
+    "gamme": "paint",
+    "categorie": "Peintures intérieures",
+    "slug": "fenek-paint-int-s",
+    "contenu_source_fr": {
+      "produit": "Peinture acrylique intérieure satinée",
+      "description": "Peinture acrylique satinée lavable pour pièces de vie et zones à entretien fréquent.",
+      "normes_de_reference_indicatives": "EN 13300 ; ISO 11998 ; ISO 6504-3 ; ISO 2813",
+      "exigences_non_verifiees": "Classes à déclarer : abrasion humide, pouvoir masquant, brillant (satiné), COV.",
+      "mode_emploi_brouillon": "1) Support propre, sec, dépoussiéré, réparé. 2) Appliquer une sous-couche [LABO]. 3) Diluer si nécessaire ([LABO] % d'eau). 4) Appliquer en [LABO] couches au rouleau/brosse/pistolet. 5) Délai entre couches [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Peinture à l'eau, danger faible : peut irriter yeux et peau. Gants, lunettes si projection. Bien ventiler pendant l'application et le séchage. Ne pas jeter les restes à l'égout. Stocker à l'abri du gel, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Liant acrylique ou styrène-acrylique en dispersion, TiO₂, carbonate de calcium, épaississants, agents de coalescence, dispersants, biocides, eau",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Peinture acrylique intérieure satinée",
+        "description": "Peinture acrylique satinée lavable pour pièces de vie et zones à entretien fréquent.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PAINT-INT-WA",
+    "nom": "FENEK-PAINT INT-WA",
+    "gamme": "paint",
+    "categorie": "Peintures intérieures",
+    "slug": "fenek-paint-int-wa",
+    "contenu_source_fr": {
+      "produit": "Peinture intérieure lessivable haute résistance",
+      "description": "Peinture lessivable haute résistance pour couloirs, cuisines et locaux professionnels.",
+      "normes_de_reference_indicatives": "EN 13300 ; ISO 11998",
+      "exigences_non_verifiees": "Classe d'abrasion humide élevée visée (classe 1 ou 2) ; pouvoir masquant ; brillant ; COV.",
+      "mode_emploi_brouillon": "1) Support propre, sec, dépoussiéré, réparé. 2) Appliquer une sous-couche [LABO]. 3) Diluer si nécessaire ([LABO] % d'eau). 4) Appliquer en [LABO] couches au rouleau/brosse/pistolet. 5) Délai entre couches [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Peinture à l'eau, danger faible : peut irriter yeux et peau. Gants, lunettes si projection. Bien ventiler pendant l'application et le séchage. Ne pas jeter les restes à l'égout. Stocker à l'abri du gel, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Liant acrylique ou styrène-acrylique en dispersion, TiO₂, carbonate de calcium, épaississants, agents de coalescence, dispersants, biocides, eau ; charges durcissantes",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Peinture intérieure lessivable haute résistance",
+        "description": "Peinture lessivable haute résistance pour couloirs, cuisines et locaux professionnels.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PAINT-FAC-M",
+    "nom": "FENEK-PAINT FAC-M",
+    "gamme": "paint",
+    "categorie": "Peintures de façade",
+    "slug": "fenek-paint-fac-m",
+    "contenu_source_fr": {
+      "produit": "Peinture acrylique de façade, mate",
+      "description": "Peinture acrylique mate de protection et de décoration des façades.",
+      "normes_de_reference_indicatives": "EN 1062-1 ; EN 1504-2 (si protection du béton)",
+      "exigences_non_verifiees": "Classes à déclarer : brillant, épaisseur sèche, perméabilité à la vapeur d'eau (V), à l'eau liquide (W), au CO₂.",
+      "mode_emploi_brouillon": "1) Support sain, propre, sec, sans efflorescences ni algues (traiter si besoin). 2) Appliquer la sous-couche adaptée. 3) Diluer selon fiche ([LABO] %). 4) Appliquer en [LABO] couches. 5) Ne pas appliquer sous pluie, gel ou plein soleil.",
+      "consignes_securite_indicatives_non_fds": "Peinture à l'eau, danger faible : peut irriter yeux et peau. Gants, lunettes si projection. Bien ventiler pendant l'application et le séchage. Ne pas jeter les restes à l'égout. Stocker à l'abri du gel, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Liant acrylique pur, TiO₂, charges, épaississants, hydrofuge, biocides/algicides film sec, eau",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Peinture acrylique de façade, mate",
+        "description": "Peinture acrylique mate de protection et de décoration des façades.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PAINT-FAC-EL",
+    "nom": "FENEK-PAINT FAC-EL",
+    "gamme": "paint",
+    "categorie": "Peintures de façade",
+    "slug": "fenek-paint-fac-el",
+    "contenu_source_fr": {
+      "produit": "Peinture de façade élastomère (pontage des microfissures)",
+      "description": "Revêtement élastomère de façade qui ponte les microfissures.",
+      "normes_de_reference_indicatives": "EN 1062-1 ; EN 1062-7 (pontage de fissures) ; EN 1504-2",
+      "exigences_non_verifiees": "Classe de pontage de fissures (A1 à A5) à déclarer ; perméabilité à l'eau et à la vapeur ; adhérence ≥ 0,8 N/mm².",
+      "mode_emploi_brouillon": "1) Support sain, propre, sec, sans efflorescences ni algues (traiter si besoin). 2) Appliquer la sous-couche adaptée. 3) Diluer selon fiche ([LABO] %). 4) Appliquer en [LABO] couches. 5) Ne pas appliquer sous pluie, gel ou plein soleil.",
+      "consignes_securite_indicatives_non_fds": "Peinture à l'eau, danger faible : peut irriter yeux et peau. Gants, lunettes si projection. Bien ventiler pendant l'application et le séchage. Ne pas jeter les restes à l'égout. Stocker à l'abri du gel, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Liant acrylique pur, TiO₂, charges, épaississants, hydrofuge, biocides/algicides film sec, eau ; liant élastomère haute extensibilité",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Peinture de façade élastomère (pontage des microfissures)",
+        "description": "Revêtement élastomère de façade qui ponte les microfissures.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PAINT-FAC-SX",
+    "nom": "FENEK-PAINT FAC-SX",
+    "gamme": "paint",
+    "categorie": "Peintures de façade",
+    "slug": "fenek-paint-fac-sx",
+    "contenu_source_fr": {
+      "produit": "Peinture de façade siloxane (hydrofuge, respirante)",
+      "description": "Peinture siloxane hydrofuge et respirante pour façades minérales.",
+      "normes_de_reference_indicatives": "EN 1062-1 ; EN ISO 7783 ; EN 1062-3",
+      "exigences_non_verifiees": "Perméabilité à la vapeur élevée (V1 : Sd < 0,14 m) ; faible perméabilité à l'eau liquide (W3 : w ≤ 0,1 kg/(m²·h^0,5)).",
+      "mode_emploi_brouillon": "1) Support sain, propre, sec, sans efflorescences ni algues (traiter si besoin). 2) Appliquer la sous-couche adaptée. 3) Diluer selon fiche ([LABO] %). 4) Appliquer en [LABO] couches. 5) Ne pas appliquer sous pluie, gel ou plein soleil.",
+      "consignes_securite_indicatives_non_fds": "Peinture à l'eau, danger faible : peut irriter yeux et peau. Gants, lunettes si projection. Bien ventiler pendant l'application et le séchage. Ne pas jeter les restes à l'égout. Stocker à l'abri du gel, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Liant acrylique pur, TiO₂, charges, épaississants, hydrofuge, biocides/algicides film sec, eau ; émulsion de résine siloxane",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Peinture de façade siloxane (hydrofuge, respirante)",
+        "description": "Peinture siloxane hydrofuge et respirante pour façades minérales.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PAINT-PRIM-A",
+    "nom": "FENEK-PAINT PRIM-A",
+    "gamme": "paint",
+    "categorie": "Sous-couches",
+    "slug": "fenek-paint-prim-a",
+    "contenu_source_fr": {
+      "produit": "Sous-couche d'accrochage acrylique",
+      "description": "Sous-couche d'accrochage et d'uniformisation avant peinture.",
+      "normes_de_reference_indicatives": "Pas de norme produit dédiée ; EN 1542 (adhérence)",
+      "exigences_non_verifiees": "Adhérence et compatibilité avec le système de finition ; pouvoir de pénétration et temps de recouvrement à définir.",
+      "mode_emploi_brouillon": "1) Support propre et dépoussiéré. 2) Diluer ou utiliser prêt à l'emploi selon fiche ([LABO] %). 3) Appliquer en une couche uniforme, consommation [LABO] m²/L. 4) Recouvrir après [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Peinture à l'eau, danger faible : peut irriter yeux et peau. Gants, lunettes si projection. Bien ventiler pendant l'application et le séchage. Ne pas jeter les restes à l'égout. Stocker à l'abri du gel, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Dispersion acrylique, charges fines, agents d'accrochage, conservateur, eau",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Sous-couche d'accrochage acrylique",
+        "description": "Sous-couche d'accrochage et d'uniformisation avant peinture.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PAINT-PRIM-FX",
+    "nom": "FENEK-PAINT PRIM-FX",
+    "gamme": "paint",
+    "categorie": "Sous-couches",
+    "slug": "fenek-paint-prim-fx",
+    "contenu_source_fr": {
+      "produit": "Fixateur de fond",
+      "description": "Fixateur de fond pour consolider les supports poudreux ou très absorbants.",
+      "normes_de_reference_indicatives": "Pas de norme produit dédiée ; EN 1542",
+      "exigences_non_verifiees": "Profondeur de pénétration, consolidation du support et adhérence à définir par le labo ; COV si base solvant.",
+      "mode_emploi_brouillon": "1) Support propre et dépoussiéré. 2) Diluer ou utiliser prêt à l'emploi selon fiche ([LABO] %). 3) Appliquer en une couche uniforme, consommation [LABO] m²/L. 4) Recouvrir après [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Peinture à l'eau, danger faible : peut irriter yeux et peau. Gants, lunettes si projection. Bien ventiler pendant l'application et le séchage. Ne pas jeter les restes à l'égout. Stocker à l'abri du gel, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Dispersion acrylique, charges fines, agents d'accrochage, conservateur, eau ; résine de pénétration (base eau ou solvant)",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Fixateur de fond",
+        "description": "Fixateur de fond pour consolider les supports poudreux ou très absorbants.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PAINT-TXT-F",
+    "nom": "FENEK-PAINT TXT-F",
+    "gamme": "paint",
+    "categorie": "Revêtements décoratifs",
+    "slug": "fenek-paint-txt-f",
+    "contenu_source_fr": {
+      "produit": "Revêtement décoratif texturé fin",
+      "description": "Revêtement mural texturé fin décoratif et protecteur.",
+      "normes_de_reference_indicatives": "EN 15824 (enduits extérieurs à liants organiques)",
+      "exigences_non_verifiees": "Adhérence, absorption d'eau capillaire, perméabilité à la vapeur d'eau, réaction au feu : classes à déclarer.",
+      "mode_emploi_brouillon": "1) Support propre, primarisé. 2) Mélanger. 3) Appliquer à la lisseuse inox puis structurer à la taloche/rouleau. 4) Épaisseur [LABO] mm. 5) Séchage [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Peinture à l'eau, danger faible : peut irriter yeux et peau. Gants, lunettes si projection. Bien ventiler pendant l'application et le séchage. Ne pas jeter les restes à l'égout. Stocker à l'abri du gel, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Liant acrylique, charges calibrées (marbre/quartz), pigments, épaississants, biocides, eau",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Revêtement décoratif texturé fin",
+        "description": "Revêtement mural texturé fin décoratif et protecteur.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PAINT-SOL-A",
+    "nom": "FENEK-PAINT SOL-A",
+    "gamme": "paint",
+    "categorie": "Peintures de sol",
+    "slug": "fenek-paint-sol-a",
+    "contenu_source_fr": {
+      "produit": "Peinture de sol (parkings, locaux)",
+      "description": "Peinture de sol résistante à l'abrasion pour parkings, garages et locaux techniques.",
+      "normes_de_reference_indicatives": "EN 1504-2 ; EN ISO 5470-1 (abrasion) ; EN 13036-4 (glissance)",
+      "exigences_non_verifiees": "Résistance à l'abrasion (Taber) ; adhérence ≥ 1,5 N/mm² (avec trafic) ; antidérapance selon l'usage.",
+      "mode_emploi_brouillon": "1) Support sain, sec, dépoussiéré, humidité max [LABO] %. 2) Primaire si requis. 3) Appliquer en [LABO] couches au rouleau. 4) Circulation piétonne après [LABO] h, véhicules après [LABO] j. 5) Tracer les marquages après durcissement.",
+      "consignes_securite_indicatives_non_fds": "Selon la formulation (eau ou solvant) : COV, possible inflammabilité. Ventiler, gants, lunettes, masque à cartouche si solvants. Éviter flammes. Ne pas jeter les restes à l'égout."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Résine acrylique ou polyuréthane-acrylique, TiO₂, charges anti-abrasion, additifs anti-dérapants, eau ou solvant",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Peinture de sol (parkings, locaux)",
+        "description": "Peinture de sol résistante à l'abrasion pour parkings, garages et locaux techniques.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PAINT-ENT-L",
+    "nom": "FENEK-PAINT ENT-L",
+    "gamme": "paint",
+    "categorie": "Enduits de lissage",
+    "slug": "fenek-paint-ent-l",
+    "contenu_source_fr": {
+      "produit": "Enduit de lissage en pâte",
+      "description": "Enduit de lissage en pâte prêt à l'emploi pour finition des murs intérieurs avant peinture.",
+      "normes_de_reference_indicatives": "Pas de norme harmonisée dédiée ; EN 1542 (adhérence)",
+      "exigences_non_verifiees": "Adhérence, retrait, facilité de ponçage et temps de séchage à définir par le labo.",
+      "mode_emploi_brouillon": "1) Support dépoussiéré, fissures rebouchées. 2) Appliquer à la lame en passes minces, [LABO] passes. 3) Séchage [LABO] h, puis ponçage. 4) Dépoussiérer avant peinture.",
+      "consignes_securite_indicatives_non_fds": "Peinture à l'eau, danger faible : peut irriter yeux et peau. Gants, lunettes si projection. Bien ventiler pendant l'application et le séchage. Ne pas jeter les restes à l'égout. Stocker à l'abri du gel, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Liant acrylique ou vinylique, carbonate de calcium, talc, épaississants, conservateur, eau",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Enduit de lissage en pâte",
+        "description": "Enduit de lissage en pâte prêt à l'emploi pour finition des murs intérieurs avant peinture.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  }
+]

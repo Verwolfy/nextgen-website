@@ -1,0 +1,472 @@
+[
+  {
+    "pf_id": "BOND-R4",
+    "nom": "FENEK-BOND R4",
+    "gamme": "bond",
+    "categorie": "Réparation du béton",
+    "slug": "fenek-bond-r4",
+    "contenu_source_fr": {
+      "produit": "Mortier de réparation structurelle fibré, thixotrope",
+      "description": "Mortier fibré thixotrope à haute performance pour réparations structurelles en épaisseur et en plafond.",
+      "normes_de_reference_indicatives": "EN 1504-3 (classe R4) ; EN 1542",
+      "exigences_non_verifiees": "R4 : compression ≥ 45 MPa ; adhérence ≥ 2,0 MPa ; chlorures ≤ 0,05 %.",
+      "mode_emploi_brouillon": "1) Préparer le support (piquage, dépoussiérage, traitement des armatures). 2) Humidifier à refus, support mat. 3) Gâcher [LABO] L d'eau par [LABO] kg. 4) Appliquer à la truelle ou par projection, épaisseur max par passe [LABO] mm. 5) Serrer, talocher. 6) Cure humide [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland, sable siliceux calibré, fumée de silice, superplastifiant en poudre, RDP, agent compensateur de retrait, inhibiteur de corrosion (option) ; fibres synthétiques",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Mortier de réparation structurelle fibré, thixotrope",
+        "description": "Mortier fibré thixotrope à haute performance pour réparations structurelles en épaisseur et en plafond.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "BOND-GR-HR",
+    "nom": "FENEK-BOND GR-HR",
+    "gamme": "bond",
+    "categorie": "Scellement et calage",
+    "slug": "fenek-bond-gr-hr",
+    "contenu_source_fr": {
+      "produit": "Mortier de calage et scellement haute résistance (grout)",
+      "description": "Mortier fluide à retrait compensé pour calage de platines, scellement d'ancrages et reprise sous poteaux.",
+      "normes_de_reference_indicatives": "EN 1504-3 (classe R4) ; EN 1504-6 (ancrage) selon usage",
+      "exigences_non_verifiees": "Compression ≥ 45 MPa (R4) ; adhérence ≥ 2,0 MPa ; fluidité, absence de ressuage et retrait compensé à définir par le labo.",
+      "mode_emploi_brouillon": "1) Support propre, coffrage étanche, support humidifié si requis. 2) Gâcher [LABO] L d'eau par [LABO] kg en malaxant jusqu'à fluidité. 3) Couler en continu, sans vibration excessive ni ségrégation. 4) Protéger et cure [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland, sable calibré, superplastifiant en poudre, agent expansif / compensateur de retrait, agent anti-ressuage",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Mortier de calage et scellement haute résistance (grout)",
+        "description": "Mortier fluide à retrait compensé pour calage de platines, scellement d'ancrages et reprise sous poteaux.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "BOND-GP-CSII",
+    "nom": "FENEK-BOND GP-CSII",
+    "gamme": "bond",
+    "categorie": "Enduits",
+    "slug": "fenek-bond-gp-csii",
+    "contenu_source_fr": {
+      "produit": "Enduit ciment d'usage courant",
+      "description": "Enduit de ciment pour dressage intérieur et extérieur des murs en maçonnerie.",
+      "normes_de_reference_indicatives": "EN 998-1 (type GP)",
+      "exigences_non_verifiees": "Catégorie CS II : compression 1,5 à 5,0 N/mm² à 28 j ; absorption capillaire (W0/W1/W2), adhérence et perméabilité vapeur à déclarer.",
+      "mode_emploi_brouillon": "1) Support propre, résistant, humidifié ou primarisé selon son absorption. 2) Gâcher [LABO] L par sac de [LABO] kg. 3) Appliquer (projection ou manuel) en [LABO] mm. 4) Dresser à la règle, finir à la taloche. 5) Protéger du soleil, du vent et du gel les 48 h suivantes.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland, chaux hydratée, sable calibré, entraîneur d'air, éther de cellulose, hydrofuge, pigments (monocouche)",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Enduit ciment d'usage courant",
+        "description": "Enduit de ciment pour dressage intérieur et extérieur des murs en maçonnerie.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "BOND-OC-CSIII",
+    "nom": "FENEK-BOND OC-CSIII",
+    "gamme": "bond",
+    "categorie": "Enduits",
+    "slug": "fenek-bond-oc-csiii",
+    "contenu_source_fr": {
+      "produit": "Enduit monocouche de façade",
+      "description": "Enduit monocouche coloré, protection et décoration des façades.",
+      "normes_de_reference_indicatives": "EN 998-1 (type OC)",
+      "exigences_non_verifiees": "Catégorie CS III : compression 3,5 à 7,5 N/mm² à 28 j ; absorption capillaire (W1/W2) ; perméabilité vapeur et adhérence à déclarer.",
+      "mode_emploi_brouillon": "1) Support propre, résistant, humidifié ou primarisé selon son absorption. 2) Gâcher [LABO] L par sac de [LABO] kg. 3) Appliquer (projection ou manuel) en [LABO] mm. 4) Dresser à la règle, finir à la taloche. 5) Protéger du soleil, du vent et du gel les 48 h suivantes.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland, chaux hydratée, sable calibré, entraîneur d'air, éther de cellulose, hydrofuge, pigments (monocouche)",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Enduit monocouche de façade",
+        "description": "Enduit monocouche coloré, protection et décoration des façades.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "BOND-M5",
+    "nom": "FENEK-BOND M5",
+    "gamme": "bond",
+    "categorie": "Maçonnerie",
+    "slug": "fenek-bond-m5",
+    "contenu_source_fr": {
+      "produit": "Mortier de maçonnerie courant",
+      "description": "Mortier de montage de blocs et briques pour maçonnerie courante.",
+      "normes_de_reference_indicatives": "EN 998-2",
+      "exigences_non_verifiees": "Classe M5 : résistance à la compression ≥ 5 N/mm² à 28 j ; teneur en chlorures et adhérence à déclarer.",
+      "mode_emploi_brouillon": "1) Humidifier les éléments absorbants. 2) Gâcher [LABO] L par [LABO] kg à consistance plastique. 3) Poser le lit de mortier puis les éléments, joints de [LABO] mm. 4) Serrer les joints avant durcissement. 5) Protéger du soleil et du gel.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland, chaux hydratée (option), sable calibré, plastifiant/entraîneur d'air en poudre",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Mortier de maçonnerie courant",
+        "description": "Mortier de montage de blocs et briques pour maçonnerie courante.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "BOND-M10",
+    "nom": "FENEK-BOND M10",
+    "gamme": "bond",
+    "categorie": "Maçonnerie",
+    "slug": "fenek-bond-m10",
+    "contenu_source_fr": {
+      "produit": "Mortier de maçonnerie haute résistance",
+      "description": "Mortier de montage pour maçonnerie porteuse et éléments fortement chargés.",
+      "normes_de_reference_indicatives": "EN 998-2",
+      "exigences_non_verifiees": "Classe M10 : résistance à la compression ≥ 10 N/mm² à 28 j ; teneur en chlorures et adhérence à déclarer.",
+      "mode_emploi_brouillon": "1) Humidifier les éléments absorbants. 2) Gâcher [LABO] L par [LABO] kg à consistance plastique. 3) Poser le lit de mortier puis les éléments, joints de [LABO] mm. 4) Serrer les joints avant durcissement. 5) Protéger du soleil et du gel.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland, chaux hydratée (option), sable calibré, plastifiant/entraîneur d'air en poudre",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Mortier de maçonnerie haute résistance",
+        "description": "Mortier de montage pour maçonnerie porteuse et éléments fortement chargés.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PROOF-CM-O1P",
+    "nom": "FENEK-PROOF CM-O1P",
+    "gamme": "proof",
+    "categorie": "Étanchéité",
+    "slug": "fenek-proof-cm-o1p",
+    "contenu_source_fr": {
+      "produit": "Étanchéité cimentaire sous carrelage, rigide",
+      "description": "Étanchéité cimentaire pour balcons, terrasses, salles d'eau et piscines, sous carrelage.",
+      "normes_de_reference_indicatives": "EN 14891 (classe CM O1P)",
+      "exigences_non_verifiees": "Étanchéité à l'eau sous 1,5 bar sans pénétration ; adhérence initiale ≥ 0,5 N/mm² ; pontage de fissures selon la classe de la désignation (≥ 0,75 mm).",
+      "mode_emploi_brouillon": "1) Support sain, propre, humide mat. 2) Gâcher selon fiche ([LABO] d'eau ou composant B). 3) Appliquer en [LABO] couches croisées, armer angles et joints avec bande. 4) Délai entre couches [LABO] h. 5) Pose du carrelage / mise en eau après [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland, sable fin, éther de cellulose, polymères redispersables ou dispersion acrylique/SBR (bi-composant), fibres (option)",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Étanchéité cimentaire sous carrelage, rigide",
+        "description": "Étanchéité cimentaire pour balcons, terrasses, salles d'eau et piscines, sous carrelage.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PROOF-CM-O2P",
+    "nom": "FENEK-PROOF CM-O2P",
+    "gamme": "proof",
+    "categorie": "Étanchéité",
+    "slug": "fenek-proof-cm-o2p",
+    "contenu_source_fr": {
+      "produit": "Étanchéité cimentaire bi-composant, flexible",
+      "description": "Étanchéité cimentaire bi-composant flexible pour supports soumis à fissuration.",
+      "normes_de_reference_indicatives": "EN 14891 (classe CM O2P)",
+      "exigences_non_verifiees": "Étanchéité à l'eau sous 1,5 bar sans pénétration ; adhérence initiale ≥ 0,5 N/mm² ; classe de pontage de fissures supérieure (≥ 0,75 mm).",
+      "mode_emploi_brouillon": "1) Support sain, propre, humide mat. 2) Gâcher selon fiche ([LABO] d'eau ou composant B). 3) Appliquer en [LABO] couches croisées, armer angles et joints avec bande. 4) Délai entre couches [LABO] h. 5) Pose du carrelage / mise en eau après [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Poudre alcaline : irritante pour yeux, peau et voies respiratoires ; sensibilisation cutanée possible (chrome VI). EPI : gants nitrile, lunettes, masque anti-poussières FFP2 au mélange. Rincer abondamment à l'eau en cas de projection. Stocker au sec, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Ciment Portland, sable fin, éther de cellulose, polymères redispersables ou dispersion acrylique/SBR (bi-composant), fibres (option) ; résine acrylique en dispersion (composant B)",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Étanchéité cimentaire bi-composant, flexible",
+        "description": "Étanchéité cimentaire bi-composant flexible pour supports soumis à fissuration.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PROOF-PU-1K",
+    "nom": "FENEK-PROOF PU-1K",
+    "gamme": "proof",
+    "categorie": "Étanchéité",
+    "slug": "fenek-proof-pu-1k",
+    "contenu_source_fr": {
+      "produit": "Membrane liquide polyuréthane mono-composant",
+      "description": "Membrane liquide élastique pour toitures, terrasses et balcons.",
+      "normes_de_reference_indicatives": "EN 1504-2 ; ETAG 005 / EAD toiture liquide (à vérifier)",
+      "exigences_non_verifiees": "Adhérence par arrachement (EN 1542) ≥ 0,8 N/mm² (système flexible, sans trafic) ; allongement à la rupture, vieillissement et perméabilité à l'eau selon l'usage.",
+      "mode_emploi_brouillon": "1) Support sec (humidité max [LABO] %), propre, primarisé si requis. 2) Homogénéiser le produit. 3) Appliquer en [LABO] couches (brosse, rouleau ou raclette), consommation [LABO] kg/m². 4) Armer aux points singuliers si requis. 5) Recouvrement après [LABO] h ; mise en service [LABO].",
+      "consignes_securite_indicatives_non_fds": "Contient des isocyanates : sensibilisant respiratoire et cutané, irritant. Forte ventilation, masque adapté (selon FDS) en milieu confiné, gants, lunettes. Exclure de la mise en œuvre les personnes asthmatiques ou sensibilisées. Réagit à l'humidité : ne pas refermer hermétiquement un emballage entamé sans précaution."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Prépolymère polyuréthane (isocyanate), charges minérales, plastifiants, pigments, additifs anti-bulles / de séchage",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Membrane liquide polyuréthane mono-composant",
+        "description": "Membrane liquide élastique pour toitures, terrasses et balcons.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  },
+  {
+    "pf_id": "PROOF-ACR-RF",
+    "nom": "FENEK-PROOF ACR-RF",
+    "gamme": "proof",
+    "categorie": "Étanchéité",
+    "slug": "fenek-proof-acr-rf",
+    "contenu_source_fr": {
+      "produit": "Étanchéité acrylique de toiture",
+      "description": "Revêtement d'étanchéité acrylique réfléchissant pour toitures-terrasses.",
+      "normes_de_reference_indicatives": "EN 1504-2 ; ETAG 005 / EAD toiture liquide (à vérifier)",
+      "exigences_non_verifiees": "Allongement à la rupture, adhérence, résistance au vieillissement et à la stagnation d'eau : seuils du guide d'agrément retenu.",
+      "mode_emploi_brouillon": "1) Support propre, sec, réparé, primarisé si requis. 2) Homogénéiser. 3) Appliquer en [LABO] couches croisées au rouleau/brosse, consommation [LABO] kg/m². 4) Armer les joints et relevés. 5) Délai entre couches [LABO] h.",
+      "consignes_securite_indicatives_non_fds": "Peinture à l'eau, danger faible : peut irriter yeux et peau. Gants, lunettes si projection. Bien ventiler pendant l'application et le séchage. Ne pas jeter les restes à l'égout. Stocker à l'abri du gel, emballage fermé."
+    },
+    "matieres_premieres_familles_indicatives_privees": "Dispersion acrylique, charges (carbonate de calcium), pigments (TiO₂), agents de coalescence, épaississants, biocides film sec",
+    "contenu_web_brouillon": {
+      "fr": {
+        "accroche": "Étanchéité acrylique de toiture",
+        "description": "Revêtement d'étanchéité acrylique réfléchissant pour toitures-terrasses.",
+        "usages": [
+          "Application indicative à confirmer selon la formulation et les essais de laboratoire."
+        ]
+      },
+      "ar": {
+        "accroche": "بطاقة أولية غير معتمدة",
+        "description": "معلومات أولية؛ الخصائص والاستعمالات في انتظار موافقة المختبر.",
+        "usages": [
+          "الاستعمالات النهائية تخضع للتحقق الفني."
+        ]
+      },
+      "en": {
+        "accroche": "Draft product concept – not approved",
+        "description": "Preliminary product concept. Technical performance and applications await laboratory review.",
+        "usages": [
+          "Intended applications require technical validation."
+        ]
+      }
+    },
+    "etat": {
+      "catalogue_commercial_valide_par_utilisateur": true,
+      "labo_valide": false,
+      "produit_reel_confirme": false,
+      "public": false,
+      "fts_fds_non_validees": true,
+      "statut_excel": "BROUILLON – à valider par le laboratoire"
+    }
+  }
+]
