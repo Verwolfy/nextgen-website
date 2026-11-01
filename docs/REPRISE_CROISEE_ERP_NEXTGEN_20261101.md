@@ -129,3 +129,10 @@
 - **2 CI de PR finales vertes** sur `034b33c3d9e71110f2c848196b828dcaf233187b` : [build/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41347775698) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41347775713). Les captures de la première passe verte ([run 41347456040](https://github.com/Verwolfy/nextgen-website/actions/runs/41347456040)) sont récupérées et inspectées : posters visibles en arabe ; l'absence de défaut majeur est limitée aux écrans testés.
 - **Aucune** modification ERP, production Supabase, SQL/RLS/GRANT, donnée commerciale exportée, formulaire actif/CRM, secret, DNS ou Cloudflare Pages/Access. Le catalogue reste `[]`, `robots.txt` noindex.
 - Suite : vérifier les 2 CI dernier `main` ; inspection finale arabe native, polices et responsivité ; toute publication Cloudflare reste une opération séparée nécessitant validation des protections/domaines et des contenus.
+
+## Lot site 17 — finitions FR/AR/EN (01/11/2026)
+
+- [PR #12](https://github.com/Verwolfy/nextgen-website/pull/12) fusionnée, commit `d817ecee2809a6e02c2323f65772685c180bd51d` : deux mentions encore anglaises sur la version arabe de l'accueil/galerie corrigées (FENEK Collection → فئات FENEK ; NextGen Design study → NextGen · تصاميم أولية), noms de marque inchangés. Tests sources et navigateur des deux rubriques.
+- CI de PR 2/2 vertes sur SHA `2684ae0300be1dbc24fa5be978a06074a22dbd0c` : [Astro/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41348268501), [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41348268419). `docs/LOT17_LIBELLES_ARABES.md` et état d'avancement synchronisés.
+- Aucun changement ERP/Supabase, SQL, Cloudflare, DNS, secrets, collecte, prix ni produits ; catalogue statique `[]` et noindex restent verrouillés.
+- Suite : confirmer les deux CI sur le SHA final `main`, procéder à une relecture professionnelle arabe des visuels de simulations (leurs étiquettes sont incorporées en anglais), puis préparer les validations juridiques, commerciales et de protection Access avant toute publication.
