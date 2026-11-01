@@ -5,6 +5,11 @@ export type Section = (typeof sections)[number];
 export const ranges = ['bond','proof','flow','paint'] as const;
 export type Range = (typeof ranges)[number];
 export const brand = { name: 'NextGen Building Solutions', phone: '+213 554 603 410', whatsapp: '213554603410', email: 'contact@nextgen-buildingsolutions.com', location: 'Zone Industrielle, Sidi Khaled, Oued El-Berdi, Bouira, Algérie' };
+export const brandLocation: Record<Lang,string> = {
+  fr: brand.location,
+  ar: 'المنطقة الصناعية، سيدي خالد، وادي البردي، البويرة، الجزائر',
+  en: 'Industrial Zone, Sidi Khaled, Oued El-Berdi, Bouira, Algeria',
+};
 export const rangeName: Record<Range,string> = {bond:'Fenek-Bond', proof:'Fenek-Proof', flow:'Fenek-Flow', paint:'Fenek-Paint'};
 export const rangeColor: Record<Range,string> = {bond:'#12295C',proof:'#0E9A5B',flow:'#71899B',paint:'#971B38'};
 type Messages={
