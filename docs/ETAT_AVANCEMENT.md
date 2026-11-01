@@ -184,3 +184,14 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Post-contrôle DB : 50 actifs + 6 inactifs produits, 97 nouvelles matières candidates + 12 anciennes inactives, recettes 1, lignes recette 2, anciens SKU 7, ordres fabrication 1. Liens historiques toujours présents ; 90/90 tables publiques RLS, aucune table lisible directement par `anon`.
 - Référentiel détaillé des produits et matières dans `docs/catalogue-interne/` (dépôt privé GitHub), **jamais copié vers `public/` ou `dist/`**. Contenu français source, traduction générique AR/EN non validée, valeurs `[LABO]` restant à déterminer.
 - Restent : confirmer réalité des produits, qualité et provenance des matières, recettes et essais laboratoire, véritables traductions, emballages / SKU et documents techniques avant de libérer la publication. Aucun formulaire ni Cloudflare DNS activé.
+
+
+## 1 novembre 2026 — Traductions des 50 fiches et prévisualisation interne
+
+- Le classeur source `Catalogue_Produits_NextGen_BROUILLON.xlsx` et les 50 fiches FR ont servi à générer 50 traductions **spécifiques** AR/EN ; textes non validés par traducteur technique ni laboratoire.
+- Supabase PROD `wenydirqtmkywbxbxfal` : mise à jour **strictement de la colonne `contenu`** sur les 50 lignes de `site_produits` en transaction ; préconditions obligatoires : `statut_commercial=valide`, `statut_technique=brouillon`, `publie=false`, `produit_reel_confirme=false`. Exécution SQL : 50 lignes modifiées, 0 produit publié.
+- Post-contrôle sur Supabase : 50/50 fiches protégées et spécifiques en FR/AR/EN ; **0 lien externe** pour des PDF/visuels/GLB non approuvés ; la vue publiable reste vide par construction.
+- `docs/catalogue-interne/fiches_..._TRILINGUES_NON_PUBLIEES.json` : 5 lots de 10 contenus privés. `docs/catalogue-interne/conditionnements_50_A_CONFIRMER.json` : hypothèses sans poids, volume ou SKU confirmé.
+- `tests/test_private_catalogue_drafts.py` : tests de 50 IDs uniques, langue, avertissement laboratoire, absence de publication et de faux conditionnements. Tous les contrôles Astro/Chromium du commit `229cddcc949e810ba81f4c42d4b6940bdf8e30c3` sont passés.
+- Livrables hors du répertoire `public/` : HTML filtrable pour revue interne des 50 fiches, PDF imprimable de 50 pages FR/AR/EN avec logo original et mention **BROUILLON — NON HOMOLOGUÉ** ; aucun PDF officiel FT/FDS créé, aucune documentation prétendument certifiée.
+- Les 97 matières premières restent des familles candidates et ne sont pas publiées. Confirmer fournisseur, grades, emballages, résultats labo, conditionnements SKU réels, traduction professionnelle, noms/classes normatives avant tout GO public.
