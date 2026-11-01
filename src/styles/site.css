@@ -160,3 +160,31 @@ h1,h2,h3,.page-head p,.showcase-card{overflow-wrap:anywhere;min-width:0}
  .home-approach-portrait{min-height:270px}
 }
 @media(prefers-reduced-motion:reduce){.hero-mascot-card{transform:none}}
+
+
+/* Lot 14 — contact channels first, simulated/disabled forms as an optional disclosure. */
+.contact-direct{scroll-margin-top:110px}
+.contact-channels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.contact-channel{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:25px;border-radius:16px;background:#fff;border:1px solid #d7e4e8;box-shadow:0 8px 24px #0b25440d}
+.contact-channel-kind{font-size:.77rem;font-weight:780;color:#087b53;letter-spacing:.04em}
+.contact-channel-value{font-size:clamp(.87rem,1.3vw,1rem);font-weight:680;color:#183954;margin:14px 0 20px;max-width:100%;overflow-wrap:anywhere;text-align:start}
+.contact-channel .btn{margin-top:auto;max-width:100%;text-align:center}
+.contact-channel a:focus-visible,.lead-preview summary:focus-visible{outline:3px solid #078c5c;outline-offset:4px}
+.contact-disclosure{margin:24px 0 0;padding:17px 22px;background:#eaf1f4;color:#314e63;border-inline-start:4px solid #71899b;border-radius:8px;font-size:.9rem}
+.contact-disclosure p{max-width:none;margin:0}
+.contact-disclosure p+p{margin-top:8px}
+.lead-panel{scroll-margin-top:110px}
+.lead-preview{border:1px solid #d5e2e7;border-radius:10px;margin:22px 0;background:#fafcfc}
+.lead-preview summary{padding:17px 19px;cursor:pointer;color:#183a53;font-weight:760;list-style:revert}
+.lead-preview summary:hover{background:#edf3f4}
+.lead-preview[open] summary{border-bottom:1px solid #d7e4e8}
+.lead-preview-help{margin:17px 19px 0;font-size:.9rem;color:#486477}
+.lead-preview .lead-fields{padding:0 19px 19px;margin:20px 0 0}
+@media(max-width:850px){.contact-channels{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){
+ .contact-channels{grid-template-columns:1fr}
+ .contact-channel{padding:21px}
+ .contact-channel-value{margin:10px 0 17px}
+ .contact-channel .btn{width:100%}
+ .lead-preview .lead-fields{padding-inline:14px}
+}
