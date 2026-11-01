@@ -15,7 +15,7 @@ EXAMPLE = {
  'slug':'produit-reel-test', 'nom':'Produit validé', 'gamme':'bond', 'ordre':100,
  'produit_reel_confirme':True, 'statut_technique':'valide', 'statut_commercial':'valide',
  'conditionnements':[{'format':'Sac 25 kg','poids_net':25,'unite':'SAC','prix_vente_defaut':149999}],
- 'contenu':{lang:{'accroche':'Accroche','description':'Description validée','usages':['Application définie']}
+ 'contenu':{lang:{'accroche':'Accroche','description':'Description validée','usages':['Application définie'],'mode_emploi':'Nettoyer le support. Appliquer selon la fiche technique validée.'}
             for lang in ('fr','ar','en')},
  'prix_vente_defaut':999999, 'recette_id':'PRIVE', 'fournisseur_id':'PRIVE'
 }
