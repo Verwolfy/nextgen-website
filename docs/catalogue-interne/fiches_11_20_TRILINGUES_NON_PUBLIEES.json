@@ -1,0 +1,572 @@
+[
+  {
+    "pf_id": "BOND-R4",
+    "slug": "fenek-bond-r4",
+    "gamme": "bond",
+    "nom": "FENEK-BOND R4",
+    "categorie": "Réparation du béton",
+    "source_excel_fr": {
+      "titre": "Mortier de réparation structurelle fibré, thixotrope",
+      "description": "Mortier fibré thixotrope à haute performance pour réparations structurelles en épaisseur et en plafond.",
+      "normes_indicatives": "EN 1504-3 (classe R4) ; EN 1542",
+      "exigences_non_verifiees": "R4 : compression ≥ 45 MPa ; adhérence ≥ 2,0 MPa ; chlorures ≤ 0,05 %."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Mortier de réparation structurelle fibré, thixotrope",
+        "description": "Concept de produit (non validé) : Mortier fibré thixotrope à haute performance pour réparations structurelles en épaisseur et en plafond. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Réparation du béton. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Fibre-reinforced thixotropic structural repair mortar",
+        "description": "Unvalidated product concept: High-performance fibre-reinforced thixotropic mortar concept for thick-layer and overhead structural repairs. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Concrete repair. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "مونة إصلاح إنشائية مدعّمة بالألياف وثيكسوتروبية",
+        "description": "تصور منتج غير معتمد: تصور لمونة إصلاح إنشائية مدعّمة بالألياف وثيكسوتروبية للطبقات السميكة وأعمال الإصلاح فوق الرأس. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: إصلاح الخرسانة. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Sac — format à confirmer",
+      "en": "Bag — size to confirm",
+      "ar": "كيس — المقاس قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 11
+  },
+  {
+    "pf_id": "BOND-GR-HR",
+    "slug": "fenek-bond-gr-hr",
+    "gamme": "bond",
+    "nom": "FENEK-BOND GR-HR",
+    "categorie": "Scellement et calage",
+    "source_excel_fr": {
+      "titre": "Mortier de calage et scellement haute résistance (grout)",
+      "description": "Mortier fluide à retrait compensé pour calage de platines, scellement d'ancrages et reprise sous poteaux.",
+      "normes_indicatives": "EN 1504-3 (classe R4) ; EN 1504-6 (ancrage) selon usage",
+      "exigences_non_verifiees": "Compression ≥ 45 MPa (R4) ; adhérence ≥ 2,0 MPa ; fluidité, absence de ressuage et retrait compensé à définir par le labo."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Mortier de calage et scellement haute résistance (grout)",
+        "description": "Concept de produit (non validé) : Mortier fluide à retrait compensé pour calage de platines, scellement d'ancrages et reprise sous poteaux. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Scellement et calage. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "High-strength grouting and bedding mortar",
+        "description": "Unvalidated product concept: Flowable shrinkage-compensated mortar concept for base plates, anchor grouting and column bases. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Grouting and bedding. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "مونة حقن وتثبيت عالية المقاومة",
+        "description": "تصور منتج غير معتمد: تصور لمونة سائلة مع تعويض الانكماش لتثبيت الصفائح المعدنية والمراسي وتحت قواعد الأعمدة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: التثبيت والحقن. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Sac — format à confirmer",
+      "en": "Bag — size to confirm",
+      "ar": "كيس — المقاس قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 12
+  },
+  {
+    "pf_id": "BOND-GP-CSII",
+    "slug": "fenek-bond-gp-csii",
+    "gamme": "bond",
+    "nom": "FENEK-BOND GP-CSII",
+    "categorie": "Enduits",
+    "source_excel_fr": {
+      "titre": "Enduit ciment d'usage courant",
+      "description": "Enduit de ciment pour dressage intérieur et extérieur des murs en maçonnerie.",
+      "normes_indicatives": "EN 998-1 (type GP)",
+      "exigences_non_verifiees": "Catégorie CS II : compression 1,5 à 5,0 N/mm² à 28 j ; absorption capillaire (W0/W1/W2), adhérence et perméabilité vapeur à déclarer."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Enduit ciment d'usage courant",
+        "description": "Concept de produit (non validé) : Enduit de ciment pour dressage intérieur et extérieur des murs en maçonnerie. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Enduits. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "General-purpose cement render",
+        "description": "Unvalidated product concept: Cement render concept for levelling interior and exterior masonry walls. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Renders and plasters. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "لياسة إسمنتية للاستعمال العام",
+        "description": "تصور منتج غير معتمد: تصور للياسة إسمنتية لتسوية جدران البناء الداخلية والخارجية. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: اللياسة. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Sac — format à confirmer",
+      "en": "Bag — size to confirm",
+      "ar": "كيس — المقاس قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 13
+  },
+  {
+    "pf_id": "BOND-OC-CSIII",
+    "slug": "fenek-bond-oc-csiii",
+    "gamme": "bond",
+    "nom": "FENEK-BOND OC-CSIII",
+    "categorie": "Enduits",
+    "source_excel_fr": {
+      "titre": "Enduit monocouche de façade",
+      "description": "Enduit monocouche coloré, protection et décoration des façades.",
+      "normes_indicatives": "EN 998-1 (type OC)",
+      "exigences_non_verifiees": "Catégorie CS III : compression 3,5 à 7,5 N/mm² à 28 j ; absorption capillaire (W1/W2) ; perméabilité vapeur et adhérence à déclarer."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Enduit monocouche de façade",
+        "description": "Concept de produit (non validé) : Enduit monocouche coloré, protection et décoration des façades. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Enduits. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Single-coat façade render",
+        "description": "Unvalidated product concept: Coloured single-coat render concept for façade protection and decoration. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Renders and plasters. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "لياسة واجهات أحادية الطبقة",
+        "description": "تصور منتج غير معتمد: تصور لطلاء لياسة ملون أحادي الطبقة لحماية الواجهات وتزيينها. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: اللياسة. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Sac — format à confirmer",
+      "en": "Bag — size to confirm",
+      "ar": "كيس — المقاس قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 14
+  },
+  {
+    "pf_id": "BOND-M5",
+    "slug": "fenek-bond-m5",
+    "gamme": "bond",
+    "nom": "FENEK-BOND M5",
+    "categorie": "Maçonnerie",
+    "source_excel_fr": {
+      "titre": "Mortier de maçonnerie courant",
+      "description": "Mortier de montage de blocs et briques pour maçonnerie courante.",
+      "normes_indicatives": "EN 998-2",
+      "exigences_non_verifiees": "Classe M5 : résistance à la compression ≥ 5 N/mm² à 28 j ; teneur en chlorures et adhérence à déclarer."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Mortier de maçonnerie courant",
+        "description": "Concept de produit (non validé) : Mortier de montage de blocs et briques pour maçonnerie courante. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Maçonnerie. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "General-purpose masonry mortar",
+        "description": "Unvalidated product concept: Mortar concept for laying blocks and bricks in ordinary masonry. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Masonry. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "مونة بناء للاستعمال العام",
+        "description": "تصور منتج غير معتمد: تصور لمونة تركيب الطوب والكتل في أعمال البناء المعتادة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مونة البناء. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Sac — format à confirmer",
+      "en": "Bag — size to confirm",
+      "ar": "كيس — المقاس قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 15
+  },
+  {
+    "pf_id": "BOND-M10",
+    "slug": "fenek-bond-m10",
+    "gamme": "bond",
+    "nom": "FENEK-BOND M10",
+    "categorie": "Maçonnerie",
+    "source_excel_fr": {
+      "titre": "Mortier de maçonnerie haute résistance",
+      "description": "Mortier de montage pour maçonnerie porteuse et éléments fortement chargés.",
+      "normes_indicatives": "EN 998-2",
+      "exigences_non_verifiees": "Classe M10 : résistance à la compression ≥ 10 N/mm² à 28 j ; teneur en chlorures et adhérence à déclarer."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Mortier de maçonnerie haute résistance",
+        "description": "Concept de produit (non validé) : Mortier de montage pour maçonnerie porteuse et éléments fortement chargés. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Maçonnerie. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "High-strength masonry mortar",
+        "description": "Unvalidated product concept: Masonry mortar concept for load-bearing masonry and heavily loaded elements. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Masonry. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "مونة بناء عالية المقاومة",
+        "description": "تصور منتج غير معتمد: تصور لمونة بناء للجدران الحاملة والعناصر المعرضة لأحمال مرتفعة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مونة البناء. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Sac — format à confirmer",
+      "en": "Bag — size to confirm",
+      "ar": "كيس — المقاس قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 16
+  },
+  {
+    "pf_id": "PROOF-CM-O1P",
+    "slug": "fenek-proof-cm-o1p",
+    "gamme": "proof",
+    "nom": "FENEK-PROOF CM-O1P",
+    "categorie": "Étanchéité",
+    "source_excel_fr": {
+      "titre": "Étanchéité cimentaire sous carrelage, rigide",
+      "description": "Étanchéité cimentaire pour balcons, terrasses, salles d'eau et piscines, sous carrelage.",
+      "normes_indicatives": "EN 14891 (classe CM O1P)",
+      "exigences_non_verifiees": "Étanchéité à l'eau sous 1,5 bar sans pénétration ; adhérence initiale ≥ 0,5 N/mm² ; pontage de fissures selon la classe de la désignation (≥ 0,75 mm)."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Étanchéité cimentaire sous carrelage, rigide",
+        "description": "Concept de produit (non validé) : Étanchéité cimentaire pour balcons, terrasses, salles d'eau et piscines, sous carrelage. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Étanchéité. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Rigid cementitious waterproofing beneath tiles",
+        "description": "Unvalidated product concept: Cementitious waterproofing concept for balconies, terraces, wet rooms and pools beneath tiling. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Waterproofing. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "عزل مائي إسمنتي صلب تحت البلاط",
+        "description": "تصور منتج غير معتمد: تصور لعزل مائي إسمنتي للشرفات والأسطح والحمامات والمسابح تحت البلاط. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: العزل المائي. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Sac / kit bicomposant — à confirmer",
+      "en": "Bag / two-component kit — to confirm",
+      "ar": "كيس / طقم ثنائي المكونات — قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 17
+  },
+  {
+    "pf_id": "PROOF-CM-O2P",
+    "slug": "fenek-proof-cm-o2p",
+    "gamme": "proof",
+    "nom": "FENEK-PROOF CM-O2P",
+    "categorie": "Étanchéité",
+    "source_excel_fr": {
+      "titre": "Étanchéité cimentaire bi-composant, flexible",
+      "description": "Étanchéité cimentaire bi-composant flexible pour supports soumis à fissuration.",
+      "normes_indicatives": "EN 14891 (classe CM O2P)",
+      "exigences_non_verifiees": "Étanchéité à l'eau sous 1,5 bar sans pénétration ; adhérence initiale ≥ 0,5 N/mm² ; classe de pontage de fissures supérieure (≥ 0,75 mm)."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Étanchéité cimentaire bi-composant, flexible",
+        "description": "Concept de produit (non validé) : Étanchéité cimentaire bi-composant flexible pour supports soumis à fissuration. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Étanchéité. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Flexible two-component cementitious waterproofing",
+        "description": "Unvalidated product concept: Flexible two-component cementitious waterproofing concept for crack-prone substrates. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Waterproofing. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "عزل مائي إسمنتي مرن ثنائي المكونات",
+        "description": "تصور منتج غير معتمد: تصور لعزل مائي إسمنتي مرن من مكونين للأسطح المعرضة للتشقق. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: العزل المائي. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Sac / kit bicomposant — à confirmer",
+      "en": "Bag / two-component kit — to confirm",
+      "ar": "كيس / طقم ثنائي المكونات — قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 18
+  },
+  {
+    "pf_id": "PROOF-PU-1K",
+    "slug": "fenek-proof-pu-1k",
+    "gamme": "proof",
+    "nom": "FENEK-PROOF PU-1K",
+    "categorie": "Étanchéité",
+    "source_excel_fr": {
+      "titre": "Membrane liquide polyuréthane mono-composant",
+      "description": "Membrane liquide élastique pour toitures, terrasses et balcons.",
+      "normes_indicatives": "EN 1504-2 ; ETAG 005 / EAD toiture liquide (à vérifier)",
+      "exigences_non_verifiees": "Adhérence par arrachement (EN 1542) ≥ 0,8 N/mm² (système flexible, sans trafic) ; allongement à la rupture, vieillissement et perméabilité à l'eau selon l'usage."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Membrane liquide polyuréthane mono-composant",
+        "description": "Concept de produit (non validé) : Membrane liquide élastique pour toitures, terrasses et balcons. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Étanchéité. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "One-component polyurethane liquid membrane",
+        "description": "Unvalidated product concept: Elastic liquid membrane concept for roofs, terraces and balconies. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Waterproofing. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "غشاء سائل من البولي يوريثان أحادي المكون",
+        "description": "تصور منتج غير معتمد: تصور لغشاء سائل مرن مخصص للأسطح والشرفات والتراسات. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: العزل المائي. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Seau / kit / cartouche — selon formulation à confirmer",
+      "en": "Pail / kit / cartridge — subject to formulation",
+      "ar": "دلو / طقم / خرطوشة — وفق التركيبة المعتمدة"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 19
+  },
+  {
+    "pf_id": "PROOF-ACR-RF",
+    "slug": "fenek-proof-acr-rf",
+    "gamme": "proof",
+    "nom": "FENEK-PROOF ACR-RF",
+    "categorie": "Étanchéité",
+    "source_excel_fr": {
+      "titre": "Étanchéité acrylique de toiture",
+      "description": "Revêtement d'étanchéité acrylique réfléchissant pour toitures-terrasses.",
+      "normes_indicatives": "EN 1504-2 ; ETAG 005 / EAD toiture liquide (à vérifier)",
+      "exigences_non_verifiees": "Allongement à la rupture, adhérence, résistance au vieillissement et à la stagnation d'eau : seuils du guide d'agrément retenu."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Étanchéité acrylique de toiture",
+        "description": "Concept de produit (non validé) : Revêtement d'étanchéité acrylique réfléchissant pour toitures-terrasses. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Étanchéité. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Reflective acrylic roof waterproofing",
+        "description": "Unvalidated product concept: Reflective acrylic waterproofing coating concept for flat roofs and terraces. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Waterproofing. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "عزل مائي أكريليكي عاكس للأسطح",
+        "description": "تصور منتج غير معتمد: تصور لطلاء عزل مائي أكريليكي عاكس للأسطح المسطحة والتراسات. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: العزل المائي. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Seau / kit / cartouche — selon formulation à confirmer",
+      "en": "Pail / kit / cartridge — subject to formulation",
+      "ar": "دلو / طقم / خرطوشة — وفق التركيبة المعتمدة"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 20
+  }
+]
