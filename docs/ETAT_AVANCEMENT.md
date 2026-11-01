@@ -1,3 +1,16 @@
+## 1er novembre 2026 — Lot 16 : audit des captures, arabe BTP et posters 3D
+
+- **[PR #11](https://github.com/Verwolfy/nextgen-website/pull/11)** fusionnée sur `main`, commit merge `03e8314236a0efaeba2adfbbc976daf69ede08ba`.
+- Audit à partir de **7 captures utilisateur** : présentation des maquettes d'emballages, galerie 3D initialement grise avant interaction, portrait À propos brut, grand titres et traduction arabe générique. L'ordre de cartes de droite à gauche est correct en arabe.
+- Arabe réécrit : rubriques **الفئات التقنية / الموارد / شبكة التوزيع**, lexique mortiers, colles à carrelage, joints et étanchéité ; textes éditoriaux de gamme / ressources / emballages améliorés, adresse localisée. Marques FENEK protégées du réordonnancement RTL par `bdi dir="ltr"`; distinction correcte de poids kg vs capacité litres.
+- `ModelViewer.astro` : image WebP locale dans le slot personnalisé poster ; les 5 emballages sont visibles dès le chargement, la 3D GLB restant **activée uniquement sur clic** (`reveal="interaction"`). Assets source inchangés. Le CSS réduit les titres secondaires et cadre mieux les modèles, mascottes, photos et interlignes arabes.
+- Fichiers : `src/data/site.ts`, `editorial.ts`, `showcase.ts`, `src/pages/[lang]/index.astro`, `emballages.astro`, `gammes/[slug].astro`, `[section].astro`, `src/components/ModelViewer.astro`, `RangeOverview.astro`, `src/layouts/Layout.astro`, `src/styles/site.css`, `scripts/check_browser_pages.py`, `tests/test_lot16_arabic_visual.py`, `docs/LOT16_AUDIT_CAPTURES_ARABE_3D.md`.
+- **CI PR finale (head `034b33c3d9e71110f2c848196b828dcaf233187b`) 2/2 réussies** : [Astro/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41347775698) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41347775713). Captures privées de la première passe de PR (run [41347456040](https://github.com/Verwolfy/nextgen-website/actions/runs/41347456040), artefact `13100166303`) **récupérées et examinées** : affichage de posters confirmé sur `ar-desktop-emballages`, cartes lisibles et bidi correct sur `ar-desktop-gammes`. Les dernières finitions unités/titres ont ensuite obtenu 2 CI vertes.
+- **Invariants :** `public/data/products.json=[]`, maquettes non contractuelles, aucun produit/tarif/FT/FDS/certification inventé, formulaires/API de leads désactivés, `noindex`, aucune modification ERP/Supabase/SQL/RLS, secrets, DNS, Cloudflare Pages ni publication.
+- **CI après fusion à vérifier distinctement** ; URL publique non vérifiée dans cette session, build GitHub ≠ mise en ligne Cloudflare. Un relecteur arabe professionnel reste recommandé avant approbation commerciale.
+
+---
+
 ## 1er novembre 2026 — Lot 14 : parcours Contact et Distributeurs, aucune collecte
 
 - **[PR #9](https://github.com/Verwolfy/nextgen-website/pull/9)** fusionnée sur `main`, commit merge `827adc374685c0193e440b7de7e465afa314d005`.
