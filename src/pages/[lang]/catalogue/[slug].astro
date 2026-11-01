@@ -1,0 +1,51 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import {languages,rangeName,rangeColor,type Lang} from '../../../data/site';
+import {catalogueProjects,conceptImage,type CatalogueProject} from '../../../lib/catalogue-projets';
+import {catalogueCopy,guidance} from '../../../data/catalogue-content';
+export function getStaticPaths(){
+ return languages.flatMap(lang=>catalogueProjects.map(product=>({params:{lang,slug:product.slug},props:{product}})));
+}
+const lang=Astro.params.lang as Lang;
+const product=Astro.props.product as CatalogueProject;
+if(!product || !catalogueProjects.some(p=>p.slug===product.slug)) throw Error('Unknown catalogue concept');
+const d=product.contenu[lang];
+const t=catalogueCopy[lang];
+---
+<Layout lang={lang} title={product.nom} description={d.description}>
+  <div class="page-head concept-detail-head" style={'--range-color:'+rangeColor[product.gamme]}>
+    <div class="container">
+      <a class="concept-back" href={'/'+lang+'/catalogue/'}>{t.back}</a>
+      <span class="eyebrow"><bdi dir="ltr">{rangeName[product.gamme]}</bdi> · {t.concept}</span>
+      <h1><bdi dir="ltr">{product.nom}</bdi></h1>
+      <p>{d.accroche}</p>
+      <span class="concept-detail-status">{t.status}</span>
+    </div>
+  </div>
+  <section class="section"><div class="container">
+    <div class="concept-detail-layout">
+      <div class="concept-detail-main">
+        <p class="editorial-caution" role="note">{t.review}</p>
+        <h2>{t.application}</h2><p>{d.description}</p>
+        {d.usages.length>0&&<ul class="concept-usages">{d.usages.map(x=><li>{x}</li>)}</ul>}
+        <h2>{t.format}</h2>
+        <div class="concept-formats detail-formats">{product.conditionnements.length?product.conditionnements.map(x=><span>{x.format}</span>):<span>{t.unknownFormat}</span>}</div>
+        <p class="concept-detail-note">{t.revision}</p>
+        <h2>{t.methodTitle}</h2>
+        <p>{t.methodDisclaimer}</p>
+        <ol class="concept-steps">{guidance(lang,product.code).map((step,index)=><li><span class="step-count">{String(index+1).padStart(2,'0')}</span>{step}</li>)}</ol>
+        <details class="concept-source-method">
+          <summary>{t.sourceProcedure}</summary>
+          <p>{t.sourceNote}</p><p lang="fr" dir="ltr">{product.mode_fr_preparatoire}</p>
+        </details>
+      </div>
+      <aside class="concept-detail-aside" aria-label={t.format}>
+        <div class="concept-detail-image" style={'--range-color:'+rangeColor[product.gamme]}>
+          <img src={conceptImage[product.gamme]} width="680" height="680" alt="" loading="lazy"/>
+        </div>
+        <p class="concept-detail-note">{t.pictureNote}</p>
+        <a class="btn" href={'/'+lang+'/contact/'}>{t.quote}</a>
+      </aside>
+    </div>
+  </div></section>
+</Layout>
