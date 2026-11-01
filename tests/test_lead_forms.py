@@ -15,13 +15,21 @@ class TestLeadFormPreview(unittest.TestCase):
         self.assertIn('disabled type={typeFor(field)}',component)
         self.assertIn('<textarea disabled',component)
         self.assertIn('disabled aria-disabled="true"',component)
-        self.assertIn('mailto:',component)
-        self.assertIn('wa.me',component)
+        self.assertIn('<details class="lead-preview">',component)
+        self.assertIn('t.previewTitle',component)
+        self.assertNotIn('mailto:',component)
+        self.assertNotIn('wa.me',component)
+        channels=(ROOT/'src/components/ContactChannels.astro').read_text()
+        self.assertIn('mailto:',channels)
+        self.assertIn('https://wa.me/',channels)
+        self.assertIn('tel:',channels)
     def test_site_has_separate_paths_within_pages(self):
         section=(ROOT/'src/pages/[lang]/[section].astro').read_text()
         self.assertIn('kind="quote"',section)
         self.assertIn('kind="distributor"',section)
         self.assertIn('href="#candidature"',section)
+        self.assertIn('href="#contact-direct"',section)
+        self.assertIn('<ContactChannels lang={lang} />',section)
     def test_privacy_notice_is_not_misleading(self):
         values=(ROOT/'src/data/lead-forms.ts').read_text()
         for phrase in ('envoi désactivé', 'الإرسال غير مفعل', 'submission disabled'):
