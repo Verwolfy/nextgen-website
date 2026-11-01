@@ -8,19 +8,21 @@ import ResourcesHub from '../../components/ResourcesHub.astro';
 import AboutStory from '../../components/AboutStory.astro';
 import {brand,brandLocation,languages,messages,sections,rangeName,type Lang,type Section} from '../../data/site';
 import {products} from '../../lib/products';
+import ConceptCatalogue from '../../components/ConceptCatalogue.astro';
+import {catalogueCopy} from '../../data/catalogue-content';
 export function getStaticPaths(){return languages.flatMap(lang=>sections.map(section=>({params:{lang,section}})))}
 const lang=Astro.params.lang as Lang;
 const section=Astro.params.section as Section;
 const t=messages[lang];
 const title=t.menu[section];
-const heading=section==='contact'?t.contactTitle:section==='distributeurs'?t.distributorsTitle:title;
-const description=section==='catalogue'?t.rangesIntro:section==='distributeurs'?t.distributorsInfo:section==='ressources'?t.resourcesInfo:section==='a-propos'?t.aboutInfo:section==='mentions-legales'?t.legalInfo:section==='confidentialite'?t.privacyInfo:section==='contact'?contactCopy[lang].intro:t.intro;
+const heading=section==='catalogue'?catalogueCopy[lang].title:section==='contact'?t.contactTitle:section==='distributeurs'?t.distributorsTitle:title;
+const description=section==='catalogue'?catalogueCopy[lang].lead:section==='distributeurs'?t.distributorsInfo:section==='ressources'?t.resourcesInfo:section==='a-propos'?t.aboutInfo:section==='mentions-legales'?t.legalInfo:section==='confidentialite'?t.privacyInfo:section==='contact'?contactCopy[lang].intro:t.intro;
 ---
 <Layout lang={lang} title={title} description={description}>
 <div class="page-head"><div class="container"><span class="eyebrow">NextGen Building Solutions</span><h1>{heading}</h1><p>{description}</p></div></div>
 <div class="section"><div class="container">
 {section==='gammes'&&<RangeOverview lang={lang} />}
-{section==='catalogue'&&<>{products.length===0?<div class="notice"><h2>{t.empty}</h2><p>{t.emptyInfo}</p></div>:<div class="products-grid">{products.map(p=><a href={`/${lang}/produits/${p.slug}/`} class="product"><span class="tag">{rangeName[p.gamme]}</span><h3>{p.nom}</h3><p>{p.contenu[lang].accroche}</p></a>)}</div>}</>}
+{section==='catalogue'&&<ConceptCatalogue lang={lang} />}
 {section==='distributeurs'&&<><div class="notice"><p>{t.distributorsInfo}</p><div class="actions"><a class="btn" href="#contact-direct">{contactCopy[lang].heading}</a><a class="btn btn-muted" href="#candidature">{contactCopy[lang].previewAnchor}</a></div></div><ContactChannels lang={lang} /><LeadForm lang={lang} kind="distributor" /></>}
 {section==='ressources'&&<ResourcesHub lang={lang} />}
 {section==='a-propos'&&<AboutStory lang={lang} />}
