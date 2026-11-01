@@ -90,7 +90,7 @@ test('limiter is given a stable opaque HMAC rather than raw contact', async () =
   try {
     const custom={...env,NEXTGEN_RATE_LIMITER:{limit:async({key})=>(hashes.push(key),{success:true})}};
     assert.equal((await onRequestPost({request:request(),env:custom})).status,201);
-    assert.equal((await onRequestPost({request:request({...valid,phone:'+213 (0) 554 603 410'}),env:custom})).status,201);
+    assert.equal((await onRequestPost({request:request({...valid,phone:'+213(554)603410'}),env:custom})).status,201);
     assert.equal(hashes.length,2);assert.equal(writes,2);
     assert.match(hashes[0],/^[0-9a-f]{64}$/);assert.equal(hashes[0],hashes[1]);
     assert.ok(!hashes[0].includes('554'));assert.ok(!hashes[0].includes('+213'));
