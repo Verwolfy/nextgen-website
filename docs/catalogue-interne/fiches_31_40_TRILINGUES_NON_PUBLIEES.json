@@ -1,0 +1,572 @@
+[
+  {
+    "pf_id": "FLOW-SP-PF",
+    "slug": "fenek-flow-sp-pf",
+    "gamme": "flow",
+    "nom": "FENEK-FLOW SP-PF",
+    "categorie": "Superplastifiants",
+    "source_excel_fr": {
+      "titre": "Superplastifiant pour préfabrication, résistances précoces",
+      "description": "Superplastifiant à résistances précoces élevées pour préfabrication et décoffrage rapide.",
+      "normes_indicatives": "EN 934-2 ; EN 934-1",
+      "exigences_non_verifiees": "Réduction d'eau ≥ 12 % ; compression à 1 j ≥ 140 % du témoin ; compression à 28 j ≥ 115 %."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Superplastifiant pour préfabrication, résistances précoces",
+        "description": "Concept de produit (non validé) : Superplastifiant à résistances précoces élevées pour préfabrication et décoffrage rapide. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Superplastifiants. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Precast superplasticizer for early strength",
+        "description": "Unvalidated product concept: Superplasticizer concept for early-strength precast concrete and rapid demoulding. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Superplasticizers. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "ملدن فائق للخرسانة مسبقة الصنع والمقاومة المبكرة",
+        "description": "تصور منتج غير معتمد: تصور لملدن فائق للخرسانة مسبقة الصنع يهدف إلى اكتساب مقاومة مبكرة وفك القوالب بسرعة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الملدنات الفائقة. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Bidon / fût / IBC — formats à confirmer",
+      "en": "Canister / drum / IBC — sizes to confirm",
+      "ar": "عبوة / برميل / خزان IBC — الأحجام قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 31
+  },
+  {
+    "pf_id": "FLOW-RT",
+    "slug": "fenek-flow-rt",
+    "gamme": "flow",
+    "nom": "FENEK-FLOW RT",
+    "categorie": "Retardateurs",
+    "source_excel_fr": {
+      "titre": "Retardateur de prise",
+      "description": "Retarde la prise du béton par temps chaud ou en cas de transport long.",
+      "normes_indicatives": "EN 934-2 ; EN 934-1",
+      "exigences_non_verifiees": "Début de prise retardé de ≥ 90 min et ≤ 360 min par rapport au témoin ; compression à 28 j ≥ 90 % du témoin."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Retardateur de prise",
+        "description": "Concept de produit (non validé) : Retarde la prise du béton par temps chaud ou en cas de transport long. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Retardateurs. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Setting retarder",
+        "description": "Unvalidated product concept: Setting retarder concept for concrete in hot weather or during long transport. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Retarders. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "مؤخر لزمن الشك",
+        "description": "تصور منتج غير معتمد: تصور لمضاف يؤخر شك الخرسانة في الطقس الحار أو عند النقل لمسافات طويلة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مؤخرات الشك. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Bidon / fût / IBC — formats à confirmer",
+      "en": "Canister / drum / IBC — sizes to confirm",
+      "ar": "عبوة / برميل / خزان IBC — الأحجام قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 32
+  },
+  {
+    "pf_id": "FLOW-AC",
+    "slug": "fenek-flow-ac",
+    "gamme": "flow",
+    "nom": "FENEK-FLOW AC",
+    "categorie": "Accélérateurs",
+    "source_excel_fr": {
+      "titre": "Accélérateur de prise",
+      "description": "Accélère la prise et le durcissement du béton par temps froid ou pour décoffrage rapide.",
+      "normes_indicatives": "EN 934-2 ; EN 934-1",
+      "exigences_non_verifiees": "Début de prise à 20 °C ≤ 50 % de celui du témoin ; compression à 28 j ≥ 80 % du témoin ; chlorures ≤ 0,10 %."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Accélérateur de prise",
+        "description": "Concept de produit (non validé) : Accélère la prise et le durcissement du béton par temps froid ou pour décoffrage rapide. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Accélérateurs. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Setting accelerator",
+        "description": "Unvalidated product concept: Setting and hardening accelerator concept for cold-weather concreting or faster demoulding. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Accelerators. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "مسرع لزمن الشك",
+        "description": "تصور منتج غير معتمد: تصور لمضاف يسرع شك الخرسانة وتصلبها في البرد أو لتسريع فك القوالب. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مسرعات الشك. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Bidon / fût / IBC — formats à confirmer",
+      "en": "Canister / drum / IBC — sizes to confirm",
+      "ar": "عبوة / برميل / خزان IBC — الأحجام قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 33
+  },
+  {
+    "pf_id": "FLOW-AE",
+    "slug": "fenek-flow-ae",
+    "gamme": "flow",
+    "nom": "FENEK-FLOW AE",
+    "categorie": "Entraîneurs d'air",
+    "source_excel_fr": {
+      "titre": "Entraîneur d'air",
+      "description": "Entraîne des microbulles d'air pour la résistance au gel-dégel et aux sels de déverglaçage.",
+      "normes_indicatives": "EN 934-2 ; EN 934-1",
+      "exigences_non_verifiees": "Teneur en air du béton d'essai ≥ 2,5 % au-dessus du témoin (total 4 à 6 %) ; facteur d'espacement ≤ 0,200 mm ; compression à 28 j ≥ 75 %."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Entraîneur d'air",
+        "description": "Concept de produit (non validé) : Entraîne des microbulles d'air pour la résistance au gel-dégel et aux sels de déverglaçage. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Entraîneurs d'air. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Air-entraining admixture",
+        "description": "Unvalidated product concept: Air-entraining admixture concept intended to improve freeze–thaw and de-icing salt resistance through micro-air voids. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Air-entraining admixtures. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "مضاف حابس للهواء",
+        "description": "تصور منتج غير معتمد: تصور لمضاف يحبس فقاعات هواء دقيقة بهدف تحسين مقاومة التجمد والذوبان وأملاح إزالة الجليد. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مواد حبس الهواء. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Bidon / fût / IBC — formats à confirmer",
+      "en": "Canister / drum / IBC — sizes to confirm",
+      "ar": "عبوة / برميل / خزان IBC — الأحجام قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 34
+  },
+  {
+    "pf_id": "FLOW-WP",
+    "slug": "fenek-flow-wp",
+    "gamme": "flow",
+    "nom": "FENEK-FLOW WP",
+    "categorie": "Hydrofuges de masse",
+    "source_excel_fr": {
+      "titre": "Hydrofuge de masse",
+      "description": "Réduit l'absorption capillaire du béton et du mortier.",
+      "normes_indicatives": "EN 934-2 ; EN 934-1",
+      "exigences_non_verifiees": "Absorption capillaire à 7 et 28 j ≤ 50 % du témoin ; compression à 28 j ≥ 85 % du témoin."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Hydrofuge de masse",
+        "description": "Concept de produit (non validé) : Réduit l'absorption capillaire du béton et du mortier. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Hydrofuges de masse. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Integral waterproofing admixture",
+        "description": "Unvalidated product concept: Integral water-repellent admixture concept to reduce capillary absorption in concrete and mortar. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Integral water repellents. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "مضاف عزل مائي ضمن الخلطة",
+        "description": "تصور منتج غير معتمد: تصور لمضاف طارد للماء ضمن الخلطة لتقليل الامتصاص الشعري في الخرسانة والمونة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مضافات العزل المائي. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Bidon / fût / IBC — formats à confirmer",
+      "en": "Canister / drum / IBC — sizes to confirm",
+      "ar": "عبوة / برميل / خزان IBC — الأحجام قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 35
+  },
+  {
+    "pf_id": "FLOW-VMA",
+    "slug": "fenek-flow-vma",
+    "gamme": "flow",
+    "nom": "FENEK-FLOW VMA",
+    "categorie": "Agents de viscosité",
+    "source_excel_fr": {
+      "titre": "Agent de viscosité (béton autoplaçant)",
+      "description": "Stabilise les bétons très fluides et réduit la ségrégation et le ressuage.",
+      "normes_indicatives": "EN 934-2 ; EN 934-1 (à confirmer) ; EN 12350-8",
+      "exigences_non_verifiees": "Critères à définir par le labo : étalement, stabilité (ségrégation), temps d'écoulement ; chlorures ≤ 0,10 %."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Agent de viscosité (béton autoplaçant)",
+        "description": "Concept de produit (non validé) : Stabilise les bétons très fluides et réduit la ségrégation et le ressuage. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Agents de viscosité. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Viscosity-modifying admixture for self-compacting concrete",
+        "description": "Unvalidated product concept: Viscosity stabilizer concept for highly flowable concrete, limiting segregation and bleeding. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Viscosity modifiers. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "مضاف معدل للزوجة الخرسانة ذاتية الدمك",
+        "description": "تصور منتج غير معتمد: تصور لمضاف يضبط لزوجة الخرسانة عالية السيولة للحد من الانفصال الحبيبي ونزف الماء. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: معدلات اللزوجة. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Bidon / fût / IBC — formats à confirmer",
+      "en": "Canister / drum / IBC — sizes to confirm",
+      "ar": "عبوة / برميل / خزان IBC — الأحجام قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 36
+  },
+  {
+    "pf_id": "FLOW-CI",
+    "slug": "fenek-flow-ci",
+    "gamme": "flow",
+    "nom": "FENEK-FLOW CI",
+    "categorie": "Inhibiteurs de corrosion",
+    "source_excel_fr": {
+      "titre": "Inhibiteur de corrosion des armatures",
+      "description": "Retarde la corrosion des armatures dans le béton exposé aux chlorures ou à la carbonatation.",
+      "normes_indicatives": "EN 1504-9 (principes) ; ASTM C1582 (spécification)",
+      "exigences_non_verifiees": "Pas de seuils EN 934-2 spécifiques : essais de corrosion et de durabilité selon la référence retenue."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Inhibiteur de corrosion des armatures",
+        "description": "Concept de produit (non validé) : Retarde la corrosion des armatures dans le béton exposé aux chlorures ou à la carbonatation. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Inhibiteurs de corrosion. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Rebar corrosion inhibitor",
+        "description": "Unvalidated product concept: Corrosion-inhibiting admixture concept for concrete exposed to chlorides or carbonation. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Corrosion inhibitors. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "مضاف مثبط لتآكل حديد التسليح",
+        "description": "تصور منتج غير معتمد: تصور لمضاف مثبط لتآكل حديد التسليح في الخرسانة المعرضة للكلوريدات أو الكربنة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مثبطات التآكل. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Bidon / fût / IBC — formats à confirmer",
+      "en": "Canister / drum / IBC — sizes to confirm",
+      "ar": "عبوة / برميل / خزان IBC — الأحجام قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 37
+  },
+  {
+    "pf_id": "FLOW-CURE",
+    "slug": "fenek-flow-cure",
+    "gamme": "flow",
+    "nom": "FENEK-FLOW CURE",
+    "categorie": "Produits de cure",
+    "source_excel_fr": {
+      "titre": "Produit de cure du béton",
+      "description": "Forme un film temporaire qui retient l'eau du béton frais.",
+      "normes_indicatives": "NF P18-370 (réf. française) ; ASTM C309",
+      "exigences_non_verifiees": "Perte d'eau limitée (ASTM C309 : ≤ 0,55 kg/m² à 72 h) ; compatibilité avec revêtements ultérieurs à vérifier."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Produit de cure du béton",
+        "description": "Concept de produit (non validé) : Forme un film temporaire qui retient l'eau du béton frais. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Produits de cure. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Concrete curing compound",
+        "description": "Unvalidated product concept: Temporary-film curing compound concept to retain moisture in freshly placed concrete. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Curing compounds. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "مركب معالجة الخرسانة",
+        "description": "تصور منتج غير معتمد: تصور لمادة معالجة تشكل غشاء مؤقتاً يساعد على الاحتفاظ بالماء في الخرسانة الطازجة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مواد المعالجة. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Bidon / fût / IBC — formats à confirmer",
+      "en": "Canister / drum / IBC — sizes to confirm",
+      "ar": "عبوة / برميل / خزان IBC — الأحجام قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 38
+  },
+  {
+    "pf_id": "FLOW-LAT",
+    "slug": "fenek-flow-lat",
+    "gamme": "flow",
+    "nom": "FENEK-FLOW LAT",
+    "categorie": "Résines d'adhérence",
+    "source_excel_fr": {
+      "titre": "Résine d'adhérence et d'amélioration des mortiers",
+      "description": "Résine en dispersion servant de pont d'adhérence et d'additif d'amélioration des mortiers.",
+      "normes_indicatives": "EN 1542 (adhérence) ; EN 1504-3 (usage en mortier de réparation)",
+      "exigences_non_verifiees": "Pas de norme produit unique : adhérence par arrachement ≥ 0,8 à 2,0 MPa selon la classe de mortier visée ; essais comparatifs."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Résine d'adhérence et d'amélioration des mortiers",
+        "description": "Concept de produit (non validé) : Résine en dispersion servant de pont d'adhérence et d'additif d'amélioration des mortiers. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Résines d'adhérence. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Bonding and mortar-modifying polymer dispersion",
+        "description": "Unvalidated product concept: Polymer dispersion concept for bonding bridges and mortar modification. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Bonding polymers. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "مستحلب راتنجي لتحسين الالتصاق والمونة",
+        "description": "تصور منتج غير معتمد: تصور لمستحلب بوليمري يُستخدم كجسر التصاق وإضافة لتحسين خصائص المونة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: بوليمرات الالتصاق. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Bidon / fût / IBC — formats à confirmer",
+      "en": "Canister / drum / IBC — sizes to confirm",
+      "ar": "عبوة / برميل / خزان IBC — الأحجام قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 39
+  },
+  {
+    "pf_id": "PAINT-INT-M",
+    "slug": "fenek-paint-int-m",
+    "gamme": "paint",
+    "nom": "FENEK-PAINT INT-M",
+    "categorie": "Peintures intérieures",
+    "source_excel_fr": {
+      "titre": "Peinture acrylique intérieure mate",
+      "description": "Peinture acrylique mate pour murs et plafonds intérieurs.",
+      "normes_indicatives": "EN 13300 ; ISO 11998 ; ISO 6504-3 ; ISO 2813",
+      "exigences_non_verifiees": "Classes à déclarer : abrasion humide (1 à 5), pouvoir masquant (1 à 4), brillant (mat), granulométrie, COV."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Peinture acrylique intérieure mate",
+        "description": "Concept de produit (non validé) : Peinture acrylique mate pour murs et plafonds intérieurs. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Peintures intérieures. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Matt interior acrylic paint",
+        "description": "Unvalidated product concept: Matt acrylic paint concept for interior walls and ceilings. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Interior paints. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "دهان أكريليكي داخلي مطفي",
+        "description": "تصور منتج غير معتمد: تصور لدهان أكريليكي مطفي للجدران والأسقف الداخلية. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الدهانات الداخلية. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Seau — volume à confirmer",
+      "en": "Pail — volume to confirm",
+      "ar": "دلو — الحجم قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 40
+  }
+]
