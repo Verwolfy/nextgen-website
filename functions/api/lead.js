@@ -68,6 +68,7 @@ export async function onRequestPost({ request, env }) {
   // Explicit server-side fail-closed gate, independent of the disabled UI.
   if (env?.NEXTGEN_LEADS_ENABLED !== 'true') return reply(503, 'LEADS_NOT_ACTIVE');
   if (!env.TURNSTILE_SECRET_KEY || !env.SUPABASE_SERVICE_ROLE_KEY || !env.SUPABASE_URL || !env.NEXTGEN_PRIVACY_NOTICE_VERSION || !env.NEXTGEN_EXPECTED_HOSTNAME || !env.NEXTGEN_TURNSTILE_ACTION) return reply(503, 'NOT_CONFIGURED');
+  if (typeof env.NEXTGEN_SUPABASE_PROJECT_REF !== 'string' || !/^[a-z0-9]{20}$/.test(env.NEXTGEN_SUPABASE_PROJECT_REF)) return reply(503, 'PROJECT_NOT_CONFIGURED');
   // A Worker Rate Limiting binding is mandatory before any future activation.
   // No rate limiter, weak salt or error => never persist personal information.
   if (typeof env.NEXTGEN_RATE_LIMIT_SALT !== 'string' || env.NEXTGEN_RATE_LIMIT_SALT.length < 32 ||
@@ -89,7 +90,7 @@ export async function onRequestPost({ request, env }) {
 
   let url;
   try { url = new URL(env.SUPABASE_URL); } catch { return reply(503, 'INVALID_STORAGE_CONFIG'); }
-  if (url.protocol !== 'https:' || !/^[a-z0-9-]+\.supabase\.co$/.test(url.hostname)) return reply(503, 'INVALID_STORAGE_CONFIG');
+  if (url.protocol !== 'https:' || url.hostname !== `${env.NEXTGEN_SUPABASE_PROJECT_REF}.supabase.co` || url.username || url.password || url.port || url.pathname !== '/' || url.search || url.hash) return reply(503, 'INVALID_STORAGE_CONFIG');
 
   let verified;
   try {

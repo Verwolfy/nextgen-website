@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {onRequestPost, onRequestGet} from '../functions/api/lead.js';
 const address = 'https://www.nextgen-buildingsolutions.com/api/lead';
 const valid = { kind:'quote',business:'Compagnie',contact:'Responsable',phone:'+213 554 603 410',email:'contact@example.com',wilaya:'Bouira',commune:'Oued El-Berdi',product:'Fenek',package:'25 kg',quantity:'50',message:'Demande',consent:true,token:'test-token-abcdef',website:'' };
-const env = { NEXTGEN_LEADS_ENABLED:'true',TURNSTILE_SECRET_KEY:'secret',SUPABASE_SERVICE_ROLE_KEY:'private',SUPABASE_URL:'https://wenydirqtmkywbxbxfal.supabase.co',NEXTGEN_PRIVACY_NOTICE_VERSION:'reviewed-test-only-v1',NEXTGEN_EXPECTED_HOSTNAME:'www.nextgen-buildingsolutions.com',NEXTGEN_TURNSTILE_ACTION:'nextgen_lead', NEXTGEN_RATE_LIMIT_SALT:'offline-test-only-secret-keep-out-of-prod-000000', NEXTGEN_RATE_LIMITER:{limit:async()=>({success:true})} };
+const env = { NEXTGEN_LEADS_ENABLED:'true',TURNSTILE_SECRET_KEY:'secret',SUPABASE_SERVICE_ROLE_KEY:'private',SUPABASE_URL:'https://wenydirqtmkywbxbxfal.supabase.co',NEXTGEN_PRIVACY_NOTICE_VERSION:'reviewed-test-only-v1',NEXTGEN_EXPECTED_HOSTNAME:'www.nextgen-buildingsolutions.com',NEXTGEN_TURNSTILE_ACTION:'nextgen_lead', NEXTGEN_SUPABASE_PROJECT_REF:'wenydirqtmkywbxbxfal', NEXTGEN_RATE_LIMIT_SALT:'offline-test-only-secret-keep-out-of-prod-000000', NEXTGEN_RATE_LIMITER:{limit:async()=>({success:true})} };
 function request(body=valid, headers={}) {
   return new Request(address,{method:'POST',headers:{origin:'https://www.nextgen-buildingsolutions.com','content-type':'application/json',...headers},body:JSON.stringify(body)});
 }
@@ -102,5 +102,22 @@ test('rate limiter failure refuses storage', async () => {
   try {
     const res=await onRequestPost({request:request(),env:{...env,NEXTGEN_RATE_LIMITER:{limit:async()=>{throw Error('service unavailable')}}}});
     assert.equal(res.status,503);assert.equal(writes,0);
+  } finally {globalThis.fetch=old;}
+});
+
+test('project URL binding stops unexpected Supabase endpoint and cannot exfiltrate key',async()=>{
+  const old=globalThis.fetch;globalThis.fetch=()=>{throw Error('NO_OUTBOUND_ALLOWED')};
+  try {
+    for(const patch of [
+      {NEXTGEN_SUPABASE_PROJECT_REF:''},
+      {NEXTGEN_SUPABASE_PROJECT_REF:'not-valid-ref'},
+      {SUPABASE_URL:'https://otherproject1234567.supabase.co'},
+      {SUPABASE_URL:'https://wenydirqtmkywbxbxfal.supabase.co/malicious'},
+      {SUPABASE_URL:'https://wenydirqtmkywbxbxfal.supabase.co?copy=1'},
+      {SUPABASE_URL:'http://wenydirqtmkywbxbxfal.supabase.co'},
+    ]){
+      const r=await onRequestPost({request:request(),env:{...env,...patch}});
+      assert.equal(r.status,503);
+    }
   } finally {globalThis.fetch=old;}
 });

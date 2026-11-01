@@ -45,3 +45,9 @@ Sortie : comptages non nominatifs par type/statut, indicateur de troncature lors
 - Cloudflare Turnstile Siteverify : https://developers.cloudflare.com/turnstile/get-started/server-side-validation/
 - Cloudflare Pages — variables et bindings : https://developers.cloudflare.com/pages/functions/bindings/
 - Texte légal modificatif : https://natlex.ilo.org/dyn/natlex2/r/natlex/fe/details?p3_isn=118858
+
+## Durcissement Lot 6 (2026-11-01)
+
+- Le serveur Cloudflare refuse maintenant toute réception si le binding de limitation de fréquence `NEXTGEN_RATE_LIMITER` manque, si son secret HMAC `NEXTGEN_RATE_LIMIT_SALT` est trop court, ou si le service limite/refuse la requête. La clé du compteur est dérivée par HMAC du numéro de téléphone normalisé ; le numéro en clair n'est pas transmis au compteur. Le contrôle fonctionne après Turnstile, avant l'écriture. Il **ne remplace pas** les règles WAF globales contre les abus.
+- La variable `NEXTGEN_SUPABASE_PROJECT_REF` doit correspondre exactement à l'URL racine Supabase configurée ; tout autre projet ou chemin est refusé, sans émission de la clé serveur. Les secrets restent à configurer uniquement après validation de l'infrastructure.
+- Exiger une preuve de configuration effective du binding Cloudflare (et de la limite choisie) avant d'activer la fonctionnalité ; aucun binding ni secret réellement configuré à ce jour.
