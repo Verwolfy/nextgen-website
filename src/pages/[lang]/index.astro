@@ -1,11 +1,22 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { languages, messages, ranges, rangeName,rangeColor,type Lang } from '../../data/site';
+import { showcaseModels, showcaseCopy } from '../../data/showcase';
 export function getStaticPaths(){return languages.map(lang=>({params:{lang}}))}
-const lang=Astro.params.lang as Lang;const t=messages[lang];
+const lang=Astro.params.lang as Lang;const t=messages[lang];const preview=showcaseCopy[lang];
 ---
 <Layout lang={lang} title={t.welcome} description={t.intro}>
 <section class="hero"><div class="container hero-wrap"><div><span class="eyebrow">NextGen Building Solutions · Algérie</span><h1>{t.welcome}</h1><p>{t.intro}</p><div class="actions"><a class="btn" href={`/${lang}/gammes/`}>{t.explore}</a><a class="btn btn-outline" href={`/${lang}/contact/`}>{t.quote}</a></div></div><div class="hero-art"><img src="/images/Nexo-Geno.webp" alt={t.mascotsAlt} width="800" height="1390" loading="eager" /></div></div></section>
 <section class="section"><div class="container"><div class="section-head"><span class="eyebrow">FENEK COLLECTION</span><h2>{t.ourRanges}</h2><p>{t.rangesIntro}</p></div><div class="grid">{ranges.map(g=><a class="card" href={`/${lang}/gammes/${g}/`}><div class="bar" style={`background:${rangeColor[g]}`}></div><h3>{rangeName[g]}</h3><p>{t.ranges[g]}</p><span class="arrow" aria-hidden="true">↗</span></a>)}</div></div></section>
+<section class="section showcase-home" aria-labelledby="showcase-title"><div class="container">
+  <div class="section-head"><span class="eyebrow">NEXTGEN · 3D</span><h2 id="showcase-title">{preview.title}</h2><p>{preview.intro}</p></div>
+  <p class="concept-disclaimer" role="note">{preview.warning}</p>
+  <div class="concept-grid">
+    {showcaseModels.map((slug,index)=><a class="concept-card" href={`/${lang}/emballages/`}>
+      <div class="concept-image"><img src={`/images/3d-demo/${slug}-30.webp`} alt={`${preview.names[index]} — ${preview.simulation}`} width="680" height="680" loading="lazy" /></div>
+      <div class="concept-copy"><span class="concept-tag">{preview.simulation}</span><h3>{preview.names[index]}</h3><span class="concept-link">{preview.see3d}<span aria-hidden="true"> ↗</span></span></div>
+    </a>)}
+  </div>
+</div></section>
 <section class="section pale"><div class="container columns"><div><span class="eyebrow">LAB · FIELD · TRAINING</span><h2>{t.services}</h2><p>{t.quality}</p><div class="info-list">{[t.laboratory,t.technicalSupport,t.fieldSupport,t.training].map(v=><span class="chip">{v}</span>)}</div><div class="actions"><a class="btn" href={`/${lang}/a-propos/`}>{t.menu['a-propos']}</a></div></div><img class="mascot" src="/images/Nexo.webp" alt="Nexo, mascotte technique NextGen" width="750" height="1301" loading="lazy" /></div></section>
 </Layout>
