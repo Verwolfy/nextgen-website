@@ -106,7 +106,7 @@ test('rate limiter failure refuses storage', async () => {
 });
 
 test('project URL binding stops unexpected Supabase endpoint and cannot exfiltrate key',async()=>{
-  const old=globalThis.fetch;globalThis.fetch=()=>{throw Error('NO_OUTBOUND_ALLOWED')};
+  const old=globalThis.fetch;let outbound=0;globalThis.fetch=()=>{outbound++;throw Error('NO_OUTBOUND_ALLOWED')};
   try {
     for(const patch of [
       {NEXTGEN_SUPABASE_PROJECT_REF:''},
@@ -118,6 +118,7 @@ test('project URL binding stops unexpected Supabase endpoint and cannot exfiltra
     ]){
       const r=await onRequestPost({request:request(),env:{...env,...patch}});
       assert.equal(r.status,503);
+      assert.equal(outbound,0,'untrusted Supabase config must be rejected before fetch');
     }
   } finally {globalThis.fetch=old;}
 });
