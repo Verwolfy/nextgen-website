@@ -10,12 +10,12 @@ const edit = editorialCopy[lang];
   <div class="columns about-feature">
     <div>
       <h2 id="about-heading">{t.mission}</h2>
-      <p>{t.aboutInfo}</p><p>{t.quality}</p>
+      <p>{t.quality}</p><p>{edit.aboutLead}</p>
       <p class="editorial-caution" role="note">{edit.aboutNotice}</p>
     </div>
     <img src="/images/Nexo-Geno.webp" alt={t.mascotsAlt} width="800" height="1390" loading="lazy" class="mascot" />
   </div>
-  <div class="section-head about-process-head"><h2>{edit.aboutHeading}</h2><p>{edit.aboutLead}</p></div>
+  <div class="section-head about-process-head"><h2>{edit.aboutHeading}</h2></div>
   <ol class="about-steps">
     {edit.aboutSteps.map((step,index) => <li class="about-step">
       <span class="step-count" aria-hidden="true">{String(index+1).padStart(2,'0')}</span>
