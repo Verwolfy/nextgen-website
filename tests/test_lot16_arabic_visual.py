@@ -25,6 +25,16 @@ class ArabicVisualChecks(unittest.TestCase):
         self.assertIn('homeStatus:', editor)
         self.assertIn('لم يُعتمد أي منتج حقيقي', editor)
 
+    def test_arabic_mass_units_are_not_described_as_liquid_capacity(self):
+        gallery = (ROOT / 'src/pages/[lang]/emballages.astro').read_text(encoding='utf-8')
+        for expected in ('كيس بوزن 25 كغ', 'دلو بوزن 20 كغ',
+                         'عبوة بسعة 20 لترًا', 'برميل بسعة 200 لتر'):
+            self.assertIn(expected, gallery)
+        self.assertNotIn('بسعة 25 كغ', gallery)
+        self.assertNotIn('بسعة 20 كغ', gallery)
+        self.assertIn('نموذج بوزن 25 كغ',
+                      (ROOT / 'src/data/showcase.ts').read_text(encoding='utf-8'))
+
     def test_mixed_brand_names_are_isolated(self):
         for path in ('src/pages/[lang]/index.astro',
                      'src/pages/[lang]/gammes/[slug].astro',
