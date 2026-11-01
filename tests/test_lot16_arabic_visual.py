@@ -20,7 +20,7 @@ class ArabicVisualChecks(unittest.TestCase):
     def test_editorial_arabic_keeps_noncommercial_disclaimers(self):
         editor = (ROOT / 'src/data/editorial.ts').read_text(encoding='utf-8')
         for term in ('مجالات الاستخدام', 'شركات المقاولات', 'بيانات المنتجات',
-                     'نشرات بيانات السلامة', 'غير معتمدة', 'بانتظار الاعتماد'):
+                     'نشرات بيانات السلامة', 'غير معتمدة', 'قيد المراجعة'):
             self.assertIn(term, editor)
         self.assertIn('homeStatus:', editor)
         self.assertIn('لم يُعتمد أي منتج حقيقي', editor)
