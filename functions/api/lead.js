@@ -55,10 +55,24 @@ function validate(input) {
   return { kind: input.kind, data, token: input.token };
 }
 
+
+/** Derive a stable, non-plaintext rate-limit key for a single contact. */
+async function rateLimitKey(phone, secret) {
+  const enc = new TextEncoder();
+  const key = await crypto.subtle.importKey('raw', enc.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+  const signature = await crypto.subtle.sign('HMAC', key, enc.encode(phone.replace(/[^+0-9]/g, '')));
+  return Array.from(new Uint8Array(signature), b => b.toString(16).padStart(2, '0')).join('');
+}
+
 export async function onRequestPost({ request, env }) {
   // Explicit server-side fail-closed gate, independent of the disabled UI.
   if (env?.NEXTGEN_LEADS_ENABLED !== 'true') return reply(503, 'LEADS_NOT_ACTIVE');
   if (!env.TURNSTILE_SECRET_KEY || !env.SUPABASE_SERVICE_ROLE_KEY || !env.SUPABASE_URL || !env.NEXTGEN_PRIVACY_NOTICE_VERSION || !env.NEXTGEN_EXPECTED_HOSTNAME || !env.NEXTGEN_TURNSTILE_ACTION) return reply(503, 'NOT_CONFIGURED');
+  // A Worker Rate Limiting binding is mandatory before any future activation.
+  // No rate limiter, weak salt or error => never persist personal information.
+  if (typeof env.NEXTGEN_RATE_LIMIT_SALT !== 'string' || env.NEXTGEN_RATE_LIMIT_SALT.length < 32 ||
+      typeof env.NEXTGEN_RATE_LIMITER?.limit !== 'function') return reply(503, 'RATE_LIMIT_NOT_CONFIGURED');
+
   const requestURL = new URL(request.url);
   const origin = requestURL.origin;
   // Host binding ensures a preview or rogue hostname cannot reuse production secrets.
@@ -89,6 +103,14 @@ export async function onRequestPost({ request, env }) {
   } catch { return reply(503, 'VERIFICATION_UNAVAILABLE'); }
   // A token issued for another website must not authorize this site's API.
   if (verified?.success !== true || verified.hostname !== env.NEXTGEN_EXPECTED_HOSTNAME || verified.action !== env.NEXTGEN_TURNSTILE_ACTION) return reply(403, 'VERIFICATION_FAILED');
+
+  // Rate limiting occurs only after Turnstile: challenge failures cannot spend quotas.
+  // A keyed digest avoids sending a phone number in clear to the limiter.
+  try {
+    const key = await rateLimitKey(parsed.data.phone, env.NEXTGEN_RATE_LIMIT_SALT);
+    const permitted = await env.NEXTGEN_RATE_LIMITER.limit({ key });
+    if (permitted?.success !== true) return reply(429, 'RATE_LIMITED');
+  } catch { return reply(503, 'RATE_LIMIT_UNAVAILABLE'); }
 
   const payload = {
     type_demande: parsed.kind,
