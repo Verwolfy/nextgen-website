@@ -195,3 +195,14 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - `tests/test_private_catalogue_drafts.py` : tests de 50 IDs uniques, langue, avertissement laboratoire, absence de publication et de faux conditionnements. Tous les contrôles Astro/Chromium du commit `229cddcc949e810ba81f4c42d4b6940bdf8e30c3` sont passés.
 - Livrables hors du répertoire `public/` : HTML filtrable pour revue interne des 50 fiches, PDF imprimable de 50 pages FR/AR/EN avec logo original et mention **BROUILLON — NON HOMOLOGUÉ** ; aucun PDF officiel FT/FDS créé, aucune documentation prétendument certifiée.
 - Les 97 matières premières restent des familles candidates et ne sont pas publiées. Confirmer fournisseur, grades, emballages, résultats labo, conditionnements SKU réels, traduction professionnelle, noms/classes normatives avant tout GO public.
+
+
+## 01/11/2026 — Lot Cloudflare : prête pour connexion Git, non déployée
+
+- PR #4 fusionnée, commit `f3038b79449b85f8bccf954e081f2f7f1769b51c`.
+- Fichier `.node-version` = 22.23.4 et `public/_routes.json` inclut seulement `/api/lead`.
+- Test `scripts/check_cloudflare_release.py` valide répertoire de compilation, routes, 3 langues, aucune fiche publique, API fail-closed, zero formulaires actifs.
+- CI site post-fusion `41311184684` : **success** ; artifact GitHub privé `nextgen-cloudflare-dist-review` généré (68 fichiers, statique uniquement).
+- Procédure dédiée `docs/DEPLOIEMENT_CLOUDFLARE_RUNBOOK.md` et README mis à jour.
+- Compte Cloudflare non connecté ; aucun déploiement, DNS, secret, activation Leads ou modification Supabase n'a eu lieu.
+- **Blocage résiduel** : relier le compte Cloudflare et établir Access pour les origines pages.dev si la préproduction doit être privée, puis confirmer les comptes autorisés et contrôler l'URL réelle.

@@ -52,3 +52,12 @@ Aucun changement DNS, accès Internet Cloudflare, activation de formulaires, e-m
 - Consignes complètes et limites de validation : `docs/LOT9_ACCESS_VERIFICATION.md`.
 - **Aucun compte Cloudflare connecté, aucune Access policy vérifiée, aucun déploiement créé.** La plateforme Pages publie par défaut des URL visibles sur Internet ; `noindex` ne rend pas un site privé.
 - ERP Streamlit : PR #33 fusionnée, repère `SOF-NEXTGEN-CRM-20261101-L9` dans l'onglet CRM pour une vérification future après connexion. La présence réelle du repère en production **n'est pas confirmée**.
+
+
+## Cloudflare Pages — configuration de lancement préparée (01/11/2026)
+
+- PR [#4](https://github.com/Verwolfy/nextgen-website/pull/4) fusionnée : Node 22.23.4, Pages Functions limitées à `/api/lead`, vérification du catalogue privé/FR-AR-EN et archive `dist/` de contrôle interne.
+- CI GitHub : [build vérifié](https://github.com/Verwolfy/nextgen-website/actions/runs/41311184684). L'archive obtenue est **statique** : pour conserver la fonction `/api/lead`, utiliser la connexion GitHub Pages et le répertoire `functions/` du dépôt, et non un zip statique seul.
+- Procédure de connexion et précautions Access : [docs/DEPLOIEMENT_CLOUDFLARE_RUNBOOK.md](docs/DEPLOIEMENT_CLOUDFLARE_RUNBOOK.md).
+- Le code est **prêt à être connecté**. Aucun compte Cloudflare n'est relié à ChatGPT, aucun projet Pages ou DNS n'a été créé ici. Les previews Pages sont accessibles publiquement sans Cloudflare Access.
+- Le site reste un prototype vitrine sans produit public, sans collecte active et sans certification technique revendiquée. La validation juridique reste nécessaire pour le lancement public officiel.
