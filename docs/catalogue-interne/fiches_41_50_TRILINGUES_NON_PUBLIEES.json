@@ -1,0 +1,572 @@
+[
+  {
+    "pf_id": "PAINT-INT-S",
+    "slug": "fenek-paint-int-s",
+    "gamme": "paint",
+    "nom": "FENEK-PAINT INT-S",
+    "categorie": "Peintures intérieures",
+    "source_excel_fr": {
+      "titre": "Peinture acrylique intérieure satinée",
+      "description": "Peinture acrylique satinée lavable pour pièces de vie et zones à entretien fréquent.",
+      "normes_indicatives": "EN 13300 ; ISO 11998 ; ISO 6504-3 ; ISO 2813",
+      "exigences_non_verifiees": "Classes à déclarer : abrasion humide, pouvoir masquant, brillant (satiné), COV."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Peinture acrylique intérieure satinée",
+        "description": "Concept de produit (non validé) : Peinture acrylique satinée lavable pour pièces de vie et zones à entretien fréquent. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Peintures intérieures. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Satin interior acrylic paint",
+        "description": "Unvalidated product concept: Washable satin acrylic paint concept for living areas and frequently cleaned spaces. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Interior paints. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "دهان أكريليكي داخلي ساتان",
+        "description": "تصور منتج غير معتمد: تصور لدهان أكريليكي ساتان قابل للغسل لغرف المعيشة والمساحات كثيرة التنظيف. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الدهانات الداخلية. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Seau — volume à confirmer",
+      "en": "Pail — volume to confirm",
+      "ar": "دلو — الحجم قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 41
+  },
+  {
+    "pf_id": "PAINT-INT-WA",
+    "slug": "fenek-paint-int-wa",
+    "gamme": "paint",
+    "nom": "FENEK-PAINT INT-WA",
+    "categorie": "Peintures intérieures",
+    "source_excel_fr": {
+      "titre": "Peinture intérieure lessivable haute résistance",
+      "description": "Peinture lessivable haute résistance pour couloirs, cuisines et locaux professionnels.",
+      "normes_indicatives": "EN 13300 ; ISO 11998",
+      "exigences_non_verifiees": "Classe d'abrasion humide élevée visée (classe 1 ou 2) ; pouvoir masquant ; brillant ; COV."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Peinture intérieure lessivable haute résistance",
+        "description": "Concept de produit (non validé) : Peinture lessivable haute résistance pour couloirs, cuisines et locaux professionnels. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Peintures intérieures. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "High-durability washable interior paint",
+        "description": "Unvalidated product concept: High-resistance washable paint concept for corridors, kitchens and professional premises. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Interior paints. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "دهان داخلي قابل للغسل عالي التحمل",
+        "description": "تصور منتج غير معتمد: تصور لدهان داخلي قابل للغسل وعالي التحمل للممرات والمطابخ والمباني المهنية. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الدهانات الداخلية. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Seau — volume à confirmer",
+      "en": "Pail — volume to confirm",
+      "ar": "دلو — الحجم قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 42
+  },
+  {
+    "pf_id": "PAINT-FAC-M",
+    "slug": "fenek-paint-fac-m",
+    "gamme": "paint",
+    "nom": "FENEK-PAINT FAC-M",
+    "categorie": "Peintures de façade",
+    "source_excel_fr": {
+      "titre": "Peinture acrylique de façade, mate",
+      "description": "Peinture acrylique mate de protection et de décoration des façades.",
+      "normes_indicatives": "EN 1062-1 ; EN 1504-2 (si protection du béton)",
+      "exigences_non_verifiees": "Classes à déclarer : brillant, épaisseur sèche, perméabilité à la vapeur d'eau (V), à l'eau liquide (W), au CO₂."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Peinture acrylique de façade, mate",
+        "description": "Concept de produit (non validé) : Peinture acrylique mate de protection et de décoration des façades. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Peintures de façade. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Matt acrylic façade paint",
+        "description": "Unvalidated product concept: Matt acrylic paint concept for protection and decoration of façades. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Façade paints. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "دهان أكريليكي مطفي للواجهات",
+        "description": "تصور منتج غير معتمد: تصور لدهان أكريليكي مطفي لحماية الواجهات وتزيينها. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: دهانات الواجهات. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Seau — volume à confirmer",
+      "en": "Pail — volume to confirm",
+      "ar": "دلو — الحجم قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 43
+  },
+  {
+    "pf_id": "PAINT-FAC-EL",
+    "slug": "fenek-paint-fac-el",
+    "gamme": "paint",
+    "nom": "FENEK-PAINT FAC-EL",
+    "categorie": "Peintures de façade",
+    "source_excel_fr": {
+      "titre": "Peinture de façade élastomère (pontage des microfissures)",
+      "description": "Revêtement élastomère de façade qui ponte les microfissures.",
+      "normes_indicatives": "EN 1062-1 ; EN 1062-7 (pontage de fissures) ; EN 1504-2",
+      "exigences_non_verifiees": "Classe de pontage de fissures (A1 à A5) à déclarer ; perméabilité à l'eau et à la vapeur ; adhérence ≥ 0,8 N/mm²."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Peinture de façade élastomère (pontage des microfissures)",
+        "description": "Concept de produit (non validé) : Revêtement élastomère de façade qui ponte les microfissures. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Peintures de façade. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Elastomeric façade paint for hairline cracks",
+        "description": "Unvalidated product concept: Elastomeric façade coating concept intended to bridge hairline cracks. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Façade paints. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "دهان واجهات إيلاستوميري للشقوق الدقيقة",
+        "description": "تصور منتج غير معتمد: تصور لطلاء واجهات مرن يهدف إلى تغطية الشقوق الدقيقة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: دهانات الواجهات. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Seau — volume à confirmer",
+      "en": "Pail — volume to confirm",
+      "ar": "دلو — الحجم قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 44
+  },
+  {
+    "pf_id": "PAINT-FAC-SX",
+    "slug": "fenek-paint-fac-sx",
+    "gamme": "paint",
+    "nom": "FENEK-PAINT FAC-SX",
+    "categorie": "Peintures de façade",
+    "source_excel_fr": {
+      "titre": "Peinture de façade siloxane (hydrofuge, respirante)",
+      "description": "Peinture siloxane hydrofuge et respirante pour façades minérales.",
+      "normes_indicatives": "EN 1062-1 ; EN ISO 7783 ; EN 1062-3",
+      "exigences_non_verifiees": "Perméabilité à la vapeur élevée (V1 : Sd < 0,14 m) ; faible perméabilité à l'eau liquide (W3 : w ≤ 0,1 kg/(m²·h^0,5))."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Peinture de façade siloxane (hydrofuge, respirante)",
+        "description": "Concept de produit (non validé) : Peinture siloxane hydrofuge et respirante pour façades minérales. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Peintures de façade. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Water-repellent breathable siloxane façade paint",
+        "description": "Unvalidated product concept: Siloxane façade paint concept intended to repel water while allowing mineral substrates to breathe. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Façade paints. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "دهان واجهات سيلوكسان طارد للماء ونفّاذ للبخار",
+        "description": "تصور منتج غير معتمد: تصور لدهان واجهات سيلوكسان يهدف إلى طرد الماء مع السماح بنفاذ بخار الماء عبر الأسطح المعدنية. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: دهانات الواجهات. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Seau — volume à confirmer",
+      "en": "Pail — volume to confirm",
+      "ar": "دلو — الحجم قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 45
+  },
+  {
+    "pf_id": "PAINT-PRIM-A",
+    "slug": "fenek-paint-prim-a",
+    "gamme": "paint",
+    "nom": "FENEK-PAINT PRIM-A",
+    "categorie": "Sous-couches",
+    "source_excel_fr": {
+      "titre": "Sous-couche d'accrochage acrylique",
+      "description": "Sous-couche d'accrochage et d'uniformisation avant peinture.",
+      "normes_indicatives": "Pas de norme produit dédiée ; EN 1542 (adhérence)",
+      "exigences_non_verifiees": "Adhérence et compatibilité avec le système de finition ; pouvoir de pénétration et temps de recouvrement à définir."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Sous-couche d'accrochage acrylique",
+        "description": "Concept de produit (non validé) : Sous-couche d'accrochage et d'uniformisation avant peinture. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Sous-couches. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Acrylic adhesion primer",
+        "description": "Unvalidated product concept: Acrylic primer concept for adhesion and substrate uniformity before painting. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Primers. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "طبقة تأسيس أكريليكية للالتصاق",
+        "description": "تصور منتج غير معتمد: تصور لطبقة تأسيس أكريليكية لتعزيز الالتصاق وتوحيد امتصاص السطح قبل الدهان. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الطبقات التأسيسية. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Seau — volume à confirmer",
+      "en": "Pail — volume to confirm",
+      "ar": "دلو — الحجم قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 46
+  },
+  {
+    "pf_id": "PAINT-PRIM-FX",
+    "slug": "fenek-paint-prim-fx",
+    "gamme": "paint",
+    "nom": "FENEK-PAINT PRIM-FX",
+    "categorie": "Sous-couches",
+    "source_excel_fr": {
+      "titre": "Fixateur de fond",
+      "description": "Fixateur de fond pour consolider les supports poudreux ou très absorbants.",
+      "normes_indicatives": "Pas de norme produit dédiée ; EN 1542",
+      "exigences_non_verifiees": "Profondeur de pénétration, consolidation du support et adhérence à définir par le labo ; COV si base solvant."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Fixateur de fond",
+        "description": "Concept de produit (non validé) : Fixateur de fond pour consolider les supports poudreux ou très absorbants. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Sous-couches. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Substrate consolidating primer",
+        "description": "Unvalidated product concept: Consolidating primer concept for powdery or highly absorbent substrates. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Primers. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "مثبّت للأسطح المسامية",
+        "description": "تصور منتج غير معتمد: تصور لطبقة تأسيس لتقوية الأسطح المتربة أو شديدة الامتصاص. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الطبقات التأسيسية. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Seau — volume à confirmer",
+      "en": "Pail — volume to confirm",
+      "ar": "دلو — الحجم قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 47
+  },
+  {
+    "pf_id": "PAINT-TXT-F",
+    "slug": "fenek-paint-txt-f",
+    "gamme": "paint",
+    "nom": "FENEK-PAINT TXT-F",
+    "categorie": "Revêtements décoratifs",
+    "source_excel_fr": {
+      "titre": "Revêtement décoratif texturé fin",
+      "description": "Revêtement mural texturé fin décoratif et protecteur.",
+      "normes_indicatives": "EN 15824 (enduits extérieurs à liants organiques)",
+      "exigences_non_verifiees": "Adhérence, absorption d'eau capillaire, perméabilité à la vapeur d'eau, réaction au feu : classes à déclarer."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Revêtement décoratif texturé fin",
+        "description": "Concept de produit (non validé) : Revêtement mural texturé fin décoratif et protecteur. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Revêtements décoratifs. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Fine textured decorative wall coating",
+        "description": "Unvalidated product concept: Fine-textured decorative and protective wall coating concept. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Decorative coatings. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "طلاء جدران زخرفي ناعم الملمس",
+        "description": "تصور منتج غير معتمد: تصور لطلاء جدران زخرفي ذي ملمس ناعم للحماية والتزيين. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الطلاءات الزخرفية. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Seau — volume à confirmer",
+      "en": "Pail — volume to confirm",
+      "ar": "دلو — الحجم قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 48
+  },
+  {
+    "pf_id": "PAINT-SOL-A",
+    "slug": "fenek-paint-sol-a",
+    "gamme": "paint",
+    "nom": "FENEK-PAINT SOL-A",
+    "categorie": "Peintures de sol",
+    "source_excel_fr": {
+      "titre": "Peinture de sol (parkings, locaux)",
+      "description": "Peinture de sol résistante à l'abrasion pour parkings, garages et locaux techniques.",
+      "normes_indicatives": "EN 1504-2 ; EN ISO 5470-1 (abrasion) ; EN 13036-4 (glissance)",
+      "exigences_non_verifiees": "Résistance à l'abrasion (Taber) ; adhérence ≥ 1,5 N/mm² (avec trafic) ; antidérapance selon l'usage."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Peinture de sol (parkings, locaux)",
+        "description": "Concept de produit (non validé) : Peinture de sol résistante à l'abrasion pour parkings, garages et locaux techniques. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Peintures de sol. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Floor paint for car parks and premises",
+        "description": "Unvalidated product concept: Abrasion-resistant floor paint concept for garages, car parks and technical rooms. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Floor paints. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "دهان أرضيات للمواقف والمرافق",
+        "description": "تصور منتج غير معتمد: تصور لدهان أرضيات يهدف إلى مقاومة الاحتكاك في المرائب والمواقف والغرف التقنية. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: دهانات الأرضيات. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Seau — volume à confirmer",
+      "en": "Pail — volume to confirm",
+      "ar": "دلو — الحجم قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 49
+  },
+  {
+    "pf_id": "PAINT-ENT-L",
+    "slug": "fenek-paint-ent-l",
+    "gamme": "paint",
+    "nom": "FENEK-PAINT ENT-L",
+    "categorie": "Enduits de lissage",
+    "source_excel_fr": {
+      "titre": "Enduit de lissage en pâte",
+      "description": "Enduit de lissage en pâte prêt à l'emploi pour finition des murs intérieurs avant peinture.",
+      "normes_indicatives": "Pas de norme harmonisée dédiée ; EN 1542 (adhérence)",
+      "exigences_non_verifiees": "Adhérence, retrait, facilité de ponçage et temps de séchage à définir par le labo."
+    },
+    "contenu": {
+      "fr": {
+        "accroche": "Enduit de lissage en pâte",
+        "description": "Concept de produit (non validé) : Enduit de lissage en pâte prêt à l'emploi pour finition des murs intérieurs avant peinture. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Enduits de lissage. Validation technique requise."
+        ]
+      },
+      "en": {
+        "accroche": "Ready-to-use smoothing filler",
+        "description": "Unvalidated product concept: Ready-to-use paste smoothing compound concept for interior walls before painting. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Smoothing fillers. Technical approval pending."
+        ]
+      },
+      "ar": {
+        "accroche": "معجون تنعيم جاهز للاستعمال",
+        "description": "تصور منتج غير معتمد: تصور لمعجون تنعيم جاهز للاستعمال لتشطيب الجدران الداخلية قبل الدهان. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: معاجين التنعيم. الاعتماد التقني لم يصدر بعد."
+        ]
+      }
+    },
+    "packaging_proposition_NON_VALIDE": {
+      "fr": "Seau — format à confirmer",
+      "en": "Pail — size to confirm",
+      "ar": "دلو — الحجم قيد التحديد"
+    },
+    "statuts": {
+      "produit_erp_actif": true,
+      "statut_commercial": "valide",
+      "statut_technique": "brouillon",
+      "produit_reel_confirme": false,
+      "publie": false,
+      "fiche_technique_validee": false,
+      "fds_validee": false
+    },
+    "assets": {
+      "image": "à produire et vérifier",
+      "modele_3d": "maquette générique seulement",
+      "fiche_technique": "brouillon gabarit",
+      "fds": "gabarit non officiel"
+    },
+    "ordre": 50
+  }
+]
