@@ -1,0 +1,21 @@
+---
+import { ranges, rangeName, rangeColor, messages, type Lang } from '../data/site';
+import { editorialCopy } from '../data/editorial';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = messages[lang];
+const edit = editorialCopy[lang];
+---
+<section aria-labelledby="ranges-intro">
+  <div class="section-head"><h2 id="ranges-intro">{t.ourRanges}</h2><p>{edit.rangesLead}</p></div>
+  <div class="range-overview">
+    {ranges.map((range, index) => <a class="range-overview-card" href={'/'+lang+'/gammes/'+range+'/'} style={'--range-color:'+rangeColor[range]}>
+      <span class="range-number" aria-hidden="true">{String(index+1).padStart(2,'0')}</span>
+      <span class="bar" aria-hidden="true"></span>
+      <h3>{rangeName[range]}</h3><p>{t.ranges[range]}</p>
+      <span class="range-topics">{edit.rangeTopics[range].map(topic => <span class="range-topic">{topic}</span>)}</span>
+      <span class="range-more">{edit.topicsHeading}<span aria-hidden="true"> ↗</span></span>
+    </a>)}
+  </div>
+  <p class="editorial-caution" role="note">{edit.rangeDisclaimer}</p>
+</section>
