@@ -128,3 +128,15 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Second commit documentaire `4d3701d2d54ee489912f901132df3ca4580703fd` ; aucun déploiement Cloudflare/DNS, aucun formulaire actif, aucun envoi d'e-mail, aucun produit fictif publié.
 - Point critique inchangé : `service_role` conserve des droits `DELETE` et `TRUNCATE` par héritage Supabase. Changement ACL seulement après autorisation SQL distincte.
 - Prochain lot : panneau CRM ERP en lecture seule puis workflow de qualification à double contrôle ; validation juridique, anti-abus, préproduction et tests réels avant toute activation commerciale.
+
+
+## 1 novembre 2026 — Lot 5 : onglet NextGen dans le CRM ERP
+
+- ERP : \`Verwolfy/erp-mortier\`, PR [#31](https://github.com/Verwolfy/erp-mortier/pull/31) **fusionnée** sur \`main\`, commit \`6a64c882f00ce6f295e98eead3ba856fe3a6e67e\`.
+- Nouvel onglet « Demandes NextGen » ajouté dans \`modules/crm/views.py\`. Service \`modules/crm/site_requests.py\` en lecture seule.
+- **Activation BLOQUÉE par défaut** : \`[nextgen] crm_inbox_read_enabled=true\` dans les secrets Streamlit sera nécessaire **après** validation de l'information juridique, des permissions et des tests d'exploitation. Le flag n'a pas été configuré.
+- Requête privée limitée à \`demande_id,type_demande,statut,cree_le\` et 100 lignes visibles ; aucun champ de coordonnées personnelles demandé, aucun client ou opportunité créé.
+- Sécurité : revalidation du compte actif depuis \`users\`, droit \`CRM/lecture\` frais, refus sans session et sur erreur, aucun SQL et aucune écriture CRM.
+- CI ERP ciblée : https://github.com/Verwolfy/erp-mortier/actions/runs/41293090843 (31 tests réussis).
+- CI ERP complète : https://github.com/Verwolfy/erp-mortier/actions/runs/41293155671 (**2102 tests réussis**, 2 avertissements non bloquants).
+- Base Supabase PRODUCTION inchangée. Le site Web Cloudflare, les formulaires et la synchronisation publique restent inactifs. Prochaine phase : notice + base légale et conservation validées ; audit accès détaillés ; workflow de qualification humaine ; tests en préproduction.
