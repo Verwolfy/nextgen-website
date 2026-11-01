@@ -1,0 +1,44 @@
+name: NextGen - preproduction build only (NO DEPLOY)
+on:
+  workflow_dispatch:
+  push:
+    branches: ["feat/lot8-preproduction-gates-20261101"]
+  pull_request:
+    paths:
+      - "public/_headers"
+      - "scripts/preprod_static_audit.py"
+      - ".github/workflows/preprod-build-only.yml"
+      - "docs/LOT8_CLOUDFLARE_PREPROD.md"
+permissions:
+  contents: read
+jobs:
+  preproduction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Build noindex draft
+        run: npm run build
+      - name: Verify all static paths and disabled forms
+        run: python scripts/check_built_pages.py
+      - name: Verify preview headers, privacy and hashed manifest
+        run: python scripts/preprod_static_audit.py
+      - name: Confirm backend defaults to 503 (all network mocked)
+        run: node --test tests/lead_endpoint.test.mjs
+      - name: Upload internal manifest only (NEVER deploy)
+        uses: actions/upload-artifact@v4
+        with:
+          name: nextgen-private-preprod-manifest
+          path: .ci-artifacts/preprod-contents-manifest.json
+          retention-days: 7
+          if-no-files-found: error
