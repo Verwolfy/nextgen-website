@@ -47,6 +47,15 @@ def check() -> None:
                         assert page.locator("h1").count() == 1, path
                         assert page.locator("main").count() == 1, path
                         assert page.locator("form").count() == 0, path
+                        if section == "":
+                            assert page.locator(".hero-status[role='note']").count() == 1, path
+                            assert page.locator(".hero-mascot-card img").count() == 1, path
+                            assert page.locator(".home-approach .editorial-caution").count() == 1, path
+                            assert page.locator(".home-approach .chip").count() == 3, path
+                            assert page.locator(".hero .btn-outline").get_attribute("href") == "/"+lang+"/contact/", path
+                            assert page.locator(".hero-mascot-card").evaluate(
+                                "e => getComputedStyle(e).borderRadius !== '0px'"
+                            ), path
                         if section == "gammes":
                             assert page.locator(".range-overview-card").count() == 4, path
                             assert page.locator(".editorial-caution").count() >= 1, path
@@ -110,6 +119,8 @@ def check() -> None:
                 assert tiny.locator(".mobile-links").is_visible()
                 tiny_width = tiny.evaluate("Math.ceil(document.documentElement.scrollWidth - innerWidth)")
                 assert tiny_width <= 4, f"320px navigation overflow ({lang}): {tiny_width}"
+                tiny.screenshot(path=str(SHOTS / (lang + "-mobile-320-home.png")), full_page=True)
+                snapshots += 1
                 tiny.close()
             browser.close()
     finally:

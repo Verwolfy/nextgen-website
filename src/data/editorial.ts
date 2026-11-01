@@ -3,6 +3,11 @@ import type { Lang, Range } from './site';
 // Editorial taxonomy, NOT approved products, performance claims or laboratory results.
 type RangeTopics = Record<Range, readonly [string, string, string]>;
 type EditorialCopy = {
+  marketTag: string;
+  homeStatus: string;
+  homeContact: string;
+  homeApproachTag: string;
+  mascotAlt: string;
   rangesLead: string;
   topicsHeading: string;
   rangeDisclaimer: string;
@@ -29,6 +34,11 @@ type EditorialCopy = {
 };
 export const editorialCopy: Record<Lang, EditorialCopy> = {
   fr: {
+    marketTag: 'NextGen Building Solutions · Algérie',
+    homeStatus: 'Site en préparation : aucun produit réel approuvé pour publication.',
+    homeContact: 'Nous contacter',
+    homeApproachTag: 'Démarche en préparation',
+    mascotAlt: 'Nexo, mascotte NextGen',
     rangesLead: 'Parcourez les quatre familles FENEK. Les rubriques ci-dessous présentent des domaines de travail, pas des références commercialisées.',
     topicsHeading: 'Domaines présentés',
     rangeDisclaimer: 'Présentation indicative de la gamme en préparation : aucun SKU ni performance produit n’est validé pour publication.',
@@ -63,6 +73,11 @@ export const editorialCopy: Record<Lang, EditorialCopy> = {
     resourceExplore: 'Ouvrir la galerie 3D',
   },
   ar: {
+    marketTag: 'NextGen Building Solutions · الجزائر',
+    homeStatus: 'الموقع قيد الإعداد: لم يُعتمد أي منتج حقيقي للنشر بعد.',
+    homeContact: 'تواصل معنا',
+    homeApproachTag: 'منهجية قيد الإعداد',
+    mascotAlt: 'نيكسو، شخصية نكست جن',
     rangesLead: 'تعرّف إلى مجموعات FENEK الأربع. تعرض الأقسام مجالات عامة قيد التحضير، وليست منتجات معتمدة للبيع.',
     topicsHeading: 'المجالات المعروضة',
     rangeDisclaimer: 'عرض توضيحي لمجموعة قيد التطوير: لم تتم الموافقة على أي مرجع منتج أو أداء تقني للنشر.',
@@ -97,6 +112,11 @@ export const editorialCopy: Record<Lang, EditorialCopy> = {
     resourceExplore: 'فتح معرض النماذج ثلاثية الأبعاد',
   },
   en: {
+    marketTag: 'NextGen Building Solutions · Algeria',
+    homeStatus: 'Website in preparation: no verified product is approved for publication.',
+    homeContact: 'Contact us',
+    homeApproachTag: 'Approach in development',
+    mascotAlt: 'Nexo, NextGen mascot',
     rangesLead: 'Explore the four FENEK families. These are editorial categories, not approved commercial products.',
     topicsHeading: 'Areas covered',
     rangeDisclaimer: 'Illustrative range in development: no product SKU or performance claim has been cleared for publication.',

@@ -135,3 +135,28 @@ h1,h2,h3,.page-head p,.showcase-card{overflow-wrap:anywhere;min-width:0}
  .about-process-head{margin-top:44px}
 }
 @media(prefers-reduced-motion:reduce){.range-overview-card{transition:none}.range-overview-card:hover{transform:none}}
+
+
+/* Lot 13: visual review of 21 internal Chromium screenshots; keep original brand assets untouched. */
+.hero-mascot-card{position:relative;z-index:1;display:grid;place-items:center;width:min(320px,100%);margin:0;padding:16px;background:#fff;border:1px solid #d1e2e7;border-radius:25px;box-shadow:0 22px 55px #040f24a6;transform:rotate(-2deg)}
+.hero-mascot-card img{display:block;width:100%;max-height:385px;height:auto;object-fit:contain;border-radius:12px}
+.hero-art::before{inset:4%;border:1px solid #82aaaf6b;transform:rotate(8deg);pointer-events:none}
+.hero-status{display:flex;align-items:flex-start;gap:10px;max-width:64ch;margin:20px 0 0;color:#e4f2ef!important;font-size:.92rem!important;line-height:1.45;padding:13px 16px;border-radius:9px;border:1px solid #7ca9a56a;background:#0d2744}
+.hero-status-mark{display:inline-block;flex:0 0 9px;width:9px;height:9px;border-radius:50%;background:#59d6a9;margin-top:.4em}
+.home-approach-tag{color:#06794d}
+.home-approach p{color:#425c69}
+.home-approach .editorial-caution{margin-top:23px}
+.home-approach-portrait{display:grid;place-items:center;border-radius:24px;min-height:365px;padding:20px;background:linear-gradient(145deg,#d8e9e6,#f4f8f6);border:1px solid #c8dedd}
+.home-approach-portrait .mascot{width:min(240px,100%);height:auto;max-height:350px;border-radius:19px;background:white;box-shadow:0 12px 30px #091b3520}
+@media(max-width:980px){
+ .hero-mascot-card{width:min(310px,82%);padding:13px}
+ .hero-art::before{inset:9%}
+ .home-approach-portrait{min-height:300px}
+}
+@media(max-width:580px){
+ .hero-mascot-card{width:min(285px,80%);border-radius:21px;padding:10px;transform:rotate(-1deg)}
+ .hero-mascot-card img{max-height:265px}
+ .hero-status{font-size:.85rem!important}
+ .home-approach-portrait{min-height:270px}
+}
+@media(prefers-reduced-motion:reduce){.hero-mascot-card{transform:none}}
