@@ -2,11 +2,12 @@
 import Layout from '../../layouts/Layout.astro';
 import { languages, messages, ranges, rangeName,rangeColor,type Lang } from '../../data/site';
 import { showcaseModels, showcaseCopy } from '../../data/showcase';
+import { editorialCopy } from '../../data/editorial';
 export function getStaticPaths(){return languages.map(lang=>({params:{lang}}))}
-const lang=Astro.params.lang as Lang;const t=messages[lang];const preview=showcaseCopy[lang];
+const lang=Astro.params.lang as Lang;const t=messages[lang];const preview=showcaseCopy[lang];const edit=editorialCopy[lang];
 ---
 <Layout lang={lang} title={t.welcome} description={t.intro}>
-<section class="hero"><div class="container hero-wrap"><div><span class="eyebrow">NextGen Building Solutions · Algérie</span><h1>{t.welcome}</h1><p>{t.intro}</p><div class="actions"><a class="btn" href={`/${lang}/gammes/`}>{t.explore}</a><a class="btn btn-outline" href={`/${lang}/contact/`}>{t.quote}</a></div></div><div class="hero-art"><img src="/images/Nexo-Geno.webp" alt={t.mascotsAlt} width="800" height="1390" loading="eager" /></div></div></section>
+<section class="hero"><div class="container hero-wrap"><div><span class="eyebrow">{edit.marketTag}</span><h1>{t.welcome}</h1><p>{t.intro}</p><p class="hero-status" role="note"><span class="hero-status-mark" aria-hidden="true"></span>{edit.homeStatus}</p><div class="actions"><a class="btn" href={`/${lang}/gammes/`}>{t.explore}</a><a class="btn btn-outline" href={`/${lang}/contact/`}>{edit.homeContact}</a></div></div><div class="hero-art"><figure class="hero-mascot-card"><img src="/images/Nexo-Geno.webp" alt={t.mascotsAlt} width="800" height="1390" loading="eager" /></figure></div></div></section>
 <section class="section"><div class="container"><div class="section-head"><span class="eyebrow">FENEK COLLECTION</span><h2>{t.ourRanges}</h2><p>{t.rangesIntro}</p></div><div class="grid">{ranges.map(g=><a class="card" href={`/${lang}/gammes/${g}/`}><div class="bar" style={`background:${rangeColor[g]}`}></div><h3>{rangeName[g]}</h3><p>{t.ranges[g]}</p><span class="arrow" aria-hidden="true">↗</span></a>)}</div></div></section>
 <section class="section showcase-home" aria-labelledby="showcase-title"><div class="container">
   <div class="section-head"><span class="eyebrow">NEXTGEN · 3D</span><h2 id="showcase-title">{preview.title}</h2><p>{preview.intro}</p></div>
@@ -18,5 +19,15 @@ const lang=Astro.params.lang as Lang;const t=messages[lang];const preview=showca
     </a>)}
   </div>
 </div></section>
-<section class="section pale"><div class="container columns"><div><span class="eyebrow">LAB · FIELD · TRAINING</span><h2>{t.services}</h2><p>{t.quality}</p><div class="info-list">{[t.laboratory,t.technicalSupport,t.fieldSupport,t.training].map(v=><span class="chip">{v}</span>)}</div><div class="actions"><a class="btn" href={`/${lang}/a-propos/`}>{t.menu['a-propos']}</a></div></div><img class="mascot" src="/images/Nexo.webp" alt="Nexo, mascotte technique NextGen" width="750" height="1301" loading="lazy" /></div></section>
+<section class="section pale home-approach"><div class="container columns">
+  <div>
+    <span class="eyebrow home-approach-tag">{edit.homeApproachTag}</span>
+    <h2>{edit.aboutHeading}</h2>
+    <p>{edit.aboutLead}</p>
+    <div class="info-list">{edit.aboutSteps.map(step=><span class="chip">{step}</span>)}</div>
+    <p class="editorial-caution" role="note">{edit.aboutNotice}</p>
+    <div class="actions"><a class="btn" href={'/'+lang+'/a-propos/'}>{t.menu['a-propos']}</a></div>
+  </div>
+  <div class="home-approach-portrait"><img class="mascot" src="/images/Nexo.webp" alt={edit.mascotAlt} width="750" height="1301" loading="lazy" /></div>
+</div></section>
 </Layout>
