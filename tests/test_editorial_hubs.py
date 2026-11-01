@@ -9,10 +9,12 @@ ROOT = Path(__file__).resolve().parents[1]
 class TestEditorialHubs(unittest.TestCase):
     def test_localized_taxonomy_has_no_sku_or_phantom_datasheets(self):
         data = (ROOT / "src/data/editorial.ts").read_text(encoding="utf-8")
-        for key in ("fr:", "ar:", "en:", "rangeTopics:", "resourcePending:",
-                    "resourceTechTitle:", "resourceSafetyTitle:", "resource3dTitle:",
-                    "aboutNotice:", "rangeDisclaimer:"):
-            self.assertGreaterEqual(data.count(key), 3 if key != "rangeTopics:" else 4, key)
+        for key in ("fr:", "ar:", "en:"):
+            self.assertEqual(data.count(key), 1, key)
+        for key in ("rangeTopics:", "resourcePending:", "resourceTechTitle:",
+                    "resourceSafetyTitle:", "resource3dTitle:", "aboutNotice:",
+                    "rangeDisclaimer:"):
+            self.assertGreaterEqual(data.count(key), 3, key)
         for key in ("bond:", "proof:", "flow:", "paint:"):
             self.assertEqual(data.count(key), 3, key)
         self.assertNotIn("PF-001", data)
@@ -20,7 +22,7 @@ class TestEditorialHubs(unittest.TestCase):
         self.assertNotIn("ISO 9001", data)
         self.assertNotIn("prix_vente", data)
         self.assertIn("not approved", data)
-        self.assertIn("غير معتمدة", data)
+        self.assertIn("بانتظار الاعتماد", data)
 
     def test_hubs_use_components_without_forms_or_download_claims(self):
         page = (ROOT / "src/pages/[lang]/[section].astro").read_text(encoding="utf-8")
@@ -46,7 +48,7 @@ class TestEditorialHubs(unittest.TestCase):
         self.assertIn("edit.rangeDisclaimer", page)
         self.assertIn("items.length===0", page)
         self.assertIn("t.emptyInfo", page)
-        self.assertIn("rangeDetail", page.replace("range-detail", "rangeDetail"))
+        self.assertIn("range-detail", page)
         self.assertNotIn("PF-001", page)
         self.assertNotIn("<form", page)
 
