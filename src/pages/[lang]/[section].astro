@@ -6,7 +6,7 @@ import {contactCopy} from '../../data/contact-channels';
 import RangeOverview from '../../components/RangeOverview.astro';
 import ResourcesHub from '../../components/ResourcesHub.astro';
 import AboutStory from '../../components/AboutStory.astro';
-import {brand,languages,messages,sections,rangeName,type Lang,type Section} from '../../data/site';
+import {brand,brandLocation,languages,messages,sections,rangeName,type Lang,type Section} from '../../data/site';
 import {products} from '../../lib/products';
 export function getStaticPaths(){return languages.flatMap(lang=>sections.map(section=>({params:{lang,section}})))}
 const lang=Astro.params.lang as Lang;
@@ -25,7 +25,7 @@ const description=section==='catalogue'?t.rangesIntro:section==='distributeurs'?
 {section==='ressources'&&<ResourcesHub lang={lang} />}
 {section==='a-propos'&&<AboutStory lang={lang} />}
 {section==='contact'&&<><ContactChannels lang={lang} /><LeadForm lang={lang} kind="quote" /></>}
-{section==='mentions-legales'&&<div class="notice"><p>{t.legalInfo}</p><p>NextGen Building Solutions · {brand.location}</p></div>}
+{section==='mentions-legales'&&<div class="notice"><p>{t.legalInfo}</p><p><bdi dir="ltr">NextGen Building Solutions</bdi> · {brandLocation[lang]}</p></div>}
 {section==='confidentialite'&&<div class="notice"><p>{t.privacyInfo}</p><p><a href={`mailto:${brand.email}`}>{brand.email}</a></p></div>}
 </div></div>
 </Layout>

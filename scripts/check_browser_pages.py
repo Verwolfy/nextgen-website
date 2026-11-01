@@ -58,7 +58,22 @@ def check() -> None:
                             ), path
                         if section == "gammes":
                             assert page.locator(".range-overview-card").count() == 4, path
+                            assert page.locator(".range-overview-card h3 bdi[dir='ltr']").count() == 4, path
+                            if lang == "ar":
+                                assert "الفئات التقنية" in page.locator("h1").inner_text(), path
+                                assert "الملاط" in page.locator(".range-overview").inner_text(), path
                             assert page.locator(".editorial-caution").count() >= 1, path
+                        if section == "emballages":
+                            assert page.locator("model-viewer").count() == 5, path
+                            posters = page.locator("button[slot='poster'] img")
+                            assert posters.count() == 5, path
+                            # Native img tag inside the local poster slot must render BEFORE the 3D GLB is loaded.
+                            for i in range(posters.count()):
+                                posters.nth(i).scroll_into_view_if_needed()
+                                assert posters.nth(i).evaluate("im => im.complete && im.naturalWidth > 0"), path
+                            assert page.locator("model-viewer[reveal='interaction']").count() == 5, path
+                            assert page.locator("button[slot='poster']").count() == 5, path
+                            page.evaluate("window.scrollTo(0,0)")
                         if section == "a-propos":
                             assert page.locator(".about-step").count() == 3, path
                             assert page.locator(".editorial-caution").count() >= 1, path
@@ -92,7 +107,9 @@ def check() -> None:
                                 .slice(0,8)
                                 .map(e => ({tag:e.tagName, cls:String(e.className).slice(0,50), width:Math.round(e.getBoundingClientRect().width)}))""")
                             raise AssertionError(f"Horizontal overflow: {path} {width}px: {diff}px; elements={overflowing}")
-                        if section in ("", "contact") or (size == "mobile" and section in ("gammes", "a-propos", "ressources", "distributeurs")):
+                        if (section in ("", "contact")
+                            or (size == "mobile" and section in ("gammes", "a-propos", "ressources", "distributeurs", "emballages"))
+                            or (size == "desktop" and lang == "ar" and section in ("gammes", "a-propos", "emballages"))):
                             page.screenshot(path=str(SHOTS / (lang + "-" + size + "-" + (section or "home") + ".png")), full_page=True)
                             snapshots += 1
                     # Explicitly follow the language navigation to another localized page.

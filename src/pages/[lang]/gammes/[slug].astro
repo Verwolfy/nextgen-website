@@ -7,9 +7,9 @@ export function getStaticPaths(){return languages.flatMap(lang=>ranges.map(slug=
 const lang=Astro.params.lang as Lang;const slug=Astro.params.slug as Range;const t=messages[lang];const edit=editorialCopy[lang];const items=products.filter(p=>p.gamme===slug);
 ---
 <Layout lang={lang} title={rangeName[slug]} description={t.ranges[slug]}>
-<div class="page-head"><div class="container"><span class="eyebrow">FENEK / {slug.toUpperCase()}</span><h1>{rangeName[slug]}</h1><p>{t.ranges[slug]}</p></div></div>
+<div class="page-head"><div class="container"><span class="eyebrow">FENEK / {slug.toUpperCase()}</span><h1><bdi dir="ltr">{rangeName[slug]}</bdi></h1><p>{t.ranges[slug]}</p></div></div>
 <section class="section"><div class="container">
-  <div class="breadcrumbs"><a href={'/'+lang+'/gammes/'}>{edit.rangeBack}</a> / {rangeName[slug]}</div>
+  <div class="breadcrumbs"><a href={'/'+lang+'/gammes/'}>{edit.rangeBack}</a> / <bdi dir="ltr">{rangeName[slug]}</bdi></div>
   <div class="range-detail" style={'--range-color:'+rangeColor[slug]}>
     <div class="range-detail-copy">
       <span class="range-detail-eyebrow">FENEK / {slug.toUpperCase()}</span>
@@ -18,7 +18,7 @@ const lang=Astro.params.lang as Lang;const slug=Astro.params.slug as Range;const
       <p class="editorial-caution" role="note">{edit.rangeDisclaimer}</p>
       <div class="actions"><a class="btn" href={'/'+lang+'/emballages/'}>{edit.rangeGallery}</a><a class="btn btn-muted" href={'/'+lang+'/contact/'}>{edit.rangeContact}</a></div>
     </div>
-    <div class="range-identity" aria-hidden="true"><span>FENEK</span><strong>{slug.toUpperCase()}</strong></div>
+    <div class="range-identity" aria-hidden="true"><span>FENEK</span><strong dir="ltr">{slug.toUpperCase()}</strong></div>
   </div>
   <div class="range-products">{items.length===0?<div class="notice"><h2>{t.empty}</h2><p>{t.emptyInfo}</p></div>:<div class="products-grid">{items.map(p=><a href={'/'+lang+'/produits/'+p.slug+'/'} class="product"><span class="bar" style={'display:block;background:'+rangeColor[slug]+';height:5px;width:70px'}></span><h3>{p.nom}</h3><p>{p.contenu[lang].accroche}</p></a>)}</div>}</div>
 </div></section>

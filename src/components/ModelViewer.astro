@@ -35,7 +35,10 @@ const help={fr:'Glisser pour tourner · défiler ou pincer pour zoomer',ar:'اس
     touch-action="pan-y"
     aria-label={label}
   >
-    <button slot="poster" class="model-load" type="button">{buttonText}</button>
+    <button slot="poster" class="model-load model-load-preview" type="button" aria-label={buttonText}>
+      {poster&&<img src={poster} alt="" loading="lazy" width="680" height="680" />}
+      <span class="model-load-label">{buttonText}</span>
+    </button>
     <div slot="progress-bar" class="model-progress" aria-hidden="true"></div>
   </model-viewer>
   <p class="model-hint">{help}</p>
