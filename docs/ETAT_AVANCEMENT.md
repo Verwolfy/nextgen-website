@@ -1,3 +1,16 @@
+## 1er novembre 2026 — Lot 20 : catalogue de 50 fiches acceptées pour présentation
+
+- Approbation **éditoriale provisoire** demandée par l'utilisateur : les 50 références du classeur Excel et de `public.site_produits` ont été acceptées pour alimenter le site, **révisables ultérieurement**. Ne pas assimiler cet accord à une validation technique ou commerciale.
+- **Supabase PROD** projet `wenydirqtmkywbxbxfal` : ajout d'un attribut JSON `contenu.validation_editoriale_projet` sur **50/50** enregistrements, statut `accepte_pour_presentation_provisoire`, date 2026-11-01, révocable. Vérification SQL après écriture : **50 accords, 0 produits confirmés, 0 publiés**, aucun changement RLS, schéma, FT/FDS ou sécurité.
+- [PR #16](https://github.com/Verwolfy/nextgen-website/pull/16) **fusionnée** sur `main` au SHA `bc333bf5f208263da130af155ec0dbdc52861ce6`. Elle ajoute les 50 produits de projet en catalogue visible sur les trois langues FR/AR/EN, 150 pages de détail, descriptions spécifiques, formats provenant de SKU Supabase, brouillons FR avec `[valeur à confirmer]`, guides indicatifs AR/EN sans dosage inventé, avertissements non homologués et images génériques.
+- Une référence `PROOF-PU-SEAL` n'a pas de format de conditionnement ERP défini : la page signale ce manque, sans inventer de poids. Les formats affichés sont des hypothèses de référentiel, pas des stocks disponibles.
+- Code `src/data/catalogue-projets.json`, `src/lib/catalogue-projets.ts`, `src/data/catalogue-content.ts`, `src/components/ConceptCatalogue.astro`, `src/pages/[lang]/catalogue/[slug].astro`, CSS, recette Chromium élargie, `tests/test_lot20_catalogue_projects.py`, documentation `docs/LOT20_CATALOGUE_50_PRESENTATION.md`.
+- **2 CI sur PR réussies** : [build Astro/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41354741585) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41354741729). CI du dernier `main` à contrôler.
+- Les **50 photos individuelles réalistes** restent à intégrer au dépôt (50 compositions de préproduction existent localement dans `NextGen_Catalogue_50_PREPRODUCTION.zip`, mais les pages GitHub utilisent les posters 3D génériques existants). Ne **pas** annoncer un score graphique 9/10 ni une homologation sans revue.
+- Catalogue officiel certifié toujours `public/data/products.json=[]`, collecte inactive, `noindex` conservé. Aucune modification DNS/Cloudflare Pages/Access, secret, prix/marge, RLS ou ERP. La fusion sur GitHub ne prouve pas le déploiement du site public.
+
+---
+
 ## 1er novembre 2026 — Lot 18 : relecture arabe BTP, audit des captures
 
 - **[PR #14](https://github.com/Verwolfy/nextgen-website/pull/14)** fusionnée sur `main` (merge SHA `1ba3c5088e224ad61f8446840933dc11752dfb4b`) après correction et deux CI réussies sur head `071913a8a2ddb51b901c994f57c24ad11cd7e570` : [Astro/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41349078803) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41349079000).
