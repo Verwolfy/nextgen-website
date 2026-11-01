@@ -1,0 +1,7 @@
+# NextGen draft site — never confuse indexing controls with access control.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: no-referrer
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  X-Robots-Tag: noindex, nofollow, noarchive
