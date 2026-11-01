@@ -6,7 +6,8 @@ const {lang,title,description}=Astro.props;
 const t=messages[lang];
 const suffix=Astro.url.pathname.replace(/^\/(?:fr|ar|en)/,'') || '/';
 const translate=(next:Lang)=>`/${next}${suffix}`.replace(/\/+/g,'/');
-const canonical=Astro.url.origin+Astro.url.pathname;
+const publicOrigin=Astro.site?.origin ?? 'https://nextgen-buildingsolutions.com';
+const canonical=publicOrigin+Astro.url.pathname;
 const whats=`https://wa.me/${brand.whatsapp}`;
 const navSections = ['gammes','catalogue','distributeurs','ressources','a-propos','contact'] as const;
 ---
@@ -18,8 +19,8 @@ const navSections = ['gammes','catalogue','distributeurs','ressources','a-propos
   <meta name="robots" content="noindex,nofollow" />
   <meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" />
   <link rel="canonical" href={canonical} />
-  {languages.map(l=><link rel="alternate" hreflang={l} href={Astro.url.origin+translate(l)} />)}
-  <link rel="alternate" hreflang="x-default" href={Astro.url.origin+translate('fr')} />
+  {languages.map(l=><link rel="alternate" hreflang={l} href={publicOrigin+translate(l)} />)}
+  <link rel="alternate" hreflang="x-default" href={publicOrigin+translate('fr')} />
   <title>{title} · NextGen Building Solutions</title>
  </head>
  <body>
