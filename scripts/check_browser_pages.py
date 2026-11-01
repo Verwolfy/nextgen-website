@@ -67,10 +67,23 @@ def check() -> None:
                             assert page.locator(".resource-card-demo a[href$='/emballages/']").count() == 1, path
                             assert page.locator(".resource-card:not(.resource-card-demo) a").count() == 0, path
                         if section in ("contact", "distributeurs"):
+                            assert page.locator(".contact-direct .contact-channel").count() == 3, path
+                            assert page.locator(".contact-channel a[href^='mailto:']").count() == 1, path
+                            assert page.locator(".contact-channel a[href^='tel:']").count() == 1, path
+                            whatsapp = page.locator(".contact-channel a[href^='https://wa.me/']")
+                            assert whatsapp.count() == 1, path
+                            assert whatsapp.get_attribute("rel") == "noopener noreferrer", path
+                            assert page.locator(".contact-direct .contact-disclosure[role='note']").count() == 1, path
+                            assert page.locator(".lead-preview").count() == 1, path
+                            assert not page.locator(".lead-preview .lead-fields").is_visible(), path
                             all_controls = page.locator(".lead-panel input, .lead-panel textarea, .lead-panel button")
                             count = all_controls.count()
                             assert count > 5, path
                             assert all(all_controls.nth(i).is_disabled() for i in range(count)), path
+                            page.locator(".lead-preview summary").click()
+                            assert page.locator(".lead-preview .lead-fields").is_visible(), path
+                            page.locator(".lead-preview summary").click()
+                            assert not page.locator(".lead-preview .lead-fields").is_visible(), path
                         # Overflows on phone screens make navigation unusable.
                         diff = page.evaluate("Math.ceil(document.documentElement.scrollWidth - window.innerWidth)")
                         if diff > 4:
@@ -79,7 +92,7 @@ def check() -> None:
                                 .slice(0,8)
                                 .map(e => ({tag:e.tagName, cls:String(e.className).slice(0,50), width:Math.round(e.getBoundingClientRect().width)}))""")
                             raise AssertionError(f"Horizontal overflow: {path} {width}px: {diff}px; elements={overflowing}")
-                        if section in ("", "contact") or (size == "mobile" and section in ("gammes", "a-propos", "ressources")):
+                        if section in ("", "contact") or (size == "mobile" and section in ("gammes", "a-propos", "ressources", "distributeurs")):
                             page.screenshot(path=str(SHOTS / (lang + "-" + size + "-" + (section or "home") + ".png")), full_page=True)
                             snapshots += 1
                     # Explicitly follow the language navigation to another localized page.
@@ -120,6 +133,13 @@ def check() -> None:
                 tiny_width = tiny.evaluate("Math.ceil(document.documentElement.scrollWidth - innerWidth)")
                 assert tiny_width <= 4, f"320px navigation overflow ({lang}): {tiny_width}"
                 tiny.screenshot(path=str(SHOTS / (lang + "-mobile-320-home.png")), full_page=True)
+                snapshots += 1
+                tiny.goto(base + "/" + lang + "/contact/", wait_until="domcontentloaded")
+                assert tiny.locator(".contact-channel").count() == 3
+                assert not tiny.locator(".lead-preview .lead-fields").is_visible()
+                tiny_contact_width = tiny.evaluate("Math.ceil(document.documentElement.scrollWidth - innerWidth)")
+                assert tiny_contact_width <= 4, f"320px contact overflow ({lang}): {tiny_contact_width}"
+                tiny.screenshot(path=str(SHOTS / (lang + "-mobile-320-contact.png")), full_page=True)
                 snapshots += 1
                 tiny.close()
             browser.close()
