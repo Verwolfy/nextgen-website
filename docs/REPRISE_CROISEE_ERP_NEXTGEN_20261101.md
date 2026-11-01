@@ -80,3 +80,12 @@
 - **Aucune écriture Supabase**, aucun remplissage de registre, aucun déploiement Cloudflare, aucune activation de collecte, aucun SKU/tarif/TVA fictif.
 - Limite Streamlit : accès HTTP externe/DNS indisponible depuis l'environnement ; ni le déploiement de la version réelle ni l'authentification n'ont pu être vérifiés.
 - Prochaine priorité : preuve du SHA Git hébergé après connexion Streamlit ; comparaison réellement documentée version par version des migrations SQL ; qualification NextGen sur pièces vérifiées. Ne pas exécuter les fichiers SQL sur la seule base de leur nom.
+
+## Addendum site prioritaire — 01/11/2026, lots 10 et 11
+
+- Priorité donnée par l'utilisateur au site **NextGen Building Solutions**, et non aux évolutions ERP. Le site Astro 6 du dépôt privé `Verwolfy/nextgen-website` demeure FR/AR/EN et non publié sur Cloudflare.
+- **Lot 10** : [PR site #5](https://github.com/Verwolfy/nextgen-website/pull/5) fusionnée, commit `875ec757c3c642ec9a5f3e6d75ae9ff62d2146cd` ; menu mobile natif, sans JavaScript, 6 rubriques, navigation clavier, 320px et RTL, libellés a11y et mascottes trilingues ; CI merge Astro et Chromium `success`.
+- **Lot 11** : [PR site #6](https://github.com/Verwolfy/nextgen-website/pull/6) fusionnée, commit `270382fbc3fc7851ffb91bae8c17e5a3a4a572c1`. Accueil complété par 3 aperçus WebP de maquettes 3D (sac 25 kg, bidon 20 L, IBC 1 000 L), liens vers la galerie 5 modèles. Les mentions FR/AR/EN précisent qu'aucun modèle ni conditionnement n'est approuvé/à vendre. CI PR build et Chromium `success`.
+- Tests intégrés : `tests/test_mobile_navigation.py`, `tests/test_home_showcase.py`; outil Chromium vérifie menu fermé/ouvert au clavier et absence de débordement à 320px. Docs : `docs/LOT10_NAVIGATION_MOBILE.md`, `docs/LOT11_ACCUEIL_GALERIE_3D.md` et `docs/ETAT_AVANCEMENT.md`.
+- **Aucune publication publique :** Cloudflare Access principal/préviews non attesté, aucun compte Pages ou DNS modifié, formulaires de collecte toujours désactivés, produits publiables `[]`, pas de conformité juridique ou technique inventée, aucun SQL/RLS/secret modifié.
+- Suite : vérifier la dernière CI après commits documentaires ; inspecter les captures internes CI, peaufiner la présentation et garder le statut NO-GO pour toute connexion/déploiement Pages avant authentification et approbation ciblée.
