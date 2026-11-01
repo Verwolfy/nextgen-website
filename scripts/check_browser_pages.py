@@ -54,7 +54,12 @@ def check() -> None:
                             assert all(all_controls.nth(i).is_disabled() for i in range(count)), path
                         # Overflows on phone screens make navigation unusable.
                         diff = page.evaluate("Math.ceil(document.documentElement.scrollWidth - window.innerWidth)")
-                        assert diff <= 4, f"Horizontal overflow: {path} {width}px: {diff}px"
+                        if diff > 4:
+                            overflowing = page.evaluate("""Array.from(document.querySelectorAll('*'))
+                                .filter(e => e.getBoundingClientRect().right > innerWidth + 3)
+                                .slice(0,8)
+                                .map(e => ({tag:e.tagName, cls:String(e.className).slice(0,50), width:Math.round(e.getBoundingClientRect().width)}))""")
+                            raise AssertionError(f"Horizontal overflow: {path} {width}px: {diff}px; elements={overflowing}")
                         if section in ("", "contact"):
                             page.screenshot(path=str(SHOTS / (lang + "-" + size + "-" + (section or "home") + ".png")), full_page=True)
                             snapshots += 1

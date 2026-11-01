@@ -29,3 +29,6 @@ model-viewer{display:block;width:100%;height:clamp(260px,35vw,450px);--poster-co
 .lead-disabled{cursor:not-allowed;opacity:.55;justify-self:start;min-width:180px;transform:none!important}
 .lead-whatsapp{background:#102e50;border:1px solid #102e50}
 @media(max-width:680px){.lead-header,.lead-fields{grid-template-columns:1fr}.lead-panel{padding:18px}}
+
+/* Wrap long localized headings on narrow screens (FR/AR/EN) without layout overflow. */
+h1,h2,h3,.page-head p,.showcase-card{overflow-wrap:anywhere;min-width:0}

@@ -3,7 +3,7 @@
 Date : 2026-11-01. Aucun Cloudflare Pages ni DNS n'a été publié pour ces tests.
 
 ## Livrables
-- scripts/check_built_pages.py : 45 routes trilingues, langue et direction RTL, 3 liens de traduction, absence de formulaires actifs et de produits ERP fictifs, vérification de chaque lien local/asset et des cinq GLB.
+- scripts/check_built_pages.py : 42 routes trilingues, langue et direction RTL, 3 liens de traduction, absence de formulaires actifs et de produits ERP fictifs, vérification de chaque lien local/asset et des cinq GLB.
 - scripts/check_browser_pages.py : test Chromium localhost uniquement de 30 combinaisons de pages/langues/tailles, contrôle débordement horizontal, état disabled et changement de langue. 12 captures d'écran en artefacts internes GitHub Actions.
 - .github/workflows/site-browser-recette.yml : npm ci, Astro build, vérification statique, Playwright isolé, captures internes conservées 7 jours.
 

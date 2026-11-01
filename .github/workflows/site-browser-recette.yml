@@ -32,7 +32,7 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Compile static site
         run: npm run build
-      - name: Verify 45 localized routes and locked-down forms
+      - name: Verify 42 localized routes and locked-down forms
         run: python scripts/check_built_pages.py
       - name: Install isolated browser recipe tooling
         run: |
