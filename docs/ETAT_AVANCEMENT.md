@@ -169,3 +169,18 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - ERP : PR [#33](https://github.com/Verwolfy/erp-mortier/pull/33) **fusionnée**, commit `222bffb7e10f4c244475390d3f63cacc979e8d68`. Onglet CRM avec `SOF-NEXTGEN-CRM-20261101-L9`, sans ouverture du flag ni données privées.
 - ERP CI `41298643013` **success** : 37 tests ciblés et **2 144 tests ERP**, 1 warning non bloquant. Présence effective dans Streamlit Cloud toujours non confirmée (HTTP 303 anonyme).
 - Préproduction Access, publication Cloudflare Pages, DNS, SQL, secrets, e-mails et formulaire de collecte : **aucune activation**. Conformité juridique et durée de conservation toujours à approuver.
+
+
+## 1 novembre 2026 — Remplacement opérationnel du catalogue ERP PROD à partir du fichier Excel
+
+- Commande explicite : **« écrase les produits et matières premières déjà présents dans la bdd principale avec les nouvelles références. valide tous les produits ajoutés »**.
+- Source : `Catalogue_Produits_NextGen_BROUILLON.xlsx` ; SHA-256 `f932299f798145e0a7e9d6d3ea4337ea5766e72f2492dcf50d08e0890ef0474d`.
+- Import transactionnel DML **exécuté avec succès** dans Supabase PROD `wenydirqtmkywbxbxfal`. SQL historique `nextgen_import_catalogue_prod_DML_20261101.sql` stocké dans le dossier de reprise, **ne pas réexécuter**.
+- 50 références FENEK actives dans `produits` (Bond 16, Proof 11, Flow 12, Paint 11). La demande utilisateur constitue une **approbation commerciale du catalogue ERP**, pas une preuve technique de conformité/laboratoire.
+- 97 familles/matières premières candidates ajoutées en `NG-MP-001` à `NG-MP-097` avec `actif=NON` et sans fournisseur, prix, HS code, stock fictif, grade, recette, dosages ou unité de stockage inventés.
+- Les six `PF-001..PF-006` et douze `MP-001..MP-012` existants sont passés en `actif=NON`, **conservés physiquement** car des SKU, factures, commandes, stocks, recettes et mouvements les référencent. Aucune suppression de transactions ni réattribution d'identifiants.
+- 50 fiches `site_produits` privées insérées ; `statut_commercial=valide`, `statut_technique=brouillon`, `produit_reel_confirme=false`, `publie=false`. Vue `site_products` : **0 produit**. Aucune classe normative, performance, conformité, FT ou FDS validée.
+- Corrections d'import consignées : `PROOF-PU-INJ` et `PROOF-PU-SEAL` reclassées dans les résines polyuréthane, sans modifier le classeur source.
+- Post-contrôle DB : 50 actifs + 6 inactifs produits, 97 nouvelles matières candidates + 12 anciennes inactives, recettes 1, lignes recette 2, anciens SKU 7, ordres fabrication 1. Liens historiques toujours présents ; 90/90 tables publiques RLS, aucune table lisible directement par `anon`.
+- Référentiel détaillé des produits et matières dans `docs/catalogue-interne/` (dépôt privé GitHub), **jamais copié vers `public/` ou `dist/`**. Contenu français source, traduction générique AR/EN non validée, valeurs `[LABO]` restant à déterminer.
+- Restent : confirmer réalité des produits, qualité et provenance des matières, recettes et essais laboratoire, véritables traductions, emballages / SKU et documents techniques avant de libérer la publication. Aucun formulaire ni Cloudflare DNS activé.
