@@ -8,14 +8,14 @@ const lang=Astro.params.lang as Lang;const t=messages[lang];const preview=showca
 ---
 <Layout lang={lang} title={t.welcome} description={t.intro}>
 <section class="hero"><div class="container hero-wrap"><div><span class="eyebrow">{edit.marketTag}</span><h1>{t.welcome}</h1><p>{t.intro}</p><p class="hero-status" role="note"><span class="hero-status-mark" aria-hidden="true"></span>{edit.homeStatus}</p><div class="actions"><a class="btn" href={`/${lang}/gammes/`}>{t.explore}</a><a class="btn btn-outline" href={`/${lang}/contact/`}>{edit.homeContact}</a></div></div><div class="hero-art"><figure class="hero-mascot-card"><img src="/images/Nexo-Geno.webp" alt={t.mascotsAlt} width="800" height="1390" loading="eager" /></figure></div></div></section>
-<section class="section"><div class="container"><div class="section-head"><span class="eyebrow">FENEK COLLECTION</span><h2>{t.ourRanges}</h2><p>{t.rangesIntro}</p></div><div class="grid">{ranges.map(g=><a class="card" href={`/${lang}/gammes/${g}/`}><div class="bar" style={`background:${rangeColor[g]}`}></div><h3>{rangeName[g]}</h3><p>{t.ranges[g]}</p><span class="arrow" aria-hidden="true">↗</span></a>)}</div></div></section>
+<section class="section"><div class="container"><div class="section-head"><span class="eyebrow">FENEK COLLECTION</span><h2>{t.ourRanges}</h2><p>{t.rangesIntro}</p></div><div class="grid">{ranges.map(g=><a class="card" href={`/${lang}/gammes/${g}/`}><div class="bar" style={`background:${rangeColor[g]}`}></div><h3><bdi dir="ltr">{rangeName[g]}</bdi></h3><p>{t.ranges[g]}</p><span class="arrow" aria-hidden="true">↗</span></a>)}</div></div></section>
 <section class="section showcase-home" aria-labelledby="showcase-title"><div class="container">
   <div class="section-head"><span class="eyebrow">NEXTGEN · 3D</span><h2 id="showcase-title">{preview.title}</h2><p>{preview.intro}</p></div>
   <p class="concept-disclaimer" role="note">{preview.warning}</p>
   <div class="concept-grid">
     {showcaseModels.map((slug,index)=><a class="concept-card" href={`/${lang}/emballages/`}>
       <div class="concept-image"><img src={`/images/3d-demo/${slug}-30.webp`} alt={`${preview.names[index]} — ${preview.simulation}`} width="680" height="680" loading="lazy" /></div>
-      <div class="concept-copy"><span class="concept-tag">{preview.simulation}</span><h3>{preview.names[index]}</h3><span class="concept-link">{preview.see3d}<span aria-hidden="true"> ↗</span></span></div>
+      <div class="concept-copy"><span class="concept-tag">{preview.simulation}</span><h3 dir="auto">{preview.names[index]}</h3><span class="concept-link">{preview.see3d}<span aria-hidden="true"> ↗</span></span></div>
     </a>)}
   </div>
 </div></section>
