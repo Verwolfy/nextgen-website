@@ -58,6 +58,13 @@ def check() -> None:
                             assert page.locator(".hero-mascot-card").evaluate(
                                 "e => getComputedStyle(e).borderRadius !== '0px'"
                             ), path
+                        if section == "catalogue":
+                            assert page.locator(".concept-product-card").count() == 50, path
+                            assert page.locator(".concept-range-section").count() == 4, path
+                            assert page.locator(".concept-product-status").count() == 50, path
+                            assert page.locator(".catalogue-projects .editorial-caution").count() == 1, path
+                            if lang == "ar":
+                                assert "كتالوج" in page.locator("h1").inner_text(), path
                         if section == "gammes":
                             assert page.locator(".range-overview-card").count() == 4, path
                             assert page.locator(".range-overview-card h3 bdi[dir='ltr']").count() == 4, path
@@ -116,6 +123,22 @@ def check() -> None:
                             or (size == "desktop" and lang == "ar" and section in ("gammes", "a-propos", "emballages"))):
                             page.screenshot(path=str(SHOTS / (lang + "-" + size + "-" + (section or "home") + ".png")), full_page=True)
                             snapshots += 1
+                    # Smoke-check four individual conceptual products, not certified SKUs.
+                    for slug in ("fenek-bond-c1t", "fenek-proof-cm-o1p",
+                                 "fenek-flow-wr-n", "fenek-paint-int-m"):
+                        concept_path = "/"+lang+"/catalogue/"+slug+"/"
+                        response = page.goto(base+concept_path, wait_until="domcontentloaded", timeout=20000)
+                        assert response is not None and response.status==200, concept_path
+                        assert page.locator("h1").count()==1, concept_path
+                        assert page.locator(".concept-detail-status").count()==1, concept_path
+                        assert page.locator(".concept-steps li").count()==3, concept_path
+                        assert page.locator(".concept-source-method").count()==1, concept_path
+                        assert page.locator("form").count()==0, concept_path
+                        detail_overflow=page.evaluate("Math.ceil(document.documentElement.scrollWidth-innerWidth)")
+                        assert detail_overflow<=4, f"Concept details overflow: {concept_path}, {width}px, {detail_overflow}px"
+                        if slug=="fenek-bond-c1t":
+                            page.screenshot(path=str(SHOTS/(lang+"-"+size+"-catalogue-concept.png")),full_page=True)
+                            snapshots+=1
                     # Explicitly follow the language navigation to another localized page.
                     page.goto(base + "/" + lang + "/contact/", wait_until="domcontentloaded")
                     assert page.locator(".locale a").count() == 3
