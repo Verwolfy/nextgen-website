@@ -84,6 +84,8 @@ def check() -> None:
                         assert page.locator(".mobile-links").is_visible()
                         page.locator(".mobile-links a[href='/" + lang + "/ressources/']").focus()
                         page.keyboard.press("Enter")
+                        # Key presses do not imply navigation has completed: wait explicitly.
+                        page.wait_for_url("**/" + lang + "/ressources/", timeout=10000)
                         assert page.url.endswith("/" + lang + "/ressources/"), lang
                     else:
                         assert page.locator(".nav").is_visible(), lang
