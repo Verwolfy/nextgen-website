@@ -23,7 +23,7 @@ class ArabicVisualChecks(unittest.TestCase):
                      'نشرات بيانات السلامة', 'غير معتمدة', 'قيد المراجعة'):
             self.assertIn(term, editor)
         self.assertIn('homeStatus:', editor)
-        self.assertIn('لم يُعتمد أي منتج حقيقي', editor)
+        self.assertIn('لم تُعتمد بعد أي منتجات للنشر أو البيع', editor)
 
     def test_arabic_mass_units_are_not_described_as_liquid_capacity(self):
         gallery = (ROOT / 'src/pages/[lang]/emballages.astro').read_text(encoding='utf-8')
