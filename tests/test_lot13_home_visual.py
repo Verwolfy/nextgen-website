@@ -13,7 +13,7 @@ class Lot13HomeVisualTests(unittest.TestCase):
             "NextGen Building Solutions · Algérie",
             "NextGen Building Solutions · الجزائر",
             "NextGen Building Solutions · Algeria",
-            "aucun produit réel approuvé", "لم يُعتمد أي منتج حقيقي",
+            "aucun produit réel approuvé", "لم تُعتمد بعد أي منتجات للنشر أو البيع",
             "no verified product is approved",
             "Démarche en préparation", "منهجية قيد الإعداد",
             "Approach in development",
