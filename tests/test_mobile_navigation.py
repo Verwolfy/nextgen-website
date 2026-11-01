@@ -24,7 +24,7 @@ class TestMobileNavigation(unittest.TestCase):
         for label in ("'Navigation principale'", "'القائمة الرئيسية'", "'Main navigation'",
                       "'Choix de la langue'", "'اختيار اللغة'", "'Choose language'"):
             self.assertIn(label, data)
-        for path in ("src/pages/[lang]/index.astro", "src/pages/[lang]/[section].astro"):
+        for path in ("src/pages/[lang]/index.astro", "src/components/AboutStory.astro"):
             self.assertIn("alt={t.mascotsAlt}", (ROOT/path).read_text(encoding="utf-8"))
 
     def test_responsive_styles_and_focus_visible(self):
