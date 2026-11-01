@@ -21,7 +21,7 @@ class TestEditorialHubs(unittest.TestCase):
         self.assertNotIn("NG-SKU-", data)
         self.assertNotIn("ISO 9001", data)
         self.assertNotIn("prix_vente", data)
-        self.assertIn("not approved", data)
+        self.assertIn("no product SKU or performance claim", data)
         self.assertIn("بانتظار الاعتماد", data)
 
     def test_hubs_use_components_without_forms_or_download_claims(self):
