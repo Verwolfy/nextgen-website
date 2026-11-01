@@ -1,0 +1,2511 @@
+[
+  {
+    "code": "BOND-C1T",
+    "slug": "fenek-bond-c1t",
+    "nom": "FENEK-BOND C1T",
+    "gamme": "bond",
+    "ordre": 1,
+    "contenu": {
+      "fr": {
+        "accroche": "Colle carrelage standard",
+        "description": "Concept de produit (non validé) : Colle cimentaire en poudre pour la pose de carrelage en sol et en mur intérieurs, sans glissement en pose murale. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Colles carrelage. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "لاصق بلاط قياسي",
+        "description": "تصور منتج غير معتمد: تصور للاصق إسمنتي مسحوق لتركيب البلاط على الجدران والأرضيات الداخلية، مع خاصية مستهدفة للحد من الانزلاق عند التركيب على الجدران. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: لواصق البلاط. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Standard tile adhesive",
+        "description": "Unvalidated product concept: Powdered cementitious tile adhesive concept for interior wall and floor tiling, with intended slip resistance for wall placement. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Tile adhesives. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre, sain, plan, stable. 2) Gâcher [valeur à confirmer] L d'eau propre par sac de [valeur à confirmer] kg jusqu'à pâte homogène. 3) Repos [valeur à confirmer] min, remalaxer. 4) Appliquer à la spatule crantée ([valeur à confirmer]) ; double encollage si nécessaire. 5) Poser dans le temps ouvert [valeur à confirmer] min. 6) Jointoyer après [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Sac 10 kg",
+        "poids_net": 10,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 25 kg",
+        "poids_net": 25,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 5 kg",
+        "poids_net": 5,
+        "unite": "SAC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "BOND-C1TE",
+    "slug": "fenek-bond-c1te",
+    "nom": "FENEK-BOND C1TE",
+    "gamme": "bond",
+    "ordre": 2,
+    "contenu": {
+      "fr": {
+        "accroche": "Colle carrelage standard, temps ouvert allongé",
+        "description": "Concept de produit (non validé) : Colle cimentaire pour carrelage avec temps ouvert allongé, utile pour grands formats ou chantiers chauds. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Colles carrelage. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "لاصق بلاط قياسي بزمن تشغيل مفتوح ممتد",
+        "description": "تصور منتج غير معتمد: تصور للاصق بلاط إسمنتي بزمن تشغيل مفتوح ممتد، موجه للبلاط كبير المقاس أو ظروف العمل الحارة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: لواصق البلاط. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Standard tile adhesive with extended open time",
+        "description": "Unvalidated product concept: Cementitious tile adhesive concept with extended open time, intended for large-format tiles or hot-site conditions. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Tile adhesives. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre, sain, plan, stable. 2) Gâcher [valeur à confirmer] L d'eau propre par sac de [valeur à confirmer] kg jusqu'à pâte homogène. 3) Repos [valeur à confirmer] min, remalaxer. 4) Appliquer à la spatule crantée ([valeur à confirmer]) ; double encollage si nécessaire. 5) Poser dans le temps ouvert [valeur à confirmer] min. 6) Jointoyer après [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Sac 10 kg",
+        "poids_net": 10,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 25 kg",
+        "poids_net": 25,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 5 kg",
+        "poids_net": 5,
+        "unite": "SAC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "BOND-C2FT",
+    "slug": "fenek-bond-c2ft",
+    "nom": "FENEK-BOND C2FT",
+    "gamme": "bond",
+    "ordre": 3,
+    "contenu": {
+      "fr": {
+        "accroche": "Colle carrelage améliorée prise rapide",
+        "description": "Concept de produit (non validé) : Colle améliorée à prise rapide pour remise en service rapide des sols. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Colles carrelage. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "لاصق بلاط محسّن سريع التصلب",
+        "description": "تصور منتج غير معتمد: تصور للاصق بلاط محسّن سريع التصلب بهدف إعادة استعمال الأرضيات بسرعة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: لواصق البلاط. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Improved rapid-setting tile adhesive",
+        "description": "Unvalidated product concept: Improved quick-setting adhesive concept intended for rapid return to service of tiled floors. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Tile adhesives. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre, sain, plan, stable. 2) Gâcher [valeur à confirmer] L d'eau propre par sac de [valeur à confirmer] kg jusqu'à pâte homogène. 3) Repos [valeur à confirmer] min, remalaxer. 4) Appliquer à la spatule crantée ([valeur à confirmer]) ; double encollage si nécessaire. 5) Poser dans le temps ouvert [valeur à confirmer] min. 6) Jointoyer après [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Sac 10 kg",
+        "poids_net": 10,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 25 kg",
+        "poids_net": 25,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 5 kg",
+        "poids_net": 5,
+        "unite": "SAC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "BOND-C2TE",
+    "slug": "fenek-bond-c2te",
+    "nom": "FENEK-BOND C2TE",
+    "gamme": "bond",
+    "ordre": 4,
+    "contenu": {
+      "fr": {
+        "accroche": "Colle carrelage améliorée",
+        "description": "Concept de produit (non validé) : Colle cimentaire améliorée à adhérence renforcée pour carrelages peu poreux, sols, façades et zones humides. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Colles carrelage. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "لاصق بلاط محسّن",
+        "description": "تصور منتج غير معتمد: تصور للاصق إسمنتي محسّن للبلاط قليل المسامية والأرضيات والواجهات والمناطق الرطبة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: لواصق البلاط. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Improved tile adhesive",
+        "description": "Unvalidated product concept: Enhanced cementitious adhesive concept for low-porosity tiles, floors, façades and wet areas. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Tile adhesives. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre, sain, plan, stable. 2) Gâcher [valeur à confirmer] L d'eau propre par sac de [valeur à confirmer] kg jusqu'à pâte homogène. 3) Repos [valeur à confirmer] min, remalaxer. 4) Appliquer à la spatule crantée ([valeur à confirmer]) ; double encollage si nécessaire. 5) Poser dans le temps ouvert [valeur à confirmer] min. 6) Jointoyer après [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Sac 10 kg",
+        "poids_net": 10,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 25 kg",
+        "poids_net": 25,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 5 kg",
+        "poids_net": 5,
+        "unite": "SAC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "BOND-C2TE-S1",
+    "slug": "fenek-bond-c2te-s1",
+    "nom": "FENEK-BOND C2TE-S1",
+    "gamme": "bond",
+    "ordre": 5,
+    "contenu": {
+      "fr": {
+        "accroche": "Colle carrelage améliorée déformable",
+        "description": "Concept de produit (non validé) : Colle améliorée déformable pour supports soumis à de faibles mouvements (chauffage au sol, grands formats). Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Colles carrelage. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "لاصق بلاط محسّن قابل للتشوه",
+        "description": "تصور منتج غير معتمد: تصور للاصق قابل للتشوه للأسطح التي تتعرض لحركات محدودة مثل الأرضيات المدفأة والبلاط كبير المقاس. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: لواصق البلاط. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Improved deformable tile adhesive",
+        "description": "Unvalidated product concept: Deformable adhesive concept for substrates exposed to limited movement, such as heated floors and large-format tiles. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Tile adhesives. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre, sain, plan, stable. 2) Gâcher [valeur à confirmer] L d'eau propre par sac de [valeur à confirmer] kg jusqu'à pâte homogène. 3) Repos [valeur à confirmer] min, remalaxer. 4) Appliquer à la spatule crantée ([valeur à confirmer]) ; double encollage si nécessaire. 5) Poser dans le temps ouvert [valeur à confirmer] min. 6) Jointoyer après [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Sac 10 kg",
+        "poids_net": 10,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 25 kg",
+        "poids_net": 25,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 5 kg",
+        "poids_net": 5,
+        "unite": "SAC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "BOND-CG1",
+    "slug": "fenek-bond-cg1",
+    "nom": "FENEK-BOND CG1",
+    "gamme": "bond",
+    "ordre": 6,
+    "contenu": {
+      "fr": {
+        "accroche": "Joint de carrelage standard",
+        "description": "Concept de produit (non validé) : Mortier de jointoiement cimentaire pour joints de carrelage intérieurs et extérieurs. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Joints de carrelage. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مونة فواصل بلاط قياسية",
+        "description": "تصور منتج غير معتمد: تصور لمونة إسمنتية لملء فواصل البلاط الداخلي والخارجي. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مونة فواصل البلاط. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Standard tile grout",
+        "description": "Unvalidated product concept: Cementitious grouting mortar concept for interior and exterior tile joints. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Tile grouts. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Joints propres, vides et secs. 2) Gâcher [valeur à confirmer] d'eau par [valeur à confirmer] kg de poudre jusqu'à consistance lisse. 3) Repos [valeur à confirmer] min. 4) Remplir à la raclette caoutchouc en diagonale. 5) Nettoyer à l'éponge humide avant durcissement ([valeur à confirmer] min). 6) Polir le voile après séchage.",
+    "conditionnements": [
+      {
+        "format": "Sac 10 kg",
+        "poids_net": 10,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 25 kg",
+        "poids_net": 25,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 5 kg",
+        "poids_net": 5,
+        "unite": "SAC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "BOND-CG2WA",
+    "slug": "fenek-bond-cg2wa",
+    "nom": "FENEK-BOND CG2WA",
+    "gamme": "bond",
+    "ordre": 7,
+    "contenu": {
+      "fr": {
+        "accroche": "Joint de carrelage amélioré, hydrofuge, résistant à l'abrasion",
+        "description": "Concept de produit (non validé) : Joint amélioré, hydrofuge, pour zones humides et à fort passage. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Joints de carrelage. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مونة فواصل محسّنة طاردة للماء ومقاومة للاحتكاك",
+        "description": "تصور منتج غير معتمد: تصور لمونة فواصل محسّنة طاردة للماء للمناطق الرطبة وكثيفة الاستخدام. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مونة فواصل البلاط. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Enhanced water-repellent abrasion-resistant grout",
+        "description": "Unvalidated product concept: Enhanced, water-repellent grout concept for wet and heavily trafficked areas. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Tile grouts. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Joints propres, vides et secs. 2) Gâcher [valeur à confirmer] d'eau par [valeur à confirmer] kg de poudre jusqu'à consistance lisse. 3) Repos [valeur à confirmer] min. 4) Remplir à la raclette caoutchouc en diagonale. 5) Nettoyer à l'éponge humide avant durcissement ([valeur à confirmer] min). 6) Polir le voile après séchage.",
+    "conditionnements": [
+      {
+        "format": "Sac 10 kg",
+        "poids_net": 10,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 25 kg",
+        "poids_net": 25,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 5 kg",
+        "poids_net": 5,
+        "unite": "SAC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "BOND-CT-C25-F5",
+    "slug": "fenek-bond-ct-c25-f5",
+    "nom": "FENEK-BOND CT-C25-F5",
+    "gamme": "bond",
+    "ordre": 8,
+    "contenu": {
+      "fr": {
+        "accroche": "Ragréage autolissant de sol",
+        "description": "Concept de produit (non validé) : Mortier autolissant pour rattraper les défauts de planéité avant revêtement de sol. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Ragréage. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مونة تسوية أرضيات ذاتية الانتشار",
+        "description": "تصور منتج غير معتمد: تصور لمونة ذاتية التسوية لمعالجة عدم استواء الأرضيات قبل تركيب غطاء الأرضية. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: تسوية الأرضيات. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Self-levelling floor compound",
+        "description": "Unvalidated product concept: Self-levelling mortar concept to correct floor flatness before laying flooring. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Floor levelling. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support résistant, dépoussiéré, primaire si requis. 2) Verser la poudre dans [valeur à confirmer] L d'eau mesurée en malaxant jusqu'à fluidité homogène. 3) Couler, étaler à la raclette, débuller au rouleau à pointes. 4) Épaisseur [valeur à confirmer] mm. 5) Protéger des courants d'air ; praticable après [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Sac 10 kg",
+        "poids_net": 10,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 25 kg",
+        "poids_net": 25,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 5 kg",
+        "poids_net": 5,
+        "unite": "SAC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "BOND-GP-CSII",
+    "slug": "fenek-bond-gp-csii",
+    "nom": "FENEK-BOND GP-CSII",
+    "gamme": "bond",
+    "ordre": 9,
+    "contenu": {
+      "fr": {
+        "accroche": "Enduit ciment d'usage courant",
+        "description": "Concept de produit (non validé) : Enduit de ciment pour dressage intérieur et extérieur des murs en maçonnerie. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Enduits. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "لياسة إسمنتية للاستعمال العام",
+        "description": "تصور منتج غير معتمد: تصور للياسة إسمنتية لتسوية جدران البناء الداخلية والخارجية. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: اللياسة. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "General-purpose cement render",
+        "description": "Unvalidated product concept: Cement render concept for levelling interior and exterior masonry walls. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Renders and plasters. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre, résistant, humidifié ou primarisé selon son absorption. 2) Gâcher [valeur à confirmer] L par sac de [valeur à confirmer] kg. 3) Appliquer (projection ou manuel) en [valeur à confirmer] mm. 4) Dresser à la règle, finir à la taloche. 5) Protéger du soleil, du vent et du gel les 48 h suivantes.",
+    "conditionnements": [
+      {
+        "format": "Sac 10 kg",
+        "poids_net": 10,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 25 kg",
+        "poids_net": 25,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 5 kg",
+        "poids_net": 5,
+        "unite": "SAC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "BOND-GR-HR",
+    "slug": "fenek-bond-gr-hr",
+    "nom": "FENEK-BOND GR-HR",
+    "gamme": "bond",
+    "ordre": 10,
+    "contenu": {
+      "fr": {
+        "accroche": "Mortier de calage et scellement haute résistance (grout)",
+        "description": "Concept de produit (non validé) : Mortier fluide à retrait compensé pour calage de platines, scellement d'ancrages et reprise sous poteaux. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Scellement et calage. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مونة حقن وتثبيت عالية المقاومة",
+        "description": "تصور منتج غير معتمد: تصور لمونة سائلة مع تعويض الانكماش لتثبيت الصفائح المعدنية والمراسي وتحت قواعد الأعمدة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: التثبيت والحقن. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "High-strength grouting and bedding mortar",
+        "description": "Unvalidated product concept: Flowable shrinkage-compensated mortar concept for base plates, anchor grouting and column bases. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Grouting and bedding. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre, coffrage étanche, support humidifié si requis. 2) Gâcher [valeur à confirmer] L d'eau par [valeur à confirmer] kg en malaxant jusqu'à fluidité. 3) Couler en continu, sans vibration excessive ni ségrégation. 4) Protéger et cure [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Sac 10 kg",
+        "poids_net": 10,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 25 kg",
+        "poids_net": 25,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 5 kg",
+        "poids_net": 5,
+        "unite": "SAC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "BOND-M10",
+    "slug": "fenek-bond-m10",
+    "nom": "FENEK-BOND M10",
+    "gamme": "bond",
+    "ordre": 11,
+    "contenu": {
+      "fr": {
+        "accroche": "Mortier de maçonnerie haute résistance",
+        "description": "Concept de produit (non validé) : Mortier de montage pour maçonnerie porteuse et éléments fortement chargés. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Maçonnerie. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مونة بناء عالية المقاومة",
+        "description": "تصور منتج غير معتمد: تصور لمونة بناء للجدران الحاملة والعناصر المعرضة لأحمال مرتفعة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مونة البناء. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "High-strength masonry mortar",
+        "description": "Unvalidated product concept: Masonry mortar concept for load-bearing masonry and heavily loaded elements. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Masonry. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Humidifier les éléments absorbants. 2) Gâcher [valeur à confirmer] L par [valeur à confirmer] kg à consistance plastique. 3) Poser le lit de mortier puis les éléments, joints de [valeur à confirmer] mm. 4) Serrer les joints avant durcissement. 5) Protéger du soleil et du gel.",
+    "conditionnements": [
+      {
+        "format": "Sac 10 kg",
+        "poids_net": 10,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 25 kg",
+        "poids_net": 25,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 5 kg",
+        "poids_net": 5,
+        "unite": "SAC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "BOND-M5",
+    "slug": "fenek-bond-m5",
+    "nom": "FENEK-BOND M5",
+    "gamme": "bond",
+    "ordre": 12,
+    "contenu": {
+      "fr": {
+        "accroche": "Mortier de maçonnerie courant",
+        "description": "Concept de produit (non validé) : Mortier de montage de blocs et briques pour maçonnerie courante. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Maçonnerie. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مونة بناء للاستعمال العام",
+        "description": "تصور منتج غير معتمد: تصور لمونة تركيب الطوب والكتل في أعمال البناء المعتادة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مونة البناء. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "General-purpose masonry mortar",
+        "description": "Unvalidated product concept: Mortar concept for laying blocks and bricks in ordinary masonry. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Masonry. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Humidifier les éléments absorbants. 2) Gâcher [valeur à confirmer] L par [valeur à confirmer] kg à consistance plastique. 3) Poser le lit de mortier puis les éléments, joints de [valeur à confirmer] mm. 4) Serrer les joints avant durcissement. 5) Protéger du soleil et du gel.",
+    "conditionnements": [
+      {
+        "format": "Sac 10 kg",
+        "poids_net": 10,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 25 kg",
+        "poids_net": 25,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 5 kg",
+        "poids_net": 5,
+        "unite": "SAC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "BOND-OC-CSIII",
+    "slug": "fenek-bond-oc-csiii",
+    "nom": "FENEK-BOND OC-CSIII",
+    "gamme": "bond",
+    "ordre": 13,
+    "contenu": {
+      "fr": {
+        "accroche": "Enduit monocouche de façade",
+        "description": "Concept de produit (non validé) : Enduit monocouche coloré, protection et décoration des façades. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Enduits. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "لياسة واجهات أحادية الطبقة",
+        "description": "تصور منتج غير معتمد: تصور لطلاء لياسة ملون أحادي الطبقة لحماية الواجهات وتزيينها. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: اللياسة. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Single-coat façade render",
+        "description": "Unvalidated product concept: Coloured single-coat render concept for façade protection and decoration. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Renders and plasters. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre, résistant, humidifié ou primarisé selon son absorption. 2) Gâcher [valeur à confirmer] L par sac de [valeur à confirmer] kg. 3) Appliquer (projection ou manuel) en [valeur à confirmer] mm. 4) Dresser à la règle, finir à la taloche. 5) Protéger du soleil, du vent et du gel les 48 h suivantes.",
+    "conditionnements": [
+      {
+        "format": "Sac 10 kg",
+        "poids_net": 10,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 25 kg",
+        "poids_net": 25,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 5 kg",
+        "poids_net": 5,
+        "unite": "SAC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "BOND-R2",
+    "slug": "fenek-bond-r2",
+    "nom": "FENEK-BOND R2",
+    "gamme": "bond",
+    "ordre": 14,
+    "contenu": {
+      "fr": {
+        "accroche": "Mortier de réparation du béton (non structurel)",
+        "description": "Concept de produit (non validé) : Mortier de réparation et de reprofilage du béton, usage non structurel. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Réparation du béton. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مونة إصلاح خرسانة غير إنشائية",
+        "description": "تصور منتج غير معتمد: تصور لمونة إصلاح وإعادة تشكيل الخرسانة للاستخدامات غير الإنشائية. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: إصلاح الخرسانة. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Non-structural concrete repair mortar",
+        "description": "Unvalidated product concept: Concrete repair and reprofiling mortar concept for non-structural applications. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Concrete repair. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Préparer le support (piquage, dépoussiérage, traitement des armatures). 2) Humidifier à refus, support mat. 3) Gâcher [valeur à confirmer] L d'eau par [valeur à confirmer] kg. 4) Appliquer à la truelle ou par projection, épaisseur max par passe [valeur à confirmer] mm. 5) Serrer, talocher. 6) Cure humide [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Sac 10 kg",
+        "poids_net": 10,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 25 kg",
+        "poids_net": 25,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 5 kg",
+        "poids_net": 5,
+        "unite": "SAC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "BOND-R3",
+    "slug": "fenek-bond-r3",
+    "nom": "FENEK-BOND R3",
+    "gamme": "bond",
+    "ordre": 15,
+    "contenu": {
+      "fr": {
+        "accroche": "Mortier de réparation structurelle",
+        "description": "Concept de produit (non validé) : Mortier de réparation du béton à caractère structurel pour ouvrages courants. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Réparation du béton. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مونة إصلاح خرسانة إنشائية",
+        "description": "تصور منتج غير معتمد: تصور لمونة إصلاح خرسانة ذات استعمال إنشائي للأعمال المعتادة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: إصلاح الخرسانة. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Structural concrete repair mortar",
+        "description": "Unvalidated product concept: Structural concrete repair mortar concept for common construction works. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Concrete repair. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Préparer le support (piquage, dépoussiérage, traitement des armatures). 2) Humidifier à refus, support mat. 3) Gâcher [valeur à confirmer] L d'eau par [valeur à confirmer] kg. 4) Appliquer à la truelle ou par projection, épaisseur max par passe [valeur à confirmer] mm. 5) Serrer, talocher. 6) Cure humide [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Sac 10 kg",
+        "poids_net": 10,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 25 kg",
+        "poids_net": 25,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 5 kg",
+        "poids_net": 5,
+        "unite": "SAC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "BOND-R4",
+    "slug": "fenek-bond-r4",
+    "nom": "FENEK-BOND R4",
+    "gamme": "bond",
+    "ordre": 16,
+    "contenu": {
+      "fr": {
+        "accroche": "Mortier de réparation structurelle fibré, thixotrope",
+        "description": "Concept de produit (non validé) : Mortier fibré thixotrope à haute performance pour réparations structurelles en épaisseur et en plafond. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Réparation du béton. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مونة إصلاح إنشائية مدعّمة بالألياف وثيكسوتروبية",
+        "description": "تصور منتج غير معتمد: تصور لمونة إصلاح إنشائية مدعّمة بالألياف وثيكسوتروبية للطبقات السميكة وأعمال الإصلاح فوق الرأس. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: إصلاح الخرسانة. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Fibre-reinforced thixotropic structural repair mortar",
+        "description": "Unvalidated product concept: High-performance fibre-reinforced thixotropic mortar concept for thick-layer and overhead structural repairs. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Concrete repair. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Préparer le support (piquage, dépoussiérage, traitement des armatures). 2) Humidifier à refus, support mat. 3) Gâcher [valeur à confirmer] L d'eau par [valeur à confirmer] kg. 4) Appliquer à la truelle ou par projection, épaisseur max par passe [valeur à confirmer] mm. 5) Serrer, talocher. 6) Cure humide [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Sac 10 kg",
+        "poids_net": 10,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 25 kg",
+        "poids_net": 25,
+        "unite": "SAC"
+      },
+      {
+        "format": "Sac 5 kg",
+        "poids_net": 5,
+        "unite": "SAC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "FLOW-AC",
+    "slug": "fenek-flow-ac",
+    "nom": "FENEK-FLOW AC",
+    "gamme": "flow",
+    "ordre": 17,
+    "contenu": {
+      "fr": {
+        "accroche": "Accélérateur de prise",
+        "description": "Concept de produit (non validé) : Accélère la prise et le durcissement du béton par temps froid ou pour décoffrage rapide. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Accélérateurs. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مسرع لزمن الشك",
+        "description": "تصور منتج غير معتمد: تصور لمضاف يسرع شك الخرسانة وتصلبها في البرد أو لتسريع فك القوالب. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مسرعات الشك. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Setting accelerator",
+        "description": "Unvalidated product concept: Setting and hardening accelerator concept for cold-weather concreting or faster demoulding. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Accelerators. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Ajouter à l'eau de gâchage. 2) Dosage [valeur à confirmer] % du poids de liant selon température. 3) Mettre en œuvre rapidement. 4) Valider par essais ; vérifier l'absence de chlorures si béton armé.",
+    "conditionnements": [
+      {
+        "format": "Bidon 20 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Bidon 5 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Fût 200 L",
+        "poids_net": null,
+        "unite": "FUT"
+      },
+      {
+        "format": "IBC 1000 L",
+        "poids_net": null,
+        "unite": "IBC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "FLOW-AE",
+    "slug": "fenek-flow-ae",
+    "nom": "FENEK-FLOW AE",
+    "gamme": "flow",
+    "ordre": 18,
+    "contenu": {
+      "fr": {
+        "accroche": "Entraîneur d'air",
+        "description": "Concept de produit (non validé) : Entraîne des microbulles d'air pour la résistance au gel-dégel et aux sels de déverglaçage. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Entraîneurs d'air. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مضاف حابس للهواء",
+        "description": "تصور منتج غير معتمد: تصور لمضاف يحبس فقاعات هواء دقيقة بهدف تحسين مقاومة التجمد والذوبان وأملاح إزالة الجليد. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مواد حبس الهواء. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Air-entraining admixture",
+        "description": "Unvalidated product concept: Air-entraining admixture concept intended to improve freeze–thaw and de-icing salt resistance through micro-air voids. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Air-entraining admixtures. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Ajouter à l'eau de gâchage ou en cours de malaxage. 2) Dosage [valeur à confirmer] % du poids de liant. 3) Contrôler la teneur en air du béton frais à chaque gâchée. 4) Maintenir un temps de malaxage constant.",
+    "conditionnements": [
+      {
+        "format": "Bidon 20 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Bidon 5 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Fût 200 L",
+        "poids_net": null,
+        "unite": "FUT"
+      },
+      {
+        "format": "IBC 1000 L",
+        "poids_net": null,
+        "unite": "IBC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "FLOW-CI",
+    "slug": "fenek-flow-ci",
+    "nom": "FENEK-FLOW CI",
+    "gamme": "flow",
+    "ordre": 19,
+    "contenu": {
+      "fr": {
+        "accroche": "Inhibiteur de corrosion des armatures",
+        "description": "Concept de produit (non validé) : Retarde la corrosion des armatures dans le béton exposé aux chlorures ou à la carbonatation. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Inhibiteurs de corrosion. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مضاف مثبط لتآكل حديد التسليح",
+        "description": "تصور منتج غير معتمد: تصور لمضاف مثبط لتآكل حديد التسليح في الخرسانة المعرضة للكلوريدات أو الكربنة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مثبطات التآكل. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Rebar corrosion inhibitor",
+        "description": "Unvalidated product concept: Corrosion-inhibiting admixture concept for concrete exposed to chlorides or carbonation. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Corrosion inhibitors. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Ajouter à l'eau de gâchage du béton/mortier. 2) Dosage [valeur à confirmer] % du poids de liant. 3) Option : application en surface sur béton existant selon fiche. 4) Valider par essais de durabilité.",
+    "conditionnements": [
+      {
+        "format": "Bidon 20 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Bidon 5 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Fût 200 L",
+        "poids_net": null,
+        "unite": "FUT"
+      },
+      {
+        "format": "IBC 1000 L",
+        "poids_net": null,
+        "unite": "IBC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "FLOW-CURE",
+    "slug": "fenek-flow-cure",
+    "nom": "FENEK-FLOW CURE",
+    "gamme": "flow",
+    "ordre": 20,
+    "contenu": {
+      "fr": {
+        "accroche": "Produit de cure du béton",
+        "description": "Concept de produit (non validé) : Forme un film temporaire qui retient l'eau du béton frais. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Produits de cure. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مركب معالجة الخرسانة",
+        "description": "تصور منتج غير معتمد: تصور لمادة معالجة تشكل غشاء مؤقتاً يساعد على الاحتفاظ بالماء في الخرسانة الطازجة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مواد المعالجة. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Concrete curing compound",
+        "description": "Unvalidated product concept: Temporary-film curing compound concept to retain moisture in freshly placed concrete. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Curing compounds. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Appliquer sur le béton frais dès la disparition de l'eau de ressuage. 2) Pulvériser en couche uniforme, consommation [valeur à confirmer] m²/L. 3) Ne pas appliquer si le béton doit recevoir un revêtement sans décapage.",
+    "conditionnements": [
+      {
+        "format": "Bidon 20 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Bidon 5 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Fût 200 L",
+        "poids_net": null,
+        "unite": "FUT"
+      },
+      {
+        "format": "IBC 1000 L",
+        "poids_net": null,
+        "unite": "IBC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "FLOW-LAT",
+    "slug": "fenek-flow-lat",
+    "nom": "FENEK-FLOW LAT",
+    "gamme": "flow",
+    "ordre": 21,
+    "contenu": {
+      "fr": {
+        "accroche": "Résine d'adhérence et d'amélioration des mortiers",
+        "description": "Concept de produit (non validé) : Résine en dispersion servant de pont d'adhérence et d'additif d'amélioration des mortiers. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Résines d'adhérence. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مستحلب راتنجي لتحسين الالتصاق والمونة",
+        "description": "تصور منتج غير معتمد: تصور لمستحلب بوليمري يُستخدم كجسر التصاق وإضافة لتحسين خصائص المونة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: بوليمرات الالتصاق. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Bonding and mortar-modifying polymer dispersion",
+        "description": "Unvalidated product concept: Polymer dispersion concept for bonding bridges and mortar modification. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Bonding polymers. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre, humidifié. 2) Utiliser pur en pont d'adhérence ([valeur à confirmer] kg/m²) ou dilué dans l'eau de gâchage ([valeur à confirmer] %). 3) Appliquer le mortier frais sur pont encore frais. 4) Cure normale.",
+    "conditionnements": [
+      {
+        "format": "Bidon 20 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Bidon 5 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Fût 200 L",
+        "poids_net": null,
+        "unite": "FUT"
+      },
+      {
+        "format": "IBC 1000 L",
+        "poids_net": null,
+        "unite": "IBC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "FLOW-RT",
+    "slug": "fenek-flow-rt",
+    "nom": "FENEK-FLOW RT",
+    "gamme": "flow",
+    "ordre": 22,
+    "contenu": {
+      "fr": {
+        "accroche": "Retardateur de prise",
+        "description": "Concept de produit (non validé) : Retarde la prise du béton par temps chaud ou en cas de transport long. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Retardateurs. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مؤخر لزمن الشك",
+        "description": "تصور منتج غير معتمد: تصور لمضاف يؤخر شك الخرسانة في الطقس الحار أو عند النقل لمسافات طويلة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مؤخرات الشك. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Setting retarder",
+        "description": "Unvalidated product concept: Setting retarder concept for concrete in hot weather or during long transport. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Retarders. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Ajouter à l'eau de gâchage. 2) Dosage [valeur à confirmer] % du poids de liant selon température. 3) Valider par essais préalables. 4) Surveiller les temps de prise en cas de forte chaleur.",
+    "conditionnements": [
+      {
+        "format": "Bidon 20 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Bidon 5 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Fût 200 L",
+        "poids_net": null,
+        "unite": "FUT"
+      },
+      {
+        "format": "IBC 1000 L",
+        "poids_net": null,
+        "unite": "IBC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "FLOW-SP-HR",
+    "slug": "fenek-flow-sp-hr",
+    "nom": "FENEK-FLOW SP-HR",
+    "gamme": "flow",
+    "ordre": 23,
+    "contenu": {
+      "fr": {
+        "accroche": "Superplastifiant haut réducteur d'eau",
+        "description": "Concept de produit (non validé) : Superplastifiant haute performance pour bétons fluides et à faible rapport E/C. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Superplastifiants. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "ملدن فائق عالي خفض الماء",
+        "description": "تصور منتج غير معتمد: تصور لملدن فائق للخرسانة عالية السيولة ذات نسبة الماء إلى الإسمنت المنخفضة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الملدنات الفائقة. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "High-range water-reducing superplasticizer",
+        "description": "Unvalidated product concept: High-performance superplasticizer concept for flowing concrete and low water-to-cement ratios. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Superplasticizers. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Ajouter en fin de malaxage ou dans l'eau de gâchage. 2) Dosage [valeur à confirmer] % du poids de liant. 3) Malaxer [valeur à confirmer] min. 4) Valider par essais préalables sur le ciment et les granulats du chantier. Ne pas surdoser (ressuage, ségrégation).",
+    "conditionnements": [
+      {
+        "format": "Bidon 20 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Bidon 5 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Fût 200 L",
+        "poids_net": null,
+        "unite": "FUT"
+      },
+      {
+        "format": "IBC 1000 L",
+        "poids_net": null,
+        "unite": "IBC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "FLOW-SP-PF",
+    "slug": "fenek-flow-sp-pf",
+    "nom": "FENEK-FLOW SP-PF",
+    "gamme": "flow",
+    "ordre": 24,
+    "contenu": {
+      "fr": {
+        "accroche": "Superplastifiant pour préfabrication, résistances précoces",
+        "description": "Concept de produit (non validé) : Superplastifiant à résistances précoces élevées pour préfabrication et décoffrage rapide. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Superplastifiants. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "ملدن فائق للخرسانة مسبقة الصنع والمقاومة المبكرة",
+        "description": "تصور منتج غير معتمد: تصور لملدن فائق للخرسانة مسبقة الصنع يهدف إلى اكتساب مقاومة مبكرة وفك القوالب بسرعة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الملدنات الفائقة. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Precast superplasticizer for early strength",
+        "description": "Unvalidated product concept: Superplasticizer concept for early-strength precast concrete and rapid demoulding. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Superplasticizers. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Ajouter en fin de malaxage ou dans l'eau de gâchage. 2) Dosage [valeur à confirmer] % du poids de liant. 3) Malaxer [valeur à confirmer] min. 4) Valider par essais préalables sur le ciment et les granulats du chantier. Ne pas surdoser (ressuage, ségrégation).",
+    "conditionnements": [
+      {
+        "format": "Bidon 20 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Bidon 5 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Fût 200 L",
+        "poids_net": null,
+        "unite": "FUT"
+      },
+      {
+        "format": "IBC 1000 L",
+        "poids_net": null,
+        "unite": "IBC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "FLOW-SP-RT",
+    "slug": "fenek-flow-sp-rt",
+    "nom": "FENEK-FLOW SP-RT",
+    "gamme": "flow",
+    "ordre": 25,
+    "contenu": {
+      "fr": {
+        "accroche": "Superplastifiant à maintien de rhéologie",
+        "description": "Concept de produit (non validé) : Superplastifiant à maintien d'ouvrabilité prolongé pour béton transporté (BPE). Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Superplastifiants. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "ملدن فائق يحافظ على قابلية التشغيل",
+        "description": "تصور منتج غير معتمد: تصور لملدن فائق لإطالة فترة قابلية تشغيل الخرسانة الجاهزة أثناء النقل. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الملدنات الفائقة. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Workability-retaining superplasticizer",
+        "description": "Unvalidated product concept: Superplasticizer concept for extended workability retention of transported ready-mix concrete. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Superplasticizers. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Ajouter en fin de malaxage ou dans l'eau de gâchage. 2) Dosage [valeur à confirmer] % du poids de liant. 3) Malaxer [valeur à confirmer] min. 4) Valider par essais préalables sur le ciment et les granulats du chantier. Ne pas surdoser (ressuage, ségrégation).",
+    "conditionnements": [
+      {
+        "format": "Bidon 20 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Bidon 5 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Fût 200 L",
+        "poids_net": null,
+        "unite": "FUT"
+      },
+      {
+        "format": "IBC 1000 L",
+        "poids_net": null,
+        "unite": "IBC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "FLOW-VMA",
+    "slug": "fenek-flow-vma",
+    "nom": "FENEK-FLOW VMA",
+    "gamme": "flow",
+    "ordre": 26,
+    "contenu": {
+      "fr": {
+        "accroche": "Agent de viscosité (béton autoplaçant)",
+        "description": "Concept de produit (non validé) : Stabilise les bétons très fluides et réduit la ségrégation et le ressuage. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Agents de viscosité. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مضاف معدل للزوجة الخرسانة ذاتية الدمك",
+        "description": "تصور منتج غير معتمد: تصور لمضاف يضبط لزوجة الخرسانة عالية السيولة للحد من الانفصال الحبيبي ونزف الماء. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: معدلات اللزوجة. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Viscosity-modifying admixture for self-compacting concrete",
+        "description": "Unvalidated product concept: Viscosity stabilizer concept for highly flowable concrete, limiting segregation and bleeding. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Viscosity modifiers. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Ajouter pendant le malaxage, après les granulats et le ciment. 2) Dosage [valeur à confirmer] % du poids de liant. 3) Malaxer [valeur à confirmer] min. 4) Contrôler l'étalement et la stabilité avant mise en œuvre.",
+    "conditionnements": [
+      {
+        "format": "Bidon 20 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Bidon 5 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Fût 200 L",
+        "poids_net": null,
+        "unite": "FUT"
+      },
+      {
+        "format": "IBC 1000 L",
+        "poids_net": null,
+        "unite": "IBC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "FLOW-WP",
+    "slug": "fenek-flow-wp",
+    "nom": "FENEK-FLOW WP",
+    "gamme": "flow",
+    "ordre": 27,
+    "contenu": {
+      "fr": {
+        "accroche": "Hydrofuge de masse",
+        "description": "Concept de produit (non validé) : Réduit l'absorption capillaire du béton et du mortier. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Hydrofuges de masse. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مضاف عزل مائي ضمن الخلطة",
+        "description": "تصور منتج غير معتمد: تصور لمضاف طارد للماء ضمن الخلطة لتقليل الامتصاص الشعري في الخرسانة والمونة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: مضافات العزل المائي. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Integral waterproofing admixture",
+        "description": "Unvalidated product concept: Integral water-repellent admixture concept to reduce capillary absorption in concrete and mortar. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Integral water repellents. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Ajouter à l'eau de gâchage. 2) Dosage [valeur à confirmer] % du poids de liant. 3) Bien malaxer pour une répartition homogène. 4) Vibrer et cure normaux.",
+    "conditionnements": [
+      {
+        "format": "Bidon 20 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Bidon 5 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Fût 200 L",
+        "poids_net": null,
+        "unite": "FUT"
+      },
+      {
+        "format": "IBC 1000 L",
+        "poids_net": null,
+        "unite": "IBC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "FLOW-WR-N",
+    "slug": "fenek-flow-wr-n",
+    "nom": "FENEK-FLOW WR-N",
+    "gamme": "flow",
+    "ordre": 28,
+    "contenu": {
+      "fr": {
+        "accroche": "Plastifiant réducteur d'eau",
+        "description": "Concept de produit (non validé) : Réduit l'eau de gâchage et améliore la maniabilité des bétons et mortiers courants. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Plastifiants. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "ملدن مخفض لماء الخلط",
+        "description": "تصور منتج غير معتمد: تصور لمضاف مخفض للماء يهدف إلى تحسين تشغيلية الخرسانة والمونة العادية. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الملدنات. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Water-reducing plasticizer",
+        "description": "Unvalidated product concept: Water-reducing admixture concept intended to improve workability of ordinary concrete and mortars. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Plasticizers. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Ajouter à l'eau de gâchage ou en fin de malaxage. 2) Dosage [valeur à confirmer] % du poids de liant. 3) Malaxer [valeur à confirmer] min pour homogénéiser. 4) Contrôler consistance et résistance par essais préalables.",
+    "conditionnements": [
+      {
+        "format": "Bidon 20 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Bidon 5 L",
+        "poids_net": null,
+        "unite": "BIDON"
+      },
+      {
+        "format": "Fût 200 L",
+        "poids_net": null,
+        "unite": "FUT"
+      },
+      {
+        "format": "IBC 1000 L",
+        "poids_net": null,
+        "unite": "IBC"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PAINT-ENT-L",
+    "slug": "fenek-paint-ent-l",
+    "nom": "FENEK-PAINT ENT-L",
+    "gamme": "paint",
+    "ordre": 29,
+    "contenu": {
+      "fr": {
+        "accroche": "Enduit de lissage en pâte",
+        "description": "Concept de produit (non validé) : Enduit de lissage en pâte prêt à l'emploi pour finition des murs intérieurs avant peinture. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Enduits de lissage. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "معجون تنعيم جاهز للاستعمال",
+        "description": "تصور منتج غير معتمد: تصور لمعجون تنعيم جاهز للاستعمال لتشطيب الجدران الداخلية قبل الدهان. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: معاجين التنعيم. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Ready-to-use smoothing filler",
+        "description": "Unvalidated product concept: Ready-to-use paste smoothing compound concept for interior walls before painting. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Smoothing fillers. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support dépoussiéré, fissures rebouchées. 2) Appliquer à la lame en passes minces, [valeur à confirmer] passes. 3) Séchage [valeur à confirmer] h, puis ponçage. 4) Dépoussiérer avant peinture.",
+    "conditionnements": [
+      {
+        "format": "Seau 10 kg",
+        "poids_net": 10,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 20 kg",
+        "poids_net": 20,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PAINT-FAC-EL",
+    "slug": "fenek-paint-fac-el",
+    "nom": "FENEK-PAINT FAC-EL",
+    "gamme": "paint",
+    "ordre": 30,
+    "contenu": {
+      "fr": {
+        "accroche": "Peinture de façade élastomère (pontage des microfissures)",
+        "description": "Concept de produit (non validé) : Revêtement élastomère de façade qui ponte les microfissures. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Peintures de façade. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "دهان واجهات إيلاستوميري للشقوق الدقيقة",
+        "description": "تصور منتج غير معتمد: تصور لطلاء واجهات مرن يهدف إلى تغطية الشقوق الدقيقة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: دهانات الواجهات. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Elastomeric façade paint for hairline cracks",
+        "description": "Unvalidated product concept: Elastomeric façade coating concept intended to bridge hairline cracks. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Façade paints. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support sain, propre, sec, sans efflorescences ni algues (traiter si besoin). 2) Appliquer la sous-couche adaptée. 3) Diluer selon fiche ([valeur à confirmer] %). 4) Appliquer en [valeur à confirmer] couches. 5) Ne pas appliquer sous pluie, gel ou plein soleil.",
+    "conditionnements": [
+      {
+        "format": "Seau 10 kg",
+        "poids_net": 10,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 20 kg",
+        "poids_net": 20,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PAINT-FAC-M",
+    "slug": "fenek-paint-fac-m",
+    "nom": "FENEK-PAINT FAC-M",
+    "gamme": "paint",
+    "ordre": 31,
+    "contenu": {
+      "fr": {
+        "accroche": "Peinture acrylique de façade, mate",
+        "description": "Concept de produit (non validé) : Peinture acrylique mate de protection et de décoration des façades. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Peintures de façade. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "دهان أكريليكي مطفي للواجهات",
+        "description": "تصور منتج غير معتمد: تصور لدهان أكريليكي مطفي لحماية الواجهات وتزيينها. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: دهانات الواجهات. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Matt acrylic façade paint",
+        "description": "Unvalidated product concept: Matt acrylic paint concept for protection and decoration of façades. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Façade paints. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support sain, propre, sec, sans efflorescences ni algues (traiter si besoin). 2) Appliquer la sous-couche adaptée. 3) Diluer selon fiche ([valeur à confirmer] %). 4) Appliquer en [valeur à confirmer] couches. 5) Ne pas appliquer sous pluie, gel ou plein soleil.",
+    "conditionnements": [
+      {
+        "format": "Seau 10 kg",
+        "poids_net": 10,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 20 kg",
+        "poids_net": 20,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PAINT-FAC-SX",
+    "slug": "fenek-paint-fac-sx",
+    "nom": "FENEK-PAINT FAC-SX",
+    "gamme": "paint",
+    "ordre": 32,
+    "contenu": {
+      "fr": {
+        "accroche": "Peinture de façade siloxane (hydrofuge, respirante)",
+        "description": "Concept de produit (non validé) : Peinture siloxane hydrofuge et respirante pour façades minérales. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Peintures de façade. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "دهان واجهات سيلوكسان طارد للماء ونفّاذ للبخار",
+        "description": "تصور منتج غير معتمد: تصور لدهان واجهات سيلوكسان يهدف إلى طرد الماء مع السماح بنفاذ بخار الماء عبر الأسطح المعدنية. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: دهانات الواجهات. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Water-repellent breathable siloxane façade paint",
+        "description": "Unvalidated product concept: Siloxane façade paint concept intended to repel water while allowing mineral substrates to breathe. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Façade paints. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support sain, propre, sec, sans efflorescences ni algues (traiter si besoin). 2) Appliquer la sous-couche adaptée. 3) Diluer selon fiche ([valeur à confirmer] %). 4) Appliquer en [valeur à confirmer] couches. 5) Ne pas appliquer sous pluie, gel ou plein soleil.",
+    "conditionnements": [
+      {
+        "format": "Seau 10 kg",
+        "poids_net": 10,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 20 kg",
+        "poids_net": 20,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PAINT-INT-M",
+    "slug": "fenek-paint-int-m",
+    "nom": "FENEK-PAINT INT-M",
+    "gamme": "paint",
+    "ordre": 33,
+    "contenu": {
+      "fr": {
+        "accroche": "Peinture acrylique intérieure mate",
+        "description": "Concept de produit (non validé) : Peinture acrylique mate pour murs et plafonds intérieurs. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Peintures intérieures. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "دهان أكريليكي داخلي مطفي",
+        "description": "تصور منتج غير معتمد: تصور لدهان أكريليكي مطفي للجدران والأسقف الداخلية. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الدهانات الداخلية. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Matt interior acrylic paint",
+        "description": "Unvalidated product concept: Matt acrylic paint concept for interior walls and ceilings. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Interior paints. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre, sec, dépoussiéré, réparé. 2) Appliquer une sous-couche [valeur à confirmer]. 3) Diluer si nécessaire ([valeur à confirmer] % d'eau). 4) Appliquer en [valeur à confirmer] couches au rouleau/brosse/pistolet. 5) Délai entre couches [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Seau 10 kg",
+        "poids_net": 10,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 20 kg",
+        "poids_net": 20,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PAINT-INT-S",
+    "slug": "fenek-paint-int-s",
+    "nom": "FENEK-PAINT INT-S",
+    "gamme": "paint",
+    "ordre": 34,
+    "contenu": {
+      "fr": {
+        "accroche": "Peinture acrylique intérieure satinée",
+        "description": "Concept de produit (non validé) : Peinture acrylique satinée lavable pour pièces de vie et zones à entretien fréquent. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Peintures intérieures. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "دهان أكريليكي داخلي ساتان",
+        "description": "تصور منتج غير معتمد: تصور لدهان أكريليكي ساتان قابل للغسل لغرف المعيشة والمساحات كثيرة التنظيف. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الدهانات الداخلية. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Satin interior acrylic paint",
+        "description": "Unvalidated product concept: Washable satin acrylic paint concept for living areas and frequently cleaned spaces. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Interior paints. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre, sec, dépoussiéré, réparé. 2) Appliquer une sous-couche [valeur à confirmer]. 3) Diluer si nécessaire ([valeur à confirmer] % d'eau). 4) Appliquer en [valeur à confirmer] couches au rouleau/brosse/pistolet. 5) Délai entre couches [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Seau 10 kg",
+        "poids_net": 10,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 20 kg",
+        "poids_net": 20,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PAINT-INT-WA",
+    "slug": "fenek-paint-int-wa",
+    "nom": "FENEK-PAINT INT-WA",
+    "gamme": "paint",
+    "ordre": 35,
+    "contenu": {
+      "fr": {
+        "accroche": "Peinture intérieure lessivable haute résistance",
+        "description": "Concept de produit (non validé) : Peinture lessivable haute résistance pour couloirs, cuisines et locaux professionnels. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Peintures intérieures. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "دهان داخلي قابل للغسل عالي التحمل",
+        "description": "تصور منتج غير معتمد: تصور لدهان داخلي قابل للغسل وعالي التحمل للممرات والمطابخ والمباني المهنية. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الدهانات الداخلية. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "High-durability washable interior paint",
+        "description": "Unvalidated product concept: High-resistance washable paint concept for corridors, kitchens and professional premises. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Interior paints. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre, sec, dépoussiéré, réparé. 2) Appliquer une sous-couche [valeur à confirmer]. 3) Diluer si nécessaire ([valeur à confirmer] % d'eau). 4) Appliquer en [valeur à confirmer] couches au rouleau/brosse/pistolet. 5) Délai entre couches [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Seau 10 kg",
+        "poids_net": 10,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 20 kg",
+        "poids_net": 20,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PAINT-PRIM-A",
+    "slug": "fenek-paint-prim-a",
+    "nom": "FENEK-PAINT PRIM-A",
+    "gamme": "paint",
+    "ordre": 36,
+    "contenu": {
+      "fr": {
+        "accroche": "Sous-couche d'accrochage acrylique",
+        "description": "Concept de produit (non validé) : Sous-couche d'accrochage et d'uniformisation avant peinture. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Sous-couches. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "طبقة تأسيس أكريليكية للالتصاق",
+        "description": "تصور منتج غير معتمد: تصور لطبقة تأسيس أكريليكية لتعزيز الالتصاق وتوحيد امتصاص السطح قبل الدهان. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الطبقات التأسيسية. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Acrylic adhesion primer",
+        "description": "Unvalidated product concept: Acrylic primer concept for adhesion and substrate uniformity before painting. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Primers. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre et dépoussiéré. 2) Diluer ou utiliser prêt à l'emploi selon fiche ([valeur à confirmer] %). 3) Appliquer en une couche uniforme, consommation [valeur à confirmer] m²/L. 4) Recouvrir après [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Seau 10 kg",
+        "poids_net": 10,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 20 kg",
+        "poids_net": 20,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PAINT-PRIM-FX",
+    "slug": "fenek-paint-prim-fx",
+    "nom": "FENEK-PAINT PRIM-FX",
+    "gamme": "paint",
+    "ordre": 37,
+    "contenu": {
+      "fr": {
+        "accroche": "Fixateur de fond",
+        "description": "Concept de produit (non validé) : Fixateur de fond pour consolider les supports poudreux ou très absorbants. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Sous-couches. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مثبّت للأسطح المسامية",
+        "description": "تصور منتج غير معتمد: تصور لطبقة تأسيس لتقوية الأسطح المتربة أو شديدة الامتصاص. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الطبقات التأسيسية. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Substrate consolidating primer",
+        "description": "Unvalidated product concept: Consolidating primer concept for powdery or highly absorbent substrates. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Primers. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre et dépoussiéré. 2) Diluer ou utiliser prêt à l'emploi selon fiche ([valeur à confirmer] %). 3) Appliquer en une couche uniforme, consommation [valeur à confirmer] m²/L. 4) Recouvrir après [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Seau 10 kg",
+        "poids_net": 10,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 20 kg",
+        "poids_net": 20,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PAINT-SOL-A",
+    "slug": "fenek-paint-sol-a",
+    "nom": "FENEK-PAINT SOL-A",
+    "gamme": "paint",
+    "ordre": 38,
+    "contenu": {
+      "fr": {
+        "accroche": "Peinture de sol (parkings, locaux)",
+        "description": "Concept de produit (non validé) : Peinture de sol résistante à l'abrasion pour parkings, garages et locaux techniques. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Peintures de sol. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "دهان أرضيات للمواقف والمرافق",
+        "description": "تصور منتج غير معتمد: تصور لدهان أرضيات يهدف إلى مقاومة الاحتكاك في المرائب والمواقف والغرف التقنية. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: دهانات الأرضيات. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Floor paint for car parks and premises",
+        "description": "Unvalidated product concept: Abrasion-resistant floor paint concept for garages, car parks and technical rooms. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Floor paints. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support sain, sec, dépoussiéré, humidité max [valeur à confirmer] %. 2) Primaire si requis. 3) Appliquer en [valeur à confirmer] couches au rouleau. 4) Circulation piétonne après [valeur à confirmer] h, véhicules après [valeur à confirmer] j. 5) Tracer les marquages après durcissement.",
+    "conditionnements": [
+      {
+        "format": "Seau 10 kg",
+        "poids_net": 10,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 20 kg",
+        "poids_net": 20,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PAINT-TXT-F",
+    "slug": "fenek-paint-txt-f",
+    "nom": "FENEK-PAINT TXT-F",
+    "gamme": "paint",
+    "ordre": 39,
+    "contenu": {
+      "fr": {
+        "accroche": "Revêtement décoratif texturé fin",
+        "description": "Concept de produit (non validé) : Revêtement mural texturé fin décoratif et protecteur. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Revêtements décoratifs. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "طلاء جدران زخرفي ناعم الملمس",
+        "description": "تصور منتج غير معتمد: تصور لطلاء جدران زخرفي ذي ملمس ناعم للحماية والتزيين. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: الطلاءات الزخرفية. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Fine textured decorative wall coating",
+        "description": "Unvalidated product concept: Fine-textured decorative and protective wall coating concept. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Decorative coatings. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre, primarisé. 2) Mélanger. 3) Appliquer à la lisseuse inox puis structurer à la taloche/rouleau. 4) Épaisseur [valeur à confirmer] mm. 5) Séchage [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Seau 10 kg",
+        "poids_net": 10,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 20 kg",
+        "poids_net": 20,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PROOF-ACR-RF",
+    "slug": "fenek-proof-acr-rf",
+    "nom": "FENEK-PROOF ACR-RF",
+    "gamme": "proof",
+    "ordre": 40,
+    "contenu": {
+      "fr": {
+        "accroche": "Étanchéité acrylique de toiture",
+        "description": "Concept de produit (non validé) : Revêtement d'étanchéité acrylique réfléchissant pour toitures-terrasses. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Étanchéité. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "عزل مائي أكريليكي عاكس للأسطح",
+        "description": "تصور منتج غير معتمد: تصور لطلاء عزل مائي أكريليكي عاكس للأسطح المسطحة والتراسات. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: العزل المائي. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Reflective acrylic roof waterproofing",
+        "description": "Unvalidated product concept: Reflective acrylic waterproofing coating concept for flat roofs and terraces. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Waterproofing. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre, sec, réparé, primarisé si requis. 2) Homogénéiser. 3) Appliquer en [valeur à confirmer] couches croisées au rouleau/brosse, consommation [valeur à confirmer] kg/m². 4) Armer les joints et relevés. 5) Délai entre couches [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Seau 20 kg",
+        "poids_net": 20,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PROOF-CM-O1P",
+    "slug": "fenek-proof-cm-o1p",
+    "nom": "FENEK-PROOF CM-O1P",
+    "gamme": "proof",
+    "ordre": 41,
+    "contenu": {
+      "fr": {
+        "accroche": "Étanchéité cimentaire sous carrelage, rigide",
+        "description": "Concept de produit (non validé) : Étanchéité cimentaire pour balcons, terrasses, salles d'eau et piscines, sous carrelage. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Étanchéité. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "عزل مائي إسمنتي صلب تحت البلاط",
+        "description": "تصور منتج غير معتمد: تصور لعزل مائي إسمنتي للشرفات والأسطح والحمامات والمسابح تحت البلاط. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: العزل المائي. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Rigid cementitious waterproofing beneath tiles",
+        "description": "Unvalidated product concept: Cementitious waterproofing concept for balconies, terraces, wet rooms and pools beneath tiling. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Waterproofing. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support sain, propre, humide mat. 2) Gâcher selon fiche ([valeur à confirmer] d'eau ou composant B). 3) Appliquer en [valeur à confirmer] couches croisées, armer angles et joints avec bande. 4) Délai entre couches [valeur à confirmer] h. 5) Pose du carrelage / mise en eau après [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Seau 20 kg",
+        "poids_net": 20,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PROOF-CM-O2P",
+    "slug": "fenek-proof-cm-o2p",
+    "nom": "FENEK-PROOF CM-O2P",
+    "gamme": "proof",
+    "ordre": 42,
+    "contenu": {
+      "fr": {
+        "accroche": "Étanchéité cimentaire bi-composant, flexible",
+        "description": "Concept de produit (non validé) : Étanchéité cimentaire bi-composant flexible pour supports soumis à fissuration. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Étanchéité. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "عزل مائي إسمنتي مرن ثنائي المكونات",
+        "description": "تصور منتج غير معتمد: تصور لعزل مائي إسمنتي مرن من مكونين للأسطح المعرضة للتشقق. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: العزل المائي. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Flexible two-component cementitious waterproofing",
+        "description": "Unvalidated product concept: Flexible two-component cementitious waterproofing concept for crack-prone substrates. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Waterproofing. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support sain, propre, humide mat. 2) Gâcher selon fiche ([valeur à confirmer] d'eau ou composant B). 3) Appliquer en [valeur à confirmer] couches croisées, armer angles et joints avec bande. 4) Délai entre couches [valeur à confirmer] h. 5) Pose du carrelage / mise en eau après [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Kit résine - composition et contenance non définies",
+        "poids_net": null,
+        "unite": "KIT"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PROOF-EP-ANC",
+    "slug": "fenek-proof-ep-anc",
+    "nom": "FENEK-PROOF EP-ANC",
+    "gamme": "proof",
+    "ordre": 43,
+    "contenu": {
+      "fr": {
+        "accroche": "Résine d'ancrage et scellement chimique",
+        "description": "Concept de produit (non validé) : Résine pour le scellement d'armatures en attente et de tiges d'ancrage dans le béton. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Résines époxy. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "راتنج للتثبيت الكيميائي",
+        "description": "تصور منتج غير معتمد: تصور لراتنج تثبيت قضبان التسليح والمراسي المعدنية داخل الخرسانة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: راتنجات الإيبوكسي. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Chemical anchoring resin",
+        "description": "Unvalidated product concept: Resin concept for anchoring reinforcing bars and anchor rods in concrete. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Epoxy resins. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Percer au diamètre [valeur à confirmer], nettoyer (soufflage/brossage/soufflage). 2) Mélanger la cartouche (buse mélangeuse), écarter les premières doses. 3) Injecter du fond du trou. 4) Insérer l'armature en tournant. 5) Ne pas charger avant [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Kit résine - composition et contenance non définies",
+        "poids_net": null,
+        "unite": "KIT"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PROOF-EP-INJ",
+    "slug": "fenek-proof-ep-inj",
+    "nom": "FENEK-PROOF EP-INJ",
+    "gamme": "proof",
+    "ordre": 44,
+    "contenu": {
+      "fr": {
+        "accroche": "Résine d'injection époxy (fissures)",
+        "description": "Concept de produit (non validé) : Résine époxy basse viscosité pour injection et recollement des fissures structurelles. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Résines époxy. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "راتنج إيبوكسي لحقن الشقوق",
+        "description": "تصور منتج غير معتمد: تصور لراتنج إيبوكسي منخفض اللزوجة لحقن الشقوق الإنشائية وإعادة ربطها. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: راتنجات الإيبوكسي. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Epoxy crack injection resin",
+        "description": "Unvalidated product concept: Low-viscosity epoxy injection resin concept for bonding structural cracks. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Epoxy resins. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Repérer et nettoyer la fissure, poser les packers ([valeur à confirmer] cm). 2) Obturer la fissure en surface. 3) Mélanger A et B au rapport [valeur à confirmer]. 4) Injecter à la pompe, de bas en haut, jusqu'au refus. 5) Retirer les packers après durcissement [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Kit résine - composition et contenance non définies",
+        "poids_net": null,
+        "unite": "KIT"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PROOF-EP-PRIM",
+    "slug": "fenek-proof-ep-prim",
+    "nom": "FENEK-PROOF EP-PRIM",
+    "gamme": "proof",
+    "ordre": 45,
+    "contenu": {
+      "fr": {
+        "accroche": "Primaire époxy",
+        "description": "Concept de produit (non validé) : Primaire d'accrochage et de fermeture des pores du béton avant revêtement de sol ou résine. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Résines époxy. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "طبقة تأسيس إيبوكسية",
+        "description": "تصور منتج غير معتمد: تصور لطبقة تأسيس إيبوكسية لتحسين الالتصاق وسد مسام الخرسانة قبل طلاء الأرضيات أو الراتنج. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: راتنجات الإيبوكسي. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Epoxy primer",
+        "description": "Unvalidated product concept: Epoxy adhesion and pore-sealing primer concept for concrete before flooring or resin coatings. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Epoxy resins. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support propre, sec, préparé mécaniquement. 2) Mélanger A et B au rapport [valeur à confirmer] exact (malaxeur lent). 3) Appliquer au rouleau/raclette, consommation [valeur à confirmer] g/m². 4) Saupoudrer de sable si recouvrement tardif. 5) Recouvrir dans [valeur à confirmer] h.",
+    "conditionnements": [
+      {
+        "format": "Kit résine - composition et contenance non définies",
+        "poids_net": null,
+        "unite": "KIT"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PROOF-EP-SB",
+    "slug": "fenek-proof-ep-sb",
+    "nom": "FENEK-PROOF EP-SB",
+    "gamme": "proof",
+    "ordre": 46,
+    "contenu": {
+      "fr": {
+        "accroche": "Colle structurelle époxy",
+        "description": "Concept de produit (non validé) : Colle époxy pour collage structurel béton-béton, béton-acier, béton-composite. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Résines époxy. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "لاصق إيبوكسي إنشائي",
+        "description": "تصور منتج غير معتمد: تصور للاصق إيبوكسي للربط الإنشائي بين الخرسانة والخرسانة أو الفولاذ أو المواد المركبة. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: راتنجات الإيبوكسي. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Structural epoxy adhesive",
+        "description": "Unvalidated product concept: Epoxy adhesive concept for structural bonding of concrete to concrete, steel or composites. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Epoxy resins. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Surfaces propres, sèches, rugueuses. 2) Mélanger A et B au rapport [valeur à confirmer] jusqu'à teinte homogène. 3) Appliquer en couche continue sur les deux faces. 4) Assembler et maintenir en pression [valeur à confirmer] h. 5) Durcissement complet [valeur à confirmer] j.",
+    "conditionnements": [
+      {
+        "format": "Kit résine - composition et contenance non définies",
+        "poids_net": null,
+        "unite": "KIT"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PROOF-EP-SR",
+    "slug": "fenek-proof-ep-sr",
+    "nom": "FENEK-PROOF EP-SR",
+    "gamme": "proof",
+    "ordre": 47,
+    "contenu": {
+      "fr": {
+        "accroche": "Revêtement de sol époxy autolissant",
+        "description": "Concept de produit (non validé) : Revêtement de sol époxy autolissant pour ateliers, parkings et locaux industriels. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Résines époxy. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "طلاء أرضيات إيبوكسي ذاتي التسوية",
+        "description": "تصور منتج غير معتمد: تصور لطلاء أرضيات إيبوكسي ذاتي التسوية للورش والمواقف والمنشآت الصناعية. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: راتنجات الإيبوكسي. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Self-levelling epoxy floor coating",
+        "description": "Unvalidated product concept: Self-levelling epoxy flooring concept for workshops, car parks and industrial premises. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Epoxy resins. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support sec, résistant, primarisé. 2) Mélanger A et B au rapport [valeur à confirmer], ajouter la charge si requise. 3) Couler et étaler à la raclette dentée, débuller au rouleau. 4) Épaisseur [valeur à confirmer] mm. 5) Circulation piétonne après [valeur à confirmer] h, pleine charge après [valeur à confirmer] j.",
+    "conditionnements": [
+      {
+        "format": "Kit résine - composition et contenance non définies",
+        "poids_net": null,
+        "unite": "KIT"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PROOF-PU-1K",
+    "slug": "fenek-proof-pu-1k",
+    "nom": "FENEK-PROOF PU-1K",
+    "gamme": "proof",
+    "ordre": 48,
+    "contenu": {
+      "fr": {
+        "accroche": "Membrane liquide polyuréthane mono-composant",
+        "description": "Concept de produit (non validé) : Membrane liquide élastique pour toitures, terrasses et balcons. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Étanchéité. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "غشاء سائل من البولي يوريثان أحادي المكون",
+        "description": "تصور منتج غير معتمد: تصور لغشاء سائل مرن مخصص للأسطح والشرفات والتراسات. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: العزل المائي. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "One-component polyurethane liquid membrane",
+        "description": "Unvalidated product concept: Elastic liquid membrane concept for roofs, terraces and balconies. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Waterproofing. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Support sec (humidité max [valeur à confirmer] %), propre, primarisé si requis. 2) Homogénéiser le produit. 3) Appliquer en [valeur à confirmer] couches (brosse, rouleau ou raclette), consommation [valeur à confirmer] kg/m². 4) Armer aux points singuliers si requis. 5) Recouvrement après [valeur à confirmer] h ; mise en service [valeur à confirmer].",
+    "conditionnements": [
+      {
+        "format": "Seau 20 kg",
+        "poids_net": 20,
+        "unite": "SEAU"
+      },
+      {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PROOF-PU-INJ",
+    "slug": "fenek-proof-pu-inj",
+    "nom": "FENEK-PROOF PU-INJ",
+    "gamme": "proof",
+    "ordre": 49,
+    "contenu": {
+      "fr": {
+        "accroche": "Résine d'injection polyuréthane (venues d'eau)",
+        "description": "Concept de produit (non validé) : Résine polyuréthane à gonflement pour arrêter les venues d'eau et colmater les fissures. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Résines polyuréthane. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "راتنج بولي يوريثان لحقن تسربات المياه",
+        "description": "تصور منتج غير معتمد: تصور لراتنج بولي يوريثان متمدد للحد من تسرب المياه وسد الشقوق. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: راتنجات البولي يوريثان. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Polyurethane injection resin for water ingress",
+        "description": "Unvalidated product concept: Expanding polyurethane resin concept for stopping water ingress and sealing cracks. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Polyurethane resins. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Repérer la venue d'eau ou la fissure, poser les packers. 2) Préparer le produit (et accélérateur si requis, dosage [valeur à confirmer]). 3) Injecter à la pompe jusqu'à arrêt de la fuite. 4) Contrôler, ré-injecter si besoin. 5) Retirer les packers, reboucher.",
+    "conditionnements": [
+      {
+        "format": "Kit résine - composition et contenance non définies",
+        "poids_net": null,
+        "unite": "KIT"
+      }
+    ],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  },
+  {
+    "code": "PROOF-PU-SEAL",
+    "slug": "fenek-proof-pu-seal",
+    "nom": "FENEK-PROOF PU-SEAL",
+    "gamme": "proof",
+    "ordre": 50,
+    "contenu": {
+      "fr": {
+        "accroche": "Mastic polyuréthane pour joints",
+        "description": "Concept de produit (non validé) : Mastic polyuréthane élastique pour joints de dilatation et de façade. Performances et usages à confirmer par le laboratoire.",
+        "usages": [
+          "Famille d’application envisagée : Résines polyuréthane. Validation technique requise."
+        ]
+      },
+      "ar": {
+        "accroche": "مانع تسرب بولي يوريثان للفواصل",
+        "description": "تصور منتج غير معتمد: تصور لمعجون مانع تسرب مرن من البولي يوريثان لفواصل التمدد والواجهات. الخصائص ومجالات الاستعمال رهن التحقق من المختبر.",
+        "usages": [
+          "مجموعة الاستعمال المقترحة: راتنجات البولي يوريثان. الاعتماد التقني لم يصدر بعد."
+        ]
+      },
+      "en": {
+        "accroche": "Polyurethane joint sealant",
+        "description": "Unvalidated product concept: Elastic polyurethane sealant concept for movement joints and façade joints. Performance and applications require laboratory review.",
+        "usages": [
+          "Proposed application family: Polyurethane resins. Technical approval pending."
+        ]
+      }
+    },
+    "mode_fr_preparatoire": "1) Joint propre, sec, dépoussiéré ; primaire si requis. 2) Poser fond de joint de diamètre [valeur à confirmer]. 3) Extruder le mastic en remplissant sans bulles. 4) Lisser à l'outil avant formation de peau ([valeur à confirmer] min). 5) Éviter les mouvements durant le durcissement.",
+    "conditionnements": [],
+    "statut": "presentation_provisoire",
+    "certifie": false,
+    "commercialise": false
+  }
+]
