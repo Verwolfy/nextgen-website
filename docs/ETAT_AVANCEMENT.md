@@ -140,3 +140,10 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - CI ERP ciblée : https://github.com/Verwolfy/erp-mortier/actions/runs/41293090843 (31 tests réussis).
 - CI ERP complète : https://github.com/Verwolfy/erp-mortier/actions/runs/41293155671 (**2102 tests réussis**, 2 avertissements non bloquants).
 - Base Supabase PRODUCTION inchangée. Le site Web Cloudflare, les formulaires et la synchronisation publique restent inactifs. Prochaine phase : notice + base légale et conservation validées ; audit accès détaillés ; workflow de qualification humaine ; tests en préproduction.
+
+## 1 novembre 2026 — Lot 6 : préproduction sans collecte
+- ERP PR #32 fusionnée : deux verrous secrets obligatoires et stricts pour lire la boîte CRM.
+- Streamlit : observation GitHub anonyme HTTP 303 ; déploiement réel après connexion non confirmé.
+- Cloudflare : endpoint sécurisé avec rate-limiter obligatoire/HMAC et projet Supabase précisément épinglé ; formulaires restent désactivés.
+- Supabase : aucune écriture ni migration SQL supplémentaire.
+- Critères de lancement : docs/LOT6_PREPRODUCTION_GATE.md ; NO-GO collecte.
