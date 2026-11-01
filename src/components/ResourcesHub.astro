@@ -1,0 +1,30 @@
+---
+import { messages, type Lang } from '../data/site';
+import { editorialCopy } from '../data/editorial';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = messages[lang];
+const edit = editorialCopy[lang];
+---
+<section aria-labelledby="resources-heading">
+  <div class="section-head"><h2 id="resources-heading">{edit.resourceHeading}</h2><p>{edit.resourceLead}</p></div>
+  <div class="resources-grid">
+    <article class="resource-card">
+      <span class="resource-index" aria-hidden="true">01</span>
+      <span class="resource-state">{edit.resourcePending}</span>
+      <h3>{edit.resourceTechTitle}</h3><p>{edit.resourceTechInfo}</p>
+    </article>
+    <article class="resource-card">
+      <span class="resource-index" aria-hidden="true">02</span>
+      <span class="resource-state">{edit.resourcePending}</span>
+      <h3>{edit.resourceSafetyTitle}</h3><p>{edit.resourceSafetyInfo}</p>
+    </article>
+    <article class="resource-card resource-card-demo">
+      <span class="resource-index" aria-hidden="true">03</span>
+      <span class="resource-state">{edit.resourceDemo}</span>
+      <h3>{edit.resource3dTitle}</h3><p>{edit.resource3dInfo}</p>
+      <a href={'/'+lang+'/emballages/'} class="btn">{edit.resourceExplore}</a>
+    </article>
+  </div>
+  <p class="editorial-caution" role="note">{t.noDocuments}</p>
+</section>
