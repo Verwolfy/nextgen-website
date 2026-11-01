@@ -1,5 +1,5 @@
 ---
-import { brand, type Lang } from '../data/site';
+import type { Lang } from '../data/site';
 import { fieldOrder, leadCopy, type FieldKey, type LeadKind } from '../data/lead-forms';
 interface Props {lang: Lang; kind: LeadKind;}
 const {lang,kind} = Astro.props;
@@ -8,24 +8,25 @@ const fields=fieldOrder[kind];
 const large=new Set<FieldKey>(['message']);
 const required=new Set<FieldKey>(['business','contact','phone','wilaya']);
 const typeFor=(field:FieldKey)=>field==='email'?'email':field==='phone'?'tel':'text';
-const email=`mailto:${brand.email}`;
-const wa=`https://wa.me/${brand.whatsapp}`;
 ---
 <section class="lead-panel" id={kind==='quote'?'demande-de-devis':'candidature'} aria-labelledby={`lead-${kind}`}>
   <div class="lead-header">
     <div><span class="eyebrow">NEXTGEN · B2B</span><h2 id={`lead-${kind}`}>{t.title[kind]}</h2><p>{t.intro[kind]}</p></div>
     <p class="lead-state" role="status">{t.disabled}</p>
   </div>
-  <!-- Deliberately no HTML form/action: no network transport and no personal-data collection. -->
-  <div class="lead-fields" role="group" aria-label={t.title[kind]}>
-    {fields.map((field:FieldKey)=><label class:list={['lead-field',{wide:large.has(field)}]}>
-      <span>{t.fields[field]}{required.has(field)?' *':''}</span>
-      {large.has(field)?<textarea disabled rows="4" maxlength="1500" aria-disabled="true" />:<input disabled type={typeFor(field)} autocomplete="off" maxlength="160" dir={field==='email'||field==='phone'?'ltr':'auto'} aria-disabled="true" />}
-    </label>)}
-    <label class="lead-consent wide"><input type="checkbox" disabled aria-disabled="true" /><span>{t.consent}</span></label>
-    <button type="button" class="btn lead-disabled" disabled aria-disabled="true">{t.send}</button>
-  </div>
+  <!-- No HTML form, action, script, network transport or collection. Fields hidden initially, and always disabled. -->
+  <details class="lead-preview">
+    <summary>{t.previewTitle}</summary>
+    <p class="lead-preview-help">{t.previewHelp}</p>
+    <div class="lead-fields" role="group" aria-label={t.title[kind]}>
+      {fields.map((field:FieldKey)=><label class:list={['lead-field',{wide:large.has(field)}]}>
+        <span>{t.fields[field]}{required.has(field)?' *':''}</span>
+        {large.has(field)?<textarea disabled rows="4" maxlength="1500" aria-disabled="true" />:<input disabled type={typeFor(field)} autocomplete="off" maxlength="160" dir={field==='email'||field==='phone'?'ltr':'auto'} aria-disabled="true" />}
+      </label>)}
+      <label class="lead-consent wide"><input type="checkbox" disabled aria-disabled="true" /><span>{t.consent}</span></label>
+      <button type="button" class="btn lead-disabled" disabled aria-disabled="true">{t.send}</button>
+    </div>
+  </details>
   <p class="muted">{t.privacy}</p>
   <p>{t.alternative}</p>
-  <div class="actions"><a class="btn" href={email}>{brand.email}</a><a class="btn btn-outline lead-whatsapp" href={wa} target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
 </section>
