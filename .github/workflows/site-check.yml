@@ -28,6 +28,8 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Compile static trilingual site
         run: npm run build
+      - name: Validate internal links, three languages, RTL and disabled forms
+        run: python scripts/check_built_pages.py
       - name: Assert non-publication guardrails
         run: |
           test -f dist/fr/index.html
