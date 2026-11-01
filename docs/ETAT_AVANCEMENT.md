@@ -1,3 +1,15 @@
+## 1er novembre 2026 — Lot site 13 : accueil contrôlé visuellement
+
+- **[PR #8](https://github.com/Verwolfy/nextgen-website/pull/8) fusionnée**, SHA merge `6e11017b227a1bcbbf0f1951c2133daa144205cf`.
+- **21 captures privées du lot 12 réellement récupérées et étudiées** depuis le run Chromium [41331800296](https://github.com/Verwolfy/nextgen-website/actions/runs/41331800296), artefact GitHub ID `13093227397`. Constats : navigation mobile lisible, mascottes auparavant mal intégrées au fond sombre, pays non localisé en AR/EN et rubrique `LAB · FIELD · TRAINING` pouvant suggérer une offre technique active.
+- Réponse de code : `src/data/editorial.ts` et `src/pages/[lang]/index.astro` — repère géographique FR/AR/EN, état explicite **site en préparation, aucun produit réel approuvé**, CTA direct « Nous contacter » (et équivalents AR/EN), approche présentée comme démarche **proposée** avec réserve sur les services et les résultats labo.
+- CSS `src/styles/site.css` : mise en scène volontaire des portraits blancs d'origine dans un cadre clair arrondi ; assets sources conservés strictement inchangés. Contrôles `tests/test_lot13_home_visual.py` et `scripts/check_browser_pages.py` incluant 320px, en plus des contrôles 390px.
+- **2 CI PR réussies sur `a676a69584ba639b16e33575573dc8baaf1d3e75`** : [build/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41332623363), [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41332623414). Artefact de **24 captures** après correction, ID `13093838508`, téléchargé et inspecté (FR/AR et vues 320px + desktop) : cadrage mieux intégré et statuts lisibles. Les captures 320px montrent le menu déplié volontairement après interaction de recette.
+- Documentation `docs/LOT13_AUDIT_VISUEL_ACCUEIL.md` ; aucune publication Cloudflare, données métier, tarifs, fiches non approuvées, SQL, secret, collecte ou permission modifiés.
+- **CI de fusion et du dernier commit `main` à contrôler** séparément des CI sur PR. Capture Chromium et build réussi ne prouvent pas le déploiement Cloudflare ; lancement/publication soumis aux validations Access + juridique.
+
+---
+
 ## 1 novembre 2026 — Priorité site, lot 12 : pages Gammes, À propos, Ressources
 
 ### Changements réels
