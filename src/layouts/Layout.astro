@@ -1,5 +1,5 @@
 ---
-import { brand, languages, messages, type Lang } from '../data/site';
+import { brand, brandLocation, languages, messages, type Lang } from '../data/site';
 import '../styles/site.css';
 interface Props { lang:Lang; title:string; description:string; }
 const {lang,title,description}=Astro.props;
@@ -45,9 +45,9 @@ const navSections = ['gammes','catalogue','distributeurs','ressources','a-propos
   </header>
   <main id="main"><slot /></main>
   <footer class="footer"><div class="container footer-grid">
-    <div><h2>NextGen Building Solutions</h2><p>{brand.location}</p><a href={`tel:${brand.phone.replaceAll(' ','')}`}>{brand.phone}</a><p><a href={`mailto:${brand.email}`}>{brand.email}</a></p></div>
+    <div><h2>NextGen Building Solutions</h2><p>{brandLocation[lang]}</p><a href={`tel:${brand.phone.replaceAll(' ','')}`}>{brand.phone}</a><p><a href={`mailto:${brand.email}`}>{brand.email}</a></p></div>
     <div><strong>{t.menu.ressources}</strong><p><a href={`/${lang}/ressources/`}>{t.menu.ressources}</a></p><p><a href={`/${lang}/mentions-legales/`}>{t.menu['mentions-legales']}</a></p><p><a href={`/${lang}/confidentialite/`}>{t.menu.confidentialite}</a></p></div>
-    <div><strong>Fenek</strong><p>{t.noPrices}</p><a class="btn btn-outline" href={whats} rel="noopener noreferrer" target="_blank">WhatsApp</a></div>
+    <div><strong><bdi dir="ltr">FENEK</bdi></strong><p>{t.noPrices}</p><a class="btn btn-outline" href={whats} rel="noopener noreferrer" target="_blank">WhatsApp</a></div>
    </div><div class="container footnote">© {new Date().getFullYear()} NextGen Building Solutions · {t.mark}</div></footer>
  </body>
 </html>
