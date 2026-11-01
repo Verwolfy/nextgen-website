@@ -147,3 +147,16 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Cloudflare : endpoint sécurisé avec rate-limiter obligatoire/HMAC et projet Supabase précisément épinglé ; formulaires restent désactivés.
 - Supabase : aucune écriture ni migration SQL supplémentaire.
 - Critères de lancement : docs/LOT6_PREPRODUCTION_GATE.md ; NO-GO collecte.
+
+
+## 1 novembre 2026 — Lot 8 : portes de préproduction (NO-GO déploiement)
+
+- PR site [#2](https://github.com/Verwolfy/nextgen-website/pull/2) **fusionnée** sur `main`, commit `d91e5715d3911e68061b537430200fbdf9ce8e76`.
+- `public/_headers` : nosniff, anti-iframe, referrer-policy, permissions-policy et X-Robots-Tag noindex. **N'est PAS un contrôle d'accès**.
+- `scripts/preprod_static_audit.py` : vérifie 42 pages générées, catalogue vide, form désactivé, 5 GLB et absence d'artefacts internes dans `dist`, génère SHA-256 sans réseau.
+- `.github/workflows/preprod-build-only.yml` : build & garde-fous, archive **uniquement le manifeste privé interne**, jamais de commande Wrangler/API Cloudflare.
+- `tests/test_preprod_static_audit.py` : tests unittest sur les headers et restrictions de formulaires.
+- **CI PR** : `41297423184` Astro + sécurité et `41297423154` build-only : success ; dernier contrôle post-fusion à enregistrer.
+- Cloudflare Pages : les previews sont publiques par défaut ; Cloudflare Access doit être établi AVANT de créer ou connecter le site. L'Access de preview ne protège pas automatiquement le domaine principal pages.dev. `docs/LOT8_CLOUDFLARE_PREPROD.md` détaille les vérifications et les autorisations.
+- Streamlit ERP : observation anonyme HTTP **303**, déploiement de l'onglet après authentification **non vérifié**.
+- Aucun appel Cloudflare, aucune migration/écriture Supabase, aucun secret, aucune collecte, aucune modification DNS ni publication réelle.

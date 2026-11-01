@@ -1,54 +1,46 @@
-# NextGen Building Solutions — Site B2B
+# NextGen Building Solutions — Site B2B (FR · AR · EN)
 
-**LOT 1 / SUPPORTS LOCAUX — SQL DE PUBLICATION APPLIQUÉ EN PRODUCTION LE 31 OCTOBRE 2026.**
+> **Statut au 1er novembre 2026 : préproduction technique préparée — NON DÉPLOYÉ SUR CLOUDFLARE.**
+> Le catalogue public ne contient aucun produit réel approuvé. Les formulaires et l'API de réception sont désactivés.
 
-Site dédié, distinct de l'ERP `Verwolfy/erp-mortier`. Le répertoire contient **la base d'intégration et les supports du lot 1** ; le site Astro trilingue sera développé au lot 2. Aucune publication/donnée personnelle ne doit être envoyée avant recette et validation.
+## Dépôts et architecture
 
-## Invariants
+- **Site** : dépôt privé `Verwolfy/nextgen-website`, branche `main`. Astro 6, 3 langues dont arabe RTL, pages statiques et visionneuse de conditionnements 3D indicatifs.
+- **ERP** : `Verwolfy/erp-mortier` — dépôt séparé. L'onglet CRM « Demandes NextGen » est présent mais reste désactivé par deux verrous serveur.
+- **Supabase PROD** : `wenydirqtmkywbxbxfal` ; les migrations site 001 et 003 sont **déjà appliquées**, ne pas les rejouer. Tables privées `site_produits`, `site_demandes`, vue `site_products`.
 
-- **Jamais** de requête Supabase depuis le navigateur ; extraction côté GitHub Actions seulement, avec clé serveur dans GitHub Secrets.
-- Produit réel confirmé **ET** approbation laboratoire **ET** approbation commerciale avant publication. Les 6 produits `PF-001` à `PF-006` existants sont des tests exclus du modèle.
-- Aucune divulgation des tables ERP, recettes, coûts, prix, clients, fournisseurs, employés.
-- Aucun contenu 3D, fiche technique ou FDS fictif sur le site public ; les supports générés sont des **BROUILLONS** internes.
-- Après accord écrit « SQL VALIDÉ », seule la migration SQL de publication privée a été exécutée en PRODUCTION : table, vue et permissions ; aucune donnée ERP modifiée, aucun DNS ni déploiement.
-
-## Structure
-
-- `sql/001_site_publication_PROPOSITION_NON_EXECUTEE.sql` : **source historique de la migration déjà appliquée**, conservée pour traçabilité. Ne pas exécuter de nouveau. Voir `docs/ETAT_AVANCEMENT.md`.
-- `scripts/sync_catalogue.py` : export JSON public minimal et copie contrôlée PDF/images/GLB depuis Supabase Storage.
-- `scripts/check_public_content.py` : bloque champs sensibles/prix non autorisés.
-- `.github/workflows/sync-site.yml` : nuits + déclenchement manuel/event externe ; **non déployé**.
-- `supports/` : logo original, charte, étiquettes SVG éditables, FT trilingues en HTML et PDF de démonstration, trames FDS.
-- `public/data/products.json` : `[]` à l'origine ; **aucun produit fictif en ligne**.
-
-## Exécution locale de la recette
+## Tester le site sans déployer
 
 ```bash
-python -m pip install -r requirements-sync.txt
-python -m unittest discover -s tests -v
-python scripts/check_public_content.py
+npm ci
+npm run build
+python -m unittest discover -s tests -q
+python scripts/check_built_pages.py
+python scripts/preprod_static_audit.py
+node --test tests/lead_endpoint.test.mjs
 ```
 
-## Secrets à créer sur le nouveau dépôt GitHub
+Recette navigateur Chromium (locale/CI) : `python scripts/check_browser_pages.py` après installation isolée de Playwright et Chromium. La CI GitHub exécute ces vérifications automatiquement.
 
-`SUPABASE_URL` et `SUPABASE_SERVICE_ROLE_KEY` (jamais dans ce dépôt). **La vue privée existe désormais et ses droits SQL ont été contrôlés ; configurer ces secrets uniquement dans GitHub dès que le dépôt dédié existe.**
+## Sécurité et publication
 
-Le bouton Streamlit « Publier » n'est pas implanté au lot 1. Dans un lot ultérieur, il déclenchera `repository_dispatch` via un token GitHub à permissions minimales ; aucun secret supplémentaire dans le code. Cloudflare Pages pourra être lié au dépôt après approbation de publication.
+- **Aucun navigateur ne reçoit** la clé Supabase service-role. L'export de catalogue est effectué uniquement par un processus serveur privé.
+- Les produits fictifs ERP `PF-001` à `PF-006`, coûts, prix, recettes et documents fictifs ne doivent jamais être publiés.
+- Les cinq GLB d'emballages sont uniquement des maquettes portant un avertissement de simulation et ne sont pas une homologation technique.
+- `public/robots.txt`, la balise HTML robots et `public/_headers` bloquent l'indexation des pages **sans constituer un mécanisme de confidentialité**.
+- `functions/api/lead.js` renvoie `503` tant que `NEXTGEN_LEADS_ENABLED` n'est pas exactement `true`. Turnstile, hostname, référence Supabase et rate-limit serveur/HMAC sont ensuite obligatoires, mais **ne sont pas configurés ni activés**.
+- `.github/workflows/preprod-build-only.yml` effectue uniquement une vérification et publie un manifeste SHA-256 **interne à GitHub Actions**, jamais sur Cloudflare.
+- Les previews Cloudflare Pages sont **publiques par défaut**. Avant toute création ou liaison du projet, établir Cloudflare Access et vérifier que le domaine principal `*.pages.dev` n'est pas accessible anonymement. Ne pas connecter le dépôt à Pages sans accord de publication ciblé.
+- Les mentions légales, la durée de conservation, les transferts internationaux, la notice de confidentialité FR/AR/EN et le registre B2B exigent revue juridique : ne pas présenter les brouillons comme validés.
 
-## Risques / points ouverts
+## Documentation de référence
 
-- Dépôt privé GitHub `Verwolfy/nextgen-website` désormais créé et accessible ; import progressif. Les PDF et images des maquettes internes ne doivent pas être traités comme des supports validés ni inclus dans le site public.
-- Migration production : appliquée le 31 octobre 2026 avec accord explicite, sous `20261031204336_nextgen_site_publication_private_20261031`. Tout changement ultérieur reste soumis à approbation.
-- FTP/FT labo, FDS et marque : aucune donnée validée ; ne pas mettre les exemples en ligne.
-- Le logo source est un JPG ; usage du fichier exact, sans redessin IA. Les documents ne sont pas des étiquettes industrielles de production.
-- Génération de formulaires avec accusé + CRM à 0 € : à valider juridiquement et techniquement en lot 3.
+- `docs/ETAT_AVANCEMENT.md` — journal et décisions historiques.
+- `docs/LOT8_CLOUDFLARE_PREPROD.md` — protocole de préproduction sans déploiement.
+- `docs/LOT6_PREPRODUCTION_GATE.md` et `docs/LOT7_REGISTRE_DONNEES_ET_VALIDATION.md` — décisions de conformité encore ouvertes.
+- `docs/LOT7_RECETTE_NAVIGATION.md` — tests FR/AR/EN, mobile et captures.
+- `sql/` — sources historiques de migrations déjà exécutées, **pas des scripts à rejouer**.
 
-## Lot 2 — squelette Astro FR/AR/EN (en cours)
+## Démarrage public : NO-GO
 
-- Astro 6.4.6, sorties 100% statiques, aucune API Supabase navigateur.
-- Pages /fr, /ar (RTL), /en, gamme, catalogue, fiche produit, distributeurs, contact et mentions non définitives.
-- Aucune fiche de produit fictif ; les documents présents dans `supports/` ne sont pas servis par `public`.
-- Build : `npm install && npm run build` sur Node 22.
-- Pas encore de build local exécuté : installation npm impossible dans l'environnement de génération ; CI GitHub chargée de l'évaluer.
-- `package-lock.json` présent sur GitHub ; utiliser `npm ci && npm run build` pour reproduire le build.
-- Robots et meta noindex activés jusqu'à l'autorisation de lancement.
+Aucun changement DNS, accès Internet Cloudflare, activation de formulaires, e-mail automatique, nouveau droit RLS/GRANT ou publication de produit n'a été autorisé dans ce lot. La vérification de la version réellement déployée dans Streamlit Cloud reste non confirmée (réponse HTTP anonyme 303).
