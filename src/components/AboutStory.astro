@@ -1,0 +1,29 @@
+---
+import { messages, type Lang } from '../data/site';
+import { editorialCopy } from '../data/editorial';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = messages[lang];
+const edit = editorialCopy[lang];
+---
+<section aria-labelledby="about-heading">
+  <div class="columns about-feature">
+    <div>
+      <h2 id="about-heading">{t.mission}</h2>
+      <p>{t.aboutInfo}</p><p>{t.quality}</p>
+      <p class="editorial-caution" role="note">{edit.aboutNotice}</p>
+    </div>
+    <img src="/images/Nexo-Geno.webp" alt={t.mascotsAlt} width="800" height="1390" loading="lazy" class="mascot" />
+  </div>
+  <div class="section-head about-process-head"><h2>{edit.aboutHeading}</h2><p>{edit.aboutLead}</p></div>
+  <ol class="about-steps">
+    {edit.aboutSteps.map((step,index) => <li class="about-step">
+      <span class="step-count" aria-hidden="true">{String(index+1).padStart(2,'0')}</span>
+      <h3>{step}</h3><p>{edit.aboutDetails[index]}</p>
+    </li>)}
+  </ol>
+  <div class="actions">
+    <a class="btn" href={'/'+lang+'/gammes/'}>{t.explore}</a>
+    <a class="btn btn-muted" href={'/'+lang+'/contact/'}>{edit.rangeContact}</a>
+  </div>
+</section>

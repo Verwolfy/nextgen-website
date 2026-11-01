@@ -1,7 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import LeadForm from '../../components/LeadForm.astro';
-import {brand,languages,messages,sections,ranges,rangeName,rangeColor,type Lang,type Section} from '../../data/site';
+import RangeOverview from '../../components/RangeOverview.astro';
+import ResourcesHub from '../../components/ResourcesHub.astro';
+import AboutStory from '../../components/AboutStory.astro';
+import {brand,languages,messages,sections,rangeName,type Lang,type Section} from '../../data/site';
 import {products} from '../../lib/products';
 export function getStaticPaths(){return languages.flatMap(lang=>sections.map(section=>({params:{lang,section}})))}
 const lang=Astro.params.lang as Lang;
@@ -14,11 +17,11 @@ const description=section==='catalogue'?t.rangesIntro:section==='distributeurs'?
 <Layout lang={lang} title={title} description={description}>
 <div class="page-head"><div class="container"><span class="eyebrow">NextGen Building Solutions</span><h1>{heading}</h1><p>{description}</p></div></div>
 <div class="section"><div class="container">
-{section==='gammes'&&<><div class="grid">{ranges.map(g=><a class="card" href={`/${lang}/gammes/${g}/`}><span class="bar" style={`background:${rangeColor[g]}`}></span><h2>{rangeName[g]}</h2><p>{t.ranges[g]}</p><span class="arrow">↗</span></a>)}</div></>}
+{section==='gammes'&&<RangeOverview lang={lang} />}
 {section==='catalogue'&&<>{products.length===0?<div class="notice"><h2>{t.empty}</h2><p>{t.emptyInfo}</p></div>:<div class="products-grid">{products.map(p=><a href={`/${lang}/produits/${p.slug}/`} class="product"><span class="tag">{rangeName[p.gamme]}</span><h3>{p.nom}</h3><p>{p.contenu[lang].accroche}</p></a>)}</div>}</>}
 {section==='distributeurs'&&<><div class="notice"><p>{t.distributorsInfo}</p><p><a class="btn" href="#candidature">{t.becomeDistributor}</a></p></div><LeadForm lang={lang} kind="distributor" /></>}
-{section==='ressources'&&<div class="notice"><p>{t.resourcesInfo}</p><p>{t.noDocuments}</p><p><a class="btn" href={`/${lang}/emballages/`}>{lang==='ar'?'معاينة العبوات ثلاثية الأبعاد':lang==='en'?'View 3D packaging concepts':'Voir les maquettes 3D des emballages'}</a></p></div>}
-{section==='a-propos'&&<div class="columns"><div><h2>{t.mission}</h2><p>{t.aboutInfo}</p><h3>{t.services}</h3><div class="info-list">{[t.laboratory,t.technicalSupport,t.fieldSupport,t.training].map(v=><span class="chip">{v}</span>)}</div></div><img src="/images/Nexo-Geno.webp" alt={t.mascotsAlt} width="800" height="1390" loading="lazy" class="mascot" /></div>}
+{section==='ressources'&&<ResourcesHub lang={lang} />}
+{section==='a-propos'&&<AboutStory lang={lang} />}
 {section==='contact'&&<><div class="notice"><h2>{t.contactTitle}</h2><p>{brand.location}</p><p><a href={`tel:${brand.phone.replaceAll(' ','')}`}>{t.call}: {brand.phone}</a></p><p><a href={`mailto:${brand.email}`}>{brand.email}</a></p><div class="actions"><a class="btn" href={`https://wa.me/${brand.whatsapp}`} target="_blank" rel="noopener noreferrer">{t.whatsapp}</a></div></div><LeadForm lang={lang} kind="quote" /></>}
 {section==='mentions-legales'&&<div class="notice"><p>{t.legalInfo}</p><p>NextGen Building Solutions · {brand.location}</p></div>}
 {section==='confidentialite'&&<div class="notice"><p>{t.privacyInfo}</p><p><a href={`mailto:${brand.email}`}>{brand.email}</a></p></div>}

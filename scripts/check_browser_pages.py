@@ -38,7 +38,7 @@ def check() -> None:
                 for size, width, height in (("desktop", 1280, 900), ("mobile", 390, 844)):
                     page = browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=1)
                     page.on("pageerror", lambda err: errors.append(str(err)))
-                    for section in ("", "contact", "distributeurs", "catalogue", "emballages"):
+                    for section in ("", "contact", "distributeurs", "catalogue", "emballages", "gammes", "a-propos", "ressources"):
                         path = "/" + lang + "/" + (section + "/" if section else "")
                         response = page.goto(base + path, wait_until="domcontentloaded", timeout=20000)
                         assert response is not None and response.status == 200, path
@@ -47,6 +47,16 @@ def check() -> None:
                         assert page.locator("h1").count() == 1, path
                         assert page.locator("main").count() == 1, path
                         assert page.locator("form").count() == 0, path
+                        if section == "gammes":
+                            assert page.locator(".range-overview-card").count() == 4, path
+                            assert page.locator(".editorial-caution").count() >= 1, path
+                        if section == "a-propos":
+                            assert page.locator(".about-step").count() == 3, path
+                            assert page.locator(".editorial-caution").count() >= 1, path
+                        if section == "ressources":
+                            assert page.locator(".resource-card").count() == 3, path
+                            assert page.locator(".resource-card-demo a[href$='/emballages/']").count() == 1, path
+                            assert page.locator(".resource-card:not(.resource-card-demo) a").count() == 0, path
                         if section in ("contact", "distributeurs"):
                             all_controls = page.locator(".lead-panel input, .lead-panel textarea, .lead-panel button")
                             count = all_controls.count()
@@ -60,7 +70,7 @@ def check() -> None:
                                 .slice(0,8)
                                 .map(e => ({tag:e.tagName, cls:String(e.className).slice(0,50), width:Math.round(e.getBoundingClientRect().width)}))""")
                             raise AssertionError(f"Horizontal overflow: {path} {width}px: {diff}px; elements={overflowing}")
-                        if section in ("", "contact"):
+                        if section in ("", "contact") or (size == "mobile" and section in ("gammes", "a-propos", "ressources")):
                             page.screenshot(path=str(SHOTS / (lang + "-" + size + "-" + (section or "home") + ".png")), full_page=True)
                             snapshots += 1
                     # Explicitly follow the language navigation to another localized page.
@@ -106,7 +116,7 @@ def check() -> None:
         srv.shutdown()
         srv.server_close()
     assert not errors, "Unexpected browser JavaScript errors: " + str(errors[:5])
-    print(f"PASS: 30 browser route/viewport checks, 6 language-switch clicks, 9 responsive menus, {snapshots} screenshots")
+    print(f"PASS: 48 browser route/viewport checks, 6 language-switch clicks, 9 responsive menus, {snapshots} screenshots")
 
 
 if __name__ == "__main__":
