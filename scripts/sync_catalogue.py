@@ -69,6 +69,10 @@ def _validate_content(obj: object) -> dict:
         title = d.get("accroche")
         body = d.get("description")
         usages = d.get("usages")
+        mode = d.get("mode_emploi")
+        if (not isinstance(mode, str) or not mode.strip() or len(mode)>5000 or
+            "[LABO]" in mode or "<" in mode or ">" in mode):
+            raise SyncError(f"Missing approved instructions: {lang}")
         if (not isinstance(title, str) or not title.strip() or
             not isinstance(body, str) or not body.strip() or
             not isinstance(usages, list) or not usages or
@@ -79,7 +83,7 @@ def _validate_content(obj: object) -> dict:
             raise SyncError("Oversized content")
         if any("<" in s or ">" in s for s in [title, body, *usages]):
             raise SyncError("HTML not permitted in content")
-        out[lang] = {"accroche": title.strip(), "description": body.strip(), "usages": [s.strip() for s in usages]}
+        out[lang] = {"accroche": title.strip(), "description": body.strip(), "usages": [s.strip() for s in usages], "mode_emploi": mode.strip()}
     return out
 
 

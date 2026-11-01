@@ -15,7 +15,7 @@ EXAMPLE = {
  'slug':'produit-reel-test', 'nom':'Produit validé', 'gamme':'bond', 'ordre':100,
  'produit_reel_confirme':True, 'statut_technique':'valide', 'statut_commercial':'valide',
  'conditionnements':[{'format':'Sac 25 kg','poids_net':25,'unite':'SAC','prix_vente_defaut':149999}],
- 'contenu':{lang:{'accroche':'Accroche','description':'Description validée','usages':['Application définie']}
+ 'contenu':{lang:{'accroche':'Accroche','description':'Description validée','usages':['Application définie'],'mode_emploi':'Nettoyer le support. Appliquer selon la fiche technique validée.'}
             for lang in ('fr','ar','en')},
  'prix_vente_defaut':999999, 'recette_id':'PRIVE', 'fournisseur_id':'PRIVE'
 }
@@ -43,6 +43,17 @@ class TestCatalogue(unittest.TestCase):
    with self.subTest(field=field):
     d=copy.deepcopy(EXAMPLE);d[field]=bad
     with self.assertRaises(sync.SyncError): sync.sanitize_product(d)
+
+ def test_mode_emploi_requires_validated_trilingual_text(self):
+  for lang in ('fr','ar','en'):
+   for bad in (None,'','Gâcher [LABO] L','<b>instructions</b>'):
+    with self.subTest(lang=lang,bad=bad):
+     d=copy.deepcopy(EXAMPLE)
+     if bad is None: d['contenu'][lang].pop('mode_emploi')
+     else: d['contenu'][lang]['mode_emploi']=bad
+     with self.assertRaises(sync.SyncError):sync.sanitize_product(d)
+  good=sync.sanitize_product(EXAMPLE)
+  self.assertEqual(good['contenu']['fr']['mode_emploi'],EXAMPLE['contenu']['fr']['mode_emploi'])
 
  def test_reject_unsafe_slug(self):
   for slug in ('../evil','x?y','HELLO','x/y','x..y',''):
