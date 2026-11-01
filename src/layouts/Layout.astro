@@ -8,6 +8,7 @@ const suffix=Astro.url.pathname.replace(/^\/(?:fr|ar|en)/,'') || '/';
 const translate=(next:Lang)=>`/${next}${suffix}`.replace(/\/+/g,'/');
 const canonical=Astro.url.origin+Astro.url.pathname;
 const whats=`https://wa.me/${brand.whatsapp}`;
+const navSections = ['gammes','catalogue','distributeurs','ressources','a-propos','contact'] as const;
 ---
 <!doctype html>
 <html lang={lang} dir={lang==='ar'?'rtl':'ltr'}>
@@ -25,13 +26,20 @@ const whats=`https://wa.me/${brand.whatsapp}`;
   <a class="skip" href="#main">{lang==='ar'?'انتقل إلى المحتوى':'Aller au contenu / Skip to content'}</a>
   <header class="header">
    <div class="container header-row">
-    <a href={`/${lang}/`} class="brand" aria-label="NextGen Building Solutions">
-      <img src="/images/Logo1.jpg" alt="Logo NextGen Building Solutions" width="148" height="82" />
+    <a href={`/${lang}/`} class="brand" aria-label={t.homeLabel} aria-current={Astro.url.pathname===`/${lang}/`?'page':undefined}>
+      <img src="/images/Logo1.jpg" alt="" width="148" height="82" />
     </a>
-    <nav aria-label={lang==='ar'?'القائمة الرئيسية':'Navigation principale'} class="nav">
-      {(['gammes','catalogue','distributeurs','a-propos','contact'] as const).map(s=><a href={`/${lang}/${s}/`} aria-current={Astro.url.pathname===`/${lang}/${s}/`?'page':undefined}>{t.menu[s]}</a>)}
+    <nav aria-label={t.navigationLabel} class="nav">
+      {navSections.map(s=><a href={`/${lang}/${s}/`} aria-current={Astro.url.pathname===`/${lang}/${s}/`?'page':undefined}>{t.menu[s]}</a>)}
     </nav>
-    <div class="locale" aria-label="Langue / Language">{languages.map(l=><a aria-current={l===lang?'page':undefined} href={translate(l)}>{l.toUpperCase()}</a>)}</div>
+    <div class="locale" aria-label={t.languageLabel}>{languages.map(l=><a aria-current={l===lang?'page':undefined} href={translate(l)} lang={l} aria-label={l==='fr'?'Français':l==='ar'?'العربية':'English'}>{l.toUpperCase()}</a>)}</div>
+    <!-- Native disclosure: keyboard and touch accessible, no JS or tracking. -->
+    <details class="mobile-nav">
+      <summary class="mobile-trigger" aria-label={t.mobileMenu}><span aria-hidden="true">☰</span><span class="mobile-trigger-label">{t.mobileMenu}</span></summary>
+      <nav class="mobile-links" aria-label={t.navigationLabel}>
+        {navSections.map(s=><a href={`/${lang}/${s}/`} aria-current={Astro.url.pathname===`/${lang}/${s}/`?'page':undefined}>{t.menu[s]}</a>)}
+      </nav>
+    </details>
    </div>
   </header>
   <main id="main"><slot /></main>

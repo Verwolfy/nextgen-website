@@ -68,13 +68,45 @@ def check() -> None:
                     assert page.locator(".locale a").count() == 3
                     page.locator(".locale a[href='/en/contact/']").click()
                     assert page.url.endswith("/en/contact/")
+                    # Native responsive navigation: desktop stays visible, mobile is keyboard operable.
+                    page.goto(base + "/" + lang + "/", wait_until="domcontentloaded")
+                    assert page.locator(".nav a").count() == 6
+                    if size == "mobile":
+                        assert not page.locator(".nav").is_visible(), lang
+                        toggle = page.locator(".mobile-trigger")
+                        assert toggle.is_visible(), lang
+                        assert page.locator(".mobile-links a").count() == 6
+                        assert not page.locator(".mobile-links").is_visible()
+                        if lang == "ar":
+                            assert "القائمة" in toggle.inner_text()
+                        toggle.focus()
+                        page.keyboard.press("Enter")
+                        assert page.locator(".mobile-links").is_visible()
+                        page.locator(".mobile-links a[href='/" + lang + "/ressources/']").focus()
+                        page.keyboard.press("Enter")
+                        # Key presses do not imply navigation has completed: wait explicitly.
+                        page.wait_for_url("**/" + lang + "/ressources/", timeout=10000)
+                        assert page.url.endswith("/" + lang + "/ressources/"), lang
+                    else:
+                        assert page.locator(".nav").is_visible(), lang
+                        assert not page.locator(".mobile-trigger").is_visible(), lang
                     page.close()
+                # Also exercise the 320px viewport where the menu label is visually shortened.
+                tiny = browser.new_page(viewport={"width": 320, "height": 700})
+                tiny.goto(base + "/" + lang + "/", wait_until="domcontentloaded")
+                assert tiny.locator(".mobile-trigger").is_visible()
+                tiny.locator(".mobile-trigger").click()
+                assert tiny.locator(".mobile-links a").count() == 6
+                assert tiny.locator(".mobile-links").is_visible()
+                tiny_width = tiny.evaluate("Math.ceil(document.documentElement.scrollWidth - innerWidth)")
+                assert tiny_width <= 4, f"320px navigation overflow ({lang}): {tiny_width}"
+                tiny.close()
             browser.close()
     finally:
         srv.shutdown()
         srv.server_close()
     assert not errors, "Unexpected browser JavaScript errors: " + str(errors[:5])
-    print(f"PASS: 30 browser route/viewport checks, 6 language-switch clicks, {snapshots} screenshots")
+    print(f"PASS: 30 browser route/viewport checks, 6 language-switch clicks, 9 responsive menus, {snapshots} screenshots")
 
 
 if __name__ == "__main__":
