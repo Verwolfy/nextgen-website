@@ -1,3 +1,16 @@
+## 1er novembre 2026 — Lot 17 : finitions des légendes éditoriales FR/AR/EN
+
+- **[PR #12](https://github.com/Verwolfy/nextgen-website/pull/12)** fusionnée au commit `d817ecee2809a6e02c2323f65772685c180bd51d`.
+- Relecture des captures de lot 16 : deux mentions anglaises persistaient sur les pages arabes (**FENEK COLLECTION** sur l'accueil, **NextGen · Design study** sur les emballages). Elles sont désormais localisées FR/AR/EN, sans traduire les noms des marques.
+- `src/pages/[lang]/index.astro` : `Collection FENEK / فئات FENEK / FENEK collection`, `dir="auto"`.
+- `src/pages/[lang]/emballages.astro` : `Étude de conception / تصاميم أولية / Design study` après la marque NextGen.
+- `scripts/check_browser_pages.py` : vérification réelle des légendes arabes en Chromium. `tests/test_lot17_arabic_eyebrows.py` bloque leur régression ; documentation `docs/LOT17_LIBELLES_ARABES.md`.
+- **2 CI PR réussies sur head `2684ae0300be1dbc24fa5be978a06074a22dbd0c`** : [Astro/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41348268501) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41348268419).
+- **Aucun** déploiement Pages/DNS/Access, collecte, changement ERP/Supabase, produit/tarif/FT/FDS commercial ajouté. `public/data/products.json=[]`, `noindex`.
+- Dernier SHA `main` après mise à jour documentaire à revalider 2/2. Les étiquettes imprimées en anglais dans les **images de maquettes** sont conservées : composants graphiques non contractuels à revoir ultérieurement avec approbation design, et non texte de l'interface.
+
+---
+
 ## 1er novembre 2026 — Lot 16 : audit des captures, arabe BTP et posters 3D
 
 - **[PR #11](https://github.com/Verwolfy/nextgen-website/pull/11)** fusionnée sur `main`, commit merge `03e8314236a0efaeba2adfbbc976daf69ede08ba`.
