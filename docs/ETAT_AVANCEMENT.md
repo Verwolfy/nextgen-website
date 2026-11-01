@@ -1,3 +1,26 @@
+## 1 novembre 2026 — Priorité site, lot 12 : pages Gammes, À propos, Ressources
+
+### Changements réels
+- [PR #7](https://github.com/Verwolfy/nextgen-website/pull/7) fusionnée sur `main` (commit de fusion `9f35c1a71c350613830423d59efe44593b3014b0`).
+- `src/data/editorial.ts` : contenu FR/AR/EN et rubriques éditoriales prudentes pour quatre familles FENEK, méthode de préparation, ressources techniques et sécurité en attente, 3D illustrative.
+- Trois composants nouveaux : `RangeOverview.astro`, `AboutStory.astro` et `ResourcesHub.astro`. Les pages centrales sont plus lisibles et utilisables sur mobile ; aucune fausse FT/FDS cliquable.
+- `src/pages/[lang]/gammes/[slug].astro` enrichi pour 4 gammes × 3 langues ; maintien du message « catalogue en préparation » en l'absence de produits approuvés.
+- CSS responsive (320/390 px, RTL, focus clavier, mouvement réduit) et recette Chromium étendue de **30 à 48 combinaisons** route/langue/format, avec captures internes additionnelles Gammes/À propos/Ressources.
+- `tests/test_editorial_hubs.py`, `tests/test_mobile_navigation.py` adapté après déplacement de l'image des mascottes dans le composant À propos. Documentation `docs/LOT12_HUBS_EDITORIAUX_FR_AR_EN.md`.
+- **CI sur PR après correction :** [build/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41331612676) `completed/success` et [recette Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41331612642) `completed/success`. Les CI après fusion doivent être attestées distinctement.
+
+### Interdictions préservées
+- Aucun ajout à `public/data/products.json` (`[]`), aucun SKU produit ni prix, aucun résultat labo ou homologation, aucune FT/FDS inventée.
+- Formulaires B2B et backend de collecte **inactifs** ; ni accès client Supabase, ni secrets modifiés.
+- Aucun changement SQL/RLS/GRANT, DNS ni publication Cloudflare. Le site reste **NO-GO pour toute mise en ligne publique** tant que les domaines `pages.dev`/previews ne sont pas effectivement protégés par Access et que les validations juridiques/métier restent ouvertes.
+
+### Suite
+1. Contrôler les CI des derniers commits `main` et les captures internes des pages enrichies.
+2. Continuer l'amélioration visuelle sans publier les données non qualifiées.
+3. Conserver un jalon explicite avant toute configuration Cloudflare, collecte ou annonce de disponibilité des produits.
+
+---
+
 ## 1 novembre 2026 — Site prioritaire : lots 10 et 11, navigation et accueil 3D
 
 ### Développements fusionnés sur `main`
