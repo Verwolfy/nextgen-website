@@ -49,6 +49,19 @@ class Lot40HomepageTests(unittest.TestCase):
         self.assertIn("/maquettes/", source)
         self.assertNotIn("<form", source)
 
+    def test_resources_headings_match_documentation_only(self):
+        site = (ROOT / "src/data/site.ts").read_text(encoding="utf-8")
+        editorial = (ROOT / "src/data/editorial.ts").read_text(encoding="utf-8")
+        for text in ("Informations sur les fiches techniques",
+                     "معلومات حول النشرات الفنية",
+                     "Information about technical datasheets"):
+            self.assertIn(text, site)
+        for text in ("demande de fiche technique ou de données de sécurité",
+                     "النشرات الفنية وبيانات السلامة",
+                     "technical documentation and safety data sheet"):
+            self.assertIn(text, editorial)
+        self.assertNotIn("Explore our product presentations and packaging galleries.", site)
+
     def test_guardrails_unchanged(self):
         self.assertEqual((ROOT / "public/data/products.json").read_text().strip(), "[]")
         self.assertIn("noindex,nofollow",
