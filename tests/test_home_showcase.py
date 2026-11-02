@@ -19,15 +19,19 @@ class TestShowcaseHomepage(unittest.TestCase):
                          "packaging formats"):
             self.assertIn(required,content)
 
-    def test_homepage_links_to_existing_3d_gallery(self):
+    def test_homepage_excludes_redundant_3d_preview_and_gallery_remains(self):
         page=(BASE/"src/pages/[lang]/index.astro").read_text(encoding="utf-8")
-        for token in ('showcaseCopy[lang]', 'showcaseModels.map(', '/images/3d-demo/',
-                      'href={`/${lang}/emballages/${slug}/`}', 'role="note"',
-                      'loading="lazy"', 'preview.simulation'):
-            self.assertIn(token,page)
-        self.assertNotIn("PF-001",page)
-        self.assertNotIn("prix_vente_defaut",page)
-        self.assertNotIn("<form",page)
+        for forbidden in ('showcaseCopy[lang]', 'showcaseModels.map(', 'showcase-home',
+                          '/images/3d-demo/', 'preview.simulation', '<form'):
+            self.assertNotIn(forbidden,page)
+        resources=(BASE/"src/components/ResourcesHub.astro").read_text(encoding="utf-8")
+        self.assertIn('emballages/',resources)
+        dedicated=(BASE/"src/pages/[lang]/emballages.astro").read_text(encoding="utf-8")
+        self.assertIn('ModelViewer',dedicated)
+        self.assertIn('manifest',dedicated)
+        detail=(BASE/"src/pages/[lang]/emballages/[slug].astro").read_text(encoding="utf-8")
+        self.assertIn('ModelViewer',detail)
+        self.assertIn('models-demo/',detail)
 
     def test_showcase_respects_mobile_and_reduced_motion(self):
         styles=(BASE/"src/styles/site.css").read_text(encoding="utf-8")

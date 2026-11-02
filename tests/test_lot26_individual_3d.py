@@ -32,11 +32,13 @@ class TestIndividual3DViews(unittest.TestCase):
         self.assertNotIn("site_products", page)
         self.assertNotIn("SUPABASE_", page)
 
-    def test_gallery_and_home_have_direct_per_model_links(self):
+    def test_gallery_keeps_direct_per_model_links_without_home_preview(self):
         gallery = (ROOT / "src/pages/[lang]/emballages.astro").read_text(encoding="utf-8")
         home = (ROOT / "src/pages/[lang]/index.astro").read_text(encoding="utf-8")
         self.assertIn("emballages/${item.slug}/", gallery)
-        self.assertIn("emballages/${slug}/", home)
+        self.assertNotIn("emballages/${slug}/", home)
+        resources = (ROOT / "src/components/ResourcesHub.astro").read_text(encoding="utf-8")
+        self.assertIn("emballages/", resources)
         self.assertIn("<ModelViewer", gallery)
         self.assertEqual((ROOT / "public/data/products.json").read_text().strip(), "[]")
 
