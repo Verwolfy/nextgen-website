@@ -57,9 +57,10 @@ const reviewedGalleryImage=(product:CatalogueProject):string|null=>{
 };
 
 export const conceptImage:Record<Range,string>={
-  bond:'/images/3d-demo/sac-25kg-30.webp',
-  proof:'/images/3d-demo/seau-20kg-30.webp',
-  flow:'/images/3d-demo/bidon-20l-30.webp',
+  // Neutral branding only: never substitute a packaging concept for another SKU.
+  bond:'/images/Logo1.jpg',
+  proof:'/images/Logo1.jpg',
+  flow:'/images/Logo1.jpg',
   paint:'' // no fallback: missing individual PAINT artwork fails the build
 };
 
