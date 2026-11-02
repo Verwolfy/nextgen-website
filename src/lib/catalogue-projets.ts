@@ -48,7 +48,10 @@ export const conceptPackshot=(product:CatalogueProject,variant:'card'|'full'='ca
  const name=product.slug+(variant==='card'?'-card':'')+'.webp';
  const relative='images/catalogue-projects/'+name;
  const absolute=resolve(process.cwd(),'public',relative);
- return existsSync(absolute)?'/'+relative:conceptImage[product.gamme];
+ const alternate=resolve(process.cwd(),'public','images/catalogue-projects/',
+    product.slug+(variant==='card'?'': '-card')+'.webp');
+ // Never show an incomplete upload (only the card or only the large image).
+ return existsSync(absolute)&&existsSync(alternate)?'/'+relative:conceptImage[product.gamme];
 };
 export const hasProductPackshot=(product:CatalogueProject):boolean=>
  conceptPackshot(product,'full')!==conceptImage[product.gamme];
