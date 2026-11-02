@@ -15,7 +15,6 @@ Date : 2 novembre 2026. **Lot de contrôle qualité, sans transfert des octets W
 4. `tests/test_lot21_flow_packshots.py` et `tests/test_lot22_approved_flow_images.py` : contrôles de structure, référentiels, conditionnements ERP, intégrité et absence de publication technique. Si les assets binaires sont absents du dépôt, le test d'intégrité des fichiers est explicitement marqué *skipped* au lieu de prétendre les avoir vérifiés dans GitHub.
 
 ## Transfert restant
-Le connecteur GitHub de cette conversation sait créer des fichiers UTF-8 et des blobs à partir de chaînes, **pas consommer directement le ZIP binaire qui réside dans le conteneur local**. L'environnement Git local ne résout pas `github.com` et ne possède pas de jeton GitHub. En conséquence, les **24 fichiers WebP ne sont pas poussés**, et les pages du site continuent d'afficher le fallback 3D existant.
 
 Pour importer depuis une machine authentifiée disposant de l'archive :
 ```bash
