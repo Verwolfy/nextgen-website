@@ -262,7 +262,7 @@ def check() -> None:
         srv.shutdown()
         srv.server_close()
     assert not errors, "Unexpected browser JavaScript errors: " + str(errors[:5])
-    print(f"PASS: 48 browser route/viewport checks, 6 language-switch clicks, 9 responsive menus, {snapshots} screenshots")
+    print(f"PASS: 54 browser route/viewport checks, 6 language-switch clicks, 9 responsive menus, {snapshots} screenshots")
 
 
 if __name__ == "__main__":
