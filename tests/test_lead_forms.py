@@ -25,11 +25,12 @@ class TestLeadFormPreview(unittest.TestCase):
         self.assertIn('tel:',channels)
     def test_site_has_separate_paths_within_pages(self):
         section=(ROOT/'src/pages/[lang]/[section].astro').read_text()
-        self.assertIn('kind="quote"',section)
-        self.assertIn('kind="distributor"',section)
-        self.assertIn('href="#candidature"',section)
+        self.assertNotIn('kind="quote"',section)
+        self.assertNotIn('kind="distributor"',section)
+        self.assertNotIn('href="#candidature"',section)
         self.assertIn('href="#contact-direct"',section)
-        self.assertIn('<ContactChannels lang={lang} />',section)
+        self.assertEqual(section.count('<ContactChannels lang={lang} />'),2)
+        self.assertNotIn('<LeadForm',section)
     def test_privacy_notice_is_not_misleading(self):
         values=(ROOT/'src/data/lead-forms.ts').read_text()
         for phrase in ('envoi désactivé', 'الإرسال غير مفعل', 'submission disabled'):
