@@ -1,0 +1,19 @@
+name: Diagnostic public NextGen — Cloudflare domains vs Pages
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/audit_live_cloudflare_domains.py'
+      - '.github/workflows/live-domain-diagnostic.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Checkout read-only
+        uses: actions/checkout@v4
+      - name: Compare real HTTP, DNS and render markers on public hosts
+        run: python3 scripts/audit_live_cloudflare_domains.py
