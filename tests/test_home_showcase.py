@@ -15,8 +15,8 @@ class TestShowcaseHomepage(unittest.TestCase):
 
     def test_disclaimer_is_unambiguous_in_three_languages(self):
         content=(BASE/"src/data/showcase.ts").read_text(encoding="utf-8")
-        for required in ("fr:", "ar:", "en:", "non approuvés", "غير معتمدة",
-                         "not approved", "Aucun produit", "No products"):
+        for required in ("fr:", "ar:", "en:", "emballages FENEK", "عبوات FENEK",
+                         "packaging formats"):
             self.assertIn(required,content)
 
     def test_homepage_links_to_existing_3d_gallery(self):
