@@ -54,8 +54,11 @@ class TestLot20CatalogueProjects(unittest.TestCase):
         self.assertIn('<ConceptCatalogue lang={lang} />',section)
         self.assertIn('languages.flatMap(lang=>catalogueProjects.map',detail)
         self.assertIn('product.conditionnements.length',detail)
-        self.assertIn('t.sourceNote',detail)
-        self.assertIn('guidance(lang,product.code)',detail)
+        self.assertNotIn('t.sourceNote',detail)
+        self.assertNotIn('guidance(lang,product.code)',detail)
+        self.assertNotIn('product.mode_fr_preparatoire',detail)
+        self.assertNotIn('concept-source-method',detail)
+        self.assertIn('t.methodDisclaimer',detail)
         self.assertIn('projectsByRange(g)',cards)
         self.assertIn('catalogueProjects.length',cards)
         self.assertNotIn('<form',cards)
@@ -70,7 +73,7 @@ class TestLot20CatalogueProjects(unittest.TestCase):
                 self.assertIn('does not establish certification',copy)
             else:
                 self.assertIn(token,copy)
-        self.assertIn('lang="fr" dir="ltr"',(ROOT/'src/pages/[lang]/catalogue/[slug].astro').read_text())
+        self.assertNotIn('lang="fr" dir="ltr"',(ROOT/'src/pages/[lang]/catalogue/[slug].astro').read_text())
 
 if __name__=="__main__":
     unittest.main()
