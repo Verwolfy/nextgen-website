@@ -13,10 +13,10 @@ class Lot13HomeVisualTests(unittest.TestCase):
             "NextGen Building Solutions · Algérie",
             "NextGen Building Solutions · الجزائر",
             "NextGen Building Solutions · Algeria",
-            "aucun produit réel approuvé", "لم تُعتمد بعد أي منتجات للنشر أو البيع",
-            "no verified product is approved",
-            "Démarche en préparation", "منهجية قيد الإعداد",
-            "Approach in development",
+            "Découvrez les familles FENEK", "تعرّف على مجموعات FENEK", 
+            "Discover the FENEK ranges", 
+            "Notre démarche", "منهجية العمل", 
+            "Our approach",
         ):
             self.assertIn(text, data)
 
