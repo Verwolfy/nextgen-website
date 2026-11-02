@@ -29,11 +29,11 @@ def check() -> None:
     expected = mod.expected_files()
     assert len(expected) == 24
 
-    actual = {str(path.relative_to(ROOT)) for path in PUBLIC.glob("*.webp")} if PUBLIC.exists() else set()
+    actual = {str(path.relative_to(ROOT)) for path in PUBLIC.glob("fenek-flow-*.webp")} if PUBLIC.exists() else set()
     if not actual:
         print("SKIP: 0/24 FENEK-FLOW packshots uploaded; generic 3D placeholders remain in use")
         # An obsolete build directory must never be mistaken for a verified upload.
-        assert not list((DIST / "images/catalogue-projects").glob("*.webp")), (
+        assert not list((DIST / "images/catalogue-projects").glob("fenek-flow-*.webp")), (
             "Stale packshots in dist despite no source assets"
         )
         return
@@ -64,7 +64,7 @@ def check() -> None:
             assert full_url in body, f"Specific packshot not rendered: {lang}/{slug}"
             assert "concept-detail-note" in body, f"Missing non-contractual notice: {lang}/{slug}"
 
-    print("PASS: 24/24 verified images and 48/48 localized uses (12 cards × 3 + 12 details × 3)")
+    print("PASS: 24/24 verified images and 72/72 localized uses (12 cards × 3 + 12 details × 3)")
 
 
 if __name__ == "__main__":
