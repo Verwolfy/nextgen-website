@@ -10,7 +10,8 @@ class TestLot21FlowPackshots(unittest.TestCase):
         self.assertIn("export const conceptPackshot=",src)
         self.assertIn("existsSync(absolute)",src)
         self.assertIn("return conceptImage[product.gamme]",src)
-        self.assertIn("product.gamme!=='flow'",src)
+        self.assertIn("product.gamme==='flow'",src)
+        self.assertIn("product.gamme==='bond'",src)
         self.assertIn("Bidon 20 L",src)
         self.assertIn("hasProductPackshot",src)
 
