@@ -108,13 +108,30 @@ def audit_trilingual_catalogue_copy() -> None:
                    "new_description_visible":new in html,"legacy_description_absent":old not in html,
                    "valid":ok},flush=True)
             assert ok, "Public product text not yet updated: "+lang
+    # Lot 33: the 150 generated catalogue pages retain private source
+    # instructions only in the Git repository. Inspect examples on public
+    # Cloudflare in every language, with cache-bypass on a GET.
+    codes=("fenek-bond-c1t","fenek-proof-cm-o1p",
+           "fenek-flow-wr-n","fenek-paint-int-m")
     for lang in checks:
-        url=HOSTS["apex"]+"/"+lang+"/mentions-legales/"
-        with urlopen(Request(url,headers={"Cache-Control":"no-cache"}),timeout=12) as resp:
-            html=resp.read(100_000).decode("utf-8",errors="replace")
-            old={"fr":"avant la mise en ligne","en":"before the public launch","ar":"قبل الإطلاق العام"}[lang]
-            print({"lang":lang,"page":"legal","http":resp.status,"prelaunch_notice_absent":old not in html},flush=True)
-            assert resp.status==200 and old not in html
+        for code in codes:
+            url=HOSTS["apex"]+"/"+lang+"/catalogue/"+code+"/?audit_lot33=1"
+            req=Request(url,headers={"Cache-Control":"no-cache",
+                "User-Agent":"NextGen-procedure-safety-check/1.0"})
+            with urlopen(req,timeout=12) as resp:
+                html=resp.read(150_000).decode("utf-8",errors="replace")
+                forbidden=("[valeur à confirmer]","concept-source-method",
+                           "Mode d’emploi source (brouillon français)",
+                           "Original French instructions (draft)",
+                           "نص طريقة الاستعمال الأصلي بالفرنسية")
+                absent=all(x not in html for x in forbidden)
+                has_notice="concept-detail-note" in html
+                ok=resp.status==200 and absent and has_notice
+                print({"lang":lang,"product":code,"status":resp.status,
+                       "draft_content_absent":absent,"documentation_notice":has_notice,
+                       "valid":ok},flush=True)
+                assert ok, "Public draft procedure still available: "+lang+"/"+code
+    print({"lot33_public_samples":"12/12 pages checked"},flush=True)
 
 def main() -> None:
     for name, base in HOSTS.items():
