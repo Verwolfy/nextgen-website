@@ -1,3 +1,18 @@
+## 2 novembre 2026 — Lot 24 : les 12 véritables emballages FENEK-FLOW sont sur main
+
+- [PR #19](https://github.com/Verwolfy/nextgen-website/pull/19), garde-fou des 24 assets, fusion `e2052945ce75e3a2227ab89791861951fc56a8c2`; [PR #20](https://github.com/Verwolfy/nextgen-website/pull/20), **24 fichiers binaires réellement transférés**, fusion `f1e0ca10f2a700bfb2a58434fe0c17ae9739d57e`.
+- Contrôle réel de l'API GitHub `public/images/catalogue-projects?ref=main` après fusion : **24 WebP, 12 slugs, 1 818 364 octets**, empreintes SHA Git identiques aux sources de l'archive privée de conversation. La prise en charge des images spécifiques et l'absence d'étirement viennent des lots 21–23.
+- CI sur tête corrigée de la PR #20 `5890c9531b13c1ee26bef384384a3d35abcfb051` : [Astro/sécurité réussi](https://github.com/Verwolfy/nextgen-website/actions/runs/41453201528), [Chromium FR/AR/EN réussi](https://github.com/Verwolfy/nextgen-website/actions/runs/41453201515). L'échec initial Chromium était une assertion prématurée de `loading=lazy`, réparée avec `await im.decode()`.
+- Captures de la recette `41453201515` téléchargées, WR-N inspectée sur desktop français et mobile FR/AR : produit visible, pas de bidon écrasé, avertissement de maquette non contractuelle conservé. `WR-N` bien écrit sur le visuel.
+- Relais de transfert privé temporaire utilisé uniquement pour la copie base64 GitHub puis **supprimé**. `scripts/create_flow_packshots_pr.sh` n'est plus nécessaire pour ce lot importé, seulement pour un futur réimport.
+- Documentation détaillée : `docs/LOT24_FLOW_12_IMAGES_GITHUB.md`. **Ne pas réutiliser les notes des lots 21–23 « WebP manquants » comme état courant**.
+- Le catalogue commercial homologué `public/data/products.json` demeure `[]`; 50 fiches éditoriales de prévalidation. Aucun déploiement Cloudflare ou configuration Access/DNS/ERP/Supabase/secrets déclenché dans cette session. La visibilité sur le domaine public n'a pas été vérifiée.
+
+### Suite immédiate
+Attester les 2 CI du dernier `main` après documentation, examiner les 12 rendus sur le domaine réellement déployé si accessible et protégé, puis poursuivre les maquettes des autres gammes avec contrôle technique et commercial avant toute homologation.
+
+---
+
 ## 2 novembre 2026 — Lot 22 : packshots FENEK-FLOW vérifiés, upload binaire restant
 
 - [PR #18](https://github.com/Verwolfy/nextgen-website/pull/18) fusionnée sur `main`, commit `5df6b6d773768bf12ee659dc45a6c47a57ad4518`. CI de PR **2/2 réussies** : [Astro/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41443116845), [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41443117048).
