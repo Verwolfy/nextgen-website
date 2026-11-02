@@ -91,6 +91,31 @@ def verify_live_paint_packshots() -> None:
     assert ok == 11
     print({"paint_public_assets": "11/11 accessible and valid"}, flush=True)
 
+def audit_trilingual_catalogue_copy() -> None:
+    """Read-only smoke check of the latest public catalogue descriptions."""
+    checks={
+      "fr": ("Gamme : Mortiers, colles et réparation.", "Concept de produit (non validé) :"),
+      "en": ("Range: Mortars, adhesives and repair.", "Unvalidated product concept:"),
+      "ar": ("الفئة: الملاط والمواد اللاصقة والإصلاح.", "تصور منتج غير معتمد:"),
+    }
+    for lang,(new,old) in checks.items():
+        url=HOSTS["apex"]+"/"+lang+"/catalogue/fenek-bond-c1t/"
+        req=Request(url,headers={"Cache-Control":"no-cache","User-Agent":"NextGen-editorial-public-audit/1.0"})
+        with urlopen(req,timeout=12) as resp:
+            html=resp.read(100_000).decode("utf-8",errors="replace")
+            ok=resp.status==200 and new in html and old not in html
+            print({"lang":lang,"code":"BOND-C1T","http":resp.status,
+                   "new_description_visible":new in html,"legacy_description_absent":old not in html,
+                   "valid":ok},flush=True)
+            assert ok, "Public product text not yet updated: "+lang
+    for lang in checks:
+        url=HOSTS["apex"]+"/"+lang+"/mentions-legales/"
+        with urlopen(Request(url,headers={"Cache-Control":"no-cache"}),timeout=12) as resp:
+            html=resp.read(100_000).decode("utf-8",errors="replace")
+            old={"fr":"avant la mise en ligne","en":"before the public launch","ar":"قبل الإطلاق العام"}[lang]
+            print({"lang":lang,"page":"legal","http":resp.status,"prelaunch_notice_absent":old not in html},flush=True)
+            assert resp.status==200 and old not in html
+
 def main() -> None:
     for name, base in HOSTS.items():
         host = urlsplit(base).hostname
@@ -103,6 +128,7 @@ def main() -> None:
             one(name, base, path)
         one(name, base, "/fr/catalogue/", fresh=True)
     verify_live_paint_packshots()
+    audit_trilingual_catalogue_copy()
 
 if __name__ == "__main__":
     main()
