@@ -41,7 +41,7 @@ def check() -> None:
                 for size, width, height in (("desktop", 1280, 900), ("mobile", 390, 844)):
                     page = browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=1)
                     page.on("pageerror", lambda err: errors.append(str(err)))
-                    for section in ("", "contact", "distributeurs", "catalogue", "maquettes", "gammes", "a-propos", "ressources"):
+                    for section in ("", "contact", "distributeurs", "catalogue", "gammes", "a-propos", "ressources"):
                         path = "/" + lang + "/" + (section + "/" if section else "")
                         response = page.goto(base + path, wait_until="domcontentloaded", timeout=20000)
                         assert response is not None and response.status == 200, path
@@ -176,20 +176,12 @@ def check() -> None:
                         if section == "a-propos":
                             assert page.locator(".about-step").count() == 3, path
                             assert page.locator(".editorial-caution").count() >= 1, path
-                        if section == "maquettes":
-                            assert page.locator(".visual-concept-card").count() == 46, path
-                            images = page.locator(".visual-concept-card img")
-                            assert images.count() == 46, path
-                            assert page.locator(".notice[role='note']").count() == 1, path
-                            for idx in (0, 20, 45):
-                                images.nth(idx).scroll_into_view_if_needed()
-                                assert images.nth(idx).evaluate("im => im.complete && im.naturalWidth > 0"), path
-                            page.evaluate("window.scrollTo(0,0)")
                         if section == "ressources":
                             assert page.locator(".resource-card").count() == 2, path
                             assert page.locator(".resource-card-demo").count() == 0, path
                             assert page.locator(".resource-support a[href$='/contact/']").count() == 1, path
-                            assert page.locator(".resource-support a[href$='/maquettes/']").count() == 1, path
+                            assert page.locator(".resource-support a").count() == 1, path
+                            assert page.locator("a[href*='/maquettes/']").count() == 0, path
                             assert page.locator(".resource-card a").count() == 0, path
                         if section in ("contact", "distributeurs"):
                             assert page.locator(".contact-direct .contact-channel").count() == 3, path
@@ -373,7 +365,7 @@ def check() -> None:
         srv.shutdown()
         srv.server_close()
     assert not errors, "Unexpected browser JavaScript errors: " + str(errors[:5])
-    print(f"PASS: 48 browser route/viewport checks, 6 language-switch clicks, 9 responsive menus, {snapshots} screenshots")
+    print(f"PASS: 42 browser route/viewport checks, 6 language-switch clicks, 9 responsive menus, {snapshots} screenshots")
 
 
 if __name__ == "__main__":
