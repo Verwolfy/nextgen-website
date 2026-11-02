@@ -73,6 +73,24 @@ def one(name: str, base: str, path: str, fresh: bool = False) -> None:
         print({"site": name, "path": path, "fresh": fresh,
                "error": repr(ex)[:220]}, flush=True)
 
+def verify_live_paint_packshots() -> None:
+    """Confirm all eleven uploaded WebPs are directly accessible in production."""
+    codes = ("ent-l", "fac-el", "fac-m", "fac-sx", "int-m", "int-s",
+             "int-wa", "prim-a", "prim-fx", "sol-a", "txt-f")
+    ok = 0
+    for code in codes:
+        url = HOSTS["apex"] + "/images/catalogue-projects/fenek-paint-" + code + ".webp"
+        with urlopen(Request(url, headers={"User-Agent": "NextGen-public-assets-check/1.0"}), timeout=12) as resp:
+            data = resp.read(250_000)
+            valid = (resp.status == 200 and data[:4] == b"RIFF" and
+                     data[8:12] == b"WEBP" and len(data) > 20_000)
+            print({"paint_asset": code, "http": resp.status, "webp_valid": valid,
+                   "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}, flush=True)
+            assert valid, "Missing or invalid public PAINT file: " + code
+            ok += 1
+    assert ok == 11
+    print({"paint_public_assets": "11/11 accessible and valid"}, flush=True)
+
 def main() -> None:
     for name, base in HOSTS.items():
         host = urlsplit(base).hostname
@@ -84,6 +102,7 @@ def main() -> None:
         for path in PATHS:
             one(name, base, path)
         one(name, base, "/fr/catalogue/", fresh=True)
+    verify_live_paint_packshots()
 
 if __name__ == "__main__":
     main()
