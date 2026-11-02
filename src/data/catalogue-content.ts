@@ -3,28 +3,28 @@ export const catalogueCopy:Record<Lang,{
   title:string;lead:string;status:string;intro:string;count:string;view:string;concept:string;
   format:string;unknownFormat:string;application:string;procedure:string;sourceProcedure:string;
   sourceNote:string;back:string;pictureNote:string;packshotNote:string;quote:string;rangeNav:string;
-  rangeVisual:string;paintConceptNote:string;review:string;methodTitle:string;methodDisclaimer:string;revision:string;
+  rangeVisual:string;paintConceptNote:string;review:string;methodTitle:string;methodDisclaimer:string;revision:string;technicalContact:string;
 }>={
 fr:{
- title:'Catalogue des 50 références',lead:'50 références FENEK acceptées pour présentation éditoriale. Les caractéristiques et consignes restent provisoires jusqu’aux vérifications techniques.',
- status:'Présentation de projet · Non homologué',intro:'Retrouvez les familles, descriptions, formats envisagés et modes d’emploi de travail. Les fiches pourront être révisées.',count:'références',view:'Consulter la fiche',concept:'Projet FENEK',
- format:'Conditionnements envisagés',unknownFormat:'Format à préciser',application:'Description du produit',procedure:'Déroulement indicatif',sourceProcedure:'Mode d’emploi source (brouillon français)',sourceNote:'Les mentions « valeur à confirmer » nécessitent des essais. Ne pas utiliser ce texte comme instruction de chantier.',
+ title:'Catalogue des 50 références',lead:'Découvrez les 50 références des gammes FENEK et leurs domaines d’application.',
+ status:'Référence FENEK',intro:'Explorez les références FENEK, leurs domaines d’application et leurs visuels.',count:'références',view:'Consulter la fiche',concept:'Gamme FENEK',
+ format:'Formats présentés',unknownFormat:'Format à préciser',application:'Description du produit',procedure:'Déroulement indicatif',sourceProcedure:'Mode d’emploi source (brouillon français)',sourceNote:'Les mentions « valeur à confirmer » nécessitent des essais. Ne pas utiliser ce texte comme instruction de chantier.',
  back:'Retour au catalogue',pictureNote:'Visuel d’ensemble de la gamme : cette image ne représente pas précisément ce produit ni les conditionnements indiqués.',rangeVisual:'Étude de design · Non contractuelle',paintConceptNote:'Étude graphique propre au code de cette référence. Ce dessin ne représente pas un emballage fabriqué : contenance, étiquette, formulation et couleur restent à valider.',packshotNote:'Maquette graphique propre à cette référence : étiquette, mentions techniques et conditionnement à confirmer avant impression ou commercialisation.',quote:'Voir les contacts',rangeNav:'Explorer par gamme',
- review:'Aucune certification, performance, dosage ni disponibilité commerciale n’est attestée par cet accord éditorial.',methodTitle:'Étapes de préparation à confirmer',methodDisclaimer:'Les consignes détaillées doivent être vérifiées avec une fiche technique propre à la référence avant usage.',revision:'Contenu révisable. Les données du laboratoire prévaudront une fois validées.'
+ review:'Pour les caractéristiques techniques, la documentation et la disponibilité, contactez NextGen.',methodTitle:'Étapes de préparation à confirmer',methodDisclaimer:'Les consignes détaillées doivent être vérifiées avec une fiche technique propre à la référence avant usage.',revision:'Données techniques disponibles sur demande.',technicalContact:'Pour recevoir les instructions d’application adaptées à votre projet, contactez notre équipe.'
 },
 ar:{
- title:'كتالوج يضم 50 مرجعًا',lead:'50 مرجعًا من مجموعات FENEK أُجيز عرضها تعريفيًا. تظل المواصفات وتعليمات الاستخدام أولية إلى حين اعتمادها فنيًا.',
- status:'عرض أولي · غير معتمد فنيًا',intro:'تصفّح المجموعات والمنتجات المقترحة وعبواتها وخطوات استخدامها الأولية. يمكن مراجعة المعلومات وتعديلها لاحقًا.',count:'مرجعًا',view:'عرض التفاصيل',concept:'تصور منتج',
- format:'العبوات المقترحة',unknownFormat:'لم يُحدّد حجم العبوة بعد',application:'وصف المنتج',procedure:'خطوات استخدام استرشادية',sourceProcedure:'نص طريقة الاستعمال الأصلي بالفرنسية (مسودة)',sourceNote:'تتضمن المسودة الفرنسية قيمًا لم تُحدّد بعد. لا تُستخدم تعليمات تنفيذ في موقع العمل.',
+ title:'كتالوج يضم 50 مرجعًا',lead:'اكتشف 50 مرجعًا من مجموعات FENEK ومجالات استخدامها.',
+ status:'مرجع FENEK',intro:'تصفّح مجموعات FENEK ومجالات الاستخدام وتصاميم العبوات.',count:'مرجعًا',view:'عرض التفاصيل',concept:'مجموعة FENEK',
+ format:'العبوات المعروضة',unknownFormat:'لم يُحدّد حجم العبوة بعد',application:'وصف المنتج',procedure:'خطوات استخدام استرشادية',sourceProcedure:'نص طريقة الاستعمال الأصلي بالفرنسية (مسودة)',sourceNote:'تتضمن المسودة الفرنسية قيمًا لم تُحدّد بعد. لا تُستخدم تعليمات تنفيذ في موقع العمل.',
  back:'العودة إلى الكتالوج',pictureNote:'صورة عامة للمجموعة، ولا تمثل هذا المنتج أو أحجام العبوات الواردة في الوصف.',rangeVisual:'دراسة تصميمية غير تعاقدية',paintConceptNote:'رسم تصوّري يحمل رمز هذا المرجع فقط، ولا يمثل عبوة مصنّعة. يجب تأكيد حجم العبوة والملصق والتركيبة والألوان قبل الاستخدام التجاري.',packshotNote:'تصميم توضيحي خاص بهذا المرجع. يجب مراجعة الملصق والمعلومات التقنية وحجم العبوة قبل التصنيع أو التسويق.',quote:'وسائل التواصل',rangeNav:'تصفح حسب المجموعة',
- review:'الموافقة على العرض لا تعني اعتماد الأداء أو الجرعات أو المطابقة أو توافر المنتج للبيع.',methodTitle:'خطوات أولية قابلة للمراجعة',methodDisclaimer:'يجب الرجوع إلى النشرة الفنية المعتمدة الخاصة بكل منتج قبل الاستخدام الفعلي.',revision:'يمكن تحديث هذا المحتوى لاحقًا وفقًا لنتائج التجارب والاعتمادات الفنية.'
+ review:'للمواصفات الفنية والوثائق والتوفر، يُرجى التواصل مع NextGen.',methodTitle:'خطوات أولية قابلة للمراجعة',methodDisclaimer:'يجب الرجوع إلى النشرة الفنية المعتمدة الخاصة بكل منتج قبل الاستخدام الفعلي.',revision:'المعلومات الفنية متاحة عند الطلب.',technicalContact:'للحصول على تعليمات الاستخدام المناسبة لمشروعك، تواصل مع فريقنا.'
 },
 en:{
- title:'Catalogue of 50 references',lead:'50 FENEK references approved for editorial presentation. Technical details and instructions remain provisional pending product-specific review.',
- status:'Concept presentation · Not certified',intro:'Explore the proposed ranges, descriptions, packaging formats and draft working methods. Content may be updated later.',count:'references',view:'Explore concept',concept:'FENEK concept',
- format:'Proposed packaging',unknownFormat:'Packaging format to be defined',application:'Product description',procedure:'Indicative workflow',sourceProcedure:'Original French instructions (draft)',sourceNote:'The French draft contains values not yet established by testing. It is not an instruction for site use.',
+ title:'Catalogue of 50 references',lead:'Explore 50 FENEK references and their application areas.',
+ status:'FENEK reference',intro:'Browse FENEK ranges, application areas and product visuals.',count:'references',view:'Explore concept',concept:'FENEK range',
+ format:'Packaging formats shown',unknownFormat:'Packaging format to be defined',application:'Product description',procedure:'Indicative workflow',sourceProcedure:'Original French instructions (draft)',sourceNote:'The French draft contains values not yet established by testing. It is not an instruction for site use.',
  back:'Back to catalogue',pictureNote:'Range overview only: the pictured items are not this specific product or its stated packaging sizes.',rangeVisual:'Design study · Non-contractual',paintConceptNote:'Code-specific editorial illustration only, not a manufactured pack. Packaging size, printed label, formulation and colours require approval.',packshotNote:'Product-specific visual concept: label, technical statements and packaging must be reviewed before printing or sale.',quote:'Contact channels',rangeNav:'Browse by range',
- review:'Editorial approval does not establish certification, performance, dosage or commercial availability.',methodTitle:'Preparation steps pending review',methodDisclaimer:'Follow a product-specific, approved technical datasheet before any actual application.',revision:'This content can be revised as laboratory and technical validation progresses.'
+ review:'Contact NextGen for technical specifications, documentation and availability.',methodTitle:'Preparation steps pending review',methodDisclaimer:'Follow a product-specific, approved technical datasheet before any actual application.',revision:'Technical information available upon request.'
 }
 };
 export const guideKey=(code:string):string=>{
@@ -44,7 +44,7 @@ fr:{
  resin:['Examiner la propreté, l’humidité et la compatibilité du support.','Respecter le ratio de mélange ou le mode de préparation indiqué dans une fiche validée.','Appliquer puis respecter les conditions et délais de recouvrement confirmés.'],
  admixture:['Vérifier la compatibilité avec les matériaux et la formulation du chantier.','Déterminer le dosage et le moment d’incorporation à partir d’essais de convenance.','Contrôler le béton ou le mortier frais puis les performances requises.'],
  paint:['Préparer le support et vérifier l’adéquation du primaire.','Déterminer la dilution, les couches et les outils sur une fiche technique approuvée.','Respecter les conditions d’application et les délais de séchage validés.'],
- mortar:['Préparer le support et vérifier l’application prévue.','Définir le gâchage, l’épaisseur et les conditions de mise en œuvre par essais.','Contrôler les délais et la cure prévus par la documentation approuvée.']
+ mortar:['Préparer le support et vérifier l’application prévue.','Définir le gâchage, l’épaisseur et les conditions de mise en œuvre par essais.','Contrôler les délais et la cure prévus par la documentation approuvée.'],technicalContact:'Contact our team for application guidance relevant to your project.'
 },
 ar:{
  tile:['افحص حالة السطح ومدى ملاءمته لنظام اللصق المقترح.','لا تُحدّد كمية الماء أو طريقة الخلط إلا وفق نشرة فنية معتمدة بعد التجارب.','تُراجع طريقة الفرد وأزمنة العمل والتصلب قبل أي استعمال فعلي.'],
