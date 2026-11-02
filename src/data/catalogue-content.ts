@@ -3,28 +3,28 @@ export const catalogueCopy:Record<Lang,{
   title:string;lead:string;status:string;intro:string;count:string;view:string;concept:string;
   format:string;unknownFormat:string;application:string;procedure:string;sourceProcedure:string;
   sourceNote:string;back:string;pictureNote:string;packshotNote:string;quote:string;rangeNav:string;
-  rangeVisual:string;paintConceptNote:string;review:string;methodTitle:string;methodDisclaimer:string;revision:string;
+  rangeVisual:string;paintConceptNote:string;review:string;methodTitle:string;methodDisclaimer:string;
 }>={
 fr:{
  title:'Catalogue des 50 références',lead:'50 références FENEK acceptées pour présentation éditoriale. Les caractéristiques et consignes restent provisoires jusqu’aux vérifications techniques.',
  status:'Présentation de projet · Non homologué',intro:'Retrouvez les familles, descriptions, formats envisagés et modes d’emploi de travail. Les fiches pourront être révisées.',count:'références',view:'Consulter la fiche',concept:'Projet FENEK',
  format:'Conditionnements envisagés',unknownFormat:'Format à préciser',application:'Description du produit',procedure:'Déroulement indicatif',sourceProcedure:'Mode d’emploi source (brouillon français)',sourceNote:'Les mentions « valeur à confirmer » nécessitent des essais. Ne pas utiliser ce texte comme instruction de chantier.',
  back:'Retour au catalogue',pictureNote:'Visuel d’ensemble de la gamme : cette image ne représente pas précisément ce produit ni les conditionnements indiqués.',rangeVisual:'Étude de design · Non contractuelle',paintConceptNote:'Étude graphique propre au code de cette référence. Ce dessin ne représente pas un emballage fabriqué : contenance, étiquette, formulation et couleur restent à valider.',packshotNote:'Maquette graphique propre à cette référence : étiquette, mentions techniques et conditionnement à confirmer avant impression ou commercialisation.',quote:'Voir les contacts',rangeNav:'Explorer par gamme',
- review:'Aucune certification, performance, dosage ni disponibilité commerciale n’est attestée par cet accord éditorial.',methodTitle:'Étapes de préparation à confirmer',methodDisclaimer:'Pour toute question sur l’utilisation d’une référence, contactez notre équipe technique.',revision:'Contenu révisable. Les données du laboratoire prévaudront une fois validées.'
+ review:'Aucune certification, performance, dosage ni disponibilité commerciale n’est attestée par cet accord éditorial.',methodTitle:'Étapes de préparation à confirmer',methodDisclaimer:'Pour toute question sur l’utilisation d’une référence, contactez notre équipe technique.'
 },
 ar:{
  title:'كتالوج يضم 50 مرجعًا',lead:'50 مرجعًا من مجموعات FENEK أُجيز عرضها تعريفيًا. تظل المواصفات وتعليمات الاستخدام أولية إلى حين اعتمادها فنيًا.',
  status:'عرض أولي · غير معتمد فنيًا',intro:'تصفّح المجموعات والمنتجات المقترحة وعبواتها وخطوات استخدامها الأولية. يمكن مراجعة المعلومات وتعديلها لاحقًا.',count:'مرجعًا',view:'عرض التفاصيل',concept:'تصور منتج',
  format:'العبوات المقترحة',unknownFormat:'لم يُحدّد حجم العبوة بعد',application:'وصف المنتج',procedure:'خطوات استخدام استرشادية',sourceProcedure:'نص طريقة الاستعمال الأصلي بالفرنسية (مسودة)',sourceNote:'تتضمن المسودة الفرنسية قيمًا لم تُحدّد بعد. لا تُستخدم تعليمات تنفيذ في موقع العمل.',
  back:'العودة إلى الكتالوج',pictureNote:'صورة عامة للمجموعة، ولا تمثل هذا المنتج أو أحجام العبوات الواردة في الوصف.',rangeVisual:'دراسة تصميمية غير تعاقدية',paintConceptNote:'رسم تصوّري يحمل رمز هذا المرجع فقط، ولا يمثل عبوة مصنّعة. يجب تأكيد حجم العبوة والملصق والتركيبة والألوان قبل الاستخدام التجاري.',packshotNote:'تصميم توضيحي خاص بهذا المرجع. يجب مراجعة الملصق والمعلومات التقنية وحجم العبوة قبل التصنيع أو التسويق.',quote:'وسائل التواصل',rangeNav:'تصفح حسب المجموعة',
- review:'الموافقة على العرض لا تعني اعتماد الأداء أو الجرعات أو المطابقة أو توافر المنتج للبيع.',methodTitle:'خطوات أولية قابلة للمراجعة',methodDisclaimer:'للاستفسار عن استعمال أي مرجع، تواصل مع فريق NextGen.',revision:'يمكن تحديث هذا المحتوى لاحقًا وفقًا لنتائج التجارب والاعتمادات الفنية.'
+ review:'الموافقة على العرض لا تعني اعتماد الأداء أو الجرعات أو المطابقة أو توافر المنتج للبيع.',methodTitle:'خطوات أولية قابلة للمراجعة',methodDisclaimer:'للاستفسار عن استعمال أي مرجع، تواصل مع فريق NextGen.'
 },
 en:{
  title:'Catalogue of 50 references',lead:'50 FENEK references approved for editorial presentation. Technical details and instructions remain provisional pending product-specific review.',
  status:'Concept presentation · Not certified',intro:'Explore the proposed ranges, descriptions, packaging formats and draft working methods. Content may be updated later.',count:'references',view:'Explore concept',concept:'FENEK concept',
  format:'Proposed packaging',unknownFormat:'Packaging format to be defined',application:'Product description',procedure:'Indicative workflow',sourceProcedure:'Original French instructions (draft)',sourceNote:'The French draft contains values not yet established by testing. It is not an instruction for site use.',
  back:'Back to catalogue',pictureNote:'Range overview only: the pictured items are not this specific product or its stated packaging sizes.',rangeVisual:'Design study · Non-contractual',paintConceptNote:'Code-specific editorial illustration only, not a manufactured pack. Packaging size, printed label, formulation and colours require approval.',packshotNote:'Product-specific visual concept: label, technical statements and packaging must be reviewed before printing or sale.',quote:'Contact channels',rangeNav:'Browse by range',
- review:'Editorial approval does not establish certification, performance, dosage or commercial availability.',methodTitle:'Preparation steps pending review',methodDisclaimer:'Contact our team for product-specific application information.',revision:'This content can be revised as laboratory and technical validation progresses.'
+ review:'Editorial approval does not establish certification, performance, dosage or commercial availability.',methodTitle:'Preparation steps pending review',methodDisclaimer:'Contact our team for product-specific application information.'
 }
 };
 export const guideKey=(code:string):string=>{
