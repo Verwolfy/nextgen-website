@@ -298,3 +298,18 @@ h1,h2,h3,.page-head p,.showcase-card{overflow-wrap:anywhere;min-width:0}
  .showcase-single{margin:20px auto}
  .showcase-single model-viewer{height:clamp(330px,54vh,540px)}
 }
+
+
+/* Lot 27 — source PNG visual study, 46 unique responsive WebP previews. */
+.visual-concept-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:28px 0 36px}
+.visual-concept-card{min-width:0;margin:0;border:1px solid #dce6e9;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 8px 22px #1026480c}
+.visual-concept-card a{display:block;aspect-ratio:1;overflow:hidden;background:#eef1f3}
+.visual-concept-card a:focus-visible{outline:3px solid #078c5c;outline-offset:-3px}
+.visual-concept-card img{width:100%;height:100%;object-fit:contain;display:block}
+.visual-concept-card figcaption{display:grid;gap:4px;padding:13px 15px;color:#112851}
+.visual-concept-card figcaption span{font-size:.77rem;color:#587082;line-height:1.4}
+.resource-visuals-link{margin:16px 0 0}
+.resource-visuals-link a{text-decoration:underline;text-underline-offset:3px;font-weight:700}
+@media(max-width:990px){.visual-concept-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:680px){.visual-concept-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.visual-concept-card figcaption{padding:11px}}
+@media(max-width:360px){.visual-concept-grid{grid-template-columns:1fr}}
