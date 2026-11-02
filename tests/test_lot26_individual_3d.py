@@ -25,7 +25,7 @@ class TestIndividual3DViews(unittest.TestCase):
         for token in ("getStaticPaths()", "languages.flatMap", "manifest.map",
                       "params: { lang, slug: model.code }", "<ModelViewer",
                       "src={modelPath}", "poster={posterPath}",
-                      "href={modelPath}", "download=", "no", "SIMULATION",
+                      "href={modelPath}", "download=", "SIMULATION",
                       "مسودة غير معتمدة", "NOT APPROVED"):
             self.assertIn(token, page)
         self.assertIn("Unknown 3D preview", page)
@@ -35,9 +35,9 @@ class TestIndividual3DViews(unittest.TestCase):
     def test_gallery_and_home_have_direct_per_model_links(self):
         gallery = (ROOT / "src/pages/[lang]/emballages.astro").read_text(encoding="utf-8")
         home = (ROOT / "src/pages/[lang]/index.astro").read_text(encoding="utf-8")
-        self.assertIn("emballages/${item.slug}/".replace("\\$", "$"), gallery)
-        self.assertIn("emballages/${slug}/".replace("\\$", "$"), home)
-        self.assertIn("model-viewer", gallery.lower())
+        self.assertIn("emballages/${item.slug}/", gallery)
+        self.assertIn("emballages/${slug}/", home)
+        self.assertIn("<ModelViewer", gallery)
         self.assertEqual((ROOT / "public/data/products.json").read_text().strip(), "[]")
 
 
