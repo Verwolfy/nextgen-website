@@ -28,8 +28,8 @@ def approved_assets() -> tuple[dict, dict]:
     indexed = {p["slug"]: p for p in assets}
     assert len(indexed) == 10
     assert all(p["slug"].startswith("fenek-bond-") for p in assets)
-    assert len({p["full_sha256"] for p in assets}) == 12
-    assert len({p["card_sha256"] for p in assets}) == 12
+    assert len({p["full_sha256"] for p in assets}) == 10
+    assert len({p["card_sha256"] for p in assets}) == 10
     return manifest, indexed
 
 
