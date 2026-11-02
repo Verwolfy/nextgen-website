@@ -162,16 +162,22 @@ def main() -> None:
             assert detail.is_file() and asset in detail.read_text(encoding="utf-8"), (
                 f"Wrong detail image: {lang}/{slug}"
             )
-        # PAINT has only a range collage in the source, never pass it as an
-        # individual certified packshot or claim it matches listed formats.
-        assert catalog.count('class="concept-range-only-label"') == 11, lang
+        # Lot 30: eleven distinct PAINT editorial drawings by exact code,
+        # never the repeated 15 L photo montage or an invented certified pack.
+        assert catalog.count('class="paint-concept-art"') == 11, lang
+        assert '/images/maquettes/maquette-19.webp' not in catalog, (
+            f"Obsolete shared 15 L collage still in the PAINT catalogue ({lang})"
+        )
         for slug in ("fenek-paint-ent-l","fenek-paint-fac-el","fenek-paint-fac-m",
                      "fenek-paint-fac-sx","fenek-paint-int-m","fenek-paint-int-s",
                      "fenek-paint-int-wa","fenek-paint-prim-a","fenek-paint-prim-fx",
                      "fenek-paint-sol-a","fenek-paint-txt-f"):
+            code = "PAINT-" + slug.removeprefix("fenek-paint-").upper()
+            assert f'data-paint-code="{code}"' in catalog, f"Missing PAINT concept: {lang}/{code}"
             detail = (ROOT / lang / "catalogue" / slug / "index.html").read_text(encoding="utf-8")
-            assert '/images/maquettes/maquette-19.webp' in detail, slug
-            assert 'concept-range-only-label' in detail, slug
+            assert f'data-paint-code="{code}"' in detail, f"Wrong PAINT concept: {lang}/{slug}"
+            assert 'class="paint-concept-art"' in detail, slug
+            assert '/images/maquettes/maquette-19.webp' not in detail, slug
         assert "PF-001" not in catalog and "PF-006" not in catalog
         assert not (ROOT / lang / "produits").is_dir(), "No real product was approved"
         assert "SIMULATION" in (ROOT / "fr" / "emballages" / "index.html").read_text(encoding="utf-8")

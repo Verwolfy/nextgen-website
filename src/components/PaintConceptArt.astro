@@ -1,0 +1,57 @@
+---
+import type {Lang} from '../data/site';
+interface Props { code:string; lang:Lang }
+const {code,lang}=Astro.props;
+const codes=['ENT-L','FAC-EL','FAC-M','FAC-SX','INT-M','INT-S','INT-WA','PRIM-A','PRIM-FX','SOL-A','TXT-F'] as const;
+const short=code.startsWith('PAINT-')?code.slice(6):'';
+const index=codes.indexOf(short as typeof codes[number]);
+if(index<0) throw Error('Unknown FENEK-PAINT editorial concept: '+code);
+const colors=['#8b2640','#2b7890','#804d89','#a15c38','#1f7880','#586f9b','#738348','#99733a','#526a7e','#6752a3','#ab5970'];
+const accent=colors[index];
+const uid='paint-'+short.toLowerCase().replace(/[^a-z0-9]/g,'-');
+const copy={
+ fr:{tag:'ÉTUDE DE DESIGN',status:'Concept visuel · non homologué',alt:'Illustration graphique provisoire pour'},
+ ar:{tag:'دراسة تصميمية',status:'تصور بصري غير معتمد',alt:'رسم توضيحي أولي لـ'},
+ en:{tag:'DESIGN STUDY',status:'Visual concept · not approved',alt:'Provisional graphic illustration for'}
+}[lang];
+---
+<div class="paint-concept-art" data-paint-code={code} role="img" aria-label={copy.alt+' '+code}>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 640" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id={uid+'-bg'} x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#fff" />
+        <stop offset="1" stop-color="#e8edf2" />
+      </linearGradient>
+      <linearGradient id={uid+'-pail'} x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#d5dce1"/><stop offset=".2" stop-color="#fff"/>
+        <stop offset=".72" stop-color="#fff"/><stop offset="1" stop-color="#bdc7d0"/>
+      </linearGradient>
+      <linearGradient id={uid+'-lid'} x1="0" y1="0" x2="1" y2=".8">
+        <stop offset="0" stop-color={accent}/><stop offset="1" stop-color="#1b2b46"/>
+      </linearGradient>
+    </defs>
+    <rect width="720" height="640" fill={'url(#'+uid+'-bg)'}/>
+    <circle cx={118+(index%4)*148} cy="165" r={142+(index%3)*18} fill={accent} opacity=".055"/>
+    <path d={index%2===0?'M0 515 L720 360 V640 H0 Z':'M0 378 L720 520 V640 H0 Z'} fill={accent} opacity=".065"/>
+    {Array.from({length:4},(_,i)=><rect x={68+i*186} y={74+(index%3)*14} width="8" height={72+(i%2)*39} rx="4" fill={accent} opacity=".17" transform={`rotate(${index%2?13:-13} ${68+i*186} 90)`}/>)}
+    <ellipse cx="360" cy="570" rx="199" ry="25" fill="#1d2a3b" opacity=".12"/>
+    <path d="M192 206 C179 115 228 81 357 78 C489 78 541 125 527 206" fill="none" stroke="#8b97a7" stroke-width="14" stroke-linecap="round"/>
+    <path d="M192 202 Q360 245 528 202 L510 515 Q360 572 210 515 Z" fill={'url(#'+uid+'-pail)'} stroke="#b8c2cd" stroke-width="3"/>
+    <path d="M202 220 Q360 255 518 220 L514 271 Q360 290 206 271 Z" fill={accent} opacity=".96"/>
+    <ellipse cx="360" cy="197" rx="177" ry="46" fill={'url(#'+uid+'-lid)'} stroke="#263f54" stroke-width="4"/>
+    <ellipse cx="360" cy="188" rx="167" ry="34" fill={accent} opacity=".95"/>
+    <path d="M192 207 Q360 250 528 207" fill="none" stroke="#263f54" stroke-width="11"/>
+    <path d="M226 286 Q360 299 494 286 L488 471 Q360 501 232 471 Z" fill="#fff" stroke="#e5e8ec" stroke-width="2"/>
+    <path d="M230 295 L490 295 L488 311 L232 311 Z" fill={accent}/>
+    <text x="360" y="354" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="800" fill="#142e48">NEXTGEN</text>
+    <text x="360" y="389" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="35" font-weight="800" fill={accent}>FENEK-PAINT</text>
+    <path d="M259 409 H461" stroke={accent} stroke-width="3" opacity=".7"/>
+    <text x="360" y="461" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="55" font-weight="900" fill="#19354e">{short}</text>
+    <path d="M212 484 Q360 522 508 484 L507 513 Q360 561 212 513 Z" fill={accent} opacity=".94"/>
+    <text x="360" y="603" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#586e7c">{copy.tag}</text>
+  </svg>
+  <div class="paint-concept-caption">
+    <bdi dir="ltr">{'FENEK-PAINT '+short}</bdi>
+    <small>{copy.status}</small>
+  </div>
+</div>

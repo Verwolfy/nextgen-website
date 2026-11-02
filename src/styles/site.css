@@ -321,3 +321,13 @@ h1,h2,h3,.page-head p,.showcase-card{overflow-wrap:anywhere;min-width:0}
 .concept-range-only-label small{font-size:.68rem;font-weight:700;color:#456375}
 .concept-detail-image.concept-range-only-visual{min-height:280px}
 @media(max-width:590px){.concept-range-only-label{padding:7px 10px}.concept-range-only-label small{font-size:.65rem}}
+
+/* Lot 30: code-specific editorial graphics instead of the repeated 15 L PAINT collage.
+   All lettering is illustrative and intentionally omits weight, volume and certification. */
+.paint-concept-art{position:relative;display:block;width:100%;aspect-ratio:1/1;min-width:0;overflow:hidden;background:#eef2f5;isolation:isolate}
+.paint-concept-art svg{display:block;width:100%;height:100%;object-fit:contain}
+.paint-concept-caption{position:absolute;inset:auto 4% 3%;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 11px;max-width:92%;background:#fffffff0;border:1px solid #dce4e9;border-radius:11px;box-shadow:0 3px 12px #17324c1b;color:#163048;text-align:center;overflow-wrap:anywhere}
+.paint-concept-caption bdi{font-size:.88rem;font-weight:800;letter-spacing:.01em}
+.paint-concept-caption small{color:#4e6875;font-size:.69rem;font-weight:650}
+[dir=rtl] .paint-concept-caption{direction:rtl}
+@media(max-width:590px){.paint-concept-caption{padding:7px 9px}.paint-concept-caption small{font-size:.65rem}}
