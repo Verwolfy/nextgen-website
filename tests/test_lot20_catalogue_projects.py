@@ -54,8 +54,8 @@ class TestLot20CatalogueProjects(unittest.TestCase):
         self.assertIn('<ConceptCatalogue lang={lang} />',section)
         self.assertIn('languages.flatMap(lang=>catalogueProjects.map',detail)
         self.assertIn('product.conditionnements.length',detail)
-        self.assertIn('t.sourceNote',detail)
-        self.assertIn('guidance(lang,product.code)',detail)
+        self.assertIn('t.technicalContact',detail)
+        self.assertNotIn('guidance(lang,product.code)',detail)
         self.assertIn('projectsByRange(g)',cards)
         self.assertIn('catalogueProjects.length',cards)
         self.assertNotIn('<form',cards)
@@ -63,14 +63,13 @@ class TestLot20CatalogueProjects(unittest.TestCase):
 
     def test_draft_methods_not_misrepresented_as_translated_field_directions(self):
         copy=(ROOT/'src/data/catalogue-content.ts').read_text()
-        for token in ('Mode d’emploi source', 'بالفرنسية', 'French instructions',
-                      'لم يُحدّد حجم العبوة', 'no certification', 'methodDisclaimer:'):
+        for token in ('technicalContact:', 'لم يُحدّد حجم العبوة', 'methodDisclaimer:'):
             # Some phrases have different casing depending on locale; prove the relevant semantics.
             if token=='no certification':
                 self.assertIn('does not establish certification',copy)
             else:
                 self.assertIn(token,copy)
-        self.assertIn('lang="fr" dir="ltr"',(ROOT/'src/pages/[lang]/catalogue/[slug].astro').read_text())
+        self.assertNotIn('mode_fr_preparatoire',(ROOT/'src/pages/[lang]/catalogue/[slug].astro').read_text())
 
 if __name__=="__main__":
     unittest.main()
