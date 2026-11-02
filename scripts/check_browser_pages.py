@@ -68,15 +68,15 @@ def check() -> None:
                             if lang == "ar":
                                 assert "كتالوج" in page.locator("h1").inner_text(), path
                         if section == "catalogue":
-                            # Lot 28: 6 BOND + 11 PROOF exact source illustrations,
+                            # Lot 28: 16 BOND + 11 PROOF exact source illustrations,
                             # plus 11 clearly labeled, non-specific PAINT overview cards.
                             gallery_cards = page.locator(".concept-product-card img[src*='/images/maquettes/']")
-                            assert gallery_cards.count() == 28, f"{lang}, {size}: incorrect gallery catalogue mapping"
+                            assert gallery_cards.count() == 38, f"{lang}, {size}: incorrect gallery catalogue mapping"
                             assert page.locator(".concept-product-card .concept-range-only-label").count() == 11, (
                                 f"{lang}, {size}: PAINT range art must be explicitly labeled"
                             )
                             if size == "mobile":
-                                for k in (0, 5, 16, 17, 27):
+                                for k in (0, 5, 16, 27, 37):
                                     im = gallery_cards.nth(k)
                                     im.scroll_into_view_if_needed()
                                     assert im.evaluate("""async im => {
@@ -100,15 +100,21 @@ def check() -> None:
                                     )
                             page.evaluate("window.scrollTo(0,0)")
                         if section == "catalogue" and bond_images_present:
-                            bags=page.locator(".concept-product-card img[src*='/images/catalogue-projects/fenek-bond-']")
-                            assert bags.count()==10, f"{lang}, {size}: incomplete BOND cards"
+                            # Lot 29: exact labels on the newly supplied studio mockups,
+                            # rather than the first-generation flat-label WebP cards.
+                            bags=page.locator("#catalogue-bond .concept-product-card img[src*='/images/maquettes/']")
+                            assert bags.count()==16, f"{lang}, {size}: incomplete updated BOND cards"
+                            assert page.locator(".concept-product-card img[src*='/images/catalogue-projects/fenek-bond-']").count()==0, (
+                                f"{lang}, {size}: old BOND label design is still displayed"
+                            )
                             if size=="mobile":
                                 for k in range(bags.count()):
                                     bags.nth(k).scroll_into_view_if_needed()
-                                    assert bags.nth(k).evaluate("""im => im.complete && im.naturalWidth === 560 &&
-                                        im.naturalHeight === 560 && getComputedStyle(im).objectFit === 'contain'"""), (
-                                            f"{lang}: missing, stretched BOND bag {k}"
-                                        )
+                                    assert bags.nth(k).evaluate("""async im => {
+                                        try { await im.decode(); } catch (_) { return false; }
+                                        return im.complete && im.naturalWidth === 880 &&
+                                            im.naturalHeight === 880 && getComputedStyle(im).objectFit === 'contain';
+                                    }"""), f"{lang}: broken or stretched updated BOND card {k}"
                                 page.evaluate("window.scrollTo(0,0)")
                         if section == "gammes":
                             assert page.locator(".range-overview-card").count() == 4, path
@@ -207,10 +213,13 @@ def check() -> None:
                         if slug=="fenek-bond-c1t" and bond_images_present:
                             full=page.locator(".concept-detail-image img")
                             full.scroll_into_view_if_needed()
-                            assert full.evaluate("""im => im.complete && im.naturalWidth === 1280 &&
-                                im.naturalHeight === 1280 && getComputedStyle(im).objectFit === 'contain'"""), (
-                                f"{lang}, {size}: BOND C1T image missing or deformed"
-                            )
+                            assert full.evaluate("""async im => {
+                                try { await im.decode(); } catch (_) { return false; }
+                                return im.complete && im.naturalWidth === 880 &&
+                                    im.naturalHeight === 880 &&
+                                    im.getAttribute('src') === '/images/maquettes/maquette-20.webp' &&
+                                    getComputedStyle(im).objectFit === 'contain';
+                            }"""), f"{lang}, {size}: detailed BOND C1T bag missing or distorted"
                             page.screenshot(path=str(SHOTS/(lang+"-"+size+"-fenek-bond-c1t.png")),full_page=True)
                             snapshots+=1
                         if slug=="fenek-flow-wr-n" and flow_images_present:
