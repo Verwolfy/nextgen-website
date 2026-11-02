@@ -2,7 +2,7 @@
 import Layout from '../../../layouts/Layout.astro';
 import {languages,rangeName,rangeColor,type Lang} from '../../../data/site';
 import {catalogueProjects,conceptPackshot,hasProductPackshot,type CatalogueProject} from '../../../lib/catalogue-projets';
-import {catalogueCopy,guidance} from '../../../data/catalogue-content';
+import {catalogueCopy} from '../../../data/catalogue-content';
 export function getStaticPaths(){
  return languages.flatMap(lang=>catalogueProjects.map(product=>({params:{lang,slug:product.slug},props:{product}})));
 }
@@ -30,14 +30,7 @@ const t=catalogueCopy[lang];
         {d.usages.length>0&&<ul class="concept-usages">{d.usages.map(x=><li>{x}</li>)}</ul>}
         <h2>{t.format}</h2>
         <div class="concept-formats detail-formats">{product.conditionnements.length?product.conditionnements.map(x=><span>{x.format}</span>):<span>{t.unknownFormat}</span>}</div>
-        <p class="concept-detail-note">{t.revision}</p>
-        <h2>{t.methodTitle}</h2>
-        <p>{t.methodDisclaimer}</p>
-        <ol class="concept-steps">{guidance(lang,product.code).map((step,index)=><li><span class="step-count">{String(index+1).padStart(2,'0')}</span>{step}</li>)}</ol>
-        <details class="concept-source-method">
-          <summary>{t.sourceProcedure}</summary>
-          <p>{t.sourceNote}</p><p lang="fr" dir="ltr">{product.mode_fr_preparatoire}</p>
-        </details>
+        <p class="concept-detail-note">{t.technicalContact}</p>
       </div>
       <aside class="concept-detail-aside" aria-label={t.format}>
         <div class="concept-detail-image concept-packshot-container" style={'--range-color:'+rangeColor[product.gamme]}>
