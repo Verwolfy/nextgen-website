@@ -26,7 +26,7 @@ class TestLot27VisualConcepts(unittest.TestCase):
         page = (ROOT / "src/pages/[lang]/maquettes.astro").read_text(encoding="utf-8")
         for needle in ("languages.map", "length: 46", "maquette-", "loading=\"lazy\"",
                        "NextGen visual design gallery", "Galerie de créations visuelles", "معرض التصاميم",
-                       "getStaticPaths", "Layout", "emballages/"):
+                       "getStaticPaths", "Layout", "catalogue/"):
             self.assertIn(needle, page)
         resources = (ROOT / "src/components/ResourcesHub.astro").read_text(encoding="utf-8")
         self.assertIn("/maquettes/", resources)
