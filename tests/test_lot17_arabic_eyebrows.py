@@ -19,7 +19,7 @@ class LocalizedSectionLabels(unittest.TestCase):
                     "eyebrow:'Design study'", 'NextGen · {copy.eyebrow}'):
             self.assertIn(txt,s)
         self.assertNotIn('<span class="eyebrow">NextGen · Design study</span>',s)
-        self.assertIn('مسودة غير معتمدة',s)
+        self.assertIn('استكشف نماذج العبوات',s)
 
     def test_catalogue_stays_unpublished(self):
         self.assertEqual((ROOT/'public/data/products.json').read_text().strip(),'[]')
