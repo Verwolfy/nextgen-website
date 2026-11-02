@@ -42,4 +42,3 @@ La mise à jour SQL n'était autorisée que pour les 50 lignes `statut_technique
 - Deux CI après fusion réussies au SHA `c5ef0e2` : [Astro/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41352515834) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41352515874).
 - 50 visuels 900 × 900 WebP contrôlés ; archive privée avec 50 visuels + `index.html` + JSON (52 fichiers), intégrité ZIP vérifiée, classeur enrichi 50 lignes et source Excel conservée.
 
-**Note qualité** : 50/50 complétude de préparation, mais le niveau esthétique `9/10` n'a pas été attesté par une évaluation indépendante ; des vérifications d'impression/étiquetage, retouches 3D individuelles et validation BTP sont encore nécessaires. Aucune publication des 50 références sur le site live ni Cloudflare.

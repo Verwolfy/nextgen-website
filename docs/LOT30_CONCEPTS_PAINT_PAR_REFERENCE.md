@@ -9,7 +9,6 @@
 
 ## Correction provisoire livrable
 - Nouveau composant Astro `src/components/PaintConceptArt.astro` : étude graphique *distincte et identifiée par code* pour chacune des onze références `PAINT-ENT-L`, `FAC-EL`, `FAC-M`, `FAC-SX`, `INT-M`, `INT-S`, `INT-WA`, `PRIM-A`, `PRIM-FX`, `SOL-A`, `TXT-F`.
-- Chaque illustration repose sur un **seau vectoriel stylisé** avec code FENEK-PAINT propre, une palette légèrement différenciée et mention de conception FR/AR/EN. **Ce n'est ni une photographie, ni une maquette 3D, ni une image d'emballage homologué**. Aucun volume, poids, dosage, norme ou certification n'est imprimé sur le seau.
 - Remplace l'image répétée `maquette-19.webp` sur les **11 cartes catalogue + 11 fiches × 3 langues**. L'image source du lot 27 reste préservée dans la galerie générale des maquettes.
 - Les avertissements des fiches FR/AR/EN indiquent les limites des illustrations et l'absence d'approbation des emballages.
 - Les 16 images BOND photoréalistes issues des sources, les 11 PROOF et les 12 FLOW restent inchangées.

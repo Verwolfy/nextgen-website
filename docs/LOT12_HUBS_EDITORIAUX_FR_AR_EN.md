@@ -4,14 +4,12 @@ Date : 1er novembre 2026. Statut : **code de préproduction, sans publication Cl
 
 ## Objectif
 
-Après les lots 10 (navigation mobile) et 11 (galerie 3D sur l'accueil), renforcer les pages de second niveau du site NextGen Building Solutions en français, arabe RTL et anglais, sans inventer de produits, de performances, d'autorisations ou de documents homologués.
 
 ## Livrables
 
 - `src/data/editorial.ts` : textes localisés, catégories éditoriales pour **Fenek-Bond, Fenek-Proof, Fenek-Flow et Fenek-Paint**, démarche de qualification présentée comme **en préparation**, distinction entre documents techniques en attente et concepts d'emballages.
 - `src/components/RangeOverview.astro` : quatre cartes de gammes plus lisibles, thèmes génériques et réserve explicite, sans SKU.
 - `src/components/AboutStory.astro` : trois étapes **proposées** (écoute du besoin, qualification des références, contrôle des documents), sans prétendre à une certification ou disponibilité de services.
-- `src/components/ResourcesHub.astro` : trois cartes (fiches techniques, FDS, concepts 3D). Les premières sont indiquées *en attente de validation* et **ne comportent aucun lien de téléchargement fictif**. Seule la galerie 3D déjà existante est liée.
 - `src/pages/[lang]/[section].astro` : connexion de ces trois composants aux routes existantes.
 - `src/pages/[lang]/gammes/[slug].astro` : pages des 4 gammes × 3 langues détaillées avec zones éditoriales, réserve sur les SKU, accès aux maquettes et au contact ; l'état « catalogue vide » reste inchangé tant qu'aucun produit n'est approuvé.
 - `src/styles/site.css` : grilles responsives, affichage mobile 320/390 px, couleur de gamme via variable CSS, focus clavier, prise en charge RTL et animations réduites.

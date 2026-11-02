@@ -6,7 +6,6 @@ Date : 2 novembre 2026. Dernier contexte : site NextGen en production Cloudflare
 
 - Image 1 : `FENEK-BOND C1T` rendu à étiquette plate et pictogramme simplifié, actuellement utilisé sur le catalogue.
 - Image 2 : sac `FENEK-BOND C1T` avec packaging photoréaliste blanc/bleu/vert, lettrage bien lisible, visuel carrelage, textes FR/AR et mascotte.
-- La seconde est déjà présente dans le dépôt comme `public/images/maquettes/maquette-20.webp`, issue de l'archive utilisateur `Maquettes 3D.zip` (galerie lot 27). Ce sont des **images 2D**, pas des modèles CAO ni photos de produits fabriqués.
 - Choix : utiliser **les maquettes déjà fournies par l'utilisateur**, pas une régénération. Les images originales (20 WebP lot 25) restent conservées à l'identique et vérifiées SHA-256, mais ne sont plus affichées comme première source dans le catalogue.
 
 ## Table exacte des 10 visuels BOND remplacés

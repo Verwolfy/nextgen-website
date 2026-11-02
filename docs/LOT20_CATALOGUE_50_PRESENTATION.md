@@ -20,7 +20,6 @@ En production Supabase `wenydirqtmkywbxbxfal`, 50 lignes de `public.site_produit
 
 ## Limites d'illustration
 
-Pour le site, l'image affichée reste **une illustration générique de la catégorie** issue des cinq posters 3D existants, accompagnée d'une mention qui interdit de la confondre avec l'étiquette ou le conditionnement précis de la référence. Les 50 images composites WebP de travail sont disponibles dans l'archive de préproduction locale précédente, **mais ne sont pas incorporées dans cette PR**. Qualité photoréaliste 9/10 non prouvée et non annoncée.
 
 ## Tests et restrictions
 

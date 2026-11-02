@@ -161,9 +161,3 @@ class TestAssetSecurity(unittest.TestCase):
    s=FileSession(b'',302)
    with self.assertRaises(sync.SyncError):
     sync.copy_asset(BASE+'/storage/v1/object/public/docs/example.pdf','fiche_technique_url',f,BASE,'TEST_SECRET',s)
-
- def test_reject_glb_magic(self):
-  with tempfile.TemporaryDirectory() as td:
-   f=Path(td)/'models'/'demo.glb'
-   with self.assertRaises(sync.SyncError):
-    sync.copy_asset(BASE+'/storage/v1/object/public/models/demo.glb','modele_3d_url',f,BASE,'TEST_SECRET',FileSession(b'BADGLB'*8))

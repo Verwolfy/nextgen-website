@@ -20,7 +20,6 @@ L'en-tête Astro affichait tous ses liens sur plusieurs lignes à l'écran étro
 - `python -m unittest discover -s tests -v` inclut `tests/test_mobile_navigation.py`.
 - `npm ci && npm run build && python scripts/check_built_pages.py` vérifie les 42 routes et l'absence de produit non approuvé.
 - `python scripts/check_browser_pages.py` vérifie en Chromium les menus desktop/mobile dans trois langues, l'ouverture par **Entrée**, la navigation par lien et les écrans à **320 px** ; les captures restent dans les artefacts internes à GitHub.
-- Les contrôles de sécurité antidéploiement, catalogue vide, formulaires désactivés et 3D demeurent en place.
 
 ## Limitations
 

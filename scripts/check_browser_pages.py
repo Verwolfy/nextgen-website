@@ -41,7 +41,7 @@ def check() -> None:
                 for size, width, height in (("desktop", 1280, 900), ("mobile", 390, 844)):
                     page = browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=1)
                     page.on("pageerror", lambda err: errors.append(str(err)))
-                    for section in ("", "contact", "distributeurs", "catalogue", "emballages", "maquettes", "gammes", "a-propos", "ressources"):
+                    for section in ("", "contact", "distributeurs", "catalogue", "maquettes", "gammes", "a-propos", "ressources"):
                         path = "/" + lang + "/" + (section + "/" if section else "")
                         response = page.goto(base + path, wait_until="domcontentloaded", timeout=20000)
                         assert response is not None and response.status == 200, path
@@ -173,20 +173,6 @@ def check() -> None:
                                 assert "الفئات التقنية" in page.locator("h1").inner_text(), path
                                 assert "الملاط" in page.locator(".range-overview").inner_text(), path
                             assert page.locator(".editorial-caution").count() >= 1, path
-                        if section == "emballages":
-                            if lang == "ar":
-                                assert "تصاميم أولية" in page.locator(".page-head .eyebrow").inner_text(), path
-                            assert page.locator("model-viewer").count() == 5, path
-                            assert page.locator(".showcase-card a[href^='/"+lang+"/emballages/']").count() == 5, path
-                            posters = page.locator("button[slot='poster'] img")
-                            assert posters.count() == 5, path
-                            # Native img tag inside the local poster slot must render BEFORE the 3D GLB is loaded.
-                            for i in range(posters.count()):
-                                posters.nth(i).scroll_into_view_if_needed()
-                                assert posters.nth(i).evaluate("im => im.complete && im.naturalWidth > 0"), path
-                            assert page.locator("model-viewer[reveal='interaction']").count() == 5, path
-                            assert page.locator("button[slot='poster']").count() == 5, path
-                            page.evaluate("window.scrollTo(0,0)")
                         if section == "a-propos":
                             assert page.locator(".about-step").count() == 3, path
                             assert page.locator(".editorial-caution").count() >= 1, path
@@ -226,22 +212,14 @@ def check() -> None:
                                 .map(e => ({tag:e.tagName, cls:String(e.className).slice(0,50), width:Math.round(e.getBoundingClientRect().width)}))""")
                             raise AssertionError(f"Horizontal overflow: {path} {width}px: {diff}px; elements={overflowing}")
                         if (section in ("", "contact")
-                            or (size == "mobile" and section in ("gammes", "a-propos", "ressources", "distributeurs", "emballages"))
-                            or (size == "desktop" and lang == "ar" and section in ("gammes", "a-propos", "emballages"))):
+                            or (size == "mobile" and section in ("gammes", "a-propos", "ressources", "distributeurs"))
+                            or (size == "desktop" and lang == "ar" and section in ("gammes", "a-propos"))):
                             page.screenshot(path=str(SHOTS / (lang + "-" + size + "-" + (section or "home") + ".png")), full_page=True)
                             snapshots += 1
-                    # Real local 3D GLB can be opened directly from the homepage.
-                    model_route = "/"+lang+"/emballages/sac-25kg/"
-                    result = page.goto(base+model_route, wait_until="domcontentloaded", timeout=20000)
-                    assert result is not None and result.status == 200, model_route
-                    assert page.locator("model-viewer").count() == 1, model_route
-                    assert page.locator("model-viewer").get_attribute("src") == "/models-demo/sac-25kg.glb", model_route
-                    assert page.locator("model-viewer").get_attribute("reveal") == "interaction", model_route
-                    assert page.locator("button[slot='poster'] img").count() == 1, model_route
-                    assert page.locator("a[download='sac-25kg.glb']").count() == 1, model_route
-                    assert page.locator("form").count() == 0, model_route
-                    assert page.locator("meta[name='robots']").get_attribute("content") == "noindex,nofollow", model_route
-                    assert page.evaluate("Math.ceil(document.documentElement.scrollWidth - window.innerWidth)") <= 4, model_route
+                    # Obsolete routes are no longer part of the static build.
+                    assert not (DIST / lang / "emballages").exists(), lang
+                    assert not (DIST / "models-demo").exists()
+                    assert not (DIST / "images" / "3d-demo").exists()
                     # Smoke-check four individual conceptual products, not certified SKUs.
                     for slug in ("fenek-bond-c1t", "fenek-proof-cm-o1p",
                                  "fenek-flow-wr-n", "fenek-paint-int-m"):
@@ -395,7 +373,7 @@ def check() -> None:
         srv.shutdown()
         srv.server_close()
     assert not errors, "Unexpected browser JavaScript errors: " + str(errors[:5])
-    print(f"PASS: 54 browser route/viewport checks, 6 language-switch clicks, 9 responsive menus, {snapshots} screenshots")
+    print(f"PASS: 48 browser route/viewport checks, 6 language-switch clicks, 9 responsive menus, {snapshots} screenshots")
 
 
 if __name__ == "__main__":

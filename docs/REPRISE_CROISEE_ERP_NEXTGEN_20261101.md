@@ -10,7 +10,6 @@
 - Instruction : consulter aussi `docs/ETAT_AVANCEMENT.md` dans les deux dépôts et `prompt_execution_autonome.md` fourni au projet.
 
 ## Constats vérifiés le 01/11/2026
-1. Site Astro 6 B2B **NextGen Building Solutions** FR / AR (RTL) / EN, maquettes d'emballages 3D ; pas de catalogue public réel approuvé et pas de collecte activée. Le dépôt privé n'implique pas un hébergement privé.
 2. Requête SQL PROD en lecture seule : `public.site_produits = 50` lignes privées, `public.site_products = 0` ligne exportable, `public.site_demandes = 0`, `public.schema_migrations = 0`, `supabase_migrations.schema_migrations = 23`. **Ne pas confondre les deux historiques** ni inventer des entrées dans le premier.
 3. `site_produits` et `site_demandes` : RLS actif (2 tables), zéro politique ouverte ; seuls les GRANT de `service_role` apparaissent pour ces tables, incluant toujours DELETE/TRUNCATE. Ne pas réduire ces droits sans arbitrage RLS/GRANT explicite.
 4. CRM ERP : onglet demandes NextGen présent sur main ; lecture métadonnées seulement et **double verrou** `nextgen.crm_inbox_read_enabled is True` ET `nextgen.privacy_review_approved is True`; ne pas activer. Service de qualification SKU en lecture seule sur main ; ne débloque ni vente, ni production, ni publication.
@@ -85,7 +84,6 @@
 
 - Priorité donnée par l'utilisateur au site **NextGen Building Solutions**, et non aux évolutions ERP. Le site Astro 6 du dépôt privé `Verwolfy/nextgen-website` demeure FR/AR/EN et non publié sur Cloudflare.
 - **Lot 10** : [PR site #5](https://github.com/Verwolfy/nextgen-website/pull/5) fusionnée, commit `875ec757c3c642ec9a5f3e6d75ae9ff62d2146cd` ; menu mobile natif, sans JavaScript, 6 rubriques, navigation clavier, 320px et RTL, libellés a11y et mascottes trilingues ; CI merge Astro et Chromium `success`.
-- **Lot 11** : [PR site #6](https://github.com/Verwolfy/nextgen-website/pull/6) fusionnée, commit `270382fbc3fc7851ffb91bae8c17e5a3a4a572c1`. Accueil complété par 3 aperçus WebP de maquettes 3D (sac 25 kg, bidon 20 L, IBC 1 000 L), liens vers la galerie 5 modèles. Les mentions FR/AR/EN précisent qu'aucun modèle ni conditionnement n'est approuvé/à vendre. CI PR build et Chromium `success`.
 - Tests intégrés : `tests/test_mobile_navigation.py`, `tests/test_home_showcase.py`; outil Chromium vérifie menu fermé/ouvert au clavier et absence de débordement à 320px. Docs : `docs/LOT10_NAVIGATION_MOBILE.md`, `docs/LOT11_ACCUEIL_GALERIE_3D.md` et `docs/ETAT_AVANCEMENT.md`.
 - **Aucune publication publique :** Cloudflare Access principal/préviews non attesté, aucun compte Pages ou DNS modifié, formulaires de collecte toujours désactivés, produits publiables `[]`, pas de conformité juridique ou technique inventée, aucun SQL/RLS/secret modifié.
 - Suite : vérifier la dernière CI après commits documentaires ; inspecter les captures internes CI, peaufiner la présentation et garder le statut NO-GO pour toute connexion/déploiement Pages avant authentification et approbation ciblée.
@@ -93,7 +91,6 @@
 ## Addendum priorité site — lot 12 / 1er novembre 2026
 
 - Nouvelle PR [NextGen #7](https://github.com/Verwolfy/nextgen-website/pull/7) **fusionnée** sur `main`, SHA de merge `9f35c1a71c350613830423d59efe44593b3014b0`.
-- Pages Gammes, À propos, Ressources refondues sur les routes FR/AR/EN existantes, via `src/data/editorial.ts` et `RangeOverview.astro`, `AboutStory.astro`, `ResourcesHub.astro`; pages détail FENEK également enrichies. **Aucune performance, référence commerciale ou homologation inventée**. Les FT/FDS ne sont pas présentées comme disponibles ; seul l'accès aux modèles 3D de simulation existants est proposé.
 - Adaptation mobile/RTL/focus, 48 contrôles Chromium route/langue/viewport et captures mobiles supplémentaires ; `tests/test_editorial_hubs.py`, `tests/test_mobile_navigation.py` mis à jour pour le composant extrait. Le premier run CI a détecté un test de chemin devenu obsolète, corrigé avant merge.
 - **Deux CI de PR sur SHA `1f36a66bde2f699caf53a6f6bf43a0bd652b8537` réussies** : [build/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41331612676) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41331612642).
 - `docs/LOT12_HUBS_EDITORIAUX_FR_AR_EN.md` explique les changements et les blocages. `docs/ETAT_AVANCEMENT.md` synchronisé.
@@ -120,11 +117,9 @@
 - Aucune écriture SQL/Supabase, aucun accès ERP, déploiement Cloudflare/DNS, secret, activation formulaires/CRM, aucun produit commercial publié. `public/data/products.json = []` ; le go-live Cloudflare exige toujours politique Access principal+previews+URL hash et revue juridique/produits.
 - Prochaine étape : confirmer la dernière CI `main`, revoir les captures internes Contact / Distributeurs en arabe, anglais, français et à 320px ; reprendre une amélioration site sans publication si défaut réel.
 
-## Lot site 16 — captures utilisateur, arabe RTL, aperçu 3D (01/11/2026)
 
 - Priorité utilisateur inchangée : **site NextGen** avant ERP. Dépôt site privé `Verwolfy/nextgen-website`.
 - [PR #11](https://github.com/Verwolfy/nextgen-website/pull/11) **fusionnée** sur `main`, merge `03e8314236a0efaeba2adfbbc976daf69ede08ba`. Audit de 7 captures utilisateur. Termes arabes et rédaction BTP améliorés (menu, gammes, ressources, travaux/produits non homologués), marque FENEK isolée en direction LTR, adresse traduite, kg poids séparé de litres contenance.
-- Galerie 3D : images WebP locales rendues dans le slot de poster avant clic ; maintien du GLB `reveal="interaction"`. Portrait À propos mieux encadré, cartes et titres plus équilibrés, typographie RTL plus lisible.
 - Tests ajoutés/étendus `tests/test_lot16_arabic_visual.py` et `scripts/check_browser_pages.py` (5 posters, unités arabes, bdi, captures FR/AR/EN et AR desktop). Documents : `docs/LOT16_AUDIT_CAPTURES_ARABE_3D.md`, `docs/ETAT_AVANCEMENT.md`.
 - **2 CI de PR finales vertes** sur `034b33c3d9e71110f2c848196b828dcaf233187b` : [build/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41347775698) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41347775713). Les captures de la première passe verte ([run 41347456040](https://github.com/Verwolfy/nextgen-website/actions/runs/41347456040)) sont récupérées et inspectées : posters visibles en arabe ; l'absence de défaut majeur est limitée aux écrans testés.
 - **Aucune** modification ERP, production Supabase, SQL/RLS/GRANT, donnée commerciale exportée, formulaire actif/CRM, secret, DNS ou Cloudflare Pages/Access. Le catalogue reste `[]`, `robots.txt` noindex.

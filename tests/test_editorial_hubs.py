@@ -12,7 +12,7 @@ class TestEditorialHubs(unittest.TestCase):
         for key in ("fr:", "ar:", "en:"):
             self.assertEqual(data.count(key), 1, key)
         for key in ("rangeTopics:", "resourcePending:", "resourceTechTitle:",
-                    "resourceSafetyTitle:", "resource3dTitle:", "aboutNotice:",
+                    "resourceSafetyTitle:", "aboutNotice:",
                     "rangeDisclaimer:"):
             self.assertGreaterEqual(data.count(key), 3, key)
         for key in ("bond:", "proof:", "flow:", "paint:"):
@@ -70,7 +70,7 @@ class TestEditorialHubs(unittest.TestCase):
         self.assertIn('".range-overview-card"', check)
         self.assertIn('".about-step"', check)
         self.assertIn('".resource-card"', check)
-        self.assertIn('54 browser route/viewport', check)
+        self.assertIn('48 browser route/viewport', check)
 
 
 if __name__ == "__main__":

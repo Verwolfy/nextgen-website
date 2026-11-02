@@ -4,7 +4,6 @@ Date : 1er novembre 2026. Lot complémentaire à la PR #11.
 
 ## Constat sur les captures CI du lot 16
 
-Sur la page arabe d'accueil, l'étiquette de la section des familles FENEK affichait toujours `FENEK COLLECTION` en anglais. Sur la galerie 3D, l'étiquette `NextGen · Design study` restait également en anglais. Le reste de la navigation RTL était correctement construit et les posters 3D sont visibles.
 
 ## Corrections
 
@@ -16,6 +15,5 @@ Sur la page arabe d'accueil, l'étiquette de la section des familles FENEK affic
 ## Limites et validations
 
 - Aucune modification d'asset/packaging, donnée commerciale ou ERP; aucun Cloudflare, DNS, RLS, secret ou déploiement.
-- Les textes intégrés aux étiquettes des maquettes 3D restent en partie en anglais, car ils font partie des visuels de simulation non contractuels, non des textes localisés du site.
 - Tester les deux workflows de PR avant merge puis le SHA `main`.
 - Relecture par un professionnel arabophone de la construction recommandée avant communication contractuelle.

@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ALLOWED_KEYS = {"slug", "nom", "gamme", "contenu", "conditionnements", "ordre",
-                "fiche_technique", "fds", "image", "modele_3d"}
+                "fiche_technique", "fds", "image"}
 FORBIDDEN_TERMS = ("prix", "cout", "recette_id", "matieres_premieres", "fournisseur",
                    "client_id", "hash_mdp", "service_role", "grille_tarifaire", "montant")
 

@@ -8,7 +8,6 @@
 - [PR #20](https://github.com/Verwolfy/nextgen-website/pull/20) : **vrais octets binaires transférés sur GitHub**, fusion SHA `f1e0ca10f2a700bfb2a58434fe0c17ae9739d57e`.
 - Sous `public/images/catalogue-projects/` sur `main` : **24 WebP exacts, 12 références distinctes**, total 1 818 364 octets. Toutes les empreintes Git SHA-1 correspondent aux 24 contenus de l'archive vérifiés localement (empreintes SHA256 contrôlées indépendamment).
 - Grandes images : 12 × 1120×1120 ; cartes : 12 × 560×560. Ratio naturel conservé en CSS via `object-fit:contain`, sans étirement.
-- Les **12 références FLOW disposent de leur visuel propre**, pas du poster 3D générique, lorsque Astro construit le site à partir de ce `main`.
 - `WR-N` : l'étiquette a été examinée à 1120×1120, elle affiche bien `WR-N`, pas `SP-HR`.
 
 ## CI et revue de captures

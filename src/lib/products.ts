@@ -1,6 +1,6 @@
 import raw from '../../public/data/products.json';
 import type { Lang, Range } from '../data/site';
-export type Product = {slug:string;nom:string;gamme:Range;contenu:Record<Lang,{accroche:string;description:string;usages:string[];mode_emploi:string}>; conditionnements:{format:string;poids_net:number|null;unite:string}[];ordre:number;image?:string|null;modele_3d?:string|null;fiche_technique?:string|null;fds?:string|null};
+export type Product = {slug:string;nom:string;gamme:Range;contenu:Record<Lang,{accroche:string;description:string;usages:string[];mode_emploi:string}>; conditionnements:{format:string;poids_net:number|null;unite:string}[];ordre:number;image?:string|null;fiche_technique?:string|null;fds?:string|null};
 // The secure Python sync is the sole publisher; no browser database requests.
 // Keep build fail-closed if the JSON has an unexpected shape.
 if (!Array.isArray(raw)) throw new Error('Catalogue public non conforme : tableau attendu');

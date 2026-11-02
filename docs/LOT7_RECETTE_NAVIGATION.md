@@ -14,4 +14,3 @@ Date : 2026-11-01. Aucun Cloudflare Pages ni DNS n'a été publié pour ces test
 - Les tests n'utilisent pas de données personnelles ni de connexion Supabase.
 
 ## Recette métier future
-Après l'homologation juridique et la configuration d'une préproduction protégée, vérifier manuellement sur téléphone iOS et Android : menu FR/AR/EN, RTL, contraste, lecteur 3D, pages contact et distributeurs, refus des envois, absence de prix et documents fictifs.

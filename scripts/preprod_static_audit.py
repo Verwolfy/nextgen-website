@@ -16,7 +16,7 @@ DIST = BASE / "dist"
 REPORT = BASE / ".ci-artifacts" / "preprod-contents-manifest.json"
 LANGUAGES = ("fr", "ar", "en")
 SECTIONS = ("gammes", "catalogue", "distributeurs", "ressources",
-            "a-propos", "contact", "mentions-legales", "confidentialite", "emballages")
+            "a-propos", "contact", "mentions-legales", "confidentialite")
 RANGES = ("bond", "proof", "flow", "paint")
 EXPECTED_HEADERS = {
     "x-content-type-options": "nosniff",
@@ -86,9 +86,11 @@ def main() -> None:
     for lang in LANGUAGES:
         for suffix in ("", *SECTIONS, *((f"gammes/{range_name}") for range_name in RANGES)):
             inspect_page(DIST / lang / suffix / "index.html", lang)
-    for filename in ("sac-25kg", "seau-20kg", "bidon-20l", "fut-200l", "ibc-1000l"):
-        model = DIST / "models-demo" / (filename + ".glb")
-        assert model.is_file() and 0 < model.stat().st_size < 3_000_000, str(model)
+    # Check the deployment artifact contains no retired models or pages.
+    for lang in LANGUAGES:
+        assert not (DIST / lang / "emballages").exists(), lang
+    assert not (DIST / "models-demo").exists()
+    assert not (DIST / "images" / "3d-demo").exists()
     # Every file inside dist is an asset that WOULD be accessible upon deployment.
     files = sorted(p for p in DIST.rglob("*") if p.is_file())
     assert files and len(files) < 2000, "Unexpected deployment contents"

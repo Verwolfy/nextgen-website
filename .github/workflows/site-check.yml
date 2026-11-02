@@ -46,13 +46,11 @@ jobs:
           test -f dist/ar/index.html
           test -f dist/en/index.html
           test -f dist/images/Logo1.jpg
-          test -f dist/fr/emballages/index.html
-          test -f dist/ar/emballages/index.html
-          test -f dist/en/emballages/index.html
-          for model in sac-25kg seau-20kg bidon-20l fut-200l ibc-1000l; do
-            test -s "dist/models-demo/${model}.glb"
-            test -s "dist/images/3d-demo/${model}-30.webp"
-          done
+          ! test -e dist/fr/emballages
+          ! test -e dist/ar/emballages
+          ! test -e dist/en/emballages
+          ! test -e dist/models-demo
+          ! test -e dist/images/3d-demo
           ! grep -R -i 'SUPABASE_SERVICE_ROLE_KEY' dist
           ! grep -R -i 'ISO 9001' dist
 
