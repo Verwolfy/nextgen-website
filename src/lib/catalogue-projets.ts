@@ -28,11 +28,33 @@ for(const p of projects){
 }
 export const catalogueProjects = projects;
 export const projectsByRange=(range:Range)=>catalogueProjects.filter(p=>p.gamme===range);
+/** Exact product codes visually read from the uploaded 46-image concept gallery.
+ * This links editorial mockups, not technical/certified/contractual imagery.
+ * Eleven FENEK-PAINT references have no individual image in this archive.
+ */
+export const reviewedGalleryForReference:Readonly<Record<string,number>> = {
+  'fenek-bond-m10':35, 'fenek-bond-m5':34, 'fenek-bond-oc-csiii':33,
+  'fenek-bond-r2':28, 'fenek-bond-r3':29, 'fenek-bond-r4':30,
+  'fenek-proof-acr-rf':39, 'fenek-proof-cm-o1p':36, 'fenek-proof-cm-o2p':37,
+  'fenek-proof-ep-anc':44, 'fenek-proof-ep-inj':43, 'fenek-proof-ep-prim':40,
+  'fenek-proof-ep-sb':42, 'fenek-proof-ep-sr':41, 'fenek-proof-pu-1k':38,
+  'fenek-proof-pu-inj':45, 'fenek-proof-pu-seal':4
+};
+const reviewedGalleryImage=(product:CatalogueProject):string|null=>{
+  const number=reviewedGalleryForReference[product.slug];
+  if(number===undefined) return null;
+  const relative='images/maquettes/maquette-'+String(number).padStart(2,'0')+'.webp';
+  if(!existsSync(resolve(process.cwd(),'public',relative))) {
+    throw Error('Maquette de conception absente: '+product.code+' -> '+relative);
+  }
+  return '/'+relative;
+};
+
 export const conceptImage:Record<Range,string>={
   bond:'/images/3d-demo/sac-25kg-30.webp',
   proof:'/images/3d-demo/seau-20kg-30.webp',
   flow:'/images/3d-demo/bidon-20l-30.webp',
-  paint:'/images/3d-demo/seau-20kg-30.webp'
+  paint:'/images/maquettes/maquette-19.webp'
 };
 
 
@@ -45,14 +67,17 @@ export const conceptImage:Record<Range,string>={
 export const conceptPackshot=(product:CatalogueProject,variant:'card'|'full'='card'):string=>{
  const flow = product.gamme==='flow' && product.conditionnements.some(c=>c.format==='Bidon 20 L');
  const bond = product.gamme==='bond' && product.conditionnements.some(c=>c.format==='Sac 25 kg');
- if(!flow && !bond) return conceptImage[product.gamme];
- const name=product.slug+(variant==='card'?'-card':'')+'.webp';
- const relative='images/catalogue-projects/'+name;
- const absolute=resolve(process.cwd(),'public',relative);
- const alternate=resolve(process.cwd(),'public','images/catalogue-projects/',
-    product.slug+(variant==='card'?'': '-card')+'.webp');
- // Never show an incomplete upload (only the card or only the large image).
- return existsSync(absolute)&&existsSync(alternate)?'/'+relative:conceptImage[product.gamme];
+ if(flow || bond){
+   const name=product.slug+(variant==='card'?'-card':'')+'.webp';
+   const relative='images/catalogue-projects/'+name;
+   const absolute=resolve(process.cwd(),'public',relative);
+   const alternate=resolve(process.cwd(),'public','images/catalogue-projects/',
+      product.slug+(variant==='card'?'': '-card')+'.webp');
+   // Never show an incomplete binary upload (only card or only full).
+   if(existsSync(absolute)&&existsSync(alternate)) return '/'+relative;
+ }
+ // Reuse exact label-matched design concepts from Lot 27 before generic art.
+ return reviewedGalleryImage(product)??conceptImage[product.gamme];
 };
 export const hasProductPackshot=(product:CatalogueProject):boolean=>
  conceptPackshot(product,'full')!==conceptImage[product.gamme];
