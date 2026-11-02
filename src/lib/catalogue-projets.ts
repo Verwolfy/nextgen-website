@@ -60,7 +60,7 @@ export const conceptImage:Record<Range,string>={
   bond:'/images/3d-demo/sac-25kg-30.webp',
   proof:'/images/3d-demo/seau-20kg-30.webp',
   flow:'/images/3d-demo/bidon-20l-30.webp',
-  paint:'/images/maquettes/maquette-19.webp'
+  paint:'' // no fallback: missing individual PAINT artwork fails the build
 };
 
 
@@ -71,6 +71,15 @@ export const conceptImage:Record<Range,string>={
  * No dynamic client JS, network request or external image host is involved.
  */
 export const conceptPackshot=(product:CatalogueProject,variant:'card'|'full'='card'):string=>{
+ // Exact code-specific photorealistic editorial PAINT assets from the
+ // user's 11-reference concept board. Fail closed if one binary is missing:
+ // never silently show the generic 15 L collage or a different product code.
+ if(product.gamme==='paint'){
+   const relative='images/catalogue-projects/'+product.slug+'.webp';
+   if(!existsSync(resolve(process.cwd(),'public',relative)))
+      throw Error('FENEK-PAINT concept asset missing: '+product.code+' -> '+relative);
+   return '/'+relative;
+ }
  // Prefer the code-specific realistic studio render already in the concept
  // gallery for BOND. Preserve the original reviewed WebP files as archival
  // sources, but do not keep showing the older flat-label composition.
