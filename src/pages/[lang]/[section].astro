@@ -22,7 +22,7 @@ const description=section==='catalogue'?catalogueCopy[lang].lead:section==='dist
 <div class="section"><div class="container">
 {section==='gammes'&&<RangeOverview lang={lang} />}
 {section==='catalogue'&&<ConceptCatalogue lang={lang} />}
-{section==='distributeurs'&&<><div class="notice"><p>{t.distributorsInfo}</p><div class="actions"><a class="btn" href="#contact-direct">{contactCopy[lang].heading}</a><a class="btn btn-muted" href="#contact-direct">{contactCopy[lang].previewAnchor}</a></div></div><ContactChannels lang={lang} /></>}
+{section==='distributeurs'&&<><div class="notice"><p>{t.distributorsInfo}</p><div class="actions"><a class="btn" href="#contact-direct">{contactCopy[lang].heading}</a></div></div><ContactChannels lang={lang} /></>}
 {section==='ressources'&&<ResourcesHub lang={lang} />}
 {section==='a-propos'&&<AboutStory lang={lang} />}
 {section==='contact'&&<><ContactChannels lang={lang} /></>}
