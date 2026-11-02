@@ -69,7 +69,7 @@ class TestEditorialHubs(unittest.TestCase):
         self.assertIn('".range-overview-card"', check)
         self.assertIn('".about-step"', check)
         self.assertIn('".resource-card"', check)
-        self.assertIn('48 browser route/viewport', check)
+        self.assertIn('54 browser route/viewport', check)
 
 
 if __name__ == "__main__":
