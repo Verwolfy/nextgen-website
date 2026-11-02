@@ -32,6 +32,8 @@ jobs:
         run: npm run build
       - name: Validate internal links, three languages, RTL and disabled forms
         run: python scripts/check_built_pages.py
+      - name: Fail closed on partial FENEK-FLOW packshot uploads
+        run: python scripts/check_flow_packshots_built.py
       - name: Validate deployable Pages files (no deployment)
         run: |
           python scripts/preprod_static_audit.py

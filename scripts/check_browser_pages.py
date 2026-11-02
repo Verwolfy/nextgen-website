@@ -31,6 +31,7 @@ def check() -> None:
     base = "http://127.0.0.1:" + str(srv.server_address[1])
     errors = []
     snapshots = 0
+    flow_images_present = bool(list((ROOT / "public/images/catalogue-projects").glob("fenek-flow-*.webp")))
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
@@ -65,6 +66,17 @@ def check() -> None:
                             assert page.locator(".catalogue-projects .editorial-caution").count() == 1, path
                             if lang == "ar":
                                 assert "كتالوج" in page.locator("h1").inner_text(), path
+                        if section == "catalogue" and flow_images_present:
+                            packshots = page.locator(".concept-product-card .concept-product-image img[src*='/images/catalogue-projects/fenek-flow-']")
+                            assert packshots.count() == 12, f"{lang}, {size}: missing FLOW card imagery"
+                            if size == "mobile":
+                                for k in range(packshots.count()):
+                                    packshots.nth(k).scroll_into_view_if_needed()
+                                    assert packshots.nth(k).evaluate("""im => im.complete && im.naturalWidth === 560 &&
+                                        im.naturalHeight === 560 && getComputedStyle(im).objectFit === 'contain'"""), (
+                                        f"{lang}: distorted, missing or broken FLOW card {k}"
+                                    )
+                            page.evaluate("window.scrollTo(0,0)")
                         if section == "gammes":
                             assert page.locator(".range-overview-card").count() == 4, path
                             assert page.locator(".range-overview-card h3 bdi[dir='ltr']").count() == 4, path
@@ -136,6 +148,15 @@ def check() -> None:
                         assert page.locator("form").count()==0, concept_path
                         detail_overflow=page.evaluate("Math.ceil(document.documentElement.scrollWidth-innerWidth)")
                         assert detail_overflow<=4, f"Concept details overflow: {concept_path}, {width}px, {detail_overflow}px"
+                        if slug=="fenek-flow-wr-n" and flow_images_present:
+                            full = page.locator(".concept-detail-image img")
+                            full.scroll_into_view_if_needed()
+                            assert full.evaluate("""im => im.complete && im.naturalWidth === 1120 &&
+                                im.naturalHeight === 1120 && getComputedStyle(im).objectFit === 'contain'"""), (
+                                f"{lang}, {size}: WR-N packshot missing or compressed"
+                            )
+                            page.screenshot(path=str(SHOTS/(lang+"-"+size+"-fenek-flow-wr-n.png")),full_page=True)
+                            snapshots+=1
                         if slug=="fenek-bond-c1t":
                             page.screenshot(path=str(SHOTS/(lang+"-"+size+"-catalogue-concept.png")),full_page=True)
                             snapshots+=1
