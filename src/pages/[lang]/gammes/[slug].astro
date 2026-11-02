@@ -16,7 +16,7 @@ const lang=Astro.params.lang as Lang;const slug=Astro.params.slug as Range;const
       <h2>{edit.topicsHeading}</h2>
       <ul class="range-detail-topics">{edit.rangeTopics[slug].map(topic=><li>{topic}</li>)}</ul>
       <p class="editorial-caution" role="note">{edit.rangeDisclaimer}</p>
-      <div class="actions"><a class="btn" href={'/'+lang+'/emballages/'}>{edit.rangeGallery}</a><a class="btn btn-muted" href={'/'+lang+'/contact/'}>{edit.rangeContact}</a></div>
+      <div class="actions"><a class="btn" href={'/'+lang+'/catalogue/'}>{edit.rangeCatalogue}</a><a class="btn btn-muted" href={'/'+lang+'/contact/'}>{edit.rangeContact}</a></div>
     </div>
     <div class="range-identity" aria-hidden="true"><span>FENEK</span><strong dir="ltr">{slug.toUpperCase()}</strong></div>
   </div>
