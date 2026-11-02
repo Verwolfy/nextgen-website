@@ -1,0 +1,80 @@
+{
+  "lot": 25,
+  "category": "bond",
+  "status": "preview_non_contractual",
+  "size": {
+    "full": [
+      1280,
+      1280
+    ],
+    "card": [
+      560,
+      560
+    ]
+  },
+  "format": "Sac 25 kg",
+  "original_asset": "sac_de_mortier_fenek_bond_25_kg.png",
+  "note": "Dix compositions photoréalistes à étiquettes exactes, non contractuelles; aucune conformité ni dosage certifié.",
+  "assets": [
+    {
+      "code": "BOND-C1T",
+      "slug": "fenek-bond-c1t",
+      "full_sha256": "90c01c3406b2642c955c42ea091ded44d26dfabb5b4fa7ff2aac5a9b53538dfa",
+      "card_sha256": "ebc2ea9709610030ecf7994bdcdcd46dc390a7714ed10069c5ad5902708cc639"
+    },
+    {
+      "code": "BOND-C1TE",
+      "slug": "fenek-bond-c1te",
+      "full_sha256": "30d744db27a22b0c24f57da3c707ed2c37e499a3c998411de2890c46c115b1da",
+      "card_sha256": "85cad024705adbd6118b2a0dea17a72102b575fd7f70444c536e47ebb3c07a55"
+    },
+    {
+      "code": "BOND-C2FT",
+      "slug": "fenek-bond-c2ft",
+      "full_sha256": "a2fc56140a0a334b4b8408c4af324eb461cd3e0bb2a492307b8755d616b8e6a7",
+      "card_sha256": "d2485fda1a512040e50b8c63cadb428cd90fdf02c4f44ce7e4b6d52f8f095dad"
+    },
+    {
+      "code": "BOND-C2TE",
+      "slug": "fenek-bond-c2te",
+      "full_sha256": "5b082cfcf200a435a2110bfbbdeec1f400580c3adb38ec0285fae63d897c20ec",
+      "card_sha256": "d46fedfd3b59ae1ac984e3e6199c055cf15ad70647d15ed0f7ccfa0af61e8231"
+    },
+    {
+      "code": "BOND-C2TE-S1",
+      "slug": "fenek-bond-c2te-s1",
+      "full_sha256": "899b9deccdbcc29b5cd4964fe05a95bdedffee7b1bc6b8eb8539990e269d3582",
+      "card_sha256": "8c8fb8a7c6737d702d839c4738f4d6b8e213a46d9e285ad0bec707e796933435"
+    },
+    {
+      "code": "BOND-CG1",
+      "slug": "fenek-bond-cg1",
+      "full_sha256": "cc65198c78898922d2234ad18adfa4d1c4721b26dc68c0c4be46a8e4251de0e7",
+      "card_sha256": "69233f2d063393fbdcd82fe40ce72fce7f786b7dfd4dc4c63490197f3a26aa79"
+    },
+    {
+      "code": "BOND-CG2WA",
+      "slug": "fenek-bond-cg2wa",
+      "full_sha256": "8ad01e6fe1678b14feece457a65d86f7f7f818b518631998ffa70b51de96693b",
+      "card_sha256": "3d02d6d7dd109ad98a285b19f25e9ad9acdb239370505c11504e49afbc4a224e"
+    },
+    {
+      "code": "BOND-CT-C25-F5",
+      "slug": "fenek-bond-ct-c25-f5",
+      "full_sha256": "55c8aaa4d5cb062a6fbb874ba2aa3065a67a64ec0d304cb735f8c746b5e99194",
+      "card_sha256": "79b48e42735689b583bea6459ed7c4470bc624f4bda416a4ac7b136ff499db58"
+    },
+    {
+      "code": "BOND-GP-CSII",
+      "slug": "fenek-bond-gp-csii",
+      "full_sha256": "5091187a2c44f937373a2aeab918457a68d2fb46b17e906ef02ebc661bca3a7f",
+      "card_sha256": "cc8bfeb87b8c06d10c8a764c22c8371f291cc962d5d9de2efd92eff6597a2203"
+    },
+    {
+      "code": "BOND-GR-HR",
+      "slug": "fenek-bond-gr-hr",
+      "full_sha256": "243624ad74c973357e4cae5847234582cf18ab99a9ae4883ced2eb523a4c2f3c",
+      "card_sha256": "40f4742ab53c321b254b85de5083bc5356653cf4823f03011dbd59b02ab996ba"
+    }
+  ]
+}
