@@ -58,22 +58,20 @@ class TestLot20CatalogueProjects(unittest.TestCase):
         self.assertNotIn('guidance(lang,product.code)',detail)
         self.assertNotIn('product.mode_fr_preparatoire',detail)
         self.assertNotIn('concept-source-method',detail)
-        self.assertIn('t.methodDisclaimer',detail)
+        self.assertIn('t.technicalContact',detail)
         self.assertIn('projectsByRange(g)',cards)
         self.assertIn('catalogueProjects.length',cards)
         self.assertNotIn('<form',cards)
         self.assertNotIn('fetch(',detail)
 
-    def test_draft_methods_not_misrepresented_as_translated_field_directions(self):
+    def test_draft_methods_are_not_publicly_rendered(self):
         copy=(ROOT/'src/data/catalogue-content.ts').read_text()
-        for token in ('Mode d’emploi source', 'بالفرنسية', 'French instructions',
-                      'لم يُحدّد حجم العبوة', 'no certification', 'methodDisclaimer:'):
-            # Some phrases have different casing depending on locale; prove the relevant semantics.
-            if token=='no certification':
-                self.assertIn('does not establish certification',copy)
-            else:
-                self.assertIn(token,copy)
-        self.assertNotIn('lang="fr" dir="ltr"',(ROOT/'src/pages/[lang]/catalogue/[slug].astro').read_text())
+        detail=(ROOT/'src/pages/[lang]/catalogue/[slug].astro').read_text()
+        self.assertIn('technicalContact:',copy)
+        self.assertIn('t.technicalContact',detail)
+        self.assertNotIn('mode_fr_preparatoire',detail)
+        self.assertNotIn('sourceProcedure',detail)
+        self.assertNotIn('guidance(lang,product.code)',detail)
 
 if __name__=="__main__":
     unittest.main()
