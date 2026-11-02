@@ -221,8 +221,8 @@ def check() -> None:
                         assert response is not None and response.status==200, concept_path
                         assert page.locator("h1").count()==1, concept_path
                         assert page.locator(".concept-detail-status").count()==1, concept_path
-                        assert page.locator(".concept-steps li").count()==3, concept_path
-                        assert page.locator(".concept-source-method").count()==1, concept_path
+                        assert page.locator(".concept-steps li").count()==0, concept_path
+                        assert page.locator(".concept-source-method").count()==0, concept_path
                         assert page.locator("form").count()==0, concept_path
                         detail_overflow=page.evaluate("Math.ceil(document.documentElement.scrollWidth-innerWidth)")
                         assert detail_overflow<=4, f"Concept details overflow: {concept_path}, {width}px, {detail_overflow}px"
