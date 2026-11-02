@@ -40,7 +40,7 @@ def check() -> None:
                 for size, width, height in (("desktop", 1280, 900), ("mobile", 390, 844)):
                     page = browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=1)
                     page.on("pageerror", lambda err: errors.append(str(err)))
-                    for section in ("", "contact", "distributeurs", "catalogue", "emballages", "gammes", "a-propos", "ressources"):
+                    for section in ("", "contact", "distributeurs", "catalogue", "emballages", "maquettes", "gammes", "a-propos", "ressources"):
                         path = "/" + lang + "/" + (section + "/" if section else "")
                         response = page.goto(base + path, wait_until="domcontentloaded", timeout=20000)
                         assert response is not None and response.status == 200, path
@@ -116,9 +116,19 @@ def check() -> None:
                         if section == "a-propos":
                             assert page.locator(".about-step").count() == 3, path
                             assert page.locator(".editorial-caution").count() >= 1, path
+                        if section == "maquettes":
+                            assert page.locator(".visual-concept-card").count() == 46, path
+                            images = page.locator(".visual-concept-card img")
+                            assert images.count() == 46, path
+                            assert page.locator(".notice[role='note']").count() == 1, path
+                            for idx in (0, 20, 45):
+                                images.nth(idx).scroll_into_view_if_needed()
+                                assert images.nth(idx).evaluate("im => im.complete && im.naturalWidth > 0"), path
+                            page.evaluate("window.scrollTo(0,0)")
                         if section == "ressources":
                             assert page.locator(".resource-card").count() == 3, path
                             assert page.locator(".resource-card-demo a[href$='/emballages/']").count() == 1, path
+                            assert page.locator(".resource-visuals-link a[href$='/maquettes/']").count() == 1, path
                             assert page.locator(".resource-card:not(.resource-card-demo) a").count() == 0, path
                         if section in ("contact", "distributeurs"):
                             assert page.locator(".contact-direct .contact-channel").count() == 3, path
