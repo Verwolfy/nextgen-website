@@ -123,7 +123,10 @@ def audit_trilingual_catalogue_copy() -> None:
                 forbidden=("[valeur à confirmer]","concept-source-method",
                            "Mode d’emploi source (brouillon français)",
                            "Original French instructions (draft)",
-                           "نص طريقة الاستعمال الأصلي بالفرنسية")
+                           "نص طريقة الاستعمال الأصلي بالفرنسية",
+                           "Contenu révisable. Les données du laboratoire",
+                           "This content can be revised as laboratory",
+                           "يمكن تحديث هذا المحتوى لاحقًا")
                 absent=all(x not in html for x in forbidden)
                 has_notice="concept-detail-note" in html
                 ok=resp.status==200 and absent and has_notice
