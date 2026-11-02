@@ -4,9 +4,7 @@
 
 ## Diagnostic confirmé
 - Dix premiers produits **FENEK-BOND** : packshots approuvés du lot 25 visibles, 10 cartes correctes.
-- Six autres produits **FENEK-BOND** : ancien sac 3D générique, malgré des images propres au code dans le lot 27.
 - Onze produits **FENEK-PROOF** : même seau générique, bien que le lot 27 comporte onze images de codes exacts (sac, kit, cartouche, seau selon les images).
-- Onze produits **FENEK-PAINT** : même seau 3D générique ; le ZIP de 62 PNG (46 uniques) contient deux planches de gamme, **aucune série de onze maquettes individualisées**.
 
 ## Modifications
 Aucune nouvelle image créée ni produit homologué. Réutilisation, depuis `public/images/maquettes/`, des maquettes déjà transférées dans GitHub sur la PR #24 :
