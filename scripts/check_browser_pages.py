@@ -293,6 +293,26 @@ def check() -> None:
                     page.locator("[data-catalogue-reset]").click()
                     assert visible_cards.count() == 50, lang
                     assert page.locator("form").count() == 0, lang
+                    # Lot 39: match any public description, usage, or range keyword.
+                    # 'mortier' must include BOND; FLOW may also match legitimately.
+                    for term, target_range in (
+                        ("mortier", "bond"),
+                        ("colle carrelage", "bond"),
+                        ("étanchéité", "proof"),
+                        ("etancheite", "proof"),
+                        ("waterproofing", "proof"),
+                        ("الملاط", "bond"),
+                    ):
+                        search.fill(term)
+                        assert page.locator("#catalogue-"+target_range+
+                                            " .concept-product-card:visible").count() > 0, (
+                            lang, size, term, target_range)
+                    search.fill("fenek bond c1t")
+                    assert visible_cards.count() >= 1, (lang, size)
+                    search.fill("absent-keyword-zzzz")
+                    assert visible_cards.count() == 0, lang
+                    page.locator("[data-catalogue-reset]").click()
+                    assert visible_cards.count() == 50, lang
                     # Explicitly follow the language navigation to another localized page.
                     page.goto(base + "/" + lang + "/contact/", wait_until="domcontentloaded")
                     assert page.locator(".locale a").count() == 3
