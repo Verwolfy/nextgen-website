@@ -43,8 +43,9 @@ export const conceptImage:Record<Range,string>={
  * No dynamic client JS, network request or external image host is involved.
  */
 export const conceptPackshot=(product:CatalogueProject,variant:'card'|'full'='card'):string=>{
- if(product.gamme!=='flow'||!product.conditionnements.some(c=>c.format==='Bidon 20 L'))
-   return conceptImage[product.gamme];
+ const flow = product.gamme==='flow' && product.conditionnements.some(c=>c.format==='Bidon 20 L');
+ const bond = product.gamme==='bond' && product.conditionnements.some(c=>c.format==='Sac 25 kg');
+ if(!flow && !bond) return conceptImage[product.gamme];
  const name=product.slug+(variant==='card'?'-card':'')+'.webp';
  const relative='images/catalogue-projects/'+name;
  const absolute=resolve(process.cwd(),'public',relative);
