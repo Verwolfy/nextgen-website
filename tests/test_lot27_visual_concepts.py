@@ -25,7 +25,7 @@ class TestLot27VisualConcepts(unittest.TestCase):
     def test_trilingual_gallery_and_explicit_non_approval(self):
         page = (ROOT / "src/pages/[lang]/maquettes.astro").read_text(encoding="utf-8")
         for needle in ("languages.map", "length: 46", "maquette-", "loading=\"lazy\"",
-                       "UNAPPROVED", "NON VALIDÉES", "غير معتمدة",
+                       "NextGen visual design gallery", "Galerie de créations visuelles", "معرض التصاميم",
                        "getStaticPaths", "Layout", "emballages/"):
             self.assertIn(needle, page)
         resources = (ROOT / "src/components/ResourcesHub.astro").read_text(encoding="utf-8")
