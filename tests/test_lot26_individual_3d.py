@@ -38,7 +38,9 @@ class TestIndividual3DViews(unittest.TestCase):
         self.assertIn("emballages/${item.slug}/", gallery)
         self.assertNotIn("emballages/${slug}/", home)
         resources = (ROOT / "src/components/ResourcesHub.astro").read_text(encoding="utf-8")
-        self.assertIn("emballages/", resources)
+        self.assertIn("maquettes/", resources)
+        visual_gallery = (ROOT / "src/pages/[lang]/maquettes.astro").read_text(encoding="utf-8")
+        self.assertIn("emballages/", visual_gallery)
         self.assertIn("<ModelViewer", gallery)
         self.assertEqual((ROOT / "public/data/products.json").read_text().strip(), "[]")
 
