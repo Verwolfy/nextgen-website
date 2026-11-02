@@ -10,9 +10,9 @@ const names: Record<Lang, Record<string, string>> = {
   en: { 'sac-25kg': '25 kg bag', 'seau-20kg': '20 kg pail', 'bidon-20l': '20 L jerrycan', 'fut-200l': '200 L drum', 'ibc-1000l': '1,000 L IBC tote' },
 };
 const copy = {
-  fr: { title: 'Visionneuse 3D', notice: 'SIMULATION — BROUILLON NON VALIDÉ. Géométrie et étiquettes illustratives, sans validation industrielle, technique ou réglementaire. Aucun produit réel approuvé.', back: 'Voir les cinq maquettes', file: 'Fichier GLB de démonstration', instruction: 'Appuyez sur Afficher la 3D interactive, puis faites pivoter et zoomez.' },
-  ar: { title: 'عارض النماذج ثلاثية الأبعاد', notice: 'محاكاة — مسودة غير معتمدة. الشكل والملصقات توضيحية وغير معتمدة صناعياً أو فنياً أو تنظيمياً. لا يمثل النموذج منتجاً تجارياً معتمداً.', back: 'عرض النماذج الخمسة', file: 'ملف GLB توضيحي', instruction: 'اضغط على عرض المجسم التفاعلي ثم قم بالتدوير والتكبير.' },
-  en: { title: 'Interactive 3D viewer', notice: 'SIMULATION — NOT APPROVED. Illustrative geometry and labels, not validated for manufacturing, technical compliance or regulatory use. Not an approved commercial product.', back: 'View all five models', file: 'Demonstration GLB file', instruction: 'Select Load interactive 3D, then rotate and zoom the model.' },
+  fr: { title: 'Visionneuse 3D', notice: 'Visionnez ce format en 3D. Les dimensions industrielles sont disponibles sur demande.', back: 'Voir les cinq maquettes', file: 'Fichier GLB de démonstration', instruction: 'Appuyez sur Afficher la 3D interactive, puis faites pivoter et zoomez.' },
+  ar: { title: 'عارض النماذج ثلاثية الأبعاد', notice: 'شاهد نموذج العبوة ثلاثي الأبعاد. للاستفسار عن الأبعاد الصناعية، تواصل معنا.', back: 'عرض النماذج الخمسة', file: 'ملف GLB توضيحي', instruction: 'اضغط على عرض المجسم التفاعلي ثم قم بالتدوير والتكبير.' },
+  en: { title: 'Interactive 3D viewer', notice: 'View the packaging format in 3D. Industrial specifications are available on request.', back: 'View all five models', file: 'Demonstration GLB file', instruction: 'Select Load interactive 3D, then rotate and zoom the model.' },
 };
 export function getStaticPaths() {
   return languages.flatMap(lang => manifest.map(model => ({
