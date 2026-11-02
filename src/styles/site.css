@@ -286,3 +286,15 @@ h1,h2,h3,.page-head p,.showcase-card{overflow-wrap:anywhere;min-width:0}
 .concept-product-image.concept-packshot-container img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
 .concept-detail-image.concept-packshot-container img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;object-position:center}
 @media(max-width:590px){.concept-product-image.concept-packshot-container{aspect-ratio:1/1}}
+
+
+/* Lot 26 — individual 3D inspection, local GLBs only. */
+.showcase-single{max-width:980px;margin:28px auto 18px}
+.showcase-single model-viewer{height:clamp(370px,68vh,720px)}
+.model-download{margin:4px 0 25px;text-align:center}
+.model-download a{font-weight:700;text-underline-offset:4px;overflow-wrap:anywhere}
+.showcase-card .btn{margin-top:10px;max-width:100%}
+@media(max-width:600px){
+ .showcase-single{margin:20px auto}
+ .showcase-single model-viewer{height:clamp(330px,54vh,540px)}
+}
