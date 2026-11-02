@@ -72,8 +72,11 @@ def check() -> None:
                             if size == "mobile":
                                 for k in range(packshots.count()):
                                     packshots.nth(k).scroll_into_view_if_needed()
-                                    assert packshots.nth(k).evaluate("""im => im.complete && im.naturalWidth === 560 &&
-                                        im.naturalHeight === 560 && getComputedStyle(im).objectFit === 'contain'"""), (
+                                    assert packshots.nth(k).evaluate("""async im => {
+                                        try { await im.decode(); } catch (_) { return false; }
+                                        return im.complete && im.naturalWidth === 560 &&
+                                            im.naturalHeight === 560 && getComputedStyle(im).objectFit === 'contain';
+                                    }"""), (
                                         f"{lang}: distorted, missing or broken FLOW card {k}"
                                     )
                             page.evaluate("window.scrollTo(0,0)")
@@ -151,8 +154,11 @@ def check() -> None:
                         if slug=="fenek-flow-wr-n" and flow_images_present:
                             full = page.locator(".concept-detail-image img")
                             full.scroll_into_view_if_needed()
-                            assert full.evaluate("""im => im.complete && im.naturalWidth === 1120 &&
-                                im.naturalHeight === 1120 && getComputedStyle(im).objectFit === 'contain'"""), (
+                            assert full.evaluate("""async im => {
+                                try { await im.decode(); } catch (_) { return false; }
+                                return im.complete && im.naturalWidth === 1120 &&
+                                    im.naturalHeight === 1120 && getComputedStyle(im).objectFit === 'contain';
+                            }"""), (
                                 f"{lang}, {size}: WR-N packshot missing or compressed"
                             )
                             page.screenshot(path=str(SHOTS/(lang+"-"+size+"-fenek-flow-wr-n.png")),full_page=True)
