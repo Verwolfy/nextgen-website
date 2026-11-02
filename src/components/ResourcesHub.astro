@@ -5,6 +5,11 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = messages[lang];
 const edit = editorialCopy[lang];
+const visuals = {
+  fr: 'Voir aussi les 46 illustrations de conception (2D)',
+  ar: 'شاهد أيضاً 46 صورة للتصاميم الأولية (ثنائية الأبعاد)',
+  en: 'Also explore 46 visual design concepts (2D)',
+}[lang];
 ---
 <section aria-labelledby="resources-heading">
   <div class="section-head"><h2 id="resources-heading">{edit.resourceHeading}</h2><p>{edit.resourceLead}</p></div>
@@ -24,6 +29,7 @@ const edit = editorialCopy[lang];
       <span class="resource-state">{edit.resourceDemo}</span>
       <h3>{edit.resource3dTitle}</h3><p>{edit.resource3dInfo}</p>
       <a href={'/'+lang+'/emballages/'} class="btn">{edit.resourceExplore}</a>
+      <p class="resource-visuals-link"><a href={'/'+lang+'/maquettes/'}>{visuals}</a></p>
     </article>
   </div>
   <p class="editorial-caution" role="note">{t.noDocuments}</p>

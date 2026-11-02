@@ -39,8 +39,9 @@ class TestEditorialHubs(unittest.TestCase):
         resources = (ROOT / "src/components/ResourcesHub.astro").read_text(encoding="utf-8")
         self.assertIn("resourcePending", resources)
         self.assertEqual(resources.count("<article"), 3)
-        self.assertEqual(resources.count("<a "), 1)
+        self.assertEqual(resources.count("<a "), 2)
         self.assertIn("emballages/", resources)
+        self.assertIn("maquettes/", resources)
 
     def test_detail_pages_are_illustrative_not_product_inventory(self):
         page = (ROOT / "src/pages/[lang]/gammes/[slug].astro").read_text(encoding="utf-8")
@@ -68,7 +69,7 @@ class TestEditorialHubs(unittest.TestCase):
         self.assertIn('".range-overview-card"', check)
         self.assertIn('".about-step"', check)
         self.assertIn('".resource-card"', check)
-        self.assertIn('48 browser route/viewport', check)
+        self.assertIn('54 browser route/viewport', check)
 
 
 if __name__ == "__main__":
