@@ -70,7 +70,7 @@ class TestLot20CatalogueProjects(unittest.TestCase):
                       'لم يُحدّد حجم العبوة', 'no certification', 'methodDisclaimer:'):
             # Some phrases have different casing depending on locale; prove the relevant semantics.
             if token=='no certification':
-                self.assertIn('does not establish certification',copy)
+                self.assertIn('technical specifications, documentation and availability',copy)
             else:
                 self.assertIn(token,copy)
         self.assertNotIn('lang="fr" dir="ltr"',(ROOT/'src/pages/[lang]/catalogue/[slug].astro').read_text())
