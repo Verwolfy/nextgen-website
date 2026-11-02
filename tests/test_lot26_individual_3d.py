@@ -25,8 +25,8 @@ class TestIndividual3DViews(unittest.TestCase):
         for token in ("getStaticPaths()", "languages.flatMap", "manifest.map",
                       "params: { lang, slug: model.code }", "<ModelViewer",
                       "src={modelPath}", "poster={posterPath}",
-                      "href={modelPath}", "download=", "SIMULATION",
-                      "مسودة غير معتمدة", "NOT APPROVED"):
+                      "href={modelPath}", "download=", "Visionnez ce format",
+                      "شاهد نموذج العبوة", "View the packaging format"):
             self.assertIn(token, page)
         self.assertIn("Unknown 3D preview", page)
         self.assertNotIn("site_products", page)

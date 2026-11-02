@@ -8,7 +8,7 @@ class ArabicEditorialPolishTests(unittest.TestCase):
         editorial=(ROOT/'src/data/editorial.ts').read_text(encoding='utf8')
         for term in ('حلول مبتكرة لقطاع البناء','كتالوج المنتجات','النشرات الفنية'):
             self.assertIn(term,site+editorial)
-        for term in ('هذه معلومات تعريفية أولية','لم تُعتمد بعد','الموارد والوثائق الفنية','قيد المراجعة'):
+        for term in ('تعرّف على مجموعات FENEK','للحصول على التفاصيل الفنية','الموارد والوثائق الفنية','تواصل معنا'):
             self.assertIn(term,editorial)
         self.assertNotIn("welcome:'حلول جديدة لمواد البناء'",site)
     def test_about_copy_not_repeated(self):
