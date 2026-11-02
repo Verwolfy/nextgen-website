@@ -11,9 +11,9 @@ class TestDirectContactPaths(unittest.TestCase):
         page = (ROOT / 'src/pages/[lang]/[section].astro').read_text(encoding='utf-8')
         self.assertEqual(page.count('<ContactChannels lang={lang} />'), 2)
         self.assertIn('href="#contact-direct"', page)
-        self.assertIn('href="#candidature"', page)
-        self.assertIn('kind="quote"', page)
-        self.assertIn('kind="distributor"', page)
+        self.assertNotIn('href="#candidature"', page)
+        self.assertNotIn('<LeadForm', page)
+        self.assertNotIn('LeadForm.astro', page)
         self.assertNotIn("<form", page)
 
     def test_contact_channels_have_three_visible_actions_but_no_data_transport(self):
@@ -40,6 +40,8 @@ class TestDirectContactPaths(unittest.TestCase):
     def test_field_preview_is_collapsible_and_never_active(self):
         component = (ROOT / 'src/components/LeadForm.astro').read_text(encoding='utf-8')
         self.assertIn('<details class="lead-preview">', component)
+        page = (ROOT / 'src/pages/[lang]/[section].astro').read_text(encoding='utf-8')
+        self.assertNotIn('<LeadForm', page)
         self.assertIn('<summary>{t.previewTitle}</summary>', component)
         self.assertIn('<textarea disabled', component)
         self.assertIn('disabled type={typeFor(field)}', component)
