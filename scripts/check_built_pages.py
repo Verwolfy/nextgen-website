@@ -116,7 +116,7 @@ def main() -> None:
     checked = 0
     refs = 0
     for lang in LANGS:
-        for suffix in ("", *SECTIONS, "emballages", *(("gammes/" + r) for r in RANGES)):
+        for suffix in ("", *SECTIONS, "emballages", "maquettes", *(("gammes/" + r) for r in RANGES)):
             fn = ROOT / lang / suffix / "index.html"
             assert fn.is_file(), "Missing translated route: " + str(fn)
             refs += check_page(fn, lang)
@@ -127,6 +127,14 @@ def main() -> None:
             parsed.feed(fn.read_text(encoding="utf-8"))
             assert parsed.lead_controls, "Expected a disabled demo form: " + str(fn)
             assert all(disabled for _, disabled in parsed.lead_controls), "Enabled lead input: " + str(fn)
+        # Lot 27: all unique images are linked from the localized, non-indexed gallery.
+        gallery = (ROOT / lang / "maquettes" / "index.html").read_text(encoding="utf-8")
+        assert "non contractuelles" in gallery.lower() or "NON VALIDÉES" in gallery or "غير معتمدة" in gallery or "UNAPPROVED" in gallery, lang
+        for i in range(1, 47):
+            asset = f"/images/maquettes/maquette-{i:02d}.webp"
+            assert asset in gallery, "Missing image in "+lang+": "+asset
+            image = ROOT / asset.lstrip("/")
+            assert image.is_file() and image.read_bytes()[:4] == b"RIFF", str(image)
         catalog = (ROOT / lang / "catalogue" / "index.html").read_text(encoding="utf-8")
         assert "PF-001" not in catalog and "PF-006" not in catalog
         assert not (ROOT / lang / "produits").is_dir(), "No real product was approved"
