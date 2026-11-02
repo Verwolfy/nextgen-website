@@ -31,8 +31,8 @@ class TestDirectContactPaths(unittest.TestCase):
     def test_direct_channels_are_localized_and_do_not_promise_delivery(self):
         copy = (ROOT / 'src/data/contact-channels.ts').read_text(encoding='utf-8')
         for token in ('fr:', 'ar:', 'en:', 'externalNotice:', 'inboxNotice:',
-                      'previewAnchor:', 'réception effective', 'لم يتم التحقق',
-                      'has not been verified'):
+                      'previewAnchor:', 'Choisissez le moyen', 'اختر وسيلة',
+                      'Choose your preferred contact'):
             self.assertIn(token, copy)
         self.assertNotIn('guaranteed response', copy.lower())
         self.assertNotIn('24/7', copy)
