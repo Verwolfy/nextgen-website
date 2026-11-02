@@ -27,6 +27,19 @@ MARKERS = {
     "old-c1t-flat-label": "/images/catalogue-projects/fenek-bond-c1t-card.webp",
     "new-bond-c1te": "/images/maquettes/maquette-21.webp",
     "new-bond-gr-hr": "/images/maquettes/maquette-31.webp",
+    # Lot 31: all eleven individual PAINT packshots must be linked from the
+    # public catalogue. The entire proof is read-only and cannot publish data.
+    "paint-ent-l": "/images/catalogue-projects/fenek-paint-ent-l.webp",
+    "paint-fac-el": "/images/catalogue-projects/fenek-paint-fac-el.webp",
+    "paint-fac-m": "/images/catalogue-projects/fenek-paint-fac-m.webp",
+    "paint-fac-sx": "/images/catalogue-projects/fenek-paint-fac-sx.webp",
+    "paint-int-m": "/images/catalogue-projects/fenek-paint-int-m.webp",
+    "paint-int-s": "/images/catalogue-projects/fenek-paint-int-s.webp",
+    "paint-int-wa": "/images/catalogue-projects/fenek-paint-int-wa.webp",
+    "paint-prim-a": "/images/catalogue-projects/fenek-paint-prim-a.webp",
+    "paint-prim-fx": "/images/catalogue-projects/fenek-paint-prim-fx.webp",
+    "paint-sol-a": "/images/catalogue-projects/fenek-paint-sol-a.webp",
+    "paint-txt-f": "/images/catalogue-projects/fenek-paint-txt-f.webp",
 }
 
 def one(name: str, base: str, path: str, fresh: bool = False) -> None:
