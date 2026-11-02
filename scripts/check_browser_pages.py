@@ -103,6 +103,7 @@ def check() -> None:
                             if lang == "ar":
                                 assert "تصاميم أولية" in page.locator(".page-head .eyebrow").inner_text(), path
                             assert page.locator("model-viewer").count() == 5, path
+                            assert page.locator(".showcase-card a[href^='/"+lang+"/emballages/']").count() == 5, path
                             posters = page.locator("button[slot='poster'] img")
                             assert posters.count() == 5, path
                             # Native img tag inside the local poster slot must render BEFORE the 3D GLB is loaded.
@@ -150,6 +151,18 @@ def check() -> None:
                             or (size == "desktop" and lang == "ar" and section in ("gammes", "a-propos", "emballages"))):
                             page.screenshot(path=str(SHOTS / (lang + "-" + size + "-" + (section or "home") + ".png")), full_page=True)
                             snapshots += 1
+                    # Real local 3D GLB can be opened directly from the homepage.
+                    model_route = "/"+lang+"/emballages/sac-25kg/"
+                    result = page.goto(base+model_route, wait_until="domcontentloaded", timeout=20000)
+                    assert result is not None and result.status == 200, model_route
+                    assert page.locator("model-viewer").count() == 1, model_route
+                    assert page.locator("model-viewer").get_attribute("src") == "/models-demo/sac-25kg.glb", model_route
+                    assert page.locator("model-viewer").get_attribute("reveal") == "interaction", model_route
+                    assert page.locator("button[slot='poster'] img").count() == 1, model_route
+                    assert page.locator("a[download='sac-25kg.glb']").count() == 1, model_route
+                    assert page.locator("form").count() == 0, model_route
+                    assert page.locator("meta[name='robots']").get_attribute("content") == "noindex,nofollow", model_route
+                    assert page.evaluate("Math.ceil(document.documentElement.scrollWidth - window.innerWidth)") <= 4, model_route
                     # Smoke-check four individual conceptual products, not certified SKUs.
                     for slug in ("fenek-bond-c1t", "fenek-proof-cm-o1p",
                                  "fenek-flow-wr-n", "fenek-paint-int-m"):
