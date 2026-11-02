@@ -1,0 +1,72 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { languages, type Lang } from '../../data/site';
+
+export function getStaticPaths() {
+  return languages.map(lang => ({ params: { lang } }));
+}
+const lang = Astro.params.lang as Lang;
+const copy = {
+  fr: {
+    title: 'Maquettes visuelles NextGen',
+    intro: '46 rendus visuels distincts issus des études graphiques du projet, en complément des maquettes 3D interactives.',
+    notice: 'MAQUETTES DE CONCEPTION — NON VALIDÉES. Ces illustrations numériques ne constituent ni des photographies de produits fabriqués, ni des fiches techniques, ni des preuves de conformité. Les marques, codes, formats, caractéristiques, emballages et mentions figurant dans les images sont à vérifier avant tout usage commercial ou réglementaire.',
+    number: 'Maquette',
+    type: 'Illustration de conception non contractuelle',
+    open: 'Voir l’image en grand',
+    back: 'Consulter les modèles 3D interactifs',
+    resource: 'Retour aux ressources',
+  },
+  ar: {
+    title: 'نماذج نكست جن المصوّرة',
+    intro: '46 صورة مختلفة لتصاميم أولية، إضافة إلى نماذج العبوات ثلاثية الأبعاد التفاعلية.',
+    notice: 'نماذج تصميم غير معتمدة. الصور تصوّرات رقمية وليست صوراً لمنتجات مصنّعة أو وثائق فنية أو إثباتاً للمطابقة. يجب مراجعة جميع الرموز والأحجام والبيانات الظاهرة قبل أي استعمال تجاري أو تنظيمي.',
+    number: 'نموذج',
+    type: 'صورة تصميم غير تعاقدية',
+    open: 'عرض الصورة بحجم أكبر',
+    back: 'تصفّح النماذج التفاعلية ثلاثية الأبعاد',
+    resource: 'العودة إلى الموارد',
+  },
+  en: {
+    title: 'NextGen visual concepts',
+    intro: '46 distinct concept images from the design study, alongside the interactive 3D packaging previews.',
+    notice: 'UNAPPROVED DESIGN CONCEPTS. These digital illustrations are not photographs of manufactured goods, technical datasheets or evidence of compliance. Any printed codes, labels, sizes, specifications and packaging details require independent review before commercial or regulatory use.',
+    number: 'Concept',
+    type: 'Non-contractual design illustration',
+    open: 'Open full image',
+    back: 'Explore the interactive 3D models',
+    resource: 'Back to resources',
+  },
+}[lang];
+const items = Array.from({length: 46}, (_, i) => {
+  const number = String(i + 1).padStart(2, '0');
+  return { number, src: `/images/maquettes/maquette-${number}.webp` };
+});
+---
+<Layout lang={lang} title={copy.title} description={copy.intro}>
+  <div class="page-head"><div class="container">
+    <span class="eyebrow">NextGen · Design</span>
+    <h1>{copy.title}</h1>
+    <p>{copy.intro}</p>
+  </div></div>
+  <section class="section"><div class="container">
+    <p class="notice" role="note"><strong>{copy.notice}</strong></p>
+    <div class="visual-concept-grid">
+      {items.map(item => (
+        <figure class="visual-concept-card">
+          <a href={item.src} target="_blank" rel="noopener noreferrer" aria-label={`${copy.open} — ${copy.number} ${item.number}`}>
+            <img src={item.src} alt={`${copy.number} ${item.number} — ${copy.type}`} width="880" height="880" loading="lazy" decoding="async" />
+          </a>
+          <figcaption>
+            <strong>{copy.number} {item.number}</strong>
+            <span>{copy.type}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+    <div class="actions">
+      <a class="btn" href={`/${lang}/emballages/`}>{copy.back}</a>
+      <a class="btn btn-outline" href={`/${lang}/ressources/`}>{copy.resource}</a>
+    </div>
+  </div></section>
+</Layout>
