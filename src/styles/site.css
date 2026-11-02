@@ -331,3 +331,15 @@ h1,h2,h3,.page-head p,.showcase-card{overflow-wrap:anywhere;min-width:0}
 .paint-concept-caption small{color:#4e6875;font-size:.69rem;font-weight:650}
 [dir=rtl] .paint-concept-caption{direction:rtl}
 @media(max-width:590px){.paint-concept-caption{padding:7px 9px}.paint-concept-caption small{font-size:.65rem}}
+
+
+/* Lot 38: progressive-enhancement catalogue controls (no network or cookies). */
+.catalogue-filters{display:flex;flex-wrap:wrap;align-items:flex-end;gap:15px;padding:20px;margin:20px 0 10px;background:#eaf1f3;border:1px solid #cedfe4;border-radius:13px}
+.catalogue-filter-field{display:flex;flex:1 1 215px;flex-direction:column;gap:5px;min-width:0}
+.catalogue-filter-field label{font-weight:750;font-size:.9rem}
+.catalogue-filter-field input,.catalogue-filter-field select{width:100%;min-height:46px;padding:10px 13px;font:inherit;color:#102648;background:#fff;border:1px solid #8ba6b2;border-radius:8px}
+.catalogue-filter-field input:focus-visible,.catalogue-filter-field select:focus-visible,.catalogue-filter-reset:focus-visible{outline:3px solid #047b52;outline-offset:3px}
+.catalogue-filter-reset{white-space:normal}
+.catalogue-filter-count{width:100%;margin:0;color:#365368;font-weight:650}
+.catalogue-filter-empty{padding:22px;background:#fff;border:1px dashed #93aab4;border-radius:11px}
+.catalogue-projects [hidden]{display:none!important}
