@@ -72,8 +72,11 @@ class TestLot28CatalogueVisuals(unittest.TestCase):
         self.assertEqual(art.count("'ENT-L'"), 1)
         for token in ("'TXT-F'","'INT-M'","paint-concept-caption"):
             self.assertIn(token, art)
+        # Scan printed text payloads, not arbitrary SVG path coordinates
+        # such as "M0 515 L720..." that resemble "15 L" by coincidence.
+        printed = re.findall(r"<text[^>]*>([^<]*)</text>", art)
         for token in ("15 L", "25 kg", "20 kg", "EN 1504", "certifié"):
-            self.assertNotIn(token, art)
+            self.assertFalse(any(token in label for label in printed), token)
         self.assertEqual((ROOT/"public/data/products.json").read_text().strip(),"[]")
 
 if __name__=="__main__":
