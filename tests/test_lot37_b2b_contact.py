@@ -16,7 +16,7 @@ class Lot37B2BContactTests(unittest.TestCase):
             "Distribution and partnerships", "/contact/", "/distributeurs/",
         ):
             self.assertIn(marker, source)
-        self.assertEqual(source.count('class="card"'), 2)
+        self.assertEqual(source.count('<article class="card">'), 2)
         self.assertNotIn("<form", source)
         self.assertNotIn("fetch(", source)
 
