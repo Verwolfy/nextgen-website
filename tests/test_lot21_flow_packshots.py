@@ -33,9 +33,10 @@ class TestLot21FlowPackshots(unittest.TestCase):
 
     def test_import_has_digest_checks_and_exact_slugs(self):
         imp=(ROOT/"scripts/install_flow_packshots.py").read_text(encoding="utf8")
-        for phrase in ("len(items) == 12","len(all_bytes) == 24","hashlib.sha256(raw).hexdigest()",
-                       "assert raw_path == expected_path","raw.startswith(b\"RIFF\")",
-                       '"fenek-flow-wr-n"', '"fenek-flow-sp-hr"'):
+        for phrase in ('len(assets) == 12','len(files) == 24','hashlib.sha256(data).hexdigest()',
+                       'name == expected_path','data[:4] == b"RIFF"',
+                       'APPROVED = ROOT / "scripts" / "flow-packshots-approved.json"',
+                       'assert package_paths == set(expected)'):
             self.assertIn(phrase,imp)
         self.assertNotIn("requests.",imp)
         self.assertNotIn("urllib",imp)
