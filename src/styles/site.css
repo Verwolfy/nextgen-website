@@ -343,3 +343,37 @@ h1,h2,h3,.page-head p,.showcase-card{overflow-wrap:anywhere;min-width:0}
 .catalogue-filter-count{width:100%;margin:0;color:#365368;font-weight:650}
 .catalogue-filter-empty{padding:22px;background:#fff;border:1px dashed #93aab4;border-radius:11px}
 .catalogue-projects [hidden]{display:none!important}
+
+
+/* Lot 40 — home collection slideshow; four approved editorial mockup assets. */
+.hero{background:linear-gradient(116deg,#091c35 0%,#112f4e 61%,#24425b 100%)}
+.hero-wrap{gap:clamp(22px,4.4vw,58px)}
+.hero-showcase{min-width:0;width:min(100%,540px);margin-inline:auto;padding:clamp(12px,1.7vw,18px);background:linear-gradient(155deg,#ffffff,#edf3f4);border:1px solid #d8e5e9;border-radius:22px;box-shadow:0 25px 65px #0313247a;color:#102648}
+.hero-slide-stack{position:relative;width:100%;aspect-ratio:1;overflow:hidden;border-radius:14px;background:#f5f7f8;touch-action:pan-y}
+.hero-slide{position:absolute;inset:0;display:grid;place-items:center;margin:0;opacity:0;visibility:hidden;transform:translateX(18px) scale(.985);transition:opacity .7s ease,transform .7s ease,visibility .7s ease;pointer-events:none}
+.hero-slide.is-active{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+.hero-slide img{display:block;width:100%;height:100%;object-fit:contain}
+.hero-slide-caption{position:absolute;inset-inline:0;bottom:0;display:flex;justify-content:space-between;gap:12px;padding:24px 16px 12px;background:linear-gradient(transparent,#091b34c8);color:white;font-size:.78rem;font-weight:760;letter-spacing:.01em}
+.hero-slide-count{white-space:nowrap}
+.hero-slide-controls{display:flex;justify-content:center;align-items:center;gap:12px;padding-top:14px}
+.hero-slide-controls[hidden]{display:none!important}
+.hero-slide-arrow,.hero-slide-pause,.hero-slide-dot{display:inline-grid;place-items:center;cursor:pointer;color:#102648;background:#f4f7f8;border:1px solid #cad9df;border-radius:99px;min-width:42px;min-height:42px}
+.hero-slide-arrow{font-size:1.9rem;line-height:1}
+.hero-slide-pause{font-size:.95rem;margin-inline-start:8px}
+.hero-slide-dots{display:flex;align-items:center;justify-content:center;gap:3px}
+.hero-slide-dot{background:transparent;border-color:transparent;min-width:35px;min-height:42px}
+.hero-slide-dot span{display:block;width:9px;height:9px;border-radius:99px;background:#91a6b0;transition:background .2s ease,transform .2s ease}
+.hero-slide-dot[aria-current=true] span{background:#008b5b;transform:scale(1.45)}
+.hero-showcase button:hover{background:#e3edea}
+.hero-showcase button:focus-visible{outline:3px solid #05825a;outline-offset:3px}
+.hero .hero-slide-note{color:#445d6e;font-size:.76rem;line-height:1.45;text-align:center;margin:9px auto 2px}
+.resources-grid.resources-grid-docs{grid-template-columns:repeat(2,minmax(0,1fr))}
+.resource-support{margin-top:20px}
+.resource-support .actions{align-items:center;gap:16px}
+.resource-gallery-link{color:#006c4a;text-decoration:underline;text-underline-offset:3px;font-weight:700}
+.resource-gallery-link:focus-visible{outline:3px solid #087b53;outline-offset:4px}
+@media(min-width:981px){.hero-wrap{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}}
+@media(max-width:980px){.hero-showcase{max-width:500px}}
+@media(max-width:660px){.resources-grid.resources-grid-docs{grid-template-columns:1fr}}
+@media(max-width:580px){.hero-showcase{width:100%;max-width:370px;padding:10px;border-radius:17px}.hero-slide-stack{border-radius:11px}.hero-slide-controls{gap:6px}.hero-slide-arrow,.hero-slide-pause{min-width:42px;min-height:42px}}
+@media(prefers-reduced-motion:reduce){.hero-slide,.hero-slide-dot span{transition:none!important;transform:none!important}.hero-slide-dot[aria-current=true] span{transform:none!important;width:12px;height:12px}}
