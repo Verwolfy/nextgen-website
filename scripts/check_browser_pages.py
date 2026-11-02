@@ -76,11 +76,14 @@ def check() -> None:
                             slider.locator("[data-hero-toggle]").click()
                             assert slider.locator("[data-hero-toggle]").get_attribute("aria-pressed") == "true", path
                             if size == "desktop":
-                                with browser.new_page(java_script_enabled=False) as no_js:
+                                no_js = browser.new_page(java_script_enabled=False)
+                                try:
                                     no_js.goto(base + path, wait_until="domcontentloaded")
                                     assert no_js.locator("[data-hero-slide]").count() == 4, path
                                     assert no_js.locator(".hero-slide.is-active img").is_visible(), path
                                     assert not no_js.locator("[data-hero-controls]").is_visible(), path
+                                finally:
+                                    no_js.close()
                             assert page.locator(".home-approach .editorial-caution").count() == 1, path
                             assert page.locator(".home-approach .chip").count() == 3, path
                             assert page.locator(".home-audiences .card").count() == 2, path
