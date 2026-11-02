@@ -178,16 +178,10 @@ def check() -> None:
                             assert whatsapp.count() == 1, path
                             assert whatsapp.get_attribute("rel") == "noopener noreferrer", path
                             assert page.locator(".contact-direct .contact-disclosure[role='note']").count() == 1, path
-                            assert page.locator(".lead-preview").count() == 1, path
-                            assert not page.locator(".lead-preview .lead-fields").is_visible(), path
-                            all_controls = page.locator(".lead-panel input, .lead-panel textarea, .lead-panel button")
-                            count = all_controls.count()
-                            assert count > 5, path
-                            assert all(all_controls.nth(i).is_disabled() for i in range(count)), path
-                            page.locator(".lead-preview summary").click()
-                            assert page.locator(".lead-preview .lead-fields").is_visible(), path
-                            page.locator(".lead-preview summary").click()
-                            assert not page.locator(".lead-preview .lead-fields").is_visible(), path
+                            assert page.locator(".lead-preview, .lead-panel").count() == 0, path
+                            assert page.locator("form, input, textarea").count() == 0, path
+                            if section == "distributeurs":
+                                assert page.locator("a[href='#contact-direct']").count() == 1, path
                         # Overflows on phone screens make navigation unusable.
                         diff = page.evaluate("Math.ceil(document.documentElement.scrollWidth - window.innerWidth)")
                         if diff > 4:
@@ -305,7 +299,7 @@ def check() -> None:
                 snapshots += 1
                 tiny.goto(base + "/" + lang + "/contact/", wait_until="domcontentloaded")
                 assert tiny.locator(".contact-channel").count() == 3
-                assert not tiny.locator(".lead-preview .lead-fields").is_visible()
+                assert tiny.locator(".lead-preview, .lead-panel").count() == 0
                 tiny_contact_width = tiny.evaluate("Math.ceil(document.documentElement.scrollWidth - innerWidth)")
                 assert tiny_contact_width <= 4, f"320px contact overflow ({lang}): {tiny_contact_width}"
                 tiny.screenshot(path=str(SHOTS / (lang + "-mobile-320-contact.png")), full_page=True)
