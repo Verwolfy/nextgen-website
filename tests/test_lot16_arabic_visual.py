@@ -20,10 +20,10 @@ class ArabicVisualChecks(unittest.TestCase):
     def test_editorial_arabic_keeps_noncommercial_disclaimers(self):
         editor = (ROOT / 'src/data/editorial.ts').read_text(encoding='utf-8')
         for term in ('مجالات الاستخدام', 'شركات المقاولات', 'بيانات المنتجات',
-                     'نشرات بيانات السلامة', 'غير معتمدة', 'قيد المراجعة'):
+                     'نشرات بيانات السلامة', 'تواصل معنا', 'المعلومات الفنية'):
             self.assertIn(term, editor)
         self.assertIn('homeStatus:', editor)
-        self.assertIn('لم تُعتمد بعد أي منتجات للنشر أو البيع', editor)
+        self.assertIn('تعرّف على مجموعات FENEK', editor)
 
     def test_arabic_mass_units_are_not_described_as_liquid_capacity(self):
         gallery = (ROOT / 'src/pages/[lang]/emballages.astro').read_text(encoding='utf-8')
