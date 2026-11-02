@@ -25,7 +25,6 @@ Dernière préparation : 1 novembre 2026. Source de référence : `Catalogue_Pro
 2. Traductions techniques FR/AR/EN à relire par un spécialiste ; détails de performances et modes opératoires restent des inconnues.
 3. Confirmation des conditionnements commercialisés, matières d'emballage, dimensions, masses/volumes, codes SKU et unités ERP.
 4. Qualification des 97 familles de matières candidates en grades, fournisseurs, fiches fournisseurs et approbations d'achat ; matières premières/recettes **jamais publiables**.
-5. Visuels officiels du produit réel, emballages, étiquettes réglementaires et modèles 3D validés ; les anciennes maquettes restent des simulations.
 6. Génération des FT/FDS officielles seulement à partir des résultats labo, FDS fournisseurs et décisions réglementaires signées.
 7. Validation technique puis commerciale de **publication**, et seulement ensuite synchronisation serveur `site_products`.
 
