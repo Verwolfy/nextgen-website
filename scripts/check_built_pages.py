@@ -125,8 +125,12 @@ def main() -> None:
             fn = ROOT / lang / part / "index.html"
             parsed = Tags()
             parsed.feed(fn.read_text(encoding="utf-8"))
-            assert parsed.lead_controls, "Expected a disabled demo form: " + str(fn)
-            assert all(disabled for _, disabled in parsed.lead_controls), "Enabled lead input: " + str(fn)
+            # Visitors see functioning direct contact channels, never a
+            # disabled form preview that suggests the site is unfinished.
+            html = fn.read_text(encoding="utf-8")
+            assert 'class="contact-direct"' in html and html.count('class="contact-channel"') == 3, fn
+            assert "lead-preview" not in html and "lead-panel" not in html, fn
+            assert not parsed.lead_controls, "Unexpected lead input: " + str(fn)
         # Lot 27: all unique images are linked from the localized, non-indexed gallery.
         gallery = (ROOT / lang / "maquettes" / "index.html").read_text(encoding="utf-8")
         assert "non contractuelles" in gallery.lower() or "NON VALIDÉES" in gallery or "غير معتمدة" in gallery or "UNAPPROVED" in gallery, lang
