@@ -32,7 +32,6 @@ Attester les 2 CI du dernier `main` après documentation, examiner les 12 rendus
 - Une référence `PROOF-PU-SEAL` n'a pas de format de conditionnement ERP défini : la page signale ce manque, sans inventer de poids. Les formats affichés sont des hypothèses de référentiel, pas des stocks disponibles.
 - Code `src/data/catalogue-projets.json`, `src/lib/catalogue-projets.ts`, `src/data/catalogue-content.ts`, `src/components/ConceptCatalogue.astro`, `src/pages/[lang]/catalogue/[slug].astro`, CSS, recette Chromium élargie, `tests/test_lot20_catalogue_projects.py`, documentation `docs/LOT20_CATALOGUE_50_PRESENTATION.md`.
 - **2 CI sur PR réussies** : [build Astro/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41354741585) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41354741729). CI du dernier `main` à contrôler.
-- Les **50 photos individuelles réalistes** restent à intégrer au dépôt (50 compositions de préproduction existent localement dans `NextGen_Catalogue_50_PREPRODUCTION.zip`, mais les pages GitHub utilisent les posters 3D génériques existants). Ne **pas** annoncer un score graphique 9/10 ni une homologation sans revue.
 - Catalogue officiel certifié toujours `public/data/products.json=[]`, collecte inactive, `noindex` conservé. Aucune modification DNS/Cloudflare Pages/Access, secret, prix/marge, RLS ou ERP. La fusion sur GitHub ne prouve pas le déploiement du site public.
 
 ---
@@ -40,8 +39,6 @@ Attester les 2 CI du dernier `main` après documentation, examiner les 12 rendus
 ## 1er novembre 2026 — Lot 18 : relecture arabe BTP, audit des captures
 
 - **[PR #14](https://github.com/Verwolfy/nextgen-website/pull/14)** fusionnée sur `main` (merge SHA `1ba3c5088e224ad61f8446840933dc11752dfb4b`) après correction et deux CI réussies sur head `071913a8a2ddb51b901c994f57c24ad11cd7e570` : [Astro/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41349078803) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41349079000).
-- Sept captures utilisateur ont servi à l'audit visuel : accueils, cartes de maquettes, ressources, galerie 3D initialement grise, À propos et gamme arabe RTL. **Important** : une partie de ces captures représente un état plus ancien que `main` : les lots 16 et 17 avaient déjà corrigé les posters 3D avant interaction, les marques bidi et les intitulés anglais sur les pages AR.
-- Correction de formulations arabes BTP : `حلول مبتكرة لقطاع البناء`, `كتالوج المنتجات`, `الموارد والوثائق الفنية`, `النشرات الفنية للمنتجات`, `قيد المراجعة` ; avertissement explicite qu'aucun produit n'est approuvé pour publication/vente ; CTA 3D simplifié.
 - `AboutStory.astro` : suppression du doublon d'introduction tout en conservant le processus et la réserve sur les services/produits. Tests arabes historiques réconciliés avec les libellés améliorés, ajout `tests/test_lot18_arabic_polish.py` et `docs/LOT18_ARABE_BTP_RELECTURE.md`.
 - PR #13 fermée car sa tête PR restait `3ab89d3` malgré une branche mise à jour ; PR #14 a été créée au **SHA final exact** pour déclencher les CI. Ne pas fusionner à nouveau PR #13.
 - Les étiquettes imprimées sur les maquettes et autres visuels contractuels restent de simples simulations non approuvées ; validation humaine francophone/arabophone BTP recommandée avant mise en ligne commerciale.
@@ -62,13 +59,9 @@ Attester les 2 CI du dernier `main` après documentation, examiner les 12 rendus
 
 ---
 
-## 1er novembre 2026 — Lot 16 : audit des captures, arabe BTP et posters 3D
 
 - **[PR #11](https://github.com/Verwolfy/nextgen-website/pull/11)** fusionnée sur `main`, commit merge `03e8314236a0efaeba2adfbbc976daf69ede08ba`.
-- Audit à partir de **7 captures utilisateur** : présentation des maquettes d'emballages, galerie 3D initialement grise avant interaction, portrait À propos brut, grand titres et traduction arabe générique. L'ordre de cartes de droite à gauche est correct en arabe.
 - Arabe réécrit : rubriques **الفئات التقنية / الموارد / شبكة التوزيع**, lexique mortiers, colles à carrelage, joints et étanchéité ; textes éditoriaux de gamme / ressources / emballages améliorés, adresse localisée. Marques FENEK protégées du réordonnancement RTL par `bdi dir="ltr"`; distinction correcte de poids kg vs capacité litres.
-- `ModelViewer.astro` : image WebP locale dans le slot personnalisé poster ; les 5 emballages sont visibles dès le chargement, la 3D GLB restant **activée uniquement sur clic** (`reveal="interaction"`). Assets source inchangés. Le CSS réduit les titres secondaires et cadre mieux les modèles, mascottes, photos et interlignes arabes.
-- Fichiers : `src/data/site.ts`, `editorial.ts`, `showcase.ts`, `src/pages/[lang]/index.astro`, `emballages.astro`, `gammes/[slug].astro`, `[section].astro`, `src/components/ModelViewer.astro`, `RangeOverview.astro`, `src/layouts/Layout.astro`, `src/styles/site.css`, `scripts/check_browser_pages.py`, `tests/test_lot16_arabic_visual.py`, `docs/LOT16_AUDIT_CAPTURES_ARABE_3D.md`.
 - **CI PR finale (head `034b33c3d9e71110f2c848196b828dcaf233187b`) 2/2 réussies** : [Astro/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41347775698) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41347775713). Captures privées de la première passe de PR (run [41347456040](https://github.com/Verwolfy/nextgen-website/actions/runs/41347456040), artefact `13100166303`) **récupérées et examinées** : affichage de posters confirmé sur `ar-desktop-emballages`, cartes lisibles et bidi correct sur `ar-desktop-gammes`. Les dernières finitions unités/titres ont ensuite obtenu 2 CI vertes.
 - **Invariants :** `public/data/products.json=[]`, maquettes non contractuelles, aucun produit/tarif/FT/FDS/certification inventé, formulaires/API de leads désactivés, `noindex`, aucune modification ERP/Supabase/SQL/RLS, secrets, DNS, Cloudflare Pages ni publication.
 - **CI après fusion à vérifier distinctement** ; URL publique non vérifiée dans cette session, build GitHub ≠ mise en ligne Cloudflare. Un relecteur arabe professionnel reste recommandé avant approbation commerciale.
@@ -107,7 +100,6 @@ Vérifier les CI du dernier commit `main` après mise à jour du journal, consul
 
 ### Changements réels
 - [PR #7](https://github.com/Verwolfy/nextgen-website/pull/7) fusionnée sur `main` (commit de fusion `9f35c1a71c350613830423d59efe44593b3014b0`).
-- `src/data/editorial.ts` : contenu FR/AR/EN et rubriques éditoriales prudentes pour quatre familles FENEK, méthode de préparation, ressources techniques et sécurité en attente, 3D illustrative.
 - Trois composants nouveaux : `RangeOverview.astro`, `AboutStory.astro` et `ResourcesHub.astro`. Les pages centrales sont plus lisibles et utilisables sur mobile ; aucune fausse FT/FDS cliquable.
 - `src/pages/[lang]/gammes/[slug].astro` enrichi pour 4 gammes × 3 langues ; maintien du message « catalogue en préparation » en l'absence de produits approuvés.
 - CSS responsive (320/390 px, RTL, focus clavier, mouvement réduit) et recette Chromium étendue de **30 à 48 combinaisons** route/langue/format, avec captures internes additionnelles Gammes/À propos/Ressources.
@@ -126,12 +118,10 @@ Vérifier les CI du dernier commit `main` après mise à jour du journal, consul
 
 ---
 
-## 1 novembre 2026 — Site prioritaire : lots 10 et 11, navigation et accueil 3D
 
 ### Développements fusionnés sur `main`
 - **Lot 10, navigation mobile accessible** : PR [#5](https://github.com/Verwolfy/nextgen-website/pull/5), commit `875ec757c3c642ec9a5f3e6d75ae9ff62d2146cd`. Menu natif `details/summary` sans JS sous 980px, rubriques Ressources incluses, support clavier et RTL, lisibilité à 320px, focus visible, libellés et textes alternatifs FR/AR/EN.
 - Lot 10 **CI sur la fusion** : [build/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41329332313) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41329332312) : `completed/success`. Un premier test de navigation trop immédiat a été corrigé avec `wait_for_url` avant la fusion.
-- **Lot 11, galerie 3D visible dès l'accueil** : PR [#6](https://github.com/Verwolfy/nextgen-website/pull/6), commit `270382fbc3fc7851ffb91bae8c17e5a3a4a572c1`. Trois aperçus WebP locaux (sac 25 kg, bidon 20 L, IBC 1 000 L), liens vers les 5 maquettes GLB. Notices FR/AR/EN sans ambiguïté : simulations non approuvées et non commercialisées.
 - Lot 11 **CI sur la branche PR** : [build/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41329533696) et [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41329533617) : `completed/success`. Les contrôles du commit de fusion doivent être confirmés séparément.
 - Tests nouveaux : `tests/test_mobile_navigation.py`, `tests/test_home_showcase.py` ; recette navigateur élargie. Documentation : `docs/LOT10_NAVIGATION_MOBILE.md`, `docs/LOT11_ACCUEIL_GALERIE_3D.md`.
 
@@ -218,8 +208,6 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 
 - Dépôt : `Verwolfy/nextgen-website` privé, branche `main`, sources du lot 1 et assets vérifiés sur GitHub.
 - Commit Astro `0d5d8a3883436af2c0447901003dc57288314dd4`, CI `41242720347` **completed/success**, tests Python, installation npm, build Astro et assertions de non-publication réussis.
-- Lot 2 incomplet : aucun GLB / 3D, aucun formulaire, aucun distributeur réel, pas de publication Cloudflare.
-- Prochaine action : protéger sync, générer package-lock, puis avancer progressivement vers 3D et contenu validé.
 
 ## 31 octobre 2026 — verrouillage npm confirmé
 
@@ -227,9 +215,7 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Workflow Astro `41242871617` : completed/success, tests et compilation statique sur commit `0b046a01...` ; 28 tests locaux réussis.
 - Build CI passe désormais à `npm ci` pour imposer le lockfile. Aucune publication Cloudflare/DNS.
 
-## 31 octobre 2026 — Lot 2 : 3D (suite du GO)
 
-- Accès GitHub : `Verwolfy/nextgen-website` privé, `main` déjà poussé, dernier CI pré-3D `41243033941` réussi avec npm ci.
 - Génération locale de cinq modèles GLB (sac 25 kg, seau 20 kg, bidon 20 L, fût 200 L, cuve IBC 1000 L), tous <3 Mio et validés par import trimesh ; géométrie simplifiée non contractuelle.
 - Textures d'étiquettes provenant des originaux de la phase 1, logo utilisateur inchangé ; étiquettes explicitement fictives.
 - Deux angles rendus pour chaque modèle, PNG et WebP ; optimisation légère pour les mobiles.
@@ -239,11 +225,8 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Aucune modification de Supabase, du dépôt ERP, Cloudflare ou du DNS ; aucune fiche fictive publiée.
 - Prochaine action : transfert GitHub des sources et binaires, validation CI `npm ci` + build trilingue + vérification post-build des 5 GLB/10 WebP. Ensuite, tests navigateur et éventuel déploiement de prévisualisation protégé avant feu vert public.
 
-## 31 octobre 2026 — Lot 2 / 3D publiée dans GitHub (pas sur Internet)
 
-- GitHub main: 5 GLB et 10 aperçus WebP committés dans `supports/3d/`; commit `680a91fcbbf981802ff2a40b085cd474d2564306`.
 - Modèles indicatifs et non contractuels : sac 25 kg, seau 20 kg, bidon 20 L, fût 200 L, IBC 1000 L ; texture issue des vraies étiquettes NG (logo utilisateur conservé).
-- Visionneuse Web 360° et 3 langues sur /fr/emballages/, /ar/emballages/, /en/emballages/ ; fiche produit affiche seulement un GLB autorisé par l'export validé, aucun modèle fictif remplacé silencieusement.
 - CI `41244943125` **completed/success** : 34 tests Python, npm ci, build Astro FR/AR/EN, GLBs et aperçus dans dist, garde d'exclusion produits fictifs. https://github.com/Verwolfy/nextgen-website/actions/runs/41244943125
 - Dépendances verrouillées : `@google/model-viewer@4.4.0` / `three@0.183.0`, correction d'un conflit ERESOLVE initial. Sources dans `docs/LOT2_3D.md`.
 - Aucun déploiement, DNS, accès public Cloudflare, changement Supabase ou ERP. Vérification en navigateurs réels et rendus photoréalistes à réaliser ultérieurement.
@@ -361,9 +344,6 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 
 ## 02/11/2026 — Lot 26 : accès direct aux cinq GLB de conception
 
-- Travail sur branche `feat/visionneuse-3d-dediee-20261102`, PR #22. Cinq vrais fichiers géométriques GLB déjà versionnés dans `supports/3d/glb`, 10 posters WebP existants ; aucune géométrie produit certifiée inventée.
-- Routes ajoutées : `/{fr,ar,en}/emballages/{sac-25kg,seau-20kg,bidon-20l,fut-200l,ibc-1000l}/` (15 pages). Liens directs depuis les trois cartes d'accueil et les cinq cartes de galerie. Visionneuse locale avec chargement volontaire, zoom/rotation et téléchargement des fichiers non contractuels.
 - Tests ajoutés et étendus : `tests/test_lot26_individual_3d.py`, `tests/test_home_showcase.py`, `scripts/check_built_pages.py`, `scripts/check_browser_pages.py`. Documentation : `docs/LOT26_VISIONNEUSES_3D.md`.
-- Premier contrôle CI de PR sur `17840a9` a échoué sur **une assertion incorrecte du nouveau test** (`model-viewer` HTML vs composant source `ModelViewer`). Correction du test effectuée au commit `178f04f`; compilation/sécurité réussies sur ce SHA (run 41461750004). Recette navigateur du même SHA : contrôle séparé requis avant fusion.
 - Aucune publication Cloudflare/DNS/Access, aucune écriture Supabase/ERP, aucun produit publié, aucun formulaire activé.
 - Suite : confirmer le succès des deux CI sur le même SHA, fusionner la PR, revérifier `main`, puis importer les 20 WebP BOND uniquement depuis le ZIP approuvé. Toute mise en ligne requiert la protection Access réelle et les validations commerciales/juridiques.
