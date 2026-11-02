@@ -24,8 +24,7 @@ REQUIRED_LANGUAGES = ("fr", "ar", "en")
 FIELDS = ("slug", "nom", "gamme", "contenu", "conditionnements", "ordre")
 ASSETS = {"fiche_technique_url": ("docs", ".pdf", 8 * 1024 * 1024),
           "fds_url": ("docs", ".pdf", 8 * 1024 * 1024),
-          "image_url": ("images", None, 6 * 1024 * 1024),
-          "modele_3d_url": ("models", ".glb", 3 * 1024 * 1024)}
+          "image_url": ("images", None, 6 * 1024 * 1024)}
 IMAGE_TYPES = {".png": b"\x89PNG\r\n\x1a\n", ".jpg": b"\xff\xd8\xff", ".jpeg": b"\xff\xd8\xff", ".webp": b"RIFF", ".avif": b"\x00\x00\x00"}
 
 
@@ -163,14 +162,12 @@ def copy_asset(url: str, field: str, destination: Path, origin: str, key: str, s
         for chunk in r.iter_content(chunk_size=65536):
             count += len(chunk)
             if count > maximum:
-                raise SyncError("Oversize document / model")
+                raise SyncError("Oversize document or image")
             out.write(chunk)
     data = destination.read_bytes()
     ext = destination.suffix.lower()
     if ext == ".pdf" and not data.startswith(b"%PDF-"):
         raise SyncError("PDF signature mismatch")
-    if ext == ".glb" and (not data.startswith(b"glTF") or len(data) < 20):
-        raise SyncError("GLB signature mismatch")
     if ext in IMAGE_TYPES:
         sig = IMAGE_TYPES[ext]
         if not data.startswith(sig):
@@ -183,7 +180,7 @@ def copy_asset(url: str, field: str, destination: Path, origin: str, key: str, s
 
 def _replace_generated(stage: Path, output: Path) -> None:
     """Best effort rollback across generated files; never remove unrelated assets."""
-    targets = ("docs", "images", "models", "data")
+    targets = ("docs", "images", "data")
     backup = stage / "backup"
     backup.mkdir()
     moved = []
@@ -212,7 +209,7 @@ def synchronize(origin: str, key: str, output: Path = OUTPUT, session=requests) 
     slugs = set()
     with tempfile.TemporaryDirectory(prefix=".nextgen-stage-", dir=output.parent) as tmp:
         stage = Path(tmp)
-        for folder in ("data", "docs", "images", "models"):
+        for folder in ("data", "docs", "images"):
             (stage / folder).mkdir(parents=True)
         for row in records:
             item = sanitize_product(row)
