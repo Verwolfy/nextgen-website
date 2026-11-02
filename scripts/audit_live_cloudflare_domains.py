@@ -146,13 +146,18 @@ def audit_contact_page_publication() -> None:
                 "User-Agent":"NextGen-public-contact-audit/1.0"})
             with urlopen(req,timeout=12) as response:
                 html=response.read(200_000).decode("utf-8",errors="replace")
-                ok=(response.status==200 and
-                    "lead-preview" not in html and "lead-panel" not in html and
-                    "mailto:" in html and "https://wa.me/" in html and "tel:" in html)
+                # Cloudflare may email-obfuscate mailto: into its own
+                # /cdn-cgi/l/email-protection link in the served HTML.
+                email_ok=("mailto:" in html or "/cdn-cgi/l/email-protection" in html)
+                tel_ok="tel:" in html
+                whatsapp_ok="https://wa.me/" in html
+                demo_absent="lead-preview" not in html and "lead-panel" not in html
+                ok=response.status==200 and demo_absent and email_ok and tel_ok and whatsapp_ok
                 print({"section":section,"lang":lang,"http":response.status,
-                       "three_direct_channels":all(x in html for x in ("mailto:","https://wa.me/","tel:")),
-                       "demo_forms_absent":("lead-preview" not in html and "lead-panel" not in html),
-                       "valid":ok},flush=True)
+                       "email_link_or_cf_obfuscation":email_ok,
+                       "phone_link":tel_ok,"whatsapp_link":whatsapp_ok,
+                       "demo_forms_absent":demo_absent, "valid":ok,
+                       "html_size":len(html)},flush=True)
                 assert ok, "Live contact page still contains demo or missing channel: "+lang+"/"+section
                 checked+=1
     assert checked==6
