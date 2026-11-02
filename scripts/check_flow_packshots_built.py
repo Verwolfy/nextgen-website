@@ -31,7 +31,7 @@ def check() -> None:
 
     actual = {str(path.relative_to(ROOT)) for path in PUBLIC.glob("fenek-flow-*.webp")} if PUBLIC.exists() else set()
     if not actual:
-        print("SKIP: 0/24 FENEK-FLOW packshots uploaded; generic 3D placeholders remain in use")
+        print("SKIP: 0/24 FENEK-FLOW packshots uploaded; generic placeholder images remain in use")
         # An obsolete build directory must never be mistaken for a verified upload.
         assert not list((DIST / "images/catalogue-projects").glob("fenek-flow-*.webp")), (
             "Stale packshots in dist despite no source assets"
