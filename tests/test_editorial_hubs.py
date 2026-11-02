@@ -21,8 +21,8 @@ class TestEditorialHubs(unittest.TestCase):
         self.assertNotIn("NG-SKU-", data)
         self.assertNotIn("ISO 9001", data)
         self.assertNotIn("prix_vente", data)
-        self.assertIn("no product SKU or performance claim", data)
-        self.assertIn("قيد المراجعة", data)
+        self.assertIn("technical specifications and availability", data)
+        self.assertIn("تواصل معنا", data)
 
     def test_hubs_use_components_without_forms_or_download_claims(self):
         page = (ROOT / "src/pages/[lang]/[section].astro").read_text(encoding="utf-8")
