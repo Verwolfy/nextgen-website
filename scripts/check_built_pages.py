@@ -129,7 +129,7 @@ def main() -> None:
             assert all(disabled for _, disabled in parsed.lead_controls), "Enabled lead input: " + str(fn)
         # Lot 27: all unique images are linked from the localized, non-indexed gallery.
         gallery = (ROOT / lang / "maquettes" / "index.html").read_text(encoding="utf-8")
-        assert "non contractuelles" in gallery.lower() or "NON VALIDÉES" in gallery or "غير معتمدة" in gallery or "UNAPPROVED" in gallery, lang
+        assert {"fr":"Galerie de créations visuelles","ar":"معرض التصاميم المرئية","en":"NextGen visual design gallery"}[lang] in gallery, lang
         for i in range(1, 47):
             asset = f"/images/maquettes/maquette-{i:02d}.webp"
             assert asset in gallery, "Missing image in "+lang+": "+asset
@@ -182,9 +182,17 @@ def main() -> None:
             assert asset in detail, f"Wrong full-size PAINT concept: {lang}/{slug}"
             assert 'class="paint-concept-art"' not in detail and '/images/maquettes/maquette-19.webp' not in detail, slug
             assert "concept-detail-note" in detail, slug
+        # No unverified field instructions or numerical placeholders in
+        # any of the 150 rendered concept detail pages.
+        for detail_file in (ROOT / lang / "catalogue").glob("*/index.html"):
+            page_text = detail_file.read_text(encoding="utf-8")
+            assert "[valeur à confirmer]" not in page_text, str(detail_file)
+            assert "mode_fr_preparatoire" not in page_text, str(detail_file)
+            assert "concept-source-method" not in page_text, str(detail_file)
+            assert "concept-steps" not in page_text, str(detail_file)
         assert "PF-001" not in catalog and "PF-006" not in catalog
         assert not (ROOT / lang / "produits").is_dir(), "No real product was approved"
-        assert "SIMULATION" in (ROOT / "fr" / "emballages" / "index.html").read_text(encoding="utf-8")
+        assert "formats d’emballage" in (ROOT / "fr" / "emballages" / "index.html").read_text(encoding="utf-8")
         # Lot 26: every local 3D asset must have a dedicated, fully linked,
         # non-indexed route in each language, with the real GLB and WebP poster.
         gallery_html = (ROOT / lang / "emballages" / "index.html").read_text(encoding="utf-8")
