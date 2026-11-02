@@ -179,6 +179,10 @@ def main() -> None:
                 assert forbidden not in markup, (
                     f"Draft technical procedure leaked to {lang}/{entry['slug']}: {forbidden}"
                 )
+            for stale in ("Contenu révisable. Les données du laboratoire",
+                          "This content can be revised as laboratory",
+                          "يمكن تحديث هذا المحتوى لاحقًا"):
+                assert stale not in markup, f"Old revision copy still public: {lang}/{entry['slug']}"
             assert "concept-detail-note" in markup, f"Missing documentation notice {lang}/{entry['slug']}"
         # Lot 31: eleven photo-realistic renderings cut from the user-selected
         # concept board, associated strictly with their true FENEK-PAINT code.
