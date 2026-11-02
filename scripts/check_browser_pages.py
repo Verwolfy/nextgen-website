@@ -268,6 +268,31 @@ def check() -> None:
                         if slug=="fenek-bond-c1t":
                             page.screenshot(path=str(SHOTS/(lang+"-"+size+"-catalogue-concept.png")),full_page=True)
                             snapshots+=1
+                    # Lot 38: filters run locally; no network request, cookie or form.
+                    page.goto(base + "/" + lang + "/catalogue/", wait_until="domcontentloaded")
+                    controls = page.locator("[data-catalogue-controls]")
+                    assert controls.is_visible(), lang
+                    visible_cards = page.locator(".concept-product-card:visible")
+                    assert visible_cards.count() == 50, lang
+                    search = page.locator("#catalogue-query")
+                    search.fill("fenek-flow-wr-n")
+                    assert visible_cards.count() == 1, lang
+                    assert "WR-N" in visible_cards.first.inner_text(), lang
+                    search.fill("no-such-product-reference-xyz")
+                    assert visible_cards.count() == 0, lang
+                    assert page.locator("[data-catalogue-empty]").is_visible(), lang
+                    page.locator("[data-catalogue-reset]").click()
+                    assert visible_cards.count() == 50, lang
+                    selector = page.locator("#catalogue-range")
+                    selector.select_option("paint")
+                    assert visible_cards.count() == 11, lang
+                    assert page.locator(".concept-range-section:visible").count() == 1, lang
+                    page.locator("[data-catalogue-nav='bond']").click()
+                    assert visible_cards.count() == 16, lang
+                    assert selector.input_value() == "bond", lang
+                    page.locator("[data-catalogue-reset]").click()
+                    assert visible_cards.count() == 50, lang
+                    assert page.locator("form").count() == 0, lang
                     # Explicitly follow the language navigation to another localized page.
                     page.goto(base + "/" + lang + "/contact/", wait_until="domcontentloaded")
                     assert page.locator(".locale a").count() == 3

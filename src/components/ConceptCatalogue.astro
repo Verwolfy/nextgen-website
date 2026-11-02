@@ -5,6 +5,26 @@ import {catalogueCopy} from '../data/catalogue-content';
 interface Props { lang:Lang }
 const {lang}=Astro.props;
 const t=catalogueCopy[lang];
+const filters = {
+  fr: {
+    title: 'Rechercher une référence', query: 'Nom ou code produit',
+    placeholder: 'Ex. FENEK-BOND C1T', range: 'Gamme', all: 'Toutes les gammes',
+    reset: 'Effacer les filtres', results: 'références affichées',
+    empty: 'Aucune référence trouvée. Modifiez les filtres.',
+  },
+  ar: {
+    title: 'البحث عن مرجع', query: 'الاسم أو رمز المرجع',
+    placeholder: 'مثال: FENEK-BOND C1T', range: 'المجموعة', all: 'كل المجموعات',
+    reset: 'مسح عوامل التصفية', results: 'مرجعًا معروضًا',
+    empty: 'لا توجد نتائج. غيّر البحث أو المجموعة.',
+  },
+  en: {
+    title: 'Find a reference', query: 'Name or reference code',
+    placeholder: 'e.g. FENEK-BOND C1T', range: 'Range', all: 'All ranges',
+    reset: 'Clear filters', results: 'references shown',
+    empty: 'No references found. Change the filters.',
+  },
+}[lang];
 ---
 <section class="catalogue-projects" aria-labelledby="catalogue-count">
   <div class="concepts-lead">
@@ -12,13 +32,30 @@ const t=catalogueCopy[lang];
     <span class="concept-count">{catalogueProjects.length} <small>{t.count}</small></span>
   </div>
   <p class="editorial-caution" role="note">{t.review}</p>
+  <div class="catalogue-filters" data-catalogue-controls hidden aria-label={filters.title}>
+    <div class="catalogue-filter-field">
+      <label for="catalogue-query">{filters.query}</label>
+      <input id="catalogue-query" type="search" placeholder={filters.placeholder} autocomplete="off" />
+    </div>
+    <div class="catalogue-filter-field">
+      <label for="catalogue-range">{filters.range}</label>
+      <select id="catalogue-range">
+        <option value="">{filters.all}</option>
+        {ranges.map(g=><option value={g}>{rangeName[g]}</option>)}
+      </select>
+    </div>
+    <button class="btn btn-muted catalogue-filter-reset" data-catalogue-reset type="button">{filters.reset}</button>
+    <p class="catalogue-filter-count" role="status" aria-live="polite"
+       data-catalogue-count data-results-label={filters.results}></p>
+  </div>
+  <p class="catalogue-filter-empty" data-catalogue-empty hidden>{filters.empty}</p>
   <nav class="concept-range-nav" aria-label={t.rangeNav}>
-    {ranges.map(g=><a href={'#catalogue-'+g} style={'--range-color:'+rangeColor[g]}><span class="concept-dot" aria-hidden="true"></span><bdi dir="ltr">{rangeName[g]}</bdi><small>{projectsByRange(g).length}</small></a>)}
+    {ranges.map(g=><a href={'#catalogue-'+g} data-catalogue-nav={g} style={'--range-color:'+rangeColor[g]}><span class="concept-dot" aria-hidden="true"></span><bdi dir="ltr">{rangeName[g]}</bdi><small>{projectsByRange(g).length}</small></a>)}
   </nav>
-  {ranges.map(g=><section id={'catalogue-'+g} class="concept-range-section" aria-labelledby={'range-title-'+g} style={'--range-color:'+rangeColor[g]}>
+  {ranges.map(g=><section id={'catalogue-'+g} class="concept-range-section" data-catalogue-range={g} aria-labelledby={'range-title-'+g} style={'--range-color:'+rangeColor[g]}>
     <div class="concept-range-title"><div><span class="concept-range-color" aria-hidden="true"></span><h2 id={'range-title-'+g}><bdi dir="ltr">{rangeName[g]}</bdi></h2></div><span>{projectsByRange(g).length} {t.count}</span></div>
     <div class="concept-products-grid">
-      {projectsByRange(g).map(p=><a class="concept-product-card" href={'/'+lang+'/catalogue/'+p.slug+'/'} aria-label={p.nom+' — '+t.view}>
+      {projectsByRange(g).map(p=><a class="concept-product-card" data-catalogue-search={[p.code,p.slug,p.nom,p.contenu[lang].accroche,p.contenu[lang].description,...p.conditionnements.map(x=>x.format)].join(' ')} href={'/'+lang+'/catalogue/'+p.slug+'/'} aria-label={p.nom+' — '+t.view}>
         <div class="concept-product-image concept-packshot-container"><img src={conceptPackshot(p,"card")} alt="" width="800" height="800" loading="lazy" /></div>
         <div class="concept-product-copy"><span class="concept-product-status">{t.status}</span><h3><bdi dir="ltr">{p.nom}</bdi></h3><p>{p.contenu[lang].accroche}</p>
           <div class="concept-formats">{p.conditionnements.length?p.conditionnements.slice(0,3).map(x=><span>{x.format}</span>):<span>{t.unknownFormat}</span>}</div>
@@ -28,3 +65,55 @@ const t=catalogueCopy[lang];
     </div>
   </section>)}
 </section>
+
+
+<script>
+  // Progressive enhancement: without JavaScript all 50 published editorial cards stay visible.
+  const root = document.querySelector<HTMLElement>('.catalogue-projects');
+  const controls = root?.querySelector<HTMLElement>('[data-catalogue-controls]');
+  const query = root?.querySelector<HTMLInputElement>('#catalogue-query');
+  const range = root?.querySelector<HTMLSelectElement>('#catalogue-range');
+  const count = root?.querySelector<HTMLElement>('[data-catalogue-count]');
+  const empty = root?.querySelector<HTMLElement>('[data-catalogue-empty]');
+  const reset = root?.querySelector<HTMLButtonElement>('[data-catalogue-reset]');
+  const sections = Array.from(root?.querySelectorAll<HTMLElement>('[data-catalogue-range]') ?? []);
+  const normalize = (text: string) =>
+    text.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase();
+
+  if (controls && query && range && count && empty && reset && sections.length === 4) {
+    const apply = () => {
+      const needle = normalize(query.value.trim());
+      const selected = range.value;
+      let matches = 0;
+      for (const section of sections) {
+        let sectionMatches = 0;
+        for (const card of section.querySelectorAll<HTMLElement>('[data-catalogue-search]')) {
+          const show = (!selected || section.dataset.catalogueRange === selected)
+            && (!needle || normalize(card.dataset.catalogueSearch ?? '').includes(needle));
+          card.hidden = !show;
+          if (show) { matches += 1; sectionMatches += 1; }
+        }
+        section.hidden = sectionMatches === 0;
+      }
+      count.textContent = String(matches) + ' ' + (count.dataset.resultsLabel ?? '');
+      empty.hidden = matches !== 0;
+    };
+    query.addEventListener('input', apply);
+    range.addEventListener('change', apply);
+    reset.addEventListener('click', () => {
+      query.value = '';
+      range.value = '';
+      apply();
+      query.focus();
+    });
+    root.querySelectorAll<HTMLAnchorElement>('[data-catalogue-nav]').forEach(link => {
+      link.addEventListener('click', () => {
+        query.value = '';
+        range.value = link.dataset.catalogueNav ?? '';
+        apply();
+      });
+    });
+    controls.hidden = false;
+    apply();
+  }
+</script>
