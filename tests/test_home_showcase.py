@@ -22,7 +22,7 @@ class TestShowcaseHomepage(unittest.TestCase):
     def test_homepage_links_to_existing_3d_gallery(self):
         page=(BASE/"src/pages/[lang]/index.astro").read_text(encoding="utf-8")
         for token in ('showcaseCopy[lang]', 'showcaseModels.map(', '/images/3d-demo/',
-                      'href={`/${lang}/emballages/`}', 'role="note"',
+                      'href={`/${lang}/emballages/${slug}/`}', 'role="note"',
                       'loading="lazy"', 'preview.simulation'):
             self.assertIn(token,page)
         self.assertNotIn("PF-001",page)
