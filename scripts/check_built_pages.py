@@ -131,6 +131,20 @@ def main() -> None:
         assert "PF-001" not in catalog and "PF-006" not in catalog
         assert not (ROOT / lang / "produits").is_dir(), "No real product was approved"
         assert "SIMULATION" in (ROOT / "fr" / "emballages" / "index.html").read_text(encoding="utf-8")
+        # Lot 26: every local 3D asset must have a dedicated, fully linked,
+        # non-indexed route in each language, with the real GLB and WebP poster.
+        gallery_html = (ROOT / lang / "emballages" / "index.html").read_text(encoding="utf-8")
+        for model in ("sac-25kg", "seau-20kg", "bidon-20l", "fut-200l", "ibc-1000l"):
+            model_page = ROOT / lang / "emballages" / model / "index.html"
+            assert model_page.is_file(), "Missing 3D inspection route: " + str(model_page)
+            refs += check_page(model_page, lang)
+            checked += 1
+            content = model_page.read_text(encoding="utf-8")
+            assert f"/models-demo/{model}.glb" in content, str(model_page)
+            assert f"/images/3d-demo/{model}-30.webp" in content, str(model_page)
+            assert "<model-viewer" in content and "download=" in content, str(model_page)
+            assert f"/{lang}/emballages/{model}/" in gallery_html, model
+
     for item in ("sac-25kg", "seau-20kg", "bidon-20l", "fut-200l", "ibc-1000l"):
         assert (ROOT / "models-demo" / (item + ".glb")).stat().st_size > 0
         assert (ROOT / "images" / "3d-demo" / (item + "-30.webp")).stat().st_size > 0

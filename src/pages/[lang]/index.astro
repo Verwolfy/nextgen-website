@@ -14,7 +14,7 @@ const collectionLabel={fr:'Collection FENEK',ar:'فئات FENEK',en:'FENEK colle
   <div class="section-head"><span class="eyebrow">NEXTGEN · 3D</span><h2 id="showcase-title">{preview.title}</h2><p>{preview.intro}</p></div>
   <p class="concept-disclaimer" role="note">{preview.warning}</p>
   <div class="concept-grid">
-    {showcaseModels.map((slug,index)=><a class="concept-card" href={`/${lang}/emballages/`}>
+    {showcaseModels.map((slug,index)=><a class="concept-card" href={`/${lang}/emballages/${slug}/`}>
       <div class="concept-image"><img src={`/images/3d-demo/${slug}-30.webp`} alt={`${preview.names[index]} — ${preview.simulation}`} width="680" height="680" loading="lazy" /></div>
       <div class="concept-copy"><span class="concept-tag">{preview.simulation}</span><h3 dir="auto">{preview.names[index]}</h3><span class="concept-link">{preview.see3d}<span aria-hidden="true"> ↗</span></span></div>
     </a>)}

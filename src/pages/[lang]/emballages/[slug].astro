@@ -1,0 +1,44 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ModelViewer from '../../../components/ModelViewer.astro';
+import { languages, type Lang } from '../../../data/site';
+import manifest from '../../../../supports/3d/manifest.json';
+
+const names: Record<Lang, Record<string, string>> = {
+  fr: { 'sac-25kg': 'Sac 25 kg', 'seau-20kg': 'Seau 20 kg', 'bidon-20l': 'Bidon 20 L', 'fut-200l': 'Fût 200 L', 'ibc-1000l': 'Cubi IBC 1 000 L' },
+  ar: { 'sac-25kg': 'كيس بوزن 25 كغ', 'seau-20kg': 'دلو بوزن 20 كغ', 'bidon-20l': 'عبوة بسعة 20 لترًا', 'fut-200l': 'برميل بسعة 200 لتر', 'ibc-1000l': 'خزان IBC بسعة 1,000 لتر' },
+  en: { 'sac-25kg': '25 kg bag', 'seau-20kg': '20 kg pail', 'bidon-20l': '20 L jerrycan', 'fut-200l': '200 L drum', 'ibc-1000l': '1,000 L IBC tote' },
+};
+const copy = {
+  fr: { title: 'Visionneuse 3D', notice: 'SIMULATION — BROUILLON NON VALIDÉ. Géométrie et étiquettes illustratives, sans validation industrielle, technique ou réglementaire. Aucun produit réel approuvé.', back: 'Voir les cinq maquettes', file: 'Fichier GLB de démonstration', instruction: 'Appuyez sur Afficher la 3D interactive, puis faites pivoter et zoomez.' },
+  ar: { title: 'عارض النماذج ثلاثية الأبعاد', notice: 'محاكاة — مسودة غير معتمدة. الشكل والملصقات توضيحية وغير معتمدة صناعياً أو فنياً أو تنظيمياً. لا يمثل النموذج منتجاً تجارياً معتمداً.', back: 'عرض النماذج الخمسة', file: 'ملف GLB توضيحي', instruction: 'اضغط على عرض المجسم التفاعلي ثم قم بالتدوير والتكبير.' },
+  en: { title: 'Interactive 3D viewer', notice: 'SIMULATION — NOT APPROVED. Illustrative geometry and labels, not validated for manufacturing, technical compliance or regulatory use. Not an approved commercial product.', back: 'View all five models', file: 'Demonstration GLB file', instruction: 'Select Load interactive 3D, then rotate and zoom the model.' },
+};
+export function getStaticPaths() {
+  return languages.flatMap(lang => manifest.map(model => ({
+    params: { lang, slug: model.code },
+    props: { model },
+  })));
+}
+const lang = Astro.params.lang as Lang;
+const model = Astro.props.model as (typeof manifest)[number];
+if (!model || !names[lang]?.[model.code]) throw new Error('Unknown 3D preview');
+const t = copy[lang];
+const name = names[lang][model.code];
+const modelPath = `/models-demo/${model.code}.glb`;
+const posterPath = `/images/3d-demo/${model.code}-30.webp`;
+---
+<Layout lang={lang} title={`${name} — ${t.title}`} description={t.notice}>
+  <div class="page-head"><div class="container">
+    <a class="concept-back" href={`/${lang}/emballages/`}>{t.back}</a>
+    <span class="eyebrow">NextGen · 3D</span>
+    <h1>{name}</h1>
+    <p>{t.instruction}</p>
+  </div></div>
+  <section class="section"><div class="container">
+    <p class="notice" role="note"><strong>{t.notice}</strong></p>
+    <div class="showcase-single"><ModelViewer language={lang} src={modelPath} poster={posterPath} label={`${name} — ${t.notice}`} /></div>
+    <p class="model-download"><a href={modelPath} download={`${model.code}.glb`}>{t.file} (.glb)</a></p>
+    <a class="btn" href={`/${lang}/emballages/`}>{t.back}</a>
+  </div></section>
+</Layout>

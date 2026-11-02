@@ -357,3 +357,13 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Procédure dédiée `docs/DEPLOIEMENT_CLOUDFLARE_RUNBOOK.md` et README mis à jour.
 - Compte Cloudflare non connecté ; aucun déploiement, DNS, secret, activation Leads ou modification Supabase n'a eu lieu.
 - **Blocage résiduel** : relier le compte Cloudflare et établir Access pour les origines pages.dev si la préproduction doit être privée, puis confirmer les comptes autorisés et contrôler l'URL réelle.
+
+
+## 02/11/2026 — Lot 26 : accès direct aux cinq GLB de conception
+
+- Travail sur branche `feat/visionneuse-3d-dediee-20261102`, PR #22. Cinq vrais fichiers géométriques GLB déjà versionnés dans `supports/3d/glb`, 10 posters WebP existants ; aucune géométrie produit certifiée inventée.
+- Routes ajoutées : `/{fr,ar,en}/emballages/{sac-25kg,seau-20kg,bidon-20l,fut-200l,ibc-1000l}/` (15 pages). Liens directs depuis les trois cartes d'accueil et les cinq cartes de galerie. Visionneuse locale avec chargement volontaire, zoom/rotation et téléchargement des fichiers non contractuels.
+- Tests ajoutés et étendus : `tests/test_lot26_individual_3d.py`, `tests/test_home_showcase.py`, `scripts/check_built_pages.py`, `scripts/check_browser_pages.py`. Documentation : `docs/LOT26_VISIONNEUSES_3D.md`.
+- Premier contrôle CI de PR sur `17840a9` a échoué sur **une assertion incorrecte du nouveau test** (`model-viewer` HTML vs composant source `ModelViewer`). Correction du test effectuée au commit `178f04f`; compilation/sécurité réussies sur ce SHA (run 41461750004). Recette navigateur du même SHA : contrôle séparé requis avant fusion.
+- Aucune publication Cloudflare/DNS/Access, aucune écriture Supabase/ERP, aucun produit publié, aucun formulaire activé.
+- Suite : confirmer le succès des deux CI sur le même SHA, fusionner la PR, revérifier `main`, puis importer les 20 WebP BOND uniquement depuis le ZIP approuvé. Toute mise en ligne requiert la protection Access réelle et les validations commerciales/juridiques.
