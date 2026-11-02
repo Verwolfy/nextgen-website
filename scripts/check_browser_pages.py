@@ -5,6 +5,7 @@ from __future__ import annotations
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from urllib.parse import unquote
 from threading import Thread
 
 from playwright.sync_api import sync_playwright
@@ -56,6 +57,10 @@ def check() -> None:
                             assert page.locator(".hero-mascot-card img").count() == 1, path
                             assert page.locator(".home-approach .editorial-caution").count() == 1, path
                             assert page.locator(".home-approach .chip").count() == 3, path
+                            assert page.locator(".home-audiences .card").count() == 2, path
+                            paths = page.locator(".home-audiences .card a").evaluate_all(
+                                "links => links.map(a => a.getAttribute('href'))")
+                            assert paths == ["/"+lang+"/contact/", "/"+lang+"/distributeurs/"], path
                             assert page.locator(".hero .btn-outline").get_attribute("href") == "/"+lang+"/contact/", path
                             assert page.locator(".hero-mascot-card").evaluate(
                                 "e => getComputedStyle(e).borderRadius !== '0px'"
@@ -218,6 +223,11 @@ def check() -> None:
                         assert page.locator(".concept-steps li").count()==0, concept_path
                         assert page.locator(".concept-source-method").count()==0, concept_path
                         assert page.locator(".concept-detail-note").count()>=1, concept_path
+                        email_action = page.locator(".concept-detail-aside a[href^='mailto:']")
+                        assert email_action.count() == 1, concept_path
+                        email_target = unquote(email_action.get_attribute("href"))
+                        assert email_target.startswith("mailto:contact@nextgen-buildingsolutions.com?subject="), concept_path
+                        assert page.locator("h1 bdi").inner_text() in email_target, concept_path
                         assert "[valeur à confirmer]" not in page.content(), concept_path
                         assert page.locator("form").count()==0, concept_path
                         detail_overflow=page.evaluate("Math.ceil(document.documentElement.scrollWidth-innerWidth)")

@@ -1,6 +1,6 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-import {languages,rangeName,rangeColor,type Lang} from '../../../data/site';
+import {brand,languages,rangeName,rangeColor,type Lang} from '../../../data/site';
 import {catalogueProjects,conceptPackshot,hasProductPackshot,type CatalogueProject} from '../../../lib/catalogue-projets';
 import {catalogueCopy} from '../../../data/catalogue-content';
 export function getStaticPaths(){
@@ -11,6 +11,17 @@ const product=Astro.props.product as CatalogueProject;
 if(!product || !catalogueProjects.some(p=>p.slug===product.slug)) throw Error('Unknown catalogue concept');
 const d=product.contenu[lang];
 const t=catalogueCopy[lang];
+const questionSubject = {
+  fr: 'Question concernant la référence ',
+  ar: 'استفسار عن المرجع ',
+  en: 'Question about reference ',
+}[lang] + product.nom;
+const directEmail = 'mailto:' + brand.email + '?subject=' + encodeURIComponent(questionSubject);
+const directEmailLabel = {
+  fr: 'Écrire au sujet de cette référence',
+  ar: 'مراسلتنا بخصوص هذا المرجع',
+  en: 'Email us about this reference',
+}[lang];
 ---
 <Layout lang={lang} title={product.nom} description={d.description}>
   <div class="page-head concept-detail-head" style={'--range-color:'+rangeColor[product.gamme]}>
@@ -37,7 +48,10 @@ const t=catalogueCopy[lang];
           <img src={conceptPackshot(product,"full")} width="800" height="800" alt="" loading="lazy"/>
         </div>
         <p class="concept-detail-note">{product.gamme==='paint'?t.paintConceptNote:hasProductPackshot(product)?t.packshotNote:t.pictureNote}</p>
-        <a class="btn" href={'/'+lang+'/contact/'}>{t.quote}</a>
+        <div class="actions">
+          <a class="btn" href={'/'+lang+'/contact/'}>{t.quote}</a>
+          <a class="btn btn-muted" href={directEmail}>{directEmailLabel}</a>
+        </div>
       </aside>
     </div>
   </div></section>

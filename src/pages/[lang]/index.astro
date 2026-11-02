@@ -5,10 +5,55 @@ import { editorialCopy } from '../../data/editorial';
 export function getStaticPaths(){return languages.map(lang=>({params:{lang}}))}
 const lang=Astro.params.lang as Lang;const t=messages[lang];const edit=editorialCopy[lang];
 const collectionLabel={fr:'Collection FENEK',ar:'فئات FENEK',en:'FENEK collection'}[lang];
+const audiences = {
+  fr: {
+    title: 'Une question sur les solutions FENEK ?',
+    intro: 'Choisissez le parcours adapté à votre activité. Les spécifications techniques et la disponibilité sont à confirmer directement auprès de NextGen.',
+    project: 'Entreprises et projets',
+    projectText: 'Vous recherchez une référence ou souhaitez obtenir des informations techniques sur une application ?',
+    projectAction: 'Contacter notre équipe',
+    distributor: 'Distribution et partenariats',
+    distributorText: 'Vous souhaitez échanger sur la distribution des gammes FENEK en Algérie ?',
+    distributorAction: 'Découvrir le contact distributeurs',
+  },
+  ar: {
+    title: 'لديك استفسار عن مجموعات FENEK؟',
+    intro: 'اختر المسار المناسب لنشاطك. تُؤكّد المواصفات الفنية والتوفر مباشرةً مع فريق NextGen.',
+    project: 'المؤسسات والمشاريع',
+    projectText: 'هل تبحث عن مرجع معيّن أو معلومات فنية حول مجال استخدام؟',
+    projectAction: 'تواصل مع فريقنا',
+    distributor: 'التوزيع والشراكات',
+    distributorText: 'هل ترغب في التواصل بخصوص توزيع مجموعات FENEK في الجزائر؟',
+    distributorAction: 'الانتقال إلى تواصل الموزعين',
+  },
+  en: {
+    title: 'Questions about the FENEK ranges?',
+    intro: 'Choose the route that suits your business. Confirm technical specifications and availability directly with NextGen.',
+    project: 'Contractors and projects',
+    projectText: 'Looking for a reference or technical information about an application area?',
+    projectAction: 'Contact our team',
+    distributor: 'Distribution and partnerships',
+    distributorText: 'Interested in discussing distribution of the FENEK ranges in Algeria?',
+    distributorAction: 'See distributor contacts',
+  },
+}[lang];
 ---
 <Layout lang={lang} title={t.welcome} description={t.intro}>
 <section class="hero"><div class="container hero-wrap"><div><span class="eyebrow">{edit.marketTag}</span><h1>{t.welcome}</h1><p>{t.intro}</p><p class="hero-status" role="note"><span class="hero-status-mark" aria-hidden="true"></span>{edit.homeStatus}</p><div class="actions"><a class="btn" href={`/${lang}/gammes/`}>{t.explore}</a><a class="btn btn-outline" href={`/${lang}/contact/`}>{edit.homeContact}</a></div></div><div class="hero-art"><figure class="hero-mascot-card"><img src="/images/Nexo-Geno.webp" alt={t.mascotsAlt} width="800" height="1390" loading="eager" /></figure></div></div></section>
 <section class="section"><div class="container"><div class="section-head"><span class="eyebrow" dir="auto">{collectionLabel}</span><h2>{t.ourRanges}</h2><p>{t.rangesIntro}</p></div><div class="grid">{ranges.map(g=><a class="card" href={`/${lang}/gammes/${g}/`}><div class="bar" style={`background:${rangeColor[g]}`}></div><h3><bdi dir="ltr">{rangeName[g]}</bdi></h3><p>{t.ranges[g]}</p><span class="arrow" aria-hidden="true">↗</span></a>)}</div></div></section>
+<section class="section home-audiences" aria-labelledby="audiences-title"><div class="container">
+  <div class="section-head"><h2 id="audiences-title">{audiences.title}</h2><p>{audiences.intro}</p></div>
+  <div class="columns">
+    <article class="card">
+      <h3>{audiences.project}</h3><p>{audiences.projectText}</p>
+      <div class="actions"><a class="btn" href={`/${lang}/contact/`}>{audiences.projectAction}</a></div>
+    </article>
+    <article class="card">
+      <h3>{audiences.distributor}</h3><p>{audiences.distributorText}</p>
+      <div class="actions"><a class="btn" href={`/${lang}/distributeurs/`}>{audiences.distributorAction}</a></div>
+    </article>
+  </div>
+</div></section>
 <section class="section pale home-approach"><div class="container columns">
   <div>
     <span class="eyebrow home-approach-tag">{edit.homeApproachTag}</span>
