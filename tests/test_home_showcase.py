@@ -25,7 +25,9 @@ class TestShowcaseHomepage(unittest.TestCase):
                           '/images/3d-demo/', 'preview.simulation', '<form'):
             self.assertNotIn(forbidden,page)
         resources=(BASE/"src/components/ResourcesHub.astro").read_text(encoding="utf-8")
-        self.assertIn('emballages/',resources)
+        self.assertIn('maquettes/',resources)
+        gallery=(BASE/"src/pages/[lang]/maquettes.astro").read_text(encoding="utf-8")
+        self.assertIn('emballages/', gallery)
         dedicated=(BASE/"src/pages/[lang]/emballages.astro").read_text(encoding="utf-8")
         self.assertIn('ModelViewer',dedicated)
         self.assertIn('manifest',dedicated)

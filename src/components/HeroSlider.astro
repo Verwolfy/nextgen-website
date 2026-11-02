@@ -1,0 +1,166 @@
+---
+import type { Lang } from '../data/site';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const concepts = ['01', '02', '15', '16'] as const;
+const copy = {
+  fr: {
+    gallery: 'Maquettes visuelles FENEK',
+    visual: 'Maquette',
+    note: 'Études graphiques de conditionnements — visuels non contractuels.',
+    previous: 'Maquette précédente',
+    next: 'Maquette suivante',
+    goTo: 'Afficher la maquette',
+    pause: 'Mettre le défilement en pause',
+    resume: 'Reprendre le défilement',
+  },
+  ar: {
+    gallery: 'نماذج FENEK المصوّرة',
+    visual: 'نموذج',
+    note: 'تصاميم توضيحية للعبوات — صور غير تعاقدية.',
+    previous: 'النموذج السابق',
+    next: 'النموذج التالي',
+    goTo: 'عرض النموذج',
+    pause: 'إيقاف العرض التلقائي',
+    resume: 'استئناف العرض التلقائي',
+  },
+  en: {
+    gallery: 'FENEK visual concepts',
+    visual: 'Concept',
+    note: 'Illustrative packaging designs — non-contractual visuals.',
+    previous: 'Previous concept',
+    next: 'Next concept',
+    goTo: 'Show concept',
+    pause: 'Pause automatic slideshow',
+    resume: 'Resume automatic slideshow',
+  },
+}[lang];
+---
+<div class="hero-showcase" data-hero-slider aria-label={copy.gallery} role="region">
+  <div class="hero-slide-stack" aria-live="off" data-hero-stage>
+    {concepts.map((number, index) => (
+      <figure class:list={['hero-slide', { 'is-active': index === 0 }]}
+        data-hero-slide aria-hidden={index === 0 ? 'false' : 'true'}>
+        <img
+          src={`/images/maquettes/maquette-${number}.webp`}
+          alt={`${copy.visual} ${number} — ${copy.gallery}`}
+          width="880" height="880"
+          loading={index === 0 ? 'eager' : 'lazy'}
+          fetchpriority={index === 0 ? 'high' : 'low'}
+          decoding="async"
+        />
+        <figcaption class="hero-slide-caption">
+          <span>{copy.visual} {number}</span>
+          <span class="hero-slide-count" dir="ltr">{index + 1} / {concepts.length}</span>
+        </figcaption>
+      </figure>
+    ))}
+  </div>
+  <div class="hero-slide-controls" data-hero-controls hidden>
+    <button type="button" class="hero-slide-arrow" data-hero-prev aria-label={copy.previous}>
+      <span aria-hidden="true">‹</span>
+    </button>
+    <div class="hero-slide-dots" role="group" aria-label={copy.gallery}>
+      {concepts.map((number, index) => (
+        <button type="button" class="hero-slide-dot" data-hero-dot
+          aria-label={`${copy.goTo} ${number}`} aria-current={index === 0 ? 'true' : undefined}>
+          <span aria-hidden="true"></span>
+        </button>
+      ))}
+    </div>
+    <button type="button" class="hero-slide-arrow" data-hero-next aria-label={copy.next}>
+      <span aria-hidden="true">›</span>
+    </button>
+    <button type="button" class="hero-slide-pause" data-hero-toggle
+      data-pause-label={copy.pause} data-resume-label={copy.resume}
+      aria-label={copy.pause} aria-pressed="false">
+      <span aria-hidden="true" data-hero-toggle-icon>Ⅱ</span>
+    </button>
+  </div>
+  <p class="hero-slide-note">{copy.note}</p>
+</div>
+<script>
+  const slider = document.querySelector<HTMLElement>('[data-hero-slider]');
+  if (slider) {
+    const slides = [...slider.querySelectorAll<HTMLElement>('[data-hero-slide]')];
+    const dots = [...slider.querySelectorAll<HTMLButtonElement>('[data-hero-dot]')];
+    const controls = slider.querySelector<HTMLElement>('[data-hero-controls]');
+    const stage = slider.querySelector<HTMLElement>('[data-hero-stage]');
+    const previous = slider.querySelector<HTMLButtonElement>('[data-hero-prev]');
+    const next = slider.querySelector<HTMLButtonElement>('[data-hero-next]');
+    const pauseButton = slider.querySelector<HTMLButtonElement>('[data-hero-toggle]');
+    const toggleIcon = slider.querySelector<HTMLElement>('[data-hero-toggle-icon]');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let active = 0;
+    let pausedByUser = false;
+    let hovering = false;
+    let focused = false;
+    let timer: number | undefined;
+
+    const stop = () => {
+      if (timer !== undefined) window.clearInterval(timer);
+      timer = undefined;
+    };
+    const show = (nextIndex: number) => {
+      active = (nextIndex + slides.length) % slides.length;
+      slides.forEach((slide, index) => {
+        const current = index === active;
+        slide.classList.toggle('is-active', current);
+        slide.setAttribute('aria-hidden', String(!current));
+        dots[index]?.toggleAttribute('aria-current', current);
+        if (current) dots[index]?.setAttribute('aria-current', 'true');
+      });
+    };
+    const schedule = () => {
+      stop();
+      if (!pausedByUser && !reduceMotion.matches && !hovering &&
+          !focused && !document.hidden && slides.length === 4) {
+        timer = window.setInterval(() => show(active + 1), 5000);
+      }
+    };
+    if (slides.length === 4 && dots.length === 4 && controls && stage &&
+        previous && next && pauseButton && toggleIcon) {
+      previous.addEventListener('click', () => show(active - 1));
+      next.addEventListener('click', () => show(active + 1));
+      dots.forEach((dot, index) => dot.addEventListener('click', () => show(index)));
+      pauseButton.addEventListener('click', () => {
+        pausedByUser = !pausedByUser;
+        pauseButton.setAttribute('aria-pressed', String(pausedByUser));
+        pauseButton.setAttribute('aria-label',
+          pausedByUser ? pauseButton.dataset.resumeLabel! : pauseButton.dataset.pauseLabel!);
+        toggleIcon.textContent = pausedByUser ? '▶' : 'Ⅱ';
+        schedule();
+      });
+      slider.addEventListener('mouseenter', () => { hovering = true; schedule(); });
+      slider.addEventListener('mouseleave', () => { hovering = false; schedule(); });
+      slider.addEventListener('focusin', () => { focused = true; schedule(); });
+      slider.addEventListener('focusout', (event) => {
+        if (!slider.contains(event.relatedTarget as Node | null)) {
+          focused = false;
+          schedule();
+        }
+      });
+      let pointerStart: { x: number; y: number } | null = null;
+      stage.addEventListener('pointerdown', event => {
+        pointerStart = { x: event.clientX, y: event.clientY };
+      });
+      stage.addEventListener('pointerup', event => {
+        if (!pointerStart) return;
+        const dx = event.clientX - pointerStart.x;
+        const dy = event.clientY - pointerStart.y;
+        pointerStart = null;
+        if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+          show(active + (dx < 0 ? 1 : -1));
+          schedule();
+        }
+      });
+      stage.addEventListener('pointercancel', () => { pointerStart = null; });
+      reduceMotion.addEventListener('change', schedule);
+      document.addEventListener('visibilitychange', schedule);
+      controls.hidden = false;
+      show(0);
+      schedule();
+    }
+  }
+</script>

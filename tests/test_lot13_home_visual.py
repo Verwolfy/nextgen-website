@@ -26,8 +26,8 @@ class Lot13HomeVisualTests(unittest.TestCase):
             "editorialCopy[lang]", "edit.marketTag", "edit.homeStatus",
             "edit.homeContact", "edit.homeApproachTag", "edit.aboutLead",
             "edit.aboutNotice", "edit.aboutSteps",
-            'role="note"', 'class="hero-mascot-card"',
-            "alt={edit.mascotAlt}", "/a-propos/",
+            'role="note"', "<HeroSlider lang={lang} />",
+            "/a-propos/",
         ):
             self.assertIn(text, page)
         for forbidden in (
@@ -39,15 +39,15 @@ class Lot13HomeVisualTests(unittest.TestCase):
         # The catalog remains private; nothing is exported to the homepage.
         self.assertEqual((ROOT / "public/data/products.json").read_text(encoding="utf-8").strip(), "[]")
 
-    def test_existing_brand_asset_unmodified_and_portrait_frame_styled(self):
+    def test_existing_brand_asset_unmodified_and_new_slider_styled(self):
         self.assertEqual(
             (ROOT / "supports/assets/Nexo-Geno.webp").read_bytes(),
             (ROOT / "public/images/Nexo-Geno.webp").read_bytes(),
         )
         css = (ROOT / "src/styles/site.css").read_text(encoding="utf-8")
         for marker in (
-            ".hero-mascot-card", ".hero-status", ".home-approach-portrait",
-            ".home-approach .editorial-caution", ".hero-mascot-card img",
+            ".hero-showcase", ".hero-status", ".home-approach-portrait",
+            ".home-approach .editorial-caution", ".hero-slide-stack",
             "max-width:580px", "prefers-reduced-motion:reduce",
         ):
             self.assertIn(marker, css)
@@ -55,7 +55,7 @@ class Lot13HomeVisualTests(unittest.TestCase):
     def test_chromium_checks_frame_and_320_screenshots(self):
         recipe = (ROOT / "scripts/check_browser_pages.py").read_text(encoding="utf-8")
         for marker in (
-            ".hero-status[role='note']", ".hero-mascot-card img",
+            ".hero-status[role='note']", "[data-hero-slide]",
             ".home-approach .editorial-caution", ".home-approach .chip",
             "-mobile-320-home.png", "tiny_width <= 4",
         ):

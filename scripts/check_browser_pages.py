@@ -54,7 +54,36 @@ def check() -> None:
                             if lang == "ar":
                                 assert "فئات FENEK" in page.locator(".section .eyebrow").all_inner_texts(), path
                             assert page.locator(".hero-status[role='note']").count() == 1, path
-                            assert page.locator(".hero-mascot-card img").count() == 1, path
+                            slider = page.locator("[data-hero-slider]")
+                            assert slider.count() == 1, path
+                            frames = slider.locator("[data-hero-slide] img")
+                            assert frames.count() == 4, path
+                            assert [frames.nth(i).get_attribute("src") for i in range(4)] == [
+                                f"/images/maquettes/maquette-{n}.webp"
+                                for n in ("01", "02", "15", "16")
+                            ], path
+                            assert slider.locator(".hero-slide.is-active img").get_attribute("src") == (
+                                "/images/maquettes/maquette-01.webp"), path
+                            assert slider.locator("[data-hero-controls]").is_visible(), path
+                            assert page.locator(".hero-mascot-card").count() == 0, path
+                            slider.locator("[data-hero-dot]").nth(2).click()
+                            assert slider.locator(".hero-slide.is-active img").get_attribute("src") == (
+                                "/images/maquettes/maquette-15.webp"), path
+                            slider.locator("[data-hero-prev]").click()
+                            assert slider.locator(".hero-slide.is-active img").get_attribute("src") == (
+                                "/images/maquettes/maquette-02.webp"), path
+                            slider.locator("[data-hero-dot]").first.click()
+                            slider.locator("[data-hero-toggle]").click()
+                            assert slider.locator("[data-hero-toggle]").get_attribute("aria-pressed") == "true", path
+                            if size == "desktop":
+                                no_js = browser.new_page(java_script_enabled=False)
+                                try:
+                                    no_js.goto(base + path, wait_until="domcontentloaded")
+                                    assert no_js.locator("[data-hero-slide]").count() == 4, path
+                                    assert no_js.locator(".hero-slide.is-active img").is_visible(), path
+                                    assert not no_js.locator("[data-hero-controls]").is_visible(), path
+                                finally:
+                                    no_js.close()
                             assert page.locator(".home-approach .editorial-caution").count() == 1, path
                             assert page.locator(".home-approach .chip").count() == 3, path
                             assert page.locator(".home-audiences .card").count() == 2, path
@@ -62,7 +91,7 @@ def check() -> None:
                                 "links => links.map(a => a.getAttribute('href'))")
                             assert paths == ["/"+lang+"/contact/", "/"+lang+"/distributeurs/"], path
                             assert page.locator(".hero .btn-outline").get_attribute("href") == "/"+lang+"/contact/", path
-                            assert page.locator(".hero-mascot-card").evaluate(
+                            assert slider.evaluate(
                                 "e => getComputedStyle(e).borderRadius !== '0px'"
                             ), path
                         if section == "catalogue":
@@ -171,10 +200,11 @@ def check() -> None:
                                 assert images.nth(idx).evaluate("im => im.complete && im.naturalWidth > 0"), path
                             page.evaluate("window.scrollTo(0,0)")
                         if section == "ressources":
-                            assert page.locator(".resource-card").count() == 3, path
-                            assert page.locator(".resource-card-demo a[href$='/emballages/']").count() == 1, path
-                            assert page.locator(".resource-visuals-link a[href$='/maquettes/']").count() == 1, path
-                            assert page.locator(".resource-card:not(.resource-card-demo) a").count() == 0, path
+                            assert page.locator(".resource-card").count() == 2, path
+                            assert page.locator(".resource-card-demo").count() == 0, path
+                            assert page.locator(".resource-support a[href$='/contact/']").count() == 1, path
+                            assert page.locator(".resource-support a[href$='/maquettes/']").count() == 1, path
+                            assert page.locator(".resource-card a").count() == 0, path
                         if section in ("contact", "distributeurs"):
                             assert page.locator(".contact-direct .contact-channel").count() == 3, path
                             assert page.locator(".contact-channel a[href^='mailto:']").count() == 1, path
