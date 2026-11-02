@@ -1,5 +1,7 @@
 import raw from '../data/catalogue-projets.json';
 import type { Lang, Range } from '../data/site';
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
 
 // Editorial concepts explicitly accepted by the user for a draft catalogue.
 // These NEVER pass the certified-product synchronization gate.
@@ -32,3 +34,21 @@ export const conceptImage:Record<Range,string>={
   flow:'/images/3d-demo/bidon-20l-30.webp',
   paint:'/images/3d-demo/seau-20kg-30.webp'
 };
+
+
+/**
+ * A product-specific mockup is used only if the exact reviewed WebP exists
+ * in the repository at build time. Never show broken src URLs and never infer
+ * a certified pack or an approved net-volume label from an AI picture.
+ * No dynamic client JS, network request or external image host is involved.
+ */
+export const conceptPackshot=(product:CatalogueProject,variant:'card'|'full'='card'):string=>{
+ if(product.gamme!=='flow'||!product.conditionnements.some(c=>c.format==='Bidon 20 L'))
+   return conceptImage[product.gamme];
+ const name=product.slug+(variant==='card'?'-card':'')+'.webp';
+ const relative='images/catalogue-projects/'+name;
+ const absolute=resolve(process.cwd(),'public',relative);
+ return existsSync(absolute)?'/'+relative:conceptImage[product.gamme];
+};
+export const hasProductPackshot=(product:CatalogueProject):boolean=>
+ conceptPackshot(product,'full')!==conceptImage[product.gamme];
