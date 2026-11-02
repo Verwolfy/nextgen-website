@@ -15,7 +15,7 @@ export const showcaseCopy: Record<Lang, Copy> = {
     title: 'Des formats à explorer en 3D',
     intro: 'Découvrez trois maquettes de conditionnements et accédez à la galerie complète de cinq formats.',
     warning: 'Visuels de conception uniquement : emballages, mentions et caractéristiques non approuvés. Aucun produit n’est proposé à la vente.',
-    simulation: 'Maquette non validée',
+    simulation: 'Modèle 3D',
     see3d: 'Voir la galerie 3D',
     names: ['Sac — concept 25 kg', 'Bidon — concept 20 L', 'IBC — concept 1 000 L'],
   },
