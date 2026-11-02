@@ -162,6 +162,24 @@ def main() -> None:
             assert detail.is_file() and asset in detail.read_text(encoding="utf-8"), (
                 f"Wrong detail image: {lang}/{slug}"
             )
+        # Lot 33: no unpublished field directions or numeric placeholders may
+        # leak into the 150 public catalogue detail pages, even in a closed
+        # disclosure widget. Their source remains private to the repository.
+        import json
+        source = json.loads((ROOT.parent / "src" / "data" /
+                             "catalogue-projets.json").read_text(encoding="utf-8"))
+        assert len(source) == 50
+        for entry in source:
+            path = ROOT / lang / "catalogue" / entry["slug"] / "index.html"
+            markup = path.read_text(encoding="utf-8")
+            for forbidden in ("[valeur à confirmer]", "Mode d’emploi source",
+                              "Original French instructions (draft)",
+                              "نص طريقة الاستعمال الأصلي بالفرنسية",
+                              "concept-source-method", "concept-steps"):
+                assert forbidden not in markup, (
+                    f"Draft technical procedure leaked to {lang}/{entry['slug']}: {forbidden}"
+                )
+            assert "concept-detail-note" in markup, f"Missing documentation notice {lang}/{entry['slug']}"
         # Lot 31: eleven photo-realistic renderings cut from the user-selected
         # concept board, associated strictly with their true FENEK-PAINT code.
         # No flat vector pail and no shared 15 L image may appear.
