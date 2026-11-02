@@ -136,6 +136,28 @@ def audit_trilingual_catalogue_copy() -> None:
                 assert ok, "Public draft procedure still available: "+lang+"/"+code
     print({"lot33_public_samples":"12/12 pages checked"},flush=True)
 
+def audit_contact_page_publication() -> None:
+    """Verify 6 real public contact/distributor pages have no inactive demos."""
+    checked=0
+    for lang in ("fr","en","ar"):
+        for section in ("contact","distributeurs"):
+            url=HOSTS["apex"]+"/"+lang+"/"+section+"/?audit_lot35=1"
+            req=Request(url,headers={"Cache-Control":"no-cache",
+                "User-Agent":"NextGen-public-contact-audit/1.0"})
+            with urlopen(req,timeout=12) as response:
+                html=response.read(200_000).decode("utf-8",errors="replace")
+                ok=(response.status==200 and
+                    "lead-preview" not in html and "lead-panel" not in html and
+                    "mailto:" in html and "https://wa.me/" in html and "tel:" in html)
+                print({"section":section,"lang":lang,"http":response.status,
+                       "three_direct_channels":all(x in html for x in ("mailto:","https://wa.me/","tel:")),
+                       "demo_forms_absent":("lead-preview" not in html and "lead-panel" not in html),
+                       "valid":ok},flush=True)
+                assert ok, "Live contact page still contains demo or missing channel: "+lang+"/"+section
+                checked+=1
+    assert checked==6
+    print({"lot35_live_contact":"6/6 pages verified"},flush=True)
+
 def main() -> None:
     for name, base in HOSTS.items():
         host = urlsplit(base).hostname
@@ -149,6 +171,7 @@ def main() -> None:
         one(name, base, "/fr/catalogue/", fresh=True)
     verify_live_paint_packshots()
     audit_trilingual_catalogue_copy()
+    audit_contact_page_publication()
 
 if __name__ == "__main__":
     main()
