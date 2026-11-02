@@ -1,3 +1,14 @@
+## 2 novembre 2026 — Lot 22 : packshots FENEK-FLOW vérifiés, upload binaire restant
+
+- [PR #18](https://github.com/Verwolfy/nextgen-website/pull/18) fusionnée sur `main`, commit `5df6b6d773768bf12ee659dc45a6c47a57ad4518`. CI de PR **2/2 réussies** : [Astro/sécurité](https://github.com/Verwolfy/nextgen-website/actions/runs/41443116845), [Chromium](https://github.com/Verwolfy/nextgen-website/actions/runs/41443117048).
+- Archive **locale de conversation**, non poussée : `NextGen_FENEK_FLOW_12_packshots_lot21.zip` contenant 12 fichiers 1120×1120 et 12 fichiers 560×560 WebP avec hashes distincts. Audit agrandi de `WR-N` : sa vraie étiquette porte bien « WR-N » (fausse lecture SP-HR sur miniature). Aucun remplacement requis.
+- `scripts/flow-packshots-approved.json` : empreintes de 24 images attendues. `scripts/install_flow_packshots.py` : chemins, taille, RIFF/VP8, dimensions, intégrité SHA256 par rapport au référentiel **versionné GitHub**, vérification complète avant écriture et mode `--verify`. `src/lib/catalogue-projets.ts` refuse d'utiliser une variante seule si carte/détail ne sont pas toutes deux présentes. `tests/test_lot21_flow_packshots.py` et `tests/test_lot22_approved_flow_images.py` couvrent les garde-fous.
+- **Limite majeure** : `public/images/catalogue-projects/` ne figure pas dans le dépôt : les 24 octets WebP **ne sont pas encore transférés**. Le site utilise encore les visuels génériques de secours. Tests sur PR ne prouvent pas leur publication.
+- Prochaine étape : depuis un clone GitHub authentifié, exécuter `python scripts/install_flow_packshots.py /chemin/NextGen_FENEK_FLOW_12_packshots_lot21.zip`, `python scripts/install_flow_packshots.py --verify`, puis committer les 24 fichiers sur branche assets, PR et CI. Ensuite contrôler le rendu réel FR/AR/EN et les proportions des bidons.
+- Invariants : présentation éditoriale provisoire des 50 références, non homologation technique ; `public/data/products.json=[]`; aucun prix/dosage/certificat inventé, formulaire ou collecte activé, ni intervention ERP/Supabase/SQL/RLS, DNS, secrets ou Cloudflare Pages/Access.
+
+---
+
 ## 1er novembre 2026 — Lot 20 : catalogue de 50 fiches acceptées pour présentation
 
 - Approbation **éditoriale provisoire** demandée par l'utilisateur : les 50 références du classeur Excel et de `public.site_produits` ont été acceptées pour alimenter le site, **révisables ultérieurement**. Ne pas assimiler cet accord à une validation technique ou commerciale.
