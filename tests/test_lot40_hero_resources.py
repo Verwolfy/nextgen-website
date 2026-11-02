@@ -46,7 +46,7 @@ class Lot40HomepageTests(unittest.TestCase):
         self.assertNotIn("resource-card-demo", source)
         self.assertNotIn("/emballages/", source)
         self.assertIn("/contact/", source)
-        self.assertIn("/maquettes/", source)
+        self.assertNotIn("/maquettes/", source)
         self.assertNotIn("<form", source)
 
     def test_resources_headings_match_documentation_only(self):
