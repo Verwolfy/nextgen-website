@@ -25,12 +25,11 @@ class ArabicVisualChecks(unittest.TestCase):
         self.assertIn('homeStatus:', editor)
         self.assertIn('تعرّف على مجموعات FENEK', editor)
 
-    def test_arabic_visual_gallery_keeps_its_noncommercial_notice(self):
-        gallery = (ROOT / 'src/pages/[lang]/maquettes.astro').read_text(encoding='utf-8')
-        self.assertIn('معرض التصاميم المرئية', gallery)
-        self.assertIn('إلى الموارد', gallery)
-        self.assertIn('/catalogue/', gallery)
- 
+    def test_removed_gallery_and_preserved_arabic_content(self):
+        self.assertFalse((ROOT / 'src/pages/[lang]/maquettes.astro').exists())
+        editorial = (ROOT / 'src/data/editorial.ts').read_text(encoding='utf-8')
+        self.assertIn('النشرات الفنية', editorial)
+
     def test_mixed_brand_names_are_isolated(self):
         for path in ('src/pages/[lang]/index.astro',
                      'src/pages/[lang]/gammes/[slug].astro',
