@@ -40,8 +40,9 @@ const t=catalogueCopy[lang];
         </details>
       </div>
       <aside class="concept-detail-aside" aria-label={t.format}>
-        <div class="concept-detail-image concept-packshot-container" style={'--range-color:'+rangeColor[product.gamme]}>
+        <div class={'concept-detail-image concept-packshot-container'+(product.gamme==='paint'?' concept-range-only-visual':'')} style={'--range-color:'+rangeColor[product.gamme]}>
           <img src={conceptPackshot(product,"full")} width="680" height="680" alt="" loading="lazy"/>
+          {product.gamme==='paint'&&<span class="concept-range-only-label"><bdi dir="ltr">{product.nom}</bdi><small>{t.rangeVisual}</small></span>}
         </div>
         <p class="concept-detail-note">{hasProductPackshot(product)?t.packshotNote:t.pictureNote}</p>
         <a class="btn" href={'/'+lang+'/contact/'}>{t.quote}</a>

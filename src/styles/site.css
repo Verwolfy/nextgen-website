@@ -313,3 +313,11 @@ h1,h2,h3,.page-head p,.showcase-card{overflow-wrap:anywhere;min-width:0}
 @media(max-width:990px){.visual-concept-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:680px){.visual-concept-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.visual-concept-card figcaption{padding:11px}}
 @media(max-width:360px){.visual-concept-grid{grid-template-columns:1fr}}
+
+/* Lot 28: category-only PAINT concept, clearly not an individual packshot. */
+.concept-range-only-visual{position:relative}
+.concept-range-only-label{position:absolute;inset:auto 10px 10px;display:flex;flex-direction:column;gap:3px;max-width:calc(100% - 20px);padding:9px 12px;border-radius:12px;border:1px solid #d5dfe5;background:#fffef5f5;box-shadow:0 3px 12px #14263a1a;color:#122c4b;line-height:1.32;overflow-wrap:anywhere}
+.concept-range-only-label bdi{font-size:.88rem;font-weight:800}
+.concept-range-only-label small{font-size:.68rem;font-weight:700;color:#456375}
+.concept-detail-image.concept-range-only-visual{min-height:280px}
+@media(max-width:590px){.concept-range-only-label{padding:7px 10px}.concept-range-only-label small{font-size:.65rem}}

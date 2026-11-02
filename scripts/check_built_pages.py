@@ -136,6 +136,36 @@ def main() -> None:
             image = ROOT / asset.lstrip("/")
             assert image.is_file() and image.read_bytes()[:4] == b"RIFF", str(image)
         catalog = (ROOT / lang / "catalogue" / "index.html").read_text(encoding="utf-8")
+        # Lot 28: all 17 formerly generic BOND/PROOF references must show
+        # their actual product-labeled, reviewed gallery image in all 3 locales.
+        reviewed_visuals = {
+            "fenek-bond-m10":35, "fenek-bond-m5":34,
+            "fenek-bond-oc-csiii":33, "fenek-bond-r2":28,
+            "fenek-bond-r3":29, "fenek-bond-r4":30,
+            "fenek-proof-acr-rf":39, "fenek-proof-cm-o1p":36,
+            "fenek-proof-cm-o2p":37, "fenek-proof-ep-anc":44,
+            "fenek-proof-ep-inj":43, "fenek-proof-ep-prim":40,
+            "fenek-proof-ep-sb":42, "fenek-proof-ep-sr":41,
+            "fenek-proof-pu-1k":38, "fenek-proof-pu-inj":45,
+            "fenek-proof-pu-seal":4,
+        }
+        for slug, number in reviewed_visuals.items():
+            asset = f"/images/maquettes/maquette-{number:02d}.webp"
+            assert asset in catalog, f"Missing reference visual in {lang}: {slug}"
+            detail = ROOT / lang / "catalogue" / slug / "index.html"
+            assert detail.is_file() and asset in detail.read_text(encoding="utf-8"), (
+                f"Wrong detail image: {lang}/{slug}"
+            )
+        # PAINT has only a range collage in the source, never pass it as an
+        # individual certified packshot or claim it matches listed formats.
+        assert catalog.count('class="concept-range-only-label"') == 11, lang
+        for slug in ("fenek-paint-ent-l","fenek-paint-fac-el","fenek-paint-fac-m",
+                     "fenek-paint-fac-sx","fenek-paint-int-m","fenek-paint-int-s",
+                     "fenek-paint-int-wa","fenek-paint-prim-a","fenek-paint-prim-fx",
+                     "fenek-paint-sol-a","fenek-paint-txt-f"):
+            detail = (ROOT / lang / "catalogue" / slug / "index.html").read_text(encoding="utf-8")
+            assert '/images/maquettes/maquette-19.webp' in detail, slug
+            assert 'concept-range-only-label' in detail, slug
         assert "PF-001" not in catalog and "PF-006" not in catalog
         assert not (ROOT / lang / "produits").is_dir(), "No real product was approved"
         assert "SIMULATION" in (ROOT / "fr" / "emballages" / "index.html").read_text(encoding="utf-8")

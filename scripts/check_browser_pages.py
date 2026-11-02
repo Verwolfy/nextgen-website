@@ -67,6 +67,24 @@ def check() -> None:
                             assert page.locator(".catalogue-projects .editorial-caution").count() == 1, path
                             if lang == "ar":
                                 assert "كتالوج" in page.locator("h1").inner_text(), path
+                        if section == "catalogue":
+                            # Lot 28: 6 BOND + 11 PROOF exact source illustrations,
+                            # plus 11 clearly labeled, non-specific PAINT overview cards.
+                            gallery_cards = page.locator(".concept-product-card img[src*='/images/maquettes/']")
+                            assert gallery_cards.count() == 28, f"{lang}, {size}: incorrect gallery catalogue mapping"
+                            assert page.locator(".concept-product-card .concept-range-only-label").count() == 11, (
+                                f"{lang}, {size}: PAINT range art must be explicitly labeled"
+                            )
+                            if size == "mobile":
+                                for k in (0, 5, 16, 17, 27):
+                                    im = gallery_cards.nth(k)
+                                    im.scroll_into_view_if_needed()
+                                    assert im.evaluate("""async im => {
+                                        try { await im.decode(); } catch (_) { return false; }
+                                        return im.complete && im.naturalWidth > 0 &&
+                                          getComputedStyle(im).objectFit === 'contain';
+                                    }"""), f"{lang}: gallery-derived visual {k} broken or distorted"
+                                page.evaluate("window.scrollTo(0,0)")
                         if section == "catalogue" and flow_images_present:
                             packshots = page.locator(".concept-product-card .concept-product-image img[src*='/images/catalogue-projects/fenek-flow-']")
                             assert packshots.count() == 12, f"{lang}, {size}: missing FLOW card imagery"

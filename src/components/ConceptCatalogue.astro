@@ -19,7 +19,7 @@ const t=catalogueCopy[lang];
     <div class="concept-range-title"><div><span class="concept-range-color" aria-hidden="true"></span><h2 id={'range-title-'+g}><bdi dir="ltr">{rangeName[g]}</bdi></h2></div><span>{projectsByRange(g).length} {t.count}</span></div>
     <div class="concept-products-grid">
       {projectsByRange(g).map(p=><a class="concept-product-card" href={'/'+lang+'/catalogue/'+p.slug+'/'} aria-label={p.nom+' — '+t.view}>
-        <div class="concept-product-image concept-packshot-container"><img src={conceptPackshot(p,"card")} alt="" width="680" height="680" loading="lazy" /></div>
+        <div class={'concept-product-image concept-packshot-container'+(p.gamme==='paint'?' concept-range-only-visual':'')}><img src={conceptPackshot(p,"card")} alt="" width="680" height="680" loading="lazy" />{p.gamme==='paint'&&<span class="concept-range-only-label"><bdi dir="ltr">{p.nom}</bdi><small>{t.rangeVisual}</small></span>}</div>
         <div class="concept-product-copy"><span class="concept-product-status">{t.status}</span><h3><bdi dir="ltr">{p.nom}</bdi></h3><p>{p.contenu[lang].accroche}</p>
           <div class="concept-formats">{p.conditionnements.length?p.conditionnements.slice(0,3).map(x=><span>{x.format}</span>):<span>{t.unknownFormat}</span>}</div>
           <strong class="concept-view">{t.view}<span aria-hidden="true"> ↗</span></strong>
