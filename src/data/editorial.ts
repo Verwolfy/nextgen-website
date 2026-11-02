@@ -12,7 +12,7 @@ type EditorialCopy = {
   topicsHeading: string;
   rangeDisclaimer: string;
   rangeBack: string;
-  rangeGallery: string;
+  rangeCatalogue: string;
   rangeContact: string;
   rangeTopics: RangeTopics;
   aboutHeading: string;
@@ -26,11 +26,7 @@ type EditorialCopy = {
   resourceTechInfo: string;
   resourceSafetyTitle: string;
   resourceSafetyInfo: string;
-  resource3dTitle: string;
-  resource3dInfo: string;
   resourcePending: string;
-  resourceDemo: string;
-  resourceExplore: string;
 };
 export const editorialCopy: Record<Lang, EditorialCopy> = {
   fr: {
@@ -43,7 +39,7 @@ export const editorialCopy: Record<Lang, EditorialCopy> = {
     topicsHeading: 'Domaines présentés',
     rangeDisclaimer: 'Pour les spécifications techniques et la disponibilité, contactez NextGen.',
     rangeBack: 'Toutes les gammes',
-    rangeGallery: 'Voir les maquettes d’emballages',
+    rangeCatalogue: 'Explorer les références',
     rangeContact: 'Contacter NextGen',
     rangeTopics: {
       bond: ['Mortiers', 'Colles et joints', 'Réparation'],
@@ -66,11 +62,7 @@ export const editorialCopy: Record<Lang, EditorialCopy> = {
     resourceTechInfo: 'Renseignements et documents techniques disponibles auprès de notre équipe.',
     resourceSafetyTitle: 'Fiches de données de sécurité',
     resourceSafetyInfo: 'Pour toute question relative aux fiches de sécurité, contactez notre équipe.',
-    resource3dTitle: 'Concepts d’emballages 3D',
-    resource3dInfo: 'Explorez cinq modèles 3D de formats d’emballage.',
     resourcePending: 'Nous contacter',
-    resourceDemo: 'Simulation',
-    resourceExplore: 'Ouvrir la galerie 3D',
   },
   ar: {
     marketTag: 'NextGen Building Solutions · الجزائر',
@@ -82,7 +74,7 @@ export const editorialCopy: Record<Lang, EditorialCopy> = {
     topicsHeading: 'مجالات الاستخدام',
     rangeDisclaimer: 'للحصول على التفاصيل الفنية والتوفر، تواصل مع فريق NextGen.',
     rangeBack: 'العودة إلى الفئات',
-    rangeGallery: 'مشاهدة نماذج العبوات',
+    rangeCatalogue: 'استعراض المراجع',
     rangeContact: 'تواصل مع نكست جن',
     rangeTopics: {
       bond: ['الملاط', 'لواصق البلاط وملء الفواصل', 'مواد الإصلاح'],
@@ -105,11 +97,7 @@ export const editorialCopy: Record<Lang, EditorialCopy> = {
     resourceTechInfo: 'الوثائق الفنية والمعلومات متاحة عبر فريقنا.',
     resourceSafetyTitle: 'نشرات بيانات السلامة',
     resourceSafetyInfo: 'للاستفسار عن نشرات السلامة، تواصل مع فريقنا.',
-    resource3dTitle: 'نماذج العبوات ثلاثية الأبعاد',
-    resource3dInfo: 'استكشف خمسة نماذج ثلاثية الأبعاد للعبوات.',
     resourcePending: 'تواصل معنا',
-    resourceDemo: 'تصميم توضيحي',
-    resourceExplore: 'استعرض نماذج العبوات ثلاثية الأبعاد',
   },
   en: {
     marketTag: 'NextGen Building Solutions · Algeria',
@@ -121,7 +109,7 @@ export const editorialCopy: Record<Lang, EditorialCopy> = {
     topicsHeading: 'Areas covered',
     rangeDisclaimer: 'Contact NextGen for technical specifications and availability.',
     rangeBack: 'All product ranges',
-    rangeGallery: 'See packaging concepts',
+    rangeCatalogue: 'Browse references',
     rangeContact: 'Contact NextGen',
     rangeTopics: {
       bond: ['Mortars', 'Adhesives and grouts', 'Repair'],
@@ -144,10 +132,6 @@ export const editorialCopy: Record<Lang, EditorialCopy> = {
     resourceTechInfo: 'Contact our team for technical documentation and details.',
     resourceSafetyTitle: 'Safety data sheets',
     resourceSafetyInfo: 'For safety documentation, please contact our team.',
-    resource3dTitle: '3D packaging concepts',
-    resource3dInfo: 'Explore five interactive packaging models.',
     resourcePending: 'Contact us',
-    resourceDemo: 'Simulation',
-    resourceExplore: 'Open the 3D gallery',
   },
 };
