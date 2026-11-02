@@ -4,10 +4,6 @@ Date : 02/11/2026. Consigne utilisateur : publier la vitrine actuelle, modificat
 
 ## Entrée
 
-- Archive fournie : `Maquettes 3D.zip` (131 882 300 octets ; SHA-256 `fd2279ec128e7b8c2bfe2247b3bf473bcf7126520f3ec52d82cc90bd54321bb1`).
-- Inspection : **62 fichiers PNG, dont 46 binaires uniques** et 16 duplications. Aucun `.glb`, `.fbx`, `.obj` ou autre géométrie interactive dans cette archive.
-- Visuels optimisés en 46 WebP (sous `public/images/maquettes/maquette-01.webp` à `maquette-46.webp`), environ 2,8 Mo au total, sans inventer de photographies ou de modèles 3D supplémentaires.
-- Pas de substitution aux 5 maquettes 3D réelles `supports/3d/glb/` ni aux 20 visuels produits BOND validés par empreintes, ni aux 24 FLOW déjà sur `main`.
 
 ## Consultation
 
