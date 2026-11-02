@@ -5,11 +5,6 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = messages[lang];
 const edit = editorialCopy[lang];
-const visuals = {
-  fr: 'Voir aussi les 46 illustrations de conception (2D)',
-  ar: 'شاهد أيضاً 46 صورة للتصاميم الأولية (ثنائية الأبعاد)',
-  en: 'Also explore 46 visual design concepts (2D)',
-}[lang];
 const contactAction = {
   fr: 'Demander une documentation',
   ar: 'طلب الوثائق الفنية',
@@ -34,7 +29,6 @@ const contactAction = {
     <p class="editorial-caution" role="note">{t.noDocuments}</p>
     <div class="actions">
       <a class="btn" href={`/${lang}/contact/`}>{contactAction}</a>
-      <a class="resource-gallery-link" href={`/${lang}/maquettes/`}>{visuals}</a>
     </div>
   </div>
 </section>

@@ -22,14 +22,12 @@ class TestLot27VisualConcepts(unittest.TestCase):
                 self.assertEqual(data[:4], b"RIFF")
                 self.assertEqual(data[8:12], b"WEBP")
 
-    def test_trilingual_gallery_and_explicit_non_approval(self):
-        page = (ROOT / "src/pages/[lang]/maquettes.astro").read_text(encoding="utf-8")
-        for needle in ("languages.map", "length: 46", "maquette-", "loading=\"lazy\"",
-                       "NextGen visual design gallery", "Galerie de créations visuelles", "معرض التصاميم",
-                       "getStaticPaths", "Layout", "catalogue/"):
-            self.assertIn(needle, page)
+    def test_gallery_removed_but_images_kept_for_catalogue(self):
+        self.assertFalse((ROOT / "src/pages/[lang]/maquettes.astro").exists())
         resources = (ROOT / "src/components/ResourcesHub.astro").read_text(encoding="utf-8")
-        self.assertIn("/maquettes/", resources)
+        self.assertNotIn("/maquettes/", resources)
+        slider = (ROOT / "src/components/HeroSlider.astro").read_text(encoding="utf-8")
+        self.assertIn("['01', '02', '15', '16']", slider)
         self.assertEqual((ROOT / "public/data/products.json").read_text().strip(), "[]")
         self.assertIn("noindex,nofollow", (ROOT / "src/layouts/Layout.astro").read_text())
 

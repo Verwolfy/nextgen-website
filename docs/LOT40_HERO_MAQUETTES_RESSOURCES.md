@@ -13,13 +13,13 @@ Hero à deux zones sur fond de transition bleu nuit : texte et appels à action 
 - `src/components/HeroSlider.astro` : quatre `public/images/maquettes/maquette-{01,02,15,16}.webp`, images 880×880, premier visuel prioritaire, **aucune nouvelle bibliothèque**, pas de vidéo.
 - Rotation à 5 secondes, navigation précédente/suivante, quatre indicateurs, pause/reprise, interaction tactile, pause sur survol, focus clavier, onglet masqué et `prefers-reduced-motion`.
 - **Sans JavaScript**, seul le premier visuel apparaît et les contrôles restent masqués.
-- `src/components/ResourcesHub.astro` : 2 cartes « Fiches techniques » et « Fiches de données de sécurité » ; actions vers Contact et galerie 2D séparée. Aucun lien vers les anciens formats interactifs ; seules les 46 images de conception restent disponibles.
+- `src/components/ResourcesHub.astro` : 2 cartes « Fiches techniques » et « Fiches de données de sécurité » ; une action unique vers Contact. Les 46 WebP restent en interne pour le slider et certaines fiches catalogue ; l'ancienne page de galerie n'est plus publiée.
 - CSS sur deux colonnes (une colonne mobile), contraste, focus visible et visuels sans recadrage.
 
 ## Contrôles
-- Tests source `tests/test_lot40_hero_resources.py`, mises à jour des assertions héritées `tests/test_editorial_hubs.py`, `tests/test_lot13_home_visual.py`, `tests/test_home_showcase.py`.
+- Tests source `tests/test_lot40_hero_resources.py`, mises à jour des assertions héritées `tests/test_editorial_hubs.py` et `tests/test_lot13_home_visual.py`.
 - Playwright FR/AR/EN desktop/mobile + 1 visualisation sans JavaScript par langue, contrôle des sources WebP, boutons et absence du bloc documentaire supprimé.
-- Les contrôles historiques de routes, catalogue, PDF/FT, modèles GLB, garde-fous et noindex doivent rester verts.
+- Les contrôles historiques de routes, catalogue, PDF/FT, garde-fous et noindex doivent rester verts.
 
 ## Interdictions/limites
 Ne créer ni fausse FT/FDS, ni certification, performance, prix ou disponibilité. `public/data/products.json=[]` et site `noindex`. Aucune modification ERP/Supabase/CRM, de DNS ou de configuration juridique. Visuels 2D non contractuels.

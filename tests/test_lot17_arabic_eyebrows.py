@@ -13,12 +13,10 @@ class LocalizedSectionLabels(unittest.TestCase):
             self.assertIn(txt,s)
         self.assertNotIn('<span class="eyebrow">FENEK COLLECTION</span>',s)
 
-    def test_visual_gallery_keeps_localized_copy(self):
-        s = (ROOT/'src/pages/[lang]/maquettes.astro').read_text(encoding='utf-8')
-        for txt in ('Maquettes visuelles NextGen', 'نماذج نكست جن المصوّرة',
-                    'NextGen visual concepts'):
+    def test_hero_keeps_localized_slide_copy(self):
+        s = (ROOT/'src/components/HeroSlider.astro').read_text(encoding='utf-8')
+        for txt in ('Maquette précédente', 'النموذج السابق', 'Previous concept'):
             self.assertIn(txt, s)
-        self.assertIn('NextGen · Design', s)
 
     def test_catalogue_stays_unpublished(self):
         self.assertEqual((ROOT/'public/data/products.json').read_text().strip(),'[]')

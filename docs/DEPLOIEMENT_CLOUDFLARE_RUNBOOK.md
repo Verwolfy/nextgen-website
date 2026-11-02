@@ -43,7 +43,7 @@ La CI GitHub génère également une archive interne des fichiers `dist/` après
 
 ## 5. Après premier déploiement
 
-1. Visiter `https://<nom-du-projet>.pages.dev/fr/`, `/ar/`, `/en/`, `/fr/maquettes/` sur mobile.
+1. Visiter `https://<nom-du-projet>.pages.dev/fr/`, `/ar/`, `/en/`, `/fr/catalogue/`, `/fr/ressources/` sur mobile.
 2. Sur un navigateur sans session : vérifier si Cloudflare Access refuse ou redirige vers l'authentification sur domaines principal et previews. **Un 200 anonyme = site public.**
 3. Vérifier sur Cloudflare que le commit publié correspond au dernier commit **`main`** validé par CI.
 4. Vérifier `POST /api/lead` → 503, sans données personnelles réelles. Aucun secret ni formulaire actif.

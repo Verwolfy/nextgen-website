@@ -116,7 +116,7 @@ def main() -> None:
     checked = 0
     refs = 0
     for lang in LANGS:
-        for suffix in ("", *SECTIONS, "maquettes", *(("gammes/" + r) for r in RANGES)):
+        for suffix in ("", *SECTIONS, *(("gammes/" + r) for r in RANGES)):
             fn = ROOT / lang / suffix / "index.html"
             assert fn.is_file(), "Missing translated route: " + str(fn)
             refs += check_page(fn, lang)
@@ -131,13 +131,10 @@ def main() -> None:
             assert 'class="contact-direct"' in html and html.count('class="contact-channel"') == 3, fn
             assert "lead-preview" not in html and "lead-panel" not in html, fn
             assert not parsed.lead_controls, "Unexpected lead input: " + str(fn)
-        # Lot 27: all unique images are linked from the localized, non-indexed gallery.
-        gallery = (ROOT / lang / "maquettes" / "index.html").read_text(encoding="utf-8")
-        assert {"fr":"Galerie de créations visuelles","ar":"معرض التصاميم المرئية","en":"NextGen visual design gallery"}[lang] in gallery, lang
+        # Gallery pages are retired; keep their WebP files as catalogue/hero assets.
+        assert not (ROOT / lang / "maquettes").exists(), lang
         for i in range(1, 47):
-            asset = f"/images/maquettes/maquette-{i:02d}.webp"
-            assert asset in gallery, "Missing image in "+lang+": "+asset
-            image = ROOT / asset.lstrip("/")
+            image = ROOT / "images" / "maquettes" / f"maquette-{i:02d}.webp"
             assert image.is_file() and image.read_bytes()[:4] == b"RIFF", str(image)
         catalog = (ROOT / lang / "catalogue" / "index.html").read_text(encoding="utf-8")
         # Lots 28–29: all 27 BOND/PROOF references must show

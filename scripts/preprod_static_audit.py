@@ -86,6 +86,7 @@ def main() -> None:
     for lang in LANGUAGES:
         for suffix in ("", *SECTIONS, *((f"gammes/{range_name}") for range_name in RANGES)):
             inspect_page(DIST / lang / suffix / "index.html", lang)
+        assert not (DIST / lang / "maquettes").exists(), "Retired gallery must not be deployed: " + lang
     # Check the deployment artifact contains no retired models or pages.
     for lang in LANGUAGES:
         assert not (DIST / lang / "emballages").exists(), lang
