@@ -34,7 +34,7 @@ type EditorialCopy = {
 };
 export const editorialCopy: Record<Lang, EditorialCopy> = {
   fr: {
-    marketTag: 'NextGen Building Solutions · Algeria / Algérie',
+    marketTag: 'NextGen Building Solutions · Algérie',
     homeStatus: 'Site en préparation : aucun produit réel approuvé pour publication.',
     homeContact: 'Nous contacter',
     homeApproachTag: 'Démarche en préparation',
