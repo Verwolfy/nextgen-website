@@ -51,9 +51,9 @@ class Test3DDrafts(unittest.TestCase):
 
     def test_demo_is_explicitly_not_commercial(self):
         page=(ROOT/'src/pages/[lang]/emballages.astro').read_text()
-        self.assertIn('SIMULATION',page)
-        self.assertIn('مسودة غير معتمدة',page)
-        self.assertIn('NOT APPROVED',page)
+        self.assertIn('formats d’emballage',page)
+        self.assertIn('استكشف نماذج العبوات',page)
+        self.assertIn('Explore the packaging formats',page)
         self.assertIn('models-demo/',page)
         self.assertEqual(json.loads((ROOT/'public/data/products.json').read_text()),[])
         self.assertIn('noindex,nofollow',(ROOT/'src/layouts/Layout.astro').read_text())
