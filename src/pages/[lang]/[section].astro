@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import LeadForm from '../../components/LeadForm.astro';
 import ContactChannels from '../../components/ContactChannels.astro';
 import {contactCopy} from '../../data/contact-channels';
 import RangeOverview from '../../components/RangeOverview.astro';
@@ -23,10 +22,10 @@ const description=section==='catalogue'?catalogueCopy[lang].lead:section==='dist
 <div class="section"><div class="container">
 {section==='gammes'&&<RangeOverview lang={lang} />}
 {section==='catalogue'&&<ConceptCatalogue lang={lang} />}
-{section==='distributeurs'&&<><div class="notice"><p>{t.distributorsInfo}</p><div class="actions"><a class="btn" href="#contact-direct">{contactCopy[lang].heading}</a><a class="btn btn-muted" href="#candidature">{contactCopy[lang].previewAnchor}</a></div></div><ContactChannels lang={lang} /><LeadForm lang={lang} kind="distributor" /></>}
+{section==='distributeurs'&&<><div class="notice"><p>{t.distributorsInfo}</p><div class="actions"><a class="btn" href="#contact-direct">{contactCopy[lang].heading}</a><a class="btn btn-muted" href="#contact-direct">{contactCopy[lang].previewAnchor}</a></div></div><ContactChannels lang={lang} /></>}
 {section==='ressources'&&<ResourcesHub lang={lang} />}
 {section==='a-propos'&&<AboutStory lang={lang} />}
-{section==='contact'&&<><ContactChannels lang={lang} /><LeadForm lang={lang} kind="quote" /></>}
+{section==='contact'&&<><ContactChannels lang={lang} /></>}
 {section==='mentions-legales'&&<div class="notice"><p>{t.legalInfo}</p><p><bdi dir="ltr">NextGen Building Solutions</bdi> · {brandLocation[lang]}</p></div>}
 {section==='confidentialite'&&<div class="notice"><p>{t.privacyInfo}</p><p><a href={`mailto:${brand.email}`}>{brand.email}</a></p></div>}
 </div></div>
