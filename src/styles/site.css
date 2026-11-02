@@ -279,3 +279,10 @@ h1,h2,h3,.page-head p,.showcase-card{overflow-wrap:anywhere;min-width:0}
 @media(max-width:980px){.concept-products-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.concept-range-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.concept-detail-layout{grid-template-columns:minmax(0,1fr)}.concept-detail-aside{position:static;max-width:560px}}
 @media(max-width:590px){.concept-products-grid,.concept-range-nav{grid-template-columns:1fr}.concepts-lead{align-items:flex-start}.concept-count{min-width:82px;min-height:87px;font-size:2.3rem;padding:10px}.concept-count small{font-size:.69rem}.concept-product-image{aspect-ratio:1.5}.concept-detail-layout{gap:20px}.concept-range-title{align-items:baseline}}
 @media(prefers-reduced-motion:reduce){.concept-product-card{transition:none}.concept-product-card:hover{transform:none}}
+
+/* Lot 21 — preserve photorealistic pack proportions (never squash or crop). */
+.concept-packshot-container{display:grid;place-items:center;overflow:hidden;background:#eef1f3}
+.concept-product-image.concept-packshot-container{aspect-ratio:1/1}
+.concept-product-image.concept-packshot-container img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.concept-detail-image.concept-packshot-container img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;object-position:center}
+@media(max-width:590px){.concept-product-image.concept-packshot-container{aspect-ratio:1/1}}
