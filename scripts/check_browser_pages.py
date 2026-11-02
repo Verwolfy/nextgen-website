@@ -68,15 +68,21 @@ def check() -> None:
                             if lang == "ar":
                                 assert "كتالوج" in page.locator("h1").inner_text(), path
                         if section == "catalogue":
-                            # Lot 28: 16 BOND + 11 PROOF exact source illustrations,
-                            # plus 11 clearly labeled, non-specific PAINT overview cards.
+                            # 27 individual BOND/PROOF images from the source
+                            # gallery plus 11 separate code-labeled PAINT studies.
                             gallery_cards = page.locator(".concept-product-card img[src*='/images/maquettes/']")
-                            assert gallery_cards.count() == 38, f"{lang}, {size}: incorrect gallery catalogue mapping"
-                            assert page.locator(".concept-product-card .concept-range-only-label").count() == 11, (
-                                f"{lang}, {size}: PAINT range art must be explicitly labeled"
+                            assert gallery_cards.count() == 27, f"{lang}, {size}: incorrect gallery mapping"
+                            studies = page.locator("#catalogue-paint .concept-product-card .paint-concept-art")
+                            assert studies.count() == 11, f"{lang}, {size}: missing PAINT editorial drawings"
+                            codes = studies.evaluate_all("els => els.map(e => e.dataset.paintCode)")
+                            assert len(set(codes)) == 11 and all(c.startswith("PAINT-") for c in codes), (
+                                f"{lang}, {size}: duplicate or invalid PAINT artwork codes {codes}"
+                            )
+                            assert page.locator("#catalogue-paint img[src*='maquette-19.webp']").count() == 0, (
+                                f"{lang}, {size}: obsolete 15 L collage still reused"
                             )
                             if size == "mobile":
-                                for k in (0, 5, 16, 27, 37):
+                                for k in (0, 5, 16, 26):
                                     im = gallery_cards.nth(k)
                                     im.scroll_into_view_if_needed()
                                     assert im.evaluate("""async im => {
@@ -84,6 +90,15 @@ def check() -> None:
                                         return im.complete && im.naturalWidth > 0 &&
                                           getComputedStyle(im).objectFit === 'contain';
                                     }"""), f"{lang}: gallery-derived visual {k} broken or distorted"
+                                for k in (0, 5, 10):
+                                    concept = studies.nth(k)
+                                    concept.scroll_into_view_if_needed()
+                                    assert concept.locator("svg").count()==1, (
+                                        f"{lang}, {size}: missing PAINT vector study {k}"
+                                    )
+                                    assert concept.evaluate("el => el.clientWidth > 0 && el.clientHeight > 0"), (
+                                        f"{lang}, {size}: hidden PAINT study {k}"
+                                    )
                                 page.evaluate("window.scrollTo(0,0)")
                         if section == "catalogue" and flow_images_present:
                             packshots = page.locator(".concept-product-card .concept-product-image img[src*='/images/catalogue-projects/fenek-flow-']")
@@ -210,6 +225,11 @@ def check() -> None:
                         assert page.locator("form").count()==0, concept_path
                         detail_overflow=page.evaluate("Math.ceil(document.documentElement.scrollWidth-innerWidth)")
                         assert detail_overflow<=4, f"Concept details overflow: {concept_path}, {width}px, {detail_overflow}px"
+                        if slug=="fenek-paint-int-m":
+                            assert page.locator(".concept-detail-aside .paint-concept-art[data-paint-code='PAINT-INT-M']").count()==1, (
+                                f"{lang}, {size}: PAINT INT-M detailed concept does not match its code"
+                            )
+                            assert page.locator(".concept-detail-aside img[src*='maquette-19.webp']").count()==0, concept_path
                         if slug=="fenek-bond-c1t" and bond_images_present:
                             full=page.locator(".concept-detail-image img")
                             full.scroll_into_view_if_needed()
