@@ -162,22 +162,26 @@ def main() -> None:
             assert detail.is_file() and asset in detail.read_text(encoding="utf-8"), (
                 f"Wrong detail image: {lang}/{slug}"
             )
-        # Lot 30: eleven distinct PAINT editorial drawings by exact code,
-        # never the repeated 15 L photo montage or an invented certified pack.
-        assert catalog.count('class="paint-concept-art"') == 11, lang
-        assert '/images/maquettes/maquette-19.webp' not in catalog, (
-            f"Obsolete shared 15 L collage still in the PAINT catalogue ({lang})"
-        )
-        for slug in ("fenek-paint-ent-l","fenek-paint-fac-el","fenek-paint-fac-m",
-                     "fenek-paint-fac-sx","fenek-paint-int-m","fenek-paint-int-s",
-                     "fenek-paint-int-wa","fenek-paint-prim-a","fenek-paint-prim-fx",
-                     "fenek-paint-sol-a","fenek-paint-txt-f"):
-            code = "PAINT-" + slug.removeprefix("fenek-paint-").upper()
-            assert f'data-paint-code="{code}"' in catalog, f"Missing PAINT concept: {lang}/{code}"
+        # Lot 31: eleven photo-realistic renderings cut from the user-selected
+        # concept board, associated strictly with their true FENEK-PAINT code.
+        # No flat vector pail and no shared 15 L image may appear.
+        paint_slugs = ("ent-l", "fac-el", "fac-m", "fac-sx",
+                       "int-m", "int-s", "int-wa",
+                       "prim-a", "prim-fx", "sol-a", "txt-f")
+        assert len(paint_slugs) == 11
+        assert catalog.count("/images/catalogue-projects/fenek-paint-") == 11, lang
+        assert 'class="paint-concept-art"' not in catalog, lang
+        assert '/images/maquettes/maquette-19.webp' not in catalog, lang
+        for item in paint_slugs:
+            slug = "fenek-paint-" + item
+            asset = f"/images/catalogue-projects/{slug}.webp"
+            built_asset = ROOT / asset.lstrip("/")
+            assert built_asset.is_file() and built_asset.read_bytes()[8:12] == b"WEBP", slug
+            assert asset in catalog, f"Wrong card image in {lang}/{slug}"
             detail = (ROOT / lang / "catalogue" / slug / "index.html").read_text(encoding="utf-8")
-            assert f'data-paint-code="{code}"' in detail, f"Wrong PAINT concept: {lang}/{slug}"
-            assert 'class="paint-concept-art"' in detail, slug
-            assert '/images/maquettes/maquette-19.webp' not in detail, slug
+            assert asset in detail, f"Wrong full-size PAINT concept: {lang}/{slug}"
+            assert 'class="paint-concept-art"' not in detail and '/images/maquettes/maquette-19.webp' not in detail, slug
+            assert "concept-detail-note" in detail, slug
         assert "PF-001" not in catalog and "PF-006" not in catalog
         assert not (ROOT / lang / "produits").is_dir(), "No real product was approved"
         assert "SIMULATION" in (ROOT / "fr" / "emballages" / "index.html").read_text(encoding="utf-8")
