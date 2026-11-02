@@ -1,0 +1,77 @@
+{
+  "lot": 21,
+  "category": "flow",
+  "status": "reviewed_visual_concept_only",
+  "dimensions": {
+    "full": [
+      1120,
+      1120
+    ],
+    "card": [
+      560,
+      560
+    ]
+  },
+  "assets": [
+    {
+      "slug": "fenek-flow-ac",
+      "full_sha256": "7b2b6333c730cfecc2a4f37d3bcc5621b10339ae780b5407c973d6bc370b5235",
+      "card_sha256": "9b68101b4a82bb26113c1ef06a8f53a6f343168af4e76c9e3538bf592402ae2d"
+    },
+    {
+      "slug": "fenek-flow-ae",
+      "full_sha256": "8f83544a72461618105e0ae5b890da6df14d2755d811e1d966e881b324517db9",
+      "card_sha256": "0e079422a55f34b5959d2aad3953cdfaed0cf99af1eb443bc6eb9af5ce029689"
+    },
+    {
+      "slug": "fenek-flow-ci",
+      "full_sha256": "da685d8b35bab7558201151d1d3800b605974b79065a74aa934f1cef87551454",
+      "card_sha256": "ce530bd1c90075e2f49b7906e9a615c8b6f9a838e0d3549623d41e493b315b07"
+    },
+    {
+      "slug": "fenek-flow-cure",
+      "full_sha256": "336dd6c13bdea922f3b0662e1739e639b9f80b41eca1788d1e0cdffeb55def88",
+      "card_sha256": "5c2df8b0338cd7663422f11deb6fd4836676a93fb074a8264c0cde3b75fa32e0"
+    },
+    {
+      "slug": "fenek-flow-lat",
+      "full_sha256": "8c4dd630da126ed15b26de078aea5c1bce703372fa76ec9e5573bfdd6a5d4a74",
+      "card_sha256": "3cf8b5b51873392195c59cc4d257312bfdaf9e89c20a14fac52aa2e7868288b3"
+    },
+    {
+      "slug": "fenek-flow-rt",
+      "full_sha256": "a148bfd623e9f59a64afafa3081805c5bc6cf1920201dc99f63c85e4c47fe37f",
+      "card_sha256": "08704dba5f3ec4540756db589cc86f63895adb3a61811681528fe9f5b05449bc"
+    },
+    {
+      "slug": "fenek-flow-sp-hr",
+      "full_sha256": "7b7e12d2e3d073934b179b6eb5d2799570c806bc2527ede5f2ed3efe7bfb8ccc",
+      "card_sha256": "5a979893c4b71abbed9dfd902a4d84a6dcb40743980cb09a492d40abe3acf5fb"
+    },
+    {
+      "slug": "fenek-flow-sp-pf",
+      "full_sha256": "ab4d3a91b97d05dd18bd7abbd9d29d3ccf6e9c4c6a7a1c45117551830e702be5",
+      "card_sha256": "01f22a6c86a8cae84679f845481c51dda570f003b313cdda0bd71e67102e22d0"
+    },
+    {
+      "slug": "fenek-flow-sp-rt",
+      "full_sha256": "c1481cbc645e422b882374d4a23973641496e207de7dc396add8a9522cd0f2fd",
+      "card_sha256": "02396b11d3a9832123513eb019a5816670b0addeae307cf9c7d8fbe8b90a8249"
+    },
+    {
+      "slug": "fenek-flow-vma",
+      "full_sha256": "846465d67833fa493ef9b999c256138e2d3c6fe8ce1eb384a4f60def4c640617",
+      "card_sha256": "3c75939a146cc3446b926fc06998c9f2710763829e686bdf95608a417f4a8277"
+    },
+    {
+      "slug": "fenek-flow-wp",
+      "full_sha256": "f6bc17837838717dfe9f7a20f81c31b78e169b309e2f758ace29f3c38b2dddf3",
+      "card_sha256": "626699333f57e6d16f8e0ab2be04c1039f0d7fabedb2bc45a50d24ce9d853ee0"
+    },
+    {
+      "slug": "fenek-flow-wr-n",
+      "full_sha256": "9429ce46d97d4e77639a402d67457c55fe1fe19140fca88e4661549aac6f29bd",
+      "card_sha256": "dc65a3764e8700be7a23f681a0983363c837b37cfc09f780bb1a68cde003765a"
+    }
+  ]
+}
