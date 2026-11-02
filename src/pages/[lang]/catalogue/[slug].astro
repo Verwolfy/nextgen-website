@@ -3,7 +3,6 @@ import Layout from '../../../layouts/Layout.astro';
 import {languages,rangeName,rangeColor,type Lang} from '../../../data/site';
 import {catalogueProjects,conceptPackshot,hasProductPackshot,type CatalogueProject} from '../../../lib/catalogue-projets';
 import {catalogueCopy,guidance} from '../../../data/catalogue-content';
-import PaintConceptArt from '../../../components/PaintConceptArt.astro';
 export function getStaticPaths(){
  return languages.flatMap(lang=>catalogueProjects.map(product=>({params:{lang,slug:product.slug},props:{product}})));
 }
@@ -42,7 +41,7 @@ const t=catalogueCopy[lang];
       </div>
       <aside class="concept-detail-aside" aria-label={t.format}>
         <div class="concept-detail-image concept-packshot-container" style={'--range-color:'+rangeColor[product.gamme]}>
-          {product.gamme==='paint'?<PaintConceptArt code={product.code} lang={lang}/>:<img src={conceptPackshot(product,"full")} width="680" height="680" alt="" loading="lazy"/>}
+          <img src={conceptPackshot(product,"full")} width="800" height="800" alt="" loading="lazy"/>
         </div>
         <p class="concept-detail-note">{product.gamme==='paint'?t.paintConceptNote:hasProductPackshot(product)?t.packshotNote:t.pictureNote}</p>
         <a class="btn" href={'/'+lang+'/contact/'}>{t.quote}</a>

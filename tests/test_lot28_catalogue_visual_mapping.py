@@ -51,32 +51,22 @@ class TestLot28CatalogueVisuals(unittest.TestCase):
         self.assertIn("if(updatedConcept) return updatedConcept;", src)
         self.assertEqual(len([p for p in json.loads(PRODUCTS.read_text()) if p["gamme"]=="bond"]),16)
         self.assertIn("return reviewedGalleryImage(product)??conceptImage[product.gamme]", src)
-        self.assertIn("paint:'/images/maquettes/maquette-19.webp'", src)
+        self.assertIn("paint:''", src)
+        self.assertIn("FENEK-PAINT concept asset missing:", src)
         self.assertIn("Maquette de conception absente:", src)
         self.assertEqual(len(list((ROOT/"public/images/catalogue-projects").glob("fenek-bond-*.webp"))),20)
         self.assertEqual(len(list((ROOT/"public/images/catalogue-projects").glob("fenek-flow-*.webp"))),24)
         catalogue = (ROOT/"src/components/ConceptCatalogue.astro").read_text(encoding="utf-8")
         detail = (ROOT/"src/pages/[lang]/catalogue/[slug].astro").read_text(encoding="utf-8")
         words = (ROOT/"src/data/catalogue-content.ts").read_text(encoding="utf-8")
-        for token in ("PaintConceptArt", "gamme==='paint'"):
-            self.assertIn(token, catalogue)
-            self.assertIn(token, detail)
-        self.assertIn("paintConceptNote", detail)
-        self.assertIn("paintConceptNote:string", words)
-        for token in ("Étude de design", "دراسة تصميمية", "Design study"):
-            self.assertIn(token, words)
-        art = (ROOT/"src/components/PaintConceptArt.astro").read_text(encoding="utf-8")
-        self.assertIn("data-paint-code={code}", art)
-        self.assertIn("codes.indexOf(short", art)
-        self.assertIn("if(index<0) throw Error", art)
-        self.assertEqual(art.count("'ENT-L'"), 1)
-        for token in ("'TXT-F'","'INT-M'","paint-concept-caption"):
-            self.assertIn(token, art)
-        # Scan printed text payloads, not arbitrary SVG path coordinates
-        # such as "M0 515 L720..." that resemble "15 L" by coincidence.
-        printed = re.findall(r"<text[^>]*>([^<]*)</text>", art)
-        for token in ("15 L", "25 kg", "20 kg", "EN 1504", "certifié"):
-            self.assertFalse(any(token in label for label in printed), token)
+        self.assertIn('conceptPackshot(p,"card")',catalogue)
+        self.assertIn('conceptPackshot(product,"full")',detail)
+        self.assertNotIn("PaintConceptArt",catalogue)
+        self.assertNotIn("PaintConceptArt",detail)
+        self.assertIn("paintConceptNote",detail)
+        self.assertIn("paintConceptNote:string",words)
+        for token in ("Étude graphique", "رسم تصوّري", "editorial illustration"):
+            self.assertIn(token,words)
         self.assertEqual((ROOT/"public/data/products.json").read_text().strip(),"[]")
 
 if __name__=="__main__":

@@ -68,18 +68,19 @@ def check() -> None:
                             if lang == "ar":
                                 assert "كتالوج" in page.locator("h1").inner_text(), path
                         if section == "catalogue":
-                            # 27 individual BOND/PROOF images from the source
-                            # gallery plus 11 separate code-labeled PAINT studies.
+                            # Lot 31: 27 BOND/PROOF gallery photo renders plus
+                            # 11 individual code-matched PAINT WebPs from source board.
                             gallery_cards = page.locator(".concept-product-card img[src*='/images/maquettes/']")
                             assert gallery_cards.count() == 27, f"{lang}, {size}: incorrect gallery mapping"
-                            studies = page.locator("#catalogue-paint .concept-product-card .paint-concept-art")
-                            assert studies.count() == 11, f"{lang}, {size}: missing PAINT editorial drawings"
-                            codes = studies.evaluate_all("els => els.map(e => e.dataset.paintCode)")
-                            assert len(set(codes)) == 11 and all(c.startswith("PAINT-") for c in codes), (
-                                f"{lang}, {size}: duplicate or invalid PAINT artwork codes {codes}"
-                            )
-                            assert page.locator("#catalogue-paint img[src*='maquette-19.webp']").count() == 0, (
-                                f"{lang}, {size}: obsolete 15 L collage still reused"
+                            paint_imgs = page.locator("#catalogue-paint .concept-product-card img[src*='/images/catalogue-projects/fenek-paint-']")
+                            assert paint_imgs.count() == 11, f"{lang}, {size}: missing PAINT product images"
+                            srcs = paint_imgs.evaluate_all("els => els.map(e => e.getAttribute('src'))")
+                            required = {f"/images/catalogue-projects/fenek-paint-{slug}.webp"
+                                        for slug in ("ent-l","fac-el","fac-m","fac-sx","int-m","int-s",
+                                                     "int-wa","prim-a","prim-fx","sol-a","txt-f")}
+                            assert set(srcs) == required, f"{lang}: wrong PAINT source-to-product mapping"
+                            assert page.locator("#catalogue-paint .paint-concept-art").count()==0, (
+                                f"{lang}, {size}: obsolete schematic vector images still visible"
                             )
                             if size == "mobile":
                                 for k in (0, 5, 16, 26):
@@ -89,16 +90,16 @@ def check() -> None:
                                         try { await im.decode(); } catch (_) { return false; }
                                         return im.complete && im.naturalWidth > 0 &&
                                           getComputedStyle(im).objectFit === 'contain';
-                                    }"""), f"{lang}: gallery-derived visual {k} broken or distorted"
-                                for k in (0, 5, 10):
-                                    concept = studies.nth(k)
-                                    concept.scroll_into_view_if_needed()
-                                    assert concept.locator("svg").count()==1, (
-                                        f"{lang}, {size}: missing PAINT vector study {k}"
-                                    )
-                                    assert concept.evaluate("el => el.clientWidth > 0 && el.clientHeight > 0"), (
-                                        f"{lang}, {size}: hidden PAINT study {k}"
-                                    )
+                                    }"""), f"{lang}: gallery image {k} missing"
+                                for k in range(paint_imgs.count()):
+                                    pic = paint_imgs.nth(k)
+                                    pic.scroll_into_view_if_needed()
+                                    assert pic.evaluate("""async im => {
+                                        try { await im.decode(); } catch (_) { return false; }
+                                        return im.complete && im.naturalWidth === 800 &&
+                                          im.naturalHeight === 800 &&
+                                          getComputedStyle(im).objectFit === 'contain';
+                                    }"""), f"{lang}, {size}: paint render {k} missing or deformed"
                                 page.evaluate("window.scrollTo(0,0)")
                         if section == "catalogue" and flow_images_present:
                             packshots = page.locator(".concept-product-card .concept-product-image img[src*='/images/catalogue-projects/fenek-flow-']")
@@ -226,10 +227,14 @@ def check() -> None:
                         detail_overflow=page.evaluate("Math.ceil(document.documentElement.scrollWidth-innerWidth)")
                         assert detail_overflow<=4, f"Concept details overflow: {concept_path}, {width}px, {detail_overflow}px"
                         if slug=="fenek-paint-int-m":
-                            assert page.locator(".concept-detail-aside .paint-concept-art[data-paint-code='PAINT-INT-M']").count()==1, (
-                                f"{lang}, {size}: PAINT INT-M detailed concept does not match its code"
-                            )
-                            assert page.locator(".concept-detail-aside img[src*='maquette-19.webp']").count()==0, concept_path
+                            full = page.locator(".concept-detail-aside img")
+                            assert full.count()==1 and full.get_attribute("src")=="/images/catalogue-projects/fenek-paint-int-m.webp", concept_path
+                            full.scroll_into_view_if_needed()
+                            assert full.evaluate("""async im => {
+                                try { await im.decode(); } catch (_) { return false; }
+                                return im.complete && im.naturalWidth === 800 &&
+                                    im.naturalHeight === 800 && getComputedStyle(im).objectFit === 'contain';
+                            }"""), f"{lang}, {size}: INT-M studio image missing or distorted"
                         if slug=="fenek-bond-c1t" and bond_images_present:
                             full=page.locator(".concept-detail-image img")
                             full.scroll_into_view_if_needed()
