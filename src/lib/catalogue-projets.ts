@@ -33,6 +33,12 @@ export const projectsByRange=(range:Range)=>catalogueProjects.filter(p=>p.gamme=
  * Eleven FENEK-PAINT references have no individual image in this archive.
  */
 export const reviewedGalleryForReference:Readonly<Record<string,number>> = {
+  // Lot 29: studio bag renders replacing ten flat-label concept shots.
+  'fenek-bond-c1t':20, 'fenek-bond-c1te':21,
+  'fenek-bond-c2te':22, 'fenek-bond-c2te-s1':23,
+  'fenek-bond-c2ft':24, 'fenek-bond-cg1':25,
+  'fenek-bond-cg2wa':26, 'fenek-bond-ct-c25-f5':27,
+  'fenek-bond-gr-hr':31, 'fenek-bond-gp-csii':32,
   'fenek-bond-m10':35, 'fenek-bond-m5':34, 'fenek-bond-oc-csiii':33,
   'fenek-bond-r2':28, 'fenek-bond-r3':29, 'fenek-bond-r4':30,
   'fenek-proof-acr-rf':39, 'fenek-proof-cm-o1p':36, 'fenek-proof-cm-o2p':37,
@@ -65,6 +71,13 @@ export const conceptImage:Record<Range,string>={
  * No dynamic client JS, network request or external image host is involved.
  */
 export const conceptPackshot=(product:CatalogueProject,variant:'card'|'full'='card'):string=>{
+ // Prefer the code-specific realistic studio render already in the concept
+ // gallery for BOND. Preserve the original reviewed WebP files as archival
+ // sources, but do not keep showing the older flat-label composition.
+ if(product.gamme==='bond'){
+   const updatedConcept=reviewedGalleryImage(product);
+   if(updatedConcept) return updatedConcept;
+ }
  const flow = product.gamme==='flow' && product.conditionnements.some(c=>c.format==='Bidon 20 L');
  const bond = product.gamme==='bond' && product.conditionnements.some(c=>c.format==='Sac 25 kg');
  if(flow || bond){

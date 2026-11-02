@@ -136,9 +136,15 @@ def main() -> None:
             image = ROOT / asset.lstrip("/")
             assert image.is_file() and image.read_bytes()[:4] == b"RIFF", str(image)
         catalog = (ROOT / lang / "catalogue" / "index.html").read_text(encoding="utf-8")
-        # Lot 28: all 17 formerly generic BOND/PROOF references must show
-        # their actual product-labeled, reviewed gallery image in all 3 locales.
+        # Lots 28–29: all 27 BOND/PROOF references must show
+        # their actual label-matched, reviewed gallery image in all 3 locales.
         reviewed_visuals = {
+            # Lot 29: render the detailed BOND images from the real gallery.
+            "fenek-bond-c1t":20,"fenek-bond-c1te":21,
+            "fenek-bond-c2te":22,"fenek-bond-c2te-s1":23,
+            "fenek-bond-c2ft":24,"fenek-bond-cg1":25,
+            "fenek-bond-cg2wa":26,"fenek-bond-ct-c25-f5":27,
+            "fenek-bond-gr-hr":31,"fenek-bond-gp-csii":32,
             "fenek-bond-m10":35, "fenek-bond-m5":34,
             "fenek-bond-oc-csiii":33, "fenek-bond-r2":28,
             "fenek-bond-r3":29, "fenek-bond-r4":30,
