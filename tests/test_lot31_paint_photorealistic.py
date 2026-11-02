@@ -47,7 +47,7 @@ class PaintVisualTests(unittest.TestCase):
             self.assertEqual(payload[:4],b"RIFF",item["code"])
             self.assertEqual(payload[8:16],b"WEBPVP8 ",item["code"])
             self.assertEqual(struct.unpack_from("<I",payload,4)[0]+8,len(payload),item["code"])
-            self.assertEqual(payload[23:26],b"\\x9d\\x01\\x2a",item["code"])
+            self.assertEqual(payload[23:26],bytes((0x9D,0x01,0x2A)),item["code"])
             width=struct.unpack_from("<H",payload,26)[0]&0x3fff
             height=struct.unpack_from("<H",payload,28)[0]&0x3fff
             self.assertEqual([width,height],[800,800],item["code"])
