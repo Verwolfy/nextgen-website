@@ -9,32 +9,32 @@ const lang = Astro.params.lang as Lang;
 const copy = {
   fr: {
     title: 'Maquettes visuelles NextGen',
-    intro: '46 rendus visuels distincts issus des études graphiques du projet, en complément des maquettes 3D interactives.',
+    intro: '46 rendus visuels issus des études graphiques NextGen. Ce sont des concepts, pas des fiches produits.',
     notice: 'Galerie de créations visuelles NextGen. Les images présentent des designs graphiques, sans constituer des fiches techniques.',
     number: 'Maquette',
     type: 'Design de la gamme FENEK',
     open: 'Voir l’image en grand',
-    back: 'Consulter les modèles 3D interactifs',
+    back: 'Explorer le catalogue',
     resource: 'Retour aux ressources',
   },
   ar: {
     title: 'نماذج نكست جن المصوّرة',
-    intro: '46 صورة مختلفة لتصاميم أولية، إضافة إلى نماذج العبوات ثلاثية الأبعاد التفاعلية.',
+    intro: '46 صورة من التصاميم الأولية لشركة NextGen، وليست نشرات منتجات فنية.',
     notice: 'معرض التصاميم المرئية لشركة NextGen. الصور تصاميم فنية وليست نشرات تقنية.',
     number: 'نموذج',
     type: 'تصميم FENEK',
     open: 'عرض الصورة بحجم أكبر',
-    back: 'تصفّح النماذج التفاعلية ثلاثية الأبعاد',
+    back: 'استكشف الكتالوج',
     resource: 'العودة إلى الموارد',
   },
   en: {
     title: 'NextGen visual concepts',
-    intro: '46 distinct concept images from the design study, alongside the interactive 3D packaging previews.',
+    intro: '46 visual design concepts from the NextGen project, not technical product datasheets.',
     notice: 'NextGen visual design gallery. Images show graphic design concepts and are not technical datasheets.',
     number: 'Concept',
     type: 'FENEK range design',
     open: 'Open full image',
-    back: 'Explore the interactive 3D models',
+    back: 'Explore the catalogue',
     resource: 'Back to resources',
   },
 }[lang];
@@ -65,7 +65,7 @@ const items = Array.from({length: 46}, (_, i) => {
       ))}
     </div>
     <div class="actions">
-      <a class="btn" href={`/${lang}/emballages/`}>{copy.back}</a>
+      <a class="btn" href={`/${lang}/catalogue/`}>{copy.back}</a>
       <a class="btn btn-outline" href={`/${lang}/ressources/`}>{copy.resource}</a>
     </div>
   </div></section>
