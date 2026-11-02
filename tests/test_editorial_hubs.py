@@ -27,7 +27,7 @@ class TestEditorialHubs(unittest.TestCase):
     def test_hubs_use_components_without_forms_or_download_claims(self):
         page = (ROOT / "src/pages/[lang]/[section].astro").read_text(encoding="utf-8")
         for marker in ("<RangeOverview lang={lang} />", "<AboutStory lang={lang} />",
-                       "<ResourcesHub lang={lang} />", "kind=\"quote\"", "kind=\"distributor\""):
+                       "<ResourcesHub lang={lang} />", "<ContactChannels lang={lang} />"):
             self.assertIn(marker, page)
         for name in ("RangeOverview", "AboutStory", "ResourcesHub"):
             src = (ROOT / f"src/components/{name}.astro").read_text(encoding="utf-8")
