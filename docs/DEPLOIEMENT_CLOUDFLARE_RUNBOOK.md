@@ -4,7 +4,7 @@
 
 ## 1. Choix de lancement
 
-Lancement recommandé : **site Astro vitrine en mode démonstration**, sans formulaire fonctionnel, prix publics ni produit issu des 50 fiches techniques en brouillon. Les 50 produits restent dans Supabase mais la vue `site_products` ne publie rien. Les maquettes 3D sont illustratives.
+Lancement recommandé : **site Astro vitrine en mode démonstration**, sans formulaire fonctionnel, prix publics ni produit issu des 50 fiches techniques en brouillon. Les 50 produits restent dans Supabase mais la vue `site_products` ne publie rien. Les visuels de présentation ne constituent pas des fiches techniques.
 
 Le site déployé depuis GitHub devient **accessible publiquement par défaut** à son adresse `<nom-du-projet>.pages.dev`, même si le repo est privé et les pages marquées noindex. Pour une *préproduction privée*, une politique Cloudflare Access doit protéger **à la fois** le nom principal `<nom-du-projet>.pages.dev` et les URLs de preview `<hash>.<nom-du-projet>.pages.dev`. La politique automatique des previews ne protège pas le domaine principal.
 
@@ -43,7 +43,7 @@ La CI GitHub génère également une archive interne des fichiers `dist/` après
 
 ## 5. Après premier déploiement
 
-1. Visiter `https://<nom-du-projet>.pages.dev/fr/`, `/ar/`, `/en/`, `/fr/emballages/` sur mobile.
+1. Visiter `https://<nom-du-projet>.pages.dev/fr/`, `/ar/`, `/en/`, `/fr/maquettes/` sur mobile.
 2. Sur un navigateur sans session : vérifier si Cloudflare Access refuse ou redirige vers l'authentification sur domaines principal et previews. **Un 200 anonyme = site public.**
 3. Vérifier sur Cloudflare que le commit publié correspond au dernier commit **`main`** validé par CI.
 4. Vérifier `POST /api/lead` → 503, sans données personnelles réelles. Aucun secret ni formulaire actif.
