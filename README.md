@@ -5,7 +5,7 @@
 
 ## Dépôts et architecture
 
-- **Site** : dépôt privé `Verwolfy/nextgen-website`, branche `main`. Astro 6, 3 langues dont arabe RTL, pages statiques et visionneuse de conditionnements 3D indicatifs.
+- **Site** : dépôt privé `Verwolfy/nextgen-website`, branche `main`. Astro 6, 3 langues dont arabe RTL, pages statiques, catalogue éditorial et galerie visuelle 2D.
 - **ERP** : `Verwolfy/erp-mortier` — dépôt séparé. L'onglet CRM « Demandes NextGen » est présent mais reste désactivé par deux verrous serveur.
 - **Supabase PROD** : `wenydirqtmkywbxbxfal` ; les migrations site 001 et 003 sont **déjà appliquées**, ne pas les rejouer. Tables privées `site_produits`, `site_demandes`, vue `site_products`.
 
