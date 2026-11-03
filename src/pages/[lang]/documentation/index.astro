@@ -6,9 +6,9 @@ import benchmark from '../../../data/market-comparisons.json';
 export function getStaticPaths(){return languages.map(lang=>({params:{lang}}));}
 const lang=Astro.params.lang as Lang;
 const t={
-fr:{title:'Documentation produit FENEK',intro:'Fiches d’information par référence, avec description et comparaison de documents techniques publics.',warning:'Les valeurs de produits comparables ne constituent pas des caractéristiques certifiées FENEK. Les fiches de données de sécurité NextGen ne sont pas encore disponibles.',see:'Consulter la fiche d’information',count:'références'},
-ar:{title:'وثائق ومعلومات منتجات FENEK',intro:'بطاقات معلومات حسب المرجع تشمل الوصف ومقارنات موثقة مع منتجات أخرى.',warning:'قيم المنتجات المقارنة ليست خصائص معتمدة لمنتجات FENEK، وصحائف بيانات السلامة الخاصة بـ NextGen غير متاحة بعد.',see:'عرض بطاقة المعلومات',count:'مرجعًا'},
-en:{title:'FENEK product information',intro:'Reference-by-reference product notes with descriptions and sourced market comparisons.',warning:'Figures from comparable products are not certified FENEK characteristics. NextGen Safety Data Sheets are not yet available.',see:'Read product information',count:'references'},
+fr:{title:'Documentation produit FENEK',intro:'Fiches d’information par référence, avec description et comparaison de documents techniques publics.',warning:'Les valeurs de produits comparables ne constituent pas des caractéristiques certifiées FENEK. Les fiches de données de sécurité NextGen ne sont pas encore disponibles. Certaines comparaisons ne portent que sur l'usage.',see:'Consulter la fiche d’information',count:'références',compared:'références avec au moins un comparateur'},
+ar:{title:'وثائق ومعلومات منتجات FENEK',intro:'بطاقات معلومات حسب المرجع تشمل الوصف ومقارنات موثقة مع منتجات أخرى.',warning:'قيم المنتجات المقارنة ليست خصائص معتمدة لمنتجات FENEK، وصحائف بيانات السلامة الخاصة بـ NextGen غير متاحة بعد. بعض المقارنات جزئية من حيث الاستخدام.',see:'عرض بطاقة المعلومات',count:'مرجعًا',compared:'مرجعًا مع مصدر مقارنة واحد على الأقل'},
+en:{title:'FENEK product information',intro:'Reference-by-reference product notes with descriptions and sourced market comparisons.',warning:'Figures from comparable products are not certified FENEK characteristics. NextGen Safety Data Sheets are not yet available. Some comparisons are limited to intended use.',see:'Read product information',count:'references',compared:'references with at least one comparison source'},
 }[lang];
 ---
 <Layout lang={lang} title={t.title} description={t.intro}>
@@ -25,6 +25,6 @@ en:{title:'FENEK product information',intro:'Reference-by-reference product note
       </a>)}
       </div>
     </section>)}
-    <p class="market-sheet-small">{catalogueProjects.length} {t.count} · {benchmark.products.filter(p=>p.source_ids.length).length}/50 comparateurs disponibles</p>
+    <p class="market-sheet-small">{catalogueProjects.length} {t.count} · {benchmark.products.filter(p=>p.source_ids.length).length}/50 {t.compared}</p>
   </div></div>
 </Layout>
