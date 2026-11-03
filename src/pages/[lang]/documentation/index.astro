@@ -1,0 +1,30 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import {languages,rangeName,ranges,type Lang} from '../../../data/site';
+import {catalogueProjects,projectsByRange} from '../../../lib/catalogue-projets';
+import benchmark from '../../../data/market-comparisons.json';
+export function getStaticPaths(){return languages.map(lang=>({params:{lang}}));}
+const lang=Astro.params.lang as Lang;
+const t={
+fr:{title:'Documentation produit FENEK',intro:'Fiches d’information par référence, avec description et comparaison de documents techniques publics.',warning:'Les valeurs de produits comparables ne constituent pas des caractéristiques certifiées FENEK. Les fiches de données de sécurité NextGen ne sont pas encore disponibles.',see:'Consulter la fiche d’information',count:'références'},
+ar:{title:'وثائق ومعلومات منتجات FENEK',intro:'بطاقات معلومات حسب المرجع تشمل الوصف ومقارنات موثقة مع منتجات أخرى.',warning:'قيم المنتجات المقارنة ليست خصائص معتمدة لمنتجات FENEK، وصحائف بيانات السلامة الخاصة بـ NextGen غير متاحة بعد.',see:'عرض بطاقة المعلومات',count:'مرجعًا'},
+en:{title:'FENEK product information',intro:'Reference-by-reference product notes with descriptions and sourced market comparisons.',warning:'Figures from comparable products are not certified FENEK characteristics. NextGen Safety Data Sheets are not yet available.',see:'Read product information',count:'references'},
+}[lang];
+---
+<Layout lang={lang} title={t.title} description={t.intro}>
+  <div class="page-head"><div class="container"><span class="eyebrow">FENEK · DOCUMENTATION</span><h1>{t.title}</h1><p>{t.intro}</p></div></div>
+  <div class="section"><div class="container market-index">
+    <p class="market-sheet-warning" role="note">{t.warning}</p>
+    {ranges.map(range=><section aria-labelledby={`doc-${range}`}>
+      <h2 id={`doc-${range}`}><bdi dir="ltr">{rangeName[range]}</bdi></h2>
+      <div class="market-index-grid">
+      {projectsByRange(range).map(p=><a class="market-index-card" href={`/${lang}/documentation/${p.slug}/`}>
+        <strong><bdi dir="ltr">{p.nom}</bdi></strong>
+        <span>{p.contenu[lang].accroche}</span>
+        <span class="market-index-more">{t.see} ↗</span>
+      </a>)}
+      </div>
+    </section>)}
+    <p class="market-sheet-small">{catalogueProjects.length} {t.count} · {benchmark.products.filter(p=>p.source_ids.length).length}/50 comparateurs disponibles</p>
+  </div></div>
+</Layout>

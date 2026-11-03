@@ -22,6 +22,11 @@ const directEmailLabel = {
   ar: 'مراسلتنا بخصوص هذا المرجع',
   en: 'Email us about this reference',
 }[lang];
+const informationLabel = {
+  fr: 'Consulter les informations produit',
+  ar: 'عرض معلومات المنتج',
+  en: 'View product information',
+}[lang];
 ---
 <Layout lang={lang} title={product.nom} description={d.description}>
   <div class="page-head concept-detail-head" style={'--range-color:'+rangeColor[product.gamme]}>
@@ -42,6 +47,7 @@ const directEmailLabel = {
         <h2>{t.format}</h2>
         <div class="concept-formats detail-formats">{product.conditionnements.length?product.conditionnements.map(x=><span>{x.format}</span>):<span>{t.unknownFormat}</span>}</div>
         <p class="concept-detail-note">{t.methodDisclaimer}</p>
+        <div class="actions"><a class="btn btn-muted" href={`/${lang}/documentation/${product.slug}/`}>{informationLabel}</a></div>
       </div>
       <aside class="concept-detail-aside" aria-label={t.format}>
         <div class="concept-detail-image concept-packshot-container" style={'--range-color:'+rangeColor[product.gamme]}>

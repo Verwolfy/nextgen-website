@@ -1,0 +1,51 @@
+"""Market benchmark provenance checks."""
+import json
+import unittest
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[1]
+
+
+class MarketDocumentationTests(unittest.TestCase):
+    def test_50_references_39_covered_11_unmatched(self):
+        market=json.loads((ROOT/"src/data/market-comparisons.json").read_text(encoding="utf-8"))
+        catalogue=json.loads((ROOT/"src/data/catalogue-projets.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(catalogue),50)
+        self.assertEqual(len(market["products"]),50)
+        self.assertEqual(len(market["sources"]),33)
+        self.assertEqual({p["sku"] for p in market["products"]},{p["code"] for p in catalogue})
+        source_ids={s["id"] for s in market["sources"]}
+        self.assertTrue(all(set(p["source_ids"]).issubset(source_ids) for p in market["products"]))
+        self.assertEqual(sum(bool(p["source_ids"]) for p in market["products"]),39)
+        self.assertEqual(sum(not p["source_ids"] for p in market["products"]),11)
+        self.assertTrue(all(not p["nextgen_tested"] and not p["nextgen_sds"] for p in market["products"]))
+        self.assertNotIn("G19",source_ids)
+        self.assertEqual(sum(s["origin"]=="manufacturer_tds" for s in market["sources"]),15)
+        self.assertTrue(all(s["url"].startswith("https://") for s in market["sources"] if s["origin"]=="manufacturer_tds"))
+
+    def test_source_labels_and_guardrails_in_three_languages(self):
+        page=(ROOT/"src/pages/[lang]/documentation/[slug].astro").read_text(encoding="utf-8")
+        for marker in ("Les valeurs ci-dessous concernent uniquement les produits tiers",
+                       "They are not FENEK test results",
+                       "القيم المذكورة أدناه تخص المنتجات الأخرى",
+                       "Safety Data Sheet", "FDS NextGen", "s.observed", "s.name", "s.url",
+                       "product.contenu[lang].description", "data-print-market-sheet"):
+            self.assertIn(marker,page)
+        self.assertNotIn("mode_fr_preparatoire",page)
+        self.assertNotIn("applicationMixingRatio",page)
+        self.assertNotIn("<form",page)
+
+    def test_navigation_no_false_product_publication(self):
+        index=(ROOT/"src/pages/[lang]/documentation/index.astro").read_text(encoding="utf-8")
+        resource=(ROOT/"src/components/ResourcesHub.astro").read_text(encoding="utf-8")
+        detail=(ROOT/"src/pages/[lang]/catalogue/[slug].astro").read_text(encoding="utf-8")
+        self.assertIn("projectsByRange(range)",index)
+        self.assertIn("documentation/",resource)
+        self.assertIn("documentation/",detail)
+        self.assertEqual((ROOT/"public/data/products.json").read_text().strip(),"[]")
+        self.assertIn("noindex,nofollow",(ROOT/"src/layouts/Layout.astro").read_text())
+        self.assertIn("Disallow: /",(ROOT/"public/robots.txt").read_text())
+
+
+if __name__=="__main__":
+    unittest.main()

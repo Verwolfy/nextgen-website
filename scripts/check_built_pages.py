@@ -132,6 +132,11 @@ def main() -> None:
             assert "lead-preview" not in html and "lead-panel" not in html, fn
             assert not parsed.lead_controls, "Unexpected lead input: " + str(fn)
         # Gallery pages are retired; keep their WebP files as catalogue/hero assets.
+        # Source-labelled documentation: every reference is viewable in three languages.
+        info_index = ROOT / lang / "documentation" / "index.html"
+        assert info_index.is_file(), str(info_index)
+        refs += check_page(info_index, lang)
+        checked += 1
         assert not (ROOT / lang / "maquettes").exists(), lang
         for i in range(1, 47):
             image = ROOT / "images" / "maquettes" / f"maquette-{i:02d}.webp"
@@ -170,6 +175,17 @@ def main() -> None:
         source = json.loads((ROOT.parent / "src" / "data" /
                              "catalogue-projets.json").read_text(encoding="utf-8"))
         assert len(source) == 50
+        for entry in source:
+            info = ROOT / lang / "documentation" / entry["slug"] / "index.html"
+            assert info.is_file(), f"Missing information page: {info}"
+            markup = info.read_text(encoding="utf-8")
+            assert 'class="market-sheet-warning"' in markup, info
+            assert "SikaCeram" in markup if entry["slug"] == "fenek-bond-c1t" else True
+            assert "noindex,nofollow" in markup, info
+            for forbidden in ("FENEK certifié", "certified FENEK", "validated NextGen SDS"):
+                assert forbidden not in markup, (info, forbidden)
+            refs += check_page(info, lang)
+            checked += 1
         for entry in source:
             path = ROOT / lang / "catalogue" / entry["slug"] / "index.html"
             markup = path.read_text(encoding="utf-8")
