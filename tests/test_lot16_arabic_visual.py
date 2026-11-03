@@ -28,7 +28,7 @@ class ArabicVisualChecks(unittest.TestCase):
     def test_removed_gallery_and_preserved_arabic_content(self):
         self.assertFalse((ROOT / 'src/pages/[lang]/maquettes.astro').exists())
         editorial = (ROOT / 'src/data/editorial.ts').read_text(encoding='utf-8')
-        self.assertIn('النشرات الفنية', editorial)
+        self.assertIn('تصفح بطاقات منتجات FENEK', editorial)
 
     def test_mixed_brand_names_are_isolated(self):
         for path in ('src/pages/[lang]/index.astro',
