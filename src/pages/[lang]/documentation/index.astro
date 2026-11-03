@@ -1,30 +1,67 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-import {languages,rangeName,ranges,type Lang} from '../../../data/site';
-import {catalogueProjects,projectsByRange} from '../../../lib/catalogue-projets';
-import benchmark from '../../../data/market-comparisons.json';
-export function getStaticPaths(){return languages.map(lang=>({params:{lang}}));}
-const lang=Astro.params.lang as Lang;
-const t={
-fr:{title:'Documentation produit FENEK',intro:'Fiches d’information par référence, avec description et comparaison de documents techniques publics.',warning:'Les valeurs de produits comparables ne constituent pas des caractéristiques certifiées FENEK. Les fiches de données de sécurité NextGen ne sont pas encore disponibles. Certaines comparaisons ne portent que sur l’usage.',see:'Consulter la fiche d’information',count:'références',compared:'références avec au moins un comparateur'},
-ar:{title:'وثائق ومعلومات منتجات FENEK',intro:'بطاقات معلومات حسب المرجع تشمل الوصف ومقارنات موثقة مع منتجات أخرى.',warning:'قيم المنتجات المقارنة ليست خصائص معتمدة لمنتجات FENEK، وصحائف بيانات السلامة الخاصة بـ NextGen غير متاحة بعد. بعض المقارنات جزئية من حيث الاستخدام.',see:'عرض بطاقة المعلومات',count:'مرجعًا',compared:'مرجعًا مع مصدر مقارنة واحد على الأقل'},
-en:{title:'FENEK product information',intro:'Reference-by-reference product notes with descriptions and sourced market comparisons.',warning:'Figures from comparable products are not certified FENEK characteristics. NextGen Safety Data Sheets are not yet available. Some comparisons are limited to intended use.',see:'Read product information',count:'references',compared:'references with at least one comparison source'},
+import {languages, ranges, rangeName, type Lang} from '../../../data/site';
+import {catalogueProjects, projectsByRange} from '../../../lib/catalogue-projets';
+export function getStaticPaths() {
+  return languages.map(lang => ({params: {lang}}));
+}
+const lang = Astro.params.lang as Lang;
+const t = {
+  fr: {
+    title: 'Fiches produits FENEK',
+    intro: 'Retrouvez les 50 références FENEK, classées par gamme, avec leurs descriptions, applications et formats de présentation.',
+    see: 'Voir la fiche produit',
+    count: 'références',
+    question: 'Besoin d’informations techniques complémentaires ?',
+    contact: 'Contacter notre équipe',
+  },
+  ar: {
+    title: 'بطاقات منتجات FENEK',
+    intro: 'تعرّف على مراجع FENEK الخمسين مرتبة حسب المجموعة، مع الأوصاف ومجالات الاستخدام وأحجام العبوات المقترحة.',
+    see: 'عرض بطاقة المنتج',
+    count: 'مرجعًا',
+    question: 'هل تحتاج إلى معلومات فنية إضافية؟',
+    contact: 'تواصل مع فريقنا',
+  },
+  en: {
+    title: 'FENEK product sheets',
+    intro: 'Explore the 50 FENEK references by range, with product descriptions, application areas and proposed packaging formats.',
+    see: 'View product sheet',
+    count: 'references',
+    question: 'Need additional technical information?',
+    contact: 'Contact our team',
+  },
 }[lang];
 ---
 <Layout lang={lang} title={t.title} description={t.intro}>
-  <div class="page-head"><div class="container"><span class="eyebrow">FENEK · DOCUMENTATION</span><h1>{t.title}</h1><p>{t.intro}</p></div></div>
-  <div class="section"><div class="container market-index">
-    <p class="market-sheet-warning" role="note">{t.warning}</p>
-    {ranges.map(range=><section aria-labelledby={`doc-${range}`}>
-      <h2 id={`doc-${range}`}><bdi dir="ltr">{rangeName[range]}</bdi></h2>
-      <div class="market-index-grid">
-      {projectsByRange(range).map(p=><a class="market-index-card" href={`/${lang}/documentation/${p.slug}/`}>
-        <strong><bdi dir="ltr">{p.nom}</bdi></strong>
-        <span>{p.contenu[lang].accroche}</span>
-        <span class="market-index-more">{t.see} ↗</span>
-      </a>)}
+  <div class="page-head">
+    <div class="container">
+      <span class="eyebrow">FENEK · DOCUMENTATION</span>
+      <h1>{t.title}</h1>
+      <p>{t.intro}</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container market-index fenek-doc-index">
+      <p class="fenek-index-count"><strong>{catalogueProjects.length}</strong> {t.count}</p>
+      {ranges.map(range => (
+        <section aria-labelledby={`doc-${range}`}>
+          <h2 id={`doc-${range}`}><bdi dir="ltr">{rangeName[range]}</bdi></h2>
+          <div class="market-index-grid">
+            {projectsByRange(range).map(p => (
+              <a class="market-index-card" href={`/${lang}/documentation/${p.slug}/`}>
+                <strong><bdi dir="ltr">{p.nom}</bdi></strong>
+                <span>{p.contenu[lang].accroche}</span>
+                <span class="market-index-more">{t.see} ↗</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+      <div class="fenek-index-contact">
+        <h2>{t.question}</h2>
+        <a class="btn" href={`/${lang}/contact/`}>{t.contact}</a>
       </div>
-    </section>)}
-    <p class="market-sheet-small">{catalogueProjects.length} {t.count} · {benchmark.products.filter(p=>p.source_ids.length).length}/50 {t.compared}</p>
-  </div></div>
+    </div>
+  </div>
 </Layout>

@@ -56,9 +56,9 @@ class Lot40HomepageTests(unittest.TestCase):
                      "معلومات حول النشرات الفنية",
                      "Information about technical datasheets"):
             self.assertIn(text, site)
-        for text in ("demande de fiche technique ou de données de sécurité",
-                     "النشرات الفنية وبيانات السلامة",
-                     "technical documentation and safety data sheet"):
+        for text in ("Retrouvez les fiches produits FENEK",
+                     "تصفح بطاقات منتجات FENEK",
+                     "Explore FENEK product sheets"):
             self.assertIn(text, editorial)
         self.assertNotIn("Explore our product presentations and packaging galleries.", site)
 

@@ -349,3 +349,48 @@ h1,h2,h3,.page-head p{overflow-wrap:anywhere;min-width:0}
   .market-reference-list{grid-template-columns:1fr 1fr}
   a{overflow-wrap:anywhere}
 }
+
+
+/* Lot 46 — self-contained FENEK product sheets: compact, accessible and print-ready. */
+.fenek-sheet-head{border-top:5px solid var(--range-color)}
+.fenek-sheet-paper{max-width:1080px;padding:clamp(22px,3vw,44px)}
+.fenek-sheet-intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(240px,.9fr);gap:clamp(20px,4vw,44px);align-items:center;padding-bottom:28px;border-bottom:1px solid #dce7ea}
+.fenek-sheet-overline{text-transform:uppercase;letter-spacing:.14em;font-size:.73rem;font-weight:800;color:#09815a}
+.fenek-sheet-intro h2{font-size:clamp(1.65rem,3vw,2.45rem);margin:14px 0 20px}
+.fenek-sheet-intro p{font-size:1.02rem;line-height:1.75;color:#455f70}
+.fenek-reference-label{display:inline-block;margin-top:12px;padding:7px 13px;background:#e7f3ee;border-radius:6px;color:#096943;font-weight:800;letter-spacing:.025em}
+.fenek-sheet-visual{margin:0;min-width:0;border:1px solid #d9e5e9;border-radius:14px;overflow:hidden;background:#f3f6f7}
+.fenek-sheet-visual img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+.fenek-sheet-visual figcaption{padding:10px 15px;border-top:1px solid #dce5e8;color:#5c6c78;font-size:.75rem;line-height:1.5}
+.fenek-sheet-content{max-width:860px;margin:0 auto}
+.fenek-sheet-content>section{padding-bottom:18px;border-bottom:1px solid #e1e9ec}
+.fenek-sheet-content>section:last-child{border-bottom:0;padding-bottom:0}
+.fenek-sheet-content h2{font-size:1.42rem}
+.fenek-spec-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:18px 0}
+.fenek-spec-grid>div{min-width:0;background:#f5f8f9;border:1px solid #e0e9ec;border-radius:9px;padding:15px 17px}
+.fenek-spec-grid .fenek-spec-wide{grid-column:1/-1}
+.fenek-spec-grid dt{color:#617481;font-size:.8rem;font-weight:730;margin-bottom:7px}
+.fenek-spec-grid dd{margin:0;color:#142d47;font-size:1rem;font-weight:730;overflow-wrap:anywhere}
+.fenek-sheet-tags{display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:0;margin:16px 0;list-style:none}
+.fenek-sheet-tags li,.fenek-sheet-tags span{padding:9px 15px;border:1px solid #c7dcd4;border-radius:6px;background:#eaf4ee;color:#0d694b;font-size:.92rem;font-weight:650}
+.fenek-sheet-small{font-size:.83rem;color:#667987;margin-top:15px}
+.fenek-tech-contact{background:#f1f7f5;border:1px solid #d2e7de;border-radius:12px;padding:22px 25px;margin-top:27px}
+.fenek-tech-contact p{max-width:75ch;color:#375766}
+.fenek-sheet .market-sheet-footer{border-top:0;padding-top:0}
+.fenek-index-count{font-size:.9rem;color:#607583}
+.fenek-index-count strong{font-size:1.4rem;color:#0b7052}
+.fenek-index-contact{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:42px;padding:25px 30px;border-radius:12px;background:#e7f1ee}
+.fenek-index-contact h2{margin:0;font-size:clamp(1.2rem,2vw,1.5rem)}
+.fenek-doc-index .market-index-card:focus-visible{outline:3px solid #008257;outline-offset:3px}
+@media(max-width:760px){.fenek-sheet-intro{grid-template-columns:1fr}.fenek-sheet-visual{width:min(100%,420px);margin:auto}.fenek-sheet-paper{padding:18px}.fenek-tech-contact{padding:17px}}
+@media(max-width:490px){.fenek-spec-grid{grid-template-columns:1fr}.fenek-spec-grid .fenek-spec-wide{grid-column:1}.fenek-index-contact{padding:20px}}
+@media print{
+  .fenek-sheet-head .concept-back,.fenek-tech-contact .market-sheet-footer,.fenek-index-contact{display:none!important}
+  .fenek-sheet{padding:0!important}
+  .fenek-sheet-paper{max-width:none;padding:0;border:0;box-shadow:none}
+  .fenek-sheet-intro{grid-template-columns:1.4fr .6fr;gap:12mm;break-inside:avoid}
+  .fenek-sheet-visual{width:60mm}
+  .fenek-sheet-visual figcaption{font-size:8pt}
+  .fenek-sheet-content>section{break-inside:avoid;margin-block:12px}
+  .fenek-tech-contact{background:#f5f5f5!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+}
