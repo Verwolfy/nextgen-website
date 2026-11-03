@@ -10,14 +10,25 @@ const contactAction = {
   ar: 'طلب الوثائق الفنية',
   en: 'Request documentation',
 }[lang];
+const informationAction = {
+  fr: 'Consulter les fiches d’information',
+  ar: 'عرض بطاقات معلومات المنتجات',
+  en: 'Browse product information sheets',
+}[lang];
+const referenceLabel = {
+  fr: 'Informations en ligne',
+  ar: 'معلومات متاحة',
+  en: 'Information online',
+}[lang];
 ---
 <section aria-labelledby="resources-heading">
   <div class="section-head"><h2 id="resources-heading">{edit.resourceHeading}</h2><p>{edit.resourceLead}</p></div>
   <div class="resources-grid resources-grid-docs">
     <article class="resource-card">
       <span class="resource-index" aria-hidden="true">01</span>
-      <span class="resource-state">{edit.resourcePending}</span>
+      <span class="resource-state">{referenceLabel}</span>
       <h3>{edit.resourceTechTitle}</h3><p>{edit.resourceTechInfo}</p>
+      <a class="resource-information-link" href={`/${lang}/documentation/`}>{informationAction}</a>
     </article>
     <article class="resource-card">
       <span class="resource-index" aria-hidden="true">02</span>
