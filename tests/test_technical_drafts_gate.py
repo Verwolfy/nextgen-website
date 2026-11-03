@@ -1,0 +1,39 @@
+"""Protect 150 technical-sheet drafts from accidental publication or false compliance."""
+import json
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+DOCS = ROOT / "docs" / "technical-datasheets"
+
+
+class DraftTechnicalSheetsGate(unittest.TestCase):
+    def test_three_languages_complete_against_the_same_50_skus(self):
+        catalogue = json.loads((ROOT / "src/data/catalogue-projets.json").read_text(encoding="utf-8"))
+        expected = {p["slug"] for p in catalogue}
+        self.assertEqual(len(expected), 50)
+        for lang in ("fr", "ar", "en"):
+            files = list((DOCS / "drafts" / lang).glob("*.md"))
+            self.assertEqual({f.stem for f in files}, expected, lang)
+            for path in files:
+                content = path.read_text(encoding="utf-8")
+                self.assertIn("**RELEASE:** BLOCKED / INTERNAL DRAFT ONLY", content, str(path))
+                self.assertIn("presentat", content, str(path))
+                self.assertIn("certifie=false", content, str(path))
+                self.assertIn("commercialise=false", content, str(path))
+
+    def test_no_technical_release_or_unapproved_sources_in_public_app(self):
+        for p in (ROOT / "src").rglob("*.astro"):
+            content = p.read_text(encoding="utf-8")
+            self.assertNotIn("docs/technical-datasheets/", content, str(p))
+        for p in (ROOT / "public").rglob("*.pdf"):
+            self.assertNotIn("technical-datasheets", str(p))
+        master = json.loads((DOCS / "master-status.json").read_text(encoding="utf-8"))
+        self.assertEqual(master["release"], "BLOCKED")
+        self.assertEqual(len(master["products"]), 50)
+        self.assertTrue(all(not item["certified"] and item["release"] == "BLOCKED"
+                            for item in master["products"]))
+
+
+if __name__ == "__main__":
+    unittest.main()
