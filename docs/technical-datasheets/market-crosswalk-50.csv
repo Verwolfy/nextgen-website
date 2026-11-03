@@ -1,0 +1,51 @@
+code;famille;groupe_analogue;fabricants_tiers_non_equivalents;validation_specifique_requise;formule_nexgen_validee;essais_nextgen_signe;FDS_nextgen;conditionnements_nextgen;publication
+BOND-C1T;bond;mortier-colle;GRANICOL /  Keraflex /  SikaCeram-205 /  CM11 /  webercol flex;Test adhérence, glissement, temps ouvert selon classe revendiquée;NON;NON;NON;NON;BLOQUE
+BOND-C1TE;bond;mortier-colle;GRANICOL /  Keraflex /  SikaCeram-205 /  CM11 /  webercol flex;Test adhérence, glissement, temps ouvert selon classe revendiquée;NON;NON;NON;NON;BLOQUE
+BOND-C2FT;bond;mortier-colle;GRANICOL /  Keraflex /  SikaCeram-205 /  CM11 /  webercol flex;Test adhérence, glissement, temps ouvert selon classe revendiquée;NON;NON;NON;NON;BLOQUE
+BOND-C2TE;bond;mortier-colle;GRANICOL /  Keraflex /  SikaCeram-205 /  CM11 /  webercol flex;Test adhérence, glissement, temps ouvert selon classe revendiquée;NON;NON;NON;NON;BLOQUE
+BOND-C2TE-S1;bond;mortier-colle;GRANICOL /  Keraflex /  SikaCeram-205 /  CM11 /  webercol flex;Test adhérence, glissement, temps ouvert selon classe revendiquée;NON;NON;NON;NON;BLOQUE
+BOND-CG1;bond;joint cimentaire;Aucun benchmark de joint suffisamment précis;Essais EN 13888 éventuels à qualifier;NON;NON;NON;NON;BLOQUE
+BOND-CG2WA;bond;joint cimentaire;Aucun benchmark de joint suffisamment précis;Essais EN 13888 éventuels à qualifier;NON;NON;NON;NON;BLOQUE
+BOND-CT-C25-F5;bond;autres mortiers;Non établi précisément;Référentiel métier spécifique à constituer;NON;NON;NON;NON;BLOQUE
+BOND-GP-CSII;bond;autres mortiers;Non établi précisément;Référentiel métier spécifique à constituer;NON;NON;NON;NON;BLOQUE
+BOND-GR-HR;bond;autres mortiers;Non établi précisément;Référentiel métier spécifique à constituer;NON;NON;NON;NON;BLOQUE
+BOND-M10;bond;autres mortiers;Non établi précisément;Référentiel métier spécifique à constituer;NON;NON;NON;NON;BLOQUE
+BOND-M5;bond;autres mortiers;Non établi précisément;Référentiel métier spécifique à constituer;NON;NON;NON;NON;BLOQUE
+BOND-OC-CSIII;bond;autres mortiers;Non établi précisément;Référentiel métier spécifique à constituer;NON;NON;NON;NON;BLOQUE
+BOND-R2;bond;réparation;GRANIPAN F10 /  GRANIPAN R03;Essais résistances, adhérence et consommation selon emploi réel;NON;NON;NON;NON;BLOQUE
+BOND-R3;bond;réparation;GRANIPAN F10 /  GRANIPAN R03;Essais résistances, adhérence et consommation selon emploi réel;NON;NON;NON;NON;BLOQUE
+BOND-R4;bond;réparation;GRANIPAN F10 /  GRANIPAN R03;Essais résistances, adhérence et consommation selon emploi réel;NON;NON;NON;NON;BLOQUE
+FLOW-AC;flow;adjuvant spécialisé;Non établi précisément;Essai individuel selon fonction : prise, air, rhéologie, etc.;NON;NON;NON;NON;BLOQUE
+FLOW-AE;flow;adjuvant spécialisé;Non établi précisément;Essai individuel selon fonction : prise, air, rhéologie, etc.;NON;NON;NON;NON;BLOQUE
+FLOW-CI;flow;adjuvant spécialisé;Non établi précisément;Essai individuel selon fonction : prise, air, rhéologie, etc.;NON;NON;NON;NON;BLOQUE
+FLOW-CURE;flow;adjuvant spécialisé;Non établi précisément;Essai individuel selon fonction : prise, air, rhéologie, etc.;NON;NON;NON;NON;BLOQUE
+FLOW-LAT;flow;adjuvant spécialisé;Non établi précisément;Essai individuel selon fonction : prise, air, rhéologie, etc.;NON;NON;NON;NON;BLOQUE
+FLOW-RT;flow;adjuvant spécialisé;Non établi précisément;Essai individuel selon fonction : prise, air, rhéologie, etc.;NON;NON;NON;NON;BLOQUE
+FLOW-SP-HR;flow;superplastifiant;MEDAPLAST SP40 /  MEDAFLOW113 /  Sika ViscoCrete-20 HE /  Fosroc Auramix 400;Chimie exacte et essais béton avec ciments locaux;NON;NON;NON;NON;BLOQUE
+FLOW-SP-PF;flow;superplastifiant;MEDAPLAST SP40 /  MEDAFLOW113 /  Sika ViscoCrete-20 HE /  Fosroc Auramix 400;Chimie exacte et essais béton avec ciments locaux;NON;NON;NON;NON;BLOQUE
+FLOW-SP-RT;flow;superplastifiant;MEDAPLAST SP40 /  MEDAFLOW113 /  Sika ViscoCrete-20 HE /  Fosroc Auramix 400;Chimie exacte et essais béton avec ciments locaux;NON;NON;NON;NON;BLOQUE
+FLOW-VMA;flow;adjuvant spécialisé;Non établi précisément;Essai individuel selon fonction : prise, air, rhéologie, etc.;NON;NON;NON;NON;BLOQUE
+FLOW-WP;flow;hydrofuge de masse;MEDAFUGE L;Dose/compatibilité/étanchéité à établir;NON;NON;NON;NON;BLOQUE
+FLOW-WR-N;flow;adjuvant spécialisé;Non établi précisément;Essai individuel selon fonction : prise, air, rhéologie, etc.;NON;NON;NON;NON;BLOQUE
+PAINT-ENT-L;paint;peinture/finition;Analogie famille uniquement avec Elastocolor /  aucune équivalence;Mise au point et tests spécifiques selon peinture;NON;NON;NON;NON;BLOQUE
+PAINT-FAC-EL;paint;peinture façade;MEDACRYL E (échantillon) /  Mapei Elastocolor Paint;Liant, rendement, séchage, résistance et vieillissement;NON;NON;NON;NON;BLOQUE
+PAINT-FAC-M;paint;peinture façade;MEDACRYL E (échantillon) /  Mapei Elastocolor Paint;Liant, rendement, séchage, résistance et vieillissement;NON;NON;NON;NON;BLOQUE
+PAINT-FAC-SX;paint;peinture façade;MEDACRYL E (échantillon) /  Mapei Elastocolor Paint;Liant, rendement, séchage, résistance et vieillissement;NON;NON;NON;NON;BLOQUE
+PAINT-INT-M;paint;peinture/finition;Analogie famille uniquement avec Elastocolor /  aucune équivalence;Mise au point et tests spécifiques selon peinture;NON;NON;NON;NON;BLOQUE
+PAINT-INT-S;paint;peinture/finition;Analogie famille uniquement avec Elastocolor /  aucune équivalence;Mise au point et tests spécifiques selon peinture;NON;NON;NON;NON;BLOQUE
+PAINT-INT-WA;paint;peinture/finition;Analogie famille uniquement avec Elastocolor /  aucune équivalence;Mise au point et tests spécifiques selon peinture;NON;NON;NON;NON;BLOQUE
+PAINT-PRIM-A;paint;peinture/finition;Analogie famille uniquement avec Elastocolor /  aucune équivalence;Mise au point et tests spécifiques selon peinture;NON;NON;NON;NON;BLOQUE
+PAINT-PRIM-FX;paint;peinture/finition;Analogie famille uniquement avec Elastocolor /  aucune équivalence;Mise au point et tests spécifiques selon peinture;NON;NON;NON;NON;BLOQUE
+PAINT-SOL-A;paint;peinture/finition;Analogie famille uniquement avec Elastocolor /  aucune équivalence;Mise au point et tests spécifiques selon peinture;NON;NON;NON;NON;BLOQUE
+PAINT-TXT-F;paint;peinture/finition;Analogie famille uniquement avec Elastocolor /  aucune équivalence;Mise au point et tests spécifiques selon peinture;NON;NON;NON;NON;BLOQUE
+PROOF-ACR-RF;proof;étanchéité/mastic/injection;Références de famille uniquement;Identifier technologie spécifique et essai dédié;NON;NON;NON;NON;BLOQUE
+PROOF-CM-O1P;proof;étanchéité cimentaire;GRANIPROT MORTIER P /  Mapelastic Smart /  SikaTop Seal-107;Type mono/bi composants, mélange et essais étanchéité;NON;NON;NON;NON;BLOQUE
+PROOF-CM-O2P;proof;étanchéité cimentaire;GRANIPROT MORTIER P /  Mapelastic Smart /  SikaTop Seal-107;Type mono/bi composants, mélange et essais étanchéité;NON;NON;NON;NON;BLOQUE
+PROOF-EP-ANC;proof;résine époxy;MEDAPOXY PRIMER /  MEDAPOXY SOL;Ratio A/B, DPU, adhérence, chimie et SDS;NON;NON;NON;NON;BLOQUE
+PROOF-EP-INJ;proof;résine époxy;MEDAPOXY PRIMER /  MEDAPOXY SOL;Ratio A/B, DPU, adhérence, chimie et SDS;NON;NON;NON;NON;BLOQUE
+PROOF-EP-PRIM;proof;résine époxy;MEDAPOXY PRIMER /  MEDAPOXY SOL;Ratio A/B, DPU, adhérence, chimie et SDS;NON;NON;NON;NON;BLOQUE
+PROOF-EP-SB;proof;résine époxy;MEDAPOXY PRIMER /  MEDAPOXY SOL;Ratio A/B, DPU, adhérence, chimie et SDS;NON;NON;NON;NON;BLOQUE
+PROOF-EP-SR;proof;résine époxy;MEDAPOXY PRIMER /  MEDAPOXY SOL;Ratio A/B, DPU, adhérence, chimie et SDS;NON;NON;NON;NON;BLOQUE
+PROOF-PU-1K;proof;étanchéité/mastic/injection;Références de famille uniquement;Identifier technologie spécifique et essai dédié;NON;NON;NON;NON;BLOQUE
+PROOF-PU-INJ;proof;étanchéité/mastic/injection;Références de famille uniquement;Identifier technologie spécifique et essai dédié;NON;NON;NON;NON;BLOQUE
+PROOF-PU-SEAL;proof;étanchéité/mastic/injection;Références de famille uniquement;Identifier technologie spécifique et essai dédié;NON;NON;NON;NON;BLOQUE
