@@ -1,0 +1,182 @@
+{
+  "G01": {
+    "en": {
+      "observed": "4–5 L of water per 25 kg bag; approximately 2 kg/m²/mm",
+      "limit": "Arabic/English versions and bag sizes are sometimes inconsistent"
+    },
+    "ar": {
+      "observed": "4–5 L من الماء لكل كيس 25 kg؛ نحو 2 kg/m²/mm",
+      "limit": "توجد أحيانًا اختلافات بين النسختين العربية والإنجليزية وأحجام الأكياس"
+    }
+  },
+  "G02": {
+    "en": {
+      "observed": "4.5–5 L per bag; approximately 40 kg/m² for a 2 cm layer; 40 kg bag",
+      "limit": "Strength table and units require review"
+    },
+    "ar": {
+      "observed": "4,5–5 L لكل كيس؛ نحو 40 kg/m² لسماكة 2 cm؛ كيس 40 kg",
+      "limit": "يجب مراجعة جدول المقاومة ووحدات القياس"
+    }
+  },
+  "G03": {
+    "en": {
+      "observed": "Approximately 1.6 L per 5 kg; working life about 1 hour at 20 °C",
+      "limit": "Does not establish CG1 or CG2WA classification for NextGen"
+    },
+    "ar": {
+      "observed": "نحو 1,6 L لكل 5 kg؛ مدة استخدام تقارب 1 h عند 20 °C",
+      "limit": "لا يثبت التصنيف CG1 أو CG2WA لمنتجات NextGen"
+    }
+  },
+  "G04": {
+    "en": {
+      "observed": "Approximately 5–6 L per 40 kg; about 22 kg/m²/cm",
+      "limit": "Applicable to screed products only"
+    },
+    "ar": {
+      "observed": "نحو 5–6 L لكل 40 kg؛ وحوالي 22 kg/m²/cm",
+      "limit": "المقارنة خاصة بمواد المِدماك الأرضي (الشاب) فقط"
+    }
+  },
+  "G05": {
+    "en": {
+      "observed": "Approximately 6 L per 40 kg; 25/40 kg bags",
+      "limit": "Applicable to grouting/anchoring mortars only"
+    },
+    "ar": {
+      "observed": "نحو 6 L لكل 40 kg؛ أكياس 25/40 kg",
+      "limit": "المقارنة خاصة بملاط التثبيت والحقن الإسمنتي فقط"
+    }
+  },
+  "G06": {
+    "en": {
+      "observed": "Approximately 0.6–2.5% of cement mass; density 1.20 ±0.01; 12/260/1200 kg packaging (FR version)",
+      "limit": "Packaging differs between French, English and Arabic documents"
+    },
+    "ar": {
+      "observed": "نحو 0,6–2,5% من كتلة الإسمنت؛ الكثافة 1,20 ±0,01؛ عبوات 12/260/1200 kg في النسخة الفرنسية",
+      "limit": "تختلف العبوات بين الوثائق الفرنسية والإنجليزية والعربية"
+    }
+  },
+  "G07": {
+    "en": {
+      "observed": "Approximately 1–1.5% of cement mass; density 1.10 ±0.01; pH 5.6",
+      "limit": "Integral waterproofing admixture only"
+    },
+    "ar": {
+      "observed": "نحو 1–1,5% من كتلة الإسمنت؛ الكثافة 1,10 ±0,01؛ pH 5,6",
+      "limit": "مادة مضافة للعزل المائي داخل الخلطة فقط"
+    }
+  },
+  "G08": {
+    "en": {
+      "observed": "Approximately 0.4–0.75% of cement mass",
+      "limit": "Setting/hardening accelerator only"
+    },
+    "ar": {
+      "observed": "نحو 0,4–0,75% من كتلة الإسمنت",
+      "limit": "المقارنة تخص مسرّع الشك أو التصلب فقط"
+    }
+  },
+  "G09": {
+    "en": {
+      "observed": "Approximately 0.2–0.5% of cement mass",
+      "limit": "Set retarder only"
+    },
+    "ar": {
+      "observed": "نحو 0,2–0,5% من كتلة الإسمنت",
+      "limit": "المقارنة تخص مادة تأخير الشك فقط"
+    }
+  },
+  "G10": {
+    "en": {
+      "observed": "Approximately 0.01–0.1% of cement mass",
+      "limit": "Highly sensitive dosage; air-content measurements required"
+    },
+    "ar": {
+      "observed": "نحو 0,01–0,1% من كتلة الإسمنت",
+      "limit": "الجرعة شديدة الحساسية وتتطلب قياس محتوى الهواء"
+    }
+  },
+  "G11": {
+    "en": {
+      "observed": "Approximately 150–200 g/m²",
+      "limit": "Concrete curing compound only"
+    },
+    "ar": {
+      "observed": "نحو 150–200 g/m²",
+      "limit": "المقارنة تخص مادة معالجة الخرسانة بعد الصب فقط"
+    }
+  },
+  "G12": {
+    "en": {
+      "observed": "Preparation of a latex/water solution at a 1:1 ratio",
+      "limit": "Not a complete chemical formulation"
+    },
+    "ar": {
+      "observed": "تحضير محلول لاتكس/ماء بنسبة 1:1",
+      "limit": "ليست هذه تركيبة كيميائية كاملة"
+    }
+  },
+  "G13": {
+    "en": {
+      "observed": "Approximately 0.3–2% of cement mass, depending on use",
+      "limit": "Anti-washout/cohesion admixture"
+    },
+    "ar": {
+      "observed": "نحو 0,3–2% من كتلة الإسمنت حسب الاستخدام",
+      "limit": "مادة مضافة لتعزيز التماسك والحد من الغسل بالماء"
+    }
+  },
+  "G14": {
+    "en": {
+      "observed": "Component A: 1.05 kg + component B: 0.300 kg; approximately 350–450 g/m²",
+      "limit": "Arabic source contains a unit error; ratio specific to this product"
+    },
+    "ar": {
+      "observed": "المكوّن A بكمية 1,05 kg والمكوّن B بكمية 0,300 kg؛ نحو 350–450 g/m²",
+      "limit": "تحتوي النسخة العربية المرجعية على خطأ في الوحدة؛ النسبة خاصة بهذا المنتج"
+    }
+  },
+  "G15": {
+    "en": {
+      "observed": "Epoxy components A/B at a 2:1 ratio by mass",
+      "limit": "Epoxy injection product only"
+    },
+    "ar": {
+      "observed": "مكوّنا الإيبوكسي A/B بنسبة 2:1 من حيث الكتلة",
+      "limit": "المقارنة تخص مادة حقن إيبوكسية فقط"
+    }
+  },
+  "G16": {
+    "en": {
+      "observed": "Component A: 1 kg + component B: 0.350 kg",
+      "limit": "Epoxy anchoring material only"
+    },
+    "ar": {
+      "observed": "المكوّن A بكمية 1 kg والمكوّن B بكمية 0,350 kg",
+      "limit": "المقارنة تخص مادة تثبيت إيبوكسية فقط"
+    }
+  },
+  "G17": {
+    "en": {
+      "observed": "310 mL cartridge; stated movement capability 25%",
+      "limit": "Polyurethane sealant, not a waterproofing membrane"
+    },
+    "ar": {
+      "observed": "خرطوشة 310 mL؛ قدرة حركة معلنة 25%",
+      "limit": "مانع تسرب من البولي يوريثان، وليس غشاء عزل مائي"
+    }
+  },
+  "G18": {
+    "en": {
+      "observed": "Approximately 650–750 g/m²",
+      "limit": "Acrylic protective coating only"
+    },
+    "ar": {
+      "observed": "نحو 650–750 g/m²",
+      "limit": "المقارنة تخص طلاء حماية أكريليكي فقط"
+    }
+  }
+}
