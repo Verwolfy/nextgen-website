@@ -50,8 +50,10 @@ class Lot45MarketTranslations(unittest.TestCase):
                     self.assertEqual(number_set(original), number_set(translated),
                                      (ref,lang,field,"numeric drift"))
                     for token in units:
-                        if token in original:
-                            self.assertIn(token, translated, (ref,lang,field,token))
+                        unit_pattern = r"(?<![A-Za-z])" + re.escape(token) + r"(?![A-Za-z])"
+                        if re.search(unit_pattern, original):
+                            self.assertRegex(translated, unit_pattern,
+                                             (ref,lang,field,token))
 
     def test_all_summaries_are_not_used_as_nextgen_certification(self):
         page = (ROOT / "src/pages/[lang]/documentation/[slug].astro").read_text(encoding="utf-8")
