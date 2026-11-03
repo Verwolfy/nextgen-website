@@ -182,7 +182,8 @@ def check() -> None:
                             assert page.locator(".resource-support a[href$='/contact/']").count() == 1, path
                             assert page.locator(".resource-support a").count() == 1, path
                             assert page.locator("a[href*='/maquettes/']").count() == 0, path
-                            assert page.locator(".resource-card a").count() == 0, path
+                            assert page.locator(".resource-card a[href$='/documentation/']").count() == 1, path
+                            assert page.locator(".resource-card a[href*='mailto:']").count() == 0, path
                         if section in ("contact", "distributeurs"):
                             assert page.locator(".contact-direct .contact-channel").count() == 3, path
                             assert page.locator(".contact-channel a[href^='mailto:']").count() == 1, path
@@ -313,6 +314,16 @@ def check() -> None:
                     assert visible_cards.count() == 0, lang
                     page.locator("[data-catalogue-reset]").click()
                     assert visible_cards.count() == 50, lang
+                    # Product information page: sourced comparators, not FENEK technical certification.
+                    url = base + "/" + lang + "/documentation/fenek-bond-c1t/"
+                    page.goto(url, wait_until="domcontentloaded")
+                    assert page.locator(".market-sheet-warning").count() == 1, lang
+                    assert page.locator(".market-reference").count() == 2, lang
+                    assert "SikaCeram" in page.locator(".market-reference-list").inner_text(), lang
+                    assert page.locator("meta[name='robots']").get_attribute("content") == "noindex,nofollow", lang
+                    assert page.locator("form").count() == 0, lang
+                    page.goto(base + "/" + lang + "/documentation/", wait_until="domcontentloaded")
+                    assert page.locator(".market-index-card").count() == 50, lang
                     # Explicitly follow the language navigation to another localized page.
                     page.goto(base + "/" + lang + "/contact/", wait_until="domcontentloaded")
                     assert page.locator(".locale a").count() == 3
