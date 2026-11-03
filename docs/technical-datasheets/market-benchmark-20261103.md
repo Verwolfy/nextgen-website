@@ -21,6 +21,16 @@ La recette industrielle exacte (pourcentages matière première, tolérances) n'
 | Mapelastic Smart Mapei | ≈ 1,6 kg/m²/mm | Membrane bicomposant propre à Mapei |
 | Elastocolor Paint Mapei | 0,2–0,4 kg/m²/couche | Peinture de façade spécifique |
 
+## Composition qualitative fabricant, PAS formulation de NextGen
+
+- SikaCeram-205 : poudre cimentaire modifiée par polymères, selon la fiche Sika Nigeria.
+- Ceresit CM11 : ciment, charges minérales et modifiants, selon Henkel MEA.
+- Sika ViscoCrete-20 HE : solution aqueuse de polycarboxylates modifiés, selon Sika GCC.
+- Mapelastic Smart : liants cimentaires, granulats fins, additifs et polymères en dispersion, selon Mapei.
+- Elastocolor Paint : résine acrylique en dispersion aqueuse, selon Mapei.
+
+Ces dénominations ne décrivent pas la recette industrielle exacte, les pourcentages ou les matières premières autorisées de FENEK.
+
 ## Fichiers annexes
 - `market-values.csv` : 27 mesures/paramètres de tiers, source exacte, réserve et marquage `DONNEE_TIERS_SEULEMENT`.
 - `market-crosswalk-50.csv` : comparaison d'orientation des **50 SKU**, analogies de famille seulement. Les 50 ont `BLOQUE`.
