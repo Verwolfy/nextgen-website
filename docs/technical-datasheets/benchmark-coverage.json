@@ -1,0 +1,661 @@
+{
+  "date": "2026-11-03",
+  "purpose": "Third-party benchmarking only, no validation of any NextGen TDS",
+  "source_register": "benchmark-review-20261103.md",
+  "count": 50,
+  "mapped": 39,
+  "unmapped": 11,
+  "products": [
+    {
+      "sku": "BOND-C1T",
+      "range": "bond",
+      "comparators": [
+        "S01",
+        "S02"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "BOND-C1TE",
+      "range": "bond",
+      "comparators": [
+        "S01",
+        "S02"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "BOND-C2FT",
+      "range": "bond",
+      "comparators": [
+        "S02"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "BOND-C2TE",
+      "range": "bond",
+      "comparators": [
+        "S02"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "BOND-C2TE-S1",
+      "range": "bond",
+      "comparators": [
+        "S02"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "BOND-CG1",
+      "range": "bond",
+      "comparators": [
+        "S04",
+        "M01",
+        "G03"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "BOND-CG2WA",
+      "range": "bond",
+      "comparators": [
+        "S04",
+        "M01",
+        "G03"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "BOND-CT-C25-F5",
+      "range": "bond",
+      "comparators": [
+        "G04"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "BOND-GP-CSII",
+      "range": "bond",
+      "comparators": [],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "BOND-GR-HR",
+      "range": "bond",
+      "comparators": [
+        "G05"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "BOND-M10",
+      "range": "bond",
+      "comparators": [],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "BOND-M5",
+      "range": "bond",
+      "comparators": [],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "BOND-OC-CSIII",
+      "range": "bond",
+      "comparators": [],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "BOND-R2",
+      "range": "bond",
+      "comparators": [
+        "G01",
+        "S03"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "BOND-R3",
+      "range": "bond",
+      "comparators": [
+        "G02",
+        "S03"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "BOND-R4",
+      "range": "bond",
+      "comparators": [
+        "S03",
+        "G02"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "FLOW-AC",
+      "range": "flow",
+      "comparators": [
+        "G08"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "FLOW-AE",
+      "range": "flow",
+      "comparators": [
+        "G10"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "FLOW-CI",
+      "range": "flow",
+      "comparators": [],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "FLOW-CURE",
+      "range": "flow",
+      "comparators": [
+        "G11"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "FLOW-LAT",
+      "range": "flow",
+      "comparators": [
+        "G12",
+        "S06"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "FLOW-RT",
+      "range": "flow",
+      "comparators": [
+        "G09"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "FLOW-SP-HR",
+      "range": "flow",
+      "comparators": [
+        "G06",
+        "S05",
+        "F01"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "FLOW-SP-PF",
+      "range": "flow",
+      "comparators": [
+        "G06",
+        "S05",
+        "F01"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "FLOW-SP-RT",
+      "range": "flow",
+      "comparators": [
+        "G06",
+        "S05",
+        "F01"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "FLOW-VMA",
+      "range": "flow",
+      "comparators": [
+        "G13"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "FLOW-WP",
+      "range": "flow",
+      "comparators": [
+        "G07"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "FLOW-WR-N",
+      "range": "flow",
+      "comparators": [
+        "G06",
+        "S05",
+        "F01"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PAINT-ENT-L",
+      "range": "paint",
+      "comparators": [],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PAINT-FAC-EL",
+      "range": "paint",
+      "comparators": [
+        "G18"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PAINT-FAC-M",
+      "range": "paint",
+      "comparators": [
+        "G18"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PAINT-FAC-SX",
+      "range": "paint",
+      "comparators": [
+        "G18"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PAINT-INT-M",
+      "range": "paint",
+      "comparators": [
+        "J01",
+        "J02"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PAINT-INT-S",
+      "range": "paint",
+      "comparators": [
+        "J01",
+        "J02"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PAINT-INT-WA",
+      "range": "paint",
+      "comparators": [
+        "J01",
+        "J02"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PAINT-PRIM-A",
+      "range": "paint",
+      "comparators": [],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PAINT-PRIM-FX",
+      "range": "paint",
+      "comparators": [],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PAINT-SOL-A",
+      "range": "paint",
+      "comparators": [
+        "S10"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PAINT-TXT-F",
+      "range": "paint",
+      "comparators": [],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PROOF-ACR-RF",
+      "range": "proof",
+      "comparators": [
+        "S08",
+        "M02"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PROOF-CM-O1P",
+      "range": "proof",
+      "comparators": [
+        "S07"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PROOF-CM-O2P",
+      "range": "proof",
+      "comparators": [
+        "S07"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PROOF-EP-ANC",
+      "range": "proof",
+      "comparators": [
+        "G16"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PROOF-EP-INJ",
+      "range": "proof",
+      "comparators": [
+        "G15"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PROOF-EP-PRIM",
+      "range": "proof",
+      "comparators": [
+        "G14"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PROOF-EP-SB",
+      "range": "proof",
+      "comparators": [],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PROOF-EP-SR",
+      "range": "proof",
+      "comparators": [
+        "S10"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PROOF-PU-1K",
+      "range": "proof",
+      "comparators": [
+        "S08"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PROOF-PU-INJ",
+      "range": "proof",
+      "comparators": [],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    },
+    {
+      "sku": "PROOF-PU-SEAL",
+      "range": "proof",
+      "comparators": [
+        "G17",
+        "S09"
+      ],
+      "comparison_only": true,
+      "formulation_nextgen": "MISSING",
+      "test_results_nextgen": "MISSING",
+      "SDS_nextgen": "MISSING",
+      "packaging_nextgen": "NOT_APPROVED",
+      "release": "BLOCKED"
+    }
+  ]
+}
