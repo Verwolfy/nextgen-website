@@ -180,6 +180,9 @@ def main() -> None:
             assert info.is_file(), f"Missing information page: {info}"
             markup = info.read_text(encoding="utf-8")
             assert 'class="market-sheet-warning"' in markup, info
+            assert f'lang="{lang}" dir="auto"' in markup, info
+            if lang != "fr":
+                assert 'lang="fr" dir="auto"' not in markup, info
             assert "SikaCeram" in markup if entry["slug"] == "fenek-bond-c1t" else True
             assert "noindex,nofollow" in markup, info
             for forbidden in ("FENEK certifié", "certified FENEK", "validated NextGen SDS"):
