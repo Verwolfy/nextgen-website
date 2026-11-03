@@ -25,7 +25,7 @@ const sources = benchmarks.sources
   .filter(s => item.source_ids.includes(s.id))
   .map(s => {
     const translations = localizedReferenceText[s.id];
-    if (!translations) throw Error('No verified reference translation for ' + s.id);
+    if (!translations) throw Error('Missing market reference translation for ' + s.id);
     const content = lang === 'fr'
       ? {observed:s.observed,limit:s.limit}
       : (lang === 'ar' ? translations.ar : translations.en);
