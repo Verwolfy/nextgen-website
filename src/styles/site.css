@@ -312,3 +312,40 @@ h1,h2,h3,.page-head p{overflow-wrap:anywhere;min-width:0}
 @media(max-width:660px){.resources-grid.resources-grid-docs{grid-template-columns:1fr}}
 @media(max-width:580px){.hero-showcase{width:100%;max-width:370px;padding:10px;border-radius:17px}.hero-slide-stack{border-radius:11px}.hero-slide-controls{gap:6px}.hero-slide-arrow,.hero-slide-pause{min-width:42px;min-height:42px}}
 @media(prefers-reduced-motion:reduce){.hero-slide,.hero-slide-dot span{transition:none!important;transform:none!important}.hero-slide-dot[aria-current=true] span{transform:none!important;width:12px;height:12px}}
+
+
+/* Lot 43 — factual, source-attributed product information pages. */
+.market-sheet-paper{max-width:1000px;margin:0 auto;padding:clamp(18px,3vw,38px);border:1px solid #d5e1e6;background:#fff;border-radius:15px;box-shadow:0 10px 30px #0b254012}
+.market-sheet-paper section{margin-block:26px}
+.market-sheet-paper h2{font-size:clamp(1.25rem,2.2vw,1.55rem);margin:0 0 12px;color:#10294b}
+.market-sheet-paper h3{font-size:1rem;margin:0 0 9px;color:#112c50}
+.market-sheet-warning{padding:16px 18px;border-inline-start:5px solid #a96b1c;border-radius:8px;background:#fff4df;color:#583f1c;font-size:.96rem;line-height:1.6;font-weight:650}
+.market-sheet-small{font-size:.87rem;color:#4b6171;line-height:1.6}
+.market-reference-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:20px}
+.market-reference{min-width:0;padding:18px;border:1px solid #d8e5e8;border-radius:11px;background:#f8fbfc;overflow-wrap:anywhere}
+.market-reference p{margin:9px 0}
+.market-reference a,.resource-information-link{color:#006b4e;text-decoration:underline;text-underline-offset:3px;font-weight:680}
+.market-reference a:focus-visible,.resource-information-link:focus-visible{outline:3px solid #008b61;outline-offset:4px}
+.market-sheet-footer{display:flex;flex-wrap:wrap;align-items:center;gap:12px;border-top:1px solid #d9e6ea;margin-top:22px;padding-top:22px}
+.market-print{cursor:pointer}
+.market-index>section{margin-top:30px}
+.market-index-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.market-index-card{display:flex;flex-direction:column;gap:8px;min-width:0;padding:18px;border:1px solid #cfdee4;border-radius:10px;background:#fff;text-decoration:none;color:#132e50}
+.market-index-card:hover{border-color:#008a5d;box-shadow:0 8px 20px #133c3312}
+.market-index-card strong{font-size:1rem}
+.market-index-card span{line-height:1.45}
+.market-index-more{margin-top:auto;color:#087851;font-weight:750}
+.resource-information-link{display:inline-block;margin-top:16px}
+@media(max-width:800px){.market-index-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.market-reference-list{grid-template-columns:1fr}}
+@media(max-width:540px){.market-index-grid{grid-template-columns:1fr}.market-sheet-paper{padding:15px;border-radius:10px}}
+@media print {
+  @page{size:A4;margin:12mm}
+  .header,.footer,.market-print,.market-doc-head .concept-back,.skip{display:none!important}
+  body{background:white!important;color:#101b29!important}
+  .page-head{padding:6mm 0!important;background:#102d4e!important;color:#fff!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .market-sheet{padding:0!important}
+  .market-sheet-paper{max-width:none;padding:2mm;border:0;border-radius:0;box-shadow:none}
+  .market-reference{break-inside:avoid}
+  .market-reference-list{grid-template-columns:1fr 1fr}
+  a{overflow-wrap:anywhere}
+}
