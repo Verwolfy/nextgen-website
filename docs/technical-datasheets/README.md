@@ -9,3 +9,6 @@ Les trois archives de références externes comportent 365 PDF, 617 pages. Elles
 Champs bloquants : composition réelle ; résultats et méthodes signés ; conditions d'application ; consommation/dosage ; conditionnement et conservation ; FDS ; classes normatives prouvées ; homologation R&D/Qualité/HSE ; traduction vérifiée ; version finale PDF.
 
 Les codes tels que C1T, R3 ou CG2WA ne prouvent aucune norme. NE PAS ajouter de téléchargement public. Voir validation-matrix.csv et quality-checklist.md.
+## Benchmark documentaire (valeurs tierces uniquement)
+
+Voir `market-benchmark-20261103.md`, `market-values.csv` et `market-crosswalk-50.csv`. Les mesures comparatives des autres fabricants ne doivent jamais être intégrées dans les 150 brouillons comme chiffres NextGen. Les archives ne contiennent aucune FDS NextGen distincte.
