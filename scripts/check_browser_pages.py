@@ -314,41 +314,26 @@ def check() -> None:
                     assert visible_cards.count() == 0, lang
                     page.locator("[data-catalogue-reset]").click()
                     assert visible_cards.count() == 50, lang
-                    # Product information page: sourced comparators, not FENEK technical certification.
+                    # Lot 46: independent FENEK sheets with no external brand copy.
                     url = base + "/" + lang + "/documentation/fenek-bond-c1t/"
-                    page.goto(url, wait_until="domcontentloaded")
-                    assert page.locator(".market-sheet-warning").count() == 1, lang
-                    assert page.locator(".market-reference").count() == 2, lang
-                    assert "SikaCeram" in page.locator(".market-reference-list").inner_text(), lang
+                    response = page.goto(url, wait_until="domcontentloaded")
+                    assert response and response.status == 200, (lang, url)
+                    assert page.locator(".fenek-sheet-paper").count() == 1, lang
+                    assert page.locator(".fenek-spec-grid dd").count() == 3, lang
+                    assert page.locator(".fenek-sheet-tags li").count() >= 1, lang
+                    assert page.locator(".fenek-sheet-visual img").evaluate(
+                        "img => img.complete && img.naturalWidth > 0"), lang
+                    assert page.locator(".fenek-tech-contact a[href$='/contact/']").count() == 1, lang
                     assert page.locator("meta[name='robots']").get_attribute("content") == "noindex,nofollow", lang
+                    assert page.locator(".market-reference,.market-sheet-warning").count() == 0, lang
                     assert page.locator("form").count() == 0, lang
+                    for other_brand in ("Sika", "Mapei", "Fosroc", "Jotun", "Granitex", "Weber"):
+                        assert other_brand.lower() not in page.locator("main").inner_text().lower(), (
+                            lang, other_brand)
                     page.goto(base + "/" + lang + "/documentation/", wait_until="domcontentloaded")
                     assert page.locator(".market-index-card").count() == 50, lang
-                    # Lot 45: competitor observations and comparability limits
-                    # are fully translated in FR/AR/EN, preserving original numbers.
+                    assert page.locator(".market-sheet-warning").count() == 0, lang
                     if size == "desktop":
-                        localized = {
-                            "fr": ("Enduit de rénovation", "4–5 L d'eau"),
-                            "en": ("Breathable renovation render", "4–5 L of water"),
-                            "ar": ("لياسة ترميم", "4–5 L من الماء"),
-                        }
-                        for slug, excerpt in (
-                            ("fenek-bond-gp-csii", localized[lang][0]),
-                            ("fenek-bond-r2", localized[lang][1]),
-                        ):
-                            response = page.goto(base + "/" + lang +
-                                                 "/documentation/" + slug + "/",
-                                                 wait_until="domcontentloaded")
-                            assert response is not None and response.status == 200, (lang, slug)
-                            record = page.locator(".market-reference-list")
-                            assert excerpt in record.inner_text(), (lang, slug, excerpt)
-                            assert record.locator("span[lang='" + lang + "']").count() >= 1, lang
-                            assert record.locator("p[lang='" + lang + "']").count() >= 1, lang
-                            if lang != "fr":
-                                assert record.locator("span[lang='fr']").count() == 0, lang
-
-                    if size == "desktop":
-                        # Eleven newly covered SKUs, each with an attributed manufacturer.
                         for slug in (
                             "fenek-bond-gp-csii", "fenek-bond-m5", "fenek-bond-m10",
                             "fenek-bond-oc-csiii", "fenek-flow-ci", "fenek-paint-ent-l",
@@ -357,11 +342,11 @@ def check() -> None:
                         ):
                             url = base + "/" + lang + "/documentation/" + slug + "/"
                             response = page.goto(url, wait_until="domcontentloaded")
-                            assert response is not None and response.status == 200, url
-                            assert page.locator(".market-sheet-warning").count() == 1, url
-                            assert page.locator(".market-reference").count() >= 1, url
-                            assert page.locator(".market-reference a[href^='https://']").count() >= 1, url
-                            assert page.locator("form").count() == 0, url
+                            assert response and response.status == 200, (lang, url)
+                            assert page.locator(".fenek-sheet-paper").count() == 1, (lang, slug)
+                            assert page.locator(".market-reference").count() == 0, (lang, slug)
+                            assert page.locator(".fenek-sheet-visual img").evaluate(
+                                "img => img.complete && img.naturalWidth > 0"), (lang,slug)
 
                     # Explicitly follow the language navigation to another localized page.
                     page.goto(base + "/" + lang + "/contact/", wait_until="domcontentloaded")
