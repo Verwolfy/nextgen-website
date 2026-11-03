@@ -179,14 +179,18 @@ def main() -> None:
             info = ROOT / lang / "documentation" / entry["slug"] / "index.html"
             assert info.is_file(), f"Missing information page: {info}"
             markup = info.read_text(encoding="utf-8")
-            assert 'class="market-sheet-warning"' in markup, info
-            assert f'lang="{lang}" dir="auto"' in markup, info
-            if lang != "fr":
-                assert 'lang="fr" dir="auto"' not in markup, info
-            assert "SikaCeram" in markup if entry["slug"] == "fenek-bond-c1t" else True
+            assert 'class="market-sheet-paper fenek-sheet-paper"' in markup, info
+            assert 'class="fenek-spec-grid"' in markup, info
+            assert entry["nom"] in markup, info
             assert "noindex,nofollow" in markup, info
-            for forbidden in ("FENEK certifié", "certified FENEK", "validated NextGen SDS"):
-                assert forbidden not in markup, (info, forbidden)
+            for forbidden in (
+                "market-sheet-warning", "market-reference-list", "source officielle",
+                "produits tiers cités", "Sika", "Mapei", "Fosroc", "Jotun",
+                "Granitex", "Weber", "certified FENEK",
+                "FENEK certifié", "validated NextGen SDS",
+                "[valeur à confirmer]", "mode_fr_preparatoire",
+            ):
+                assert forbidden.lower() not in markup.lower(), (info, forbidden)
             refs += check_page(info, lang)
             checked += 1
         for entry in source:
@@ -230,6 +234,14 @@ def main() -> None:
         assert not (ROOT / lang / "emballages").exists(), lang
     assert not (ROOT / "models-demo").exists()
     assert not (ROOT / "images" / "3d-demo").exists()
+    # No third-party brand or legacy market comparison may appear in public HTML.
+    external_names = ("sikaceram", "sikadur", "sikaflex", "sika",
+                      "mapei", "fosroc", "jotun", "granitex",
+                      "saint-gobain weber", "weberpral")
+    for html_path in ROOT.rglob("*.html"):
+        content = html_path.read_text(encoding="utf-8").lower()
+        for name in external_names:
+            assert name not in content, f"External manufacturer in public site: {html_path}: {name}"
     assert (ROOT / "data" / "products.json").read_text(encoding="utf-8").strip() == "[]"
     print(f"PASS: {checked} localized routes checked, {refs} links validated, zero active forms, zero fake products")
 
