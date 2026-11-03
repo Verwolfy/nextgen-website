@@ -7,20 +7,34 @@ ROOT=Path(__file__).resolve().parents[1]
 
 
 class MarketDocumentationTests(unittest.TestCase):
-    def test_50_references_39_covered_11_unmatched(self):
+    def test_50_references_all_have_comparators(self):
         market=json.loads((ROOT/"src/data/market-comparisons.json").read_text(encoding="utf-8"))
         catalogue=json.loads((ROOT/"src/data/catalogue-projets.json").read_text(encoding="utf-8"))
         self.assertEqual(len(catalogue),50)
         self.assertEqual(len(market["products"]),50)
-        self.assertEqual(len(market["sources"]),33)
+        self.assertEqual(len(market["sources"]),44)
         self.assertEqual({p["sku"] for p in market["products"]},{p["code"] for p in catalogue})
         source_ids={s["id"] for s in market["sources"]}
         self.assertTrue(all(set(p["source_ids"]).issubset(source_ids) for p in market["products"]))
-        self.assertEqual(sum(bool(p["source_ids"]) for p in market["products"]),39)
-        self.assertEqual(sum(not p["source_ids"] for p in market["products"]),11)
+        self.assertEqual(sum(bool(p["source_ids"]) for p in market["products"]),50)
+        self.assertEqual(sum(not p["source_ids"] for p in market["products"]),0)
         self.assertTrue(all(not p["nextgen_tested"] and not p["nextgen_sds"] for p in market["products"]))
+        new_skus={
+            "BOND-GP-CSII","BOND-M5","BOND-M10","BOND-OC-CSIII",
+            "FLOW-CI","PAINT-ENT-L","PAINT-PRIM-A","PAINT-PRIM-FX",
+            "PAINT-TXT-F","PROOF-EP-SB","PROOF-PU-INJ"
+        }
+        by_sku={p["sku"]:p["source_ids"] for p in market["products"]}
+        by_id={s["id"]:s for s in market["sources"]}
+        self.assertEqual(len(new_skus),11)
+        for sku in new_skus:
+            self.assertEqual(len(by_sku[sku]),1)
+            entry=by_id[by_sku[sku][0]]
+            self.assertTrue(entry["url"].startswith("https://"),sku)
+            self.assertGreater(len(entry["limit"]),45,sku)
+            self.assertEqual(entry["origin"],"manufacturer_tds",sku)
         self.assertNotIn("G19",source_ids)
-        self.assertEqual(sum(s["origin"]=="manufacturer_tds" for s in market["sources"]),15)
+        self.assertEqual(sum(s["origin"]=="manufacturer_tds" for s in market["sources"]),26)
         self.assertTrue(all(s["url"].startswith("https://") for s in market["sources"] if s["origin"]=="manufacturer_tds"))
 
     def test_source_labels_and_guardrails_in_three_languages(self):

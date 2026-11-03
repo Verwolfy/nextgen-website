@@ -324,6 +324,22 @@ def check() -> None:
                     assert page.locator("form").count() == 0, lang
                     page.goto(base + "/" + lang + "/documentation/", wait_until="domcontentloaded")
                     assert page.locator(".market-index-card").count() == 50, lang
+                    if size == "desktop":
+                        # Eleven newly covered SKUs, each with an attributed manufacturer.
+                        for slug in (
+                            "fenek-bond-gp-csii", "fenek-bond-m5", "fenek-bond-m10",
+                            "fenek-bond-oc-csiii", "fenek-flow-ci", "fenek-paint-ent-l",
+                            "fenek-paint-prim-a", "fenek-paint-prim-fx",
+                            "fenek-paint-txt-f", "fenek-proof-ep-sb", "fenek-proof-pu-inj",
+                        ):
+                            url = base + "/" + lang + "/documentation/" + slug + "/"
+                            response = page.goto(url, wait_until="domcontentloaded")
+                            assert response is not None and response.status == 200, url
+                            assert page.locator(".market-sheet-warning").count() == 1, url
+                            assert page.locator(".market-reference").count() >= 1, url
+                            assert page.locator(".market-reference a[href^='https://']").count() >= 1, url
+                            assert page.locator("form").count() == 0, url
+
                     # Explicitly follow the language navigation to another localized page.
                     page.goto(base + "/" + lang + "/contact/", wait_until="domcontentloaded")
                     assert page.locator(".locale a").count() == 3
