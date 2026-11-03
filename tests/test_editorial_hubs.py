@@ -39,9 +39,10 @@ class TestEditorialHubs(unittest.TestCase):
         resources = (ROOT / "src/components/ResourcesHub.astro").read_text(encoding="utf-8")
         self.assertIn("resourcePending", resources)
         self.assertEqual(resources.count("<article"), 2)
-        self.assertEqual(resources.count("<a "), 1)
+        self.assertEqual(resources.count("<a "), 2)
         self.assertNotIn("emballages/", resources)
         self.assertIn("contact/", resources)
+        self.assertIn("documentation/", resources)
         self.assertNotIn("maquettes/", resources)
 
     def test_detail_pages_are_illustrative_not_product_inventory(self):
