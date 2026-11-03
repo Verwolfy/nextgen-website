@@ -58,7 +58,7 @@ class Lot45MarketTranslations(unittest.TestCase):
     def test_all_summaries_are_not_used_as_nextgen_certification(self):
         page = (ROOT / "src/pages/[lang]/documentation/[slug].astro").read_text(encoding="utf-8")
         for marker in ("archiveLocales", "manufacturerLocales", "additionLocales",
-                       "localizedReferenceText", "No verified reference translation",
+                       "localizedReferenceText", "Missing market reference translation",
                        "lang === 'fr'", "translations.ar", "translations.en",
                        "lang={lang}", "dir=\"auto\"", "t.warning", "t.noAverage"):
             self.assertIn(marker, page)
