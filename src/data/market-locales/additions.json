@@ -1,0 +1,112 @@
+{
+  "N01": {
+    "en": {
+      "observed": "Breathable renovation render based on natural hydraulic lime (NHL), GP-CS II class; Mapei's indicative consumption is 15 kg/m² per cm; 25 kg bag.",
+      "limit": "Comparable use and classification only. NHL binder differs from FENEK's described cement render; values are not transferable."
+    },
+    "ar": {
+      "observed": "لياسة ترميم قابلة لنفاذ البخار أساسها الجير الهيدروليكي الطبيعي (NHL)، بفئة GP-CS II؛ الاستهلاك الإرشادي لدى Mapei هو 15 kg/m² لكل cm؛ كيس 25 kg.",
+      "limit": "التشابه في الاستخدام والفئة فقط. الرابط من NHL يختلف عن اللياسة الإسمنتية الموصوفة لدى FENEK؛ لا يمكن نقل القيم."
+    }
+  },
+  "N02": {
+    "en": {
+      "observed": "Mapei performance declaration: general-purpose masonry mortar according to EN 998-2, compressive-strength class M5.",
+      "limit": "The class declared for Mapei's mortar is not a measured or declared strength for FENEK-M5."
+    },
+    "ar": {
+      "observed": "إعلان الأداء من Mapei: ملاط بناء للأغراض العامة وفق EN 998-2، بفئة مقاومة ضغط M5.",
+      "limit": "التصنيف المعلن لملاط Mapei لا يمثّل مقاومة مقاسة أو معلنة لمنتج FENEK-M5."
+    }
+  },
+  "N03": {
+    "en": {
+      "observed": "Mapei natural hydraulic lime-based masonry mortar, class G-M10 under EN 998-2; the manufacturer's sheet states 4–4.5 L of mixing water per 25 kg bag.",
+      "limit": "Similar use/class name, but a Mapei-specific hydraulic-lime formulation. Mixing quantity, strength and classification cannot be transferred to FENEK."
+    },
+    "ar": {
+      "observed": "ملاط بناء من Mapei أساسه الجير الهيدروليكي الطبيعي، بفئة G-M10 وفق EN 998-2؛ تنص نشرته على ماء خلط 4–4,5 L لكل كيس 25 kg.",
+      "limit": "تشابه في الاستعمال واسم الفئة، لكن التركيبة خاصة بـ Mapei وتعتمد الجير الهيدروليكي. لا تُنقل كمية الخلط أو المقاومة أو التصنيف إلى FENEK."
+    }
+  },
+  "N04": {
+    "en": {
+      "observed": "Single-coat coloured facade render; Weber cites CSIII strength class, a 25 kg bag, and an application temperature of +5 °C to +35 °C.",
+      "limit": "These are Weber's product and facade-system conditions. CSIII class and temperature range are not evidence for FENEK-OC-CSIII."
+    },
+    "ar": {
+      "observed": "لياسة واجهات ملوّنة أحادية الطبقة؛ تذكر Weber فئة المقاومة CSIII، وكيس 25 kg، وحرارة تطبيق من +5 °C إلى +35 °C.",
+      "limit": "هذه شروط منتج Weber ونظام واجهاته؛ ولا تثبت فئة CSIII أو مجال الحرارة خصائص FENEK-OC-CSIII."
+    }
+  },
+  "N05": {
+    "en": {
+      "observed": "Liquid corrosion-inhibiting admixture for reinforced concrete and mortar; the manufacturer's Canadian page cites protection of reinforcement exposed to chlorides and 20 L packaging.",
+      "limit": "Composition and intended use belong to this local Sika FerroGard-901 version; neither dosage nor corrosion-protection effect has been established for FENEK-FLOW CI."
+    },
+    "ar": {
+      "observed": "مادة مضافة سائلة مثبطة للتآكل في الخرسانة المسلحة والملاط؛ تذكر صفحة الشركة الكندية حماية حديد التسليح المعرض للكلوريدات وعبوة 20 L.",
+      "limit": "التركيب والاستعمال مرتبطان بإصدار Sika FerroGard-901 المحلي؛ لم تُثبت جرعة أو فعالية منع التآكل لمنتج FENEK-FLOW CI."
+    }
+  },
+  "N06": {
+    "en": {
+      "observed": "Ready-to-use acrylic paste for filling/smoothing interior walls; the manufacturer's indicative consumption is 1.6–1.7 kg/m² per mm.",
+      "limit": "Comparable interior acrylic filler only. Consumption depends on substrate and does not represent FENEK-PAINT ENT-L."
+    },
+    "ar": {
+      "observed": "معجون أكريليكي جاهز لملء العيوب وتسوية الجدران الداخلية؛ الاستهلاك الإرشادي للشركة 1,6–1,7 kg/m² لكل mm.",
+      "limit": "المقارنة تخص معجونًا أكريليكيًا داخليًا فقط؛ الاستهلاك يتغير بحسب السطح ولا يمثّل FENEK-PAINT ENT-L."
+    }
+  },
+  "N07": {
+    "en": {
+      "observed": "Jotun waterborne acrylic primer for interior walls; designed to improve adhesion and resistance to alkalinity.",
+      "limit": "Comparable primer application only; FENEK-PAINT PRIM-A formulation, compatibility and consumption are unconfirmed."
+    },
+    "ar": {
+      "observed": "أساس أكريليكي مائي من Jotun للجدران الداخلية، مصمم لتحسين الالتصاق ومقاومة القلوية.",
+      "limit": "تشابه في استخدام طبقة الأساس فقط؛ لم تُؤكد تركيبة FENEK-PAINT PRIM-A أو توافقه أو استهلاكه."
+    }
+  },
+  "N08": {
+    "en": {
+      "observed": "Jotun solvent-based acrylic penetrating primer for exterior surfaces, intended for chalking substrates and paint adhesion.",
+      "limit": "Comparable fixing function, not chemical identity. This Jotun product contains solvent, while FENEK-PAINT PRIM-FX composition is unknown."
+    },
+    "ar": {
+      "observed": "أساس أكريليكي متغلغل قائم على المذيب من Jotun للأسطح الخارجية، مخصص للأسطح المتطبشة وتحسين التصاق الطلاء.",
+      "limit": "تشابه في وظيفة تثبيت السطح وليس في التركيب الكيميائي؛ منتج Jotun قائم على المذيب وتركيبة FENEK-PAINT PRIM-FX غير معروفة."
+    }
+  },
+  "N09": {
+    "en": {
+      "observed": "Fine textured exterior coating based on acrylic emulsion, with a satin/silky finish, according to Jotun's product presentation.",
+      "limit": "Functional comparator only; no verified FENEK-PAINT TXT-F coverage, crack-bridging capability or coating performance."
+    },
+    "ar": {
+      "observed": "طلاء خارجي ناعم الملمس ذو قوام زخرفي، أساسه مستحلب أكريليكي وتشطيبه ساتاني/حريري وفق عرض Jotun.",
+      "limit": "المقارنة وظيفية فقط؛ لا توجد بيانات معتمدة عن مردود FENEK-PAINT TXT-F أو قدرته على جسر التشققات أو أداء الطلاء."
+    }
+  },
+  "N10": {
+    "en": {
+      "observed": "Sika two-component structural epoxy bonding adhesive, intended for bonding construction materials and certain concrete repairs.",
+      "limit": "The class, EN 1504-4 tests, mixing ratio and performance belong exclusively to Sikadur-31+."
+    },
+    "ar": {
+      "observed": "لاصق إيبوكسي إنشائي ثنائي المكونات من Sika، مخصص لربط مواد البناء وبعض إصلاحات الخرسانة.",
+      "limit": "التصنيف واختبارات EN 1504-4 ونسبة الخلط والأداء تخص Sikadur-31+ وحده."
+    }
+  },
+  "N11": {
+    "en": {
+      "observed": "Two-component water-reactive polyurethane injection resin for sealing cracks; the manufacturer states an A:B ratio of 1:1 by volume.",
+      "limit": "This ratio applies to one specific Sika product. Regional versions and PU systems may differ; it provides no mixing instruction for FENEK-PROOF PU-INJ."
+    },
+    "ar": {
+      "observed": "راتنج حقن بولي يوريثان ثنائي المكونات يتفاعل مع الماء لعزل الشقوق؛ تذكر الشركة نسبة A:B قدرها 1:1 بالحجم.",
+      "limit": "هذه النسبة خاصة بمنتج محدد من Sika؛ قد تختلف الإصدارات الإقليمية وأنظمة PU، ولا يمكن استنتاج تعليمات خلط لمنتج FENEK-PROOF PU-INJ."
+    }
+  }
+}

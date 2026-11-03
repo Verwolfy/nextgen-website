@@ -3,6 +3,9 @@ import Layout from '../../../layouts/Layout.astro';
 import {languages, brand, rangeName, type Lang} from '../../../data/site';
 import {catalogueProjects, type CatalogueProject} from '../../../lib/catalogue-projets';
 import benchmarks from '../../../data/market-comparisons.json';
+import archiveLocales from '../../../data/market-locales/archive.json';
+import manufacturerLocales from '../../../data/market-locales/manufacturers.json';
+import additionLocales from '../../../data/market-locales/additions.json';
 
 export function getStaticPaths() {
   return languages.flatMap(lang => catalogueProjects.map(product => ({
@@ -15,7 +18,19 @@ const product = Astro.props.product as CatalogueProject;
 if (!product || !catalogueProjects.some(p => p.code === product.code)) throw Error('Unknown product');
 const item = benchmarks.products.find(p => p.sku === product.code);
 if (!item) throw Error('Missing documentary coverage ' + product.code);
-const sources = benchmarks.sources.filter(s => item.source_ids.includes(s.id));
+const localizedReferenceText: Record<string, {en:{observed:string;limit:string};ar:{observed:string;limit:string}}> = {
+  ...archiveLocales, ...manufacturerLocales, ...additionLocales,
+};
+const sources = benchmarks.sources
+  .filter(s => item.source_ids.includes(s.id))
+  .map(s => {
+    const translations = localizedReferenceText[s.id];
+    if (!translations) throw Error('Missing market reference translation for ' + s.id);
+    const content = lang === 'fr'
+      ? {observed:s.observed,limit:s.limit}
+      : (lang === 'ar' ? translations.ar : translations.en);
+    return {...s, observed:content.observed,limit:content.limit};
+  });
 const t = {
   fr: {
     heading:'Fiche d’information produit',
@@ -29,7 +44,7 @@ const t = {
     noAverage:'Une moyenne de chiffres non homogènes (formulation, support, climat, méthode d’essai) serait trompeuse. Les observations restent rattachées à leur produit et à leur source.',
     safety:'Sécurité et validation', safetyText:'Aucune FDS NextGen ni formulation validée n’est disponible dans ce dossier. Demandez la documentation propre au produit avant tout emploi.',
     contact:'Demander les informations techniques', print:'Imprimer / enregistrer en PDF', back:'Retour au catalogue',
-    sourceLanguage:'Les relevés d’origine sont conservés en français pour éviter une conversion non vérifiée des données chiffrées.',
+    
   },
   ar: {
     heading:'بطاقة معلومات المنتج',
@@ -43,7 +58,7 @@ const t = {
     noAverage:'إن متوسط نتائج منتجات مختلفة من حيث التركيب والسطح والمناخ وطريقة الاختبار قد يكون مضللاً؛ لذلك تبقى كل قيمة مرتبطة بمصدرها.',
     safety:'السلامة والاعتماد', safetyText:'لا تتوفر في هذا الملف صحيفة بيانات سلامة أو تركيبة معتمدة تخص FENEK. اطلب المعلومات الخاصة بالمنتج قبل الاستخدام.',
     contact:'طلب المعلومات الفنية', print:'طباعة / حفظ بصيغة PDF', back:'العودة إلى الكتالوج',
-    sourceLanguage:'حُفظت بيانات المراجع الأصلية بالفرنسية لتجنب تغيير الأرقام والوحدات دون تدقيق.',
+    
   },
   en: {
     heading:'Product information sheet',
@@ -57,7 +72,7 @@ const t = {
     noAverage:'Averaging numbers from different formulations, substrates, climates and test methods would be misleading. Each observation remains linked to its specific product and source.',
     safety:'Safety and approval', safetyText:'No validated FENEK formulation or FENEK Safety Data Sheet is available in this record. Request product-specific documents before use.',
     contact:'Request technical information', print:'Print / save as PDF', back:'Back to catalogue',
-    sourceLanguage:'Original source summaries are retained in French to avoid unreviewed conversions of figures or units.',
+    
   },
 }[lang];
 const noteTitle = product.nom + ' — ' + t.heading;
@@ -90,13 +105,13 @@ const contactLink = 'mailto:' + brand.email + '?subject=' + encodeURIComponent('
             <div class="market-reference-list">
               {sources.map(s=><div class="market-reference">
                 <h3><bdi dir="ltr">{s.name}</bdi></h3>
-                <p><strong>{t.readings} :</strong> <span lang="fr">{s.observed}</span></p>
-                <p class="market-sheet-small">{s.limit}</p>
+                <p><strong>{t.readings} :</strong> <span lang={lang} dir="auto">{s.observed}</span></p>
+                <p class="market-sheet-small" lang={lang} dir="auto">{s.limit}</p>
                 {s.url ? <a href={s.url} target="_blank" rel="noopener noreferrer">{t.source} ↗</a> :
                   <span class="market-sheet-small">{t.archive} · {s.id}</span>}
               </div>)}
             </div>
-            <p class="market-sheet-small">{t.sourceLanguage}</p>
+            
           </>}
       </section>
       <section aria-labelledby="market-safety"><h2 id="market-safety">{t.safety}</h2><p>{t.safetyText}</p></section>
