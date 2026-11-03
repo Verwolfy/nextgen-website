@@ -28,7 +28,7 @@ class MarketDocumentationTests(unittest.TestCase):
         for marker in ("Les valeurs ci-dessous concernent uniquement les produits tiers",
                        "They are not FENEK test results",
                        "القيم المذكورة أدناه تخص المنتجات الأخرى",
-                       "SDS", "FDS NextGen", "s.observed", "s.name", "s.url",
+                       "Safety Data Sheet", "FDS NextGen", "s.observed", "s.name", "s.url",
                        "product.contenu[lang].description", "data-print-market-sheet"):
             self.assertIn(marker,page)
         self.assertNotIn("mode_fr_preparatoire",page)
