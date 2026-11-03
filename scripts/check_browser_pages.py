@@ -324,6 +324,29 @@ def check() -> None:
                     assert page.locator("form").count() == 0, lang
                     page.goto(base + "/" + lang + "/documentation/", wait_until="domcontentloaded")
                     assert page.locator(".market-index-card").count() == 50, lang
+                    # Lot 45: competitor observations and comparability limits
+                    # are fully translated in FR/AR/EN, preserving original numbers.
+                    if size == "desktop":
+                        localized = {
+                            "fr": ("Enduit de rénovation", "4–5 L d'eau"),
+                            "en": ("Breathable renovation render", "4–5 L of water"),
+                            "ar": ("لياسة ترميم", "4–5 L من الماء"),
+                        }
+                        for slug, excerpt in (
+                            ("fenek-bond-gp-csii", localized[lang][0]),
+                            ("fenek-bond-r2", localized[lang][1]),
+                        ):
+                            response = page.goto(base + "/" + lang +
+                                                 "/documentation/" + slug + "/",
+                                                 wait_until="domcontentloaded")
+                            assert response is not None and response.status == 200, (lang, slug)
+                            record = page.locator(".market-reference-list")
+                            assert excerpt in record.inner_text(), (lang, slug, excerpt)
+                            assert record.locator("span[lang='" + lang + "']").count() >= 1, lang
+                            assert record.locator("p[lang='" + lang + "']").count() >= 1, lang
+                            if lang != "fr":
+                                assert record.locator("span[lang='fr']").count() == 0, lang
+
                     if size == "desktop":
                         # Eleven newly covered SKUs, each with an attributed manufacturer.
                         for slug in (
