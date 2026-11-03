@@ -179,8 +179,16 @@ def main() -> None:
             info = ROOT / lang / "documentation" / entry["slug"] / "index.html"
             assert info.is_file(), f"Missing information page: {info}"
             markup = info.read_text(encoding="utf-8")
-            assert 'class="market-sheet-paper fenek-sheet-paper"' in markup, info
-            assert 'class="fenek-spec-grid"' in markup, info
+            assert 'class="fenek-product-intro"' in markup, info
+            assert markup.count('class="fenek-doc-accordion"') == 8, info
+            assert markup.count('<summary>') == 8, info
+            assert markup.count('class="fenek-accordion-indicator"') == 8, info
+            assert markup.count('class="fenek-doc-accordion" open') == 3, info
+            for anchor in ('fenek-overview', 'fenek-details',
+                           'fenek-application', 'fenek-documents'):
+                assert f'id="{anchor}"' in markup, (info, anchor)
+                assert f'href="#{anchor}"' in markup, (info, anchor)
+            assert 'data-print-market-sheet' in markup, info
             assert entry["nom"] in markup, info
             assert "noindex,nofollow" in markup, info
             for forbidden in (

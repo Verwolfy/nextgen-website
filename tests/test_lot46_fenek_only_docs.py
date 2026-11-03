@@ -23,7 +23,7 @@ class FENEKOnlyDocumentation(unittest.TestCase):
         index = (DOCS / "index.astro").read_text(encoding="utf-8")
         self.assertIn("languages.flatMap(lang => catalogueProjects.map", route)
         self.assertIn("projectsByRange(range)", index)
-        self.assertIn("conceptPackshot(product, 'full')", route)
+        self.assertIn("conceptPackshot(product,'full')", route)
         self.assertIn("product.conditionnements", route)
         self.assertIn("detail.usages.map", route)
         self.assertIn("market-index-card", index)
@@ -51,11 +51,11 @@ class FENEKOnlyDocumentation(unittest.TestCase):
         self.assertNotIn("en 1504", route.lower())
         self.assertNotIn("certified", route.lower())
         self.assertNotIn("FENEK SDS", route)
-        self.assertIn("les conditions de mise en œuvre", route)
-        self.assertIn("conditions and safety documentation", route)
+        self.assertIn("conditions de mise en œuvre", route)
+        self.assertIn("Technical dossier and SDS", route)
         self.assertIn("شروط التطبيق", route)
-        self.assertIn("Formats présentés à titre indicatif", route)
-        self.assertIn("Proposed packaging formats", route)
+        self.assertIn("Formats de présentation indicatifs", route)
+        self.assertIn("Proposed packaging", route)
         self.assertEqual(
             (ROOT / "public/data/products.json").read_text(encoding="utf-8").strip(),
             "[]",

@@ -2,6 +2,7 @@
 import Layout from '../../../layouts/Layout.astro';
 import {brand, languages, rangeName, rangeColor, type Lang} from '../../../data/site';
 import {catalogueProjects, conceptPackshot, type CatalogueProject} from '../../../lib/catalogue-projets';
+import {guideFor} from '../../../data/fenek-guides';
 
 export function getStaticPaths() {
   return languages.flatMap(lang => catalogueProjects.map(product => ({
@@ -14,142 +15,208 @@ const product = Astro.props.product as CatalogueProject;
 if (!product || !catalogueProjects.some(p => p.slug === product.slug)) {
   throw Error('Unknown FENEK reference');
 }
-const copy = {
-  fr: {
-    title: 'Fiche produit',
-    lead: 'Découvrez la référence FENEK, son domaine d’application et ses présentations.',
-    overview: 'Présentation',
-    profile: 'Identité produit',
-    kind: 'Désignation',
-    reference: 'Référence',
-    range: 'Gamme',
-    fields: 'Domaines d’application',
-    packaging: 'Formats de présentation',
-    packagingNote: 'Formats présentés à titre indicatif ; disponibilité et conditionnements définitifs sur confirmation.',
-    formatUnknown: 'Consultez notre équipe pour les formats proposés.',
-    technical: 'Informations techniques',
-    technicalText: 'Pour obtenir les caractéristiques vérifiées, les conditions de mise en œuvre et les documents de sécurité correspondant à cette référence, contactez l’équipe NextGen.',
-    contact: 'Demander une fiche technique',
-    email: 'Écrire à notre équipe',
-    print: 'Imprimer ou enregistrer en PDF',
-    back: 'Retour au catalogue',
-    image: 'Visuel de présentation de',
-    footer: 'Présentation de gamme non contractuelle. Vérifier les instructions techniques propres au produit avant toute utilisation.',
-  },
-  ar: {
-    title: 'بطاقة المنتج',
-    lead: 'تعرّف على مرجع FENEK ومجالات استخدامه وعبواته المقترحة.',
-    overview: 'نظرة عامة',
-    profile: 'هوية المنتج',
-    kind: 'الوصف',
-    reference: 'المرجع',
-    range: 'المجموعة',
-    fields: 'مجالات الاستخدام',
-    packaging: 'أحجام العبوات المقترحة',
-    packagingNote: 'الأحجام المعروضة إرشادية، ويجب تأكيد التوفر والتعبئة النهائية.',
-    formatUnknown: 'يرجى التواصل مع فريقنا لمعرفة العبوات المقترحة.',
-    technical: 'المعلومات الفنية',
-    technicalText: 'للحصول على الخصائص الفنية التي تم التحقق منها وشروط التطبيق ووثائق السلامة الخاصة بهذا المرجع، تواصل مع فريق NextGen.',
-    contact: 'طلب النشرة الفنية',
-    email: 'مراسلة الفريق',
-    print: 'طباعة البطاقة أو حفظها PDF',
-    back: 'العودة إلى الكتالوج',
-    image: 'صورة توضيحية للمنتج',
-    footer: 'عرض تعريفي غير تعاقدي. يجب التحقق من تعليمات المنتج الفنية قبل أي استخدام.',
-  },
-  en: {
-    title: 'Product sheet',
-    lead: 'Explore the FENEK reference, its intended applications and available catalogue presentations.',
-    overview: 'Overview',
-    profile: 'Product identity',
-    kind: 'Product type',
-    reference: 'Reference',
-    range: 'Range',
-    fields: 'Application areas',
-    packaging: 'Proposed packaging formats',
-    packagingNote: 'Catalogue formats are indicative; final packaging and availability require confirmation.',
-    formatUnknown: 'Contact our team for proposed packaging options.',
-    technical: 'Technical information',
-    technicalText: 'For verified characteristics, application conditions and safety documentation specific to this reference, contact the NextGen team.',
-    contact: 'Request a technical datasheet',
-    email: 'Email our team',
-    print: 'Print or save as PDF',
-    back: 'Back to catalogue',
-    image: 'Presentation image for',
-    footer: 'Non-contractual range presentation. Check the product-specific technical instructions before use.',
-  },
-}[lang];
 const detail = product.contenu[lang];
-const subject = encodeURIComponent('FENEK — technical information: ' + product.nom);
-const directEmail = 'mailto:' + brand.email + '?subject=' + subject;
+const guide = guideFor(product.code, product.gamme, lang);
+const t = {
+  fr:{
+    label:'Fiche produit',overview:'Aperçu',details:'Détails produits',application:'Application',documents:'Documents',
+    description:'Présentation',uses:'Utilisation',advantages:'Points clés',pack:'Emballage',
+    productInfo:'Informations produit',safety:'Environnement et sécurité',technical:'Informations techniques',
+    identity:'Désignation',family:'Gamme',reference:'Référence',formats:'Formats de présentation',
+    character:'Caractéristiques à considérer',controls:'Points de contrôle',safetyText:'Les consignes de sécurité doivent être adaptées au produit concerné. Contactez NextGen pour connaître les documents disponibles.',
+    formatNote:'Formats de présentation indicatifs ; conditionnements définitifs et disponibilité sur demande.',
+    noFormats:'Formats sur demande.',
+    conditions:'Conditions d’application',quantity:'Consommation et dosage',steps:'Étapes d’application',
+    before:'Étude et préparation',method:'Choix du procédé',after:'Contrôles après application',
+    documentProduct:'Fiche produit FENEK',documentTechnical:'Dossier technique et FDS',documentDesc:'Résumé de la gamme, domaines d’emploi et présentations.',
+    documentTechnicalText:'Pour la fiche technique détaillée et les documents de sécurité propres à cette référence, adressez votre demande à notre équipe.',
+    summary:'Données de comparaison issues d’une synthèse documentaire par famille ; les valeurs spécifiques et instructions finales relèvent du dossier technique du produit.',
+    contact:'Demander la documentation',email:'Écrire à NextGen',print:'Imprimer / enregistrer en PDF',
+    view:'Consulter la fiche',download:'Imprimer le document',back:'Retour au catalogue',
+    color:'Présentation visuelle',footer:'Visuel et formats indicatifs. Les conditions de mise en œuvre dépendent de la documentation propre au produit.',
+    nav:'Navigation dans la fiche',topic:'Éléments techniques de la famille',sourceHint:'Les informations de mise en œuvre détaillées sont communiquées pour la référence concernée.',
+  },
+  ar:{
+    label:'بطاقة المنتج',overview:'نظرة عامة',details:'تفاصيل المنتج',application:'التطبيق',documents:'الوثائق',
+    description:'التعريف',uses:'الاستخدام',advantages:'النقاط الرئيسية',pack:'التعبئة',
+    productInfo:'معلومات المنتج',safety:'البيئة والسلامة',technical:'المعلومات الفنية',
+    identity:'التسمية',family:'المجموعة',reference:'المرجع',formats:'أشكال العبوات المقترحة',
+    character:'الخصائص الواجب دراستها',controls:'نقاط التحقق',safetyText:'تختلف إجراءات السلامة حسب المنتج؛ يرجى التواصل مع NextGen لمعرفة الوثائق المتاحة لكل مرجع.',
+    formatNote:'أحجام العبوات إرشادية، وتؤكد العبوات النهائية والتوفر عند الطلب.',
+    noFormats:'العبوات متاحة بالاستفسار.',
+    conditions:'شروط التطبيق',quantity:'الاستهلاك والجرعة',steps:'مراحل التطبيق',
+    before:'الدراسة والتحضير',method:'اختيار الطريقة',after:'الفحوص بعد التطبيق',
+    documentProduct:'بطاقة منتج FENEK',documentTechnical:'الملف الفني وصحيفة بيانات السلامة',documentDesc:'ملخص المجموعة ومجالات الاستخدام وأشكال العبوات.',
+    documentTechnicalText:'للحصول على النشرة الفنية التفصيلية ووثائق السلامة الخاصة بهذا المرجع، يُرجى مراسلة فريقنا.',
+    summary:'معلومات مستخلصة من دراسة وثائق منتجات مماثلة حسب الفئة؛ أما القيم والتعليمات الخاصة بكل مرجع فترجع إلى ملفه الفني.',
+    contact:'طلب الوثائق الفنية',email:'مراسلة NextGen',print:'طباعة / حفظ PDF',
+    view:'عرض البطاقة',download:'طباعة الوثيقة',back:'العودة إلى الكتالوج',
+    color:'صورة توضيحية',footer:'الصورة والعبوات إرشادية. تعتمد شروط التطبيق على الوثائق الفنية الخاصة بالمنتج.',
+    nav:'التنقل بين أقسام البطاقة',topic:'المعلومات الفنية المتعلقة بالفئة',sourceHint:'تُقدم تعليمات التطبيق المفصلة الخاصة بالمرجع عند طلبها.',
+  },
+  en:{
+    label:'Product sheet',overview:'Overview',details:'Product details',application:'Application',documents:'Documents',
+    description:'Product overview',uses:'Uses',advantages:'Key considerations',pack:'Packaging',
+    productInfo:'Product information',safety:'Environment and safety',technical:'Technical information',
+    identity:'Product name',family:'Range',reference:'Reference',formats:'Proposed packaging',
+    character:'Characteristics to evaluate',controls:'Points to check',safetyText:'Safety requirements depend on the specific product. Contact NextGen to confirm which documents are available for this reference.',
+    formatNote:'Catalogue packaging is indicative; final sizes and availability are subject to confirmation.',
+    noFormats:'Packaging details on request.',
+    conditions:'Application conditions',quantity:'Consumption and dosage',steps:'Application stages',
+    before:'Review and preparation',method:'Process selection',after:'Post-application checks',
+    documentProduct:'FENEK product sheet',documentTechnical:'Technical dossier and SDS',documentDesc:'Overview of the product range, uses and packaging presentations.',
+    documentTechnicalText:'For the detailed technical data sheet and safety information specific to this reference, contact our team.',
+    summary:'Category-level information derived from a technical-document review; product-specific values and final instructions belong in the product’s own technical dossier.',
+    contact:'Request documentation',email:'Email NextGen',print:'Print / save PDF',
+    view:'Read sheet',download:'Print document',back:'Back to catalogue',
+    color:'Presentation image',footer:'Illustrative image and formats. Application conditions depend on the product-specific technical documentation.',
+    nav:'Navigate product sheet',topic:'Category technical topics',sourceHint:'Detailed instructions for this specific reference are provided on request.',
+  }
+}[lang];
+const emailHref = 'mailto:' + brand.email + '?subject=' +
+  encodeURIComponent('FENEK technical documentation — ' + product.nom);
 ---
-<Layout lang={lang} title={product.nom + ' — ' + copy.title} description={detail.description}>
+<Layout lang={lang} title={product.nom + ' — ' + t.label} description={detail.description}>
   <div class="page-head fenek-sheet-head" style={'--range-color:' + rangeColor[product.gamme]}>
     <div class="container">
-      <a class="concept-back" href={`/${lang}/catalogue/`}>{copy.back}</a>
-      <span class="eyebrow">FENEK · {copy.title}</span>
+      <a class="concept-back" href={`/${lang}/catalogue/`}>{t.back}</a>
+      <span class="eyebrow">FENEK · {rangeName[product.gamme]}</span>
       <h1><bdi dir="ltr">{product.nom}</bdi></h1>
       <p>{detail.accroche}</p>
     </div>
   </div>
-  <article class="section fenek-sheet">
+  <article class="fenek-product-page">
     <div class="container">
-      <div class="market-sheet-paper fenek-sheet-paper">
-        <div class="fenek-sheet-intro">
-          <div class="fenek-sheet-intro-copy">
-            <span class="fenek-sheet-overline">{copy.overview}</span>
-            <h2>{copy.title}</h2>
-            <p>{detail.description}</p>
-            <div class="fenek-reference-label"><bdi dir="ltr">{product.code}</bdi></div>
+      <header class="fenek-product-intro">
+        <div class="fenek-product-intro-copy">
+          <span class="fenek-sheet-overline">{t.label}</span>
+          <h2>{detail.accroche}</h2>
+          <p>{detail.description}</p>
+          <ul class="fenek-product-quick-points">
+            <li>{detail.usages.join(' · ')}</li>
+            <li>{guide.focus}</li>
+          </ul>
+        </div>
+        <figure class="fenek-product-image">
+          <img src={conceptPackshot(product,'full')} width="800" height="800"
+               loading="eager" decoding="async" alt={`${t.color} — ${product.nom}`}/>
+          <figcaption>{t.footer}</figcaption>
+        </figure>
+      </header>
+      <nav class="fenek-section-nav" aria-label={t.nav}>
+        <a href="#fenek-overview">{t.overview}</a>
+        <a href="#fenek-details">{t.details}</a>
+        <a href="#fenek-application">{t.application}</a>
+        <a href="#fenek-documents">{t.documents}</a>
+      </nav>
+      <section id="fenek-overview" class="fenek-document-section" aria-labelledby="fenek-overview-heading">
+        <h2 id="fenek-overview-heading">{t.overview}</h2>
+        <div class="fenek-overview-grid">
+          <div><h3>{t.uses}</h3><ul>{detail.usages.map(use=><li>{use}</li>)}</ul></div>
+          <div><h3>{t.advantages}</h3><p>{guide.focus}</p></div>
+          <div><h3>{t.pack}</h3>
+            {product.conditionnements.length > 0 ?
+              <ul>{product.conditionnements.map(c=><li><bdi dir="ltr">{c.format}</bdi></li>)}</ul>
+              : <p>{t.noFormats}</p>}
+            <p class="fenek-document-fineprint">{t.formatNote}</p>
           </div>
-          <figure class="fenek-sheet-visual">
-            <img
-              src={conceptPackshot(product, 'full')}
-              width="800" height="800"
-              alt={`${copy.image} ${product.nom}`}
-              loading="eager" decoding="async"
-            />
-            <figcaption>{copy.footer}</figcaption>
-          </figure>
+          <div><h3>{t.description}</h3><p>{detail.description}</p></div>
         </div>
-        <div class="fenek-sheet-content">
-          <section aria-labelledby="fenek-identity">
-            <h2 id="fenek-identity">{copy.profile}</h2>
-            <dl class="fenek-spec-grid">
-              <div><dt>{copy.reference}</dt><dd><bdi dir="ltr">{product.nom}</bdi></dd></div>
-              <div><dt>{copy.range}</dt><dd><bdi dir="ltr">{rangeName[product.gamme]}</bdi></dd></div>
-              <div class="fenek-spec-wide"><dt>{copy.kind}</dt><dd>{detail.accroche}</dd></div>
-            </dl>
-          </section>
-          <section aria-labelledby="fenek-use">
-            <h2 id="fenek-use">{copy.fields}</h2>
-            <ul class="fenek-sheet-tags">
-              {detail.usages.map(use => <li>{use}</li>)}
-            </ul>
-          </section>
-          <section aria-labelledby="fenek-pack">
-            <h2 id="fenek-pack">{copy.packaging}</h2>
-            {product.conditionnements.length > 0
-              ? <div class="fenek-sheet-tags fenek-pack-list">
-                  {product.conditionnements.map(c => <span>{c.format}</span>)}
-                </div>
-              : <p>{copy.formatUnknown}</p>}
-            <p class="fenek-sheet-small">{copy.packagingNote}</p>
-          </section>
-          <section class="fenek-tech-contact" aria-labelledby="fenek-tech">
-            <h2 id="fenek-tech">{copy.technical}</h2>
-            <p>{copy.technicalText}</p>
-            <div class="market-sheet-footer">
-              <a class="btn" href={`/${lang}/contact/`}>{copy.contact}</a>
-              <a class="btn btn-muted" href={directEmail}>{copy.email}</a>
-              <button class="btn btn-muted market-print" type="button" data-print-market-sheet>{copy.print}</button>
+      </section>
+      <section id="fenek-details" class="fenek-document-section" aria-labelledby="fenek-details-heading">
+        <h2 id="fenek-details-heading">{t.details}</h2>
+        <div class="fenek-accordion-group">
+          <details class="fenek-doc-accordion" open>
+            <summary>{t.safety}<span class="fenek-accordion-indicator" aria-hidden="true"></span></summary>
+            <div class="fenek-accordion-body"><p>{guide.safety}</p><p>{t.safetyText}</p></div>
+          </details>
+          <details class="fenek-doc-accordion">
+            <summary>{t.productInfo}<span class="fenek-accordion-indicator" aria-hidden="true"></span></summary>
+            <div class="fenek-accordion-body">
+              <dl class="fenek-document-data">
+                <div><dt>{t.reference}</dt><dd><bdi dir="ltr">{product.nom}</bdi></dd></div>
+                <div><dt>{t.family}</dt><dd><bdi dir="ltr">{rangeName[product.gamme]}</bdi></dd></div>
+                <div><dt>{t.identity}</dt><dd>{detail.accroche}</dd></div>
+                <div><dt>{t.formats}</dt><dd>{product.conditionnements.length ?
+                  product.conditionnements.map(c=>c.format).join(' · ') : t.noFormats}</dd></div>
+              </dl>
             </div>
-          </section>
+          </details>
+          <details class="fenek-doc-accordion">
+            <summary>{t.technical}<span class="fenek-accordion-indicator" aria-hidden="true"></span></summary>
+            <div class="fenek-accordion-body">
+              <dl class="fenek-document-data">
+                <div><dt>{t.topic}</dt><dd>{guide.focus}</dd></div>
+                <div><dt>{t.character}</dt><dd>{guide.checks}</dd></div>
+              </dl>
+              <p class="fenek-document-fineprint">{t.summary}</p>
+            </div>
+          </details>
         </div>
-      </div>
+      </section>
+      <section id="fenek-application" class="fenek-document-section" aria-labelledby="fenek-application-heading">
+        <h2 id="fenek-application-heading">{t.application}</h2>
+        <div class="fenek-accordion-group">
+          <details class="fenek-doc-accordion" open>
+            <summary>{t.conditions}<span class="fenek-accordion-indicator" aria-hidden="true"></span></summary>
+            <div class="fenek-accordion-body"><p>{guide.checks}</p><p>{guide.before}</p></div>
+          </details>
+          <details class="fenek-doc-accordion">
+            <summary>{t.quantity}<span class="fenek-accordion-indicator" aria-hidden="true"></span></summary>
+            <div class="fenek-accordion-body"><p>{guide.quantity}</p></div>
+          </details>
+          <details class="fenek-doc-accordion">
+            <summary>{t.steps}<span class="fenek-accordion-indicator" aria-hidden="true"></span></summary>
+            <div class="fenek-accordion-body">
+              <ol class="fenek-document-steps">
+                <li><strong>{t.before}</strong><p>{guide.before}</p></li>
+                <li><strong>{t.method}</strong><p>{guide.method}</p></li>
+                <li><strong>{t.after}</strong><p>{guide.after}</p></li>
+              </ol>
+              <p class="fenek-document-fineprint">{t.sourceHint}</p>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section id="fenek-documents" class="fenek-document-section" aria-labelledby="fenek-documents-heading">
+        <h2 id="fenek-documents-heading">{t.documents}</h2>
+        <div class="fenek-accordion-group">
+          <details class="fenek-doc-accordion" open>
+            <summary>{t.documentProduct}<span class="fenek-accordion-indicator" aria-hidden="true"></span></summary>
+            <div class="fenek-accordion-body">
+              <div class="fenek-document-row">
+                <div><span class="fenek-document-file-icon" aria-hidden="true">PDF</span>
+                  <strong>{product.nom} · {t.label}</strong><p>{t.documentDesc}</p>
+                </div>
+                <button class="btn fenek-print-btn" type="button" data-print-market-sheet>{t.print}</button>
+              </div>
+            </div>
+          </details>
+          <details class="fenek-doc-accordion">
+            <summary>{t.documentTechnical}<span class="fenek-accordion-indicator" aria-hidden="true"></span></summary>
+            <div class="fenek-accordion-body">
+              <p>{t.documentTechnicalText}</p>
+              <div class="actions">
+                <a class="btn" href={`/${lang}/contact/`}>{t.contact}</a>
+                <a class="btn btn-muted" href={emailHref}>{t.email}</a>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+      <p class="fenek-document-footer">{t.footer}</p>
     </div>
   </article>
 </Layout>
 <script>
+  const accordions = Array.from(document.querySelectorAll<HTMLDetailsElement>('.fenek-doc-accordion'));
+  let beforePrint: boolean[] = [];
+  window.addEventListener('beforeprint', () => {
+    beforePrint = accordions.map(item => item.open);
+    accordions.forEach(item => {item.open = true;});
+  });
+  window.addEventListener('afterprint', () => {
+    accordions.forEach((item, index) => {item.open = beforePrint[index] ?? item.open;});
+  });
   document.querySelector<HTMLButtonElement>('[data-print-market-sheet]')?.addEventListener('click', () => window.print());
 </script>

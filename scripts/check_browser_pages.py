@@ -314,22 +314,44 @@ def check() -> None:
                     assert visible_cards.count() == 0, lang
                     page.locator("[data-catalogue-reset]").click()
                     assert visible_cards.count() == 50, lang
-                    # Lot 46: independent FENEK sheets with no external brand copy.
+                    # Lot 47: product information organized into accessible native accordions.
                     url = base + "/" + lang + "/documentation/fenek-bond-c1t/"
                     response = page.goto(url, wait_until="domcontentloaded")
                     assert response and response.status == 200, (lang, url)
-                    assert page.locator(".fenek-sheet-paper").count() == 1, lang
-                    assert page.locator(".fenek-spec-grid dd").count() == 3, lang
-                    assert page.locator(".fenek-sheet-tags li").count() >= 1, lang
-                    assert page.locator(".fenek-sheet-visual img").evaluate(
+                    assert page.locator(".fenek-product-intro").count() == 1, lang
+                    assert page.locator(".fenek-product-image img").evaluate(
                         "img => img.complete && img.naturalWidth > 0"), lang
-                    assert page.locator(".fenek-tech-contact a[href$='/contact/']").count() == 1, lang
+                    assert page.locator(".fenek-section-nav a").count() == 4, lang
+                    assert page.locator(".fenek-doc-accordion").count() == 8, lang
+                    assert page.locator(".fenek-doc-accordion[open]").count() == 3, lang
+                    for marker in ("fenek-overview", "fenek-details",
+                                   "fenek-application", "fenek-documents"):
+                        assert page.locator("#" + marker).count() == 1, (lang, marker)
                     assert page.locator("meta[name='robots']").get_attribute("content") == "noindex,nofollow", lang
-                    assert page.locator(".market-reference,.market-sheet-warning").count() == 0, lang
+                    assert page.locator(".fenek-document-row button[data-print-market-sheet]").count() == 1, lang
                     assert page.locator("form").count() == 0, lang
+                    accordion = page.locator("#fenek-details .fenek-doc-accordion").nth(1)
+                    assert accordion.get_attribute("open") is None, lang
+                    accordion.locator("summary").click()
+                    assert accordion.get_attribute("open") is not None, lang
+                    accordion.locator("summary").focus()
+                    page.keyboard.press("Enter")
+                    assert accordion.get_attribute("open") is None, lang
+                    open_states = page.evaluate("""() => {
+                        const list = Array.from(document.querySelectorAll('.fenek-doc-accordion'));
+                        const before = list.map(d => d.open);
+                        window.dispatchEvent(new Event('beforeprint'));
+                        const expanded = list.every(d => d.open);
+                        window.dispatchEvent(new Event('afterprint'));
+                        return {expanded, restored: list.every((d,i) => d.open === before[i])};
+                    }""")
+                    assert open_states["expanded"] and open_states["restored"], (lang, open_states)
+                    assert page.locator(".market-reference,.market-sheet-warning").count() == 0, lang
                     for other_brand in ("Sika", "Mapei", "Fosroc", "Jotun", "Granitex", "Weber"):
                         assert other_brand.lower() not in page.locator("main").inner_text().lower(), (
                             lang, other_brand)
+                    overflow = page.evaluate("Math.ceil(document.documentElement.scrollWidth-innerWidth)")
+                    assert overflow <= 4, (lang,size,overflow)
                     page.goto(base + "/" + lang + "/documentation/", wait_until="domcontentloaded")
                     assert page.locator(".market-index-card").count() == 50, lang
                     assert page.locator(".market-sheet-warning").count() == 0, lang
@@ -343,10 +365,12 @@ def check() -> None:
                             url = base + "/" + lang + "/documentation/" + slug + "/"
                             response = page.goto(url, wait_until="domcontentloaded")
                             assert response and response.status == 200, (lang, url)
-                            assert page.locator(".fenek-sheet-paper").count() == 1, (lang, slug)
+                            assert page.locator(".fenek-doc-accordion").count() == 8, (lang, slug)
                             assert page.locator(".market-reference").count() == 0, (lang, slug)
-                            assert page.locator(".fenek-sheet-visual img").evaluate(
+                            assert page.locator(".fenek-product-image img").evaluate(
                                 "img => img.complete && img.naturalWidth > 0"), (lang,slug)
+                    if lang == "ar":
+                        assert page.locator("html").get_attribute("dir") == "rtl", lang
 
                     # Explicitly follow the language navigation to another localized page.
                     page.goto(base + "/" + lang + "/contact/", wait_until="domcontentloaded")
