@@ -91,7 +91,9 @@
     {
       "sku": "BOND-GP-CSII",
       "range": "bond",
-      "source_ids": [],
+      "source_ids": [
+        "N01"
+      ],
       "status": "external_market_comparison_only",
       "nextgen_tested": false,
       "nextgen_sds": false
@@ -109,7 +111,9 @@
     {
       "sku": "BOND-M10",
       "range": "bond",
-      "source_ids": [],
+      "source_ids": [
+        "N03"
+      ],
       "status": "external_market_comparison_only",
       "nextgen_tested": false,
       "nextgen_sds": false
@@ -117,7 +121,9 @@
     {
       "sku": "BOND-M5",
       "range": "bond",
-      "source_ids": [],
+      "source_ids": [
+        "N02"
+      ],
       "status": "external_market_comparison_only",
       "nextgen_tested": false,
       "nextgen_sds": false
@@ -125,7 +131,9 @@
     {
       "sku": "BOND-OC-CSIII",
       "range": "bond",
-      "source_ids": [],
+      "source_ids": [
+        "N04"
+      ],
       "status": "external_market_comparison_only",
       "nextgen_tested": false,
       "nextgen_sds": false
@@ -186,7 +194,9 @@
     {
       "sku": "FLOW-CI",
       "range": "flow",
-      "source_ids": [],
+      "source_ids": [
+        "N05"
+      ],
       "status": "external_market_comparison_only",
       "nextgen_tested": false,
       "nextgen_sds": false
@@ -293,7 +303,9 @@
     {
       "sku": "PAINT-ENT-L",
       "range": "paint",
-      "source_ids": [],
+      "source_ids": [
+        "N06"
+      ],
       "status": "external_market_comparison_only",
       "nextgen_tested": false,
       "nextgen_sds": false
@@ -364,7 +376,9 @@
     {
       "sku": "PAINT-PRIM-A",
       "range": "paint",
-      "source_ids": [],
+      "source_ids": [
+        "N07"
+      ],
       "status": "external_market_comparison_only",
       "nextgen_tested": false,
       "nextgen_sds": false
@@ -372,7 +386,9 @@
     {
       "sku": "PAINT-PRIM-FX",
       "range": "paint",
-      "source_ids": [],
+      "source_ids": [
+        "N08"
+      ],
       "status": "external_market_comparison_only",
       "nextgen_tested": false,
       "nextgen_sds": false
@@ -390,7 +406,9 @@
     {
       "sku": "PAINT-TXT-F",
       "range": "paint",
-      "source_ids": [],
+      "source_ids": [
+        "N09"
+      ],
       "status": "external_market_comparison_only",
       "nextgen_tested": false,
       "nextgen_sds": false
@@ -459,7 +477,9 @@
     {
       "sku": "PROOF-EP-SB",
       "range": "proof",
-      "source_ids": [],
+      "source_ids": [
+        "N10"
+      ],
       "status": "external_market_comparison_only",
       "nextgen_tested": false,
       "nextgen_sds": false
@@ -487,7 +507,9 @@
     {
       "sku": "PROOF-PU-INJ",
       "range": "proof",
-      "source_ids": [],
+      "source_ids": [
+        "N11"
+      ],
       "status": "external_market_comparison_only",
       "nextgen_tested": false,
       "nextgen_sds": false
@@ -801,6 +823,105 @@
       "limit": "Document tiers, marché et version spécifiques",
       "origin": "manufacturer_tds",
       "url": "https://www.jotun.com/api/v1/datasheets/download/merged?selectedFiles=4197"
+    },
+    {
+      "id": "N01",
+      "brand": "MAPEI",
+      "name": "MapeWall Intonaco Base",
+      "observed": "Enduit de rénovation respirant à base de chaux hydraulique naturelle (NHL), classe GP-CS II ; consommation indicative annoncée par Mapei : 15 kg/m² par cm ; sac de 25 kg.",
+      "limit": "Correspondance d'usage et de classe seulement : liant NHL, différent de la description FENEK « enduit ciment ». Valeurs non transposables.",
+      "origin": "manufacturer_tds",
+      "url": "https://cdnmedia.mapei.com/docs/librariesprovider2/lines-technical-documentation/cat_risanamento_gb10-24-1.pdf?sfvrsn=82270470_24"
+    },
+    {
+      "id": "N02",
+      "brand": "MAPEI",
+      "name": "Intomap Build M5",
+      "observed": "Déclaration de performances Mapei : mortier de maçonnerie général selon EN 998-2, classe de résistance à la compression M5.",
+      "limit": "Une classe déclarée pour ce mortier Mapei ne constitue pas une résistance mesurée ou déclarée pour FENEK-M5.",
+      "origin": "manufacturer_tds",
+      "url": "https://cdnmedia.mapei.com/docs/librariesprovider17/products-documents/3_gre_ce-dop_2656_en-998-2_gb_0_561f0d66983a4ccea764b1f35ad489cc.pdf?sfvrsn=dbf304db_0"
+    },
+    {
+      "id": "N03",
+      "brand": "MAPEI",
+      "name": "MapeWall Muratura Fine",
+      "observed": "Mortier de maçonnerie à base de chaux hydraulique naturelle Mapei, classe G-M10 selon EN 998-2 ; eau de mélange publiée dans la FT : 4 à 4,5 L par sac de 25 kg.",
+      "limit": "Même usage/nom de classe, mais formulation spécifique à Mapei à la chaux hydraulique ; dosage, résistance et classification non transférables à FENEK.",
+      "origin": "manufacturer_tds",
+      "url": "https://cdnmedia.mapei.com/docs/librariesprovider38/products-documents/1_2620-mapewallmuraturafine-gb_f7886b6e0d6a41fe9ab3b0fcf3f7ad58.pdf?sfvrsn=2885ed0f_0"
+    },
+    {
+      "id": "N04",
+      "brand": "Saint-Gobain Weber",
+      "name": "weberpral TE",
+      "observed": "Enduit coloré monocouche de façade ; le fabricant mentionne une résistance CSIII, un sac de 25 kg et une température d'emploi de +5 °C à +35 °C.",
+      "limit": "Produit Weber et procédé façade spécifiques. La catégorie CSIII et la plage d'application ne prouvent rien pour FENEK-OC-CSIII.",
+      "origin": "manufacturer_tds",
+      "url": "https://www.fr.weber/facades-neuves/les-enduits-monocouches-projetes/weberpral-te"
+    },
+    {
+      "id": "N05",
+      "brand": "Sika",
+      "name": "Sika FerroGard-901",
+      "observed": "Adjuvant liquide inhibiteur de corrosion pour béton armé et mortier ; le fabricant cite la protection des armatures exposées aux chlorures et un conditionnement 20 L sur sa page canadienne.",
+      "limit": "Chimie et emploi du Sika FerroGard-901 propres à sa version locale ; aucun dosage ni effet anticorrosion n'est attesté pour FENEK-FLOW CI.",
+      "origin": "manufacturer_tds",
+      "url": "https://can.sika.com/en/construction/concrete-repair-protection/admixtures-and-additives/sika-ferrogard-901.html"
+    },
+    {
+      "id": "N06",
+      "brand": "MAPEI",
+      "name": "Dursilite Level",
+      "observed": "Enduit acrylique de rebouchage/lissage en pâte prêt à l'emploi pour murs intérieurs ; consommation indicative fabricant de 1,6 à 1,7 kg/m² par mm.",
+      "limit": "Comparateur d'enduit intérieur acrylique uniquement. La consommation dépend du support et n'est pas celle de FENEK-PAINT ENT-L.",
+      "origin": "manufacturer_tds",
+      "url": "https://cdnmedia.mapei.com/docs/librariesprovider17/products-documents/1_06642_dursilite-level_en_975dceb104ce40f8bcee63c5d09b914c.pdf?sfvrsn=3990f370_0"
+    },
+    {
+      "id": "N07",
+      "brand": "Jotun",
+      "name": "Majestic Primer",
+      "observed": "Primaire acrylique aqueux Jotun pour murs intérieurs ; conçu pour améliorer l'adhérence et la résistance à l'alcalinité.",
+      "limit": "Sous-couche d'usage comparable seulement : aucune formule, compatibilité ou consommation FENEK-PAINT PRIM-A confirmée.",
+      "origin": "manufacturer_tds",
+      "url": "https://www.jotun.com/ww-en/products-and-services/products/majestic-primer"
+    },
+    {
+      "id": "N08",
+      "brand": "Jotun",
+      "name": "Jotashield Penetrating Primer",
+      "observed": "Primaire pénétrant Jotun à base d'acrylique en solvant pour surfaces extérieures, destiné aux fonds farinants et à l'adhérence de la peinture.",
+      "limit": "Comparateur de fonction fixatrice, pas d'identité chimique : ce produit Jotun est solvanté ; la formulation de FENEK-PAINT PRIM-FX reste inconnue.",
+      "origin": "manufacturer_tds",
+      "url": "https://www.jotun.com/in-en/decorative/products/exterior/all-exterior-products/jotashield-penetrating-primer"
+    },
+    {
+      "id": "N09",
+      "brand": "Jotun",
+      "name": "Jotashield Tex Fine(TR)",
+      "observed": "Peinture texturée fine d'extérieur à base d'émulsion acrylique, finition satinée/soyeuse, selon la présentation officielle Jotun.",
+      "limit": "Comparateur fonctionnel : aucun rendement, comportement aux fissures ou performance de revêtement certifié FENEK-PAINT TXT-F.",
+      "origin": "manufacturer_tds",
+      "url": "https://www.jotun.com/ww-en/products-and-services/products/jotashield-tex-fine-1"
+    },
+    {
+      "id": "N10",
+      "brand": "Sika",
+      "name": "Sikadur-31+",
+      "observed": "Adhésif de collage structurel époxy à deux composants Sika ; produit destiné au collage de matériaux de construction et à certaines réparations de béton.",
+      "limit": "La classe, les essais EN 1504-4, le rapport de mélange et les performances appartiennent uniquement au Sikadur-31+.",
+      "origin": "manufacturer_tds",
+      "url": "https://industry.sika.com/en/home/renewable-energies/wind-energy/concrete-tower/structural-bonding/sikadur-31.html"
+    },
+    {
+      "id": "N11",
+      "brand": "Sika",
+      "name": "Sika Injection-201 CE",
+      "observed": "Résine polyuréthane d'injection à deux composants réactive à l'eau pour l'étanchéité de fissures ; ratio fabricant A:B de 1:1 en volume.",
+      "limit": "Ratio d'un produit Sika spécifique. Les variantes régionales et les systèmes PU peuvent différer : aucune instruction de mélange FENEK-PROOF PU-INJ n'en découle.",
+      "origin": "manufacturer_tds",
+      "url": "https://gcc.sika.com/en/construction/waterproofing/injection/sika-injection-201ce.html"
     }
   ]
 }
