@@ -1,0 +1,28 @@
+type;produit_tiers;famille;parametre;valeur_propre_au_tiers;source_identifiable;reserve;statut_fenek
+ZIP-FR;GRANICOL;BOND;consommation;≈ 4 kg/m²;Fiche Technique FRANCAIS.zip :: Fiches Techniques New/GRANICOL.pdf;Contamination éditoriale : autre nom dans usages;DONNEE_TIERS_SEULEMENT
+ZIP-FR;GRANIPAN F10;BOND;consommation;≈ 2 kg/m²/mm;Fiche Technique FRANCAIS.zip :: Fiches Techniques New/GRANIPAN F10.pdf;Conditionnement FR/EN 25 kg vs AR 40 kg;DONNEE_TIERS_SEULEMENT
+ZIP-FR;GRANIPAN F10;BOND;conditionnement;25 kg/sac;Fiche Technique FRANCAIS.zip :: Fiches Techniques New/GRANIPAN F10.pdf;Divergence AR 40 kg;DONNEE_TIERS_SEULEMENT
+ZIP-FR;GRANIPAN R03;BOND;consommation;≈ 40 kg/m² sur 2 cm;Fiche Technique FRANCAIS.zip :: Fiches Techniques New/GRANIPAN R03.pdf;Mortier de réparation tiers;DONNEE_TIERS_SEULEMENT
+ZIP-FR;GRANIPROT MORTIER P;PROOF;consommation;1,5 kg/m²/mm;Fiche Technique FRANCAIS.zip :: Fiches Techniques New/GRANIPROT MORTIER P.pdf;EN 1,7 kg/m²/mm;DONNEE_TIERS_SEULEMENT
+ZIP-EN;GRANIPROT MORTIER P;PROOF;consommation;1.7 kg/m²/mm;Fiche Technique ANGLAIS.zip :: FT ANGLAIS/GRANIPROT MORTIER P.pdf;FR 1,5 kg/m²/mm;DONNEE_TIERS_SEULEMENT
+ZIP-FR;MEDAPLAST SP 40;FLOW;dosage;0,6–2,5 % du ciment;Fiche Technique FRANCAIS.zip :: Fiches Techniques New/MEDAPLAST SP 40.pdf;Ne pas transférer à FENEK;DONNEE_TIERS_SEULEMENT
+ZIP-FR;MEDAPLAST SP 40;FLOW;densité;1,20 ± 0,01;Fiche Technique FRANCAIS.zip :: Fiches Techniques New/MEDAPLAST SP 40.pdf;Composition réelle inconnue;DONNEE_TIERS_SEULEMENT
+ZIP-FR;MEDAFLOW 113;FLOW;dosage;0,8–2,5 % du ciment;Fiche Technique FRANCAIS.zip :: Fiches Techniques New/MEDAFLOW 113.pdf;EN contient des noms différents dans la méthode;DONNEE_TIERS_SEULEMENT
+ZIP-FR;MEDAFLOW 113;FLOW;extrait sec;36 % ± 1;Fiche Technique FRANCAIS.zip :: Fiches Techniques New/MEDAFLOW 113.pdf;Non assimilable à FENEK;DONNEE_TIERS_SEULEMENT
+ZIP-FR;MEDAFUGE L;FLOW;dosage;1–1,5 % du ciment;Fiche Technique FRANCAIS.zip :: Fiches Techniques New/MEDAFUGE L.pdf;Hydrofuge de masse tiers;DONNEE_TIERS_SEULEMENT
+ZIP-FR;MEDACRYL E;PAINT;consommation;400–500 g/m²/couche;Fiche Technique FRANCAIS.zip :: Fiches Techniques New/MEDACRYL E.pdf;EN source avec contamination autre produit;DONNEE_TIERS_SEULEMENT
+ZIP-FR;MEDAPOXY PRIMER;PROOF;consommation;350–450 g/m²;Fiche Technique FRANCAIS.zip :: Fiches Techniques New/MEDAPOXY PRIMER.pdf;EN indique 300–400 g/m²;DONNEE_TIERS_SEULEMENT
+ZIP-EN;MEDAPOXY PRIMER;PROOF;consommation;300–400 g/m²;Fiche Technique ANGLAIS.zip :: FT ANGLAIS/MEDAPOXY PRIMER.pdf;FR indique 350–450 g/m²;DONNEE_TIERS_SEULEMENT
+ZIP-FR;MEDAPOXY SOL;PROOF;consommation;1,2 kg/m²/mm;Fiche Technique FRANCAIS.zip :: Fiches Techniques New/MEDAPOXY SOL.pdf;Époxy tiers;DONNEE_TIERS_SEULEMENT
+ZIP-FR;MEDACRYL F;PAINT;consommation suspecte;7–10 L/m²;Fiche Technique FRANCAIS.zip :: Fiches Techniques New/MEDACRYL F.pdf;Valeur atypique à exclure des hypothèses;DONNEE_TIERS_SEULEMENT
+WEB_OFFICIEL;SikaCeram-205 Nigeria;BOND;eau de gâchage;5,5–6,0 L / sac 25 kg;https://nga.sika.com/en/construction/building-finishing/cementitious-tileadhesive/high-performancetileadhesivec2teclass/sikaceram-205.html;Pays/version propre au fabricant;DONNEE_TIERS_SEULEMENT
+WEB_OFFICIEL;SikaCeram-205 Nigeria;BOND;adhérence déclarée;≥ 1 MPa;https://nga.sika.com/en/construction/building-finishing/cementitious-tileadhesive/high-performancetileadhesivec2teclass/sikaceram-205.html;Pays/version propre au fabricant;DONNEE_TIERS_SEULEMENT
+WEB_OFFICIEL;Keraflex Mapei UK;BOND;eau de gâchage (gris);5–5,4 L / 20 kg;https://cdnmedia.mapei.com/docs/librariesprovider12/products-documents/1_00106_keraflex_en-gb_c667fd8afef34404b2717baabec0c34c.pdf?sfvrsn=a52ad23e_0;Pays/version propre au fabricant;DONNEE_TIERS_SEULEMENT
+WEB_OFFICIEL;Keraflex Mapei UK;BOND;consommation selon format;2–5 kg/m²;https://cdnmedia.mapei.com/docs/librariesprovider12/products-documents/1_00106_keraflex_en-gb_c667fd8afef34404b2717baabec0c34c.pdf?sfvrsn=a52ad23e_0;Pays/version propre au fabricant;DONNEE_TIERS_SEULEMENT
+WEB_OFFICIEL;Ceresit CM11 Henkel MEA;BOND;eau de gâchage;5–5,5 L / 25 kg;https://dm.henkel-dam.com/is/content/henkel/TDS_CERESIT-CM-11_EN_MEA;Pays/version propre au fabricant;DONNEE_TIERS_SEULEMENT
+WEB_OFFICIEL;webercol flex Saint-Gobain France;BOND;temps ouvert;30 minutes;https://www.fr.weber/pose-du-carrelage/les-colles-en-poudre-mortiers-colles/webercol-flex;Pays/version propre au fabricant;DONNEE_TIERS_SEULEMENT
+WEB_OFFICIEL;Sika ViscoCrete-20 HE GCC;FLOW;dosage ouvrabilité moyenne;0,2–0,8 % masse ciment;https://gcc.sika.com/en/construction/concrete/water-reducers/pce-based-super-plasticizers/sika-viscocrete-20he.html;Pays/version propre au fabricant;DONNEE_TIERS_SEULEMENT
+WEB_OFFICIEL;Sika ViscoCrete-20 HE GCC;FLOW;dosage haute ouvrabilité;1–2 % masse ciment;https://gcc.sika.com/en/construction/concrete/water-reducers/pce-based-super-plasticizers/sika-viscocrete-20he.html;Pays/version propre au fabricant;DONNEE_TIERS_SEULEMENT
+WEB_OFFICIEL;Mapelastic Smart Mapei;PROOF;consommation rouleau/truelle;≈ 1,6 kg/m²/mm;https://cdnmedia.mapei.com/docs/librariesprovider17/products-documents/1_02013_mapelastic-smart_en_afe12a9717534cecb7bf575e6388968b.pdf?sfvrsn=b9cf5de3_0;Pays/version propre au fabricant;DONNEE_TIERS_SEULEMENT
+WEB_OFFICIEL;Elastocolor Paint Mapei;PAINT;consommation couche;0,2–0,4 kg/m²;https://cdnmedia.mapei.com/docs/librariesprovider21/products-documents/1_elastocolor-paint_329-7-2017_226442349f50406dabd770ac8def7a3e.pdf?sfvrsn=df468b48_0;Pays/version propre au fabricant;DONNEE_TIERS_SEULEMENT
+WEB_OFFICIEL;Auramix 400 Fosroc;FLOW;base déclarée;polycarboxylate ether;https://www.fosroc.com/product/show/auramix-400;Pays/version propre au fabricant;DONNEE_TIERS_SEULEMENT
