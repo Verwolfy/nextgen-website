@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from functools import partial
+import re
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import unquote
@@ -343,6 +344,10 @@ def check() -> None:
                         pdf_bytes = page.pdf(path=str(pdf_path), print_background=True,
                                              prefer_css_page_size=True)
                         assert pdf_bytes.startswith(b"%PDF") and len(pdf_bytes) > 10000, lang
+                        # Chromium PDFs keep uncompressed page dictionaries:
+                        # prohibit a nearly blank orphan page on the C1T reference.
+                        pdf_page_count = len(re.findall(rb"/Type\s*/Page\b", pdf_bytes))
+                        assert pdf_page_count == 1, (lang, pdf_page_count)
                     page.emulate_media(media="screen")
                     assert page.locator(".fenek-product-page").is_visible(), lang
                     assert not page.locator(".fenek-print-document").is_visible(), lang
