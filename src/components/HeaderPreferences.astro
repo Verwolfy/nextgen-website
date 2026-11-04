@@ -2,7 +2,7 @@
 import { languages, type Lang } from '../data/site';
 interface Props { lang: Lang; suffix: string; languageLabel: string; }
 const { lang, suffix, languageLabel } = Astro.props;
-const translate=(next: Lang)=>`/${next}${suffix}`.replace(/\\/+/g,'/');
+const translate=(next: Lang)=>`/${next}${suffix}`;
 const labels = {
   fr: { mode: 'Activer le mode nuit', day: 'Activer le mode jour', night: 'Activer le mode nuit', language: 'Langue' },
   ar: { mode: 'تفعيل الوضع الليلي', day: 'تفعيل الوضع النهاري', night: 'تفعيل الوضع الليلي', language: 'اللغة' },
