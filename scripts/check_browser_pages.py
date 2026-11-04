@@ -55,34 +55,37 @@ def check() -> None:
                             if lang == "ar":
                                 assert "فئات FENEK" in page.locator(".section .eyebrow").all_inner_texts(), path
                             assert page.locator(".hero-status[role='note']").count() == 1, path
-                            slider = page.locator("[data-hero-slider]")
-                            assert slider.count() == 1, path
-                            frames = slider.locator("[data-hero-slide] img")
-                            assert frames.count() == 4, path
-                            assert [frames.nth(i).get_attribute("src") for i in range(4)] == [
-                                f"/images/maquettes/maquette-{n}.webp"
-                                for n in ("01", "02", "15", "16")
-                            ], path
-                            assert slider.locator(".hero-slide.is-active img").get_attribute("src") == (
-                                "/images/maquettes/maquette-01.webp"), path
-                            assert slider.locator("[data-hero-controls]").is_visible(), path
+                            welcome = page.locator("[data-welcome-card]")
+                            assert welcome.count() == 1, path
+                            video = welcome.locator("[data-welcome-video]")
+                            assert video.count() == 1, path
+                            assert video.get_attribute("data-src") == (
+                                "/videos/nextgen-nexo-geno-welcome.mp4"), path
+                            assert video.get_attribute("poster") == (
+                                "/videos/nextgen-nexo-geno-poster.webp"), path
+                            assert video.get_attribute("preload") == "none", path
+                            assert video.get_attribute("muted") is not None, path
+                            assert video.get_attribute("playsinline") is not None, path
+                            assert video.get_attribute("loop") is not None, path
+                            assert welcome.locator(".welcome-video-cta").get_attribute("href") == (
+                                "/" + lang + "/catalogue/"), path
+                            assert page.locator("[data-hero-slider]").count() == 0, path
                             assert page.locator(".hero-mascot-card").count() == 0, path
-                            slider.locator("[data-hero-dot]").nth(2).click()
-                            assert slider.locator(".hero-slide.is-active img").get_attribute("src") == (
-                                "/images/maquettes/maquette-15.webp"), path
-                            slider.locator("[data-hero-prev]").click()
-                            assert slider.locator(".hero-slide.is-active img").get_attribute("src") == (
-                                "/images/maquettes/maquette-02.webp"), path
-                            slider.locator("[data-hero-dot]").first.click()
-                            slider.locator("[data-hero-toggle]").click()
-                            assert slider.locator("[data-hero-toggle]").get_attribute("aria-pressed") == "true", path
+                            toggle = welcome.locator("[data-welcome-toggle]")
+                            toggle.wait_for(state="visible", timeout=5000)
+                            toggle.click()
+                            assert toggle.inner_text() == "▶", path
+                            toggle.click()
+                            assert toggle.inner_text() == "Ⅱ", path
                             if size == "desktop":
                                 no_js = browser.new_page(java_script_enabled=False)
                                 try:
                                     no_js.goto(base + path, wait_until="domcontentloaded")
-                                    assert no_js.locator("[data-hero-slide]").count() == 4, path
-                                    assert no_js.locator(".hero-slide.is-active img").is_visible(), path
-                                    assert not no_js.locator("[data-hero-controls]").is_visible(), path
+                                    assert no_js.locator("[data-welcome-video]").count() == 1, path
+                                    assert no_js.locator("[data-welcome-video]").get_attribute("poster") == (
+                                        "/videos/nextgen-nexo-geno-poster.webp"), path
+                                    assert no_js.locator(".welcome-video-cta").is_visible(), path
+                                    assert not no_js.locator("[data-welcome-toggle]").is_visible(), path
                                 finally:
                                     no_js.close()
                             assert page.locator(".home-approach .editorial-caution").count() == 1, path
@@ -92,7 +95,7 @@ def check() -> None:
                                 "links => links.map(a => a.getAttribute('href'))")
                             assert paths == ["/"+lang+"/contact/", "/"+lang+"/distributeurs/"], path
                             assert page.locator(".hero .btn-outline").get_attribute("href") == "/"+lang+"/contact/", path
-                            assert slider.evaluate(
+                            assert welcome.evaluate(
                                 "e => getComputedStyle(e).borderRadius !== '0px'"
                             ), path
                         if section == "catalogue":
