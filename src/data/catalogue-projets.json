@@ -2345,9 +2345,9 @@
     "mode_fr_preparatoire": "1) Joint propre, sec, dépoussiéré ; primaire si requis. 2) Poser fond de joint de diamètre [valeur à confirmer]. 3) Extruder le mastic en remplissant sans bulles. 4) Lisser à l'outil avant formation de peau ([valeur à confirmer] min). 5) Éviter les mouvements durant le durcissement.",
     "conditionnements": [
       {
-        "format": "300 mL — emballage à préciser",
+        "format": "Cartouche 300 mL",
         "poids_net": null,
-        "unite": "NON CONFIRMÉ"
+        "unite": "CARTOUCHE"
       }
     ],
     "statut": "presentation_provisoire",
