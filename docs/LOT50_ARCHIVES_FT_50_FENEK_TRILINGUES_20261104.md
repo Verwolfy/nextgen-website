@@ -1,5 +1,7 @@
 # Lot 50 — Enrichissement documentaire trilingue des 50 produits FENEK
 
+> **Mise à jour du 4 novembre 2026 (lot 51).** Les 16 références BOND sont désormais en **sac 25 kg exclusivement**, confirmé par l'utilisateur. Les formats 5/10 kg ci-dessous décrivent l'ancien état du catalogue et ne sont plus proposés. Voir [Lot 51](LOT51_BOND_CONDITIONNEMENT_25KG_20261104.md). La validation industrielle reste en attente.
+
 Date : 2026-11-04 · Statut : **présentations provisoires ; aucune FT/FDS approuvée**.
 
 ## Sources analysées
