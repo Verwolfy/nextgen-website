@@ -21,6 +21,7 @@ const long={fr:'Français',ar:'العربية',en:'English'};
     <svg class="theme-icon-sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/></svg>
     <svg class="theme-icon-moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 13A8.8 8.8 0 0 1 11 3.2 8.9 8.9 0 1 0 20.8 13Z"/></svg>
   </span>
+  <div class="locale">
   <details class="language-picker" data-language-picker>
     <summary aria-label={languageLabel}>
       <span class="language-picker-title">{copy.lang}</span>
@@ -32,6 +33,7 @@ const long={fr:'Français',ar:'العربية',en:'English'};
         aria-current={l===lang?'page':undefined}>{long[l]}</a>)}
     </nav>
   </details>
+  </div>
 </div>
 <script>
   const themeButton=document.querySelector<HTMLButtonElement>('[data-theme-switch]');
@@ -73,6 +75,7 @@ const long={fr:'Français',ar:'العربية',en:'English'};
 </script>
 <style>
   .header-preferences{display:flex;align-items:center;gap:6px;flex:0 0 auto;direction:ltr;margin-inline-start:auto}
+  .header-preferences .locale{display:contents}
   .theme-switch{flex:0 0 44px;display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;background:transparent;cursor:pointer;border-radius:30px}
   .theme-switch-track{display:block;position:relative;width:40px;height:21px;background:#d0d6dd;border-radius:99px;transition:background .2s}
   .theme-switch-knob{position:absolute;top:-1px;left:-1px;width:23px;height:23px;border:1px solid #e0e7ee;background:#fff;border-radius:50%;box-shadow:0 2px 4px #0c213624;transition:transform .2s}
