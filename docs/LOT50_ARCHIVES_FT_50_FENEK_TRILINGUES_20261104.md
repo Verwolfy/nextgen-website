@@ -21,14 +21,15 @@ PAINT-INT-S, PAINT-INT-WA, PAINT-TXT-F, PROOF-PU-1K et PROOF-PU-INJ.
 
 ## Modifications site
 
+- Contexte : src/data/fenek-application-context.ts — 24 profils de préparation et supports, disponibles en FR/EN/AR et utilisés par les 50 références.
 - Données : src/data/fenek-qualification-notes.ts — 50 notes contextualisées
   propres au **thème de vérification** de chaque référence, chacune en
   FR, EN et AR. Ce sont des critères à étudier, pas des performances acquises.
 - Page : src/pages/[lang]/documentation/[slug].astro — nouveau bloc
-  « Critères à vérifier pour cette référence » dans « Informations techniques » ;
+  « Critères à vérifier pour cette référence » dans « Informations techniques » et un bloc contextualisé de préparation dans « Conditions d’application » ;
   les 8 accordéons, les usages et les sections Application/Documents restent en place.
 - Export A4 : src/components/FenekPrintableSheet.astro — bloc technique
-  personnalisé dans le document de présentation provisoire ; logo et charte NEXTGEN conservés.
+  et préparation du support personnalisés dans le document de présentation provisoire ; logo et charte NEXTGEN conservés.
 - Style : src/styles/site.css.
 - Tests : tests/test_lot50_fenek_qualification_notes.py ;
   vérifications navigateur enrichies dans scripts/check_browser_pages.py.
