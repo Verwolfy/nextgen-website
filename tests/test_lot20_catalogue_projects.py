@@ -32,7 +32,7 @@ class TestLot20CatalogueProjects(unittest.TestCase):
 
     def test_packaging_is_from_erp_and_unknown_is_explicit(self):
         without=[p['code'] for p in self.data if not p['conditionnements']]
-        self.assertEqual(without,['PROOF-PU-SEAL'])
+        self.assertEqual(without,[])
         for p in self.data:
             self.assertTrue(all(c['format'] for c in p['conditionnements']))
             self.assertNotIn('prix_vente_defaut',json.dumps(p))
