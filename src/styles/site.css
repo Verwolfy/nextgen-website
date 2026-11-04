@@ -488,7 +488,7 @@ h1,h2,h3,.page-head p{overflow-wrap:anywhere;min-width:0}
   .fenek-print-document { display:none!important; }
 }
 @media print {
-  @page { size:A4 portrait; margin:10mm 11mm 13mm; }
+  @page { size:A4 portrait; margin:8mm 10mm 9mm; }
   .fenek-sheet-head,
   .fenek-product-page,
   .fenek-section-nav { display:none!important; }
@@ -518,10 +518,10 @@ h1,h2,h3,.page-head p{overflow-wrap:anywhere;min-width:0}
     grid-template-columns:38mm minmax(0,1fr) 18mm;
     align-items:center;
     column-gap:6mm;
-    min-height:31mm;
+    min-height:28mm;
     margin:0 0 2mm;
   }
-  .fenek-print-logo { display:block;width:37mm;height:28mm;object-fit:contain; }
+  .fenek-print-logo { display:block;width:37mm;height:26mm;object-fit:contain; }
   .fenek-print-name {
     border-inline-start:1.5pt solid #0d335a;
     padding-inline-start:5mm;
@@ -533,14 +533,14 @@ h1,h2,h3,.page-head p{overflow-wrap:anywhere;min-width:0}
     overflow-wrap:break-word;
   }
   .fenek-print-slants {
-    height:28mm;
+    height:26mm;
     background:linear-gradient(110deg,#0d335a 0 43%,#fff 43% 57%,#07965b 57%);
     clip-path:polygon(52% 0,100% 0,49% 100%,0 100%);
   }
   .fenek-print-line {
     height:1.1mm;
     background:linear-gradient(90deg,#0d335a 0 44%,#fff 44% 46%,#07965b 46% 61%,#fff 61% 63%,#0d335a 63% 100%);
-    margin:0 0 5mm;
+    margin:0 0 3.5mm;
   }
   .fenek-print-banner {
     width:max-content;
@@ -587,7 +587,7 @@ h1,h2,h3,.page-head p{overflow-wrap:anywhere;min-width:0}
     grid-template-columns:minmax(0,1.32fr) minmax(0,.68fr);
     gap:5mm;
     align-items:start;
-    margin:0 0 4.5mm;
+    margin:0 0 3mm;
     break-inside:avoid;
   }
   .fenek-print-metadata {
@@ -651,7 +651,7 @@ h1,h2,h3,.page-head p{overflow-wrap:anywhere;min-width:0}
   .fenek-print-cards {
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:2.7mm 3.7mm;
+    gap:2mm 3.7mm;
     align-items:stretch;
   }
   .fenek-print-card {
@@ -682,7 +682,7 @@ h1,h2,h3,.page-head p{overflow-wrap:anywhere;min-width:0}
     overflow-wrap:anywhere;
   }
   .fenek-print-process {
-    margin:4mm 0 3.5mm;
+    margin:3mm 0 2mm;
     border:1px solid #dce6eb;
     border-radius:3mm;
     overflow:hidden;
@@ -732,7 +732,7 @@ h1,h2,h3,.page-head p{overflow-wrap:anywhere;min-width:0}
     border-inline-start:1.1mm solid #07965b;
     background:#ecf4f1;
     color:#415e68;
-    padding:1.8mm 3mm;
+    padding:1.5mm 3mm;
     font-size:7.4pt;
     break-inside:avoid;
   }
@@ -742,8 +742,8 @@ h1,h2,h3,.page-head p{overflow-wrap:anywhere;min-width:0}
     grid-template-columns:1fr 1fr;
     column-gap:6mm;
     row-gap:1mm;
-    padding-top:2mm;
-    margin-top:4mm;
+    padding-top:1.5mm;
+    margin-top:2mm;
     color:#173953;
     font-size:7.6pt;
     break-inside:avoid;
