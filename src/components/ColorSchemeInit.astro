@@ -1,0 +1,14 @@
+<!-- Apply saved/system color scheme before CSS paint, without introducing dependencies. -->
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+    let preference = null;
+    try {
+      const stored = localStorage.getItem('nextgen-color-theme');
+      if (stored === 'dark' || stored === 'light') preference = stored;
+    } catch (_) { /* Private browsing: system preference still works. */ }
+    const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = preference || (systemDark ? 'dark' : 'light');
+    root.style.colorScheme = root.dataset.theme;
+  })();
+</script>
