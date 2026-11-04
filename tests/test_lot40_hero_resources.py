@@ -33,7 +33,8 @@ class Lot40HomepageTests(unittest.TestCase):
         ):
             self.assertIn(expected, slider)
         homepage = (ROOT / "src/pages/[lang]/index.astro").read_text(encoding="utf-8")
-        self.assertIn("<HeroSlider lang={lang} />", homepage)
+        self.assertIn("<HeroWelcomeVideo lang={lang} />", homepage)
+        self.assertNotIn("<HeroSlider lang={lang} />", homepage)
         self.assertNotIn("hero-mascot-card", homepage)
         self.assertNotIn("<form", homepage)
 
