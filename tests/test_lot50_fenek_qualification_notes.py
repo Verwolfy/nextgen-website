@@ -31,7 +31,7 @@ class FENEK50Editorial(unittest.TestCase):
 
     def test_24_context_profiles_localized(self):
         content = CONTEXT.read_text(encoding="utf-8")
-        matched = re.findall(r'^\\s*"([a-z]+)"\\s*:\\s*\\{fr:', content, re.M)
+        matched = re.findall(r'^\s*"([a-z]+)"\s*:\s*\{fr:', content, re.M)
         self.assertEqual(len(matched), 24)
         self.assertEqual(len(set(matched)), 24)
         self.assertEqual(content.count(',en:"'), 24)
