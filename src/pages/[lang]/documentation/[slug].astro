@@ -1,5 +1,6 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import FenekPrintableSheet from '../../../components/FenekPrintableSheet.astro';
 import {brand, languages, rangeName, rangeColor, type Lang} from '../../../data/site';
 import {catalogueProjects, conceptPackshot, type CatalogueProject} from '../../../lib/catalogue-projets';
 import {guideFor} from '../../../data/fenek-guides';
@@ -207,6 +208,7 @@ const emailHref = 'mailto:' + brand.email + '?subject=' +
       <p class="fenek-document-footer">{t.footer}</p>
     </div>
   </article>
+  <FenekPrintableSheet lang={lang} product={product} />
 </Layout>
 <script>
   const accordions = Array.from(document.querySelectorAll<HTMLDetailsElement>('.fenek-doc-accordion'));
