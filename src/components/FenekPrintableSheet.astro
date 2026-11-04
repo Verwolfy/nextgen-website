@@ -7,6 +7,7 @@
 import {brand, rangeName, type Lang} from '../data/site';
 import {conceptPackshot, type CatalogueProject} from '../lib/catalogue-projets';
 import {guideFor} from '../data/fenek-guides';
+import {qualificationFor} from '../data/fenek-qualification-notes';
 
 interface Props { lang:Lang; product:CatalogueProject; }
 const {lang,product} = Astro.props;
@@ -100,7 +101,7 @@ const formats = product.conditionnements.map(c=>c.format).join(' · ') || text.u
     </section>
     <section class="fenek-print-card">
       <h2>{text.technical}</h2>
-      <p>{guide.checks}</p>
+      <p>{qualificationFor(product.code,lang)}</p>
     </section>
     <section class="fenek-print-card">
       <h2>{text.conditions}</h2>
