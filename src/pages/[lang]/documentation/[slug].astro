@@ -125,7 +125,7 @@ const emailHref = 'mailto:' + brand.email + '?subject=' +
           <div><h3>{t.advantages}</h3><p>{guide.focus}</p></div>
           <div><h3>{t.pack}</h3>
             {product.conditionnements.length > 0 ?
-              <ul>{product.conditionnements.map(c=><li><bdi dir="ltr">{packagingLabelFor(c.format,lang)}</bdi></li>)}</ul>
+              <ul>{product.conditionnements.map(c=><li><bdi dir={lang==="ar"?"auto":"ltr"}>{packagingLabelFor(c.format,lang)}</bdi></li>)}</ul>
               : <p>{t.noFormats}</p>}
             <p class="fenek-document-fineprint">{t.formatNote}</p>
           </div>
