@@ -5,6 +5,7 @@ import {brand, languages, rangeName, rangeColor, type Lang} from '../../../data/
 import {catalogueProjects, conceptPackshot, type CatalogueProject} from '../../../lib/catalogue-projets';
 import {guideFor} from '../../../data/fenek-guides';
 import {qualificationFor} from '../../../data/fenek-qualification-notes';
+import {applicationContextFor} from '../../../data/fenek-application-context';
 
 export function getStaticPaths() {
   return languages.flatMap(lang => catalogueProjects.map(product => ({
@@ -38,6 +39,7 @@ const t = {
     color:'Présentation visuelle',footer:'Visuel et formats indicatifs. Les conditions de mise en œuvre dépendent de la documentation propre au produit.',
     nav:'Navigation dans la fiche',topic:'Éléments techniques de la famille',sourceHint:'Les informations de mise en œuvre détaillées sont communiquées pour la référence concernée.',
     qualification:'Critères à vérifier pour cette référence',qualificationNotice:'Points de contrôle issus d’une synthèse documentaire, à qualifier par essais propres au produit.',
+    preparationContext:'Points de préparation du support',
   },
   ar:{
     label:'بطاقة المنتج',overview:'نظرة عامة',details:'تفاصيل المنتج',application:'التطبيق',documents:'الوثائق',
@@ -57,6 +59,7 @@ const t = {
     color:'صورة توضيحية',footer:'الصورة والعبوات إرشادية. تعتمد شروط التطبيق على الوثائق الفنية الخاصة بالمنتج.',
     nav:'التنقل بين أقسام البطاقة',topic:'المعلومات الفنية المتعلقة بالفئة',sourceHint:'تُقدم تعليمات التطبيق المفصلة الخاصة بالمرجع عند طلبها.',
     qualification:'معايير التحقق لهذا المرجع',qualificationNotice:'معايير مستخلصة من مراجعة وثائق فنية، ويجب تأكيدها باختبارات خاصة بالمنتج.',
+    preparationContext:'نقاط تحضير السطح',
   },
   en:{
     label:'Product sheet',overview:'Overview',details:'Product details',application:'Application',documents:'Documents',
@@ -76,6 +79,7 @@ const t = {
     color:'Presentation image',footer:'Illustrative image and formats. Application conditions depend on the product-specific technical documentation.',
     nav:'Navigate product sheet',topic:'Category technical topics',sourceHint:'Detailed instructions for this specific reference are provided on request.',
     qualification:'Checks to validate for this reference',qualificationNotice:'Checklist derived from a technical-document review; validation requires product-specific testing.',
+    preparationContext:'Substrate preparation considerations',
   }
 }[lang];
 const emailHref = 'mailto:' + brand.email + '?subject=' +
@@ -169,7 +173,13 @@ const emailHref = 'mailto:' + brand.email + '?subject=' +
         <div class="fenek-accordion-group">
           <details class="fenek-doc-accordion" open>
             <summary>{t.conditions}<span class="fenek-accordion-indicator" aria-hidden="true"></span></summary>
-            <div class="fenek-accordion-body"><p>{guide.checks}</p><p>{guide.before}</p></div>
+            <div class="fenek-accordion-body">
+              <p>{guide.checks}</p><p>{guide.before}</p>
+              <div class="fenek-qualification-panel">
+                <h3>{t.preparationContext}</h3>
+                <p>{applicationContextFor(product.code,lang)}</p>
+              </div>
+            </div>
           </details>
           <details class="fenek-doc-accordion">
             <summary>{t.quantity}<span class="fenek-accordion-indicator" aria-hidden="true"></span></summary>
