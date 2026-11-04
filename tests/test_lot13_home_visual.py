@@ -26,7 +26,7 @@ class Lot13HomeVisualTests(unittest.TestCase):
             "editorialCopy[lang]", "edit.marketTag", "edit.homeStatus",
             "edit.homeContact", "edit.homeApproachTag", "edit.aboutLead",
             "edit.aboutNotice", "edit.aboutSteps",
-            'role="note"', "<HeroSlider lang={lang} />",
+            'role="note"', "<HeroWelcomeVideo lang={lang} />",
             "/a-propos/",
         ):
             self.assertIn(text, page)
@@ -55,7 +55,7 @@ class Lot13HomeVisualTests(unittest.TestCase):
     def test_chromium_checks_frame_and_320_screenshots(self):
         recipe = (ROOT / "scripts/check_browser_pages.py").read_text(encoding="utf-8")
         for marker in (
-            ".hero-status[role='note']", "[data-hero-slide]",
+            ".hero-status[role='note']", "[data-welcome-video]",
             ".home-approach .editorial-caution", ".home-approach .chip",
             "-mobile-320-home.png", "tiny_width <= 4",
         ):
