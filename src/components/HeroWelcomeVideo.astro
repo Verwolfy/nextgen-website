@@ -1,0 +1,86 @@
+---
+import type { Lang } from '../data/site';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const i18n = {
+  fr: {
+    label: 'Nexo et Geno vous invitent à découvrir NextGen',
+    cta: 'Découvrir les produits NextGen',
+    pause: 'Mettre la vidéo en pause',
+    play: 'Relancer la vidéo',
+    caption: 'Animation des mascottes Nexo et Geno',
+  },
+  ar: {
+    label: 'نيكسو وجينو يدعوانكم لاكتشاف منتجات NextGen',
+    cta: 'اكتشفوا منتجات NextGen',
+    pause: 'إيقاف الفيديو مؤقتًا',
+    play: 'تشغيل الفيديو',
+    caption: 'رسوم متحركة للتميمتين نيكسو وجينو',
+  },
+  en: {
+    label: 'Nexo and Geno invite you to discover NextGen',
+    cta: 'Discover NextGen products',
+    pause: 'Pause video',
+    play: 'Play video',
+    caption: 'Nexo and Geno mascot animation',
+  },
+}[lang];
+---
+<div class="welcome-video-card" data-welcome-card aria-label={i18n.label} role="region">
+  <video
+    data-welcome-video
+    data-src="/videos/nextgen-nexo-geno-welcome.mp4"
+    class="welcome-video"
+    poster="/videos/nextgen-nexo-geno-poster.webp"
+    width="960" height="540"
+    preload="none"
+    muted playsinline loop
+    aria-hidden="true"
+  ></video>
+  <div class="welcome-video-actions">
+    <span class="welcome-video-caption">{i18n.caption}</span>
+    <button type="button" data-welcome-toggle aria-label={i18n.pause} data-label-play={i18n.play} data-label-pause={i18n.pause} hidden>Ⅱ</button>
+  </div>
+  <a class="welcome-video-cta" href={`/${lang}/catalogue/`}>{i18n.cta}</a>
+</div>
+<script>
+  const card = document.querySelector<HTMLElement>('[data-welcome-card]');
+  const video = card?.querySelector<HTMLVideoElement>('[data-welcome-video]');
+  const button = card?.querySelector<HTMLButtonElement>('[data-welcome-toggle]');
+  if (card && video && button && 'IntersectionObserver' in window) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let visible = false;
+    let manuallyPaused = false;
+    const sync = async () => {
+      const shouldPlay = visible && !document.hidden && !reduceMotion.matches && !manuallyPaused;
+      if (!shouldPlay) { video.pause(); return; }
+      if (!video.src) video.src = video.dataset.src || '';
+      try { await video.play(); } catch { /* Poster remains visible */ }
+    };
+    const observer = new IntersectionObserver(entries => {
+      visible = entries.some(entry => entry.isIntersecting);
+      void sync();
+    }, { rootMargin: '100px' });
+    observer.observe(card);
+    button.hidden = false;
+    button.addEventListener('click', () => {
+      manuallyPaused = !manuallyPaused;
+      button.textContent = manuallyPaused ? '▶' : 'Ⅱ';
+      button.setAttribute('aria-label', manuallyPaused ? button.dataset.labelPlay! : button.dataset.labelPause!);
+      void sync();
+    });
+    document.addEventListener('visibilitychange', () => { void sync(); });
+    reduceMotion.addEventListener('change', () => { void sync(); });
+  }
+</script>
+<style>
+  .welcome-video-card{width:min(100%,540px);min-width:0;margin-inline:auto;padding:12px;background:linear-gradient(155deg,#fff,#edf3f4);border:1px solid #d8e5e9;border-radius:22px;box-shadow:0 25px 65px #0313247a;color:#102648}
+  .welcome-video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#f5f7f8;border-radius:14px}
+  .welcome-video-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:50px;padding:10px 4px 4px}
+  .welcome-video-caption{font-size:.77rem;color:#445d6e}
+  [data-welcome-toggle]{min-width:42px;min-height:42px;background:#fff;border:1px solid #cad9df;border-radius:100px;color:#102648;cursor:pointer}
+  .welcome-video-cta{display:block;width:100%;text-align:center;background:#008b5b;color:#fff;border-radius:8px;padding:9px 12px;font-weight:750}
+  .welcome-video-cta:hover{background:#00774c;text-decoration:none}
+  .welcome-video-card button:focus-visible,.welcome-video-cta:focus-visible{outline:3px solid #102648;outline-offset:3px}
+  @media(prefers-reduced-motion:reduce){.welcome-video{animation:none;transition:none}}
+</style>
