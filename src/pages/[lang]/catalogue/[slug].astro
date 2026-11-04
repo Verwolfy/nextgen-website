@@ -1,7 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import {brand,languages,rangeName,rangeColor,type Lang} from '../../../data/site';
-import {catalogueProjects,conceptPackshot,hasProductPackshot,type CatalogueProject} from '../../../lib/catalogue-projets';
+import {catalogueProjects,conceptPackshot,hasProductPackshot,packagingLabelFor,type CatalogueProject} from '../../../lib/catalogue-projets';
 import {catalogueCopy} from '../../../data/catalogue-content';
 export function getStaticPaths(){
  return languages.flatMap(lang=>catalogueProjects.map(product=>({params:{lang,slug:product.slug},props:{product}})));
@@ -45,7 +45,7 @@ const informationLabel = {
         <h2>{t.application}</h2><p>{d.description}</p>
         {d.usages.length>0&&<ul class="concept-usages">{d.usages.map(x=><li>{x}</li>)}</ul>}
         <h2>{t.format}</h2>
-        <div class="concept-formats detail-formats">{product.conditionnements.length?product.conditionnements.map(x=><span>{x.format}</span>):<span>{t.unknownFormat}</span>}</div>
+        <div class="concept-formats detail-formats">{product.conditionnements.length?product.conditionnements.map(x=><span>{packagingLabelFor(x.format,lang)}</span>):<span>{t.unknownFormat}</span>}</div>
         <p class="concept-detail-note">{t.methodDisclaimer}</p>
         <div class="actions"><a class="btn btn-muted" href={`/${lang}/documentation/${product.slug}/`}>{informationLabel}</a></div>
       </div>

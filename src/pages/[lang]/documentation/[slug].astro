@@ -2,7 +2,7 @@
 import Layout from '../../../layouts/Layout.astro';
 import FenekPrintableSheet from '../../../components/FenekPrintableSheet.astro';
 import {brand, languages, rangeName, rangeColor, type Lang} from '../../../data/site';
-import {catalogueProjects, conceptPackshot, type CatalogueProject} from '../../../lib/catalogue-projets';
+import {catalogueProjects, conceptPackshot, packagingLabelFor, type CatalogueProject} from '../../../lib/catalogue-projets';
 import {guideFor} from '../../../data/fenek-guides';
 import {qualificationFor} from '../../../data/fenek-qualification-notes';
 import {applicationContextFor} from '../../../data/fenek-application-context';
@@ -125,7 +125,7 @@ const emailHref = 'mailto:' + brand.email + '?subject=' +
           <div><h3>{t.advantages}</h3><p>{guide.focus}</p></div>
           <div><h3>{t.pack}</h3>
             {product.conditionnements.length > 0 ?
-              <ul>{product.conditionnements.map(c=><li><bdi dir="ltr">{c.format}</bdi></li>)}</ul>
+              <ul>{product.conditionnements.map(c=><li><bdi dir={lang==="ar"?"auto":"ltr"}>{packagingLabelFor(c.format,lang)}</bdi></li>)}</ul>
               : <p>{t.noFormats}</p>}
             <p class="fenek-document-fineprint">{t.formatNote}</p>
           </div>
@@ -147,7 +147,7 @@ const emailHref = 'mailto:' + brand.email + '?subject=' +
                 <div><dt>{t.family}</dt><dd><bdi dir="ltr">{rangeName[product.gamme]}</bdi></dd></div>
                 <div><dt>{t.identity}</dt><dd>{detail.accroche}</dd></div>
                 <div><dt>{t.formats}</dt><dd>{product.conditionnements.length ?
-                  product.conditionnements.map(c=>c.format).join(' · ') : t.noFormats}</dd></div>
+                  product.conditionnements.map(c=>packagingLabelFor(c.format,lang)).join(' · ') : t.noFormats}</dd></div>
               </dl>
             </div>
           </details>

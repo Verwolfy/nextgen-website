@@ -5,7 +5,7 @@
  * The real FT/FDS specimens remain private until laboratory and HSE approval.
  */
 import {brand, rangeName, type Lang} from '../data/site';
-import {conceptPackshot, type CatalogueProject} from '../lib/catalogue-projets';
+import {conceptPackshot, packagingLabelFor, type CatalogueProject} from '../lib/catalogue-projets';
 import {guideFor} from '../data/fenek-guides';
 import {qualificationFor} from '../data/fenek-qualification-notes';
 import {applicationContextFor} from '../data/fenek-application-context';
@@ -58,7 +58,7 @@ const text = {
     footer:'Range overview only. Product-specific technical and safety data sheets are not issued here; request approved documents.',
   },
 }[lang];
-const formats = product.conditionnements.map(c=>c.format).join(' · ') || text.unavailable;
+const formats = product.conditionnements.map(c=>packagingLabelFor(c.format,lang)).join(' · ') || text.unavailable;
 ---
 <section class="fenek-print-document" lang={lang} dir={lang==='ar'?'rtl':'ltr'}>
   <div class="fenek-print-masthead">
