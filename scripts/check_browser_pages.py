@@ -329,6 +329,23 @@ def check() -> None:
                         assert page.locator("#" + marker).count() == 1, (lang, marker)
                     assert page.locator("meta[name='robots']").get_attribute("content") == "noindex,nofollow", lang
                     assert page.locator(".fenek-document-row button[data-print-market-sheet]").count() == 1, lang
+                    # Lot 49: browser PDF prints a dedicated branded A4 document.
+                    assert page.locator(".fenek-print-document").count() == 1, lang
+                    assert page.locator(".fenek-print-logo").get_attribute("src") == "/images/Logo1.jpg", lang
+                    assert not page.locator(".fenek-print-document").is_visible(), lang
+                    page.emulate_media(media="print")
+                    assert page.locator(".fenek-print-document").is_visible(), lang
+                    assert not page.locator(".fenek-product-page").is_visible(), lang
+                    assert page.locator(".fenek-print-packshot img").evaluate(
+                        "img => img.complete && img.naturalWidth > 0"), lang
+                    if size == "desktop":
+                        pdf_path = SHOTS / ("fenek-bond-c1t-branded-print-" + lang + ".pdf")
+                        pdf_bytes = page.pdf(path=str(pdf_path), print_background=True,
+                                             prefer_css_page_size=True)
+                        assert pdf_bytes.startswith(b"%PDF") and len(pdf_bytes) > 10000, lang
+                    page.emulate_media(media="screen")
+                    assert page.locator(".fenek-product-page").is_visible(), lang
+                    assert not page.locator(".fenek-print-document").is_visible(), lang
                     assert page.locator("form").count() == 0, lang
                     accordion = page.locator("#fenek-details .fenek-doc-accordion").nth(1)
                     assert accordion.get_attribute("open") is None, lang

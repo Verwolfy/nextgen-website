@@ -480,3 +480,277 @@ h1,h2,h3,.page-head p{overflow-wrap:anywhere;min-width:0}
   .fenek-overview-grid p,.fenek-accordion-body p,.fenek-overview-grid li{font-size:9pt}
   .fenek-document-footer{font-size:8pt}
 }
+
+
+/* Lot 49 - A4 print composition, official logo, no publication of unapproved FT/FDS.
+   Screen: keep the existing accessible accordions and product presentation. */
+@media screen {
+  .fenek-print-document { display:none!important; }
+}
+@media print {
+  @page { size:A4 portrait; margin:10mm 11mm 13mm; }
+  .fenek-sheet-head,
+  .fenek-product-page,
+  .fenek-section-nav { display:none!important; }
+  .fenek-print-document,
+  .fenek-print-document * {
+    -webkit-print-color-adjust:exact!important;
+    print-color-adjust:exact!important;
+  }
+  .fenek-print-document {
+    display:block!important;
+    background:#fff!important;
+    color:#102b49;
+    font:9.2pt/1.42 Inter,Arial,"DejaVu Sans",sans-serif;
+    max-width:none;
+    width:100%;
+    padding:0;
+    margin:0;
+    orphans:3;
+    widows:3;
+  }
+  .fenek-print-document[dir="rtl"] {
+    font-family:"Noto Sans Arabic","DejaVu Sans",Tahoma,sans-serif;
+    line-height:1.55;
+  }
+  .fenek-print-masthead {
+    display:grid;
+    grid-template-columns:38mm minmax(0,1fr) 18mm;
+    align-items:center;
+    column-gap:6mm;
+    min-height:31mm;
+    margin:0 0 2mm;
+  }
+  .fenek-print-logo { display:block;width:37mm;height:28mm;object-fit:contain; }
+  .fenek-print-name {
+    border-inline-start:1.5pt solid #0d335a;
+    padding-inline-start:5mm;
+    color:#0d335a;
+    font-size:16pt;
+    line-height:1.16;
+    font-weight:850;
+    letter-spacing:.008em;
+    overflow-wrap:break-word;
+  }
+  .fenek-print-slants {
+    height:28mm;
+    background:linear-gradient(110deg,#0d335a 0 43%,#fff 43% 57%,#07965b 57%);
+    clip-path:polygon(52% 0,100% 0,49% 100%,0 100%);
+  }
+  .fenek-print-line {
+    height:1.1mm;
+    background:linear-gradient(90deg,#0d335a 0 44%,#fff 44% 46%,#07965b 46% 61%,#fff 61% 63%,#0d335a 63% 100%);
+    margin:0 0 5mm;
+  }
+  .fenek-print-banner {
+    width:max-content;
+    max-width:100%;
+    margin:0 auto 2.5mm;
+    background:#0d335a;
+    color:#fff;
+    transform:skewX(-10deg);
+    padding:2.2mm 12mm;
+    text-align:center;
+    font:800 19pt/1.1 Inter,Arial,sans-serif;
+    letter-spacing:.025em;
+  }
+  .fenek-print-banner span {display:block;transform:skewX(10deg);}
+  .fenek-print-product-name {
+    margin:2mm 0 0;
+    font:850 20pt/1.15 Inter,Arial,sans-serif;
+    color:#0d335a;
+    text-align:center;
+  }
+  .fenek-print-subtitle {
+    text-align:center;
+    margin:1mm auto 2mm;
+    color:#07965b;
+    font-size:12pt;
+    line-height:1.2;
+    font-weight:780;
+  }
+  .fenek-print-status {
+    text-align:center;
+    font-weight:850;
+    font-size:7.5pt;
+    color:#a52c2c;
+    background:#fff0f0;
+    border:1px solid #f2d1d1;
+    padding:1.7mm 3mm;
+    border-radius:2mm;
+    margin:0 auto 3mm;
+    width:fit-content;
+    max-width:100%;
+  }
+  .fenek-print-intro {
+    display:grid;
+    grid-template-columns:minmax(0,1.32fr) minmax(0,.68fr);
+    gap:5mm;
+    align-items:start;
+    margin:0 0 4.5mm;
+    break-inside:avoid;
+  }
+  .fenek-print-metadata {
+    display:grid;
+    gap:2mm;
+    margin:0;
+    padding:3mm;
+    border-radius:3mm;
+    background:#f1f4f6;
+    align-content:start;
+    min-height:43mm;
+  }
+  .fenek-print-metadata>div {
+    display:grid;
+    grid-template-columns:39% minmax(0,1fr);
+    align-items:stretch;
+    min-height:8mm;
+    border-radius:1.7mm;
+    overflow:hidden;
+    background:#e4eaf0;
+    break-inside:avoid;
+  }
+  .fenek-print-metadata dt {
+    padding:1.4mm 2mm;
+    margin:0;
+    background:#0d335a;
+    color:#fff;
+    font-size:8pt;
+    font-weight:770;
+  }
+  .fenek-print-metadata dd {
+    padding:1.4mm 2mm;
+    margin:0;
+    color:#152e47;
+    font-size:8pt;
+    font-weight:560;
+    overflow-wrap:anywhere;
+  }
+  .fenek-print-packshot {
+    margin:0;
+    border-radius:2.4mm;
+    overflow:hidden;
+    border:1px solid #d9e2e8;
+    background:#f5f7f8;
+    align-self:stretch;
+    text-align:center;
+  }
+  .fenek-print-packshot img {
+    display:block;
+    width:100%;
+    height:35mm;
+    object-fit:contain;
+  }
+  .fenek-print-packshot figcaption {
+    font-size:6.9pt;
+    line-height:1.25;
+    color:#526877;
+    padding:1.3mm 2mm;
+    background:#fff;
+  }
+  .fenek-print-cards {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:2.7mm 3.7mm;
+    align-items:stretch;
+  }
+  .fenek-print-card {
+    border-radius:2.6mm;
+    overflow:hidden;
+    background:#eef2f5;
+    border:1px solid #e0e7eb;
+    break-inside:avoid;
+  }
+  .fenek-print-card h2,
+  .fenek-print-process h2 {
+    background:#0d335a;
+    color:#fff;
+    border-inline-start:3.5mm solid #07965b;
+    padding:1.6mm 2.5mm;
+    margin:0;
+    font-size:10pt;
+    font-weight:800;
+    letter-spacing:0;
+    line-height:1.25;
+  }
+  .fenek-print-card p {
+    font-size:8.2pt;
+    line-height:1.43;
+    color:#223b50;
+    margin:0;
+    padding:2.4mm 3mm 3mm;
+    overflow-wrap:anywhere;
+  }
+  .fenek-print-process {
+    margin:4mm 0 3.5mm;
+    border:1px solid #dce6eb;
+    border-radius:3mm;
+    overflow:hidden;
+    break-inside:avoid;
+  }
+  .fenek-print-process ol {
+    list-style:none;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:2mm;
+    padding:2.5mm;
+    margin:0;
+    background:#edf2f4;
+  }
+  .fenek-print-process li {
+    min-width:0;
+    border-radius:2mm;
+    background:#fff;
+    padding:2.1mm 2.4mm;
+    break-inside:avoid;
+  }
+  .fenek-print-process li strong {
+    display:flex;
+    align-items:center;
+    gap:1.6mm;
+    color:#102b49;
+    line-height:1.2;
+    font-size:8.4pt;
+  }
+  .fenek-print-process li span {
+    flex:0 0 auto;
+    display:inline-grid;
+    width:7mm;
+    height:7mm;
+    place-items:center;
+    border-radius:50%;
+    background:#07965b;
+    color:#fff;
+    font-size:7pt;
+  }
+  .fenek-print-process li p {
+    font-size:7.5pt;
+    line-height:1.4;
+    margin:2mm 0 0;
+  }
+  .fenek-print-source {
+    border-inline-start:1.1mm solid #07965b;
+    background:#ecf4f1;
+    color:#415e68;
+    padding:1.8mm 3mm;
+    font-size:7.4pt;
+    break-inside:avoid;
+  }
+  .fenek-print-footer {
+    border-top:1.4pt solid #0d335a;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    column-gap:6mm;
+    row-gap:1mm;
+    padding-top:2mm;
+    margin-top:4mm;
+    color:#173953;
+    font-size:7.6pt;
+    break-inside:avoid;
+  }
+  .fenek-print-footer>div:last-of-type {text-align:end;overflow-wrap:anywhere;}
+  .fenek-print-footer p {grid-column:1/-1;margin:0;color:#506b76;font-size:7pt;line-height:1.3;max-width:none;}
+  .fenek-print-footer a {text-decoration:none;color:#173953;}
+  .fenek-print-document[dir="rtl"] .fenek-print-product-name,
+  .fenek-print-document[dir="rtl"] .fenek-print-banner {font-family:"Noto Sans Arabic","DejaVu Sans",Tahoma,sans-serif;}
+}
