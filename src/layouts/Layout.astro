@@ -1,6 +1,9 @@
 ---
 import { brand, brandLocation, languages, messages, type Lang } from '../data/site';
 import '../styles/site.css';
+import '../styles/theme.css';
+import HeaderPreferences from '../components/HeaderPreferences.astro';
+import ThemeInit from '../components/ThemeInit.astro';
 interface Props { lang:Lang; title:string; description:string; }
 const {lang,title,description}=Astro.props;
 const t=messages[lang];
@@ -15,6 +18,9 @@ const navSections = ['gammes','catalogue','distributeurs','ressources','a-propos
 <html lang={lang} dir={lang==='ar'?'rtl':'ltr'}>
  <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <ThemeInit />
+  <meta name="theme-color" content="#0c2439" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f8fafb" media="(prefers-color-scheme: light)" />
   <meta name="description" content={description} />
   <meta name="robots" content="noindex,nofollow" />
   <meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" />
@@ -33,7 +39,7 @@ const navSections = ['gammes','catalogue','distributeurs','ressources','a-propos
     <nav aria-label={t.navigationLabel} class="nav">
       {navSections.map(s=><a href={`/${lang}/${s}/`} aria-current={Astro.url.pathname===`/${lang}/${s}/`?'page':undefined}>{t.menu[s]}</a>)}
     </nav>
-    <div class="locale" aria-label={t.languageLabel}>{languages.map(l=><a aria-current={l===lang?'page':undefined} href={translate(l)} lang={l} aria-label={l==='fr'?'Français':l==='ar'?'العربية':'English'}>{l.toUpperCase()}</a>)}</div>
+    <HeaderPreferences lang={lang} suffix={suffix} languageLabel={t.languageLabel} />
     <!-- Native disclosure: keyboard and touch accessible, no JS or tracking. -->
     <details class="mobile-nav">
       <summary class="mobile-trigger" aria-label={t.mobileMenu}><span aria-hidden="true">☰</span><span class="mobile-trigger-label">{t.mobileMenu}</span></summary>
