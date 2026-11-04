@@ -1359,6 +1359,11 @@
     "mode_fr_preparatoire": "1) Support dépoussiéré, fissures rebouchées. 2) Appliquer à la lame en passes minces, [valeur à confirmer] passes. 3) Séchage [valeur à confirmer] h, puis ponçage. 4) Dépoussiérer avant peinture.",
     "conditionnements": [
       {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      },
+      {
         "format": "Seau 10 kg",
         "poids_net": 10,
         "unite": "SEAU"
@@ -1366,11 +1371,6 @@
       {
         "format": "Seau 20 kg",
         "poids_net": 20,
-        "unite": "SEAU"
-      },
-      {
-        "format": "Seau 5 kg",
-        "poids_net": 5,
         "unite": "SEAU"
       }
     ],
@@ -1410,6 +1410,11 @@
     "mode_fr_preparatoire": "1) Support sain, propre, sec, sans efflorescences ni algues (traiter si besoin). 2) Appliquer la sous-couche adaptée. 3) Diluer selon fiche ([valeur à confirmer] %). 4) Appliquer en [valeur à confirmer] couches. 5) Ne pas appliquer sous pluie, gel ou plein soleil.",
     "conditionnements": [
       {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      },
+      {
         "format": "Seau 10 kg",
         "poids_net": 10,
         "unite": "SEAU"
@@ -1417,11 +1422,6 @@
       {
         "format": "Seau 20 kg",
         "poids_net": 20,
-        "unite": "SEAU"
-      },
-      {
-        "format": "Seau 5 kg",
-        "poids_net": 5,
         "unite": "SEAU"
       }
     ],
@@ -1461,6 +1461,11 @@
     "mode_fr_preparatoire": "1) Support sain, propre, sec, sans efflorescences ni algues (traiter si besoin). 2) Appliquer la sous-couche adaptée. 3) Diluer selon fiche ([valeur à confirmer] %). 4) Appliquer en [valeur à confirmer] couches. 5) Ne pas appliquer sous pluie, gel ou plein soleil.",
     "conditionnements": [
       {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      },
+      {
         "format": "Seau 10 kg",
         "poids_net": 10,
         "unite": "SEAU"
@@ -1468,11 +1473,6 @@
       {
         "format": "Seau 20 kg",
         "poids_net": 20,
-        "unite": "SEAU"
-      },
-      {
-        "format": "Seau 5 kg",
-        "poids_net": 5,
         "unite": "SEAU"
       }
     ],
@@ -1512,6 +1512,11 @@
     "mode_fr_preparatoire": "1) Support sain, propre, sec, sans efflorescences ni algues (traiter si besoin). 2) Appliquer la sous-couche adaptée. 3) Diluer selon fiche ([valeur à confirmer] %). 4) Appliquer en [valeur à confirmer] couches. 5) Ne pas appliquer sous pluie, gel ou plein soleil.",
     "conditionnements": [
       {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      },
+      {
         "format": "Seau 10 kg",
         "poids_net": 10,
         "unite": "SEAU"
@@ -1519,11 +1524,6 @@
       {
         "format": "Seau 20 kg",
         "poids_net": 20,
-        "unite": "SEAU"
-      },
-      {
-        "format": "Seau 5 kg",
-        "poids_net": 5,
         "unite": "SEAU"
       }
     ],
@@ -1563,6 +1563,11 @@
     "mode_fr_preparatoire": "1) Support propre, sec, dépoussiéré, réparé. 2) Appliquer une sous-couche [valeur à confirmer]. 3) Diluer si nécessaire ([valeur à confirmer] % d'eau). 4) Appliquer en [valeur à confirmer] couches au rouleau/brosse/pistolet. 5) Délai entre couches [valeur à confirmer] h.",
     "conditionnements": [
       {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      },
+      {
         "format": "Seau 10 kg",
         "poids_net": 10,
         "unite": "SEAU"
@@ -1570,11 +1575,6 @@
       {
         "format": "Seau 20 kg",
         "poids_net": 20,
-        "unite": "SEAU"
-      },
-      {
-        "format": "Seau 5 kg",
-        "poids_net": 5,
         "unite": "SEAU"
       }
     ],
@@ -1614,6 +1614,11 @@
     "mode_fr_preparatoire": "1) Support propre, sec, dépoussiéré, réparé. 2) Appliquer une sous-couche [valeur à confirmer]. 3) Diluer si nécessaire ([valeur à confirmer] % d'eau). 4) Appliquer en [valeur à confirmer] couches au rouleau/brosse/pistolet. 5) Délai entre couches [valeur à confirmer] h.",
     "conditionnements": [
       {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      },
+      {
         "format": "Seau 10 kg",
         "poids_net": 10,
         "unite": "SEAU"
@@ -1621,11 +1626,6 @@
       {
         "format": "Seau 20 kg",
         "poids_net": 20,
-        "unite": "SEAU"
-      },
-      {
-        "format": "Seau 5 kg",
-        "poids_net": 5,
         "unite": "SEAU"
       }
     ],
@@ -1665,6 +1665,11 @@
     "mode_fr_preparatoire": "1) Support propre, sec, dépoussiéré, réparé. 2) Appliquer une sous-couche [valeur à confirmer]. 3) Diluer si nécessaire ([valeur à confirmer] % d'eau). 4) Appliquer en [valeur à confirmer] couches au rouleau/brosse/pistolet. 5) Délai entre couches [valeur à confirmer] h.",
     "conditionnements": [
       {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      },
+      {
         "format": "Seau 10 kg",
         "poids_net": 10,
         "unite": "SEAU"
@@ -1672,11 +1677,6 @@
       {
         "format": "Seau 20 kg",
         "poids_net": 20,
-        "unite": "SEAU"
-      },
-      {
-        "format": "Seau 5 kg",
-        "poids_net": 5,
         "unite": "SEAU"
       }
     ],
@@ -1716,6 +1716,11 @@
     "mode_fr_preparatoire": "1) Support propre et dépoussiéré. 2) Diluer ou utiliser prêt à l'emploi selon fiche ([valeur à confirmer] %). 3) Appliquer en une couche uniforme, consommation [valeur à confirmer] m²/L. 4) Recouvrir après [valeur à confirmer] h.",
     "conditionnements": [
       {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      },
+      {
         "format": "Seau 10 kg",
         "poids_net": 10,
         "unite": "SEAU"
@@ -1723,11 +1728,6 @@
       {
         "format": "Seau 20 kg",
         "poids_net": 20,
-        "unite": "SEAU"
-      },
-      {
-        "format": "Seau 5 kg",
-        "poids_net": 5,
         "unite": "SEAU"
       }
     ],
@@ -1767,6 +1767,11 @@
     "mode_fr_preparatoire": "1) Support propre et dépoussiéré. 2) Diluer ou utiliser prêt à l'emploi selon fiche ([valeur à confirmer] %). 3) Appliquer en une couche uniforme, consommation [valeur à confirmer] m²/L. 4) Recouvrir après [valeur à confirmer] h.",
     "conditionnements": [
       {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      },
+      {
         "format": "Seau 10 kg",
         "poids_net": 10,
         "unite": "SEAU"
@@ -1774,11 +1779,6 @@
       {
         "format": "Seau 20 kg",
         "poids_net": 20,
-        "unite": "SEAU"
-      },
-      {
-        "format": "Seau 5 kg",
-        "poids_net": 5,
         "unite": "SEAU"
       }
     ],
@@ -1818,6 +1818,11 @@
     "mode_fr_preparatoire": "1) Support sain, sec, dépoussiéré, humidité max [valeur à confirmer] %. 2) Primaire si requis. 3) Appliquer en [valeur à confirmer] couches au rouleau. 4) Circulation piétonne après [valeur à confirmer] h, véhicules après [valeur à confirmer] j. 5) Tracer les marquages après durcissement.",
     "conditionnements": [
       {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      },
+      {
         "format": "Seau 10 kg",
         "poids_net": 10,
         "unite": "SEAU"
@@ -1825,11 +1830,6 @@
       {
         "format": "Seau 20 kg",
         "poids_net": 20,
-        "unite": "SEAU"
-      },
-      {
-        "format": "Seau 5 kg",
-        "poids_net": 5,
         "unite": "SEAU"
       }
     ],
@@ -1869,6 +1869,11 @@
     "mode_fr_preparatoire": "1) Support propre, primarisé. 2) Mélanger. 3) Appliquer à la lisseuse inox puis structurer à la taloche/rouleau. 4) Épaisseur [valeur à confirmer] mm. 5) Séchage [valeur à confirmer] h.",
     "conditionnements": [
       {
+        "format": "Seau 5 kg",
+        "poids_net": 5,
+        "unite": "SEAU"
+      },
+      {
         "format": "Seau 10 kg",
         "poids_net": 10,
         "unite": "SEAU"
@@ -1876,11 +1881,6 @@
       {
         "format": "Seau 20 kg",
         "poids_net": 20,
-        "unite": "SEAU"
-      },
-      {
-        "format": "Seau 5 kg",
-        "poids_net": 5,
         "unite": "SEAU"
       }
     ],
