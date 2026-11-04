@@ -687,12 +687,12 @@
     "mode_fr_preparatoire": "1) Ajouter à l'eau de gâchage. 2) Dosage [valeur à confirmer] % du poids de liant selon température. 3) Mettre en œuvre rapidement. 4) Valider par essais ; vérifier l'absence de chlorures si béton armé.",
     "conditionnements": [
       {
-        "format": "Bidon 20 L",
+        "format": "Bidon 5 L",
         "poids_net": null,
         "unite": "BIDON"
       },
       {
-        "format": "Bidon 5 L",
+        "format": "Bidon 20 L",
         "poids_net": null,
         "unite": "BIDON"
       },
@@ -743,12 +743,12 @@
     "mode_fr_preparatoire": "1) Ajouter à l'eau de gâchage ou en cours de malaxage. 2) Dosage [valeur à confirmer] % du poids de liant. 3) Contrôler la teneur en air du béton frais à chaque gâchée. 4) Maintenir un temps de malaxage constant.",
     "conditionnements": [
       {
-        "format": "Bidon 20 L",
+        "format": "Bidon 5 L",
         "poids_net": null,
         "unite": "BIDON"
       },
       {
-        "format": "Bidon 5 L",
+        "format": "Bidon 20 L",
         "poids_net": null,
         "unite": "BIDON"
       },
@@ -799,12 +799,12 @@
     "mode_fr_preparatoire": "1) Ajouter à l'eau de gâchage du béton/mortier. 2) Dosage [valeur à confirmer] % du poids de liant. 3) Option : application en surface sur béton existant selon fiche. 4) Valider par essais de durabilité.",
     "conditionnements": [
       {
-        "format": "Bidon 20 L",
+        "format": "Bidon 5 L",
         "poids_net": null,
         "unite": "BIDON"
       },
       {
-        "format": "Bidon 5 L",
+        "format": "Bidon 20 L",
         "poids_net": null,
         "unite": "BIDON"
       },
@@ -855,12 +855,12 @@
     "mode_fr_preparatoire": "1) Appliquer sur le béton frais dès la disparition de l'eau de ressuage. 2) Pulvériser en couche uniforme, consommation [valeur à confirmer] m²/L. 3) Ne pas appliquer si le béton doit recevoir un revêtement sans décapage.",
     "conditionnements": [
       {
-        "format": "Bidon 20 L",
+        "format": "Bidon 5 L",
         "poids_net": null,
         "unite": "BIDON"
       },
       {
-        "format": "Bidon 5 L",
+        "format": "Bidon 20 L",
         "poids_net": null,
         "unite": "BIDON"
       },
@@ -911,12 +911,12 @@
     "mode_fr_preparatoire": "1) Support propre, humidifié. 2) Utiliser pur en pont d'adhérence ([valeur à confirmer] kg/m²) ou dilué dans l'eau de gâchage ([valeur à confirmer] %). 3) Appliquer le mortier frais sur pont encore frais. 4) Cure normale.",
     "conditionnements": [
       {
-        "format": "Bidon 20 L",
+        "format": "Bidon 5 L",
         "poids_net": null,
         "unite": "BIDON"
       },
       {
-        "format": "Bidon 5 L",
+        "format": "Bidon 20 L",
         "poids_net": null,
         "unite": "BIDON"
       },
@@ -967,12 +967,12 @@
     "mode_fr_preparatoire": "1) Ajouter à l'eau de gâchage. 2) Dosage [valeur à confirmer] % du poids de liant selon température. 3) Valider par essais préalables. 4) Surveiller les temps de prise en cas de forte chaleur.",
     "conditionnements": [
       {
-        "format": "Bidon 20 L",
+        "format": "Bidon 5 L",
         "poids_net": null,
         "unite": "BIDON"
       },
       {
-        "format": "Bidon 5 L",
+        "format": "Bidon 20 L",
         "poids_net": null,
         "unite": "BIDON"
       },
@@ -1023,12 +1023,12 @@
     "mode_fr_preparatoire": "1) Ajouter en fin de malaxage ou dans l'eau de gâchage. 2) Dosage [valeur à confirmer] % du poids de liant. 3) Malaxer [valeur à confirmer] min. 4) Valider par essais préalables sur le ciment et les granulats du chantier. Ne pas surdoser (ressuage, ségrégation).",
     "conditionnements": [
       {
-        "format": "Bidon 20 L",
+        "format": "Bidon 5 L",
         "poids_net": null,
         "unite": "BIDON"
       },
       {
-        "format": "Bidon 5 L",
+        "format": "Bidon 20 L",
         "poids_net": null,
         "unite": "BIDON"
       },
@@ -1079,12 +1079,12 @@
     "mode_fr_preparatoire": "1) Ajouter en fin de malaxage ou dans l'eau de gâchage. 2) Dosage [valeur à confirmer] % du poids de liant. 3) Malaxer [valeur à confirmer] min. 4) Valider par essais préalables sur le ciment et les granulats du chantier. Ne pas surdoser (ressuage, ségrégation).",
     "conditionnements": [
       {
-        "format": "Bidon 20 L",
+        "format": "Bidon 5 L",
         "poids_net": null,
         "unite": "BIDON"
       },
       {
-        "format": "Bidon 5 L",
+        "format": "Bidon 20 L",
         "poids_net": null,
         "unite": "BIDON"
       },
@@ -1135,12 +1135,12 @@
     "mode_fr_preparatoire": "1) Ajouter en fin de malaxage ou dans l'eau de gâchage. 2) Dosage [valeur à confirmer] % du poids de liant. 3) Malaxer [valeur à confirmer] min. 4) Valider par essais préalables sur le ciment et les granulats du chantier. Ne pas surdoser (ressuage, ségrégation).",
     "conditionnements": [
       {
-        "format": "Bidon 20 L",
+        "format": "Bidon 5 L",
         "poids_net": null,
         "unite": "BIDON"
       },
       {
-        "format": "Bidon 5 L",
+        "format": "Bidon 20 L",
         "poids_net": null,
         "unite": "BIDON"
       },
@@ -1191,12 +1191,12 @@
     "mode_fr_preparatoire": "1) Ajouter pendant le malaxage, après les granulats et le ciment. 2) Dosage [valeur à confirmer] % du poids de liant. 3) Malaxer [valeur à confirmer] min. 4) Contrôler l'étalement et la stabilité avant mise en œuvre.",
     "conditionnements": [
       {
-        "format": "Bidon 20 L",
+        "format": "Bidon 5 L",
         "poids_net": null,
         "unite": "BIDON"
       },
       {
-        "format": "Bidon 5 L",
+        "format": "Bidon 20 L",
         "poids_net": null,
         "unite": "BIDON"
       },
@@ -1247,12 +1247,12 @@
     "mode_fr_preparatoire": "1) Ajouter à l'eau de gâchage. 2) Dosage [valeur à confirmer] % du poids de liant. 3) Bien malaxer pour une répartition homogène. 4) Vibrer et cure normaux.",
     "conditionnements": [
       {
-        "format": "Bidon 20 L",
+        "format": "Bidon 5 L",
         "poids_net": null,
         "unite": "BIDON"
       },
       {
-        "format": "Bidon 5 L",
+        "format": "Bidon 20 L",
         "poids_net": null,
         "unite": "BIDON"
       },
@@ -1303,12 +1303,12 @@
     "mode_fr_preparatoire": "1) Ajouter à l'eau de gâchage ou en fin de malaxage. 2) Dosage [valeur à confirmer] % du poids de liant. 3) Malaxer [valeur à confirmer] min pour homogénéiser. 4) Contrôler consistance et résistance par essais préalables.",
     "conditionnements": [
       {
-        "format": "Bidon 20 L",
+        "format": "Bidon 5 L",
         "poids_net": null,
         "unite": "BIDON"
       },
       {
-        "format": "Bidon 5 L",
+        "format": "Bidon 20 L",
         "poids_net": null,
         "unite": "BIDON"
       },
