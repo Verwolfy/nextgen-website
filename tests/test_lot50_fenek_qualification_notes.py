@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 NOTES = ROOT / "src/data/fenek-qualification-notes.ts"
+CONTEXT = ROOT / "src/data/fenek-application-context.ts"
 ROUTE = ROOT / "src/pages/[lang]/documentation/[slug].astro"
 PRINT = ROOT / "src/components/FenekPrintableSheet.astro"
 
@@ -28,11 +29,22 @@ class FENEK50Editorial(unittest.TestCase):
         for code in matched:
             self.assertIn('"'+code+'":{fr:', source)
 
+    def test_24_context_profiles_localized(self):
+        content = CONTEXT.read_text(encoding="utf-8")
+        matched = re.findall(r'^\\s*"([a-z]+)"\\s*:\\s*\\{fr:', content, re.M)
+        self.assertEqual(len(matched), 24)
+        self.assertEqual(len(set(matched)), 24)
+        self.assertEqual(content.count(',en:"'), 24)
+        self.assertEqual(content.count(',ar:"'), 24)
+        self.assertIn("profileKeyFor(code)", content)
+
     def test_used_both_on_screen_and_on_print(self):
         route = ROUTE.read_text(encoding="utf-8")
         printed = PRINT.read_text(encoding="utf-8")
         self.assertIn("qualificationFor(product.code,lang)", route)
         self.assertIn("qualificationFor(product.code,lang)", printed)
+        self.assertIn("applicationContextFor(product.code,lang)", route)
+        self.assertIn("applicationContextFor(product.code,lang)", printed)
         self.assertIn("fenek-qualification-panel", route)
         self.assertIn("Critères à vérifier pour cette référence", route)
         self.assertIn("معايير التحقق لهذا المرجع", route)
