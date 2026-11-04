@@ -21,6 +21,80 @@ class SilentHandler(SimpleHTTPRequestHandler):
         return
 
 
+
+def check_header_preferences(browser, base: str) -> None:
+    """Lot 60: live navigation, system mode, persistence, and night contrast."""
+    for lang in ("fr", "ar", "en"):
+        page = browser.new_page(viewport={"width": 390, "height": 844})
+        try:
+            page.emulate_media(color_scheme="light")
+            response = page.goto(f"{base}/{lang}/", wait_until="domcontentloaded")
+            assert response is not None and response.status == 200
+            switch = page.locator("[data-theme-switch]")
+            menu = page.locator("[data-language-picker]")
+            assert switch.count() == 1 and menu.count() == 1
+            assert switch.get_attribute("role") == "switch"
+            assert switch.get_attribute("aria-checked") == "false"
+            assert page.locator("html").get_attribute("data-theme") == "light"
+            assert menu.locator("summary").is_visible()
+            assert menu.locator("summary").inner_text().strip()
+            switch.click()
+            assert switch.get_attribute("aria-checked") == "true"
+            assert page.locator("html").get_attribute("data-theme") == "dark"
+            dark_colors = page.evaluate("""() => {
+                const css = element => getComputedStyle(document.querySelector(element));
+                return {
+                  background: css('body').backgroundColor,
+                  foreground: css('body').color,
+                  card: css('.home-audiences .card').backgroundColor,
+                  header: css('.header').backgroundColor
+                };
+            }""")
+            assert dark_colors["background"] == "rgb(8, 23, 38)", dark_colors
+            assert dark_colors["card"] != "rgb(255, 255, 255)", dark_colors
+            assert dark_colors["foreground"] != dark_colors["background"], dark_colors
+            page.reload(wait_until="domcontentloaded")
+            assert page.locator("html").get_attribute("data-theme") == "dark"
+            assert page.locator("[data-theme-switch]").get_attribute("aria-checked") == "true"
+            menu.locator("summary").click()
+            assert menu.get_attribute("open") is not None
+            assert menu.locator("a").count() == 3
+            for target in ("fr", "ar", "en"):
+                link = menu.locator(f"a[lang='{target}']")
+                assert link.get_attribute("href") == f"/{target}/", (lang, target)
+                assert (link.get_attribute("aria-current") == "page") == (target == lang)
+            next_lang = "en" if lang != "en" else "fr"
+            menu.locator(f"a[lang='{next_lang}']").click()
+            page.wait_for_url(f"**/{next_lang}/")
+            assert page.locator("html").get_attribute("lang") == next_lang
+            assert page.locator("html").get_attribute("data-theme") == "dark"
+            menu = page.locator("[data-language-picker]")
+            menu.locator("summary").click()
+            page.keyboard.press("Escape")
+            assert menu.get_attribute("open") is None
+            page.locator("[data-theme-switch]").click()
+            assert page.locator("html").get_attribute("data-theme") == "light"
+            page.evaluate("localStorage.removeItem('nextgen-ui-theme')")
+            page.emulate_media(color_scheme="dark")
+            page.reload(wait_until="domcontentloaded")
+            assert page.locator("html").get_attribute("data-theme") == "dark"
+            page.set_viewport_size({"width": 320, "height": 720})
+            overflow = page.evaluate("document.documentElement.scrollWidth - innerWidth")
+            assert overflow <= 4, (lang, "theme header overflow", overflow)
+            page.screenshot(path=str(SHOTS / f"{lang}-night-header-320.png"))
+        finally:
+            page.close()
+    # Native <details> language links remain functional with JS disabled.
+    no_js = browser.new_page(java_script_enabled=False, viewport={"width": 320, "height": 720})
+    try:
+        no_js.goto(base + "/fr/", wait_until="domcontentloaded")
+        no_js.locator("[data-language-picker] summary").click()
+        no_js.locator("[data-language-picker] a[lang='ar']").click()
+        assert no_js.locator("html").get_attribute("lang") == "ar"
+    finally:
+        no_js.close()
+
+
 def check() -> None:
     assert (DIST / "fr" / "index.html").is_file(), "Site not built"
     SHOTS.mkdir(parents=True, exist_ok=True)
@@ -38,6 +112,7 @@ def check() -> None:
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
+            check_header_preferences(browser, base)
             for lang in ("fr", "ar", "en"):
                 for size, width, height in (("desktop", 1280, 900), ("mobile", 390, 844)):
                     page = browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=1)
@@ -402,6 +477,8 @@ def check() -> None:
                     # Explicitly follow the language navigation to another localized page.
                     page.goto(base + "/" + lang + "/contact/", wait_until="domcontentloaded")
                     assert page.locator(".locale a").count() == 3
+                    page.locator("[data-language-picker] summary").click()
+                    assert page.locator("[data-language-picker]").get_attribute("open") is not None
                     page.locator(".locale a[href='/en/contact/']").click()
                     assert page.url.endswith("/en/contact/")
                     # Native responsive navigation: desktop stays visible, mobile is keyboard operable.
