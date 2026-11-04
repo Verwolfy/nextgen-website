@@ -1,0 +1,11 @@
+<!-- Apply the saved/system theme in <head> before the first render; no third-party JS. -->
+<script is:inline>
+  (() => {
+    let selected = null;
+    try { selected = window.localStorage.getItem('nextgen-ui-theme'); }
+    catch { /* Storage may be blocked by the browser. */ }
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.theme =
+      selected === 'dark' || selected === 'light' ? selected : (prefersDark ? 'dark' : 'light');
+  })();
+</script>
