@@ -104,3 +104,18 @@ export const conceptPackshot=(product:CatalogueProject,variant:'card'|'full'='ca
 };
 export const hasProductPackshot=(product:CatalogueProject):boolean=>
  conceptPackshot(product,'full')!==conceptImage[product.gamme];
+
+
+/**
+ * Editorial contact prompt for resin kits with unknown composition and capacity.
+ * Do not infer a pack volume, mass or a technical formulation.
+ * The original French wording follows the user's packaging instruction.
+ */
+export const packagingLabelFor = (format:string, lang:Lang):string => {
+  if(format!=="Kit résine - Contacter nous pour plus d'informations") return format;
+  return {
+    fr:"Kit résine - Contacter nous pour plus d'informations",
+    en:"Resin kit — Contact us for more information",
+    ar:"طقم راتنج — تواصل معنا لمزيد من المعلومات",
+  }[lang];
+};
