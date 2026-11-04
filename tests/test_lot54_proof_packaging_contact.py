@@ -30,7 +30,7 @@ class ProofPackaging(unittest.TestCase):
                     "format":"Kit résine - "+CTA,"poids_net":None,"unite":"KIT"
                 }], p["code"])
             else:
-                self.assertEqual(p["conditionnements"], [{"format":"300 mL — emballage à préciser","poids_net":None,"unite":"NON CONFIRMÉ"}], p["code"])
+                self.assertEqual(p["conditionnements"], [{"format":"Cartouche 300 mL","poids_net":None,"unite":"CARTOUCHE"}], p["code"])
             self.assertIs(p["certifie"], False)
             self.assertIs(p["commercialise"], False)
         self.assertEqual(len(self.products),50)
