@@ -754,3 +754,10 @@ h1,h2,h3,.page-head p{overflow-wrap:anywhere;min-width:0}
   .fenek-print-document[dir="rtl"] .fenek-print-product-name,
   .fenek-print-document[dir="rtl"] .fenek-print-banner {font-family:"Noto Sans Arabic","DejaVu Sans",Tahoma,sans-serif;}
 }
+
+/* Lot 50 — critical qualification criteria, distinct from measured FENEK data. */
+.fenek-qualification-panel{border:1px solid #d5e6df;border-inline-start:4px solid #078e5b;background:#eff6f3;border-radius:8px;padding:16px 18px;margin:18px 0 12px}
+.fenek-qualification-panel h3{font-size:1rem;line-height:1.4;margin:0 0 8px;color:#0e3955}
+.fenek-qualification-panel p{margin:0 0 8px;max-width:85ch;line-height:1.65;color:#244859}
+.fenek-qualification-panel .fenek-document-fineprint{margin:6px 0 0!important}
+@media print{.fenek-qualification-panel{background:#edf4ef!important;break-inside:avoid;print-color-adjust:exact;-webkit-print-color-adjust:exact}}

@@ -324,6 +324,7 @@ def check() -> None:
                         "img => img.complete && img.naturalWidth > 0"), lang
                     assert page.locator(".fenek-section-nav a").count() == 4, lang
                     assert page.locator(".fenek-doc-accordion").count() == 8, lang
+                    assert page.locator('.fenek-qualification-panel').count() == 2, lang
                     assert page.locator(".fenek-doc-accordion[open]").count() == 3, lang
                     for marker in ("fenek-overview", "fenek-details",
                                    "fenek-application", "fenek-documents"):
@@ -388,6 +389,7 @@ def check() -> None:
                             response = page.goto(url, wait_until="domcontentloaded")
                             assert response and response.status == 200, (lang, url)
                             assert page.locator(".fenek-doc-accordion").count() == 8, (lang, slug)
+                            assert page.locator('.fenek-qualification-panel').count() == 2, (lang, slug)
                             assert page.locator(".market-reference").count() == 0, (lang, slug)
                             assert page.locator(".fenek-product-image img").evaluate(
                                 "img => img.complete && img.naturalWidth > 0"), (lang,slug)
