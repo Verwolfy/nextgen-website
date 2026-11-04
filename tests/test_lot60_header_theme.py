@@ -45,7 +45,8 @@ class HeaderThemeTests(unittest.TestCase):
                   ".fenek-product-page",".market-sheet-paper",".footer",
                   ".welcome-video-card","color-scheme:dark"):
             self.assertIn(x,self.night,x)
-        self.assertNotIn("!important",self.night)
+        self.assertEqual(self.night.count("!important"), 1)
+        self.assertIn(".fenek-document-fineprint{color:#adc8d5!important}", self.night)
         self.assertNotIn("@media print",self.night)
         self.assertNotIn("url(http",self.night)
 
