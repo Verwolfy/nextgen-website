@@ -34,6 +34,15 @@ class Lot58WelcomeVideo(unittest.TestCase):
             "role=\"region\"",
         ):
             self.assertIn(token,component,token)
+        for absent in (
+            "Animation des mascottes Nexo et Geno",
+            "رسوم متحركة للتميمتين نيكسو وجينو",
+            "Nexo and Geno mascot animation",
+            "welcome-video-caption",
+            "i18n.caption",
+        ):
+            self.assertNotIn(absent, component, absent)
+        self.assertIn("justify-content:flex-end", component)
         self.assertNotIn("autoplay", component)
         self.assertNotIn("https://", component)
 
