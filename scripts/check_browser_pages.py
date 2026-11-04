@@ -88,6 +88,35 @@ def check() -> None:
                                     assert not no_js.locator("[data-welcome-toggle]").is_visible(), path
                                 finally:
                                     no_js.close()
+                            # Lot 60: controls visible and keyboard-operable in all 3 locales.
+                            mode = page.locator("[data-theme-toggle]")
+                            mode.wait_for(state="visible", timeout=5000)
+                            picker = page.locator("[data-language-choice]")
+                            assert picker.count() == 1, path
+                            picker.locator("summary").click()
+                            options = picker.locator(".language-choice-options a")
+                            assert options.count() == 3, path
+                            suffix = "/" + (section + "/" if section else "")
+                            for code in ("fr", "ar", "en"):
+                                assert picker.locator(f'a[lang="{code}"]').get_attribute("href") == (
+                                    "/" + code + suffix), path
+                            page.keyboard.press("Escape")
+                            assert not picker.evaluate("el => el.open"), path
+                            mode.click()
+                            assert mode.get_attribute("aria-checked") == "true", path
+                            assert page.locator("html").get_attribute("data-theme") == "dark", path
+                            assert page.evaluate("""() => {
+                                const body = getComputedStyle(document.body);
+                                const card = getComputedStyle(document.querySelector('.home-audiences .card'));
+                                return body.backgroundColor === 'rgb(7, 24, 39)' &&
+                                       card.backgroundColor === 'rgb(16, 38, 58)';
+                            }"""), path
+                            page.reload(wait_until="domcontentloaded")
+                            assert page.locator("html").get_attribute("data-theme") == "dark", path
+                            mode = page.locator("[data-theme-toggle]")
+                            mode.wait_for(state="visible", timeout=5000)
+                            mode.click()
+                            assert page.locator("html").get_attribute("data-theme") == "light", path
                             assert page.locator(".home-approach .editorial-caution").count() == 1, path
                             assert page.locator(".home-approach .chip").count() == 3, path
                             assert page.locator(".home-audiences .card").count() == 2, path
