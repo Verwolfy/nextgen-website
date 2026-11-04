@@ -1,0 +1,114 @@
+/* Lot 60 — NextGen visual preferences. Last imported style layer. */
+:root{color-scheme:light}
+:root[data-theme="dark"]{color-scheme:dark}
+
+/* The controls remain usable without JavaScript (native language disclosure). */
+.header-preferences{display:flex;align-items:center;gap:clamp(10px,1.3vw,18px);flex-shrink:0;min-width:0}
+.theme-choice{display:flex;align-items:center;gap:8px;direction:ltr}
+.theme-switch{position:relative;display:inline-flex;align-items:center;flex-shrink:0;width:43px;height:25px;border:1px solid #bec9d3;border-radius:99px;background:#dce2e7;padding:2px;cursor:pointer;transition:background .2s,border-color .2s}
+.theme-switch-knob{display:block;width:19px;height:19px;border-radius:50%;background:#fff;box-shadow:0 1px 4px #001a3140;transition:transform .2s}
+.theme-switch[aria-checked="true"]{background:#078f63;border-color:#078f63}
+.theme-switch[aria-checked="true"] .theme-switch-knob{transform:translateX(18px)}
+.theme-choice-icon{font-size:1.4rem;line-height:1;color:#61758b;user-select:none}
+.theme-icon-night{display:none}
+:root[data-theme="dark"] .theme-icon-day{display:none}
+:root[data-theme="dark"] .theme-icon-night{display:inline;color:#d8e8f5}
+.language-choice{position:relative;flex-shrink:0;color:#22384d}
+.language-choice summary{position:relative;list-style:none;display:flex;align-items:center;gap:9px;min-height:47px;padding:14px 12px 7px 13px;border-radius:9px;border:1px solid #cbd6df;background:#f4f6f8;cursor:pointer;min-width:76px}
+.language-choice summary::-webkit-details-marker{display:none}
+.language-choice summary::marker{content:""}
+.language-choice-caption{position:absolute;inset-block-start:-8px;inset-inline-start:10px;background:#fff;padding:0 5px;color:#687b8d;font-size:.72rem;font-weight:500;line-height:1.3;white-space:nowrap}
+.language-choice-selected{font-size:.85rem;font-weight:650;line-height:1.2}
+.language-choice-chevron{display:block;width:8px;height:8px;border-inline-end:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);margin-inline-start:auto}
+.language-choice[open] .language-choice-chevron{transform:rotate(225deg) translateY(-2px)}
+.language-choice-options{position:absolute;z-index:50;inset-block-start:calc(100% + 9px);inset-inline-end:0;min-width:185px;padding:6px;border:1px solid #cbd9e0;border-radius:12px;background:#fff;box-shadow:0 16px 36px #081f3440}
+.language-choice-options a{display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:44px;padding:10px 12px;border-radius:7px;font-weight:670;font-size:.9rem;text-decoration:none}
+.language-choice-options a span{font-size:.74rem;opacity:.75}
+.language-choice-options a:hover,.language-choice-options a:focus-visible{background:#eaf5ef}
+.language-choice-options a[aria-current="page"]{color:#067e55;background:#ecf8f2}
+.theme-switch:focus-visible,.language-choice summary:focus-visible,.language-choice-options a:focus-visible{outline:3px solid #078e63;outline-offset:3px}
+
+/* Brand palette: midnight navy #071827, lighter navy #112a3f, FENEK green #34d6a2. */
+:root[data-theme="dark"]{background:#071827;color:#e7f0f6;--night-base:#071827;--night-panel:#10263a;--night-raised:#173249;--night-muted:#aec5d3;--night-border:#365469;--night-green:#55e2ad}
+:root[data-theme="dark"] body{background:#071827;color:#e7f0f6}
+:root[data-theme="dark"] .header{background:#0b2032f5;border-bottom-color:#315068}
+:root[data-theme="dark"] .header .brand img{border-radius:5px;background:#fff;padding:2px}
+:root[data-theme="dark"] .header .nav a{color:#dcebf4}
+:root[data-theme="dark"] .header .nav a[aria-current="page"]{color:#62e4b4}
+:root[data-theme="dark"] .language-choice{color:#e3eef7}
+:root[data-theme="dark"] .language-choice summary{color:#e3eef7;background:#173247;border-color:#48667b}
+:root[data-theme="dark"] .language-choice-caption{color:#c9dae5;background:#0b2032}
+:root[data-theme="dark"] .language-choice-options{background:#132d42;border-color:#48667b;box-shadow:0 14px 38px #0009}
+:root[data-theme="dark"] .language-choice-options a{color:#ebf5f9}
+:root[data-theme="dark"] .language-choice-options a:hover,:root[data-theme="dark"] .language-choice-options a:focus-visible,:root[data-theme="dark"] .language-choice-options a[aria-current="page"]{background:#20513f;color:#8dffcd}
+:root[data-theme="dark"] .mobile-trigger{color:#e7f0f6;background:#173247;border-color:#476579}
+:root[data-theme="dark"] .mobile-links{background:#11283a;border-color:#48667b}
+:root[data-theme="dark"] .mobile-links a{color:#e7f0f6}
+:root[data-theme="dark"] .mobile-links a:hover,:root[data-theme="dark"] .mobile-links a[aria-current="page"]{background:#1a4b3c;color:#b0ffda}
+
+/* Keep the hero and all photographic/packshot media true to their original artwork. */
+:root[data-theme="dark"] .hero{background:linear-gradient(116deg,#071426 0%,#0d2942 60%,#193d54 100%)}
+:root[data-theme="dark"] .page-head{background:#0b2940}
+:root[data-theme="dark"] .pale{background:#0d2335}
+:root[data-theme="dark"] .dark{background:#071523}
+:root[data-theme="dark"] .section-head p,:root[data-theme="dark"] .muted,:root[data-theme="dark"] .card p,:root[data-theme="dark"] .range-overview-card p,:root[data-theme="dark"] .resource-card p,:root[data-theme="dark"] .home-approach p,:root[data-theme="dark"] .home-approach .editorial-caution,:root[data-theme="dark"] .concept-product-card p,:root[data-theme="dark"] .concept-usages,:root[data-theme="dark"] .concept-detail-note{color:#bbcedc}
+:root[data-theme="dark"] .card,:root[data-theme="dark"] .product,:root[data-theme="dark"] .notice,:root[data-theme="dark"] .range-overview-card,:root[data-theme="dark"] .range-detail,:root[data-theme="dark"] .resource-card,:root[data-theme="dark"] .about-step,:root[data-theme="dark"] .contact-channel,:root[data-theme="dark"] .lead-panel,:root[data-theme="dark"] .lead-preview,:root[data-theme="dark"] .concept-product-card,:root[data-theme="dark"] .concept-steps li,:root[data-theme="dark"] .concept-source-method,:root[data-theme="dark"] .concept-detail-aside,:root[data-theme="dark"] .market-sheet-paper,:root[data-theme="dark"] .market-reference,:root[data-theme="dark"] .market-index-card,:root[data-theme="dark"] .fenek-spec-grid>div,:root[data-theme="dark"] .fenek-tech-contact,:root[data-theme="dark"] .fenek-doc-accordion,:root[data-theme="dark"] .fenek-qualification-panel{background:#10263a;border-color:#365469;color:#e7f0f6;box-shadow:none}
+:root[data-theme="dark"] .card:hover,:root[data-theme="dark"] .concept-product-card:hover,:root[data-theme="dark"] .range-overview-card:hover{box-shadow:0 10px 35px #0005}
+:root[data-theme="dark"] .chip,:root[data-theme="dark"] .range-topic,:root[data-theme="dark"] .resource-state,:root[data-theme="dark"] .concept-formats span,:root[data-theme="dark"] .concept-product-status,:root[data-theme="dark"] .concept-detail-status,:root[data-theme="dark"] .concept-range-only-label,:root[data-theme="dark"] .fenek-reference-label,:root[data-theme="dark"] .fenek-sheet-tags li,:root[data-theme="dark"] .fenek-sheet-tags span{background:#1a3b4a;border-color:#376356;color:#b8f6d9}
+:root[data-theme="dark"] .editorial-caution,:root[data-theme="dark"] .lead-state,:root[data-theme="dark"] .contact-disclosure,:root[data-theme="dark"] .fenek-index-contact{background:#19364a;border-color:#476b7c;color:#d7e7ee}
+:root[data-theme="dark"] .home-approach-portrait,:root[data-theme="dark"] .fenek-sheet-visual,:root[data-theme="dark"] .fenek-product-image,:root[data-theme="dark"] .concept-product-image,:root[data-theme="dark"] .concept-detail-image,:root[data-theme="dark"] .concept-packshot-container{background:#1a3546;border-color:#37536b}
+:root[data-theme="dark"] .home-approach-portrait .mascot,:root[data-theme="dark"] .about-feature .mascot{background:#f8fbfa}
+:root[data-theme="dark"] .concepts-lead p,:root[data-theme="dark"] .concept-range-title>span,:root[data-theme="dark"] .concept-detail-main p,:root[data-theme="dark"] .contact-channel-value,:root[data-theme="dark"] .lead-preview-help,:root[data-theme="dark"] .market-reference p,:root[data-theme="dark"] .market-index-card span,:root[data-theme="dark"] .fenek-sheet-intro p,:root[data-theme="dark"] .fenek-sheet-small,:root[data-theme="dark"] .fenek-sheet-visual figcaption{color:#bed1dc}
+:root[data-theme="dark"] .concept-count,:root[data-theme="dark"] .concept-range-nav a,:root[data-theme="dark"] .concept-range-title,:root[data-theme="dark"] .concept-source-method summary,:root[data-theme="dark"] .catalogue-filters,:root[data-theme="dark"] .catalogue-filter-empty{background:#153145;border-color:#3d5c70;color:#e1edf5}
+:root[data-theme="dark"] .concept-count small,:root[data-theme="dark"] .concept-range-nav small{color:#b8d2de}
+:root[data-theme="dark"] .concept-range-nav a:hover,:root[data-theme="dark"] .concept-source-method[open] summary,:root[data-theme="dark"] .lead-preview summary:hover{background:#20503e}
+:root[data-theme="dark"] .concept-view,:root[data-theme="dark"] .range-more,:root[data-theme="dark"] .market-reference a,:root[data-theme="dark"] .resource-information-link,:root[data-theme="dark"] .market-index-more,:root[data-theme="dark"] .fenek-index-count strong,:root[data-theme="dark"] .contact-channel-kind,:root[data-theme="dark"] .step-count,:root[data-theme="dark"] .fenek-sheet-overline{color:#6ce8b7}
+:root[data-theme="dark"] .btn-outline{border-color:#7daea9;color:#f0fcf7}
+:root[data-theme="dark"] .btn-muted{background:#21513f;border-color:#44876c;color:#e8fff5}
+:root[data-theme="dark"] .lead-whatsapp{background:#1b4060;border-color:#587c93}
+:root[data-theme="dark"] .lead-field input,:root[data-theme="dark"] .lead-field textarea,:root[data-theme="dark"] .catalogue-filter-field input,:root[data-theme="dark"] .catalogue-filter-field select{background:#183247;color:#e7f0f6;border-color:#557388}
+:root[data-theme="dark"] input::placeholder,:root[data-theme="dark"] textarea::placeholder{color:#aabfcf}
+:root[data-theme="dark"] .lead-consent,:root[data-theme="dark"] .catalogue-filter-count{color:#c6d8e1}
+:root[data-theme="dark"] .market-sheet-paper h2,:root[data-theme="dark"] .market-sheet-paper h3,:root[data-theme="dark"] .fenek-spec-grid dd,:root[data-theme="dark"] .fenek-document-section>h2,:root[data-theme="dark"] .fenek-overview-grid h3,:root[data-theme="dark"] .fenek-sheet-intro h2,:root[data-theme="dark"] .fenek-product-intro-copy h2,:root[data-theme="dark"] .fenek-document-steps strong,:root[data-theme="dark"] .fenek-qualification-panel h3{color:#e9f5fb}
+:root[data-theme="dark"] .fenek-product-page,:root[data-theme="dark"] .fenek-section-nav{background:#071827;color:#e7f0f6}
+:root[data-theme="dark"] .fenek-section-nav{border-bottom-color:#35556b}
+:root[data-theme="dark"] .fenek-section-nav a,:root[data-theme="dark"] .fenek-product-quick-points li,:root[data-theme="dark"] .fenek-overview-grid p,:root[data-theme="dark"] .fenek-overview-grid li,:root[data-theme="dark"] .fenek-accordion-body,:root[data-theme="dark"] .fenek-document-data dt,:root[data-theme="dark"] .fenek-document-data dd,:root[data-theme="dark"] .fenek-qualification-panel p{color:#cce0e9}
+:root[data-theme="dark"] .fenek-doc-accordion summary{background:#17354a;border-color:#456479;color:#e9f5fa}
+:root[data-theme="dark"] .fenek-doc-accordion summary:hover,:root[data-theme="dark"] .fenek-doc-accordion[open] summary{background:#20503f}
+:root[data-theme="dark"] .fenek-spec-grid dt,:root[data-theme="dark"] .fenek-document-fineprint{color:#bdd0df!important}
+:root[data-theme="dark"] .fenek-accordion-indicator{color:#78f0b8}
+:root[data-theme="dark"] .fenek-document-file-icon{color:#6ce8b7}
+:root[data-theme="dark"] .fenek-product-image figcaption{color:#c6d5e0}
+:root[data-theme="dark"] .market-sheet-warning{background:#473522;color:#ffe3ab;border-color:#d4a44d}
+:root[data-theme="dark"] .footer{background:#04111f}
+:root[data-theme="dark"] .footnote{border-top-color:#28485c}
+:root[data-theme="dark"] .skip{color:#102648;background:#fff}
+:root[data-theme="dark"] .home-approach-tag{color:#6ce8b7}
+
+/* Never invert products or graphics and preserve white-paper A4 printouts. */
+@media print{
+  :root[data-theme="dark"],:root[data-theme="dark"] body{background:#fff!important;color:#102648!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  :root[data-theme="dark"] .market-sheet-paper,:root[data-theme="dark"] .fenek-product-page,
+  :root[data-theme="dark"] .fenek-print-document,:root[data-theme="dark"] .fenek-sheet-paper{background:#fff!important;color:#102648!important}
+  .header-preferences{display:none!important}
+}
+@media(max-width:980px){
+  .header-preferences{order:2;margin-inline-start:auto;gap:10px}
+  .mobile-nav{order:3}
+}
+@media(max-width:580px){
+  .header-preferences{gap:7px}
+  .theme-choice{gap:5px}
+  .theme-choice-icon{font-size:1.1rem}
+  .language-choice summary{min-width:65px;min-height:44px;padding-inline:10px}
+}
+@media(max-width:380px){
+  .header-preferences{gap:5px}
+  .theme-choice-icon{font-size:1rem}
+  .theme-switch{width:37px;height:23px}
+  .theme-switch-knob{width:17px;height:17px}
+  .theme-switch[aria-checked="true"] .theme-switch-knob{transform:translateX(14px)}
+  .language-choice summary{min-width:57px;padding-inline:8px}
+  .language-choice-caption{font-size:.63rem}
+}
+@media(prefers-reduced-motion:reduce){.theme-switch,.theme-switch-knob{transition:none}}
