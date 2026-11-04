@@ -477,6 +477,8 @@ def check() -> None:
                     # Explicitly follow the language navigation to another localized page.
                     page.goto(base + "/" + lang + "/contact/", wait_until="domcontentloaded")
                     assert page.locator(".locale a").count() == 3
+                    page.locator("[data-language-picker] summary").click()
+                    assert page.locator("[data-language-picker]").get_attribute("open") is not None
                     page.locator(".locale a[href='/en/contact/']").click()
                     assert page.url.endswith("/en/contact/")
                     # Native responsive navigation: desktop stays visible, mobile is keyboard operable.
