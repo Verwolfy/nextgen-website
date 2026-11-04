@@ -29,7 +29,7 @@ class Lot58WelcomeVideo(unittest.TestCase):
             "/videos/nextgen-nexo-geno-poster.webp",
             "prefers-reduced-motion: reduce", "IntersectionObserver",
             "visibilitychange", "video.pause()", "video.play()",
-            "/catalogue/", "Découvrez les produits NextGen",
+            "/catalogue/", "Découvrir les produits NextGen",
             "اكتشفوا منتجات NextGen", "Discover NextGen products",
             "role=\"region\"",
         ):
