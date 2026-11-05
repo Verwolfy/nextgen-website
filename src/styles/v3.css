@@ -159,3 +159,13 @@ body{background:var(--v3-paper)}
   .v3-featured-card,.btn{transition:none}
   .v3-featured-card:hover,.btn:hover{transform:none}
 }
+
+@media(max-width:420px){
+  .header-row{gap:8px}
+  .brand img{width:111px}
+  .v3-hero-heading h1{overflow-wrap:anywhere;font-size:clamp(2.1rem,8.5vw,2.7rem)}
+  .v3-hero-eyebrow{max-width:100%;overflow-wrap:anywhere}
+  .v3-hero-grid,.v3-hero-heading,.v3-hero-summary,.v3-hero-signal,.v3-featured-card,.v3-range-card{min-width:0}
+  .v3-hero-summary .actions{min-width:0}
+  .v3-hero-summary .btn{min-width:0;white-space:normal;text-align:center;overflow-wrap:anywhere}
+}
