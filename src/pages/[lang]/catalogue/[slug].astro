@@ -52,7 +52,7 @@ const informationLabel = {
       </div>
       <aside class="concept-detail-aside" aria-label={t.format}>
         <div class="concept-detail-image concept-packshot-container" style={'--range-color:'+rangeColor[product.gamme]}>
-          <img src={conceptPackshot(product,"full")} width="800" height="800" alt="" loading="lazy"/>
+          <img src={conceptPackshot(product,"full")} width="800" height="800" alt="" loading="eager" decoding="async" fetchpriority="high"/>
         </div>
         <p class="concept-detail-note">{product.gamme==='paint'?t.paintConceptNote:hasProductPackshot(product)?t.packshotNote:t.pictureNote}</p>
         <div class="actions">
