@@ -1,5 +1,8 @@
 # Lot 57 — Qualification des sept kits FENEK-PROOF
 
+> **État au 5 novembre 2026 (lot 65)** : l'utilisateur a choisi **à titre provisoire** pour `PROOF-CM-O2P` un **kit composé d'un sac 30 kg et d'un bidon 10 kg**. Cette première référence n'est donc plus sans conditionnement indiqué ; **six autres kits PROOF** restent en attente de précision. La formulation réelle A/B, la validation production et les FT/FDS restent inconnues. Voir [Lot 65](LOT65_CM_O2P_SAC30_BIDON10_20261105.md). Les tableaux ci-dessous correspondent à l'état historique du 4 novembre.
+
+
 > **État actualisé au 5 novembre 2026.** La vidéo d'accueil Nexo/Geno V3 a été intégrée sur `main` au commit `9fff6990`, et la conformité du MP4 et du poster sur `nextgen-buildingsolutions.com` a été confirmée par le contrôle HTTP [GitHub Actions 42064833012](https://github.com/Verwolfy/nextgen-website/actions/runs/42064833012). La décision utilisateur du lot 63 maintient l'accès public au domaine principal. **Aucune information de composition ou de contenance des sept kits ci-dessous n'a été ajoutée ou validée lors des lots 58 à 64.** Les valeurs restent à recueillir, une référence à la fois. La mention de déploiement non confirmé en fin de cette note est historique à la date de rédaction initiale du 4 novembre.
 
 
