@@ -2176,9 +2176,9 @@
     "mode_fr_preparatoire": "1) Surfaces propres, sèches, rugueuses. 2) Mélanger A et B au rapport [valeur à confirmer] jusqu'à teinte homogène. 3) Appliquer en couche continue sur les deux faces. 4) Assembler et maintenir en pression [valeur à confirmer] h. 5) Durcissement complet [valeur à confirmer] j.",
     "conditionnements": [
       {
-        "format": "Kit résine - Contacter nous pour plus d'informations",
+        "format": "Double cartouche 300 + 300 mL (600 mL au total)",
         "poids_net": null,
-        "unite": "KIT"
+        "unite": "CARTOUCHE"
       }
     ],
     "statut": "presentation_provisoire",
