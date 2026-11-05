@@ -3,8 +3,12 @@ import Layout from '../../../layouts/Layout.astro';
 import {languages,ranges,messages,rangeName,rangeColor,type Lang,type Range} from '../../../data/site';
 import {products} from '../../../lib/products';
 import {editorialCopy} from '../../../data/editorial';
+import {projectsByRange,conceptPackshot} from '../../../lib/catalogue-projets';
+import {catalogueCopy} from '../../../data/catalogue-content';
 export function getStaticPaths(){return languages.flatMap(lang=>ranges.map(slug=>({params:{lang,slug}})))}
 const lang=Astro.params.lang as Lang;const slug=Astro.params.slug as Range;const t=messages[lang];const edit=editorialCopy[lang];const items=products.filter(p=>p.gamme===slug);
+const concept=catalogueCopy[lang];
+const previews=projectsByRange(slug).slice(0,3);
 ---
 <Layout lang={lang} title={rangeName[slug]} description={t.ranges[slug]}>
 <div class="page-head"><div class="container"><span class="eyebrow">FENEK / {slug.toUpperCase()}</span><h1><bdi dir="ltr">{rangeName[slug]}</bdi></h1><p>{t.ranges[slug]}</p></div></div>
@@ -16,10 +20,23 @@ const lang=Astro.params.lang as Lang;const slug=Astro.params.slug as Range;const
       <h2>{edit.topicsHeading}</h2>
       <ul class="range-detail-topics">{edit.rangeTopics[slug].map(topic=><li>{topic}</li>)}</ul>
       <p class="editorial-caution" role="note">{edit.rangeDisclaimer}</p>
-      <div class="actions"><a class="btn" href={'/'+lang+'/catalogue/'}>{edit.rangeCatalogue}</a><a class="btn btn-muted" href={'/'+lang+'/contact/'}>{edit.rangeContact}</a></div>
+      <div class="actions"><a class="btn" href={'/'+lang+'/catalogue/#catalogue-'+slug}>{edit.rangeCatalogue}</a><a class="btn btn-muted" href={'/'+lang+'/contact/'}>{edit.rangeContact}</a></div>
     </div>
     <div class="range-identity" aria-hidden="true"><span>FENEK</span><strong dir="ltr">{slug.toUpperCase()}</strong></div>
   </div>
   <div class="range-products">{items.length===0?<div class="notice"><h2>{t.empty}</h2><p>{t.emptyInfo}</p></div>:<div class="products-grid">{items.map(p=><a href={'/'+lang+'/produits/'+p.slug+'/'} class="product"><span class="bar" style={'display:block;background:'+rangeColor[slug]+';height:5px;width:70px'}></span><h3>{p.nom}</h3><p>{p.contenu[lang].accroche}</p></a>)}</div>}</div>
+  <section class="v3-range-previews" aria-labelledby="v3-range-preview-heading">
+    <div class="section-head v3-section-head">
+      <span class="eyebrow">{concept.concept}</span>
+      <h2 id="v3-range-preview-heading">{concept.title}</h2>
+      <p>{concept.review}</p>
+    </div>
+    <div class="v3-range-preview-grid">
+      {previews.map(p=><a href={'/'+lang+'/catalogue/'+p.slug+'/'} class="v3-range-preview">
+        <div class="v3-range-preview-picture"><img src={conceptPackshot(p,'card')} width="800" height="800" loading="lazy" decoding="async" alt="" /></div>
+        <div class="v3-range-preview-copy"><span>{concept.status}</span><h3><bdi dir="ltr">{p.nom}</bdi></h3><p>{p.contenu[lang].accroche}</p><strong>{concept.view} ↗</strong></div>
+      </a>)}
+    </div>
+  </section>
 </div></section>
 </Layout>
