@@ -23,7 +23,7 @@ const long={fr:'Français',ar:'العربية',en:'English'};
   </span>
   <div class="locale">
   <details class="language-picker" data-language-picker>
-    <summary aria-label={languageLabel}>
+    <summary>
       <span class="language-picker-title">{copy.lang}</span>
       <span class="language-picker-current" lang={lang} dir={lang==='ar'?'rtl':'ltr'}>{short[lang]}</span>
       <svg class="language-picker-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -85,7 +85,7 @@ const long={fr:'Français',ar:'العربية',en:'English'};
   .language-picker summary{position:relative;display:grid;grid-template-columns:1fr 15px;column-gap:5px;align-items:center;min-height:48px;padding:5px 9px 5px 12px;list-style:none;border:1px solid #d7dfe7;border-radius:9px;background:#f6f8fb;color:#536579;cursor:pointer}
   .language-picker summary::-webkit-details-marker{display:none}
   .language-picker summary::marker{content:''}
-  .language-picker-title{font-size:.69rem;line-height:1.13;grid-column:1/-1;color:#64748b;white-space:nowrap}
+  .language-picker-title{font-size:.69rem;line-height:1.13;grid-column:1/-1;color:#42566b;white-space:nowrap}
   .language-picker-current{font-size:.95rem;line-height:1.4;align-self:center;color:#34465e}
   .language-picker-chevron{color:#526477;transition:transform .2s}
   .language-picker[open] .language-picker-chevron{transform:rotate(180deg)}

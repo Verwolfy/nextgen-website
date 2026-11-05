@@ -1,0 +1,88 @@
+name: NextGen V3 - Lighthouse lab audit (read-only)
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "src/**"
+      - "public/**"
+      - "scripts/summarize_v3_lighthouse.py"
+      - ".github/workflows/v3-lighthouse-audit.yml"
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "public/**"
+      - "scripts/summarize_v3_lighthouse.py"
+      - ".github/workflows/v3-lighthouse-audit.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  lab_audit:
+    name: Local Lighthouse performance/accessibility (not field CWV)
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".node-version"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install locked site dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Build trilingual static site locally
+        run: npm run build
+      - name: Install isolated Chromium for lab audits
+        run: |
+          python -m pip install playwright==1.56.0
+          python -m playwright install --with-deps chromium
+      - name: Run four LOCAL Lighthouse 13.6.0 audits (read-only)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .ci-artifacts/lighthouse
+          python -m http.server 8765 --bind 127.0.0.1 --directory dist \
+            > .ci-artifacts/lighthouse/local-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent --output /dev/null http://127.0.0.1:8765/fr/; then break; fi
+            sleep 1
+          done
+          curl --fail --silent --output /dev/null http://127.0.0.1:8765/fr/
+          export CHROME_PATH="$(python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          with sync_playwright() as p:
+              print(p.chromium.executable_path)
+          PY
+          )"
+          test -x "$CHROME_PATH"
+          audit() {
+            local label="$1"
+            local route="$2"
+            npx --yes lighthouse@13.6.0 "http://127.0.0.1:8765$route" \
+              --output=json \
+              --output-path=".ci-artifacts/lighthouse/lighthouse-$label.json" \
+              --only-categories=performance,accessibility,best-practices \
+              --chrome-flags="--headless=new --no-sandbox --disable-dev-shm-usage" \
+              --quiet
+          }
+          audit fr-home /fr/
+          audit ar-home /ar/
+          audit fr-catalogue /fr/catalogue/
+          audit en-ep-anc /en/catalogue/fenek-proof-ep-anc/
+          python scripts/summarize_v3_lighthouse.py
+      - name: Archive Lighthouse lab diagnostics (private)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nextgen-v3-lighthouse-lab
+          path: .ci-artifacts/lighthouse/
+          retention-days: 7
+          if-no-files-found: warn

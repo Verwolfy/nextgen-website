@@ -15,7 +15,8 @@ class HeaderThemeTests(unittest.TestCase):
     def test_language_selector_three_languages_without_js_dependency(self):
         self.assertIn("<HeaderPreferences lang={lang}",self.layout)
         self.assertIn("<details class=\"language-picker\"",self.prefs)
-        self.assertIn("<summary aria-label={languageLabel}>",self.prefs)
+        self.assertIn("<summary>",self.prefs)
+        self.assertNotIn("<summary aria-label=",self.prefs)
         self.assertIn("languages.map(",self.prefs)
         self.assertIn("aria-current={l===lang?'page':undefined}",self.prefs)
         self.assertIn("href={urlFor(l)}",self.prefs)
