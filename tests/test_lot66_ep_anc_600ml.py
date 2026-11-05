@@ -36,8 +36,8 @@ class EpAnc600ml(unittest.TestCase):
         self.assertEqual(row["validation_production_emballage"],"EN ATTENTE")
         self.assertIs(row["sku_erp_a_creer"],False)
 
-    def test_four_unresolved_kits_and_localized_product_pdf(self):
-        pending={"PROOF-EP-PRIM","PROOF-EP-SB",
+    def test_three_unresolved_kits_and_localized_product_pdf(self):
+        pending={"PROOF-EP-SB",
                  "PROOF-EP-SR","PROOF-PU-INJ"}
         self.assertEqual({p["code"] for p in self.products if p["gamme"]=="proof" and
            any("Contacter nous" in c["format"] for c in p["conditionnements"])},pending)
