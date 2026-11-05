@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "generated_on": "2026-11-05",
+  "scope": "Audit interne — 11 références FENEK-PROOF",
+  "warning": "Une maquette associée au code produit ne prouve pas la conformité physique du conditionnement, ni la certification de son étiquette.",
+  "status_summary": "Conformité physique des maquettes aux emballages : NON VERIFIEE pour 11/11.",
+  "references": [
+    {
+      "reference": "PROOF-ACR-RF",
+      "slug": "fenek-proof-acr-rf",
+      "conditionnements_catalogue": [
+        "Seau 20 kg",
+        "Seau 5 kg"
+      ],
+      "format_nominal_registre": "5 kg / 20 kg",
+      "maquette_conceptuelle": "public/images/maquettes/maquette-39.webp",
+      "verification_identite_visuelle": "NON VERIFIE",
+      "verification_emballage_physique": "NON VERIFIE",
+      "validation_r_d": "EN ATTENTE",
+      "validation_qualite_hse": "EN ATTENTE",
+      "validation_industrielle": "EN ATTENTE",
+      "validation_commerciale": "EN ATTENTE",
+      "autorisation_publication_fiche_technique": false,
+      "autorisation_creation_sku_erp": false
+    },
+    {
+      "reference": "PROOF-CM-O1P",
+      "slug": "fenek-proof-cm-o1p",
+      "conditionnements_catalogue": [
+        "Seau 20 kg",
+        "Seau 5 kg"
+      ],
+      "format_nominal_registre": "5 kg / 20 kg",
+      "maquette_conceptuelle": "public/images/maquettes/maquette-36.webp",
+      "verification_identite_visuelle": "NON VERIFIE",
+      "verification_emballage_physique": "NON VERIFIE",
+      "validation_r_d": "EN ATTENTE",
+      "validation_qualite_hse": "EN ATTENTE",
+      "validation_industrielle": "EN ATTENTE",
+      "validation_commerciale": "EN ATTENTE",
+      "autorisation_publication_fiche_technique": false,
+      "autorisation_creation_sku_erp": false
+    },
+    {
+      "reference": "PROOF-CM-O2P",
+      "slug": "fenek-proof-cm-o2p",
+      "conditionnements_catalogue": [
+        "Kit : sac 30 kg + bidon 10 kg"
+      ],
+      "format_nominal_registre": "Sac 30 kg + bidon 10 kg (kit)",
+      "maquette_conceptuelle": "public/images/maquettes/maquette-37.webp",
+      "verification_identite_visuelle": "NON VERIFIE",
+      "verification_emballage_physique": "NON VERIFIE",
+      "validation_r_d": "EN ATTENTE",
+      "validation_qualite_hse": "EN ATTENTE",
+      "validation_industrielle": "EN ATTENTE",
+      "validation_commerciale": "EN ATTENTE",
+      "autorisation_publication_fiche_technique": false,
+      "autorisation_creation_sku_erp": false
+    },
+    {
+      "reference": "PROOF-EP-ANC",
+      "slug": "fenek-proof-ep-anc",
+      "conditionnements_catalogue": [
+        "Double cartouche bicomposant 600 mL (A : résine + B : durcisseur)"
+      ],
+      "format_nominal_registre": "Double cartouche A/B — 600 mL au total",
+      "maquette_conceptuelle": "public/images/maquettes/maquette-44.webp",
+      "verification_identite_visuelle": "NON VERIFIE",
+      "verification_emballage_physique": "NON VERIFIE",
+      "validation_r_d": "EN ATTENTE",
+      "validation_qualite_hse": "EN ATTENTE",
+      "validation_industrielle": "EN ATTENTE",
+      "validation_commerciale": "EN ATTENTE",
+      "autorisation_publication_fiche_technique": false,
+      "autorisation_creation_sku_erp": false
+    },
+    {
+      "reference": "PROOF-EP-INJ",
+      "slug": "fenek-proof-ep-inj",
+      "conditionnements_catalogue": [
+        "Double cartouche 300 + 300 mL (600 mL au total)"
+      ],
+      "format_nominal_registre": "Double cartouche 300 + 300 mL — total 600 mL",
+      "maquette_conceptuelle": "public/images/maquettes/maquette-43.webp",
+      "verification_identite_visuelle": "NON VERIFIE",
+      "verification_emballage_physique": "NON VERIFIE",
+      "validation_r_d": "EN ATTENTE",
+      "validation_qualite_hse": "EN ATTENTE",
+      "validation_industrielle": "EN ATTENTE",
+      "validation_commerciale": "EN ATTENTE",
+      "autorisation_publication_fiche_technique": false,
+      "autorisation_creation_sku_erp": false
+    },
+    {
+      "reference": "PROOF-EP-PRIM",
+      "slug": "fenek-proof-ep-prim",
+      "conditionnements_catalogue": [
+        "Kit : seau A 10 kg + seau B 3 kg"
+      ],
+      "format_nominal_registre": "Seau A 10 kg + seau B 3 kg (kit 13 kg)",
+      "maquette_conceptuelle": "public/images/maquettes/maquette-40.webp",
+      "verification_identite_visuelle": "NON VERIFIE",
+      "verification_emballage_physique": "NON VERIFIE",
+      "validation_r_d": "EN ATTENTE",
+      "validation_qualite_hse": "EN ATTENTE",
+      "validation_industrielle": "EN ATTENTE",
+      "validation_commerciale": "EN ATTENTE",
+      "autorisation_publication_fiche_technique": false,
+      "autorisation_creation_sku_erp": false
+    },
+    {
+      "reference": "PROOF-EP-SB",
+      "slug": "fenek-proof-ep-sb",
+      "conditionnements_catalogue": [
+        "Double cartouche 300 + 300 mL (600 mL au total)"
+      ],
+      "format_nominal_registre": "Double cartouche 300 + 300 mL — total 600 mL",
+      "maquette_conceptuelle": "public/images/maquettes/maquette-42.webp",
+      "verification_identite_visuelle": "NON VERIFIE",
+      "verification_emballage_physique": "NON VERIFIE",
+      "validation_r_d": "EN ATTENTE",
+      "validation_qualite_hse": "EN ATTENTE",
+      "validation_industrielle": "EN ATTENTE",
+      "validation_commerciale": "EN ATTENTE",
+      "autorisation_publication_fiche_technique": false,
+      "autorisation_creation_sku_erp": false
+    },
+    {
+      "reference": "PROOF-EP-SR",
+      "slug": "fenek-proof-ep-sr",
+      "conditionnements_catalogue": [
+        "Kit : seau 10 kg + seau 3 kg"
+      ],
+      "format_nominal_registre": "Seau 10 kg + seau 3 kg (kit 13 kg)",
+      "maquette_conceptuelle": "public/images/maquettes/maquette-41.webp",
+      "verification_identite_visuelle": "NON VERIFIE",
+      "verification_emballage_physique": "NON VERIFIE",
+      "validation_r_d": "EN ATTENTE",
+      "validation_qualite_hse": "EN ATTENTE",
+      "validation_industrielle": "EN ATTENTE",
+      "validation_commerciale": "EN ATTENTE",
+      "autorisation_publication_fiche_technique": false,
+      "autorisation_creation_sku_erp": false
+    },
+    {
+      "reference": "PROOF-PU-1K",
+      "slug": "fenek-proof-pu-1k",
+      "conditionnements_catalogue": [
+        "Seau 20 kg",
+        "Seau 5 kg"
+      ],
+      "format_nominal_registre": "5 kg / 20 kg",
+      "maquette_conceptuelle": "public/images/maquettes/maquette-38.webp",
+      "verification_identite_visuelle": "NON VERIFIE",
+      "verification_emballage_physique": "NON VERIFIE",
+      "validation_r_d": "EN ATTENTE",
+      "validation_qualite_hse": "EN ATTENTE",
+      "validation_industrielle": "EN ATTENTE",
+      "validation_commerciale": "EN ATTENTE",
+      "autorisation_publication_fiche_technique": false,
+      "autorisation_creation_sku_erp": false
+    },
+    {
+      "reference": "PROOF-PU-INJ",
+      "slug": "fenek-proof-pu-inj",
+      "conditionnements_catalogue": [
+        "Kit : seau 5 kg + seau 5 kg"
+      ],
+      "format_nominal_registre": "Seau 5 kg + seau 5 kg (kit 10 kg)",
+      "maquette_conceptuelle": "public/images/maquettes/maquette-45.webp",
+      "verification_identite_visuelle": "NON VERIFIE",
+      "verification_emballage_physique": "NON VERIFIE",
+      "validation_r_d": "EN ATTENTE",
+      "validation_qualite_hse": "EN ATTENTE",
+      "validation_industrielle": "EN ATTENTE",
+      "validation_commerciale": "EN ATTENTE",
+      "autorisation_publication_fiche_technique": false,
+      "autorisation_creation_sku_erp": false
+    },
+    {
+      "reference": "PROOF-PU-SEAL",
+      "slug": "fenek-proof-pu-seal",
+      "conditionnements_catalogue": [
+        "Cartouche 300 mL"
+      ],
+      "format_nominal_registre": "300 mL",
+      "maquette_conceptuelle": "public/images/maquettes/maquette-04.webp",
+      "verification_identite_visuelle": "NON VERIFIE",
+      "verification_emballage_physique": "NON VERIFIE",
+      "validation_r_d": "EN ATTENTE",
+      "validation_qualite_hse": "EN ATTENTE",
+      "validation_industrielle": "EN ATTENTE",
+      "validation_commerciale": "EN ATTENTE",
+      "autorisation_publication_fiche_technique": false,
+      "autorisation_creation_sku_erp": false
+    }
+  ]
+}
