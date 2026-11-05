@@ -16,14 +16,18 @@ class ProofPackaging(unittest.TestCase):
         proof = [p for p in self.products if p["gamme"]=="proof"]
         self.assertEqual(len(proof), 11)
         pails = {"PROOF-ACR-RF", "PROOF-CM-O1P", "PROOF-PU-1K"}
-        kits = {"PROOF-CM-O2P", "PROOF-EP-ANC", "PROOF-EP-INJ", "PROOF-EP-PRIM",
+        kits = {"PROOF-EP-ANC", "PROOF-EP-INJ", "PROOF-EP-PRIM",
                 "PROOF-EP-SB", "PROOF-EP-SR", "PROOF-PU-INJ"}
-        self.assertEqual({p["code"] for p in proof}, pails|kits|{"PROOF-PU-SEAL"})
+        self.assertEqual({p["code"] for p in proof}, pails|kits|{"PROOF-CM-O2P", "PROOF-PU-SEAL"})
         for p in proof:
             if p["code"] in pails:
                 self.assertEqual(p["conditionnements"], [
                     {"format":"Seau 20 kg","poids_net":20,"unite":"SEAU"},
                     {"format":"Seau 5 kg","poids_net":5,"unite":"SEAU"},
+                ], p["code"])
+            elif p["code"] == "PROOF-CM-O2P":
+                self.assertEqual(p["conditionnements"], [
+                    {"format":"Kit : sac 30 kg + bidon 10 kg","poids_net":None,"unite":"KIT"}
                 ], p["code"])
             elif p["code"] in kits:
                 self.assertEqual(p["conditionnements"], [{
