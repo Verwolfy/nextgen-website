@@ -2050,7 +2050,7 @@
         ]
       }
     },
-    "mode_fr_preparatoire": "1) Vérifier la nature du support et la procédure d'ancrage adaptée. 2) Préparer et nettoyer le forage selon une procédure technique validée. 3) Utiliser le dispositif de mélange et d'injection prescrit pour le conditionnement retenu. 4) Dimensions, préparation, temps de prise, résistance et délai de mise en charge : données FENEK à confirmer avant application.",
+    "mode_fr_preparatoire": "1) Vérifier la nature du support et la procédure d'ancrage adaptée. 2) Préparer et nettoyer le forage selon une procédure technique validée. 3) Utiliser le dispositif de mélange et d'injection prescrit pour le conditionnement retenu. 4) Dimensions, préparation, temps de prise, résistance et délai de mise en charge : [valeur à confirmer] sur les données FENEK validées avant application.",
     "conditionnements": [
       {
         "format": "600 mL — emballage à préciser",
