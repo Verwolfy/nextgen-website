@@ -95,6 +95,58 @@ def check_header_preferences(browser, base: str) -> None:
         no_js.close()
 
 
+
+def check_reduced_motion_and_skip_links(browser, base: str) -> None:
+    """Lots 91–93: no motion on reduced-motion until explicit click; localized keyboard skip."""
+    labels = {
+        "fr": ("Aller au contenu", "Relancer la vidéo", "Mettre la vidéo en pause"),
+        "ar": ("الانتقال إلى المحتوى الرئيسي", "تشغيل الفيديو", "إيقاف الفيديو مؤقتًا"),
+        "en": ("Skip to main content", "Play video", "Pause video"),
+    }
+    for lang, (skip_text, play_label, pause_label) in labels.items():
+        page = browser.new_page(viewport={"width": 390, "height": 844},
+                                reduced_motion="reduce")
+        try:
+            response = page.goto(f"{base}/{lang}/", wait_until="domcontentloaded")
+            assert response and response.status == 200, lang
+            assert page.locator("html").get_attribute("dir") == (
+                "rtl" if lang == "ar" else "ltr"
+            ), lang
+            skip = page.locator("a.skip")
+            assert skip.count() == 1, lang
+            assert skip.inner_text().strip() == skip_text, lang
+            skip.focus()
+            assert skip.evaluate("el => document.activeElement === el"), lang
+            assert skip.get_attribute("href") == "#main", lang
+
+            # The poster is requested with priority only on the home route.
+            poster_hint = page.locator('link[rel="preload"][as="image"]')
+            assert poster_hint.count() == 1, lang
+            assert poster_hint.get_attribute("href") == (
+                "/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3"
+            ), lang
+            video = page.locator("[data-welcome-video]")
+            button = page.locator("[data-welcome-toggle]")
+            button.scroll_into_view_if_needed()
+            assert button.is_visible(), lang
+            assert not video.get_attribute("src"), (lang, "MP4 loaded without consent")
+            assert button.get_attribute("aria-label") == play_label, lang
+            button.click()
+            page.wait_for_function(
+                "() => !!document.querySelector('[data-welcome-video]').getAttribute('src')",
+                timeout=7000,
+            )
+            assert button.get_attribute("aria-label") == pause_label, lang
+            button.click()
+            assert button.get_attribute("aria-label") == play_label, lang
+
+            # Other pages must not pay for the home hero poster.
+            page.goto(f"{base}/{lang}/contact/", wait_until="domcontentloaded")
+            assert page.locator('link[rel="preload"][as="image"]').count() == 0, lang
+        finally:
+            page.close()
+
+
 def check() -> None:
     assert (DIST / "fr" / "index.html").is_file(), "Site not built"
     SHOTS.mkdir(parents=True, exist_ok=True)
@@ -113,6 +165,7 @@ def check() -> None:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
             check_header_preferences(browser, base)
+            check_reduced_motion_and_skip_links(browser, base)
             for lang in ("fr", "ar", "en"):
                 for size, width, height in (("desktop", 1280, 900), ("mobile", 390, 844)):
                     page = browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=1)
