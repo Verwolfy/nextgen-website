@@ -66,7 +66,7 @@ const filters = {
           messages[l].ranges[g],...editorialCopy[l].rangeTopics[g],
         ]),
         ...p.conditionnements.map(x=>x.format),
-      ])} href={'/'+lang+'/catalogue/'+p.slug+'/'} aria-label={p.nom+' — '+t.view}>
+      ])} href={'/'+lang+'/catalogue/'+p.slug+'/'}>
         <div class="concept-product-image concept-packshot-container"><img src={conceptPackshot(p,"card")} alt="" width="800" height="800" loading="lazy" decoding="async" /></div>
         <div class="concept-product-copy"><span class="concept-product-status">{t.status}</span><span class="concept-product-code" dir="ltr">{p.code}</span><h3><bdi dir="ltr">{p.nom}</bdi></h3><p>{p.contenu[lang].accroche}</p>
           <div class="concept-formats">{p.conditionnements.length?p.conditionnements.slice(0,3).map(x=><span>{packagingLabelFor(x.format,lang)}</span>):<span>{t.unknownFormat}</span>}</div>
