@@ -4,9 +4,6 @@
  * Uses only local assets; does not enable forms, indexing or third-party services.
  */
 :root{
-  --v3-ink:#0a2838;
-  --v3-deep:#061a2b;
-  --v3-panel:#0c3140;
   --v3-mint:#79e5b5;
   --v3-paper:#f6f8f5;
   --v3-border:#d9e6e0;
@@ -317,4 +314,22 @@ body{background:var(--v3-paper)}
  .contact-channels{gap:14px}
  .page-head:not(.concept-detail-head) h1{font-size:clamp(2rem,8.5vw,2.9rem)}
  .page-head:not(.concept-detail-head){padding-block:43px}
+}
+
+/* Lot 92: show complete packaging artwork without cropping product labels. */
+.catalogue-projects .concept-product-image img,
+.v3-product-detail .concept-detail-image img{object-fit:contain}
+/* High-contrast and reduced-motion treatments remain scoped to interactive V3 UI. */
+@media (forced-colors:active){
+ .v3-featured-card:focus-visible,
+ .v3-range-card:focus-visible,
+ .v3-range-preview:focus-visible,
+ .catalogue-projects .concept-product-card:focus-visible,
+ .welcome-video-cta:focus-visible{outline:3px solid Highlight;outline-offset:3px}
+ .v3-featured-state,.v3-detail-code{border:1px solid CanvasText}
+}
+@media (prefers-reduced-motion:reduce){
+ .v3-range-preview,.v3-featured-card,.catalogue-projects .concept-product-card{scroll-behavior:auto;transition:none}
+ .v3-range-preview:hover,.v3-featured-card:hover,
+ .catalogue-projects .concept-product-card:hover{transform:none}
 }

@@ -95,6 +95,50 @@ def check_header_preferences(browser, base: str) -> None:
         no_js.close()
 
 
+
+def check_v3_reduced_motion_and_data_saver(browser, base: str) -> None:
+    """Lot 92: 320px RTL/light poster-only by default, with opt-in playback."""
+    for lang in ("fr", "ar", "en"):
+        page = browser.new_page(viewport={"width": 320, "height": 720})
+        try:
+            page.emulate_media(reduced_motion="reduce", color_scheme="light")
+            response = page.goto(f"{base}/{lang}/", wait_until="domcontentloaded")
+            assert response is not None and response.status == 200
+            toggle = page.locator("[data-welcome-toggle]")
+            player = page.locator("[data-welcome-video]")
+            toggle.wait_for(state="visible")
+            assert toggle.inner_text() == "▶", (lang, "reduced motion should not autoplay")
+            assert player.get_attribute("src") in (None, ""), (lang, "unexpected eager video")
+            assert page.locator('link[rel="preload"][as="image"][fetchpriority="high"]').count() == 1, lang
+            assert page.evaluate("document.documentElement.scrollWidth-innerWidth") <= 4, (lang, "320px overflow")
+            assert toggle.get_attribute("aria-label"), lang
+            toggle.click()
+            assert toggle.inner_text() == "Ⅱ", (lang, "manual play opt-in")
+            assert player.get_attribute("src"), (lang, "manual playback never requested")
+            toggle.click()
+            assert toggle.inner_text() == "▶", (lang, "manual pause")
+            page.screenshot(path=str(SHOTS / f"{lang}-v3-reduced-motion-320.png"))
+        finally:
+            page.close()
+    # Simulate Navigator.connection.saveData on one representative localized home.
+    page = browser.new_page(viewport={"width": 390, "height": 844})
+    try:
+        page.add_init_script(
+            "Object.defineProperty(navigator,'connection',{configurable:true,"
+            "value:{saveData:true}})"
+        )
+        page.goto(base + "/fr/", wait_until="domcontentloaded")
+        toggle = page.locator("[data-welcome-toggle]")
+        player = page.locator("[data-welcome-video]")
+        toggle.wait_for(state="visible")
+        assert toggle.inner_text() == "▶", "Data Saver unexpectedly scheduled motion"
+        assert player.get_attribute("src") in (None, ""), "Data Saver eagerly fetched MP4"
+        toggle.click()
+        assert toggle.inner_text() == "Ⅱ", "Data Saver manual opt-in must work"
+        assert player.get_attribute("src"), "Data Saver opt-in failed"
+    finally:
+        page.close()
+
 def check() -> None:
     assert (DIST / "fr" / "index.html").is_file(), "Site not built"
     SHOTS.mkdir(parents=True, exist_ok=True)
@@ -113,6 +157,7 @@ def check() -> None:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
             check_header_preferences(browser, base)
+            check_v3_reduced_motion_and_data_saver(browser, base)
             for lang in ("fr", "ar", "en"):
                 for size, width, height in (("desktop", 1280, 900), ("mobile", 390, 844)):
                     page = browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=1)
