@@ -14,6 +14,8 @@ const publicOrigin=Astro.site?.origin ?? 'https://nextgen-buildingsolutions.com'
 const canonical=publicOrigin+Astro.url.pathname;
 const whats=`https://wa.me/${brand.whatsapp}`;
 const navSections = ['gammes','catalogue','distributeurs','ressources','a-propos','contact'] as const;
+// The tiny Nexo/Geno poster is the first-frame visual only on localized homepages.
+const preloadWelcomePoster=/^\/(?:fr|ar|en)\/$/.test(Astro.url.pathname);
 ---
 <!doctype html>
 <html lang={lang} dir={lang==='ar'?'rtl':'ltr'}>
@@ -24,6 +26,7 @@ const navSections = ['gammes','catalogue','distributeurs','ressources','a-propos
   <meta name="theme-color" content="#f8fafb" media="(prefers-color-scheme: light)" />
   <meta name="description" content={description} />
   <meta name="robots" content="noindex,nofollow" />
+  {preloadWelcomePoster && <link rel="preload" as="image" href="/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3" fetchpriority="high" />}
   <meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" />
   <link rel="canonical" href={canonical} />
   {languages.map(l=><link rel="alternate" hreflang={l} href={publicOrigin+translate(l)} />)}
