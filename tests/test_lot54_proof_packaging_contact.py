@@ -18,7 +18,7 @@ class ProofPackaging(unittest.TestCase):
         pails = {"PROOF-ACR-RF", "PROOF-CM-O1P", "PROOF-PU-1K"}
         kits = {"PROOF-EP-PRIM",
                 "PROOF-EP-SB", "PROOF-EP-SR", "PROOF-PU-INJ"}
-        self.assertEqual({p["code"] for p in proof}, pails|kits|{"PROOF-CM-O2P", "PROOF-EP-ANC", "PROOF-PU-SEAL"})
+        self.assertEqual({p["code"] for p in proof}, pails|kits|{"PROOF-CM-O2P", "PROOF-EP-ANC", "PROOF-EP-INJ", "PROOF-PU-SEAL"})
         for p in proof:
             if p["code"] in pails:
                 self.assertEqual(p["conditionnements"], [
