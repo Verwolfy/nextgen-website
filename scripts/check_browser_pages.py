@@ -132,6 +132,15 @@ def check() -> None:
                             assert page.locator(".hero-status[role='note']").count() == 1, path
                             welcome = page.locator("[data-welcome-card]")
                             assert welcome.count() == 1, path
+                            assert page.locator(".v3-featured-card").count() == 3, path
+                            assert page.locator(".v3-hero-signal .v3-signal-item").count() == 3, path
+                            if size == "mobile":
+                                heading_box = page.locator(".v3-hero-heading").bounding_box()
+                                video_box = welcome.bounding_box()
+                                summary_box = page.locator(".v3-hero-summary").bounding_box()
+                                assert heading_box and video_box and summary_box, path
+                                assert heading_box["y"] + heading_box["height"] <= video_box["y"] + 3, path
+                                assert video_box["y"] + video_box["height"] <= summary_box["y"] + 3, path
                             video = welcome.locator("[data-welcome-video]")
                             assert video.count() == 1, path
                             assert video.get_attribute("data-src") == (
