@@ -67,6 +67,25 @@ class CatalogueLabAudit(unittest.TestCase):
         self.assertIn("python scripts/check_catalogue_index_payload.py",check)
         self.assertIn("nextgen-catalogue-search-index-payload",check)
 
+
+    def test_lighthouse_a11y_findings_are_targeted_not_global_overrides(self):
+        prefs=(ROOT/"src/components/HeaderPreferences.astro").read_text(encoding="utf-8")
+        catalogue=(ROOT/"src/components/ConceptCatalogue.astro").read_text(encoding="utf-8")
+        css=(ROOT/"src/styles/v3.css").read_text(encoding="utf-8")
+        self.assertIn("<summary>",prefs)
+        self.assertNotIn("<summary aria-label=",prefs)
+        self.assertIn("color:#42566b;white-space:nowrap",prefs)
+        self.assertNotIn("aria-label={p.nom+' — '+t.view}",catalogue)
+        for marker in (
+            ".v3-range-section .eyebrow", ".v3-featured-section .eyebrow",
+            ".catalogue-projects .eyebrow{color:#086b50}",
+            ".v3-audience-count{color:#086244}",
+            ".catalogue-projects .concept-range-nav small{color:#355366}",
+            "background:#066b49;color:#fff",
+            'html[data-theme="dark"] .catalogue-projects .concept-range-nav small{color:#d2e5ec}',
+        ):
+            self.assertIn(marker,css)
+
     def test_publication_guards_unchanged(self):
         layout=(ROOT/"src/layouts/Layout.astro").read_text(encoding="utf-8")
         self.assertIn("noindex,nofollow",layout)
