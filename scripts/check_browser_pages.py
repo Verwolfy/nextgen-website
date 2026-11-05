@@ -253,7 +253,9 @@ def check() -> None:
                                 assert "الملاط" in page.locator(".range-overview").inner_text(), path
                             assert page.locator(".editorial-caution").count() >= 1, path
                         if section == "a-propos":
-                            assert page.locator(".about-step").count() == 3, path
+                            assert page.locator(".industrial-step").count() == 3, path
+                            assert page.locator(".industrial-step img[src^='/images/approche/']").count() == 3, path
+                            assert page.locator(".industrial-link").get_attribute("href") == f"/{lang}/contact/", path
                             assert page.locator(".editorial-caution").count() >= 1, path
                         if section == "ressources":
                             assert page.locator(".resource-card").count() == 2, path
