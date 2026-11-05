@@ -15,7 +15,7 @@ class ArabicEditorialPolishTests(unittest.TestCase):
         component=(ROOT/'src/components/AboutStory.astro').read_text(encoding='utf8')
         self.assertEqual(component.count('{edit.aboutLead}'),1)
         self.assertNotIn('<p>{t.aboutInfo}</p>',component)
-        self.assertIn('<h2>{edit.aboutHeading}</h2>',component)
+        self.assertIn('<h2 id="industrial-approach-heading">{edit.aboutHeading}</h2>',component)
         self.assertIn('{edit.aboutNotice}',component)
     def test_no_new_commercial_or_technical_claim(self):
         self.assertEqual((ROOT/'public/data/products.json').read_text().strip(),'[]')
