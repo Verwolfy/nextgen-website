@@ -112,10 +112,10 @@ export const hasProductPackshot=(product:CatalogueProject):boolean=>
  * The original French wording follows the user's packaging instruction.
  */
 export const packagingLabelFor = (format:string, lang:Lang):string => {
-  if(format==="600 mL — emballage à préciser") return {
-    fr:"600 mL — emballage à préciser",
-    en:"600 mL — packaging type to be confirmed",
-    ar:"600 مل — نوع العبوة قيد التحديد",
+  if(format==="Double cartouche bicomposant 600 mL (A : résine + B : durcisseur)") return {
+    fr:"Double cartouche bicomposant 600 mL (A : résine + B : durcisseur)",
+    en:"600 mL dual-component cartridge (A: resin + B: hardener)",
+    ar:"خرطوشة مزدوجة المكونات 600 مل (أ: راتنج + ب: مصلّب)",
   }[lang];
   if(format==="Kit : sac 30 kg + bidon 10 kg") return {
     fr:"Kit : sac 30 kg + bidon 10 kg",
