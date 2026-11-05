@@ -21,7 +21,7 @@ class EpAnc600ml(unittest.TestCase):
         self.assertFalse(item["commercialise"])
         self.assertEqual(item["statut"],"presentation_provisoire")
         self.assertNotIn("cartouche",item["mode_fr_preparatoire"].lower())
-        self.assertIn("données FENEK à confirmer",item["mode_fr_preparatoire"])
+        self.assertIn("[valeur à confirmer]",item["mode_fr_preparatoire"])
 
     def test_approval_and_mass_still_unknown(self):
         self.assertEqual(len(self.registry),50)
