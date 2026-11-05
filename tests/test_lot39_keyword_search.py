@@ -27,7 +27,7 @@ class KeywordSearchTests(unittest.TestCase):
 
     def test_only_public_product_fields_are_indexed(self):
         source = (ROOT / "src/components/ConceptCatalogue.astro").read_text(encoding="utf-8")
-        search_attribute = source.split("data-catalogue-search={[", 1)[1].split("].join(' ')}", 1)[0]
+        search_attribute = source.split("data-catalogue-search={compactSearchWords([", 1)[1].split("])} href=", 1)[0]
         self.assertNotIn("mode_fr_preparatoire", search_attribute)
         self.assertNotIn("guidance(", search_attribute)
         self.assertNotIn("method", search_attribute)
