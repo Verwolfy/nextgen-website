@@ -54,7 +54,7 @@ class Lot76to78(unittest.TestCase):
         self.assertIn('"deploy_performed":False',check)
         layout=(ROOT/"src/layouts/Layout.astro").read_text(encoding="utf-8")
         self.assertIn('name="robots" content="noindex,nofollow"',layout)
-        self.assertIn("rest[eé] accessible", (ROOT/"docs/LOT63_DECISION_ACCES_PUBLIC_SITE_20261105.md").read_text(encoding="utf-8").lower().replace("reste","reste"))
+        self.assertIn("reste accessible publiquement", (ROOT/"docs/LOT63_DECISION_ACCES_PUBLIC_SITE_20261105.md").read_text(encoding="utf-8").lower())
 
 if __name__=="__main__":
     unittest.main()
