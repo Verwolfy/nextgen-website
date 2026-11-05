@@ -1,5 +1,8 @@
 # Lot 57 — Qualification des sept kits FENEK-PROOF
 
+> **État actualisé au 5 novembre 2026.** La vidéo d'accueil Nexo/Geno V3 a été intégrée sur `main` au commit `9fff6990`, et la conformité du MP4 et du poster sur `nextgen-buildingsolutions.com` a été confirmée par le contrôle HTTP [GitHub Actions 42064833012](https://github.com/Verwolfy/nextgen-website/actions/runs/42064833012). La décision utilisateur du lot 63 maintient l'accès public au domaine principal. **Aucune information de composition ou de contenance des sept kits ci-dessous n'a été ajoutée ou validée lors des lots 58 à 64.** Les valeurs restent à recueillir, une référence à la fois. La mention de déploiement non confirmé en fin de cette note est historique à la date de rédaction initiale du 4 novembre.
+
+
 Date : 4 novembre 2026. Dernière base vérifiée : `main` au commit `9a111c7ca20a959d2e107719d89583ae9e80f649` (lot 56).
 
 ## Résultat de l'audit
