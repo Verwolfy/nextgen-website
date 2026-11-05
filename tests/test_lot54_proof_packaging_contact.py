@@ -31,7 +31,7 @@ class ProofPackaging(unittest.TestCase):
                 ], p["code"])
             elif p["code"] == "PROOF-EP-ANC":
                 self.assertEqual(p["conditionnements"], [
-                    {"format":"600 mL — emballage à préciser","poids_net":None,"unite":"NON CONFIRMÉ"}
+                    {"format":"Double cartouche bicomposant 600 mL (A : résine + B : durcisseur)","poids_net":None,"unite":"CARTOUCHE"}
                 ], p["code"])
             elif p["code"] in kits:
                 self.assertEqual(p["conditionnements"], [{
