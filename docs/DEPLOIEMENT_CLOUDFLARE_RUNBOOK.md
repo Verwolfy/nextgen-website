@@ -1,5 +1,8 @@
 # Déploiement Cloudflare Pages — procédure courte et contrôlée
 
+> **État constaté le 5 novembre 2026 (lots 62–63)** : le site `https://nextgen-buildingsolutions.com/fr/` est effectivement accessible de façon anonyme (HTTP 200), avec la vidéo Nexo/Geno V2 conforme. L'utilisateur a confirmé son souhait de **maintenir cet accès public**. Le libellé historique « prêt à connecter, NON DÉPLOYÉ » ci-dessous décrit la situation du **1er novembre**, et ne représente plus l'état actuel de l'hébergement. Voir [décision actuelle](LOT63_DECISION_ACCES_PUBLIC_SITE_20261105.md) et [preuve HTTP](LOT62_VERIFICATION_DEPLOIEMENT_VIDEO_V2_20261105.md). Les protections `noindex`, les formulaires désactivés et la protection des previews restent inchangées.
+
+
 **État : prêt à connecter, NON DÉPLOYÉ par ce dépôt.** Date : 2026-11-01.
 
 ## 1. Choix de lancement
