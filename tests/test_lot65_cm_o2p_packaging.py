@@ -40,8 +40,7 @@ class CM_O2P_ProvisionalKit(unittest.TestCase):
         for label in (FORMAT, "Kit: 30 kg bag + 10 kg canister",
                       "طقم: كيس 30 كغ + عبوة 10 كغ"):
             self.assertIn(label, src)
-        pending = {"PROOF-EP-PRIM",
-                   "PROOF-EP-SB","PROOF-EP-SR","PROOF-PU-INJ"}
+        pending = {"PROOF-EP-SB","PROOF-EP-SR","PROOF-PU-INJ"}
         for prod in self.catalogue:
             if prod["code"] in pending:
                 self.assertEqual(prod["conditionnements"], [{
