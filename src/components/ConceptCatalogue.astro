@@ -8,7 +8,7 @@ const {lang}=Astro.props;
 const t=catalogueCopy[lang];
 // Keep all three languages searchable while avoiding repeated words in every card's
 // HTML data attribute. The client search already matches individual input terms.
-const compactSearchWords=(parts:string[])=>[...new Set(parts.join(' ').split(/\\s+/u).filter(Boolean))].join(' ');
+const compactSearchWords=(parts:string[])=>[...new Set(parts.join(' ').split(/\s+/u).filter(Boolean))].join(' ');
 const filters = {
   fr: {
     title: 'Rechercher une référence', query: 'Nom, description, usage ou mot-clé',
