@@ -1,6 +1,6 @@
 ---
 import {ranges,rangeName,rangeColor,messages,type Lang} from '../data/site';
-import {catalogueProjects,projectsByRange,conceptPackshot} from '../lib/catalogue-projets';
+import {catalogueProjects,projectsByRange,conceptPackshot,packagingLabelFor} from '../lib/catalogue-projets';
 import {catalogueCopy} from '../data/catalogue-content';
 import {editorialCopy} from '../data/editorial';
 interface Props { lang:Lang }
@@ -65,8 +65,8 @@ const filters = {
         ...p.conditionnements.map(x=>x.format),
       ].join(' ')} href={'/'+lang+'/catalogue/'+p.slug+'/'} aria-label={p.nom+' — '+t.view}>
         <div class="concept-product-image concept-packshot-container"><img src={conceptPackshot(p,"card")} alt="" width="800" height="800" loading="lazy" /></div>
-        <div class="concept-product-copy"><span class="concept-product-status">{t.status}</span><h3><bdi dir="ltr">{p.nom}</bdi></h3><p>{p.contenu[lang].accroche}</p>
-          <div class="concept-formats">{p.conditionnements.length?p.conditionnements.slice(0,3).map(x=><span>{x.format}</span>):<span>{t.unknownFormat}</span>}</div>
+        <div class="concept-product-copy"><span class="concept-product-status">{t.status}</span><span class="concept-product-code" dir="ltr">{p.code}</span><h3><bdi dir="ltr">{p.nom}</bdi></h3><p>{p.contenu[lang].accroche}</p>
+          <div class="concept-formats">{p.conditionnements.length?p.conditionnements.slice(0,3).map(x=><span>{packagingLabelFor(x.format,lang)}</span>):<span>{t.unknownFormat}</span>}</div>
           <strong class="concept-view">{t.view}<span aria-hidden="true"> ↗</span></strong>
         </div>
       </a>)}
