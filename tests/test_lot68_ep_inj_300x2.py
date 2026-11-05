@@ -34,12 +34,12 @@ class EpInj300x2(unittest.TestCase):
         self.assertEqual(x["validation_production_emballage"], "EN ATTENTE")
         self.assertIs(x["sku_erp_a_creer"],False)
 
-    def test_localizations_and_two_unresolved_formats(self):
+    def test_localizations_and_one_unresolved_format(self):
         helper = (ROOT/"src/lib/catalogue-projets.ts").read_text(encoding="utf-8")
         for label in (FORMAT, "Dual cartridge 300 + 300 mL (600 mL total)",
                       "خرطوشة مزدوجة 300 + 300 مل (600 مل إجمالاً)"):
             self.assertIn(label,helper)
-        pending = {"PROOF-EP-SR","PROOF-PU-INJ"}
+        pending = {"PROOF-PU-INJ"}
         self.assertEqual({p["code"] for p in self.catalogue if p["gamme"]=="proof" and
                           any("Contacter nous" in c["format"] for c in p["conditionnements"])},pending)
         for path in ("src/pages/[lang]/catalogue/[slug].astro",

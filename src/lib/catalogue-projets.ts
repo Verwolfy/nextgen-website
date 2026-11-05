@@ -112,6 +112,11 @@ export const hasProductPackshot=(product:CatalogueProject):boolean=>
  * The original French wording follows the user's packaging instruction.
  */
 export const packagingLabelFor = (format:string, lang:Lang):string => {
+  if(format==="Kit : seau 10 kg + seau 3 kg") return {
+    fr:"Kit : seau 10 kg + seau 3 kg",
+    en:"Kit: 10 kg bucket + 3 kg bucket",
+    ar:"طقم: دلو 10 كغ + دلو 3 كغ",
+  }[lang];
   if(format==="Kit : seau A 10 kg + seau B 3 kg") return {
     fr:"Kit : seau A 10 kg + seau B 3 kg",
     en:"Kit: 10 kg bucket A + 3 kg bucket B",

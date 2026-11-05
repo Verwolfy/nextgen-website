@@ -33,11 +33,11 @@ class EpPrim10Plus3(unittest.TestCase):
         self.assertEqual(x["validation_production_emballage"], "EN ATTENTE")
         self.assertIs(x["sku_erp_a_creer"], False)
 
-    def test_translations_and_remaining_two_pending(self):
+    def test_translations_and_remaining_one_pending(self):
         helper = (ROOT/"src/lib/catalogue-projets.ts").read_text(encoding="utf-8")
         for label in (FORMAT, "Kit: 10 kg bucket A + 3 kg bucket B", "طقم: دلو أ 10 كغ + دلو ب 3 كغ"):
             self.assertIn(label, helper)
-        pending = {"PROOF-EP-SR", "PROOF-PU-INJ"}
+        pending = {"PROOF-PU-INJ"}
         self.assertEqual({p["code"] for p in self.catalogue if p["gamme"]=="proof" and
             any("Contacter nous" in c["format"] for c in p["conditionnements"])}, pending)
         for path in ("src/pages/[lang]/catalogue/[slug].astro",
