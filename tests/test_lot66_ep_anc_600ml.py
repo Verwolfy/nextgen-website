@@ -36,8 +36,8 @@ class EpAnc600ml(unittest.TestCase):
         self.assertEqual(row["validation_production_emballage"],"EN ATTENTE")
         self.assertIs(row["sku_erp_a_creer"],False)
 
-    def test_one_unresolved_kit_and_localized_product_pdf(self):
-        pending={"PROOF-PU-INJ"}
+    def test_no_unresolved_kit_and_localized_product_pdf(self):
+        pending=set()
         self.assertEqual({p["code"] for p in self.products if p["gamme"]=="proof" and
            any("Contacter nous" in c["format"] for c in p["conditionnements"])},pending)
         helper=(ROOT/"src/lib/catalogue-projets.ts").read_text(encoding="utf-8")
