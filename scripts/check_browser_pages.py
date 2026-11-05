@@ -184,6 +184,9 @@ def check() -> None:
                             ), path
                         if section == "catalogue":
                             assert page.locator(".concept-product-card").count() == 50, path
+                            assert page.locator(".concept-product-code").count() == 50, path
+                            expected_format = {"fr":"Sac 25 kg","ar":"كيس 25 كغ","en":"25 kg bag"}[lang]
+                            assert expected_format in page.locator("#catalogue-bond .concept-formats").first.inner_text(), path
                             assert page.locator(".concept-range-section").count() == 4, path
                             assert page.locator(".concept-product-status").count() == 50, path
                             assert page.locator(".catalogue-projects .editorial-caution").count() == 1, path
