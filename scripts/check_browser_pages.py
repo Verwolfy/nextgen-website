@@ -135,9 +135,9 @@ def check() -> None:
                             video = welcome.locator("[data-welcome-video]")
                             assert video.count() == 1, path
                             assert video.get_attribute("data-src") == (
-                                "/videos/nextgen-nexo-geno-welcome.mp4"), path
+                                "/videos/nextgen-nexo-geno-welcome.mp4?v=20261105"), path
                             assert video.get_attribute("poster") == (
-                                "/videos/nextgen-nexo-geno-poster.webp"), path
+                                "/videos/nextgen-nexo-geno-poster.webp?v=20261105"), path
                             assert video.get_attribute("preload") == "none", path
                             assert video.get_attribute("muted") is not None, path
                             assert video.get_attribute("playsinline") is not None, path
@@ -158,7 +158,7 @@ def check() -> None:
                                     no_js.goto(base + path, wait_until="domcontentloaded")
                                     assert no_js.locator("[data-welcome-video]").count() == 1, path
                                     assert no_js.locator("[data-welcome-video]").get_attribute("poster") == (
-                                        "/videos/nextgen-nexo-geno-poster.webp"), path
+                                        "/videos/nextgen-nexo-geno-poster.webp?v=20261105"), path
                                     assert no_js.locator(".welcome-video-cta").is_visible(), path
                                     assert not no_js.locator("[data-welcome-toggle]").is_visible(), path
                                 finally:
