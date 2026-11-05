@@ -13,6 +13,31 @@ Date : 5 novembre 2026. Dépôt : `Verwolfy/nextgen-website`.
   - Astro + sécurité : `42008101248` → `success`.
   - Chromium FR/AR/EN : `42008101228` → `success`.
 
+## Résultat confirmé sur le domaine hébergé (5 novembre 2026, 15:22 UTC)
+
+Le diagnostic **GitHub Actions** du commit `f696ddb9d0d06597b96b3bf82b7baed083d3e386` a réussi et a produit une preuve de contenu : [run 42054220008](https://github.com/Verwolfy/nextgen-website/actions/runs/42054220008), job `127338076049`, archive JSON `nextgen-public-http-readonly-check`. **Aucun déploiement n'a été effectué par ce diagnostic.**
+
+| Origine / ressource | Résultat observé depuis le runner |
+|---|---|
+| `https://nextgen-buildingsolutions.com/fr/` | HTTP **200** anonyme, marqueur `?v=20261105` présent |
+| `/videos/nextgen-nexo-geno-welcome.mp4?v=20261105` | HTTP **200**, **181 635 octets**, SHA-256 **conforme** à la V2 |
+| `/videos/nextgen-nexo-geno-poster.webp?v=20261105` | HTTP **200**, **17 244 octets**, SHA-256 **conforme** |
+| `https://www.nextgen-buildingsolutions.com/fr/` | HTTP **301** vers `nextgen-buildingsolutions.com` |
+| `https://nextgen-website-8te.pages.dev/fr/` | HTTP **302** vers `nextgen-website-8te-pages.cloudflareaccess.com` |
+
+**Conclusion étayée : la vidéo V2 et son poster sont visibles sur le domaine principal sans authentification.** Cela ne prouve pas que tous les autres fichiers du dernier commit `main` ont été déployés, ni que les contenus juridiques et commerciaux ont été validés.
+
+**Attention publication :** le domaine principal expose anonymement le site. `noindex`, `robots.txt` et `X-Robots-Tag` ne rendent pas une page privée. La redirection Access de l'ancien `pages.dev` ne couvre pas nécessairement le domaine apex, `www` ou les URLs de previews. N'effectuer **aucune** modification de politique d'accès, DNS ou publication sans décision explicite de l'exploitant.
+
+### Vérifications restantes
+
+1. Contrôler dans Cloudflare le projet Pages, le commit effectivement publié, les politiques d'accès sur **tous** les hôtes et la protection des previews.
+2. Si le domaine principal doit rester privé, demander autorisation pour le protéger par Cloudflare Access ; si le lancement public est voulu, exiger le feu vert juridique et commercial avant activation du référencement, des formulaires et des fiches officielles.
+3. Continuer les contrôles mobiles/desktop du domaine hébergé dans un navigateur disposant d'une connectivité et, si nécessaire, d'une session Access autorisée.
+4. Maintenir la V2 en place : aucun correctif de média nécessaire après vérification de ses empreintes.
+
+---
+
 ## Vérification externe
 
 Le 5 novembre 2026, les tentatives d'accès à `https://nextgen-buildingsolutions.com/fr/` et aux deux assets via le navigateur externe ne donnent pas de réponse exploitable. Le contrôle par le conteneur ne résout aucun de ces trois domaines :
