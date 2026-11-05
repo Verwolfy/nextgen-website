@@ -16,6 +16,7 @@ const whats=`https://wa.me/${brand.whatsapp}`;
 const navSections = ['gammes','catalogue','distributeurs','ressources','a-propos','contact'] as const;
 // The tiny Nexo/Geno poster is the first-frame visual only on localized homepages.
 const preloadWelcomePoster=/^\/(?:fr|ar|en)\/$/.test(Astro.url.pathname);
+const skipLabel:Record<Lang,string>={fr:'Aller au contenu principal',ar:'الانتقال إلى المحتوى الرئيسي',en:'Skip to main content'};
 ---
 <!doctype html>
 <html lang={lang} dir={lang==='ar'?'rtl':'ltr'}>
@@ -34,7 +35,7 @@ const preloadWelcomePoster=/^\/(?:fr|ar|en)\/$/.test(Astro.url.pathname);
   <title>{title} · NextGen Building Solutions</title>
  </head>
  <body>
-  <a class="skip" href="#main">{lang==='ar'?'انتقل إلى المحتوى':'Aller au contenu / Skip to content'}</a>
+  <a class="skip" href="#main">{skipLabel[lang]}</a>
   <header class="header">
    <div class="container header-row">
     <a href={`/${lang}/`} class="brand" aria-label={t.homeLabel} aria-current={Astro.url.pathname===`/${lang}/`?'page':undefined}>
