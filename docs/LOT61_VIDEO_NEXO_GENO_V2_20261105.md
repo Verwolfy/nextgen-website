@@ -17,7 +17,7 @@ L’utilisateur a fourni `Vid_Welcome V2.mp4`, indiquant qu’il s’agit de la 
 2. `public/videos/nextgen-nexo-geno-poster.webp` — remplacement de l’image de secours.
 3. `tests/test_lot61_welcome_v2.py` — SHA-256 verrouillés, tailles contrôlées, lecteur trilingue et accessibilité préservés.
 
-Le lecteur `src/components/HeroWelcomeVideo.astro` et la mise en page `src/pages/[lang]/index.astro` conservent les mêmes chemins d’assets. **Pas de nouvelle bibliothèque ni de modification d’architecture.** Les caractéristiques existantes restent : lecture muette, différée et conditionnée par visibilité, bouton pause/reprise, respect du mouvement réduit, CTA FR/EN/AR. Le titre sous la vidéo retiré au lot 59 reste absent. Le sélecteur langue et le switch jour/nuit du lot 60 restent intacts.
+Le lecteur `src/components/HeroWelcomeVideo.astro` et la mise en page `src/pages/[lang]/index.astro` conservent les mêmes chemins d’assets. **Les URLs de requête intègrent `?v=20261105` pour éviter les anciennes versions en cache**, sans modifier les noms de fichiers. **Pas de nouvelle bibliothèque ni de modification d’architecture.** Les caractéristiques existantes restent : lecture muette, différée et conditionnée par visibilité, bouton pause/reprise, respect du mouvement réduit, CTA FR/EN/AR. Le titre sous la vidéo retiré au lot 59 reste absent. Le sélecteur langue et le switch jour/nuit du lot 60 restent intacts.
 
 ## Publication et sécurité
 - Aucun changement de tarifs, catalogue, FT/FDS, certification, ERP, Supabase ou données privées.
