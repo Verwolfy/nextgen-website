@@ -112,6 +112,11 @@ export const hasProductPackshot=(product:CatalogueProject):boolean=>
  * The original French wording follows the user's packaging instruction.
  */
 export const packagingLabelFor = (format:string, lang:Lang):string => {
+  if(format==="600 mL — emballage à préciser") return {
+    fr:"600 mL — emballage à préciser",
+    en:"600 mL — packaging type to be confirmed",
+    ar:"600 مل — نوع العبوة قيد التحديد",
+  }[lang];
   if(format==="Kit : sac 30 kg + bidon 10 kg") return {
     fr:"Kit : sac 30 kg + bidon 10 kg",
     en:"Kit: 30 kg bag + 10 kg canister",

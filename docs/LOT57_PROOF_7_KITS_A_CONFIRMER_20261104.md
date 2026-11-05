@@ -1,5 +1,8 @@
 # Lot 57 — Qualification des sept kits FENEK-PROOF
 
+> **Mise à jour du 5 novembre 2026 — lot 66.** L’utilisateur a confirmé **600 mL** pour `PROOF-EP-ANC`, sans préciser la nature physique de l’emballage. Voir [Lot 66](LOT66_PROOF_EP_ANC_600ML_20261105.md). Après le kit provisoire `PROOF-CM-O2P` (sac 30 kg + bidon 10 kg), il reste **5 références** dont la contenance est totalement inconnue ; le type d’emballage de EP-ANC reste à confirmer. Les anciennes lignes ci-dessous décrivent l’état d’audit initial du 4 novembre et ne sont pas l’état actuel.
+
+
 > **État au 5 novembre 2026 (lot 65)** : l'utilisateur a choisi **à titre provisoire** pour `PROOF-CM-O2P` un **kit composé d'un sac 30 kg et d'un bidon 10 kg**. Cette première référence n'est donc plus sans conditionnement indiqué ; **six autres kits PROOF** restent en attente de précision. La formulation réelle A/B, la validation production et les FT/FDS restent inconnues. Voir [Lot 65](LOT65_CM_O2P_SAC30_BIDON10_20261105.md). Les tableaux ci-dessous correspondent à l'état historique du 4 novembre.
 
 

@@ -2050,12 +2050,12 @@
         ]
       }
     },
-    "mode_fr_preparatoire": "1) Percer au diamètre [valeur à confirmer], nettoyer (soufflage/brossage/soufflage). 2) Mélanger la cartouche (buse mélangeuse), écarter les premières doses. 3) Injecter du fond du trou. 4) Insérer l'armature en tournant. 5) Ne pas charger avant [valeur à confirmer] h.",
+    "mode_fr_preparatoire": "1) Vérifier la nature du support et la procédure d'ancrage adaptée. 2) Préparer et nettoyer le forage selon une procédure technique validée. 3) Utiliser le dispositif de mélange et d'injection prescrit pour le conditionnement retenu. 4) Dimensions, préparation, temps de prise, résistance et délai de mise en charge : [valeur à confirmer] sur les données FENEK validées avant application.",
     "conditionnements": [
       {
-        "format": "Kit résine - Contacter nous pour plus d'informations",
+        "format": "600 mL — emballage à préciser",
         "poids_net": null,
-        "unite": "KIT"
+        "unite": "NON CONFIRMÉ"
       }
     ],
     "statut": "presentation_provisoire",
