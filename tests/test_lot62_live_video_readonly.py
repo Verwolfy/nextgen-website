@@ -15,8 +15,8 @@ class LiveVideoReadOnlyAudit(unittest.TestCase):
         self.assertEqual(len(probe.ORIGINS), 3)
         self.assertIn("https://nextgen-buildingsolutions.com", probe.ORIGINS)
         self.assertTrue(all(x.startswith("https://") for x in probe.ORIGINS))
-        self.assertIn("?v=20261105", probe.VIDEO)
-        self.assertIn("?v=20261105", probe.POSTER)
+        self.assertIn("?v=20261105-v3", probe.VIDEO)
+        self.assertIn("?v=20261105-v3", probe.POSTER)
         source = (ROOT / "scripts/check_live_video_deployment.py").read_text()
         self.assertIn('method="GET"', source)
         self.assertIn("StopRedirect", source)
@@ -31,13 +31,13 @@ class LiveVideoReadOnlyAudit(unittest.TestCase):
                          "redirect_not_followed")
         self.assertEqual(probe.classify({"status": "network_error"}, None, None),
                          "unreachable_from_runner")
-        self.assertEqual(probe.classify({"status": 200, "v2_marker": False}, None, None),
-                         "v2_not_visible_on_home")
+        self.assertEqual(probe.classify({"status": 200, "v3_marker": False}, None, None),
+                         "v3_not_visible_on_home")
         self.assertEqual(probe.classify(
-            {"status": 200, "v2_marker": True},
+            {"status": 200, "v3_marker": True},
             {"status": 200, "sha256_match": False},
             {"status": 200, "sha256_match": True},
-        ), "html_updated_but_assets_not_v2")
+        ), "html_updated_but_assets_not_v3")
 
     def test_protected_and_stale_home_never_fetch_assets(self):
         with patch.object(probe, "inspect_url", return_value=({"status": 403}, b"")) as fetch:
@@ -49,7 +49,7 @@ class LiveVideoReadOnlyAudit(unittest.TestCase):
             {"status": 200}, b"old home without new media")) as fetch:
             result = probe.audit_origin(probe.ORIGINS[0])
         self.assertEqual(fetch.call_count, 1)
-        self.assertEqual(result["result"], "v2_not_visible_on_home")
+        self.assertEqual(result["result"], "v3_not_visible_on_home")
 
     def test_success_requires_exact_media_hashes(self):
         video_body = b"video bytes"
@@ -63,7 +63,7 @@ class LiveVideoReadOnlyAudit(unittest.TestCase):
              patch.object(probe, "EXPECTED_VIDEO_SHA256", hashlib.sha256(video_body).hexdigest()), \
              patch.object(probe, "EXPECTED_POSTER_SHA256", hashlib.sha256(poster_body).hexdigest()):
             result = probe.audit_origin(probe.ORIGINS[0])
-        self.assertEqual(result["result"], "v2_verified_anonymously_accessible")
+        self.assertEqual(result["result"], "v3_verified_anonymously_accessible")
 
 
 if __name__ == "__main__":
