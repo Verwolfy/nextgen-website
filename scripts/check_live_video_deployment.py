@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only, anonymous check of the currently hosted NextGen hero V2.
+"""Read-only, anonymous check of the currently hosted NextGen hero V3.
 
 No authentication, secret, publish, DNS mutation or Cloudflare API is used.
 HTTP redirects are deliberately NOT followed: they may be Access login pages.
@@ -22,11 +22,11 @@ ORIGINS = (
     # Historical Pages host reported by the project, not independently verified.
     "https://nextgen-website-8te.pages.dev",
 )
-VIDEO = "/videos/nextgen-nexo-geno-welcome.mp4?v=20261105"
-POSTER = "/videos/nextgen-nexo-geno-poster.webp?v=20261105"
-MARKER = "nextgen-nexo-geno-welcome.mp4?v=20261105"
-EXPECTED_VIDEO_SHA256 = "46e8d7e09ce39ec32d131fa8a49ba198c43983bdc4198cbe013b92a23bca2dcc"
-EXPECTED_POSTER_SHA256 = "82875a2c83a7d4a107cdba8e9a291ab8d1f7ea4639604432354aadb34d5838b1"
+VIDEO = "/videos/nextgen-nexo-geno-welcome.mp4?v=20261105-v3"
+POSTER = "/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3"
+MARKER = "nextgen-nexo-geno-welcome.mp4?v=20261105-v3"
+EXPECTED_VIDEO_SHA256 = "3800219613d3fcf440e96beb6e1a6010796335e7c5f0bb9d5db8e692ef914d27"
+EXPECTED_POSTER_SHA256 = "d769cba1d33d91786451b5d77cf5f1143f7e14fca6aa61cf44bbc1ddd02604fd"
 MAX_BYTES = 800_000
 
 
@@ -72,21 +72,21 @@ def classify(home: dict, video: dict | None, poster: dict | None) -> str:
         return "unreachable_from_runner"
     if status != 200:
         return "unverified_http_status"
-    if not home.get("v2_marker"):
-        return "v2_not_visible_on_home"
+    if not home.get("v3_marker"):
+        return "v3_not_visible_on_home"
     if not video or not poster:
         return "assets_not_checked"
     if video.get("sha256_match") and poster.get("sha256_match"):
-        return "v2_verified_anonymously_accessible"
-    return "html_updated_but_assets_not_v2"
+        return "v3_verified_anonymously_accessible"
+    return "html_updated_but_assets_not_v3"
 
 
 def audit_origin(origin: str) -> dict:
     home, html = inspect_url(origin + "/fr/")
     if home["status"] == 200:
-        home["v2_marker"] = MARKER.encode("ascii") in html
+        home["v3_marker"] = MARKER.encode("ascii") in html
     video = poster = None
-    if home["status"] == 200 and home.get("v2_marker"):
+    if home["status"] == 200 and home.get("v3_marker"):
         video, v_body = inspect_url(origin + VIDEO)
         video["sha256_match"] = (
             video["status"] == 200 and not video.get("oversized")
@@ -121,23 +121,23 @@ def main() -> None:
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if summary:
         lines = [
-            "## NextGen — diagnostic HTTP V2 (lecture seule)",
+            "## NextGen — diagnostic HTTP V3 (lecture seule)",
             "",
             "**Aucun déploiement, aucune connexion Cloudflare, aucune modification DNS.**",
             "",
-            "| Origine | HTTP page FR | V2 | Résultat |",
+            "| Origine | HTTP page FR | V3 | Résultat |",
             "|---|---|---|---|",
         ]
         for check in report["checks"]:
             lines.append(
                 f"| {check['origin']} | {check['home']['status']} | "
-                f"{'oui' if check['home'].get('v2_marker') else 'non vérifié'} | {check['result']} |"
+                f"{'oui' if check['home'].get('v3_marker') else 'non vérifié'} | {check['result']} |"
             )
         lines += [
             "",
             "Un HTTP 200 anonyme signifie que la page est accessible publiquement, même avec noindex.",
             "Une redirection vers Cloudflare Access ne prouve pas le contenu de la version déployée.",
-            "Si aucun résultat n'est `v2_verified_anonymously_accessible`, la mise en ligne V2 demeure non confirmée.",
+            "Si aucun résultat n'est `v3_verified_anonymously_accessible`, la mise en ligne V3 demeure non confirmée.",
             "",
         ]
         with open(summary, "a", encoding="utf-8") as stream:
