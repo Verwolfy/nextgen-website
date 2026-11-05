@@ -32,6 +32,16 @@ jobs:
         run: npm run build
       - name: Measure V3 payload and enforce original media budgets
         run: python scripts/check_v3_static_payload.py
+      - name: Verify multilingual catalogue search index payload
+        run: python scripts/check_catalogue_index_payload.py
+      - name: Upload catalogue search index measurements (private)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nextgen-catalogue-search-index-payload
+          path: .ci-artifacts/lot100-catalogue-index.json
+          retention-days: 7
+          if-no-files-found: ignore
       - name: Upload lightweight V3 metrics (private diagnostics)
         if: always()
         uses: actions/upload-artifact@v4
