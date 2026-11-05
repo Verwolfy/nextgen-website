@@ -3,9 +3,13 @@ import Layout from '../../layouts/Layout.astro';
 import { languages, messages, ranges, rangeName,rangeColor,type Lang } from '../../data/site';
 import { editorialCopy } from '../../data/editorial';
 import HeroWelcomeVideo from '../../components/HeroWelcomeVideo.astro';
+import { homeV3Copy } from '../../data/home-v3';
+import { catalogueProjects, conceptPackshot } from '../../lib/catalogue-projets';
 export function getStaticPaths(){return languages.map(lang=>({params:{lang}}))}
 const lang=Astro.params.lang as Lang;const t=messages[lang];const edit=editorialCopy[lang];
 const collectionLabel={fr:'Collection FENEK',ar:'فئات FENEK',en:'FENEK collection'}[lang];
+const v3 = homeV3Copy[lang];
+const featured = ['BOND-C1T','PROOF-EP-ANC','FLOW-AC'].map(code => catalogueProjects.find(item => item.code===code)).filter((item): item is (typeof catalogueProjects)[number] => Boolean(item));
 const audiences = {
   fr: {
     title: 'Une question sur les solutions FENEK ?',
@@ -40,30 +44,100 @@ const audiences = {
 }[lang];
 ---
 <Layout lang={lang} title={t.welcome} description={t.intro}>
-<section class="hero"><div class="container hero-wrap"><div><span class="eyebrow">{edit.marketTag}</span><h1>{t.welcome}</h1><p>{t.intro}</p><p class="hero-status" role="note"><span class="hero-status-mark" aria-hidden="true"></span>{edit.homeStatus}</p><div class="actions"><a class="btn" href={`/${lang}/gammes/`}>{t.explore}</a><a class="btn btn-outline" href={`/${lang}/contact/`}>{edit.homeContact}</a></div></div><HeroWelcomeVideo lang={lang} /></div></section>
-<section class="section"><div class="container"><div class="section-head"><span class="eyebrow" dir="auto">{collectionLabel}</span><h2>{t.ourRanges}</h2><p>{t.rangesIntro}</p></div><div class="grid">{ranges.map(g=><a class="card" href={`/${lang}/gammes/${g}/`}><div class="bar" style={`background:${rangeColor[g]}`}></div><h3><bdi dir="ltr">{rangeName[g]}</bdi></h3><p>{t.ranges[g]}</p><span class="arrow" aria-hidden="true">↗</span></a>)}</div></div></section>
-<section class="section home-audiences" aria-labelledby="audiences-title"><div class="container">
-  <div class="section-head"><h2 id="audiences-title">{audiences.title}</h2><p>{audiences.intro}</p></div>
-  <div class="columns">
-    <article class="card">
-      <h3>{audiences.project}</h3><p>{audiences.projectText}</p>
-      <div class="actions"><a class="btn" href={`/${lang}/contact/`}>{audiences.projectAction}</a></div>
-    </article>
-    <article class="card">
-      <h3>{audiences.distributor}</h3><p>{audiences.distributorText}</p>
-      <div class="actions"><a class="btn" href={`/${lang}/distributeurs/`}>{audiences.distributorAction}</a></div>
-    </article>
-  </div>
-</div></section>
-<section class="section pale home-approach"><div class="container columns">
-  <div>
-    <span class="eyebrow home-approach-tag">{edit.homeApproachTag}</span>
-    <h2>{edit.aboutHeading}</h2>
-    <p>{edit.aboutLead}</p>
-    <div class="info-list">{edit.aboutSteps.map(step=><span class="chip">{step}</span>)}</div>
-    <p class="editorial-caution" role="note">{edit.aboutNotice}</p>
-    <div class="actions"><a class="btn" href={'/'+lang+'/a-propos/'}>{t.menu['a-propos']}</a></div>
-  </div>
-  <div class="home-approach-portrait"><img class="mascot" src="/images/Nexo.webp" alt={edit.mascotAlt} width="750" height="1301" loading="lazy" /></div>
-</div></section>
+  <section class="hero v3-motion-hero" aria-labelledby="v3-home-title">
+    <div class="container hero-wrap v3-hero-grid">
+      <div class="v3-hero-heading">
+        <span class="eyebrow v3-hero-eyebrow"><span class="v3-signal-dot" aria-hidden="true"></span>{v3.eyebrow}</span>
+        <h1 id="v3-home-title">{v3.headline}<span>{v3.headlineAccent}</span></h1>
+      </div>
+      <HeroWelcomeVideo lang={lang} />
+      <div class="v3-hero-summary">
+        <p class="v3-hero-lead">{v3.lead}</p>
+        <p class="hero-status" role="note"><span class="hero-status-mark" aria-hidden="true"></span>{edit.homeStatus}</p>
+        <div class="actions">
+          <a class="btn v3-hero-primary" href={`/${lang}/catalogue/`}>{v3.rangesAction}</a>
+          <a class="btn btn-outline" href={`/${lang}/contact/`}>{edit.homeContact}</a>
+        </div>
+        <p class="v3-hero-proof">{v3.proof}</p>
+      </div>
+    </div>
+    <div class="container v3-hero-signal" aria-label={v3.stepsLabel}>
+      {edit.aboutSteps.map((step,index) => (
+        <div class="v3-signal-item"><span aria-hidden="true">{String(index+1).padStart(2,'0')}</span><strong>{step}</strong></div>
+      ))}
+      <a href={`/${lang}/a-propos/`} class="v3-signal-link">{edit.homeApproachTag}<span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  <section class="section v3-range-section" aria-labelledby="v3-ranges">
+    <div class="container">
+      <div class="section-head v3-section-head">
+        <span class="eyebrow" dir="auto">{collectionLabel}</span>
+        <h2 id="v3-ranges">{t.ourRanges}</h2>
+        <p>{t.rangesIntro}</p>
+      </div>
+      <div class="grid v3-range-grid">
+        {ranges.map((g,index)=><a class="card v3-range-card" href={`/${lang}/gammes/${g}/`} style={`--range-color:${rangeColor[g]}`}>
+          <span class="v3-range-number" aria-hidden="true">{String(index+1).padStart(2,'0')}</span>
+          <div class="bar" style={`background:${rangeColor[g]}`}></div>
+          <h3><bdi dir="ltr">{rangeName[g]}</bdi></h3>
+          <p>{t.ranges[g]}</p>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section v3-featured-section" aria-labelledby="v3-featured-title">
+    <div class="container">
+      <div class="section-head v3-section-head">
+        <span class="eyebrow">FENEK</span>
+        <h2 id="v3-featured-title">{v3.featuredTitle}</h2>
+        <p>{v3.featuredLead}</p>
+      </div>
+      <div class="v3-featured-grid">
+        {featured.map(p=><a class="v3-featured-card" href={`/${lang}/catalogue/${p.slug}/`}>
+          <div class="v3-featured-image"><img src={conceptPackshot(p,'card')} width="800" height="800" loading="lazy" decoding="async" alt="" /></div>
+          <div class="v3-featured-content">
+            <span class="v3-featured-state">{v3.featuredLabel}</span>
+            <h3><bdi dir="ltr">{p.nom}</bdi></h3>
+            <p>{p.contenu[lang].accroche}</p>
+            <span class="v3-featured-link">{v3.featuredAction}<span aria-hidden="true"> ↗</span></span>
+          </div>
+        </a>)}
+      </div>
+      <p class="editorial-caution v3-featured-disclaimer" role="note">{v3.featuredDisclaimer}</p>
+    </div>
+  </section>
+
+  <section class="section home-audiences v3-audiences" aria-labelledby="audiences-title"><div class="container">
+    <div class="section-head v3-section-head"><h2 id="audiences-title">{audiences.title}</h2><p>{audiences.intro}</p></div>
+    <div class="columns">
+      <article class="card">
+        <span class="v3-audience-count" aria-hidden="true">01</span>
+        <h3>{audiences.project}</h3><p>{audiences.projectText}</p>
+        <div class="actions"><a class="btn" href={`/${lang}/contact/`}>{audiences.projectAction}</a></div>
+      </article>
+      <article class="card">
+        <span class="v3-audience-count" aria-hidden="true">02</span>
+        <h3>{audiences.distributor}</h3><p>{audiences.distributorText}</p>
+        <div class="actions"><a class="btn" href={`/${lang}/distributeurs/`}>{audiences.distributorAction}</a></div>
+      </article>
+    </div>
+  </div></section>
+
+  <section class="section pale home-approach v3-home-approach"><div class="container columns">
+    <div>
+      <span class="eyebrow home-approach-tag">{edit.homeApproachTag}</span>
+      <h2>{edit.aboutHeading}</h2>
+      <p>{edit.aboutLead}</p>
+      <div class="info-list">{edit.aboutSteps.map(step=><span class="chip">{step}</span>)}</div>
+      <p class="editorial-caution" role="note">{edit.aboutNotice}</p>
+      <div class="actions"><a class="btn" href={'/'+lang+'/a-propos/'}>{t.menu['a-propos']}</a></div>
+    </div>
+    <div class="home-approach-portrait v3-process-illustration">
+      <img src="/images/approche/02-produire.svg" width="400" height="240" loading="lazy" alt="" />
+      <span>{edit.aboutKicker}</span>
+    </div>
+  </div></section>
 </Layout>
