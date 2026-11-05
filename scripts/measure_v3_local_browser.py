@@ -120,8 +120,8 @@ def local_browser_report() -> dict:
     return {
       "timestamp_utc":datetime.now(timezone.utc).isoformat(),
       "scope":"Synthetic local Chromium, unthrottled, reduced-motion; NOT field LCP/CLS/INP or Lighthouse",
-      "video_original_unchanged":True,
-      "is_network_audit":False,
+      "motion_mode":"prefers-reduced-motion: reduce",
+      "external_network_used":False,
       "is_deployment":False,
       "css_compiled_file_count":len(css_files),
       "css_compiled_bytes":sum(p.stat().st_size for p in css_files),
