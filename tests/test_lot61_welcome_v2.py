@@ -32,6 +32,8 @@ class Lot61WelcomeV2(unittest.TestCase):
                       "اكتشفوا منتجات NextGen", "Discover NextGen products",
                       "Découvrir les produits NextGen"):
             self.assertIn(token, component)
+        self.assertIn('data-src="/videos/nextgen-nexo-geno-welcome.mp4?v=20261105"', component)
+        self.assertIn('poster="/videos/nextgen-nexo-geno-poster.webp?v=20261105"', component)
         self.assertNotIn("welcome-video-caption", component)
         self.assertIn('noindex,nofollow',
             (ROOT / "src/layouts/Layout.astro").read_text(encoding="utf-8"))
