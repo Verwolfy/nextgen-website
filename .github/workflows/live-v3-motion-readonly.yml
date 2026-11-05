@@ -1,0 +1,40 @@
+name: NextGen - verify public V3 motion (read-only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/live-v3-motion-readonly.yml"
+      - "scripts/check_live_v3_motion_readonly.py"
+      - "src/pages/[lang]/index.astro"
+      - "src/data/home-v3.ts"
+      - "src/components/HeroWelcomeVideo.astro"
+      - "public/videos/nextgen-nexo-geno-welcome.mp4"
+      - "public/videos/nextgen-nexo-geno-poster.webp"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Check FR AR EN and exact motion media on public domain
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Anonymous HTTP GET verification
+        run: python scripts/check_live_v3_motion_readonly.py
+      - name: Archive diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nextgen-lot90-v3-public-readonly
+          path: .ci-artifacts/lot90-live-v3-motion.json
+          if-no-files-found: warn
+          retention-days: 7
