@@ -36,13 +36,13 @@ class EpSrTwoBuckets(unittest.TestCase):
         self.assertEqual(x["validation_commerciale_emballage"],"EN ATTENTE")
         self.assertIs(x["sku_erp_a_creer"],False)
 
-    def test_trilingual_display_and_only_pu_inj_still_pending(self):
+    def test_trilingual_display_and_no_proof_packaging_pending(self):
         helper=(ROOT/"src/lib/catalogue-projets.ts").read_text(encoding="utf-8")
         for label in (FORMAT,"Kit: 10 kg bucket + 3 kg bucket","طقم: دلو 10 كغ + دلو 3 كغ"):
             self.assertIn(label,helper)
         pending={p["code"] for p in self.products if p["gamme"]=="proof" and
                  any("Contacter nous" in c["format"] for c in p["conditionnements"])}
-        self.assertEqual(pending,{"PROOF-PU-INJ"})
+        self.assertEqual(pending,set())
         for path in ("src/pages/[lang]/catalogue/[slug].astro",
                      "src/pages/[lang]/documentation/[slug].astro",
                      "src/components/FenekPrintableSheet.astro"):
