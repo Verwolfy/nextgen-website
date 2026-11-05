@@ -333,3 +333,20 @@ body{background:var(--v3-paper)}
  .v3-range-preview:hover,.v3-featured-card:hover,
  .catalogue-projects .concept-product-card:hover{transform:none}
 }
+
+/* Lighthouse 13.6 lab audit: repair only the measured low-contrast UI tokens.
+   These are presentation fixes, not certifications or product claims. */
+.v3-range-section .eyebrow,
+.v3-featured-section .eyebrow,
+.catalogue-projects .eyebrow{color:#086b50}
+.v3-audience-count{color:#086244}
+.catalogue-projects .concept-range-nav small{color:#355366}
+.section a.btn:not(.btn-outline):not(.btn-muted):not(.btn-light):not(.v3-hero-primary){background:#066b49;color:#fff}
+.section a.btn:not(.btn-outline):not(.btn-muted):not(.btn-light):not(.v3-hero-primary):hover{background:#045135;color:#fff}
+@media screen{
+ html[data-theme="dark"] .v3-range-section .eyebrow,
+ html[data-theme="dark"] .v3-featured-section .eyebrow,
+ html[data-theme="dark"] .catalogue-projects .eyebrow{color:#a2f1cd}
+ html[data-theme="dark"] .v3-audience-count{color:#a2f1cd}
+ html[data-theme="dark"] .catalogue-projects .concept-range-nav small{color:#d2e5ec}
+}
