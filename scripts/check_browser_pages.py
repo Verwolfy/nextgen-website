@@ -139,6 +139,40 @@ def check_v3_reduced_motion_and_data_saver(browser, base: str) -> None:
     finally:
         page.close()
 
+
+def check_localized_skip_keyboard(browser, base: str) -> None:
+    """Lot 94: keyboard-only skip links work on 320px FR/AR/EN, even without JS."""
+    labels = {
+        "fr": "Aller au contenu principal",
+        "ar": "الانتقال إلى المحتوى الرئيسي",
+        "en": "Skip to main content",
+    }
+    for lang, expected in labels.items():
+        page = browser.new_page(viewport={"width": 320, "height": 720},
+                                java_script_enabled=False)
+        try:
+            response = page.goto(f"{base}/{lang}/", wait_until="domcontentloaded")
+            assert response is not None and response.status == 200, lang
+            assert page.locator("html").get_attribute("dir") == (
+                "rtl" if lang == "ar" else "ltr"
+            ), lang
+            skip = page.locator("a.skip")
+            assert skip.count() == 1 and skip.inner_text().strip() == expected, lang
+            page.keyboard.press("Tab")
+            assert skip.evaluate("el => document.activeElement === el"), (lang, "skip not first")
+            assert skip.is_visible(), (lang, "focused skip link not visible")
+            page.keyboard.press("Enter")
+            assert page.evaluate("window.location.hash") == "#main", lang
+            assert page.locator("main#main").count() == 1, lang
+            width = page.evaluate("document.documentElement.scrollWidth - innerWidth")
+            assert width <= 4, (lang, "skip/RTL mobile overflow", width)
+            # The label must be consistent across institutional pages.
+            page.goto(f"{base}/{lang}/contact/", wait_until="domcontentloaded")
+            assert page.locator("a.skip").inner_text().strip() == expected, lang
+        finally:
+            page.close()
+
+
 def check() -> None:
     assert (DIST / "fr" / "index.html").is_file(), "Site not built"
     SHOTS.mkdir(parents=True, exist_ok=True)
@@ -158,6 +192,7 @@ def check() -> None:
             browser = p.chromium.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
             check_header_preferences(browser, base)
             check_v3_reduced_motion_and_data_saver(browser, base)
+            check_localized_skip_keyboard(browser, base)
             for lang in ("fr", "ar", "en"):
                 for size, width, height in (("desktop", 1280, 900), ("mobile", 390, 844)):
                     page = browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=1)
