@@ -50,13 +50,19 @@ const i18n = {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let visible = false;
     let userChoice: 'auto'|'paused'|'playing' = 'auto';
-    if (reduceMotion.matches) {
-      button.textContent = '▶';
-      button.setAttribute('aria-label', button.dataset.labelPlay!);
-    }
+    // Data Saver and reduced-motion visitors see the poster until they opt in.
+    const saveData = Boolean((navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData);
+    const autoAllowed = () => !reduceMotion.matches && !saveData;
+    const syncButton = () => {
+      const intendsPlay = userChoice === 'playing' || (userChoice === 'auto' && autoAllowed());
+      button.textContent = intendsPlay ? 'Ⅱ' : '▶';
+      button.setAttribute('aria-label', intendsPlay ? button.dataset.labelPause! : button.dataset.labelPlay!);
+    };
+    syncButton();
     const sync = async () => {
+      syncButton();
       const shouldPlay = visible && !document.hidden && userChoice !== 'paused'
-        && (!reduceMotion.matches || userChoice === 'playing');
+        && (autoAllowed() || userChoice === 'playing');
       if (!shouldPlay) { video.pause(); return; }
       if (!video.src) video.src = video.dataset.src || '';
       try { await video.play(); } catch { /* Poster remains visible */ }
@@ -68,10 +74,8 @@ const i18n = {
     observer.observe(card);
     button.hidden = false;
     button.addEventListener('click', () => {
-      const requestPause = userChoice === 'playing' || (userChoice === 'auto' && !reduceMotion.matches);
+      const requestPause = userChoice === 'playing' || (userChoice === 'auto' && autoAllowed());
       userChoice = requestPause ? 'paused' : 'playing';
-      button.textContent = requestPause ? '▶' : 'Ⅱ';
-      button.setAttribute('aria-label', requestPause ? button.dataset.labelPlay! : button.dataset.labelPause!);
       void sync();
     });
     document.addEventListener('visibilitychange', () => { void sync(); });
