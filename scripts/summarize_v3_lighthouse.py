@@ -43,7 +43,14 @@ def summarize(paths: list[Path]) -> dict:
                 )
             },
             "accessibility_issues": [
-                {"id": key, "title": item.get("title"), "score": item.get("score")}
+                {"id": key, "title": item.get("title"), "score": item.get("score"),
+                 "affected": [
+                     {"selector": (node.get("node") or {}).get("selector"),
+                      "snippet": ((node.get("node") or {}).get("snippet") or "")[:180],
+                      "label": ((node.get("node") or {}).get("nodeLabel") or "")[:120]}
+                     for node in (item.get("details") or {}).get("items", [])[:12]
+                     if node.get("node")
+                 ]}
                 for key, item in audits.items()
                 if item.get("scoreDisplayMode") == "binary"
                 and item.get("score") == 0
