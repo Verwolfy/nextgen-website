@@ -112,6 +112,46 @@ export const hasProductPackshot=(product:CatalogueProject):boolean=>
  * The original French wording follows the user's packaging instruction.
  */
 export const packagingLabelFor = (format:string, lang:Lang):string => {
+  if(format==="Sac 25 kg") return {
+    fr:"Sac 25 kg",
+    en:"25 kg bag",
+    ar:"كيس 25 كغ",
+  }[lang];
+  if(format==="Bidon 5 L") return {
+    fr:"Bidon 5 L",
+    en:"5 L canister",
+    ar:"عبوة 5 لترات",
+  }[lang];
+  if(format==="Bidon 20 L") return {
+    fr:"Bidon 20 L",
+    en:"20 L canister",
+    ar:"عبوة 20 لترًا",
+  }[lang];
+  if(format==="Fût 200 L") return {
+    fr:"Fût 200 L",
+    en:"200 L drum",
+    ar:"برميل 200 لتر",
+  }[lang];
+  if(format==="IBC 1000 L") return {
+    fr:"IBC 1000 L",
+    en:"1,000 L IBC",
+    ar:"حاوية IBC سعة 1000 لتر",
+  }[lang];
+  if(format==="Seau 5 kg") return {
+    fr:"Seau 5 kg",
+    en:"5 kg bucket",
+    ar:"دلو 5 كغ",
+  }[lang];
+  if(format==="Seau 10 kg") return {
+    fr:"Seau 10 kg",
+    en:"10 kg bucket",
+    ar:"دلو 10 كغ",
+  }[lang];
+  if(format==="Seau 20 kg") return {
+    fr:"Seau 20 kg",
+    en:"20 kg bucket",
+    ar:"دلو 20 كغ",
+  }[lang];
   if(format==="Kit : seau 5 kg + seau 5 kg") return {
     fr:"Kit : seau 5 kg + seau 5 kg",
     en:"Kit: two 5 kg buckets (10 kg total)",
