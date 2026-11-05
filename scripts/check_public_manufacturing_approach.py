@@ -12,6 +12,9 @@ import os
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+import sys
+if __package__ in (None, ''):
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scripts.check_live_video_deployment import inspect_url
 
 ROOT=Path(__file__).resolve().parents[1]
