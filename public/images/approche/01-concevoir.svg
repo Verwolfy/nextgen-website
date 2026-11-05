@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Étude des besoins sur un chantier">
+<defs><linearGradient id="bg1" x2="0" y2="1"><stop stop-color="#254b85"/><stop offset="1" stop-color="#0d294e"/></linearGradient></defs>
+<rect width="400" height="240" fill="url(#bg1)"/>
+<g stroke="#83b1d9" stroke-width="2.5" fill="#36608f"><path d="M28 79h202v9H28zM28 121h202v9H28zM28 163h202v9H28z"/><path d="M32 79h10v122H32zM94 79h10v122H94zM156 79h10v122h-10zM215 79h10v122h-10z"/></g>
+<g stroke="#b8d4e5" stroke-width="3" fill="none"><path d="M270 26v171M238 34h146M238 34l32-19 33 19M348 35v57"/></g><rect x="340" y="85" width="15" height="12" rx="2" fill="#45e0a8"/>
+<rect y="201" width="400" height="39" fill="#0a203a"/><path d="M36 207h191" stroke="#4b749d" stroke-width="3"/>
+<rect x="262" y="123" width="121" height="77" rx="4" fill="#3f679b" stroke="#bdd9ea" stroke-width="2"/>
+<path d="M280 138h86M280 150h74M285 167l22-14 18 13 26-17" stroke="#aac7dc" stroke-width="2" fill="none"/>
+<circle cx="315" cy="159" r="29" fill="#10355070" stroke="#38dfae" stroke-width="5"/><path d="M335 181l34 32" stroke="#38dfae" stroke-width="9" stroke-linecap="round"/>
+<path d="M53 198q4-34 34-34t34 34" fill="#fff"/><rect x="46" y="197" width="82" height="7" rx="3" fill="#d4e4ef"/>
+<path d="M82 173v25" stroke="#2bd98f" stroke-width="6"/>
+</svg>

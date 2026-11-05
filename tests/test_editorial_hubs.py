@@ -69,7 +69,7 @@ class TestEditorialHubs(unittest.TestCase):
         check = (ROOT / "scripts/check_browser_pages.py").read_text(encoding="utf-8")
         self.assertIn('"gammes", "a-propos", "ressources"', check)
         self.assertIn('".range-overview-card"', check)
-        self.assertIn('".about-step"', check)
+        self.assertIn('".industrial-step"', check)
         self.assertIn('".resource-card"', check)
         self.assertIn('42 browser route/viewport', check)
 
