@@ -2094,9 +2094,9 @@
     "mode_fr_preparatoire": "1) Repérer et nettoyer la fissure, poser les packers ([valeur à confirmer] cm). 2) Obturer la fissure en surface. 3) Mélanger A et B au rapport [valeur à confirmer]. 4) Injecter à la pompe, de bas en haut, jusqu'au refus. 5) Retirer les packers après durcissement [valeur à confirmer] h.",
     "conditionnements": [
       {
-        "format": "Kit résine - Contacter nous pour plus d'informations",
+        "format": "Double cartouche 300 + 300 mL (600 mL au total)",
         "poids_net": null,
-        "unite": "KIT"
+        "unite": "CARTOUCHE"
       }
     ],
     "statut": "presentation_provisoire",
