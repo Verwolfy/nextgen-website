@@ -1,5 +1,8 @@
 # Lot 62 — Vérification du déploiement V2 (lecture seule)
 
+> **Décision ultérieure du 5 novembre 2026 — lot 63 :** l'utilisateur demande explicitement que `nextgen-buildingsolutions.com` **reste accessible publiquement**. Le domaine principal répond déjà en HTTP 200 anonyme, aucune ouverture supplémentaire n'est nécessaire. **Ne pas désactiver les protections anti-indexation, les restrictions sur les formulaires ou l'accès protégé aux previews.** Voir [Lot 63 — accès public](LOT63_DECISION_ACCES_PUBLIC_SITE_20261105.md).
+
+
 Date : 5 novembre 2026. Dépôt : `Verwolfy/nextgen-website`.
 
 ## Résultat précédent confirmé
