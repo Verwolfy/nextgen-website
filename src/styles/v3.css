@@ -230,3 +230,91 @@ body{background:var(--v3-paper)}
  .catalogue-projects .concept-product-copy{padding:19px}
  .v3-range-previews{margin-top:42px}
 }
+
+/* V3 lots 87–89: institutional pages, resource safety and B2B contact. */
+.page-head:not(.concept-detail-head){
+ position:relative;overflow:hidden;
+ background:
+  repeating-linear-gradient(90deg,transparent 0,transparent 92px,#d9f7e90b 93px),
+  radial-gradient(ellipse at 95% 5%,#2179656b,transparent 59%),
+  linear-gradient(115deg,#071a2a,#123b49);
+ border-bottom:1px solid #387c7180;
+ padding-block:clamp(48px,6vw,75px);
+}
+.page-head:not(.concept-detail-head) .container{position:relative;z-index:1}
+.page-head:not(.concept-detail-head) h1{max-width:20ch;font-size:clamp(2.25rem,4.4vw,4rem);letter-spacing:-.04em;overflow-wrap:anywhere;text-wrap:balance}
+.page-head:not(.concept-detail-head) .eyebrow{color:#7fe9bd;font-weight:820;letter-spacing:.12em}
+.page-head:not(.concept-detail-head) p{max-width:70ch;line-height:1.7;color:#d7ece9}
+.header .nav a[href$="/contact/"]{
+ background:#e0f5e9;border:1px solid #b4dcca;border-radius:5px;
+ color:#07573f;padding:9px 14px;margin-block:3px;
+}
+.header .nav a[href$="/contact/"]:hover{background:#bbebd5;text-decoration:none;color:#073e31}
+.header .nav a[href$="/contact/"][aria-current=page]::after{display:none}
+.range-overview-card{border-radius:10px;border-color:#d1e2d9;box-shadow:0 9px 28px #0c2e300b}
+.range-overview-card h3{letter-spacing:-.02em}
+.range-overview-card .range-topic{border:1px solid #d4e3dd;background:#eef5f1;border-radius:4px;color:#345c5d}
+.range-overview-card:focus-visible{outline:3px solid #33bb8b;outline-offset:4px}
+.about-feature{
+ border:1px solid #cfdfd6;border-radius:14px;padding:clamp(20px,3.5vw,38px);
+ background:linear-gradient(120deg,#fff,#edf4ef);align-items:center;gap:24px;
+}
+.about-feature .mascot{display:block;max-height:280px;max-width:100%;object-fit:contain;margin-inline:auto}
+.about-feature h2{font-size:clamp(1.6rem,2.9vw,2.4rem);margin-top:0;color:#103747}
+.about-feature>div>p{line-height:1.7;color:#47626d}
+.about-feature .editorial-caution{margin-top:18px}
+.resources-grid.resources-grid-docs{gap:22px}
+.resources-grid.resources-grid-docs .resource-card{min-height:290px;border-radius:10px;padding:clamp(22px,3vw,32px);border:1px solid #cfdfd6;background:#fff;box-shadow:0 9px 29px #102b3a0a}
+.resource-card .resource-index{font-size:.75rem;letter-spacing:.13em;font-weight:900;color:#347461}
+.resource-card .resource-state{border-radius:4px;border:1px solid #d2e2d9;background:#ecf6f0;color:#366458}
+.resource-card h3{letter-spacing:-.02em;color:#10394b}
+.resource-card p{line-height:1.7}
+.resource-card .resource-information-link{margin-top:auto;font-weight:820;text-decoration:underline;text-underline-offset:4px;color:#087354}
+.resource-card .resource-information-link:focus-visible{outline:3px solid #2bbf88;outline-offset:3px}
+.resource-support{margin-top:27px}
+.contact-direct .section-head{max-width:780px}
+.contact-direct .section-head h2{font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:-.035em;color:#103a48}
+.contact-direct .section-head p{line-height:1.7}
+.contact-channels{gap:18px}
+.contact-channel{
+ position:relative;border-radius:10px;border:1px solid #c9dfd4;
+ background:linear-gradient(155deg,#fff,#f4f9f6);
+ box-shadow:0 10px 29px #102e390b;padding:clamp(23px,3vw,33px);
+}
+.contact-channel::before{content:'';width:44px;height:4px;border-radius:4px;background:#49bb8c;display:block;margin-bottom:14px}
+.contact-channel-kind{font-size:.79rem;letter-spacing:.07em;text-transform:uppercase;color:#147153}
+.contact-channel-value{font-size:clamp(.89rem,1.25vw,1.04rem);line-height:1.6;color:#15394b}
+.contact-channel .btn{width:100%;min-width:0;white-space:normal;overflow-wrap:anywhere}
+.contact-disclosure{background:#eaf3ed;border-color:#65a88b;border-radius:8px;color:#2e5260}
+.notice{border-radius:9px;border-color:#d2e1d9;border-inline-start-color:#12a274;background:linear-gradient(125deg,#fff,#f3f8f5)}
+@media screen{
+ html[data-theme="dark"] .page-head:not(.concept-detail-head){background:linear-gradient(122deg,#061827,#133b49);border-color:#3d6c66}
+ html[data-theme="dark"] .header .nav a[href$="/contact/"]{background:#194c45;color:#c2f8dc;border-color:#3d8671}
+ html[data-theme="dark"] .header .nav a[href$="/contact/"]:hover{background:#236858}
+ html[data-theme="dark"] .about-feature{background:linear-gradient(115deg,#102a3d,#183e49);border-color:#3d5e65}
+ html[data-theme="dark"] .about-feature h2,
+ html[data-theme="dark"] .contact-direct .section-head h2,
+ html[data-theme="dark"] .resource-card h3{color:#ecf8f7}
+ html[data-theme="dark"] .about-feature>div>p{color:#c6dbe2}
+ html[data-theme="dark"] .resources-grid.resources-grid-docs .resource-card,
+ html[data-theme="dark"] .contact-channel{background:#123247;border-color:#3f6975}
+ html[data-theme="dark"] .resource-card .resource-state,
+ html[data-theme="dark"] .range-overview-card .range-topic{background:#1b4950;border-color:#3e6b6b;color:#c0e7da}
+ html[data-theme="dark"] .contact-channel-value{color:#d3e8f0}
+ html[data-theme="dark"] .resource-card .resource-information-link{color:#a3f3ce}
+ html[data-theme="dark"] .contact-disclosure{background:#173a44;color:#cfdee9;border-color:#579e86}
+ html[data-theme="dark"] .notice{background:#153345;border-color:#3c6870}
+}
+@media(max-width:980px){
+ .header .nav a[href$="/contact/"]{background:none;border:0;margin:0;padding:12px 0}
+ .about-feature{gap:18px}
+ .about-feature .mascot{max-height:235px}
+}
+@media(max-width:580px){
+ .about-feature{padding:20px}
+ .about-feature .mascot{max-height:175px}
+ .contact-channel{padding:22px}
+ .contact-channels{gap:14px}
+ .page-head:not(.concept-detail-head) h1{font-size:clamp(2rem,8.5vw,2.9rem)}
+ .page-head:not(.concept-detail-head){padding-block:43px}
+}
