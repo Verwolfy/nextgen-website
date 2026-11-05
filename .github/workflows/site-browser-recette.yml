@@ -11,6 +11,7 @@ on:
       - "scripts/check_bond_packshots_built.py"
       - "scripts/check_built_pages.py"
       - "scripts/check_browser_pages.py"
+      - "scripts/measure_v3_local_browser.py"
       - ".github/workflows/site-browser-recette.yml"
   workflow_dispatch:
 
@@ -47,6 +48,16 @@ jobs:
           python -m playwright install --with-deps chromium
       - name: Test desktop and mobile in Chromium
         run: python scripts/check_browser_pages.py
+      - name: Collect local V3 browser timing baseline (no CWV gate)
+        run: python scripts/measure_v3_local_browser.py
+      - name: Upload private local browser metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nextgen-v3-local-browser-metrics
+          path: .ci-artifacts/lot95-97-browser-metrics.json
+          retention-days: 7
+          if-no-files-found: warn
       - name: Upload internal screenshots (not published)
         if: always()
         uses: actions/upload-artifact@v4
