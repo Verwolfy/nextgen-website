@@ -5,25 +5,100 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = messages[lang];
 const edit = editorialCopy[lang];
+const illustrations = [
+  '/images/approche/01-concevoir.svg',
+  '/images/approche/02-produire.svg',
+  '/images/approche/03-distribuer.svg',
+] as const;
 ---
 <section aria-labelledby="about-heading">
   <div class="columns about-feature">
     <div>
       <h2 id="about-heading">{t.mission}</h2>
-      <p>{t.quality}</p><p>{edit.aboutLead}</p>
+      <p>{t.quality}</p>
       <p class="editorial-caution" role="note">{edit.aboutNotice}</p>
     </div>
     <img src="/images/Nexo-Geno.webp" alt={t.mascotsAlt} width="800" height="1390" loading="lazy" class="mascot" />
   </div>
-  <div class="section-head about-process-head"><h2>{edit.aboutHeading}</h2></div>
-  <ol class="about-steps">
-    {edit.aboutSteps.map((step,index) => <li class="about-step">
-      <span class="step-count" aria-hidden="true">{String(index+1).padStart(2,'0')}</span>
-      <h3>{step}</h3><p>{edit.aboutDetails[index]}</p>
-    </li>)}
-  </ol>
-  <div class="actions">
-    <a class="btn" href={'/'+lang+'/gammes/'}>{t.explore}</a>
-    <a class="btn btn-muted" href={'/'+lang+'/contact/'}>{edit.rangeContact}</a>
-  </div>
+
+  <section class="industrial-approach" aria-labelledby="industrial-approach-heading">
+    <header class="industrial-heading">
+      <span class="industrial-kicker">{edit.aboutKicker}</span>
+      <h2 id="industrial-approach-heading">{edit.aboutHeading}</h2>
+      <p>{edit.aboutLead}</p>
+    </header>
+
+    <ol class="industrial-steps">
+      {edit.aboutSteps.map((step,index) => (
+        <li class="industrial-step">
+          <div class="industrial-image">
+            <img src={illustrations[index]} width="400" height="240" alt="" loading="lazy" />
+          </div>
+          <div class="industrial-copy">
+            <span class="industrial-number" aria-hidden="true">{String(index+1).padStart(2,'0')}</span>
+            <h3>{step}</h3>
+            <p>{edit.aboutDetails[index]}</p>
+            <ul class="industrial-tags">
+              {edit.aboutHighlights[index].map(tag => <li>{tag}</li>)}
+            </ul>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <div class="industrial-action">
+      <p>{edit.aboutCta}</p>
+      <a class="industrial-link" href={'/'+lang+'/contact/'}>{edit.rangeContact}</a>
+    </div>
+    <p class="industrial-disclaimer">{edit.aboutNotice}</p>
+  </section>
 </section>
+
+<style>
+  .industrial-approach{
+    margin:64px 0 0;
+    padding:clamp(32px,4vw,62px);
+    color:#d7e4f0;
+    background:radial-gradient(ellipse at 72% -12%,#244c7b 0,transparent 58%),linear-gradient(165deg,#0b1b3f,#071226);
+    border-radius:24px;
+    overflow:visible;
+  }
+  .industrial-kicker{display:block;color:#76edc0;font-size:.74rem;letter-spacing:.14em;font-weight:800;text-transform:uppercase;margin-bottom:13px}
+  .industrial-heading h2{color:white;font-size:clamp(1.9rem,4vw,3rem);line-height:1.12;margin:0}
+  .industrial-heading h2::after{content:"";display:block;width:65px;height:4px;border-radius:10px;background:#2bd98f;margin:17px 0}
+  .industrial-heading p{max-width:78ch;color:#c7d5e7;font-size:1.06rem;line-height:1.6;margin:0}
+  .industrial-steps{list-style:none;padding:0;margin:36px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+  .industrial-step{
+    min-width:0;position:relative;display:flex;flex-direction:column;
+    background:linear-gradient(160deg,#ffffff13,#ffffff07);
+    border:1px solid #7193ad59;border-radius:18px;overflow:visible;
+    box-shadow:0 14px 36px #04101f44;
+    transition:transform .2s ease,border-color .2s ease;
+  }
+  .industrial-step:hover{transform:translateY(-3px);border-color:#2bd98f80}
+  .industrial-step:not(:last-child)::after{
+    content:'›';position:absolute;inset-inline-end:-27px;top:105px;z-index:3;
+    width:32px;height:32px;border-radius:50%;background:#2bd98f;color:#09213a;
+    display:grid;place-items:center;font-size:1.65rem;font-weight:800;line-height:1;
+    box-shadow:0 3px 10px #06172870;
+  }
+  :global([dir="rtl"]) .industrial-step:not(:last-child)::after{transform:scaleX(-1)}
+  .industrial-image{overflow:hidden;border-radius:18px 18px 0 0;aspect-ratio:5/3;background:#1c416d}
+  .industrial-image img{display:block;width:100%;height:100%;object-fit:cover}
+  .industrial-copy{display:flex;flex:1;flex-direction:column;gap:12px;padding:22px 21px 24px}
+  .industrial-number{align-self:flex-start;color:#69f0bc;font-weight:850;line-height:1.3;background:#0e9a5b33;border-radius:99px;padding:4px 15px}
+  .industrial-copy h3{font-size:clamp(1.19rem,1.9vw,1.43rem);line-height:1.25;color:#fff;margin:0}
+  .industrial-copy p{font-size:.95rem;line-height:1.62;color:#d4deec;margin:0}
+  .industrial-tags{margin:auto 0 0;padding:12px 0 0;list-style:none;display:flex;flex-wrap:wrap;gap:7px}
+  .industrial-tags li{border:1px solid #d4e5f043;border-radius:999px;padding:4px 10px;color:#eef4fa;font-size:.76rem;line-height:1.25;display:inline-flex;align-items:center;gap:7px}
+  .industrial-tags li::before{content:'';width:7px;height:7px;border-radius:50%;background:#36dfa8;flex:none}
+  .industrial-action{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin:28px 0 0;padding:20px 23px;border:1px solid #2bd98f6b;border-radius:14px;background:#0e9a5b1b}
+  .industrial-action p{font-weight:760;font-size:1.09rem;color:white;margin:0;max-width:60ch}
+  .industrial-link{background:#2bd98f;color:#061c2f;font-size:.95rem;font-weight:800;text-decoration:none;padding:12px 18px;border-radius:8px;white-space:nowrap}
+  .industrial-link:hover{background:#81f4ca}
+  .industrial-link:focus-visible{outline:3px solid white;outline-offset:3px}
+  .industrial-disclaimer{color:#b2c4d5;font-size:.78rem;line-height:1.5;margin:17px 0 0}
+  @media(max-width:950px){.industrial-steps{grid-template-columns:1fr;gap:22px}.industrial-step:not(:last-child)::after{display:none}.industrial-image{max-height:280px}}
+  @media(max-width:600px){.industrial-approach{margin-top:40px;padding:28px 18px;border-radius:18px}.industrial-image{max-height:210px}.industrial-action{padding:17px}.industrial-link{width:100%;text-align:center;white-space:normal}}
+  @media(prefers-reduced-motion:reduce){.industrial-step{transition:none}.industrial-step:hover{transform:none}}
+</style>
