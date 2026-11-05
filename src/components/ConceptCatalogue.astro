@@ -6,6 +6,9 @@ import {editorialCopy} from '../data/editorial';
 interface Props { lang:Lang }
 const {lang}=Astro.props;
 const t=catalogueCopy[lang];
+// Keep all three languages searchable while avoiding repeated words in every card's
+// HTML data attribute. The client search already matches individual input terms.
+const compactSearchWords=(parts:string[])=>[...new Set(parts.join(' ').split(/\\s+/u).filter(Boolean))].join(' ');
 const filters = {
   fr: {
     title: 'Rechercher une référence', query: 'Nom, description, usage ou mot-clé',
@@ -56,14 +59,14 @@ const filters = {
   {ranges.map(g=><section id={'catalogue-'+g} class="concept-range-section" data-catalogue-range={g} aria-labelledby={'range-title-'+g} style={'--range-color:'+rangeColor[g]}>
     <div class="concept-range-title"><div><span class="concept-range-color" aria-hidden="true"></span><h2 id={'range-title-'+g}><bdi dir="ltr">{rangeName[g]}</bdi></h2></div><span>{projectsByRange(g).length} {t.count}</span></div>
     <div class="concept-products-grid">
-      {projectsByRange(g).map(p=><a class="concept-product-card" data-catalogue-search={[
+      {projectsByRange(g).map(p=><a class="concept-product-card" data-catalogue-search={compactSearchWords([
         p.code,p.slug,p.nom,rangeName[g],
         ...(['fr','ar','en'] as const).flatMap(l=>[
           p.contenu[l].accroche,p.contenu[l].description,...p.contenu[l].usages,
           messages[l].ranges[g],...editorialCopy[l].rangeTopics[g],
         ]),
         ...p.conditionnements.map(x=>x.format),
-      ].join(' ')} href={'/'+lang+'/catalogue/'+p.slug+'/'} aria-label={p.nom+' — '+t.view}>
+      ])} href={'/'+lang+'/catalogue/'+p.slug+'/'} aria-label={p.nom+' — '+t.view}>
         <div class="concept-product-image concept-packshot-container"><img src={conceptPackshot(p,"card")} alt="" width="800" height="800" loading="lazy" decoding="async" /></div>
         <div class="concept-product-copy"><span class="concept-product-status">{t.status}</span><span class="concept-product-code" dir="ltr">{p.code}</span><h3><bdi dir="ltr">{p.nom}</bdi></h3><p>{p.contenu[lang].accroche}</p>
           <div class="concept-formats">{p.conditionnements.length?p.conditionnements.slice(0,3).map(x=><span>{packagingLabelFor(x.format,lang)}</span>):<span>{t.unknownFormat}</span>}</div>
