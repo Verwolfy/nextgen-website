@@ -34,14 +34,14 @@ class EpSb300x2(unittest.TestCase):
         self.assertEqual(x["validation_production_emballage"],"EN ATTENTE")
         self.assertIs(x["sku_erp_a_creer"],False)
 
-    def test_localizations_reused_and_two_pending(self):
+    def test_localizations_reused_and_one_pending(self):
         helper=(ROOT/"src/lib/catalogue-projets.ts").read_text(encoding="utf-8")
         for label in (FORMAT,"Dual cartridge 300 + 300 mL (600 mL total)",
                       "خرطوشة مزدوجة 300 + 300 مل (600 مل إجمالاً)"):
             self.assertIn(label,helper)
         self.assertEqual({x["code"] for x in self.products if x["gamme"]=="proof" and
             any("Contacter nous" in c["format"] for c in x["conditionnements"])},
-            {"PROOF-EP-SR","PROOF-PU-INJ"})
+            {"PROOF-PU-INJ"})
         for path in ("src/pages/[lang]/catalogue/[slug].astro",
                      "src/pages/[lang]/documentation/[slug].astro",
                      "src/components/FenekPrintableSheet.astro"):
