@@ -57,6 +57,9 @@ const i18n = {
     const sync = async () => {
       const shouldPlay = visible && !document.hidden && userChoice !== 'paused'
         && (!reduceMotion.matches || userChoice === 'playing');
+      // Keep the accessible label in sync when reduced motion or visibility changes.
+      button.textContent = shouldPlay ? 'Ⅱ' : '▶';
+      button.setAttribute('aria-label', shouldPlay ? button.dataset.labelPause! : button.dataset.labelPlay!);
       if (!shouldPlay) { video.pause(); return; }
       if (!video.src) video.src = video.dataset.src || '';
       try { await video.play(); } catch { /* Poster remains visible */ }
