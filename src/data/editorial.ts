@@ -16,9 +16,12 @@ type EditorialCopy = {
   rangeContact: string;
   rangeTopics: RangeTopics;
   aboutHeading: string;
+  aboutKicker: string;
   aboutLead: string;
   aboutSteps: readonly [string, string, string];
   aboutDetails: readonly [string, string, string];
+  aboutHighlights: readonly [readonly string[], readonly string[], readonly string[]];
+  aboutCta: string;
   aboutNotice: string;
   resourceHeading: string;
   resourceLead: string;
@@ -47,15 +50,22 @@ export const editorialCopy: Record<Lang, EditorialCopy> = {
       flow: ['Béton', 'Mortier', 'Adjuvants'],
       paint: ['Peintures', 'Revêtements', 'Finitions'],
     },
-    aboutHeading: 'Notre démarche',
-    aboutLead: 'Découvrez notre approche des besoins de construction et de la documentation technique.',
-    aboutSteps: ['Écouter les besoins', 'Qualifier les références', 'Documenter avant publication'],
+    aboutHeading: 'Notre démarche industrielle',
+    aboutKicker: 'Solutions BTPH · Vision industrielle',
+    aboutLead: 'De la conception des produits à leur fabrication, jusqu’aux professionnels du BTPH : une démarche guidée par les besoins du terrain.',
+    aboutSteps: ['Concevoir pour le terrain', 'Produire avec méthode', 'Distribuer et accompagner'],
     aboutDetails: [
-      'Identifier les catégories de besoins des distributeurs, entreprises et chantiers.',
-      'Examiner les données techniques avec les équipes compétentes avant toute affirmation commerciale.',
-      'Vérifier les documents et autorisations nécessaires avant de publier une fiche.',
+      'Comprendre les contraintes des ouvrages et traduire les besoins des professionnels en solutions de mortiers, résines, adjuvants et revêtements.',
+      'Structurer la fabrication, les matières premières et le conditionnement, avec des contrôles à définir et valider pour chaque référence.',
+      'Préparer la mise à disposition des produits et accompagner les distributeurs et applicateurs avec une documentation vérifiée avant diffusion.',
     ],
-    aboutNotice: 'Contactez notre équipe pour les informations techniques et commerciales.',
+    aboutHighlights: [
+      ['Besoins des chantiers', 'Développement produit', 'Solutions adaptées'],
+      ['Fabrication', 'Conditionnement', 'Contrôle qualité', 'Traçabilité'],
+      ['Réseau professionnel', 'Assistance technique', 'Retour terrain'],
+    ],
+    aboutCta: 'Des solutions pensées pour être produites et utiles sur les chantiers.',
+    aboutNotice: 'Les caractéristiques, contrôles et documents propres à chaque produit restent soumis aux validations requises.',
     resourceHeading: 'Ressources et documents',
     resourceLead: 'Retrouvez les fiches produits FENEK et les informations utiles à vos projets.',
     resourceTechTitle: 'Fiches produits FENEK',
@@ -82,15 +92,22 @@ export const editorialCopy: Record<Lang, EditorialCopy> = {
       flow: ['الخرسانة', 'الملاط', 'الإضافات'],
       paint: ['الدهانات', 'الطلاءات', 'التشطيبات'],
     },
-    aboutHeading: 'منهجية عملنا',
-    aboutLead: 'تعرّف على منهجيتنا في فهم احتياجات قطاع البناء وتوثيق المعلومات الفنية.',
-    aboutSteps: ['فهم احتياجات المشاريع', 'مراجعة بيانات المنتجات', 'توثيق المعلومات قبل النشر'],
+    aboutHeading: 'منهجيتنا الصناعية',
+    aboutKicker: 'حلول البناء · رؤية صناعية',
+    aboutLead: 'من تطوير المنتجات إلى تصنيعها ثم وصولها إلى مهنيّي البناء والأشغال العمومية والري: منهجية تنطلق من احتياجات الميدان.',
+    aboutSteps: ['تصميم حلول للميدان', 'تصنيع بمنهجية واضحة', 'التوزيع والمرافقة'],
     aboutDetails: [
-      'دراسة احتياجات الموزعين وشركات المقاولات والمشاريع الإنشائية.',
-      'مراجعة البيانات الفنية مع المختصين قبل اعتماد أي وصف تجاري.',
-      'التحقق من المستندات والموافقات المطلوبة قبل نشر بطاقات المنتجات.',
+      'فهم متطلبات المشاريع وتحويل احتياجات المهنيين إلى حلول في الملاط والراتنجات والإضافات والطلاءات.',
+      'تنظيم التصنيع والمواد الأولية والتعبئة، مع تحديد اختبارات المراقبة واعتمادها لكل منتج على حدة.',
+      'التحضير لتوفير المنتجات ودعم الموزعين والمطبقين بوثائق فنية تُراجع قبل نشرها.',
     ],
-    aboutNotice: 'للحصول على المعلومات الفنية والتجارية، تواصل مع فريقنا.',
+    aboutHighlights: [
+      ['احتياجات المشاريع', 'تطوير المنتجات', 'حلول ملائمة'],
+      ['التصنيع', 'التعبئة', 'مراقبة الجودة', 'التتبع'],
+      ['شبكة المهنيين', 'الدعم التقني', 'ملاحظات الميدان'],
+    ],
+    aboutCta: 'حلول مصممة للتصنيع وخدمة مشاريع البناء.',
+    aboutNotice: 'تظل خصائص كل منتج واختباراته ووثائقه خاضعة للمراجعة والموافقات اللازمة.',
     resourceHeading: 'الموارد والوثائق الفنية',
     resourceLead: 'تصفح بطاقات منتجات FENEK والمعلومات المفيدة لمشاريعك.',
     resourceTechTitle: 'بطاقات منتجات FENEK',
@@ -117,15 +134,22 @@ export const editorialCopy: Record<Lang, EditorialCopy> = {
       flow: ['Concrete', 'Mortar', 'Admixtures'],
       paint: ['Paints', 'Coatings', 'Finishes'],
     },
-    aboutHeading: 'Our approach',
-    aboutLead: 'Learn how NextGen approaches building needs and technical documentation.',
-    aboutSteps: ['Understand requirements', 'Review product references', 'Document before publishing'],
+    aboutHeading: 'Our manufacturing approach',
+    aboutKicker: 'Construction solutions · Industrial vision',
+    aboutLead: 'From product development to manufacturing and on to construction professionals: an approach shaped by real site needs.',
+    aboutSteps: ['Design for the jobsite', 'Manufacture with purpose', 'Distribute and support'],
     aboutDetails: [
-      'Identify the broad needs of distributors, contractors and construction projects.',
-      'Have qualified teams review technical inputs before making commercial claims.',
-      'Check documentation and required approvals before publishing a product page.',
+      'Understand project constraints and turn professional needs into solutions across mortars, resins, admixtures and coatings.',
+      'Structure manufacturing, raw material selection and packaging, with checks defined and validated for each product reference.',
+      'Plan product availability and support distributors and applicators with documentation reviewed before release.',
     ],
-    aboutNotice: 'Contact our team for technical and commercial information.',
+    aboutHighlights: [
+      ['Site requirements', 'Product development', 'Fit-for-purpose solutions'],
+      ['Manufacturing', 'Packaging', 'Quality checks', 'Traceability'],
+      ['Professional network', 'Technical support', 'Field feedback'],
+    ],
+    aboutCta: 'Building solutions designed for production and practical use.',
+    aboutNotice: 'Product-specific characteristics, checks and documents remain subject to the required approvals.',
     resourceHeading: 'Resources and documents',
     resourceLead: 'Explore FENEK product sheets and useful information for your projects.',
     resourceTechTitle: 'FENEK product sheets',
