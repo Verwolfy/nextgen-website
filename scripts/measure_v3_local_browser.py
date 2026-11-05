@@ -15,11 +15,14 @@ from http.server import ThreadingHTTPServer
 from pathlib import Path
 from threading import Thread
 from urllib.parse import urlparse
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+if __package__ in (None, ''):
+    sys.path.insert(0, str(ROOT))
 
 from playwright.sync_api import sync_playwright
 from scripts.check_browser_pages import SilentHandler
-
-ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 REPORT = ROOT / ".ci-artifacts" / "lot95-97-browser-metrics.json"
 
