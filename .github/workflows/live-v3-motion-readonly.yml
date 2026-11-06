@@ -7,6 +7,9 @@ on:
     paths:
       - ".github/workflows/live-v3-motion-readonly.yml"
       - "scripts/check_live_v3_motion_readonly.py"
+      - "scripts/check_live_v3_fullsite_readonly.py"
+      - "src/layouts/Layout.astro"
+      - "public/favicon.svg"
       - "src/pages/[lang]/index.astro"
       - "src/data/home-v3.ts"
       - "src/components/HeroWelcomeVideo.astro"
@@ -30,11 +33,15 @@ jobs:
           python-version: "3.12"
       - name: Anonymous HTTP GET verification
         run: python scripts/check_live_v3_motion_readonly.py
+      - name: Check public favicon and key pages in FR AR EN (read-only)
+        run: python scripts/check_live_v3_fullsite_readonly.py
       - name: Archive diagnostic
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: nextgen-lot90-v3-public-readonly
-          path: .ci-artifacts/lot90-live-v3-motion.json
+          path: |
+            .ci-artifacts/lot90-live-v3-motion.json
+            .ci-artifacts/lot103-live-fullsite-readonly.json
           if-no-files-found: warn
           retention-days: 7
