@@ -98,6 +98,9 @@ def main() -> int:
                 out.write(
                     f"| {r['scenario']} | {scores['performance']} | {scores['accessibility']} | "
                     f"{scores['best-practices']} | {values['lcp_ms']} | {values['cls']} |\n")
+            for scenario in result["scenarios"]:
+                for issue in scenario["best_practices_issues"]:
+                    out.write(f"- {scenario['scenario']}: {issue['id']} — {issue['title']}\\n")
             out.write("\n**Scores de laboratoire local, pas des Core Web Vitals terrain.** "
                       "Les scores n'empêchent pas la fusion ; les erreurs d'exécution, oui.\n")
     return 0
