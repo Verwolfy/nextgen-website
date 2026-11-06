@@ -291,12 +291,21 @@ def check() -> None:
                             toggle = welcome.locator("[data-welcome-toggle]")
                             toggle.wait_for(state="visible", timeout=5000)
                             assert toggle.inner_text() == "Ⅱ", path
+                            assert welcome.locator(".welcome-news-track").evaluate(
+                                "el => getComputedStyle(el).animationPlayState") == "running", path
+                            video_before = welcome.locator("[data-welcome-video]").evaluate("el => el.paused")
                             toggle.click()
                             assert toggle.inner_text() == "▶", path
                             assert toggle.get_attribute("aria-pressed") == "true", path
+                            assert welcome.locator(".welcome-news-track").evaluate(
+                                "el => getComputedStyle(el).animationPlayState") == "paused", path
+                            assert welcome.locator("[data-welcome-video]").evaluate(
+                                "el => el.paused") == video_before, path
                             toggle.click()
                             assert toggle.inner_text() == "Ⅱ", path
                             assert toggle.get_attribute("aria-pressed") == "false", path
+                            assert welcome.locator(".welcome-news-track").evaluate(
+                                "el => getComputedStyle(el).animationPlayState") == "running", path
                             if size == "desktop":
                                 no_js = browser.new_page(java_script_enabled=False)
                                 try:
