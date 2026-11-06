@@ -36,7 +36,7 @@ class SkipNavigationA11y(unittest.TestCase):
         self.assertEqual((ROOT/"public/data/products.json").read_text(encoding="utf-8").strip(),"[]")
         video=(ROOT/"src/components/HeroWelcomeVideo.astro").read_text(encoding="utf-8")
         self.assertIn("connection?.saveData",video)
-        self.assertIn("reduceMotion.matches",video)
+        self.assertIn("reducedMotion.matches",video)
         self.assertIn('preload="none"',video)
 
 if __name__=="__main__":

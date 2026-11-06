@@ -10,20 +10,20 @@ const i18n = {
   fr: {
     label: 'Nexo et Geno vous invitent à découvrir NextGen',
     cta: 'Découvrir les produits NextGen',
-    pause: 'Mettre la vidéo en pause',
-    play: 'Relancer la vidéo',
+    pause: 'Mettre les actualités en pause',
+    play: 'Reprendre le défilement des actualités',
   },
   ar: {
     label: 'نيكسو وجينو يدعوانكم لاكتشاف منتجات NextGen',
     cta: 'اكتشفوا منتجات NextGen',
-    pause: 'إيقاف الفيديو مؤقتًا',
-    play: 'تشغيل الفيديو',
+    pause: 'إيقاف شريط الأخبار مؤقتًا',
+    play: 'استئناف تمرير الأخبار',
   },
   en: {
     label: 'Nexo and Geno invite you to discover NextGen',
     cta: 'Discover NextGen products',
-    pause: 'Pause video',
-    play: 'Play video',
+    pause: 'Pause news ticker',
+    play: 'Resume news ticker',
   },
 }[lang];
 ---
@@ -52,7 +52,7 @@ const i18n = {
       </div>
       <span class="welcome-news-fallback" data-news-fallback hidden>{ticker.fallback}</span>
     </div>
-    <button type="button" data-welcome-toggle aria-label={i18n.pause} data-label-play={i18n.play} data-label-pause={i18n.pause} hidden>Ⅱ</button>
+    <button type="button" data-welcome-toggle aria-label={i18n.pause} data-label-play={i18n.play} data-label-pause={i18n.pause} aria-pressed="false" hidden>Ⅱ</button>
   </div>
   <a class="welcome-video-cta" href={`/${lang}/catalogue/`}>{i18n.cta}</a>
 </div>
@@ -75,40 +75,44 @@ const i18n = {
   const card = document.querySelector<HTMLElement>('[data-welcome-card]');
   const video = card?.querySelector<HTMLVideoElement>('[data-welcome-video]');
   const button = card?.querySelector<HTMLButtonElement>('[data-welcome-toggle]');
-  if (card && video && button && 'IntersectionObserver' in window) {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const track = news?.querySelector<HTMLElement>('.welcome-news-track');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let tickerPaused = false;
+  const syncTickerButton = () => {
+    if (!button || !news || !track) return;
+    const hasNews = !track.hidden && !!news.querySelector('.welcome-news-group:first-child .welcome-news-item:not([hidden])');
+    button.hidden = !hasNews || reducedMotion.matches;
+    button.textContent = tickerPaused ? '▶' : 'Ⅱ';
+    button.setAttribute('aria-label', tickerPaused ? button.dataset.labelPlay! : button.dataset.labelPause!);
+    button.setAttribute('aria-pressed', String(tickerPaused));
+    news.dataset.paused = tickerPaused ? 'true' : 'false';
+  };
+  if (button && track && news) {
+    syncTickerButton();
+    button.addEventListener('click', () => {
+      tickerPaused = !tickerPaused;
+      syncTickerButton();
+    });
+    reducedMotion.addEventListener('change',syncTickerButton);
+    document.addEventListener('visibilitychange',syncTickerButton);
+  }
+  // The Nexo/Geno film remains independent: the round button controls news only.
+  if (card && video && 'IntersectionObserver' in window) {
     let visible = false;
-    let userChoice: 'auto'|'paused'|'playing' = 'auto';
-    // Data Saver and reduced-motion visitors see the poster until they opt in.
     const saveData = Boolean((navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData);
-    const autoAllowed = () => !reduceMotion.matches && !saveData;
-    const syncButton = () => {
-      const intendsPlay = userChoice === 'playing' || (userChoice === 'auto' && autoAllowed());
-      button.textContent = intendsPlay ? 'Ⅱ' : '▶';
-      button.setAttribute('aria-label', intendsPlay ? button.dataset.labelPause! : button.dataset.labelPlay!);
-    };
-    syncButton();
-    const sync = async () => {
-      syncButton();
-      const shouldPlay = visible && !document.hidden && userChoice !== 'paused'
-        && (autoAllowed() || userChoice === 'playing');
-      if (!shouldPlay) { video.pause(); return; }
+    const autoAllowed = () => !reducedMotion.matches && !saveData;
+    const syncVideo = async () => {
+      if (!visible || document.hidden || !autoAllowed()) { video.pause(); return; }
       if (!video.src) video.src = video.dataset.src || '';
       try { await video.play(); } catch { /* Poster remains visible */ }
     };
     const observer = new IntersectionObserver(entries => {
       visible = entries.some(entry => entry.isIntersecting);
-      void sync();
+      void syncVideo();
     }, { rootMargin: '100px' });
     observer.observe(card);
-    button.hidden = false;
-    button.addEventListener('click', () => {
-      const requestPause = userChoice === 'playing' || (userChoice === 'auto' && autoAllowed());
-      userChoice = requestPause ? 'paused' : 'playing';
-      void sync();
-    });
-    document.addEventListener('visibilitychange', () => { void sync(); });
-    reduceMotion.addEventListener('change', () => { void sync(); });
+    document.addEventListener('visibilitychange', () => { void syncVideo(); });
+    reducedMotion.addEventListener('change', () => { void syncVideo(); });
   }
 </script>
 <style>
@@ -126,11 +130,11 @@ const i18n = {
   .welcome-news-item{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;font-size:.74rem;color:#153e42;text-decoration:none}
     .welcome-news-category{font-size:.65rem;font-weight:800;text-transform:uppercase;color:#086947}
   .welcome-news-item small{color:#5b6c6d;font-size:.64rem}
-  .welcome-news-ticker:hover .welcome-news-track,.welcome-news-ticker:focus-within .welcome-news-track{animation-play-state:paused}
+  .welcome-news-ticker:hover .welcome-news-track,.welcome-news-ticker:focus-within .welcome-news-track,.welcome-news-ticker[data-paused="true"] .welcome-news-track{animation-play-state:paused}
   @keyframes welcome-news-scroll{to{transform:translateX(-50%)}}
   /* Arabic moves left-to-right; track geometry stays LTR to avoid RTL clipping. */
   .welcome-video-card[dir="rtl"] .welcome-news-track{animation-direction:reverse}
-  .welcome-news-item[hidden],.welcome-news-track[hidden],.welcome-news-fallback[hidden]{display:none}
+  .welcome-news-item[hidden],.welcome-news-track[hidden],.welcome-news-fallback[hidden],[data-welcome-toggle][hidden]{display:none}
   .welcome-news-fallback{font-size:.72rem;color:#526c70}
   @media(prefers-reduced-motion:reduce){.welcome-news-track{animation:none;width:auto}.welcome-news-viewport{overflow-x:auto}.welcome-news-duplicate{display:none}}
 
