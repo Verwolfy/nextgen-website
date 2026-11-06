@@ -30,6 +30,11 @@ def check_header_preferences(browser, base: str) -> None:
             page.emulate_media(color_scheme="light")
             response = page.goto(f"{base}/{lang}/", wait_until="domcontentloaded")
             assert response is not None and response.status == 200
+            # Lot 101: every locale must expose a real icon; avoids Lighthouse favicon.ico 404.
+            icon = page.locator('link[rel="icon"][type="image/svg+xml"]')
+            assert icon.count() == 1 and icon.get_attribute("href") == "/favicon.svg", lang
+            favicon = page.request.get(base + "/favicon.svg")
+            assert favicon.status == 200 and b"<svg" in favicon.body(), lang
             switch = page.locator("[data-theme-switch]")
             menu = page.locator("[data-language-picker]")
             assert switch.count() == 1 and menu.count() == 1
