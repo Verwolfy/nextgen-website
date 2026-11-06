@@ -42,6 +42,19 @@ def summarize(paths: list[Path]) -> dict:
                     ("speed_index_ms", "speed-index"),
                 )
             },
+            "best_practices_issues": [
+                {"id": ref["id"], "title": audits[ref["id"]].get("title"),
+                 "score": audits[ref["id"]].get("score"),
+                 "affected": [
+                    {"url": (item.get("sourceLocation") or {}).get("url"),
+                     "description": (item.get("description") or "")[:240]}
+                    for item in (audits[ref["id"]].get("details") or {}).get("items", [])[:12]
+                 ]}
+                for ref in categories.get("best-practices",{}).get("auditRefs",[])
+                if ref.get("id") in audits
+                and audits[ref["id"]].get("scoreDisplayMode") == "binary"
+                and audits[ref["id"]].get("score") == 0
+            ][:25],
             "accessibility_issues": [
                 {"id": key, "title": item.get("title"), "score": item.get("score"),
                  "affected": [
