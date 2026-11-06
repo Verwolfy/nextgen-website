@@ -80,7 +80,7 @@ def main()->int:
             out.write("| Langue | Page | HTTP | Éléments | Conforme |\n|---|---|---:|---:|---|\n")
             for p in latest["pages"]:
                 out.write(f"| {p['lang']} | {p['section']} | {p['http']} | {p['matching_elements']} | {p['visible_and_consistent']} |\n")
-            out.write(f"\nFavicon SHA-256 correct : {icon_match if False else latest['favicon_matches_source_sha256']}. "
+            out.write(f"\nFavicon SHA-256 correct : {latest['favicon_matches_source_sha256']}. "
                       "Aucun déploiement ni preuve du SHA Cloudflare.\n")
     return 0 if latest["public_routes_verified"] else 1
 
