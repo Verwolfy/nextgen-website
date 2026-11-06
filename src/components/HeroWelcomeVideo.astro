@@ -1,9 +1,10 @@
 ---
 import type { Lang } from '../data/site';
 import { homeV3Copy } from '../data/home-v3';
+import { tickerContent } from '../data/nextgen-ticker';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
-const motion = homeV3Copy[lang];
+const ticker = tickerContent[lang];
 const i18n = {
   fr: {
     label: 'Nexo et Geno vous invitent à découvrir NextGen',
@@ -25,8 +26,7 @@ const i18n = {
   },
 }[lang];
 ---
-<div class="welcome-video-card" data-welcome-card aria-label={i18n.label} role="region">
-  <div class="welcome-video-overline"><span><span class="welcome-video-indicator" aria-hidden="true"></span>{motion.motionLabel}</span><span>{motion.motionDuration}</span></div>
+<div class="welcome-video-card" dir={lang === 'ar' ? 'rtl' : 'ltr'} data-welcome-card aria-label={i18n.label} role="region">
   <video
     data-welcome-video
     data-src="/videos/nextgen-nexo-geno-welcome.mp4?v=20261105-v3"
@@ -38,6 +38,18 @@ const i18n = {
     aria-hidden="true"
   ></video>
   <div class="welcome-video-actions">
+    <div class="welcome-news-ticker" role="region" aria-label={ticker.label}>
+      <div class="welcome-news-viewport">
+        <div class="welcome-news-track">
+          <span class="welcome-news-group" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+            {ticker.items.map(item => <a class="welcome-news-item" href={item.url} target="_blank" rel="noopener noreferrer" title={`${item.source} · ${item.date}`}><span class="welcome-news-category">{item.category}</span><span>{item.text}</span><small>{item.source} · {item.date}</small></a>)}
+          </span>
+          <span class="welcome-news-group welcome-news-duplicate" aria-hidden="true" inert>
+            {ticker.items.map(item => <span class="welcome-news-item"><span class="welcome-news-category">{item.category}</span><span>{item.text}</span><small>{item.source} · {item.date}</small></span>)}
+          </span>
+        </div>
+      </div>
+    </div>
     <button type="button" data-welcome-toggle aria-label={i18n.pause} data-label-play={i18n.play} data-label-pause={i18n.pause} hidden>Ⅱ</button>
   </div>
   <a class="welcome-video-cta" href={`/${lang}/catalogue/`}>{i18n.cta}</a>
@@ -88,21 +100,27 @@ const i18n = {
     background:#f8faf8;border:1px solid #a6cfc2a8;border-radius:15px;
     box-shadow:0 27px 70px #00121e88;color:#102e3a;
   }
-  .welcome-video-overline{
-    min-height:45px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;
-    flex-wrap:wrap;gap:7px;background:#092735;color:#d8f2e8;font-size:.64rem;
-    letter-spacing:.075em;line-height:1.4;font-weight:840;
-  }
-  .welcome-video-overline>span:first-child{display:flex;align-items:center;gap:9px}
-  .welcome-video-overline>span:last-child{font-weight:640;color:#a9c6c5;letter-spacing:0}
-  .welcome-video-indicator{height:9px;width:9px;border:2px solid #6ee5b0;border-radius:100%;box-shadow:0 0 0 4px #6ee5b01b;flex:none}
   .welcome-video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#f4f6f4}
-  .welcome-video-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;min-height:48px;padding:7px 15px;background:#f8faf8}
+  .welcome-video-actions{display:flex;align-items:center;gap:10px;min-height:62px;padding:7px 12px;background:#f8faf8}
+  .welcome-news-ticker{flex:1;min-width:0;color:#103b40}
+  .welcome-news-viewport{overflow:hidden;position:relative}
+  .welcome-news-track{display:flex;width:max-content;align-items:center;animation:welcome-news-scroll 48s linear infinite}
+  .welcome-news-group{display:flex;align-items:center;gap:32px;flex:none;padding-inline-end:32px}
+  .welcome-news-item{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;font-size:.74rem;color:#153e42;text-decoration:none}
+  .welcome-news-item:hover{text-decoration:underline}
+  .welcome-news-category{font-size:.65rem;font-weight:800;text-transform:uppercase;color:#086947}
+  .welcome-news-item small{color:#5b6c6d;font-size:.64rem}
+  .welcome-news-ticker:hover .welcome-news-track,.welcome-news-ticker:focus-within .welcome-news-track{animation-play-state:paused}
+  @keyframes welcome-news-scroll{to{transform:translateX(-50%)}}
+  .welcome-video-card[dir="rtl"] .welcome-news-track{animation-direction:reverse}
+  .welcome-news-item:focus-visible{outline:2px solid #086b50;outline-offset:3px}
+  @media(prefers-reduced-motion:reduce){.welcome-news-track{animation:none;width:auto}.welcome-news-viewport{overflow-x:auto}.welcome-news-duplicate{display:none}}
+
   [data-welcome-toggle]{min-width:43px;min-height:43px;background:#0e3140;border:1px solid #0e3140;border-radius:100px;color:#fff;cursor:pointer;font-size:1rem}
   [data-welcome-toggle]:hover{background:#1a5552}
   .welcome-video-cta{display:block;width:100%;text-align:center;background:#daf3e7;color:#0b503a;border-top:1px solid #c9e4d8;padding:13px 12px;font-size:.85rem;font-weight:850}
   .welcome-video-cta:hover{background:#b8efd7;text-decoration:none;color:#09412f}
   .welcome-video-card button:focus-visible,.welcome-video-cta:focus-visible{outline:3px solid #086b50;outline-offset:-3px}
-  @media(max-width:580px){.welcome-video-overline{padding:9px 12px;font-size:.59rem}.welcome-video-actions{min-height:44px;padding:5px 12px}[data-welcome-toggle]{min-width:42px;min-height:42px}}
+  @media(max-width:580px){.welcome-video-actions{min-height:55px;padding:5px 9px}[data-welcome-toggle]{min-width:42px;min-height:42px}.welcome-news-item{font-size:.7rem}}
   @media(prefers-reduced-motion:reduce){.welcome-video{animation:none;transition:none}}
 </style>
