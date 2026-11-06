@@ -35,7 +35,7 @@ const entries: RecordEntry[] = [
   {
     id:'setif-water',category:'btph',published:'2026-11-03',expires:'2026-11-24',source:'APS',
     sourceUrl:'https://www.aps.dz/fr/algerie/developpement/mw0tqlwj-bouzegza-donne-le-coup-d-envoi-du-projet-d-aep-d-el-eulma-et-de-15-autres-communes',
-    text:{fr:'Sétif : lancement du projet d’eau potable pour El Eulma et 15 communes',ar:'سطيف: انطلاق مشروع المياه الصالحة للشرب للعلمـة و15 بلدية',en:'Sétif: drinking-water project launched for El Eulma and 15 municipalities'},
+    text:{fr:'Sétif : lancement du projet d’eau potable pour El Eulma et 15 communes',ar:'سطيف: انطلاق مشروع المياه الصالحة للشرب للعلمة و15 بلدية',en:'Sétif: drinking-water project launched for El Eulma and 15 municipalities'},
   },
   {
     id:'eur-dzd',category:'economy',published:'2026-11-05',expires:'2026-11-12',source:'Banque d’Algérie',
@@ -67,6 +67,6 @@ export const tickerRecords=entries; // Trusted editorial register, not sent as c
 export const tickerContent=Object.fromEntries((['fr','ar','en'] as const).map(lang=>[
   lang,{...labels[lang],items:entries.map(item=>({
     id:item.id,category:categories[lang][item.category],
-    text:item.text[lang],source:item.source,date:item.published,expires:item.expires,
+    text:item.text[lang],source:item.source === 'APS' ? (lang === 'ar' ? 'وأج' : 'APS') : (lang === 'ar' ? 'بنك الجزائر' : lang === 'en' ? 'Bank of Algeria' : item.source),date:item.published,expires:item.expires,
   }))},
 ])) as Record<Lang,{label:string;fallback:string;items:{id:string;category:string;text:string;source:string;date:string;expires:string}[]}>;
