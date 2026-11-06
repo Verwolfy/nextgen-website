@@ -7,7 +7,7 @@ ROOT=Path(__file__).resolve().parents[1]
 class Lot105HeroColorRefresh(unittest.TestCase):
     def test_scoped_homepage_gradient_and_rtl(self):
         css=(ROOT/"src/styles/v3.css").read_text(encoding="utf-8")
-        self.assertIn("Lot 105: FLASO-inspired light accents",css)
+        self.assertIn("Lot 105: FLASO-inspired accents",css)
         self.assertIn(".hero.v3-motion-hero::before",css)
         self.assertIn("linear-gradient(112deg,#061827",css)
         self.assertIn("html[dir=\"rtl\"] .hero.v3-motion-hero",css)
