@@ -1,4 +1,4 @@
-"""Lot 111: the About hero leads the entire page on mobile, before the heading."""
+"""Lot 111/112: About video hero leads the page; heading above video and intro below."""
 from pathlib import Path
 import unittest
 
@@ -8,14 +8,16 @@ class AboutVideoFirst(unittest.TestCase):
         page=(ROOT/"src/pages/[lang]/[section].astro").read_text(encoding="utf-8")
         story=(ROOT/"src/components/AboutStory.astro").read_text(encoding="utf-8")
         component=(ROOT/"src/components/AboutVideo.astro").read_text(encoding="utf-8")
-        self.assertLess(page.index('<section class="about-video-intro"'),page.index('<div class:list={'))
-        self.assertLess(page.index('<section class="about-video-intro"'),page.index('<AboutStory lang={lang} />'))
+        self.assertLess(page.index('<h1 class="about-video-title">'),page.index('<AboutVideo lang={lang} />'))
+        self.assertLess(page.index('<AboutVideo lang={lang} />'),page.index('<p class="about-video-lead">'))
+        self.assertLess(page.index('<p class="about-video-lead">'),page.index('<AboutStory lang={lang} />'))
+        self.assertIn("section!=='a-propos' && <div class=\"page-head\"",page)
         self.assertIn("section==='a-propos' && (",page)
         self.assertIn("aboutVideoReady=section==='a-propos' && existsSync",page)
         self.assertIn("<AboutVideo lang={lang} />",page)
         self.assertEqual(page.count("<AboutVideo lang={lang} />"),1)
         self.assertNotIn("<AboutVideo",story)
-        self.assertIn("about-video-intro-inner{padding-inline:10px}",page)
+        self.assertIn("about-video-intro-inner{padding-inline:10px;gap:13px}",page)
         self.assertIn("aspect-ratio:16/9",component)
         self.assertIn("width:min(100%,860px)",component)
         for code in ("fr:","ar:","en:"):
