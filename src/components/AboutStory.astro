@@ -1,16 +1,10 @@
 ---
 import { messages, type Lang } from '../data/site';
 import { editorialCopy } from '../data/editorial';
-import AboutVideo from './AboutVideo.astro';
-import { existsSync } from 'node:fs';
-import { join } from 'node:path';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = messages[lang];
 const edit = editorialCopy[lang];
-// The same approved interim clip serves FR/AR/EN once uploaded to public/videos.
-// If the binary is not yet present, preserve the current illustration (no 404).
-const aboutVideoReady = existsSync(join(process.cwd(), 'public/videos/nextgen-about-v1.mp4'));
 const illustrations = [
   '/images/approche/01-concevoir.svg',
   '/images/approche/02-produire.svg',
@@ -18,16 +12,12 @@ const illustrations = [
 ] as const;
 ---
 <section aria-labelledby="about-heading">
-  <div class="columns about-feature">
+  <div class="about-feature about-story-copy">
     <div>
       <h2 id="about-heading">{t.mission}</h2>
       <p>{t.quality}</p>
       <p class="editorial-caution" role="note">{edit.aboutNotice}</p>
     </div>
-    {aboutVideoReady
-      ? <AboutVideo lang={lang} />
-      : <img src="/images/Nexo-Geno.webp" alt={t.mascotsAlt} width="800" height="1390" loading="lazy" class="mascot" />
-    }
   </div>
 
   <section class="industrial-approach" aria-labelledby="industrial-approach-heading">
@@ -64,6 +54,7 @@ const illustrations = [
 </section>
 
 <style>
+  .about-story-copy{max-width:84ch;margin-inline:auto}
   .industrial-approach{
     margin:64px 0 0;
     padding:clamp(32px,4vw,62px);

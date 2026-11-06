@@ -9,7 +9,7 @@ const captions:Record<Lang,string>={
 };
 ---
 <video class="about-video" data-about-video src="/videos/nextgen-about-v1.mp4"
-  poster="/images/Nexo-Geno.webp" width="1280" height="720"
+  poster="/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3" width="1280" height="720"
   aria-label={captions[lang]} preload="none" muted playsinline loop controls></video>
 <script>
   // Playback is autonomous; no background loading for Data Saver or reduced motion.
@@ -31,6 +31,6 @@ const captions:Record<Lang,string>={
   }
 </script>
 <style>
-  .about-video{display:block;width:min(100%,560px);height:auto;aspect-ratio:16/9;object-fit:contain;margin-inline:auto;border:1px solid #d4e2e7;border-radius:22px;background:#f7faf9;box-shadow:0 16px 40px #09223d22}
+  .about-video{display:block;width:min(100%,860px);height:auto;aspect-ratio:16/9;object-fit:contain;margin-inline:auto;border:1px solid #d4e2e7;border-radius:22px;background:#f7faf9;box-shadow:0 16px 40px #09223d22}
   @media(prefers-reduced-motion:reduce){.about-video{animation:none}}
 </style>

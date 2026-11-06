@@ -1,7 +1,6 @@
-"""Lot 110: About navigation and safe trilingual interim video staging."""
+"""Lot 110/111: About navigation, safe video and video-first layout."""
 from pathlib import Path
 import unittest
-
 ROOT=Path(__file__).resolve().parents[1]
 class AboutV1Video(unittest.TestCase):
     def test_about_first_in_desktop_and_mobile_navigation(self):
@@ -12,20 +11,20 @@ class AboutV1Video(unittest.TestCase):
             self.assertIn(name,(ROOT/"src/data/site.ts").read_text(encoding="utf-8"))
     def test_video_3_languages_and_missing_binary_fallback(self):
         story=(ROOT/"src/components/AboutStory.astro").read_text(encoding="utf-8")
-        src=(ROOT/"src/components/AboutVideo.astro").read_text(encoding="utf-8")
-        for token in (
-                      'src="/videos/nextgen-about-v1.mp4"','poster="/images/Nexo-Geno.webp"',
-                      "fr:","ar:","en:","data-about-video","preload=\"none\"",
+        page=(ROOT/"src/pages/[lang]/[section].astro").read_text(encoding="utf-8")
+        video=(ROOT/"src/components/AboutVideo.astro").read_text(encoding="utf-8")
+        for token in ('src="/videos/nextgen-about-v1.mp4"',
+                      'poster="/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3"',
+                      "fr:","ar:","en:","data-about-video",'preload="none"',
                       "muted playsinline loop controls","IntersectionObserver",
-                      "reduce.matches","connection?.saveData",
-                      "video.pause()","video.play()"):
-            self.assertIn(token,src,token)
-        self.assertIn("aboutVideoReady = existsSync",story)
-        self.assertIn("public/videos/nextgen-about-v1.mp4",story)
-        self.assertIn("<AboutVideo lang={lang} />",story)
-        self.assertIn('<img src="/images/Nexo-Geno.webp"',story)
+                      "reduce.matches","connection?.saveData","video.pause()","video.play()"):
+            self.assertIn(token,video,token)
+        self.assertIn("aboutVideoReady=section==='a-propos' && existsSync",page)
+        self.assertIn("public/videos/nextgen-about-v1.mp4",page)
+        self.assertIn("<AboutVideo lang={lang} />",page)
+        self.assertIn('src="/images/Nexo-Geno.webp"',page)
+        self.assertNotIn("<AboutVideo",story)
         self.assertNotIn("<script",story)
         self.assertIn("noindex,nofollow",(ROOT/"src/layouts/Layout.astro").read_text(encoding="utf-8"))
         self.assertIn("Disallow: /",(ROOT/"public/robots.txt").read_text(encoding="utf-8"))
-if __name__=="__main__":
-    unittest.main()
+if __name__=="__main__": unittest.main()

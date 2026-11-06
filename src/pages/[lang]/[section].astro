@@ -5,6 +5,9 @@ import {contactCopy} from '../../data/contact-channels';
 import RangeOverview from '../../components/RangeOverview.astro';
 import ResourcesHub from '../../components/ResourcesHub.astro';
 import AboutStory from '../../components/AboutStory.astro';
+import AboutVideo from '../../components/AboutVideo.astro';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import {brand,brandLocation,languages,messages,sections,rangeName,type Lang,type Section} from '../../data/site';
 import {products} from '../../lib/products';
 import ConceptCatalogue from '../../components/ConceptCatalogue.astro';
@@ -16,9 +19,21 @@ const t=messages[lang];
 const title=t.menu[section];
 const heading=section==='catalogue'?catalogueCopy[lang].title:section==='contact'?t.contactTitle:section==='distributeurs'?t.distributorsTitle:title;
 const description=section==='catalogue'?catalogueCopy[lang].lead:section==='distributeurs'?t.distributorsInfo:section==='ressources'?t.resourcesInfo:section==='a-propos'?t.aboutInfo:section==='mentions-legales'?t.legalInfo:section==='confidentialite'?t.privacyInfo:section==='contact'?contactCopy[lang].intro:t.intro;
+const aboutVideoReady=section==='a-propos' && existsSync(join(process.cwd(),'public/videos/nextgen-about-v1.mp4'));
+const aboutVideoLabel:Record<Lang,string>={fr:'Présentation vidéo de NextGen',ar:'فيديو تعريفي عن NextGen',en:'NextGen video introduction'};
 ---
 <Layout lang={lang} title={title} description={description}>
-<div class="page-head"><div class="container"><span class="eyebrow">NextGen Building Solutions</span><h1>{heading}</h1><p>{description}</p></div></div>
+{section==='a-propos' && (
+  <section class="about-video-intro" aria-label={aboutVideoLabel[lang]}>
+    <div class="container about-video-intro-inner">
+      {aboutVideoReady
+        ? <AboutVideo lang={lang} />
+        : <img class="about-video-poster-fallback" src="/images/Nexo-Geno.webp" alt={t.mascotsAlt} width="800" height="1390" />
+      }
+    </div>
+  </section>
+)}
+<div class:list={['page-head',{'about-page-head':section==='a-propos'}]}><div class="container"><span class="eyebrow">NextGen Building Solutions</span><h1>{heading}</h1><p>{description}</p></div></div>
 <div class="section"><div class="container">
 {section==='gammes'&&<RangeOverview lang={lang} />}
 {section==='catalogue'&&<ConceptCatalogue lang={lang} />}
@@ -29,4 +44,15 @@ const description=section==='catalogue'?catalogueCopy[lang].lead:section==='dist
 {section==='mentions-legales'&&<div class="notice"><p>{t.legalInfo}</p><p><bdi dir="ltr">NextGen Building Solutions</bdi> · {brandLocation[lang]}</p></div>}
 {section==='confidentialite'&&<div class="notice"><p>{t.privacyInfo}</p><p><a href={`mailto:${brand.email}`}>{brand.email}</a></p></div>}
 </div></div>
+<style>
+  .about-video-intro{padding:clamp(18px,3vw,35px) 0;background:radial-gradient(circle at 80% 0%,#176e70 0,transparent 52%),linear-gradient(120deg,#0b2741,#0a3c47 65%,#0b2741);overflow:hidden}
+  .about-video-intro-inner{display:flex;align-items:center;justify-content:center}
+  .about-page-head{padding:32px 0 35px}
+  .about-video-poster-fallback{display:block;width:auto;height:auto;max-width:min(100%,410px);max-height:420px;object-fit:contain;border-radius:17px;background:#fff}
+  @media(max-width:580px){
+    .about-video-intro{padding:10px 0 12px}
+    .about-video-intro-inner{padding-inline:10px}
+    .about-page-head{padding:25px 0 30px}
+  }
+</style>
 </Layout>
