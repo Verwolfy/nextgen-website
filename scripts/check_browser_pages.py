@@ -102,7 +102,7 @@ def check_header_preferences(browser, base: str) -> None:
 
 
 def check_v3_reduced_motion_and_data_saver(browser, base: str) -> None:
-    """Lot 92: 320px RTL/light poster-only by default, with opt-in playback."""
+    """Lot 109: pause button is for news; film remains independent and data-safe."""
     for lang in ("fr", "ar", "en"):
         page = browser.new_page(viewport={"width": 320, "height": 720})
         try:
@@ -111,21 +111,13 @@ def check_v3_reduced_motion_and_data_saver(browser, base: str) -> None:
             assert response is not None and response.status == 200
             toggle = page.locator("[data-welcome-toggle]")
             player = page.locator("[data-welcome-video]")
-            toggle.wait_for(state="visible")
-            assert toggle.inner_text() == "▶", (lang, "reduced motion should not autoplay")
-            assert player.get_attribute("src") in (None, ""), (lang, "unexpected eager video")
+            assert toggle.is_hidden(), (lang, "no useless button when news motion is disabled")
+            assert player.get_attribute("src") in (None, ""), (lang, "reduced motion eager video")
             assert page.locator('link[rel="preload"][as="image"][fetchpriority="high"]').count() == 1, lang
             assert page.evaluate("document.documentElement.scrollWidth-innerWidth") <= 4, (lang, "320px overflow")
-            assert toggle.get_attribute("aria-label"), lang
-            toggle.click()
-            assert toggle.inner_text() == "Ⅱ", (lang, "manual play opt-in")
-            assert player.get_attribute("src"), (lang, "manual playback never requested")
-            toggle.click()
-            assert toggle.inner_text() == "▶", (lang, "manual pause")
             page.screenshot(path=str(SHOTS / f"{lang}-v3-reduced-motion-320.png"))
         finally:
             page.close()
-    # Simulate Navigator.connection.saveData on one representative localized home.
     page = browser.new_page(viewport={"width": 390, "height": 844})
     try:
         page.add_init_script(
@@ -136,11 +128,13 @@ def check_v3_reduced_motion_and_data_saver(browser, base: str) -> None:
         toggle = page.locator("[data-welcome-toggle]")
         player = page.locator("[data-welcome-video]")
         toggle.wait_for(state="visible")
-        assert toggle.inner_text() == "▶", "Data Saver unexpectedly scheduled motion"
+        assert toggle.inner_text() == "Ⅱ", "Ticker should move with Data Saver enabled"
         assert player.get_attribute("src") in (None, ""), "Data Saver eagerly fetched MP4"
         toggle.click()
-        assert toggle.inner_text() == "Ⅱ", "Data Saver manual opt-in must work"
-        assert player.get_attribute("src"), "Data Saver opt-in failed"
+        assert toggle.inner_text() == "▶" and toggle.get_attribute("aria-pressed") == "true"
+        assert player.get_attribute("src") in (None, ""), "Ticker button triggered video"
+        toggle.click()
+        assert toggle.inner_text() == "Ⅱ" and toggle.get_attribute("aria-pressed") == "false"
     finally:
         page.close()
 
@@ -296,10 +290,13 @@ def check() -> None:
                             assert page.locator(".hero-mascot-card").count() == 0, path
                             toggle = welcome.locator("[data-welcome-toggle]")
                             toggle.wait_for(state="visible", timeout=5000)
+                            assert toggle.inner_text() == "Ⅱ", path
                             toggle.click()
                             assert toggle.inner_text() == "▶", path
+                            assert toggle.get_attribute("aria-pressed") == "true", path
                             toggle.click()
                             assert toggle.inner_text() == "Ⅱ", path
+                            assert toggle.get_attribute("aria-pressed") == "false", path
                             if size == "desktop":
                                 no_js = browser.new_page(java_script_enabled=False)
                                 try:
