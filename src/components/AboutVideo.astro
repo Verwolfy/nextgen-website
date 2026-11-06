@@ -14,6 +14,17 @@ const captions:Record<Lang,string>={
 <script>
   // Playback is autonomous; no background loading for Data Saver or reduced motion.
   const video=document.querySelector<HTMLVideoElement>('[data-about-video]');
+  // Interim version is intentionally silent, including after native controls try to unmute.
+  // The MP4 file retains its audio track for a future editorial decision.
+  if (video) {
+    video.defaultMuted=true;
+    const enforceSilence=()=>{
+      if (!video.muted) video.muted=true;
+      if (video.volume!==0) video.volume=0;
+    };
+    video.addEventListener('volumechange',enforceSilence);
+    enforceSilence();
+  }
   if(video && 'IntersectionObserver' in window){
     const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
     const save=Boolean((navigator as Navigator & {connection?:{saveData?:boolean}}).connection?.saveData);

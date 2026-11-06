@@ -140,7 +140,7 @@ def check_v3_reduced_motion_and_data_saver(browser, base: str) -> None:
 
 
 def check_about_video_first(browser, base: str) -> None:
-    """Lot 111: video is the first About content on mobile and desktop, FR/AR/EN."""
+    """Lot 112: title, silent film, description, then industrial steps (FR/AR/EN)."""
     for lang in ("fr", "ar", "en"):
         for size,width,height in (("mobile", 320, 720), ("desktop", 1280, 900)):
             page=browser.new_page(viewport={"width":width,"height":height})
@@ -148,26 +148,50 @@ def check_about_video_first(browser, base: str) -> None:
                 page.emulate_media(reduced_motion="reduce")
                 response=page.goto(f"{base}/{lang}/a-propos/",wait_until="domcontentloaded")
                 assert response is not None and response.status == 200, (lang,size)
-                assert page.locator("main > .about-video-intro:first-child").count() == 1, (lang,size,"video must lead main")
-                player=page.locator("main > .about-video-intro [data-about-video]")
-                assert player.count() == 1 and player.is_visible(), (lang,size)
-                assert page.locator("[data-about-video]").count() == 1, (lang,"no duplicate player")
-                assert player.get_attribute("src") == "/videos/nextgen-about-v1.mp4", lang
-                assert player.get_attribute("preload") == "none", lang
-                assert player.get_attribute("controls") is not None, lang
+                hero=page.locator("main > .about-video-intro:first-child")
+                assert hero.count() == 1, (lang,size,"About intro must lead main")
+                heading=hero.locator("h1.about-video-title")
+                player=hero.locator("[data-about-video]")
+                lead=hero.locator(".about-video-lead")
+                approach=page.locator("main .industrial-approach")
+                assert heading.count()==1 and heading.is_visible(), (lang,size,"missing heading")
+                assert player.count()==1 and player.is_visible(), (lang,size,"missing video")
+                assert lead.count()==1 and lead.is_visible(), (lang,size,"missing description")
+                assert approach.count()==1 and approach.is_visible(), (lang,size,"missing industrial section")
+                assert page.locator("[data-about-video]").count()==1, (lang,"duplicate video")
+                assert page.locator("main > .page-head").count()==0, (lang,"redundant heading")
+                assert page.locator("#about-heading").count()==0, (lang,"obsolete mission")
+                assert page.locator(".industrial-step").count()==3, (lang,"3 steps required")
+                assert hero.locator(".eyebrow").count()==0, (lang,"no redundant NextGen label")
+                assert player.get_attribute("src")=="/videos/nextgen-about-v1.mp4",lang
+                assert player.get_attribute("preload")=="none",lang
+                assert player.get_attribute("controls") is not None,lang
+                title_box=heading.bounding_box()
                 video_box=player.bounding_box()
-                page_head=page.locator("main > .page-head").bounding_box()
-                mission=page.locator("#about-heading").bounding_box()
-                assert video_box and page_head and mission, (lang,size)
-                assert video_box["height"] > 100 and video_box["width"] > 270, (lang,size,video_box)
-                assert video_box["y"] + video_box["height"] <= page_head["y"]+2, (lang,size)
-                assert page_head["y"] + page_head["height"] <= mission["y"]+2, (lang,size)
-                if size == "mobile":
-                    assert video_box["y"] < 240, (lang,video_box)
-                    assert page.evaluate("document.documentElement.scrollWidth-innerWidth") <= 4, (lang,"horizontal overflow")
-                    page.screenshot(path=str(SHOTS / f"{lang}-about-video-first-mobile.png"))
+                lead_box=lead.bounding_box()
+                approach_box=approach.bounding_box()
+                assert title_box and video_box and lead_box and approach_box, (lang,size)
+                assert title_box["y"]+title_box["height"] <= video_box["y"]+2, (lang,size,"title must precede video")
+                assert video_box["y"]+video_box["height"] <= lead_box["y"]+2, (lang,size,"description must follow video")
+                assert lead_box["y"]+lead_box["height"] <= approach_box["y"]+2, (lang,size,"steps must follow description")
+                assert video_box["height"]>100 and video_box["width"]>270, (lang,size,video_box)
+                # Even native controls cannot permanently enable soundtrack in this interim version.
+                page.wait_for_function("""() => {
+                  const v=document.querySelector('[data-about-video]');
+                  return v && v.muted && v.volume===0;
+                }""")
+                player.evaluate("el => { el.muted=false; el.volume=1; }")
+                page.wait_for_function("""() => {
+                  const v=document.querySelector('[data-about-video]');
+                  return v && v.muted && v.volume===0;
+                }""")
+                if size=="mobile":
+                    assert title_box["y"]<200, (lang,title_box)
+                    assert page.evaluate("document.documentElement.scrollWidth-innerWidth")<=4, (lang,"horizontal overflow")
+                    page.screenshot(path=str(SHOTS / f"{lang}-about-title-video-lead-mobile.png"))
             finally:
                 page.close()
+
 
 
 def check_localized_news_ticker(browser, base: str) -> None:
@@ -445,7 +469,7 @@ def check() -> None:
                             assert page.locator(".industrial-step").count() == 3, path
                             assert page.locator(".industrial-step img[src^='/images/approche/']").count() == 3, path
                             assert page.locator(".industrial-link").get_attribute("href") == f"/{lang}/contact/", path
-                            assert page.locator(".editorial-caution").count() >= 1, path
+                            assert page.locator(".industrial-disclaimer[role='note']").count() == 1, path
                         if section == "ressources":
                             assert page.locator(".resource-card").count() == 2, path
                             assert page.locator(".resource-card-demo").count() == 0, path

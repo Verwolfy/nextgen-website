@@ -1,9 +1,8 @@
 ---
-import { messages, type Lang } from '../data/site';
+import type { Lang } from '../data/site';
 import { editorialCopy } from '../data/editorial';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
-const t = messages[lang];
 const edit = editorialCopy[lang];
 const illustrations = [
   '/images/approche/01-concevoir.svg',
@@ -11,16 +10,7 @@ const illustrations = [
   '/images/approche/03-distribuer.svg',
 ] as const;
 ---
-<section aria-labelledby="about-heading">
-  <div class="about-feature about-story-copy">
-    <div>
-      <h2 id="about-heading">{t.mission}</h2>
-      <p>{t.quality}</p>
-      <p class="editorial-caution" role="note">{edit.aboutNotice}</p>
-    </div>
-  </div>
-
-  <section class="industrial-approach" aria-labelledby="industrial-approach-heading">
+<section class="industrial-approach" aria-labelledby="industrial-approach-heading">
     <header class="industrial-heading">
       <span class="industrial-kicker">{edit.aboutKicker}</span>
       <h2 id="industrial-approach-heading">{edit.aboutHeading}</h2>
@@ -49,14 +39,12 @@ const illustrations = [
       <p>{edit.aboutCta}</p>
       <a class="industrial-link" href={'/'+lang+'/contact/'}>{edit.rangeContact}</a>
     </div>
-    <p class="industrial-disclaimer">{edit.aboutNotice}</p>
-  </section>
+    <p class="industrial-disclaimer" role="note">{edit.aboutNotice}</p>
 </section>
 
 <style>
-  .about-story-copy{max-width:84ch;margin-inline:auto}
   .industrial-approach{
-    margin:64px 0 0;
+    margin:0;
     padding:clamp(32px,4vw,62px);
     color:#d7e4f0;
     background:radial-gradient(ellipse at 72% -12%,#244c7b 0,transparent 58%),linear-gradient(165deg,#0b1b3f,#071226);
@@ -99,6 +87,6 @@ const illustrations = [
   .industrial-link:focus-visible{outline:3px solid white;outline-offset:3px}
   .industrial-disclaimer{color:#b2c4d5;font-size:.78rem;line-height:1.5;margin:17px 0 0}
   @media(max-width:950px){.industrial-steps{grid-template-columns:1fr;gap:22px}.industrial-step:not(:last-child)::after{display:none}.industrial-image{max-height:280px}}
-  @media(max-width:600px){.industrial-approach{margin-top:40px;padding:28px 18px;border-radius:18px}.industrial-image{max-height:210px}.industrial-action{padding:17px}.industrial-link{width:100%;text-align:center;white-space:normal}}
+  @media(max-width:600px){.industrial-approach{margin-top:0;padding:28px 18px;border-radius:18px}.industrial-image{max-height:210px}.industrial-action{padding:17px}.industrial-link{width:100%;text-align:center;white-space:normal}}
   @media(prefers-reduced-motion:reduce){.industrial-step{transition:none}.industrial-step:hover{transform:none}}
 </style>

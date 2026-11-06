@@ -26,14 +26,16 @@ const aboutVideoLabel:Record<Lang,string>={fr:'Présentation vidéo de NextGen',
 {section==='a-propos' && (
   <section class="about-video-intro" aria-label={aboutVideoLabel[lang]}>
     <div class="container about-video-intro-inner">
+      <h1 class="about-video-title">{heading}</h1>
       {aboutVideoReady
         ? <AboutVideo lang={lang} />
         : <img class="about-video-poster-fallback" src="/images/Nexo-Geno.webp" alt={t.mascotsAlt} width="800" height="1390" />
       }
+      <p class="about-video-lead">{description}</p>
     </div>
   </section>
 )}
-<div class:list={['page-head',{'about-page-head':section==='a-propos'}]}><div class="container"><span class="eyebrow">NextGen Building Solutions</span><h1>{heading}</h1><p>{description}</p></div></div>
+{section!=='a-propos' && <div class="page-head"><div class="container"><span class="eyebrow">NextGen Building Solutions</span><h1>{heading}</h1><p>{description}</p></div></div>}
 <div class="section"><div class="container">
 {section==='gammes'&&<RangeOverview lang={lang} />}
 {section==='catalogue'&&<ConceptCatalogue lang={lang} />}
@@ -45,14 +47,16 @@ const aboutVideoLabel:Record<Lang,string>={fr:'Présentation vidéo de NextGen',
 {section==='confidentialite'&&<div class="notice"><p>{t.privacyInfo}</p><p><a href={`mailto:${brand.email}`}>{brand.email}</a></p></div>}
 </div></div>
 <style>
-  .about-video-intro{padding:clamp(18px,3vw,35px) 0;background:radial-gradient(circle at 80% 0%,#176e70 0,transparent 52%),linear-gradient(120deg,#0b2741,#0a3c47 65%,#0b2741);overflow:hidden}
-  .about-video-intro-inner{display:flex;align-items:center;justify-content:center}
-  .about-page-head{padding:32px 0 35px}
+  .about-video-intro{padding:clamp(20px,3.2vw,42px) 0 clamp(28px,4vw,48px);background:radial-gradient(circle at 80% 0%,#176e70 0,transparent 52%),linear-gradient(120deg,#0b2741,#0a3c47 65%,#0b2741);overflow:hidden}
+  .about-video-intro-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(15px,2.3vw,26px)}
+  .about-video-title{margin:0;text-align:center;color:#fff;font-size:clamp(1.9rem,4.2vw,3.65rem);line-height:1.25}
+  .about-video-lead{margin:0;max-width:860px;color:#e3eff1;text-align:center;font-size:clamp(.98rem,1.45vw,1.16rem);line-height:1.7}
   .about-video-poster-fallback{display:block;width:auto;height:auto;max-width:min(100%,410px);max-height:420px;object-fit:contain;border-radius:17px;background:#fff}
   @media(max-width:580px){
-    .about-video-intro{padding:10px 0 12px}
-    .about-video-intro-inner{padding-inline:10px}
-    .about-page-head{padding:25px 0 30px}
+    .about-video-intro{padding:14px 0 25px}
+    .about-video-intro-inner{padding-inline:10px;gap:13px}
+    .about-video-title{font-size:clamp(1.7rem,7vw,2.3rem)}
+    .about-video-lead{font-size:.96rem;line-height:1.65}
   }
 </style>
 </Layout>
