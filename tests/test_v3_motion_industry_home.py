@@ -17,7 +17,7 @@ class MotionIndustryHomepage(unittest.TestCase):
         for snippet in ('preload="none"','muted playsinline loop',
                         'IntersectionObserver', 'prefers-reduced-motion: reduce',
                         'visibilitychange','video.pause()','video.play()',
-                        'data-welcome-toggle','userChoice',"'playing'",
+                        'data-welcome-toggle','tickerPaused','autoAllowed',
                         '/videos/nextgen-nexo-geno-welcome.mp4?v=20261105-v3',
                         '/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3'):
             self.assertIn(snippet,s)
