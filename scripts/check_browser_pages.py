@@ -148,9 +148,10 @@ def check_v3_reduced_motion_and_data_saver(browser, base: str) -> None:
 def check_localized_news_ticker(browser, base: str) -> None:
     """Lot 107: news visibly starts in viewport for FR/AR/EN, not just present in DOM."""
     for lang in ("fr", "ar", "en"):
+      for motion in ("reduce", "no-preference"):
         page = browser.new_page(viewport={"width": 390, "height": 844})
         try:
-            page.emulate_media(reduced_motion="reduce")
+            page.emulate_media(reduced_motion=motion)
             response = page.goto(f"{base}/{lang}/", wait_until="domcontentloaded")
             assert response is not None and response.status == 200
             ticker = page.locator("[data-news-ticker]")
@@ -173,6 +174,8 @@ def check_localized_news_ticker(browser, base: str) -> None:
             assert dimensions["viewportWidth"] > 0 and dimensions["itemWidth"] > 0, (lang, dimensions)
             assert ticker.locator("a").count() == 0, (lang, "news must not be clickable")
             assert page.locator("[data-welcome-toggle]").count() == 1, lang
+            direction = ticker.locator(".welcome-news-track").evaluate("el => getComputedStyle(el).animationDirection")
+            assert direction == "normal", (lang, motion, direction)
         finally:
             page.close()
 
