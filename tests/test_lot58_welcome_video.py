@@ -42,7 +42,8 @@ class Lot58WelcomeVideo(unittest.TestCase):
             "i18n.caption",
         ):
             self.assertNotIn(absent, component, absent)
-        self.assertIn("justify-content:flex-end", component)
+        self.assertIn("welcome-news-ticker", component)
+        self.assertIn(".welcome-video-actions{display:flex;align-items:center", component)
         self.assertNotIn("autoplay", component)
         self.assertNotIn("https://", component)
 

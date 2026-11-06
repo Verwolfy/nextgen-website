@@ -13,8 +13,6 @@ type HomeV3Copy = {
   featuredAction: string;
   featuredDisclaimer: string;
   rangesAction: string;
-  motionLabel: string;
-  motionDuration: string;
   stepsLabel: string;
 };
 export const homeV3Copy: Record<Lang, HomeV3Copy> = {
@@ -30,8 +28,6 @@ export const homeV3Copy: Record<Lang, HomeV3Copy> = {
     featuredAction: 'Voir la référence',
     featuredDisclaimer: 'Les images sont des maquettes. Les fiches techniques et les données commerciales définitives ne sont pas validées.',
     rangesAction: 'Explorer le catalogue',
-    motionLabel: 'FILM NEXTGEN · NEXO & GENO',
-    motionDuration: '10 s · sans son',
     stepsLabel: 'Notre démarche en trois étapes',
   },
   ar: {
@@ -46,8 +42,6 @@ export const homeV3Copy: Record<Lang, HomeV3Copy> = {
     featuredAction: 'عرض المرجع',
     featuredDisclaimer: 'الصور نماذج توضيحية، والبيانات الفنية والتجارية النهائية لم تُعتمد بعد.',
     rangesAction: 'استعراض الكتالوج',
-    motionLabel: 'فيلم NEXTGEN · نيكسو وجينو',
-    motionDuration: '10 ثوانٍ · بدون صوت',
     stepsLabel: 'منهجيتنا في ثلاث مراحل',
   },
   en: {
@@ -62,8 +56,6 @@ export const homeV3Copy: Record<Lang, HomeV3Copy> = {
     featuredAction: 'View reference',
     featuredDisclaimer: 'Images are concept mockups. Final technical documents and commercial specifications are not yet validated.',
     rangesAction: 'Browse the catalogue',
-    motionLabel: 'NEXTGEN FILM · NEXO & GENO',
-    motionDuration: '10 s · muted',
     stepsLabel: 'Our three-step approach',
   },
 };
