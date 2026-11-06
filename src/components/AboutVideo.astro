@@ -1,0 +1,36 @@
+---
+import type { Lang } from '../data/site';
+interface Props { lang: Lang }
+const {lang}=Astro.props;
+const captions:Record<Lang,string>={
+  fr:'Vidéo provisoire : Nexo et Geno présentent la démarche NextGen',
+  ar:'فيديو مؤقت: نيكسو وجينو يقدمان منهجية NextGen',
+  en:'Interim video: Nexo and Geno present the NextGen approach',
+};
+---
+<video class="about-video" data-about-video src="/videos/nextgen-about-v1.mp4"
+  poster="/images/Nexo-Geno.webp" width="1280" height="720"
+  aria-label={captions[lang]} preload="none" muted playsinline loop controls></video>
+<script>
+  // Playback is autonomous; no background loading for Data Saver or reduced motion.
+  const video=document.querySelector<HTMLVideoElement>('[data-about-video]');
+  if(video && 'IntersectionObserver' in window){
+    const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+    const save=Boolean((navigator as Navigator & {connection?:{saveData?:boolean}}).connection?.saveData);
+    let visible=false;
+    const sync=async()=>{
+      if(!visible || document.hidden || reduce.matches || save){video.pause();return;}
+      try{await video.play();}catch{/* Native player remains available */ }
+    };
+    const observer=new IntersectionObserver(entries=>{
+      visible=entries.some(entry=>entry.isIntersecting);void sync();
+    },{rootMargin:'100px'});
+    observer.observe(video);
+    document.addEventListener('visibilitychange',()=>{void sync();});
+    reduce.addEventListener('change',()=>{void sync();});
+  }
+</script>
+<style>
+  .about-video{display:block;width:min(100%,560px);height:auto;aspect-ratio:16/9;object-fit:contain;margin-inline:auto;border:1px solid #d4e2e7;border-radius:22px;background:#f7faf9;box-shadow:0 16px 40px #09223d22}
+  @media(prefers-reduced-motion:reduce){.about-video{animation:none}}
+</style>
