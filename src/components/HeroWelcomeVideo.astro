@@ -1,10 +1,11 @@
 ---
 import type { Lang } from '../data/site';
-import { homeV3Copy } from '../data/home-v3';
 import { tickerContent } from '../data/nextgen-ticker';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const ticker = tickerContent[lang];
+const currentDate = new Date().toISOString().slice(0,10);
+const freshItems = ticker.items.filter(item => item.expires >= currentDate);
 const i18n = {
   fr: {
     label: 'Nexo et Geno vous invitent à découvrir NextGen',
@@ -38,23 +39,39 @@ const i18n = {
     aria-hidden="true"
   ></video>
   <div class="welcome-video-actions">
-    <div class="welcome-news-ticker" role="region" aria-label={ticker.label}>
+    <div class="welcome-news-ticker" data-news-ticker role="region" aria-label={ticker.label}>
       <div class="welcome-news-viewport">
         <div class="welcome-news-track">
           <span class="welcome-news-group" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-            {ticker.items.map(item => <a class="welcome-news-item" href={item.url} target="_blank" rel="noopener noreferrer" title={`${item.source} · ${item.date}`}><span class="welcome-news-category">{item.category}</span><span>{item.text}</span><small>{item.source} · {item.date}</small></a>)}
+            {freshItems.map(item => <span class="welcome-news-item" data-news-expires={item.expires}><span class="welcome-news-category">{item.category}</span><span>{item.text}</span><small>{item.source} · {item.date}</small></span>)}
           </span>
-          <span class="welcome-news-group welcome-news-duplicate" aria-hidden="true" inert>
-            {ticker.items.map(item => <span class="welcome-news-item"><span class="welcome-news-category">{item.category}</span><span>{item.text}</span><small>{item.source} · {item.date}</small></span>)}
+          <span class="welcome-news-group welcome-news-duplicate" aria-hidden="true">
+            {freshItems.map(item => <span class="welcome-news-item" data-news-expires={item.expires}><span class="welcome-news-category">{item.category}</span><span>{item.text}</span><small>{item.source} · {item.date}</small></span>)}
           </span>
         </div>
       </div>
+      <span class="welcome-news-fallback" data-news-fallback hidden>{ticker.fallback}</span>
     </div>
     <button type="button" data-welcome-toggle aria-label={i18n.pause} data-label-play={i18n.play} data-label-pause={i18n.pause} hidden>Ⅱ</button>
   </div>
   <a class="welcome-video-cta" href={`/${lang}/catalogue/`}>{i18n.cta}</a>
 </div>
 <script>
+  // Client expiry gate also protects already-deployed static HTML from going stale.
+  const news = document.querySelector<HTMLElement>('[data-news-ticker]');
+  const refreshNews = () => {
+    if (!news) return;
+    const today = new Date().toISOString().slice(0,10);
+    const items = news.querySelectorAll<HTMLElement>('[data-news-expires]');
+    items.forEach(item => { item.hidden = (item.dataset.newsExpires || '') < today; });
+    const visible = news.querySelectorAll('.welcome-news-group:first-child .welcome-news-item:not([hidden])').length;
+    const track = news.querySelector<HTMLElement>('.welcome-news-track');
+    const fallback = news.querySelector<HTMLElement>('[data-news-fallback]');
+    if (track) track.hidden = visible === 0;
+    if (fallback) fallback.hidden = visible !== 0;
+  };
+  refreshNews();
+  document.addEventListener('visibilitychange',refreshNews);
   const card = document.querySelector<HTMLElement>('[data-welcome-card]');
   const video = card?.querySelector<HTMLVideoElement>('[data-welcome-video]');
   const button = card?.querySelector<HTMLButtonElement>('[data-welcome-toggle]');
@@ -107,13 +124,13 @@ const i18n = {
   .welcome-news-track{display:flex;width:max-content;align-items:center;animation:welcome-news-scroll 48s linear infinite}
   .welcome-news-group{display:flex;align-items:center;gap:32px;flex:none;padding-inline-end:32px}
   .welcome-news-item{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;font-size:.74rem;color:#153e42;text-decoration:none}
-  .welcome-news-item:hover{text-decoration:underline}
-  .welcome-news-category{font-size:.65rem;font-weight:800;text-transform:uppercase;color:#086947}
+    .welcome-news-category{font-size:.65rem;font-weight:800;text-transform:uppercase;color:#086947}
   .welcome-news-item small{color:#5b6c6d;font-size:.64rem}
   .welcome-news-ticker:hover .welcome-news-track,.welcome-news-ticker:focus-within .welcome-news-track{animation-play-state:paused}
   @keyframes welcome-news-scroll{to{transform:translateX(-50%)}}
   .welcome-video-card[dir="rtl"] .welcome-news-track{animation-direction:reverse}
-  .welcome-news-item:focus-visible{outline:2px solid #086b50;outline-offset:3px}
+  .welcome-news-item[hidden],.welcome-news-track[hidden],.welcome-news-fallback[hidden]{display:none}
+  .welcome-news-fallback{font-size:.72rem;color:#526c70}
   @media(prefers-reduced-motion:reduce){.welcome-news-track{animation:none;width:auto}.welcome-news-viewport{overflow-x:auto}.welcome-news-duplicate{display:none}}
 
   [data-welcome-toggle]{min-width:43px;min-height:43px;background:#0e3140;border:1px solid #0e3140;border-radius:100px;color:#fff;cursor:pointer;font-size:1rem}
