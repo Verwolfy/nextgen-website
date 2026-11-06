@@ -128,6 +128,8 @@ const i18n = {
   .welcome-news-item small{color:#5b6c6d;font-size:.64rem}
   .welcome-news-ticker:hover .welcome-news-track,.welcome-news-ticker:focus-within .welcome-news-track{animation-play-state:paused}
   @keyframes welcome-news-scroll{to{transform:translateX(-50%)}}
+  /* Arabic moves left-to-right; track geometry stays LTR to avoid RTL clipping. */
+  .welcome-video-card[dir="rtl"] .welcome-news-track{animation-direction:reverse}
   .welcome-news-item[hidden],.welcome-news-track[hidden],.welcome-news-fallback[hidden]{display:none}
   .welcome-news-fallback{font-size:.72rem;color:#526c70}
   @media(prefers-reduced-motion:reduce){.welcome-news-track{animation:none;width:auto}.welcome-news-viewport{overflow-x:auto}.welcome-news-duplicate{display:none}}
