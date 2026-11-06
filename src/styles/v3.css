@@ -352,7 +352,7 @@ body{background:var(--v3-paper)}
 }
 
 
-/* Lot 105: FLASO-inspired light accents, scoped to homepage. */
+/* Lot 105: FLASO-inspired light accents */
 .hero.v3-motion-hero{
   background:
     repeating-linear-gradient(90deg,transparent 0,transparent 86px,#d6fff008 87px),
