@@ -24,7 +24,7 @@ class TestMobileNavigation(unittest.TestCase):
         for label in ("'Navigation principale'", "'القائمة الرئيسية'", "'Main navigation'",
                       "'Choix de la langue'", "'اختيار اللغة'", "'Choose language'"):
             self.assertIn(label, data)
-        about = (ROOT / "src/components/AboutStory.astro").read_text(encoding="utf-8")
+        about = (ROOT / "src/pages/[lang]/[section].astro").read_text(encoding="utf-8")
         self.assertIn("alt={t.mascotsAlt}", about)
         hero = (ROOT / "src/components/HeroSlider.astro").read_text(encoding="utf-8")
         self.assertIn("alt={`${copy.visual} ${number} — ${copy.gallery}`}", hero)
