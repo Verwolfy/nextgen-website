@@ -24,7 +24,7 @@ class MotionPerformance(unittest.TestCase):
     def test_user_opt_in_required_for_data_saver_and_reduced_motion(self):
         player=(ROOT/"src/components/HeroWelcomeVideo.astro").read_text(encoding="utf-8")
         for token in ("connection?.saveData","reduceMotion.matches","autoAllowed",
-                      "syncButton","userChoice === 'playing'",
+                      "syncTickerButton","tickerPaused",
                       "IntersectionObserver","video.pause()","video.play()",
                       'preload="none"','muted playsinline loop',
                       'data-welcome-toggle'):
