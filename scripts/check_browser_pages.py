@@ -469,7 +469,7 @@ def check() -> None:
                             assert page.locator(".industrial-step").count() == 3, path
                             assert page.locator(".industrial-step img[src^='/images/approche/']").count() == 3, path
                             assert page.locator(".industrial-link").get_attribute("href") == f"/{lang}/contact/", path
-                            assert page.locator(".editorial-caution").count() >= 1, path
+                            assert page.locator(".industrial-disclaimer[role='note']").count() == 1, path
                         if section == "ressources":
                             assert page.locator(".resource-card").count() == 2, path
                             assert page.locator(".resource-card-demo").count() == 0, path
