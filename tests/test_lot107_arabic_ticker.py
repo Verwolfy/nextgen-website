@@ -8,7 +8,7 @@ class TestArabicTicker(unittest.TestCase):
         self.assertIn('<div class="welcome-news-viewport" dir="ltr">',source)
         self.assertIn('<div class="welcome-news-track" dir="ltr">',source)
         self.assertIn('dir={lang === \'ar\' ? \'rtl\' : \'ltr\'} data-news-expires',source)
-        self.assertNotIn('animation-direction:reverse',source)
+        self.assertIn('.welcome-video-card[dir="rtl"] .welcome-news-track{animation-direction:reverse}',source)
         self.assertIn('direction:ltr',source)
         self.assertIn('data-news-fallback',source)
         self.assertIn('item.expires >= currentDate',source)
