@@ -11,15 +11,19 @@ class AboutV1Video(unittest.TestCase):
         for name in ("À propos de NextGen","عن NextGen","About NextGen"):
             self.assertIn(name,(ROOT/"src/data/site.ts").read_text(encoding="utf-8"))
     def test_video_3_languages_and_missing_binary_fallback(self):
-        src=(ROOT/"src/components/AboutStory.astro").read_text(encoding="utf-8")
-        for token in ("aboutVideoReady = existsSync","public/videos/nextgen-about-v1.mp4",
+        story=(ROOT/"src/components/AboutStory.astro").read_text(encoding="utf-8")
+        src=(ROOT/"src/components/AboutVideo.astro").read_text(encoding="utf-8")
+        for token in ("public/videos/nextgen-about-v1.mp4",
                       'src="/videos/nextgen-about-v1.mp4"','poster="/images/Nexo-Geno.webp"',
                       "fr:","ar:","en:","data-about-video","preload=\"none\"",
                       "muted playsinline loop controls","IntersectionObserver",
                       "reduceMotion.matches","connection?.saveData",
                       "aboutVideo.pause()","aboutVideo.play()"):
             self.assertIn(token,src,token)
-        self.assertIn('<img src="/images/Nexo-Geno.webp"',src)
+        self.assertIn("aboutVideoReady = existsSync",story)
+        self.assertIn("<AboutVideo lang={lang} />",story)
+        self.assertIn('<img src="/images/Nexo-Geno.webp"',story)
+        self.assertNotIn("<script",story)
         self.assertIn("noindex,nofollow",(ROOT/"src/layouts/Layout.astro").read_text(encoding="utf-8"))
         self.assertIn("Disallow: /",(ROOT/"public/robots.txt").read_text(encoding="utf-8"))
 if __name__=="__main__":
