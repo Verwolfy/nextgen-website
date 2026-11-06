@@ -5,7 +5,7 @@ type TickerItem = { category: string; text: string; source: string; date: string
 type TickerCopy = { label: string; items: TickerItem[] };
 const roads = 'https://www.aps.dz/fr/algerie/developpement/mvwf185y-lancement-et-mise-en-service-de-95-projets-de-developpement-du-reseau-routier-a-travers-24-wilayas';
 const maintenance = 'https://www.aps.dz/fr/economie/habitat-et-infrastructure/mvnxgk43-djellaoui-preside-une-reunion-de-coordination-sur-l-entretien-des-routes';
-const fx = 'https://www.bank-of-algeria.dz/';
+const fx = 'https://www.bank-of-algeria.dz/taux-de-change-journalier/';
 export const tickerContent: Record<Lang, TickerCopy> = {
   fr: {
     label: 'Fil d’informations BTPH et économie, sources datées',
