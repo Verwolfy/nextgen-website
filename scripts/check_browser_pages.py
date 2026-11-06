@@ -145,6 +145,38 @@ def check_v3_reduced_motion_and_data_saver(browser, base: str) -> None:
         page.close()
 
 
+def check_localized_news_ticker(browser, base: str) -> None:
+    """Lot 107: news visibly starts in viewport for FR/AR/EN, not just present in DOM."""
+    for lang in ("fr", "ar", "en"):
+        page = browser.new_page(viewport={"width": 390, "height": 844})
+        try:
+            page.emulate_media(reduced_motion="reduce")
+            response = page.goto(f"{base}/{lang}/", wait_until="domcontentloaded")
+            assert response is not None and response.status == 200
+            ticker = page.locator("[data-news-ticker]")
+            assert ticker.count() == 1, lang
+            viewport = ticker.locator(".welcome-news-viewport")
+            first = ticker.locator(".welcome-news-group:first-child .welcome-news-item:not([hidden])").first
+            assert first.count() == 1, (lang, "no fresh news item")
+            dimensions = page.evaluate("""() => {
+              const view = document.querySelector('.welcome-news-viewport').getBoundingClientRect();
+              const first = document.querySelector('.welcome-news-group:first-child .welcome-news-item:not([hidden])').getBoundingClientRect();
+              return {
+                direction: getComputedStyle(document.querySelector('.welcome-news-track')).direction,
+                visible: first.right > view.left && first.left < view.right &&
+                         first.bottom > view.top && first.top < view.bottom,
+                viewportWidth: view.width, itemWidth: first.width
+              };
+            }""")
+            assert dimensions["direction"] == "ltr", (lang, dimensions)
+            assert dimensions["visible"], (lang, dimensions)
+            assert dimensions["viewportWidth"] > 0 and dimensions["itemWidth"] > 0, (lang, dimensions)
+            assert ticker.locator("a").count() == 0, (lang, "news must not be clickable")
+            assert page.locator("[data-welcome-toggle]").count() == 1, lang
+        finally:
+            page.close()
+
+
 def check_localized_skip_keyboard(browser, base: str) -> None:
     """Lot 94: keyboard-only skip links work on 320px FR/AR/EN, even without JS."""
     labels = {
@@ -197,6 +229,7 @@ def check() -> None:
             browser = p.chromium.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
             check_header_preferences(browser, base)
             check_v3_reduced_motion_and_data_saver(browser, base)
+            check_localized_news_ticker(browser, base)
             check_localized_skip_keyboard(browser, base)
             for lang in ("fr", "ar", "en"):
                 for size, width, height in (("desktop", 1280, 900), ("mobile", 390, 844)):
