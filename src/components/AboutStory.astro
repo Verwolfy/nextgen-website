@@ -1,10 +1,20 @@
 ---
 import { messages, type Lang } from '../data/site';
 import { editorialCopy } from '../data/editorial';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = messages[lang];
 const edit = editorialCopy[lang];
+// The same approved interim clip serves FR/AR/EN once uploaded to public/videos.
+// If the binary is not yet present, preserve the current illustration (no 404).
+const aboutVideoReady = existsSync(join(process.cwd(), 'public/videos/nextgen-about-v1.mp4'));
+const videoAlt: Record<Lang,string> = {
+  fr: 'Vidéo de présentation de la démarche NextGen par Nexo et Geno',
+  ar: 'فيديو يعرض فيه نيكسو وجينو منهجية NextGen',
+  en: 'Nexo and Geno present the NextGen approach',
+};
 const illustrations = [
   '/images/approche/01-concevoir.svg',
   '/images/approche/02-produire.svg',
@@ -18,7 +28,19 @@ const illustrations = [
       <p>{t.quality}</p>
       <p class="editorial-caution" role="note">{edit.aboutNotice}</p>
     </div>
-    <img src="/images/Nexo-Geno.webp" alt={t.mascotsAlt} width="800" height="1390" loading="lazy" class="mascot" />
+    {aboutVideoReady
+      ? <video
+          class="about-video"
+          data-about-video
+          src="/videos/nextgen-about-v1.mp4"
+          poster="/images/Nexo-Geno.webp"
+          width="1280" height="720"
+          aria-label={videoAlt[lang]}
+          preload="none"
+          muted playsinline loop controls
+        ></video>
+      : <img src="/images/Nexo-Geno.webp" alt={t.mascotsAlt} width="800" height="1390" loading="lazy" class="mascot" />
+    }
   </div>
 
   <section class="industrial-approach" aria-labelledby="industrial-approach-heading">
@@ -54,7 +76,39 @@ const illustrations = [
   </section>
 </section>
 
+<script>
+  // Same lightweight playback policy as the homepage: no eager loading,
+  // no forced autoplay under Data Saver or reduced-motion.
+  const aboutVideo = document.querySelector<HTMLVideoElement>('[data-about-video]');
+  if (aboutVideo && 'IntersectionObserver' in window) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const saveData = Boolean((navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData);
+    let visible = false;
+    const sync = async () => {
+      if (!visible || document.hidden || reduceMotion.matches || saveData) {
+        aboutVideo.pause();
+        return;
+      }
+      try { await aboutVideo.play(); } catch { /* Native controls remain available */ }
+    };
+    const observer = new IntersectionObserver(entries => {
+      visible = entries.some(entry => entry.isIntersecting);
+      void sync();
+    }, {rootMargin:'100px'});
+    observer.observe(aboutVideo);
+    document.addEventListener('visibilitychange', () => { void sync(); });
+    reduceMotion.addEventListener('change', () => { void sync(); });
+  }
+</script>
+
 <style>
+  .about-video{
+    display:block;width:min(100%,560px);height:auto;aspect-ratio:16/9;
+    object-fit:contain;margin-inline:auto;border:1px solid #d4e2e7;
+    border-radius:22px;background:#f7faf9;box-shadow:0 16px 40px #09223d22;
+  }
+  @media(prefers-reduced-motion:reduce){.about-video{animation:none}}
+
   .industrial-approach{
     margin:64px 0 0;
     padding:clamp(32px,4vw,62px);
