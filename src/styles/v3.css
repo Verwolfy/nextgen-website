@@ -352,8 +352,7 @@ body{background:var(--v3-paper)}
 }
 
 
-/* Lot 105: FLASO-inspired light accents, keeping NextGen's industrial dark base.
-   Homepage hero only — product sheets, brand mark, film and utility UI unchanged. */
+/* Lot 105: FLASO-inspired light accents, scoped to homepage. */
 .hero.v3-motion-hero{
   background:
     repeating-linear-gradient(90deg,transparent 0,transparent 86px,#d6fff008 87px),
@@ -361,7 +360,7 @@ body{background:var(--v3-paper)}
     linear-gradient(112deg,#061827 0%,#092d3d 39%,#126b65 73%,#087da2 100%);
 }
 .hero.v3-motion-hero::before{
-  content:"";position:absolute;inset:0 0 auto;height:5px;z-index:1;
+  content:"";position:absolute;inset:0 0 auto;height:5px;
   background:linear-gradient(90deg,#8ac846,#36bda5 34%,#0bb8d5 67%,#12537f);
   pointer-events:none;
 }
