@@ -40,13 +40,13 @@ const i18n = {
   ></video>
   <div class="welcome-video-actions">
     <div class="welcome-news-ticker" data-news-ticker role="region" aria-label={ticker.label}>
-      <div class="welcome-news-viewport">
-        <div class="welcome-news-track">
-          <span class="welcome-news-group" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-            {freshItems.map(item => <span class="welcome-news-item" data-news-expires={item.expires}><span class="welcome-news-category">{item.category}</span><span>{item.text}</span><small>{item.source} · {item.date}</small></span>)}
+      <div class="welcome-news-viewport" dir="ltr">
+        <div class="welcome-news-track" dir="ltr">
+          <span class="welcome-news-group" dir="ltr">
+            {freshItems.map(item => <span class="welcome-news-item" dir={lang === 'ar' ? 'rtl' : 'ltr'} data-news-expires={item.expires}><span class="welcome-news-category">{item.category}</span><span>{item.text}</span><small>{item.source} · {item.date}</small></span>)}
           </span>
           <span class="welcome-news-group welcome-news-duplicate" aria-hidden="true">
-            {freshItems.map(item => <span class="welcome-news-item" data-news-expires={item.expires}><span class="welcome-news-category">{item.category}</span><span>{item.text}</span><small>{item.source} · {item.date}</small></span>)}
+            {freshItems.map(item => <span class="welcome-news-item" dir={lang === 'ar' ? 'rtl' : 'ltr'} data-news-expires={item.expires}><span class="welcome-news-category">{item.category}</span><span>{item.text}</span><small>{item.source} · {item.date}</small></span>)}
           </span>
         </div>
       </div>
@@ -120,15 +120,14 @@ const i18n = {
   .welcome-video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#f4f6f4}
   .welcome-video-actions{display:flex;align-items:center;gap:10px;min-height:62px;padding:7px 12px;background:#f8faf8}
   .welcome-news-ticker{flex:1;min-width:0;color:#103b40}
-  .welcome-news-viewport{overflow:hidden;position:relative}
-  .welcome-news-track{display:flex;width:max-content;align-items:center;animation:welcome-news-scroll 48s linear infinite}
+  .welcome-news-viewport{overflow:hidden;position:relative;direction:ltr}
+  .welcome-news-track{display:flex;direction:ltr;width:max-content;align-items:center;animation:welcome-news-scroll 48s linear infinite}
   .welcome-news-group{display:flex;align-items:center;gap:32px;flex:none;padding-inline-end:32px}
   .welcome-news-item{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;font-size:.74rem;color:#153e42;text-decoration:none}
     .welcome-news-category{font-size:.65rem;font-weight:800;text-transform:uppercase;color:#086947}
   .welcome-news-item small{color:#5b6c6d;font-size:.64rem}
   .welcome-news-ticker:hover .welcome-news-track,.welcome-news-ticker:focus-within .welcome-news-track{animation-play-state:paused}
   @keyframes welcome-news-scroll{to{transform:translateX(-50%)}}
-  .welcome-video-card[dir="rtl"] .welcome-news-track{animation-direction:reverse}
   .welcome-news-item[hidden],.welcome-news-track[hidden],.welcome-news-fallback[hidden]{display:none}
   .welcome-news-fallback{font-size:.72rem;color:#526c70}
   @media(prefers-reduced-motion:reduce){.welcome-news-track{animation:none;width:auto}.welcome-news-viewport{overflow-x:auto}.welcome-news-duplicate{display:none}}
