@@ -146,38 +146,56 @@ def check_v3_reduced_motion_and_data_saver(browser, base: str) -> None:
 
 
 def check_localized_news_ticker(browser, base: str) -> None:
-    """Lot 107: news visibly starts in viewport for FR/AR/EN, not just present in DOM."""
+    """Lot 108: visible nonclickable news; Arabic marquee travels right, FR/EN left."""
     for lang in ("fr", "ar", "en"):
-      for motion in ("reduce", "no-preference"):
-        page = browser.new_page(viewport={"width": 390, "height": 844})
-        try:
-            page.emulate_media(reduced_motion=motion)
-            response = page.goto(f"{base}/{lang}/", wait_until="domcontentloaded")
-            assert response is not None and response.status == 200
-            ticker = page.locator("[data-news-ticker]")
-            assert ticker.count() == 1, lang
-            viewport = ticker.locator(".welcome-news-viewport")
-            first = ticker.locator(".welcome-news-group:first-child .welcome-news-item:not([hidden])").first
-            assert first.count() == 1, (lang, "no fresh news item")
-            dimensions = page.evaluate("""() => {
-              const view = document.querySelector('.welcome-news-viewport').getBoundingClientRect();
-              const first = document.querySelector('.welcome-news-group:first-child .welcome-news-item:not([hidden])').getBoundingClientRect();
-              return {
-                direction: getComputedStyle(document.querySelector('.welcome-news-track')).direction,
-                visible: first.right > view.left && first.left < view.right &&
-                         first.bottom > view.top && first.top < view.bottom,
-                viewportWidth: view.width, itemWidth: first.width
-              };
-            }""")
-            assert dimensions["direction"] == "ltr", (lang, dimensions)
-            assert dimensions["visible"], (lang, dimensions)
-            assert dimensions["viewportWidth"] > 0 and dimensions["itemWidth"] > 0, (lang, dimensions)
-            assert ticker.locator("a").count() == 0, (lang, "news must not be clickable")
-            assert page.locator("[data-welcome-toggle]").count() == 1, lang
-            direction = ticker.locator(".welcome-news-track").evaluate("el => getComputedStyle(el).animationDirection")
-            assert direction == "normal", (lang, motion, direction)
-        finally:
-            page.close()
+        for motion in ("reduce", "no-preference"):
+            page = browser.new_page(viewport={"width": 390, "height": 844})
+            try:
+                page.emulate_media(reduced_motion=motion)
+                response = page.goto(f"{base}/{lang}/", wait_until="domcontentloaded")
+                assert response is not None and response.status == 200
+                ticker = page.locator("[data-news-ticker]")
+                assert ticker.count() == 1, lang
+                assert ticker.locator("a").count() == 0, (lang, "news must not be clickable")
+                assert page.locator("[data-welcome-toggle]").count() == 1, lang
+                result = page.evaluate("""() => {
+                  const view = document.querySelector('.welcome-news-viewport').getBoundingClientRect();
+                  const track = document.querySelector('.welcome-news-track');
+                  const first = track.querySelector('.welcome-news-group:first-child .welcome-news-item:not([hidden])');
+                  const visible = [...track.querySelectorAll('.welcome-news-item:not([hidden])')].some(el => {
+                    const box=el.getBoundingClientRect();
+                    return box.right > view.left && box.left < view.right &&
+                           box.bottom > view.top && box.top < view.bottom;
+                  });
+                  const css=getComputedStyle(track);
+                  return { visible, width:view.width, firstWidth:first?.getBoundingClientRect().width ?? 0,
+                           direction:css.direction, animation:css.animationDirection,
+                           name:css.animationName };
+                }""")
+                assert result["direction"] == "ltr", (lang, motion, result)
+                assert result["visible"] and result["width"] > 0 and result["firstWidth"] > 0, (lang, motion, result)
+                if motion == "no-preference":
+                    expected = "reverse" if lang == "ar" else "normal"
+                    assert result["animation"] == expected, (lang, result)
+                    assert result["name"] != "none", (lang, result)
+                    # Sample the actual movement direction without waiting for animation frames.
+                    direction = page.evaluate("""() => {
+                      const track = document.querySelector('.welcome-news-track');
+                      const anim = track.getAnimations().find(a => a.effect);
+                      if (!anim) return null;
+                      anim.pause();
+                      anim.currentTime=1000;
+                      const a=track.getBoundingClientRect().x;
+                      anim.currentTime=3000;
+                      const b=track.getBoundingClientRect().x;
+                      return b-a;
+                    }""")
+                    assert direction is not None, (lang, "no motion")
+                    assert (direction > 0) == (lang == "ar"), (lang, direction)
+                else:
+                    assert result["name"] == "none", (lang, result)
+            finally:
+                page.close()
 
 
 def check_localized_skip_keyboard(browser, base: str) -> None:
