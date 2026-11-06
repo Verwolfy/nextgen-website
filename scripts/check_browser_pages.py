@@ -139,6 +139,37 @@ def check_v3_reduced_motion_and_data_saver(browser, base: str) -> None:
         page.close()
 
 
+def check_about_video_first(browser, base: str) -> None:
+    """Lot 111: video is the first About content on mobile and desktop, FR/AR/EN."""
+    for lang in ("fr", "ar", "en"):
+        for size,width,height in (("mobile", 320, 720), ("desktop", 1280, 900)):
+            page=browser.new_page(viewport={"width":width,"height":height})
+            try:
+                page.emulate_media(reduced_motion="reduce")
+                response=page.goto(f"{base}/{lang}/a-propos/",wait_until="domcontentloaded")
+                assert response is not None and response.status == 200, (lang,size)
+                assert page.locator("main > .about-video-intro:first-child").count() == 1, (lang,size,"video must lead main")
+                player=page.locator("main > .about-video-intro [data-about-video]")
+                assert player.count() == 1 and player.is_visible(), (lang,size)
+                assert page.locator("[data-about-video]").count() == 1, (lang,"no duplicate player")
+                assert player.get_attribute("src") == "/videos/nextgen-about-v1.mp4", lang
+                assert player.get_attribute("preload") == "none", lang
+                assert player.get_attribute("controls") is not None, lang
+                video_box=player.bounding_box()
+                page_head=page.locator("main > .page-head").bounding_box()
+                mission=page.locator("#about-heading").bounding_box()
+                assert video_box and page_head and mission, (lang,size)
+                assert video_box["height"] > 100 and video_box["width"] > 270, (lang,size,video_box)
+                assert video_box["y"] + video_box["height"] <= page_head["y"]+2, (lang,size)
+                assert page_head["y"] + page_head["height"] <= mission["y"]+2, (lang,size)
+                if size == "mobile":
+                    assert video_box["y"] < 240, (lang,video_box)
+                    assert page.evaluate("document.documentElement.scrollWidth-innerWidth") <= 4, (lang,"horizontal overflow")
+                    page.screenshot(path=str(SHOTS / f"{lang}-about-video-first-mobile.png"))
+            finally:
+                page.close()
+
+
 def check_localized_news_ticker(browser, base: str) -> None:
     """Lot 108: visible nonclickable news; Arabic marquee travels right, FR/EN left."""
     for lang in ("fr", "ar", "en"):
@@ -245,6 +276,7 @@ def check() -> None:
             check_header_preferences(browser, base)
             check_v3_reduced_motion_and_data_saver(browser, base)
             check_localized_news_ticker(browser, base)
+            check_about_video_first(browser, base)
             check_localized_skip_keyboard(browser, base)
             for lang in ("fr", "ar", "en"):
                 for size, width, height in (("desktop", 1280, 900), ("mobile", 390, 844)):
