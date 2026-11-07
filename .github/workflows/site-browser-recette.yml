@@ -53,6 +53,7 @@ jobs:
       - name: Upload private local browser metrics
         if: always()
         uses: actions/upload-artifact@v4
+        continue-on-error: true
         with:
           name: nextgen-v3-local-browser-metrics
           path: .ci-artifacts/lot95-97-browser-metrics.json
@@ -61,6 +62,7 @@ jobs:
       - name: Upload internal screenshots (not published)
         if: always()
         uses: actions/upload-artifact@v4
+        continue-on-error: true
         with:
           name: nextgen-lot7-internal-browser-screenshots
           path: .ci-artifacts/screenshots/
