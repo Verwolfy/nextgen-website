@@ -11,7 +11,7 @@ class TestMixedNewsTicker(unittest.TestCase):
     def test_trilingual_sources_and_non_clickable(self):
         content=(ROOT/"src/data/nextgen-ticker.ts").read_text(encoding="utf-8")
         component=(ROOT/"src/components/HeroWelcomeVideo.astro").read_text(encoding="utf-8")
-        for term in ("fr:","ar:","en:","2026-10-31","2026-11-05","bank-of-algeria.dz","www.aps.dz","EUR/DZD","USD/DZD"):
+        for term in ("fr:","ar:","en:","2026-10-31","2026-11-06","bank-of-algeria.dz","www.aps.dz","EUR/DZD","USD/DZD"):
             self.assertIn(term,content)
         self.assertNotIn("fetch(",content)
         self.assertNotIn('href={item.url}',component)
