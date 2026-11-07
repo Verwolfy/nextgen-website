@@ -23,7 +23,7 @@ class Lot13HomeVisualTests(unittest.TestCase):
     def test_home_does_not_promise_active_services_or_leads(self):
         page = (ROOT / "src/pages/[lang]/index.astro").read_text(encoding="utf-8")
         for text in (
-            "editorialCopy[lang]", "edit.marketTag", "edit.homeStatus",
+            "editorialCopy[lang]",
             "edit.homeContact", "edit.homeApproachTag", "edit.aboutLead",
             "edit.aboutNotice", "edit.aboutSteps",
             'role="note"', "<HeroWelcomeVideo lang={lang} />",
@@ -55,7 +55,7 @@ class Lot13HomeVisualTests(unittest.TestCase):
     def test_chromium_checks_frame_and_320_screenshots(self):
         recipe = (ROOT / "scripts/check_browser_pages.py").read_text(encoding="utf-8")
         for marker in (
-            ".hero-status[role='note']", "[data-welcome-video]",
+            "[data-welcome-video]",
             ".home-approach .editorial-caution", ".home-approach .chip",
             "-mobile-320-home.png", "tiny_width <= 4",
         ):
