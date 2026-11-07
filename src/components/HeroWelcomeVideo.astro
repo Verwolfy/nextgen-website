@@ -1,11 +1,19 @@
 ---
 import type { Lang } from '../data/site';
 import { tickerContent } from '../data/nextgen-ticker';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const ticker = tickerContent[lang];
 const currentDate = new Date().toISOString().slice(0,10);
 const freshItems = ticker.items.filter(item => item.expires >= currentDate);
+// Activate the new video only when its binary is present at build time.
+// Until upload, leave the current video intact instead of publishing a 404.
+const welcomeVideoV4 = existsSync(join(process.cwd(), 'public/videos/nextgen-nexo-geno-welcome-v4.mp4'));
+const welcomeVideoUrl = welcomeVideoV4
+  ? '/videos/nextgen-nexo-geno-welcome-v4.mp4?v=20261107-v4'
+  : '/videos/nextgen-nexo-geno-welcome.mp4?v=20261105-v3';
 const i18n = {
   fr: {
     label: 'Nexo et Geno vous invitent à découvrir NextGen',
@@ -30,7 +38,7 @@ const i18n = {
 <div class="welcome-video-card" dir={lang === 'ar' ? 'rtl' : 'ltr'} data-welcome-card aria-label={i18n.label} role="region">
   <video
     data-welcome-video
-    data-src="/videos/nextgen-nexo-geno-welcome.mp4?v=20261105-v3"
+    data-src={welcomeVideoUrl}
     class="welcome-video"
     poster="/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3"
     width="960" height="540"
