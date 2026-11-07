@@ -340,7 +340,7 @@ def check() -> None:
                             assert page.locator(".hero-status").count() == 0, path
                             assert page.locator(".v3-hero-proof").count() == 0, path
                             assert video.get_attribute("poster") == (
-                                "/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3"), path
+                                "/videos/nextgen-nexo-geno-poster-v4.webp?v=20261107-v4"), path
                             assert video.get_attribute("preload") == "none", path
                             assert video.get_attribute("muted") is not None, path
                             assert video.get_attribute("playsinline") is not None, path
@@ -373,7 +373,7 @@ def check() -> None:
                                     no_js.goto(base + path, wait_until="domcontentloaded")
                                     assert no_js.locator("[data-welcome-video]").count() == 1, path
                                     assert no_js.locator("[data-welcome-video]").get_attribute("poster") == (
-                                        "/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3"), path
+                                        "/videos/nextgen-nexo-geno-poster-v4.webp?v=20261107-v4"), path
                                     assert no_js.locator(".welcome-video-cta").is_visible(), path
                                     assert not no_js.locator("[data-welcome-toggle]").is_visible(), path
                                 finally:
