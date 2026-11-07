@@ -38,19 +38,19 @@ const entries: RecordEntry[] = [
     text:{fr:'Sétif : lancement du projet d’eau potable pour El Eulma et 15 communes',ar:'سطيف: انطلاق مشروع المياه الصالحة للشرب للعلمة و15 بلدية',en:'Sétif: drinking-water project launched for El Eulma and 15 municipalities'},
   },
   {
-    id:'eur-dzd',category:'economy',published:'2026-11-05',expires:'2026-11-12',source:'Banque d’Algérie',
-    sourceUrl:'https://www.bank-of-algeria.dz/',
-    text:{fr:'EUR/DZD : 152,76 DA, vente officielle du 05/11',ar:'يورو/دينار: 152.76 دج سعر البيع الرسمي 05/11',en:'EUR/DZD: 152.76 DZD official selling rate, 05 Nov'},
+    id:'eur-dzd',category:'economy',published:'2026-11-06',expires:'2026-11-13',source:'Banque d’Algérie',
+    sourceUrl:'https://www.bank-of-algeria.dz/taux-de-change-journalier/',
+    text:{fr:'EUR/DZD : 152,0801 DA, cotation officielle du 06/11',ar:'يورو/دينار: 152.0801 دج، السعر الرسمي 06/11',en:'EUR/DZD: 152.0801 DZD, official quotation 06 Nov'},
   },
   {
-    id:'usd-dzd',category:'economy',published:'2026-11-05',expires:'2026-11-12',source:'Banque d’Algérie',
-    sourceUrl:'https://www.bank-of-algeria.dz/',
-    text:{fr:'USD/DZD : 135,94 DA, vente officielle du 05/11',ar:'دولار/دينار: 135.94 دج سعر البيع الرسمي 05/11',en:'USD/DZD: 135.94 DZD official selling rate, 05 Nov'},
+    id:'usd-dzd',category:'economy',published:'2026-11-06',expires:'2026-11-13',source:'Banque d’Algérie',
+    sourceUrl:'https://www.bank-of-algeria.dz/taux-de-change-journalier/',
+    text:{fr:'USD/DZD : 136,1078 DA, cotation officielle du 06/11',ar:'دولار/دينار: 136.1078 دج، السعر الرسمي 06/11',en:'USD/DZD: 136.1078 DZD, official quotation 06 Nov'},
   },
   {
-    id:'cement-energy',category:'innovation',published:'2026-04-20',expires:'2026-11-20',source:'APS',
-    sourceUrl:'https://www.aps.dz/fr/algerie/developpement/mo7ar2xh-lancement-d-un-projet-de-valorisation-energetique-des-dechets',
-    text:{fr:'Cimenterie de Chlef : projet de valorisation énergétique des déchets',ar:'مصنع الإسمنت بالشلف: مشروع لاسترجاع الطاقة من النفايات',en:'Chlef cement plant: waste-to-energy recovery project'},
+    id:'green-cement',category:'innovation',published:'2026-11-05',expires:'2026-11-26',source:'APS',
+    sourceUrl:'https://www.aps.dz/fr/economie/industrieenergie-et-mines/mw3m83lp-kourtel-preside-une-seance-de-travail-avec-les-representants-des-entreprises-publiques-et-privees-de-production-de-ciment',
+    text:{fr:'Industrie cimentière : qualité et développement du ciment vert examinés',ar:'صناعة الإسمنت: بحث تحسين الجودة وتطوير الإسمنت الأخضر',en:'Cement industry: quality improvements and green cement development discussed'},
   },
 ];
 const categories: Record<Lang,Record<TickerCategory,string>> = {
