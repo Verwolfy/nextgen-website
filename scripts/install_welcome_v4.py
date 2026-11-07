@@ -19,7 +19,7 @@ EXPECTED = (
       "welcome-v4.part03.b64", "welcome-v4.part04.b64"),
      712241, "e7ac28368254aff457c57067c79adf2973584becbfc9e2375180e20301494a13"),
     ("nextgen-nexo-geno-poster-v4.webp", ("poster-v4.b64",),
-     26945, "7a4ba9144d9bde9844fb779b24eab728e408e11682c6ad5095be45756f3fd90b"),
+     26946, "7a4ba9144d9bde9844fb779b24eab728e408e11682c6ad5095be45756f3fd90b"),
 )
 
 
