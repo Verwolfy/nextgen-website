@@ -28,22 +28,24 @@ jobs:
           python-version: '3.12'
       - name: Install pinned source-check requirements
         run: python -m pip install -r requirements-sync.txt
-      - name: Inspect official bank TLS chain without weakening verification
+      - name: Restore DigiCert missing intermediary with verified SHA256 fingerprint
+        shell: bash
         run: |
+          set -euo pipefail
+          mkdir -p .ci-artifacts
+          curl --fail --location --silent --show-error --retry 2             https://cacerts.digicert.com/DigiCertGlobalG2TLSRSASHA2562020CA1-1.crt.pem             --output .ci-artifacts/digicert-global-g2-intermediate.pem
+          actual=$(openssl x509 -in .ci-artifacts/digicert-global-g2-intermediate.pem             -noout -fingerprint -sha256 | cut -d= -f2 | tr -d ':' | tr '[:upper:]' '[:lower:]')
+          expected='c8025f9fc65fdfc95b3ca8cc7867b9a587b5277973957917463fc813d0b625a9'
+          test "$actual" = "$expected" || { echo "::error::Unexpected DigiCert fingerprint"; exit 1; }
           python - <<'PY'
-          import requests
-          for url in (
-              "https://www.bank-of-algeria.dz/taux-de-change-journalier/",
-              "https://bank-of-algeria.dz/taux-de-change-journalier/",
-          ):
-              try:
-                  response=requests.get(url, timeout=8)
-                  print("TLS CHECK",url,response.status_code,response.url)
-              except requests.RequestException as exc:
-                  print("TLS CHECK FAILURE",url,repr(exc)[:850])
+          from pathlib import Path
+          import certifi
+          roots=Path(certifi.where()).read_bytes()
+          intermediate=Path('.ci-artifacts/digicert-global-g2-intermediate.pem').read_bytes()
+          Path('.ci-artifacts/nextgen-bank-ca-bundle.pem').write_bytes(roots + b'\n' + intermediate + b'\n')
           PY
-          echo "Issuer chain on official hostname (diagnostic only):"
-          timeout 10 openssl s_client -connect www.bank-of-algeria.dz:443             -servername www.bank-of-algeria.dz -showcerts </dev/null 2>&1 |             grep -E 'verify error|Verify return code|depth=|issuer=|subject=' | head -25 || true
+          echo "REQUESTS_CA_BUNDLE=$PWD/.ci-artifacts/nextgen-bank-ca-bundle.pem" >> "$GITHUB_ENV"
+          echo "DigiCert chain validated; TLS verification remains enabled"
       - name: Verify source and refresh local trilingual register
         run: python scripts/refresh_ticker_daily.py --report .ci-artifacts/ticker-daily.json
       - name: Determine whether currency copy changed
