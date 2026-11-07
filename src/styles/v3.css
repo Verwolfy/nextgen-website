@@ -134,11 +134,9 @@ body{background:var(--v3-paper)}
 @media(max-width:580px){
   .v3-hero-grid{padding-block:27px 24px;gap:19px}
   .v3-hero-heading h1{font-size:clamp(2.22rem,9vw,3.05rem);line-height:1.08;letter-spacing:-.04em}
-  .v3-hero-eyebrow{font-size:.59rem;padding:8px 9px;letter-spacing:.065em;max-width:100%}
   .v3-hero-lead{font-size:.99rem!important;line-height:1.68}
   .v3-hero-summary .actions{margin-top:21px}
   .v3-hero-summary .btn{flex:1 1 160px}
-  .v3-hero-proof{margin-top:20px}
   .v3-hero-signal{grid-template-columns:minmax(0,1fr);padding-block:14px 19px;gap:14px}
   .v3-signal-item{border-inline-end:0;border-bottom:1px solid #c4f0e526;padding-bottom:10px}
   .v3-signal-link{justify-content:flex-start}
