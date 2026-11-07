@@ -17,7 +17,7 @@ class TickerFacts(unittest.TestCase):
         self.assertEqual(len(dates),8)
         for start,end in dates:
             self.assertLess(date.fromisoformat(start),date.fromisoformat(end))
-        for fact in ("95 projets","853,5 km","253 326","133 780","15 communes","152,76","135,94"):
+        for fact in ("95 projets","853,5 km","253 326","133 780","15 communes","EUR/DZD","USD/DZD","ciment vert"):
             self.assertIn(fact,content)
     def test_no_links_and_stale_visibility_control(self):
         component=(ROOT/"src/components/HeroWelcomeVideo.astro").read_text(encoding="utf-8")
