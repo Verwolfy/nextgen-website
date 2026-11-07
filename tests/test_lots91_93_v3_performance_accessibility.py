@@ -18,7 +18,7 @@ class MotionPerformance(unittest.TestCase):
         self.assertIn('const preloadWelcomePoster=/^\\/(?:fr|ar|en)\\/$/.test(Astro.url.pathname);',layout)
         self.assertIn('preloadWelcomePoster && <link rel="preload" as="image"',layout)
         self.assertIn('fetchpriority="high"',layout)
-        self.assertIn('nextgen-nexo-geno-poster.webp?v=20261105-v3',layout)
+        self.assertIn('nextgen-nexo-geno-poster-v4.webp?v=20261107-v4',layout)
         self.assertIn('noindex,nofollow',layout)
 
     def test_user_opt_in_required_for_data_saver_and_reduced_motion(self):
@@ -30,7 +30,7 @@ class MotionPerformance(unittest.TestCase):
                       'data-welcome-toggle'):
             self.assertIn(token,player)
         self.assertNotIn('autoplay',player)
-        self.assertIn('data-src="/videos/nextgen-nexo-geno-welcome.mp4?v=20261105-v3"',player)
+        self.assertIn('data-src="/videos/nextgen-nexo-geno-welcome-v4.mp4?v=20261107-v4"',player)
 
     def test_no_image_crop_or_layout_shift_in_static_cards(self):
         css=(ROOT/"src/styles/v3.css").read_text(encoding="utf-8")
