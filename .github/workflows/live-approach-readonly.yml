@@ -31,6 +31,7 @@ jobs:
       - name: Archive anonymous release diagnostics
         if: always()
         uses: actions/upload-artifact@v4
+        continue-on-error: true
         with:
           name: nextgen-lot80-live-manufacturing-readonly
           path: .ci-artifacts/lot80-public-demarche.json

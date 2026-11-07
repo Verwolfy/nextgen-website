@@ -26,20 +26,20 @@ EXPECTED={
        "Provisional presentation", "v3-featured-card"),
 }
 MEDIA={
- "video":"videos/nextgen-nexo-geno-welcome.mp4",
- "poster":"videos/nextgen-nexo-geno-poster.webp",
+ "video":"videos/nextgen-nexo-geno-welcome-v4.mp4",
+ "poster":"videos/nextgen-nexo-geno-poster-v4.webp",
 }
-QUERY="?v=20261105-v3"
+QUERY="?v=20261107-v4"
 
 
 def audit_home(lang:str)->dict:
-    url=f"{ORIGIN}/{lang}/?verification=lot90-v3-20261105"
+    url=f"{ORIGIN}/{lang}/?verification=lot116-v4-20261107"
     meta,body=inspect_url(url)
     text=html.unescape(body.decode("utf-8",errors="replace")) if meta["status"]==200 else ""
     markers={word:word in text for word in EXPECTED[lang]}
     media_markers={
-      "original_video":f"/{MEDIA['video']}{QUERY}" in text,
-      "original_poster":f"/{MEDIA['poster']}{QUERY}" in text,
+      "v4_video":f"/{MEDIA['video']}{QUERY}" in text,
+      "v4_poster":f"/{MEDIA['poster']}{QUERY}" in text,
       "video_player":"data-welcome-card" in text and "data-welcome-video" in text,
     }
     noindex='noindex,nofollow' in text
@@ -82,7 +82,7 @@ def report(result:dict)->None:
             f.write("| Langue | HTTP | Accueil V3 | noindex |\n|---|---|---|---|\n")
             for p in result["pages"]:
                 f.write(f"| {p['lang']} | {p['http']} | {p['v3_home_confirmed']} | {p['noindex']} |\n")
-            f.write(f"\n**V3 visible avec vidéo originale : {result['v3_public_content_verified']}**. ")
+            f.write(f"\n**V3 accueillant la nouvelle vidéo V4 : {result['v3_public_content_verified']}**. ")
             f.write("Aucune action Cloudflare ; SHA exact du déploiement non démontré.\n")
 
 
