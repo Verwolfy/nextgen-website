@@ -47,18 +47,15 @@ const audiences = {
   <section class="hero v3-motion-hero" aria-labelledby="v3-home-title">
     <div class="container hero-wrap v3-hero-grid">
       <div class="v3-hero-heading">
-        <span class="eyebrow v3-hero-eyebrow" title={edit.marketTag}><span class="v3-signal-dot" aria-hidden="true"></span>{v3.eyebrow}</span>
         <h1 id="v3-home-title">{v3.headline}<span>{v3.headlineAccent}</span></h1>
       </div>
       <HeroWelcomeVideo lang={lang} />
       <div class="v3-hero-summary">
         <p class="v3-hero-lead">{v3.lead}</p>
-        <p class="hero-status" role="note"><span class="hero-status-mark" aria-hidden="true"></span>{edit.homeStatus}</p>
         <div class="actions">
           <a class="btn v3-hero-primary" href={`/${lang}/catalogue/`}>{v3.rangesAction}</a>
           <a class="btn btn-outline" href={`/${lang}/contact/`}>{edit.homeContact}</a>
         </div>
-        <p class="v3-hero-proof">{v3.proof}</p>
       </div>
     </div>
     <div class="container v3-hero-signal" aria-label={v3.stepsLabel}>
