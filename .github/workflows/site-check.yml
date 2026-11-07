@@ -37,6 +37,7 @@ jobs:
       - name: Upload catalogue search index measurements (private)
         if: always()
         uses: actions/upload-artifact@v4
+        continue-on-error: true
         with:
           name: nextgen-catalogue-search-index-payload
           path: .ci-artifacts/lot100-catalogue-index.json
@@ -45,6 +46,7 @@ jobs:
       - name: Upload lightweight V3 metrics (private diagnostics)
         if: always()
         uses: actions/upload-artifact@v4
+        continue-on-error: true
         with:
           name: nextgen-v3-static-payload-audit
           path: .ci-artifacts/lot93-v3-static-payload.json
@@ -77,6 +79,7 @@ jobs:
       - name: Upload private Pages static build for review only
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: actions/upload-artifact@v4
+        continue-on-error: true
         with:
           name: nextgen-cloudflare-dist-review
           path: dist/
