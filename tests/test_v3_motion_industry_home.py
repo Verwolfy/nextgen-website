@@ -18,8 +18,8 @@ class MotionIndustryHomepage(unittest.TestCase):
                         'IntersectionObserver', 'prefers-reduced-motion: reduce',
                         'visibilitychange','video.pause()','video.play()',
                         'data-welcome-toggle','tickerPaused','autoAllowed',
-                        '/videos/nextgen-nexo-geno-welcome.mp4?v=20261105-v3',
-                        '/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3'):
+                        '/videos/nextgen-nexo-geno-welcome-v4.mp4?v=20261107-v4',
+                        '/videos/nextgen-nexo-geno-poster-v4.webp?v=20261107-v4'):
             self.assertIn(snippet,s)
         self.assertNotIn("autoplay",s)
 
