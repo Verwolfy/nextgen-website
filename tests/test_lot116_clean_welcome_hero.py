@@ -8,7 +8,7 @@ class CleanWelcomeHero(unittest.TestCase):
         for gone in ('class="eyebrow v3-hero-eyebrow"','class="hero-status"','class="v3-hero-proof"'):
             self.assertNotIn(gone,home)
         for preserved in ('<h1 id="v3-home-title">','{v3.lead}','<HeroWelcomeVideo lang={lang} />',
-                          '{v3.rangesAction}','{edit.homeContact}','class="v3-hero-signal"',
+                          '{v3.rangesAction}','{edit.homeContact}','class="container v3-hero-signal"',
                           "href={`/${lang}/catalogue/`}"):
             self.assertIn(preserved,home,preserved)
         self.assertIn("check_localized_news_ticker(browser, base)",(ROOT/"scripts/check_browser_pages.py").read_text(encoding="utf-8"))
