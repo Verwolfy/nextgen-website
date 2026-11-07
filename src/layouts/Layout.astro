@@ -1,5 +1,7 @@
 ---
 import { brand, brandLocation, languages, messages, type Lang } from '../data/site';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import '../styles/site.css';
 import '../styles/theme.css';
 import '../styles/v3.css';
@@ -16,6 +18,8 @@ const whats=`https://wa.me/${brand.whatsapp}`;
 const navSections = ['a-propos','gammes','catalogue','distributeurs','ressources','contact'] as const;
 // The tiny Nexo/Geno poster is the first-frame visual only on localized homepages.
 const preloadWelcomePoster=/^\/(?:fr|ar|en)\/$/.test(Astro.url.pathname);
+const homePosterV4 = existsSync(join(process.cwd(), 'public/videos/nextgen-nexo-geno-welcome-v4.mp4')) && existsSync(join(process.cwd(), 'public/videos/nextgen-nexo-geno-poster-v4.webp'));
+const welcomePosterUrl = homePosterV4 ? '/videos/nextgen-nexo-geno-poster-v4.webp?v=20261107-v4' : '/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3';
 const skipLabel:Record<Lang,string>={fr:'Aller au contenu principal',ar:'الانتقال إلى المحتوى الرئيسي',en:'Skip to main content'};
 ---
 <!doctype html>
@@ -28,7 +32,7 @@ const skipLabel:Record<Lang,string>={fr:'Aller au contenu principal',ar:'الا�
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="description" content={description} />
   <meta name="robots" content="noindex,nofollow" />
-  {preloadWelcomePoster && <link rel="preload" as="image" href="/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3" fetchpriority="high" />}
+  {preloadWelcomePoster && <link rel="preload" as="image" href={welcomePosterUrl} fetchpriority="high" />}
   <meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" />
   <link rel="canonical" href={canonical} />
   {languages.map(l=><link rel="alternate" hreflang={l} href={publicOrigin+translate(l)} />)}
