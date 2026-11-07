@@ -318,7 +318,7 @@ def check() -> None:
                         if section == "":
                             if lang == "ar":
                                 assert "فئات FENEK" in page.locator(".section .eyebrow").all_inner_texts(), path
-                            assert page.locator(".hero-status[role='note']").count() == 1, path
+                            assert page.locator(".hero-status, .v3-hero-proof, .v3-hero-eyebrow").count() == 0, path
                             welcome = page.locator("[data-welcome-card]")
                             assert welcome.count() == 1, path
                             assert page.locator(".v3-featured-card").count() == 3, path
@@ -333,9 +333,9 @@ def check() -> None:
                             video = welcome.locator("[data-welcome-video]")
                             assert video.count() == 1, path
                             assert video.get_attribute("data-src") == (
-                                "/videos/nextgen-nexo-geno-welcome.mp4?v=20261105-v3"), path
+                                "/videos/nextgen-nexo-geno-welcome-v4.mp4?v=20261107-v4"), path
                             assert video.get_attribute("poster") == (
-                                "/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3"), path
+                                "/videos/nextgen-nexo-geno-poster-v4.webp?v=20261107-v4"), path
                             assert video.get_attribute("preload") == "none", path
                             assert video.get_attribute("muted") is not None, path
                             assert video.get_attribute("playsinline") is not None, path
@@ -368,7 +368,7 @@ def check() -> None:
                                     no_js.goto(base + path, wait_until="domcontentloaded")
                                     assert no_js.locator("[data-welcome-video]").count() == 1, path
                                     assert no_js.locator("[data-welcome-video]").get_attribute("poster") == (
-                                        "/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3"), path
+                                        "/videos/nextgen-nexo-geno-poster-v4.webp?v=20261107-v4"), path
                                     assert no_js.locator(".welcome-video-cta").is_visible(), path
                                     assert not no_js.locator("[data-welcome-toggle]").is_visible(), path
                                 finally:
