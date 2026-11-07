@@ -224,7 +224,7 @@ def run(args: argparse.Namespace) -> int:
                 raise ValueError("Unexpected redirect away from official quotation page")
             html = response.text
         except (requests.RequestException, ValueError) as exc:
-            report.update(status="source_unavailable", reason=f"{type(exc).__name__}: {str(exc)[:160]}")
+            report.update(status="source_unavailable", reason=f"{type(exc).__name__}: {str(exc)[:700]}")
             print(f"::warning::Official exchange rate source unavailable: {report['reason']}")
             return finish(report, args.report)
     try:
