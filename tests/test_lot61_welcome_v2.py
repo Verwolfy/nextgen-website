@@ -35,7 +35,9 @@ class CurrentWelcomeVideo(unittest.TestCase):
         self.assertIn('data-src={welcomeVideoUrl}', component)
         self.assertIn('nextgen-nexo-geno-welcome-v4.mp4?v=20261107-v4', component)
         self.assertIn('nextgen-nexo-geno-welcome.mp4?v=20261105-v3', component)
-        self.assertIn('poster="/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3"', component)
+        self.assertIn("poster={welcomePosterUrl}", component)
+        self.assertIn("nextgen-nexo-geno-poster-v4.webp?v=20261107-v4", component)
+        self.assertIn("nextgen-nexo-geno-poster.webp?v=20261105-v3", component)
         self.assertNotIn("welcome-video-caption", component)
         self.assertIn('noindex,nofollow',
             (ROOT / "src/layouts/Layout.astro").read_text(encoding="utf-8"))
