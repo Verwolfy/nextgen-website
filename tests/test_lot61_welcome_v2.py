@@ -32,7 +32,9 @@ class CurrentWelcomeVideo(unittest.TestCase):
                       "اكتشفوا منتجات NextGen", "Discover NextGen products",
                       "Découvrir les produits NextGen"):
             self.assertIn(token, component)
-        self.assertIn('data-src="/videos/nextgen-nexo-geno-welcome.mp4?v=20261105-v3"', component)
+        self.assertIn('data-src={welcomeVideoUrl}', component)
+        self.assertIn('nextgen-nexo-geno-welcome-v4.mp4?v=20261107-v4', component)
+        self.assertIn('nextgen-nexo-geno-welcome.mp4?v=20261105-v3', component)
         self.assertIn('poster="/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3"', component)
         self.assertNotIn("welcome-video-caption", component)
         self.assertIn('noindex,nofollow',

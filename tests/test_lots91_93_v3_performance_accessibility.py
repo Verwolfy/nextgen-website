@@ -30,7 +30,9 @@ class MotionPerformance(unittest.TestCase):
                       'data-welcome-toggle'):
             self.assertIn(token,player)
         self.assertNotIn('autoplay',player)
-        self.assertIn('data-src="/videos/nextgen-nexo-geno-welcome.mp4?v=20261105-v3"',player)
+        self.assertIn('data-src={welcomeVideoUrl}',player)
+        self.assertIn('nextgen-nexo-geno-welcome-v4.mp4?v=20261107-v4',player)
+        self.assertIn('nextgen-nexo-geno-welcome.mp4?v=20261105-v3',player)
 
     def test_no_image_crop_or_layout_shift_in_static_cards(self):
         css=(ROOT/"src/styles/v3.css").read_text(encoding="utf-8")

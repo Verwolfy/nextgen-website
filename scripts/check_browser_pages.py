@@ -318,7 +318,7 @@ def check() -> None:
                         if section == "":
                             if lang == "ar":
                                 assert "فئات FENEK" in page.locator(".section .eyebrow").all_inner_texts(), path
-                            assert page.locator(".hero-status[role='note']").count() == 1, path
+                            assert page.locator(".hero-status[role='note']").count() == 0, path
                             welcome = page.locator("[data-welcome-card]")
                             assert welcome.count() == 1, path
                             assert page.locator(".v3-featured-card").count() == 3, path
@@ -332,8 +332,13 @@ def check() -> None:
                                 assert video_box["y"] + video_box["height"] <= summary_box["y"] + 3, path
                             video = welcome.locator("[data-welcome-video]")
                             assert video.count() == 1, path
-                            assert video.get_attribute("data-src") == (
-                                "/videos/nextgen-nexo-geno-welcome.mp4?v=20261105-v3"), path
+                            expected_video = ("/videos/nextgen-nexo-geno-welcome-v4.mp4?v=20261107-v4"
+                                if (ROOT / "public/videos/nextgen-nexo-geno-welcome-v4.mp4").is_file()
+                                else "/videos/nextgen-nexo-geno-welcome.mp4?v=20261105-v3")
+                            assert video.get_attribute("data-src") == expected_video, path
+                            assert page.locator(".v3-hero-eyebrow").count() == 0, path
+                            assert page.locator(".hero-status").count() == 0, path
+                            assert page.locator(".v3-hero-proof").count() == 0, path
                             assert video.get_attribute("poster") == (
                                 "/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3"), path
                             assert video.get_attribute("preload") == "none", path
