@@ -36,6 +36,14 @@ BRAND_MEDIA = {
         "a35f94aefd101087cc9a1609935790d1b64b79c938d782cb363ebe783753a60a",
 }
 
+# Lot 124 — final About video: exact public binary assets, never interim media.
+ABOUT_MEDIA = {
+    "/videos/nextgen-about-v2.mp4":
+        "e322aaf485a24fa3a6c8705077161616f0c129e34da8cd771f5a6f2e0605a17a",
+    "/videos/nextgen-about-v2-poster.webp":
+        "b5ebd897a82c0e3c8b7d6668fcdd4dc9432911db187ef1d04d543439cf9a5936",
+}
+
 
 def fetch(origin: str, path: str, timeout: float) -> bytes:
     """HTTP GET only: predictable public origin and bounded body."""
@@ -150,6 +158,24 @@ def verify_content(origin: str, timeout: float) -> None:
         for kind, suffix in CATEGORY_ROUTES.items():
             validate_html(fetch(origin, f"/{lang}/{suffix}", timeout), lang, kind)
         print(f"PASS /{lang}/ : product, application and sheet routes")
+
+    # About video is the newest user-supplied 10s presentation.
+    for lang in LANGS:
+        html = fetch(origin, f"/{lang}/a-propos/", timeout)
+        validate_html(html, lang)
+        page = html.decode("utf-8")
+        for asset in ABOUT_MEDIA:
+            if asset not in page:
+                raise AssertionError(f"/{lang}/a-propos/: missing final About media {asset}")
+        if 'data-about-video-version="v2"' not in page:
+            raise AssertionError(f"/{lang}/a-propos/: interim About video still in use")
+    print("PASS About video v2 in FR/AR/EN, safe initial noindex")
+
+    for asset, digest in ABOUT_MEDIA.items():
+        public_bytes = fetch(origin, asset, timeout)
+        if hashlib.sha256(public_bytes).hexdigest() != digest:
+            raise AssertionError(f"Live optimized final About media altered: {asset}")
+    print("PASS final About MP4 and poster WebP (exact SHA256)", flush=True)
 
     js = fetch(origin, "/pagefind/pagefind.js", timeout)
     assert len(js) > 100 and b"<html" not in js[:300].lower(), "Missing Pagefind runtime"
