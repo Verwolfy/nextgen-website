@@ -38,14 +38,14 @@ def check_lot118_global_search(browser, base: str) -> None:
                 label = trigger.locator(".ng-search-trigger-label")
                 assert label.count() == 1 and bool(label.inner_text().strip()), (lang, width)
                 if width == 1440:
-                    assert label.is_visible(), (lang, "capsule label missing on desktop")
+                    assert label.is_visible(), (lang, "capsule label missing on wide desktop")
+                else:
+                    assert label.is_hidden(), (lang, "search icon-only on narrow screens")
                 if width in (1280, 1440):
                     nav_links = page.locator(".header .nav a")
                     first, last = nav_links.first.bounding_box(), nav_links.last.bounding_box()
                     assert first and last and abs(first["y"] - last["y"]) <= 4, \
                         (lang, "desktop navigation unexpectedly wrapped", first, last)
-                else:
-                    assert label.is_hidden(), (lang, "search icon-only on narrow screens")
                 assert page.evaluate("document.documentElement.scrollWidth-innerWidth") <= 4, \
                     (lang, width, "search header overflow")
                 trigger.click()
