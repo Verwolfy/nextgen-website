@@ -19,7 +19,7 @@ const t=messages[lang];
 const title=t.menu[section];
 const heading=section==='catalogue'?catalogueCopy[lang].title:section==='contact'?t.contactTitle:section==='distributeurs'?t.distributorsTitle:title;
 const description=section==='catalogue'?catalogueCopy[lang].lead:section==='distributeurs'?t.distributorsInfo:section==='ressources'?t.resourcesInfo:section==='a-propos'?t.aboutInfo:section==='mentions-legales'?t.legalInfo:section==='confidentialite'?t.privacyInfo:section==='contact'?contactCopy[lang].intro:t.intro;
-const aboutVideoReady=section==='a-propos' && existsSync(join(process.cwd(),'public/videos/nextgen-about-v2.mp4'));
+const aboutVideoReady=section==='a-propos' && existsSync(join(process.cwd(),'public/videos/nextgen-about-v3.mp4'));
 const aboutVideoLabel:Record<Lang,string>={fr:'Présentation vidéo de NextGen',ar:'فيديو تعريفي عن NextGen',en:'NextGen video introduction'};
 ---
 <Layout lang={lang} title={title} description={description}>

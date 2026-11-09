@@ -38,12 +38,12 @@ BRAND_MEDIA = {
 
 # Lot 124 — final About video: exact public binary assets, never interim media.
 ABOUT_MEDIA = {
-    "/videos/nextgen-about-v2.mp4":
-        "e322aaf485a24fa3a6c8705077161616f0c129e34da8cd771f5a6f2e0605a17a",
-    "/videos/nextgen-about-v2.webm":
-        "0c1d040f7984b3877c0c483780e70128cc5ac57eeed5cf8ef06da9378b2a908d",
-    "/videos/nextgen-about-v2-poster.webp":
-        "b5ebd897a82c0e3c8b7d6668fcdd4dc9432911db187ef1d04d543439cf9a5936",
+    "/videos/nextgen-about-v3.mp4":
+        "b0cd5d066fff97cd44a583f51b53ff3749b5e9b002ca901b268d9c5b896cbb51",
+    "/videos/nextgen-about-v3.webm":
+        "99440281fb4e9139086784cfdea18a8215b9eb3c0d415922d4692233edc1680e",
+    "/videos/nextgen-about-v3-poster.webp":
+        "aff4c8ea960c2f440acb6fb578999fae0a63944d4555f6a7e8827db025c5e020",
 }
 
 
@@ -169,15 +169,15 @@ def verify_content(origin: str, timeout: float) -> None:
         for asset in ABOUT_MEDIA:
             if asset not in page:
                 raise AssertionError(f"/{lang}/a-propos/: missing final About media {asset}")
-        if 'data-about-video-version="v2"' not in page:
+        if 'data-about-video-version="v3"' not in page:
             raise AssertionError(f"/{lang}/a-propos/: interim About video still in use")
-    print("PASS About video v2 in FR/AR/EN, safe initial noindex")
+    print("PASS About video v3 in FR/AR/EN, safe initial noindex")
 
     for asset, digest in ABOUT_MEDIA.items():
         public_bytes = fetch(origin, asset, timeout)
         if hashlib.sha256(public_bytes).hexdigest() != digest:
             raise AssertionError(f"Live optimized final About media altered: {asset}")
-    print("PASS final About MP4 and poster WebP (exact SHA256)", flush=True)
+    print("PASS final About MP4/WebM and poster WebP (exact SHA256)", flush=True)
 
     js = fetch(origin, "/pagefind/pagefind.js", timeout)
     assert len(js) > 100 and b"<html" not in js[:300].lower(), "Missing Pagefind runtime"
