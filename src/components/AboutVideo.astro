@@ -7,12 +7,16 @@ const captions:Record<Lang,string>={
   ar:'عرض NextGen: نيكسو وجينو يقدمان نهج الشركة',
   en:'NextGen introduction: Nexo and Geno explain the company approach',
 };
-const src='/videos/nextgen-about-v2.mp4';
+const webm='/videos/nextgen-about-v2.webm';
+const mp4='/videos/nextgen-about-v2.mp4';
 const poster='/videos/nextgen-about-v2-poster.webp';
 ---
 <video class="about-video" data-about-video data-about-video-version="v2"
-  src={src} poster={poster} width="854" height="480"
-  aria-label={captions[lang]} preload="none" muted playsinline loop controls></video>
+  poster={poster} width="854" height="480"
+  aria-label={captions[lang]} preload="none" muted playsinline loop controls>
+  <source src={webm} type="video/webm" />
+  <source src={mp4} type="video/mp4" />
+</video>
 <script>
   // Play in-view only. Reduced-motion and Data Saver users see the optimized poster
   // and may deliberately start the native player. No network API or private data.
