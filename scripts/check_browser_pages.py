@@ -22,6 +22,49 @@ class SilentHandler(SimpleHTTPRequestHandler):
 
 
 
+def check_lot118_global_search(browser, base: str) -> None:
+    """Lot 118: accessible instant search, filters, responsive RTL and no private requests."""
+    for lang in ("fr", "ar", "en"):
+        for width in (320, 1280):
+            page = browser.new_page(viewport={"width": width, "height": 780})
+            requests = []
+            page.on("request", lambda request: requests.append(request.url))
+            try:
+                page.goto(f"{base}/{lang}/", wait_until="domcontentloaded")
+                trigger = page.locator("[data-search-trigger]")
+                panel = page.locator("[data-search-panel]")
+                assert trigger.count() == 1 and trigger.is_visible(), (lang, width)
+                assert panel.is_hidden() and trigger.get_attribute("aria-expanded") == "false"
+                if width == 320:
+                    assert page.evaluate("document.documentElement.scrollWidth-innerWidth") <= 4, \
+                        (lang, "search header overflow")
+                trigger.click()
+                assert panel.is_visible() and trigger.get_attribute("aria-expanded") == "true"
+                field = panel.locator("[data-search-input]")
+                assert field.evaluate("el => el === document.activeElement"), (lang, width)
+                assert page.request.get(base + "/pagefind/pagefind.js").status == 200
+                field.fill("C1T")
+                panel.locator("[data-search-filter='product']").click()
+                result = panel.locator(f"a.ng-search-result[href='/{lang}/catalogue/fenek-bond-c1t/']")
+                result.wait_for(state="visible", timeout=20000)
+                assert panel.locator("[data-search-filter='product']").get_attribute("aria-pressed") == "true"
+                assert panel.locator("[data-search-status]").inner_text().strip(), (lang, width)
+                assert all("supabase.co" not in url for url in requests), (lang, requests)
+                page.keyboard.press("Escape")
+                assert panel.is_hidden() and trigger.get_attribute("aria-expanded") == "false"
+                assert trigger.evaluate("el => el === document.activeElement"), (lang, width)
+                page.keyboard.press("Control+k")
+                assert panel.is_visible() and field.evaluate("el => el === document.activeElement"), (lang, width)
+                page.locator("[data-search-close]").click()
+                assert panel.is_hidden(), (lang, width)
+                if width == 320:
+                    page.emulate_media(reduced_motion="reduce")
+                    assert trigger.locator("svg").evaluate(
+                        "el => getComputedStyle(el).animationName") == "none"
+            finally:
+                page.close()
+
+
 def check_header_preferences(browser, base: str) -> None:
     """Lot 60: live navigation, system mode, persistence, and night contrast."""
     for lang in ("fr", "ar", "en"):
@@ -298,6 +341,7 @@ def check() -> None:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
             check_header_preferences(browser, base)
+            check_lot118_global_search(browser, base)
             check_v3_reduced_motion_and_data_saver(browser, base)
             check_localized_news_ticker(browser, base)
             check_about_video_first(browser, base)
@@ -492,7 +536,9 @@ def check() -> None:
                             assert whatsapp.get_attribute("rel") == "noopener noreferrer", path
                             assert page.locator(".contact-direct .contact-disclosure[role='note']").count() == 1, path
                             assert page.locator(".lead-preview, .lead-panel").count() == 0, path
-                            assert page.locator("form, input, textarea").count() == 0, path
+                            # A global, local-only search field is allowed; no contact/lead input.
+                            assert page.locator("form, input:not([data-search-input]), textarea").count() == 0, path
+                            assert page.locator("input[data-search-input][type=search]").count() == 1, path
                             if section == "distributeurs":
                                 assert page.locator("a[href='#contact-direct']").count() == 1, path
                         # Overflows on phone screens make navigation unusable.

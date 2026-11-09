@@ -17,7 +17,12 @@ class SkipNavigationA11y(unittest.TestCase):
                       "Skip to main content"):
             self.assertIn(label,self.layout)
         self.assertIn('<a class="skip" href="#main">{skipLabel[lang]}</a>',self.layout)
-        self.assertIn('<main id="main"><slot /></main>',self.layout)
+        # The skip target remains the unique main landmark; Pagefind adds inert
+        # metadata to that same element rather than introducing a second main.
+        self.assertIn('<main id="main" data-pagefind-body', self.layout)
+        self.assertIn('data-pagefind-filter={`kind:${searchKind}`}', self.layout)
+        self.assertIn('><slot /></main>', self.layout)
+        self.assertEqual(self.layout.count('<main id="main"'), 1)
         self.assertNotIn("Aller au contenu / Skip to content",self.layout)
 
     def test_focused_link_visible_in_both_writing_directions(self):

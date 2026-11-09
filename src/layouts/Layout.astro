@@ -6,6 +6,7 @@ import '../styles/site.css';
 import '../styles/theme.css';
 import '../styles/v3.css';
 import HeaderPreferences from '../components/HeaderPreferences.astro';
+import SiteSearch from '../components/SiteSearch.astro';
 import ThemeInit from '../components/ThemeInit.astro';
 interface Props { lang:Lang; title:string; description:string; }
 const {lang,title,description}=Astro.props;
@@ -20,6 +21,10 @@ const navSections = ['a-propos','gammes','catalogue','distributeurs','ressources
 const preloadWelcomePoster=/^\/(?:fr|ar|en)\/$/.test(Astro.url.pathname);
 const homePosterV4 = existsSync(join(process.cwd(), 'public/videos/nextgen-nexo-geno-welcome-v4.mp4')) && existsSync(join(process.cwd(), 'public/videos/nextgen-nexo-geno-poster-v4.webp'));
 const welcomePosterUrl = homePosterV4 ? '/videos/nextgen-nexo-geno-poster-v4.webp?v=20261107-v4' : '/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3';
+// Search is built only from generated public HTML, never from private Supabase drafts.
+const searchKind = /^\/(?:fr|ar|en)\/catalogue\/[^/]+\/$/.test(Astro.url.pathname) ? 'product'
+  : /^\/(?:fr|ar|en)\/documentation\/[^/]+\/$/.test(Astro.url.pathname) ? 'sheet'
+  : /^\/(?:fr|ar|en)\/gammes\/[^/]+\/$/.test(Astro.url.pathname) ? 'application' : 'page';
 const skipLabel:Record<Lang,string>={fr:'Aller au contenu principal',ar:'الانتقال إلى المحتوى الرئيسي',en:'Skip to main content'};
 ---
 <!doctype html>
@@ -43,9 +48,12 @@ const skipLabel:Record<Lang,string>={fr:'Aller au contenu principal',ar:'الا�
   <a class="skip" href="#main">{skipLabel[lang]}</a>
   <header class="header">
    <div class="container header-row">
-    <a href={`/${lang}/`} class="brand" aria-label={t.homeLabel} aria-current={Astro.url.pathname===`/${lang}/`?'page':undefined}>
-      <img src="/images/Logo1.jpg" alt="" width="148" height="82" />
-    </a>
+    <div class="brand-search">
+      <a href={`/${lang}/`} class="brand" aria-label={t.homeLabel} aria-current={Astro.url.pathname===`/${lang}/`?'page':undefined}>
+        <img src="/images/Logo1.jpg" alt="" width="148" height="82" />
+      </a>
+      <SiteSearch lang={lang} />
+    </div>
     <nav aria-label={t.navigationLabel} class="nav">
       {navSections.map(s=><a href={`/${lang}/${s}/`} aria-current={Astro.url.pathname===`/${lang}/${s}/`?'page':undefined}>{t.menu[s]}</a>)}
     </nav>
@@ -59,7 +67,7 @@ const skipLabel:Record<Lang,string>={fr:'Aller au contenu principal',ar:'الا�
     </details>
    </div>
   </header>
-  <main id="main"><slot /></main>
+  <main id="main" data-pagefind-body data-pagefind-filter={`kind:${searchKind}`} data-pagefind-meta={`kind:${searchKind}`}><slot /></main>
   <footer class="footer"><div class="container footer-grid">
     <div><h2>NextGen Building Solutions</h2><p>{brandLocation[lang]}</p><a href={`tel:${brand.phone.replaceAll(' ','')}`}>{brand.phone}</a><p><a href={`mailto:${brand.email}`}>{brand.email}</a></p></div>
     <div><strong>{t.menu.ressources}</strong><p><a href={`/${lang}/ressources/`}>{t.menu.ressources}</a></p><p><a href={`/${lang}/mentions-legales/`}>{t.menu['mentions-legales']}</a></p><p><a href={`/${lang}/confidentialite/`}>{t.menu.confidentialite}</a></p></div>
@@ -67,3 +75,18 @@ const skipLabel:Record<Lang,string>={fr:'Aller au contenu principal',ar:'الا�
    </div><div class="container footnote">© {new Date().getFullYear()} NextGen Building Solutions · {t.mark}</div></footer>
  </body>
 </html>
+<style>
+  .brand-search{display:flex;align-items:center;gap:10px;flex-shrink:0;min-width:0}
+  @media(max-width:580px){
+    .brand-search{gap:4px}
+    :global(.header-row){gap:4px}
+    :global(.brand img){width:99px}
+    :global(.header-preferences .theme-icon){display:none}
+  }
+  @media(max-width:360px){
+    .brand-search{gap:3px}
+    :global(.header-row){gap:4px}
+    :global(.brand img){width:81px}
+    :global(.header-preferences .theme-icon){display:none}
+  }
+</style>

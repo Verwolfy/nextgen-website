@@ -256,3 +256,6 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+    # The same CI entrypoint now checks the generated trilingual Pagefind bundle.
+    from check_search_index import main as check_search_index
+    check_search_index()
