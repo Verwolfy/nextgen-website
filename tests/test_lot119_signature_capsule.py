@@ -38,10 +38,10 @@ class SignatureSearchCapsule(unittest.TestCase):
         self.assertIn("link.origin!==window.location.origin", self.component)
 
     def test_mobile_dark_mode_and_no_private_publication(self):
-        for marker in ("max-width:1279px", "max-width:580px", "max-width:360px",
+        for marker in ("max-width:1359px", "max-width:580px", "max-width:360px",
                        "html[data-theme='dark']", "ng-search-trigger:hover"):
             self.assertIn(marker, self.component)
-        self.assertIn("for width in (320, 390, 1280)", self.browser)
+        self.assertIn("for width in (320, 390, 1280, 1440)", self.browser)
         self.assertIn("search header overflow", self.browser)
         self.assertIn("desktop navigation unexpectedly wrapped", self.browser)
         self.assertIn("capsule light/dark styles identical", self.browser)
