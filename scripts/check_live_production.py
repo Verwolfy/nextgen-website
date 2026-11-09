@@ -8,6 +8,7 @@ No Cloudflare token, Supabase access, POST request, or state-changing action.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -26,6 +27,14 @@ CATEGORY_ROUTES = {
     "application": "gammes/bond/",
 }
 MAX_BYTES = 4 * 1024 * 1024
+BRAND_MEDIA = {
+    "/videos/nextgen-header-logo-v1.mp4":
+        "ae3ec46c8123065c3178f0543de93ba8d1d8a8a646dff0a22c8bd4f1e277f116",
+    "/videos/nextgen-header-logo-v1.webm":
+        "08162155ad64397604bbcd81befafec000b39f6c190999542a2788dd41bfb94d",
+    "/images/nextgen-header-logo-poster-v1.webp":
+        "a35f94aefd101087cc9a1609935790d1b64b79c938d782cb363ebe783753a60a",
+}
 
 
 def fetch(origin: str, path: str, timeout: float) -> bytes:
@@ -129,8 +138,15 @@ def validate_html(raw: bytes, lang: str, kind: str = "page") -> None:
 def verify_content(origin: str, timeout: float) -> None:
     """Verify publicly accessible content, never private Supabase source."""
     for lang in LANGS:
-        validate_html(fetch(origin, f"/{lang}/", timeout), lang)
-        print(f"PASS /{lang}/ : local search trigger, Pagefind scope, noindex")
+        homepage = fetch(origin, f"/{lang}/", timeout)
+        validate_html(homepage, lang)
+        text = homepage.decode("utf-8")
+        for asset in BRAND_MEDIA:
+            if asset not in text:
+                raise AssertionError(f"/{lang}/: missing animated logo asset {asset}")
+        if "data-header-brand" not in text or "data-header-brand-video" not in text:
+            raise AssertionError(f"/{lang}/: missing accessible animated header logo")
+        print(f"PASS /{lang}/ : local search, animated brand, Pagefind scope, noindex")
         for kind, suffix in CATEGORY_ROUTES.items():
             validate_html(fetch(origin, f"/{lang}/{suffix}", timeout), lang, kind)
         print(f"PASS /{lang}/ : product, application and sheet routes")
@@ -142,6 +158,12 @@ def verify_content(origin: str, timeout: float) -> None:
     assert isinstance(languages, (dict, list)), "Missing Pagefind language manifest"
     assert set(LANGS).issubset(set(languages)), "Incomplete FR/AR/EN Pagefind index"
     print("PASS Pagefind runtime and FR/AR/EN index")
+
+    for asset, digest in BRAND_MEDIA.items():
+        public_bytes = fetch(origin, asset, timeout)
+        if hashlib.sha256(public_bytes).hexdigest() != digest:
+            raise AssertionError(f"Live NextGen animated-logo asset altered: {asset}")
+    print("PASS optimized MP4/WebM/WebP assets (exact SHA256)", flush=True)
 
     products = json.loads(fetch(origin, "/data/products.json", timeout))
     assert products == [], "Unpublished product data unexpectedly accessible"

@@ -24,7 +24,12 @@ class SignatureSearchCapsule(unittest.TestCase):
 
     def test_no_regression_in_navigation_or_search(self):
         self.assertIn('<SiteSearch lang={lang} />', self.layout)
-        self.assertIn('src="/images/Logo1.jpg"', self.layout)
+        # Lot 123 intentionally replaces only the header logo image, while
+        # preserving the home link and the adjacent Signature search capsule.
+        self.assertIn("<AnimatedHeaderLogo lang={lang}", self.layout)
+        brand = (ROOT / "src/components/AnimatedHeaderLogo.astro").read_text(encoding="utf-8")
+        self.assertIn('src="/images/nextgen-header-logo-poster-v1.webp"', brand)
+        self.assertIn('href={`/${lang}/`}', brand)
         self.assertIn("data-pagefind-body", self.layout)
         self.assertIn("kind:${searchKind}", self.layout)
         self.assertIn("/pagefind/pagefind.js", self.component)

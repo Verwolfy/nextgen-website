@@ -263,3 +263,6 @@ if __name__ == "__main__":
     # Lot 121: all 50 provisional product guides in three locales.
     from check_application_guides import main as check_application_guides
     check_application_guides()
+    # Lot 123: animated logo preserves the public pages and all three locales.
+    from check_header_brand import main as check_header_brand
+    check_header_brand()

@@ -1,0 +1,96 @@
+---
+/**
+ * Lot 123 — Animated NextGen header logo.
+ * Initial reveal is played once; the completed logo segment loops seamlessly.
+ * Reduced-motion/data-saver visitors receive the optimized static WebP only.
+ */
+import type { Lang } from '../data/site';
+interface Props { lang:Lang; homeLabel:string; isHome?:boolean; }
+const {lang,homeLabel,isHome=false}=Astro.props;
+---
+<a href={`/${lang}/`} class="brand ng-brand-media" data-header-brand
+  aria-label={homeLabel} aria-current={isHome?'page':undefined}>
+  <img class="ng-brand-poster" src="/images/nextgen-header-logo-poster-v1.webp"
+    alt="" width="400" height="226" loading="eager" decoding="async" />
+  <video class="ng-brand-video" data-header-brand-video
+    aria-hidden="true" tabindex="-1" muted playsinline loop
+    poster="/images/nextgen-header-logo-poster-v1.webp"
+    width="400" height="226" preload="none">
+    <source data-src="/videos/nextgen-header-logo-v1.webm" type="video/webm" />
+    <source data-src="/videos/nextgen-header-logo-v1.mp4" type="video/mp4" />
+  </video>
+</a>
+<script>
+  const START_LOOP_AT=4.20;
+  const END_LOOP_AT=9.65;
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const saveData=Boolean((navigator as Navigator & {connection?:{saveData?:boolean}}).connection?.saveData);
+  const hosts=Array.from(document.querySelectorAll<HTMLElement>('[data-header-brand]'));
+  hosts.forEach(host=>{
+    const video=host.querySelector<HTMLVideoElement>('[data-header-brand-video]');
+    const sources=Array.from(video?.querySelectorAll<HTMLSourceElement>('source[data-src]')??[]);
+    if(!video||sources.length!==2)return;
+    let started=false;
+    let pending=false;
+    const pause=()=>{
+      video.pause();
+      host.classList.remove('ng-brand-playing');
+    };
+    const begin=()=>{
+      if(reduced.matches||saveData||document.visibilityState==='hidden')return;
+      if(!started){
+        sources.forEach(source=>{source.src=source.dataset.src||'';});
+        // The browser selects one supported codec; it does not download both.
+        video.load();
+        started=true;
+      }
+      if(pending)return;
+      pending=true;
+      void video.play().catch(()=>pause()).finally(()=>{pending=false;});
+    };
+    // Source stays on a static poster until playback is permitted and ready.
+    video.addEventListener('playing',()=>host.classList.add('ng-brand-playing'));
+    video.addEventListener('pause',()=>host.classList.remove('ng-brand-playing'));
+    video.addEventListener('error',pause);
+    video.addEventListener('timeupdate',()=>{
+      // The full logo at 4.2s and 9.65s is effectively identical:
+      // repeat only the subtle light sweep, not the blank initial reveal.
+      if(video.currentTime>=END_LOOP_AT&&!video.seeking){
+        try{video.currentTime=START_LOOP_AT;}catch{}
+      }
+    });
+    // Native loop is a last resort if browser drops timeupdate events.
+    video.addEventListener('ended',()=>{
+      if(reduced.matches||saveData)return;
+      video.currentTime=START_LOOP_AT;
+      void video.play().catch(()=>pause());
+    });
+    reduced.addEventListener('change',()=>reduced.matches?pause():begin());
+    document.addEventListener('visibilitychange',()=>document.visibilityState==='hidden'?pause():begin());
+    begin();
+  });
+</script>
+<style>
+  .ng-brand-media{display:block;position:relative;isolation:isolate;flex:0 0 auto;
+    width:130px;aspect-ratio:400/226;border-radius:4px;overflow:hidden;background:#fff;
+    line-height:0;text-decoration:none}
+  .ng-brand-media .ng-brand-poster,
+  .ng-brand-media .ng-brand-video{
+    display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
+    background:#fff;border:0;pointer-events:none}
+  .ng-brand-media .ng-brand-poster{opacity:1}
+  .ng-brand-media .ng-brand-video{opacity:0;transition:opacity 350ms ease-in-out}
+  .ng-brand-media.ng-brand-playing .ng-brand-video{opacity:1}
+  .ng-brand-media:hover{text-decoration:none}
+  .ng-brand-media:focus-visible{outline:3px solid #119a74;outline-offset:4px}
+  :global(html[data-theme='dark']) .ng-brand-media{background:#fff}
+  @media(min-width:981px){.ng-brand-media{width:130px}}
+  @media(max-width:980px){.ng-brand-media{width:104px}}
+  @media(max-width:580px){.ng-brand-media{width:99px}}
+  @media(max-width:360px){.ng-brand-media{width:81px}}
+  @media(prefers-reduced-motion:reduce){
+    .ng-brand-media .ng-brand-video{display:none!important;transition:none!important}
+    .ng-brand-media .ng-brand-poster{opacity:1!important}
+  }
+  @media print{.ng-brand-media .ng-brand-video{display:none!important}.ng-brand-media .ng-brand-poster{opacity:1}}
+</style>
