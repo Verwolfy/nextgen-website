@@ -259,3 +259,6 @@ if __name__ == "__main__":
     # The same CI entrypoint now checks the generated trilingual Pagefind bundle.
     from check_search_index import main as check_search_index
     check_search_index()
+    # Lot 121: all 50 provisional product guides in three locales.
+    from check_application_guides import main as check_application_guides
+    check_application_guides()
