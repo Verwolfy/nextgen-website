@@ -3,35 +3,31 @@ import type { Lang } from '../data/site';
 interface Props { lang: Lang }
 const {lang}=Astro.props;
 const captions:Record<Lang,string>={
-  fr:'Vidéo provisoire : Nexo et Geno présentent la démarche NextGen',
-  ar:'فيديو مؤقت: نيكسو وجينو يقدمان منهجية NextGen',
-  en:'Interim video: Nexo and Geno present the NextGen approach',
+  fr:'Présentation NextGen : Nexo et Geno expliquent la démarche de l’entreprise',
+  ar:'عرض NextGen: نيكسو وجينو يقدمان نهج الشركة',
+  en:'NextGen introduction: Nexo and Geno explain the company approach',
 };
+const webm='/videos/nextgen-about-v2.webm';
+const mp4='/videos/nextgen-about-v2.mp4';
+const poster='/videos/nextgen-about-v2-poster.webp';
 ---
-<video class="about-video" data-about-video src="/videos/nextgen-about-v1.mp4"
-  poster="/videos/nextgen-nexo-geno-poster.webp?v=20261105-v3" width="1280" height="720"
-  aria-label={captions[lang]} preload="none" muted playsinline loop controls></video>
+<video class="about-video" data-about-video data-about-video-version="v2"
+  poster={poster} width="854" height="480"
+  aria-label={captions[lang]} preload="none" muted playsinline loop controls>
+  <source src={webm} type="video/webm" />
+  <source src={mp4} type="video/mp4" />
+</video>
 <script>
-  // Playback is autonomous; no background loading for Data Saver or reduced motion.
+  // Play in-view only. Reduced-motion and Data Saver users see the optimized poster
+  // and may deliberately start the native player. No network API or private data.
   const video=document.querySelector<HTMLVideoElement>('[data-about-video]');
-  // Interim version is intentionally silent, including after native controls try to unmute.
-  // The MP4 file retains its audio track for a future editorial decision.
-  if (video) {
-    video.defaultMuted=true;
-    const enforceSilence=()=>{
-      if (!video.muted) video.muted=true;
-      if (video.volume!==0) video.volume=0;
-    };
-    video.addEventListener('volumechange',enforceSilence);
-    enforceSilence();
-  }
   if(video && 'IntersectionObserver' in window){
     const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
     const save=Boolean((navigator as Navigator & {connection?:{saveData?:boolean}}).connection?.saveData);
     let visible=false;
     const sync=async()=>{
       if(!visible || document.hidden || reduce.matches || save){video.pause();return;}
-      try{await video.play();}catch{/* Native player remains available */ }
+      try{await video.play();}catch{/* Native controls remain available */ }
     };
     const observer=new IntersectionObserver(entries=>{
       visible=entries.some(entry=>entry.isIntersecting);void sync();
@@ -40,8 +36,10 @@ const captions:Record<Lang,string>={
     document.addEventListener('visibilitychange',()=>{void sync();});
     reduce.addEventListener('change',()=>{void sync();});
   }
+  // Playback begins muted for autoplay; visitors can unmute manually via native controls.
 </script>
 <style>
   .about-video{display:block;width:min(100%,860px);height:auto;aspect-ratio:16/9;object-fit:contain;margin-inline:auto;border:1px solid #d4e2e7;border-radius:22px;background:#f7faf9;box-shadow:0 16px 40px #09223d22}
-  @media(prefers-reduced-motion:reduce){.about-video{animation:none}}
+  .about-video:focus-visible{outline:3px solid #56c5a5;outline-offset:3px}
+  @media(prefers-reduced-motion:reduce){.about-video{animation:none;transition:none}}
 </style>
