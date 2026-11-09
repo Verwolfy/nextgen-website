@@ -410,3 +410,9 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Aucune écriture Supabase / Cloudflare et aucun contenu certifié publié.
 - Rapport et reprise : `docs/LOT122_CLOUDFLARE_VERIFICATION_150_GUIDES_20261109.md`.
 - À vérifier : PR, CI et fusion ; la réussite de la vérification HTTP réelle se constatera seulement dans le workflow post-fusion.
+
+### Lot 122 — Livraison CI terminée
+- PR #121 fusionnée sur `main`, merge `9a3bf287c65772175912b4766b0d20071a420d34`.
+- Tests build/sécurité `42650722109` **SUCCESS**, 300 tests ; contrôle hors-ligne Cloudflare `42650722328` **SUCCESS**, 8 tests (3 lot 120, 5 lot 122).
+- Les 150 vérifications HTTP du site publié sont désormais intégrées au workflow push/`main`, quotidien et manuel, après le contrôle du SHA exact. Leurs résultats **post-fusion** ne sont pas visibles avec les outils actuels ; pas de confirmation live anticipée.
+- Documentation : `docs/LOT122_CLOUDFLARE_VERIFICATION_150_GUIDES_20261109.md`.
