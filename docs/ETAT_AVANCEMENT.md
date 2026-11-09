@@ -439,3 +439,12 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Trois nouveaux assets optimisés sur `main` : MP4 H.264/AAC 434 Ko, WebM VP9/Opus 467 Ko, poster WebP 35 Ko. Les 3 SHA Git ont été vérifiés contre les blobs.
 - Son accessible manuellement via contrôle natif ; autoplay muet sous conditions d'accessibilité, économie de données et visibilité.
 - Les copies de transfert Drive ont été supprimées. Aucun changement Supabase. **À vérifier séparément** : contrôle HTTP Cloudflare du dernier commit.
+
+### Lot 124 — Vidéo institutionnelle finale livrée
+- PR #124 **fusionnée** sur `main` le 09/11/2026, commit de fusion `4163d2091935086ebb30b3cbef535379a44350ef`.
+- Fichier client `Vid_About Last.mp4` remplacé dans la section « À propos » par MP4 H.264/AAC v3 (505 208 octets), WebM VP9/Opus (533 079 octets), affiche WebP (24 948 octets), durée 10,03 s et dimensions 854×480.
+- `AboutVideo.astro`, pages FR/AR/EN, repli visuel, tests unitaires, Chromium et contrôles SHA du moniteur Cloudflare modifiés ; les autres vidéos restent intactes.
+- GitHub Actions de PR **SUCCESS** : build/sécurité `42667764187`, navigateur `42667763853`, Lighthouse `42667763948`, moniteur hors ligne `42667763836`.
+- Tous les fichiers de référence v3 vérifiés sur `main`.
+- **À contrôler séparément** : le job de production après le déploiement Cloudflare du commit `4163d209` (workflow push `42668216401` initialement en cours). N'affirmer la mise en ligne réelle qu'après son succès.
+- Dossier : `docs/LOT124_ABOUT_FINAL_VIDEO_20261109.md`.
