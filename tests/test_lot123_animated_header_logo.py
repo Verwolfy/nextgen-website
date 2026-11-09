@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 MP4=ROOT/"public/videos/nextgen-header-logo-v1.mp4"
+WEBM=ROOT/"public/videos/nextgen-header-logo-v1.webm"
 POSTER=ROOT/"public/images/nextgen-header-logo-poster-v1.webp"
 
 
@@ -19,14 +20,19 @@ class AnimatedBrandContracts(unittest.TestCase):
 
     def test_optimized_source_media_and_poster_are_genuine(self):
         self.assertTrue(MP4.is_file())
+        self.assertTrue(WEBM.is_file())
         self.assertTrue(POSTER.is_file())
         self.assertEqual(hashlib.sha256(MP4.read_bytes()).hexdigest(),
                          "ae3ec46c8123065c3178f0543de93ba8d1d8a8a646dff0a22c8bd4f1e277f116")
+        self.assertEqual(hashlib.sha256(WEBM.read_bytes()).hexdigest(),
+                         "08162155ad64397604bbcd81befafec000b39f6c190999542a2788dd41bfb94d")
         self.assertEqual(hashlib.sha256(POSTER.read_bytes()).hexdigest(),
                          "a35f94aefd101087cc9a1609935790d1b64b79c938d782cb363ebe783753a60a")
         self.assertLess(MP4.stat().st_size,70000)
+        self.assertLess(WEBM.stat().st_size,70000)
         self.assertLess(POSTER.stat().st_size,12000)
         self.assertEqual(MP4.read_bytes()[4:8],b"ftyp")
+        self.assertEqual(WEBM.read_bytes()[:4],bytes.fromhex("1a45dfa3"))
         self.assertEqual(POSTER.read_bytes()[:4],b"RIFF")
         self.assertEqual(POSTER.read_bytes()[8:12],b"WEBP")
         self.assertNotIn(b"soun",MP4.read_bytes()[:2000])
@@ -43,6 +49,8 @@ class AnimatedBrandContracts(unittest.TestCase):
         self.assertIn("data-header-brand-video",self.brand)
         self.assertIn('poster="/images/nextgen-header-logo-poster-v1.webp"',self.brand)
         self.assertIn('data-src="/videos/nextgen-header-logo-v1.mp4"',self.brand)
+        self.assertIn('data-src="/videos/nextgen-header-logo-v1.webm"',self.brand)
+        self.assertIn("sources.forEach(source=>{source.src=source.dataset.src||'';});",self.brand)
         self.assertNotIn('<img src="/images/Logo1.jpg" alt="" width="148" height="82" />',self.layout)
 
     def test_loop_after_intro_no_blank_restart_and_mobility(self):
