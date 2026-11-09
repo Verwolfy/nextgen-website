@@ -3,6 +3,14 @@ name: NextGen - Cloudflare live production smoke (read-only)
 # GitHub->Cloudflare Pages deploys main automatically. No deploy hook or API token.
 # After each main commit (and daily), wait for Cloudflare's exact commit SHA.
 on:
+  pull_request:
+    paths:
+      - ".github/workflows/cloudflare-live-production-smoke.yml"
+      - "scripts/check_live_production.py"
+      - "scripts/check_live_browser.py"
+      - "scripts/write_release_marker.mjs"
+      - "tests/test_lot120_cloudflare_live_smoke.py"
+      - "package.json"
   push:
     branches: [main]
   schedule:
@@ -17,7 +25,29 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  offline-contracts:
+    name: Offline monitor contract / syntax
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate monitor syntax and read-only contract tests
+        run: |
+          python -m py_compile scripts/check_live_production.py scripts/check_live_browser.py
+          node --check scripts/write_release_marker.mjs
+          python -m unittest discover -s tests -p 'test_lot120_cloudflare_live_smoke.py' -v
+
   verify-production:
+    if: github.event_name != 'pull_request'
     name: Production release + FR/AR/EN search
     runs-on: ubuntu-latest
     timeout-minutes: 22
