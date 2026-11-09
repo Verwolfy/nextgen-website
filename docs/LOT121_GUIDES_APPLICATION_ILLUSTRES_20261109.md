@@ -48,7 +48,7 @@ Pour ces familles, des icônes vectorielles personnalisées (hors images industr
 - `src/data/fenek-application-steps.ts` : données éditoriales et traductions FR/AR/EN, 50 codes.
 - `src/components/FenekApplicationGuide.astro` : cartes illustrées et numérotées, responsive, RTL, thèmes clair/sombre, note et contrôle par référence.
 - `src/pages/[lang]/documentation/[slug].astro` : remplace les trois étapes génériques ; accordéon ouvert par défaut.
-- `src/components/FenekPrintableSheet.astro` : A4 imprimable aligné avec chaque guide (texte, pas d'images gonflantes).
+- `src/components/FenekPrintableSheet.astro` : synthèse imprimable A4 en trois phases conservée pour préserver une page ; les parcours illustrés complets sont disponibles en ligne.
 - `scripts/install_application_art.mjs` et `package.json` : packaging WebP vérifié sans CDN.
 - `tests/test_lot121_illustrated_guides.py` : audit du mapping exact et de la sécurité.
 - `scripts/check_application_guides.py` intégré à `scripts/check_built_pages.py` : 150 pages et asset SHA.
