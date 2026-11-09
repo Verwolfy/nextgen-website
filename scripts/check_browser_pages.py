@@ -690,7 +690,13 @@ def check() -> None:
                     assert page.locator(".fenek-section-nav a").count() == 4, lang
                     assert page.locator(".fenek-doc-accordion").count() == 8, lang
                     assert page.locator('.fenek-qualification-panel').count() == 2, lang
-                    assert page.locator(".fenek-doc-accordion[open]").count() == 3, lang
+                    assert page.locator(".fenek-doc-accordion[open]").count() == 4, lang
+                    guide = page.locator("[data-application-visual]")
+                    assert guide.count() == 1, lang
+                    assert guide.get_attribute("data-application-count") == "6", lang
+                    assert page.locator("[data-application-step]").count() == 6, lang
+                    art = page.request.get(base + "/images/application/tile-application-6.webp")
+                    assert art.status == 200 and art.body()[:4] == b"RIFF", lang
                     for marker in ("fenek-overview", "fenek-details",
                                    "fenek-application", "fenek-documents"):
                         assert page.locator("#" + marker).count() == 1, (lang, marker)

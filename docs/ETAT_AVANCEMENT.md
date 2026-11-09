@@ -383,3 +383,13 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Tests unitaires hors ligne : `tests/test_lot120_cloudflare_live_smoke.py`.
 - Aucune modification Supabase, Cloudflare DNS, Access, backend Leads ou contenu métier. Documentation : `docs/LOT120_CLOUDFLARE_LIVE_MONITORING_20261109.md`.
 - À finaliser : tests CI de la PR, corrections éventuelles, fusion sur `main`, puis contrôle du premier workflow post-déploiement (dépendant de l'accès à GitHub Actions).
+
+## 09/11/2026 — Lot 121 : guides d'application illustrés (en validation CI)
+- Périmètre : 50 concepts FENEK (16 BOND, 12 FLOW, 11 PROOF, 11 PAINT), 150 pages produit traduites FR/AR/EN.
+- 5 mortiers-colles : intégration des six dessins utilisateur en étapes illustrées, image WebP compacte et contrôlée SHA256 (décodeur build).
+- Autres procédés : cartes illustrées de 4 étapes et point de contrôle propre à chaque code.
+- Sources : catalogue éditorial et synthèses internes, plus guides de procédés MAPEI/Sika/ARDEX. **Aucune véritable FT FENEK approuvée accessible et aucune valeur technique inventée**.
+- Composants : `src/data/fenek-application-steps.ts`, `src/components/FenekApplicationGuide.astro`, `src/components/FenekPrintableSheet.astro`, pages documentation.
+- Tests : `tests/test_lot121_illustrated_guides.py`, `scripts/check_application_guides.py` intégré à `check_built_pages.py`. L'index Pagefind et le statut non publié restent inchangés.
+- Références, risques et limites dans `docs/LOT121_GUIDES_APPLICATION_ILLUSTRES_20261109.md`.
+- À suivre : PR/CI, corrections puis fusion si tests verts ; vérification Cloudflare distincte.

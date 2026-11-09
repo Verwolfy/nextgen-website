@@ -183,7 +183,8 @@ def main() -> None:
             assert markup.count('class="fenek-doc-accordion"') == 8, info
             assert markup.count('<summary>') == 8, info
             assert markup.count('class="fenek-accordion-indicator"') == 8, info
-            assert markup.count('class="fenek-doc-accordion" open') == 3, info
+            # The expanded application walkthrough makes four default-open sections.
+            assert markup.count('class="fenek-doc-accordion" open') == 4, info
             for anchor in ('fenek-overview', 'fenek-details',
                            'fenek-application', 'fenek-documents'):
                 assert f'id="{anchor}"' in markup, (info, anchor)
@@ -259,3 +260,6 @@ if __name__ == "__main__":
     # The same CI entrypoint now checks the generated trilingual Pagefind bundle.
     from check_search_index import main as check_search_index
     check_search_index()
+    # Lot 121: all 50 provisional product guides in three locales.
+    from check_application_guides import main as check_application_guides
+    check_application_guides()

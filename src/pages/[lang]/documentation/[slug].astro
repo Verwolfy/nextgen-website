@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import FenekPrintableSheet from '../../../components/FenekPrintableSheet.astro';
+import FenekApplicationGuide from '../../../components/FenekApplicationGuide.astro';
 import {brand, languages, rangeName, rangeColor, type Lang} from '../../../data/site';
 import {catalogueProjects, conceptPackshot, packagingLabelFor, type CatalogueProject} from '../../../lib/catalogue-projets';
 import {guideFor} from '../../../data/fenek-guides';
@@ -185,14 +186,10 @@ const emailHref = 'mailto:' + brand.email + '?subject=' +
             <summary>{t.quantity}<span class="fenek-accordion-indicator" aria-hidden="true"></span></summary>
             <div class="fenek-accordion-body"><p>{guide.quantity}</p></div>
           </details>
-          <details class="fenek-doc-accordion">
+          <details class="fenek-doc-accordion" open>
             <summary>{t.steps}<span class="fenek-accordion-indicator" aria-hidden="true"></span></summary>
             <div class="fenek-accordion-body">
-              <ol class="fenek-document-steps">
-                <li><strong>{t.before}</strong><p>{guide.before}</p></li>
-                <li><strong>{t.method}</strong><p>{guide.method}</p></li>
-                <li><strong>{t.after}</strong><p>{guide.after}</p></li>
-              </ol>
+              <FenekApplicationGuide lang={lang} product={product} />
               <p class="fenek-document-fineprint">{t.sourceHint}</p>
             </div>
           </details>
