@@ -393,3 +393,10 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Tests : `tests/test_lot121_illustrated_guides.py`, `scripts/check_application_guides.py` intégré à `check_built_pages.py`. L'index Pagefind et le statut non publié restent inchangés.
 - Références, risques et limites dans `docs/LOT121_GUIDES_APPLICATION_ILLUSTRES_20261109.md`.
 - À suivre : PR/CI, corrections puis fusion si tests verts ; vérification Cloudflare distincte.
+
+### Lot 121 — Livraison validée
+- PR #120 fusionnée dans `main` au commit `44560a0220fad66094f4e7e9a48c8eda06025d75`.
+- Tests **SUCCESS** sur `c8333c6423558e4a8871a38bab9f5517b52478cb` : build + sécurité `42648782262` (295 unitaires, 150 pages), Chromium `42648782299`, Lighthouse `42648782296`, contrôle hors-ligne Cloudflare `42648782387`.
+- 6 dessins utilisateur intégrés pour 5 colles carrelage, 50 mappings et 150 guides localisés, 45 autres références à pictogrammes adaptés ; impression A4 une page conservée.
+- Aucune donnée métier Supabase publiée ; tous les guides restent **éditoriaux/provisoires**, ratios et délais à certifier.
+- Suivi technique dans `docs/LOT121_GUIDES_APPLICATION_ILLUSTRES_20261109.md`. Contrôle du déploiement réel Cloudflare distinct.
