@@ -19,7 +19,13 @@ class Lot105HeroColorRefresh(unittest.TestCase):
         for color in ("#12295C","#0E9A5B","#71899B","#971B38"):
             self.assertIn(color,data)
         layout=(ROOT/"src/layouts/Layout.astro").read_text(encoding="utf-8")
-        self.assertIn("/images/Logo1.jpg",layout)
+        # Header brand is an animated MP4 with a user-provided poster since lot 123;
+        # the original static Logo1.jpg is still retained for printed sheets.
+        self.assertIn("<AnimatedHeaderLogo lang={lang}",layout)
+        brand=(ROOT/"src/components/AnimatedHeaderLogo.astro").read_text(encoding="utf-8")
+        self.assertIn("/images/nextgen-header-logo-poster-v1.webp",brand)
+        print_sheet=(ROOT/"src/components/FenekPrintableSheet.astro").read_text(encoding="utf-8")
+        self.assertIn("/images/Logo1.jpg",print_sheet)
         self.assertIn("noindex,nofollow",layout)
         component=(ROOT/"src/components/HeroWelcomeVideo.astro").read_text(encoding="utf-8")
         self.assertIn("data-welcome-toggle",component)
