@@ -355,3 +355,11 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Contrôles ajoutés : `scripts/check_search_index.py`, vérification de build et parcours Chromium C1T dans les 3 langues.
 - Document de conception et recette : `docs/LOT118_RECHERCHE_PAGEFIND_20261109.md`.
 - À vérifier impérativement : compilation et jobs PR GitHub, corrections nécessaires, fusion sur `main`, disponibilité effective de l'index sur le déploiement Cloudflare.
+
+### Lot 118 — Livraison vérifiée du 09/11/2026
+- PR GitHub #117 **fusionnée sur main** : `7a9c20e319cd66e32c505cb4a420b3dda913c7be`.
+- Trois jobs verts sur `a7e16b9` : build/sécurité 42627248702, Chromium 42627248323, Lighthouse 42627248350.
+- L'index Pagefind du site statique contient bien les langues FR/AR/EN, et les filtres produit/application/fiche/page.
+- Recherche Chromium C1T, accès clavier, responsivité mobile et absence de requête Supabase pendant la recherche : tests réussis.
+- Supabase principale : **aucune modification effectuée**.
+- **Reste à confirmer** : activation du nouvel index sur le site effectivement déployé par Cloudflare ; la vérification HTTP externe ne répondait pas dans la session. Les fiches techniques PDF non validées restent exclues de l'index.
