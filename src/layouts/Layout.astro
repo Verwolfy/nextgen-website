@@ -76,7 +76,13 @@ const skipLabel:Record<Lang,string>={fr:'Aller au contenu principal',ar:'الا�
  </body>
 </html>
 <style>
-  .brand-search{display:flex;align-items:center;gap:10px;flex-shrink:0;min-width:0}
+  /* Preserve logo/navigation balance with a text-bearing search capsule. */
+  :global(.header .container.header-row){
+    max-width:1440px;padding-inline:clamp(14px,2.2vw,30px);gap:clamp(10px,1.1vw,18px)
+  }
+  :global(.header .header-row .nav){gap:clamp(8px,1vw,14px)}
+  .brand-search{display:flex;align-items:center;gap:9px;flex-shrink:0;min-width:0}
+  @media(min-width:981px){:global(.header .brand img){width:130px}}
   @media(max-width:580px){
     .brand-search{gap:4px}
     :global(.header-row){gap:4px}

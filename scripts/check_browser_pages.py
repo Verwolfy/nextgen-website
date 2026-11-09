@@ -25,7 +25,7 @@ class SilentHandler(SimpleHTTPRequestHandler):
 def check_lot118_global_search(browser, base: str) -> None:
     """Lot 118: accessible instant search, filters, responsive RTL and no private requests."""
     for lang in ("fr", "ar", "en"):
-        for width in (320, 1280):
+        for width in (320, 390, 1280, 1440):
             page = browser.new_page(viewport={"width": width, "height": 780})
             requests = []
             page.on("request", lambda request: requests.append(request.url))
@@ -35,9 +35,19 @@ def check_lot118_global_search(browser, base: str) -> None:
                 panel = page.locator("[data-search-panel]")
                 assert trigger.count() == 1 and trigger.is_visible(), (lang, width)
                 assert panel.is_hidden() and trigger.get_attribute("aria-expanded") == "false"
-                if width == 320:
-                    assert page.evaluate("document.documentElement.scrollWidth-innerWidth") <= 4, \
-                        (lang, "search header overflow")
+                label = trigger.locator(".ng-search-trigger-label")
+                assert label.count() == 1 and bool(label.inner_text().strip()), (lang, width)
+                if width == 1440:
+                    assert label.is_visible(), (lang, "capsule label missing on wide desktop")
+                else:
+                    assert label.is_hidden(), (lang, "search icon-only on narrow screens")
+                if width in (1280, 1440):
+                    nav_links = page.locator(".header .nav a")
+                    first, last = nav_links.first.bounding_box(), nav_links.last.bounding_box()
+                    assert first and last and abs(first["y"] - last["y"]) <= 4, \
+                        (lang, "desktop navigation unexpectedly wrapped", first, last)
+                assert page.evaluate("document.documentElement.scrollWidth-innerWidth") <= 4, \
+                    (lang, width, "search header overflow")
                 trigger.click()
                 assert panel.is_visible() and trigger.get_attribute("aria-expanded") == "true"
                 field = panel.locator("[data-search-input]")
@@ -57,10 +67,21 @@ def check_lot118_global_search(browser, base: str) -> None:
                 assert panel.is_visible() and field.evaluate("el => el === document.activeElement"), (lang, width)
                 page.locator("[data-search-close]").click()
                 assert panel.is_hidden(), (lang, width)
+                if width == 1440:
+                    before = trigger.evaluate("el => getComputedStyle(el).color")
+                    page.locator("[data-theme-switch]").click()
+                    assert page.locator("html").get_attribute("data-theme") == "dark"
+                    after = trigger.evaluate("el => getComputedStyle(el).color")
+                    assert before != after, (lang, "capsule light/dark styles identical")
+                    page.locator("[data-theme-switch]").click()
+                    assert page.locator("html").get_attribute("data-theme") == "light"
                 if width == 320:
                     page.emulate_media(reduced_motion="reduce")
                     assert trigger.locator("svg").evaluate(
                         "el => getComputedStyle(el).animationName") == "none"
+                    assert trigger.evaluate(
+                        "el => getComputedStyle(el, '::before').animationName") == "none"
+                    assert page.evaluate("document.documentElement.scrollWidth-innerWidth") <= 4
             finally:
                 page.close()
 

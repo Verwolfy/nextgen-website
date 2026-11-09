@@ -4,7 +4,7 @@ interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const copy = {
   fr: {
-    open: 'Rechercher sur tout le site', close: 'Fermer la recherche', input: 'Produit, application, référence ou fiche…',
+    open: 'Rechercher sur tout le site', trigger: 'Rechercher', close: 'Fermer la recherche', input: 'Produit, application, référence ou fiche…',
     title: 'Que recherchez-vous ?', hint: 'Ex. : colle carrelage, étanchéité, FENEK-BOND C1T',
     all: 'Tout', product: 'Produits', application: 'Applications', sheet: 'Fiches produit', page: 'Pages',
     filters: 'Filtrer les résultats', ready: 'Saisissez un mot-clé pour chercher dans le site NextGen.',
@@ -13,7 +13,7 @@ const copy = {
     results: 'résultats', one: 'résultat',
   },
   ar: {
-    open: 'البحث في الموقع', close: 'إغلاق البحث', input: 'منتج أو تطبيق أو مرجع أو بطاقة…',
+    open: 'البحث في الموقع', trigger: 'بحث', close: 'إغلاق البحث', input: 'منتج أو تطبيق أو مرجع أو بطاقة…',
     title: 'عمّ تبحث؟', hint: 'مثال: لاصق البلاط، العزل المائي، FENEK-BOND C1T',
     all: 'الكل', product: 'المنتجات', application: 'التطبيقات', sheet: 'بطاقات المنتجات', page: 'الصفحات',
     filters: 'تصفية النتائج', ready: 'اكتب كلمة للبحث في موقع NextGen.',
@@ -22,7 +22,7 @@ const copy = {
     results: 'نتيجة', one: 'نتيجة',
   },
   en: {
-    open: 'Search the entire site', close: 'Close search', input: 'Product, application, reference or sheet…',
+    open: 'Search the entire site', trigger: 'Search', close: 'Close search', input: 'Product, application, reference or sheet…',
     title: 'What are you looking for?', hint: 'E.g. tile adhesive, waterproofing, FENEK-BOND C1T',
     all: 'All', product: 'Products', application: 'Applications', sheet: 'Product sheets', page: 'Pages',
     filters: 'Filter results', ready: 'Enter a keyword to search NextGen.',
@@ -45,6 +45,8 @@ const categories = [
     <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" aria-hidden="true">
       <circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path>
     </svg>
+    <span class="ng-search-trigger-label" aria-hidden="true">{copy.trigger}</span>
+    <span class="ng-search-signal" aria-hidden="true"></span>
   </button>
   <div class="ng-search-panel" data-search-panel id="ng-search-panel" hidden>
     <div class="container ng-search-inner" role="search" aria-label={copy.open}>
@@ -179,19 +181,44 @@ const categories = [
   }
 </script>
 <style>
+  /* Lot 119 — Signature capsule: light, integrated with the NextGen palette. */
   .ng-search{display:flex;align-items:center;flex:0 0 auto}
-  .ng-search-trigger{position:relative;isolation:isolate;width:46px;height:46px;display:grid;place-items:center;flex:none;
-    background:#0b318b;color:white;border:1px solid #244baa;border-radius:12px;cursor:pointer;
-    box-shadow:0 5px 14px #0c2a6a2b;transition:background .2s ease,transform .2s ease}
-  .ng-search-trigger:before{content:'';position:absolute;inset:-5px;border:2px solid #2dbb92;border-radius:16px;
-    opacity:0;pointer-events:none;animation:ng-search-call 5s ease-out infinite}
-  .ng-search-trigger svg{animation:ng-search-icon 5s ease-in-out infinite}
-  .ng-search-trigger:hover,.ng-search.is-open .ng-search-trigger{background:#087e64;transform:translateY(-1px)}
-  .ng-search.is-open .ng-search-trigger:before,.ng-search.is-open .ng-search-trigger svg{animation:none}
+  .ng-search-trigger{
+    position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;
+    gap:8px;min-width:118px;height:44px;padding:0 15px;border-radius:999px;flex:none;white-space:nowrap;
+    border:1px solid #a5d8c9;background:linear-gradient(115deg,#f2fbf7 0%,#e3f3ec 55%,#eaf6f3 100%);
+    color:#15594e;font:inherit;font-size:.8rem;font-weight:760;letter-spacing:.015em;
+    box-shadow:0 2px 8px #0c584410,inset 0 1px 0 #ffffffb8;
+    cursor:pointer;transition:background .22s ease,border-color .22s ease,box-shadow .22s ease,transform .22s ease
+  }
+  .ng-search-trigger:before{
+    content:'';position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(105deg,transparent 22%,#ffffffa6 49%,transparent 73%);
+    transform:translateX(-130%);animation:ng-search-glide 6s ease-in-out infinite
+  }
+  .ng-search-trigger svg{position:relative;z-index:1;flex:none;width:20px;height:20px;stroke-width:2.15}
+  .ng-search-trigger-label{position:relative;z-index:1;line-height:1.1}
+  .ng-search-signal{
+    position:relative;z-index:1;flex:none;width:6px;height:6px;border-radius:50%;
+    background:#139e7c;box-shadow:0 0 0 3px #70d2b02e;animation:ng-search-beacon 6s ease-in-out infinite
+  }
+  .ng-search-trigger:hover,.ng-search.is-open .ng-search-trigger{
+    border-color:#49ae92;background:linear-gradient(115deg,#e1f6eb 0%,#d6efe4 100%);
+    color:#0a5a4a;box-shadow:0 5px 14px #08714f22,inset 0 1px 0 #fff;transform:translateY(-1px)
+  }
+  .ng-search.is-open .ng-search-trigger{transform:none}
+  .ng-search.is-open .ng-search-trigger:before,
+  .ng-search.is-open .ng-search-signal{animation:none}
   .ng-search-trigger:focus-visible,.ng-search-close:focus-visible,.ng-search-filters button:focus-visible,
-  .ng-search-input-wrap input:focus-visible,.ng-search-result:focus-visible{outline:3px solid #28b889;outline-offset:3px}
-  @keyframes ng-search-call{0%,57%,100%{opacity:0;transform:scale(.94)}64%{opacity:.65;transform:scale(1)}80%{opacity:0;transform:scale(1.16)}}
-  @keyframes ng-search-icon{0%,57%,100%{transform:scale(1)}64%{transform:scale(1.14)}70%{transform:scale(1)}}
+  .ng-search-input-wrap input:focus-visible,.ng-search-result:focus-visible{outline:3px solid #1d9d7b;outline-offset:3px}
+  @keyframes ng-search-glide{
+    0%,68%,100%{transform:translateX(-130%)}
+    82%{transform:translateX(140%)}
+  }
+  @keyframes ng-search-beacon{
+    0%,69%,100%{box-shadow:0 0 0 3px #70d2b02e;opacity:.8}
+    80%{box-shadow:0 0 0 5px #58bd9f40;opacity:1}
+  }
   .ng-search-panel{position:absolute;top:100%;inset-inline:0;width:100%;background:#fff;border-bottom:1px solid #d6e3e7;
     color:#123047;box-shadow:0 22px 42px #08274335;z-index:39}
   .ng-search-panel[hidden]{display:none!important}
@@ -221,6 +248,15 @@ const categories = [
   .ng-search-result-kind{font-size:.69rem;color:#087d5b;font-weight:780;text-transform:uppercase;letter-spacing:.04em}
   .ng-search-result strong{font-size:.97rem;line-height:1.35;overflow-wrap:anywhere}
   .ng-search-excerpt{font-size:.8rem;line-height:1.5;color:#516a77;overflow-wrap:anywhere}
+  :global(html[data-theme='dark']) .ng-search-trigger{
+    background:linear-gradient(115deg,#173d42,#1c4b47);border-color:#407e72;
+    color:#d6faeb;box-shadow:0 2px 12px #0003,inset 0 1px 0 #ffffff10
+  }
+  :global(html[data-theme='dark']) .ng-search-trigger:hover,
+  :global(html[data-theme='dark']) .ng-search.is-open .ng-search-trigger{
+    background:linear-gradient(115deg,#1d554d,#266252);border-color:#69baa0;color:#f0fff8
+  }
+  :global(html[data-theme='dark']) .ng-search-signal{background:#80e0b8;box-shadow:0 0 0 3px #58bd9f50}
   :global(html[data-theme='dark']) .ng-search-panel{background:#112a41;border-color:#426178;color:#ecf6fb}
   :global(html[data-theme='dark']) .ng-search-heading strong{color:#edf8fc}
   :global(html[data-theme='dark']) .ng-search-heading p,:global(html[data-theme='dark']) .ng-search-status{color:#bcd0dd}
@@ -233,12 +269,20 @@ const categories = [
   :global(html[data-theme='dark']) .ng-search-result:hover{background:#214c51}
   :global(html[data-theme='dark']) .ng-search-excerpt{color:#bbd1dc}
   :global(html[data-theme='dark']) .ng-search-result-kind{color:#85e8ba}
+  /* Keep desktop navigation on one line; compact icon-only pill below 1360px. */
+  @media(max-width:1359px){
+    .ng-search-trigger{min-width:44px;width:44px;padding:0;gap:0}
+    .ng-search-trigger-label,.ng-search-signal{display:none}
+  }
   @media(max-width:700px){.ng-search-results{grid-template-columns:1fr}.ng-search-inner{padding-block:18px 24px}}
-  @media(max-width:580px){.ng-search-trigger{width:39px;height:39px;border-radius:10px}.ng-search-trigger svg{width:21px;height:21px}
+  @media(max-width:580px){.ng-search-trigger{width:39px;min-width:39px;height:39px}.ng-search-trigger svg{width:20px;height:20px}
     .ng-search-heading p{font-size:.77rem}.ng-search-input-wrap{min-height:53px;padding:0 11px;gap:8px}
     .ng-search-input-wrap input{font-size:.9rem}.ng-search-input-wrap kbd{display:none}
     .ng-search-filters{gap:5px}.ng-search-filters button{font-size:.74rem;padding:6px 9px}}
-  @media(max-width:360px){.ng-search-trigger{width:35px;height:35px}}
-  @media(prefers-reduced-motion:reduce){.ng-search-trigger,.ng-search-trigger svg,.ng-search-trigger:before{animation:none;transition:none}}
+  @media(max-width:360px){.ng-search-trigger{width:35px;min-width:35px;height:35px}}
+  @media(prefers-reduced-motion:reduce){
+    .ng-search-trigger,.ng-search-trigger:before,.ng-search-signal{animation:none;transition:none}
+    .ng-search-trigger:hover{transform:none}
+  }
   @media print{.ng-search{display:none}}
 </style>
