@@ -7,6 +7,7 @@ import '../styles/theme.css';
 import '../styles/v3.css';
 import HeaderPreferences from '../components/HeaderPreferences.astro';
 import SiteSearch from '../components/SiteSearch.astro';
+import AnimatedHeaderLogo from '../components/AnimatedHeaderLogo.astro';
 import ThemeInit from '../components/ThemeInit.astro';
 interface Props { lang:Lang; title:string; description:string; }
 const {lang,title,description}=Astro.props;
@@ -49,9 +50,7 @@ const skipLabel:Record<Lang,string>={fr:'Aller au contenu principal',ar:'الا�
   <header class="header">
    <div class="container header-row">
     <div class="brand-search">
-      <a href={`/${lang}/`} class="brand" aria-label={t.homeLabel} aria-current={Astro.url.pathname===`/${lang}/`?'page':undefined}>
-        <img src="/images/Logo1.jpg" alt="" width="148" height="82" />
-      </a>
+      <AnimatedHeaderLogo lang={lang} homeLabel={t.homeLabel} isHome={Astro.url.pathname===`/${lang}/`} />
       <SiteSearch lang={lang} />
     </div>
     <nav aria-label={t.navigationLabel} class="nav">
@@ -82,17 +81,14 @@ const skipLabel:Record<Lang,string>={fr:'Aller au contenu principal',ar:'الا�
   }
   :global(.header .header-row .nav){gap:clamp(8px,1vw,14px)}
   .brand-search{display:flex;align-items:center;gap:9px;flex-shrink:0;min-width:0}
-  @media(min-width:981px){:global(.header .brand img){width:130px}}
   @media(max-width:580px){
     .brand-search{gap:4px}
     :global(.header-row){gap:4px}
-    :global(.brand img){width:99px}
     :global(.header-preferences .theme-icon){display:none}
   }
   @media(max-width:360px){
     .brand-search{gap:3px}
     :global(.header-row){gap:4px}
-    :global(.brand img){width:81px}
     :global(.header-preferences .theme-icon){display:none}
   }
 </style>
