@@ -41,7 +41,7 @@ def check_lot118_global_search(browser, base: str) -> None:
                 trigger.click()
                 assert panel.is_visible() and trigger.get_attribute("aria-expanded") == "true"
                 field = panel.locator("[data-search-input]")
-                assert field.is_focused(), (lang, width)
+                assert field.evaluate("el => el === document.activeElement"), (lang, width)
                 assert page.request.get(base + "/pagefind/pagefind.js").status == 200
                 field.fill("C1T")
                 panel.locator("[data-search-filter='product']").click()
@@ -52,9 +52,9 @@ def check_lot118_global_search(browser, base: str) -> None:
                 assert all("supabase.co" not in url for url in requests), (lang, requests)
                 page.keyboard.press("Escape")
                 assert panel.is_hidden() and trigger.get_attribute("aria-expanded") == "false"
-                assert trigger.is_focused(), (lang, width)
+                assert trigger.evaluate("el => el === document.activeElement"), (lang, width)
                 page.keyboard.press("Control+k")
-                assert panel.is_visible() and field.is_focused(), (lang, width)
+                assert panel.is_visible() and field.evaluate("el => el === document.activeElement"), (lang, width)
                 page.locator("[data-search-close]").click()
                 assert panel.is_hidden(), (lang, width)
                 if width == 320:
