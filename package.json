@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/copy_public_assets.mjs && astro build",
-    "preview": "astro preview"
+    "build": "node scripts/copy_public_assets.mjs && astro build && npx --yes pagefind@1.5.2 --site dist",
+    "preview": "astro preview",
+    "check:search": "python scripts/check_search_index.py"
   },
   "engines": {
     "node": ">=22.12.0"
