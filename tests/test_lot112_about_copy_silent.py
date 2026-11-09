@@ -32,8 +32,8 @@ class AboutCopyAndAudio(unittest.TestCase):
 
     def test_final_player_autoplay_muted_and_manual_audio(self):
         video=(ROOT/"src/components/AboutVideo.astro").read_text(encoding="utf-8")
-        for token in ("muted playsinline loop controls", "nextgen-about-v2.mp4",
-                      "nextgen-about-v2-poster.webp", "nextgen-about-v2.webm", "data-about-video-version=\"v2\"",
+        for token in ("muted playsinline loop controls", "nextgen-about-v3.mp4",
+                      "nextgen-about-v3-poster.webp", "nextgen-about-v3.webm", "data-about-video-version=\"v3\"",
                       "connection?.saveData","reduce.matches","video.pause()","video.play()"):
             self.assertIn(token,video,token)
         self.assertNotIn("volumechange",video)
