@@ -432,3 +432,10 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - `AboutVideo.astro` et `src/pages/[lang]/[section].astro` utilisent désormais v2 en FR/AR/EN, avec lecture muette uniquement en visibilité et son activable par l'utilisateur.
 - Tests build, Chromium, intégrité media, Cloudflare en lecture seule et vérification des trois langues mis à jour. Dossiers de catalogue, Pagefind, Supabase et logo d'en-tête inchangés.
 - À terminer : validation CI PR, corrections éventuelles, fusion sur `main`, vérification Cloudflare post-fusion.
+
+### Lot 124 — Livraison GitHub achevée
+- PR #123 fusionnée sur `main` : `bf3fe73ad0cd29d5987a6696a87953fb03525898` ; commit testé `9155b5e29bf5e3f133b178ee1decddb228bc0c3f`.
+- Tests **SUCCESS** : build/sécurité `42663453960`, Chromium `42663453949`, Lighthouse `42663453974`, moniteur hors ligne `42663454002`.
+- Trois nouveaux assets optimisés sur `main` : MP4 H.264/AAC 434 Ko, WebM VP9/Opus 467 Ko, poster WebP 35 Ko. Les 3 SHA Git ont été vérifiés contre les blobs.
+- Son accessible manuellement via contrôle natif ; autoplay muet sous conditions d'accessibilité, économie de données et visibilité.
+- Les copies de transfert Drive ont été supprimées. Aucun changement Supabase. **À vérifier séparément** : contrôle HTTP Cloudflare du dernier commit.
