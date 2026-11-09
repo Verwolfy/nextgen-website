@@ -347,3 +347,11 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Tests ajoutés et étendus : `tests/test_lot26_individual_3d.py`, `tests/test_home_showcase.py`, `scripts/check_built_pages.py`, `scripts/check_browser_pages.py`. Documentation : `docs/LOT26_VISIONNEUSES_3D.md`.
 - Aucune publication Cloudflare/DNS/Access, aucune écriture Supabase/ERP, aucun produit publié, aucun formulaire activé.
 - Suite : confirmer le succès des deux CI sur le même SHA, fusionner la PR, revérifier `main`, puis importer les 20 WebP BOND uniquement depuis le ZIP approuvé. Toute mise en ligne requiert la protection Access réelle et les validations commerciales/juridiques.
+
+## 09/11/2026 — Lot 118 : recherche globale indexée (option B)
+- Choix utilisateur validé : loupe animée près du logo, panneau déroulant, filtres Produits / Applications / Fiches produit / Pages, FR/AR/EN.
+- Implémentation sur branche `feat/lot118-global-pagefind-search-20261109` : composant `SiteSearch.astro`, configuration Pagefind v1.5.2 après build Astro, classement par type et UI clavier/mobile/nuit.
+- Environnement de recherche : HTML statique public uniquement ; zéro export Supabase, zéro publication de produits ou de fiches techniques privées.
+- Contrôles ajoutés : `scripts/check_search_index.py`, vérification de build et parcours Chromium C1T dans les 3 langues.
+- Document de conception et recette : `docs/LOT118_RECHERCHE_PAGEFIND_20261109.md`.
+- À vérifier impérativement : compilation et jobs PR GitHub, corrections nécessaires, fusion sur `main`, disponibilité effective de l'index sur le déploiement Cloudflare.
