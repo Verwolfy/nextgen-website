@@ -425,3 +425,10 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Contenu FR/AR/EN, lien accueil, RTL et capsule de recherche conservés ; aucune modification Supabase.
 - Contrôles prévus : SHA-256, builds, tests Python et Chromium, Lighthouse, fusion GitHub, puis preuve séparée du déploiement Cloudflare.
 - Documentation : `docs/LOT123_HEADER_LOGO_VIDEO_20261109.md`.
+
+## 09/11/2026 — Lot 124 : nouvelle vidéo finale « À propos de NextGen »
+- Source utilisateur `Vid_About Last.mp4` (10 s, H.264/AAC, 1280×720, 4 663 502 o) optimisée en `nextgen-about-v2.mp4` (854×480, 24 fps, 434 327 o, ~90,7 % plus léger), plus poster WebP 35 512 o.
+- Deux blobs binaires vérifiés transférés sur branche `feat/lot124-about-video-final-20261109` ; SHA256 et provenance dans `docs/LOT124_ABOUT_VIDEO_FINAL_20261109.md`.
+- `AboutVideo.astro` et `src/pages/[lang]/[section].astro` utilisent désormais v2 en FR/AR/EN, avec lecture muette uniquement en visibilité et son activable par l'utilisateur.
+- Tests build, Chromium, intégrité media, Cloudflare en lecture seule et vérification des trois langues mis à jour. Dossiers de catalogue, Pagefind, Supabase et logo d'en-tête inchangés.
+- À terminer : validation CI PR, corrections éventuelles, fusion sur `main`, vérification Cloudflare post-fusion.
