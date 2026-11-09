@@ -8,8 +8,10 @@ on:
       - ".github/workflows/cloudflare-live-production-smoke.yml"
       - "scripts/check_live_production.py"
       - "scripts/check_live_browser.py"
+      - "scripts/check_live_application_guides.py"
       - "scripts/write_release_marker.mjs"
       - "tests/test_lot120_cloudflare_live_smoke.py"
+      - "tests/test_lot122_cloudflare_illustration_live.py"
       - "package.json"
   push:
     branches: [main]
@@ -42,9 +44,10 @@ jobs:
           node-version: "22"
       - name: Validate monitor syntax and read-only contract tests
         run: |
-          python -m py_compile scripts/check_live_production.py scripts/check_live_browser.py
+          python -m py_compile scripts/check_live_production.py scripts/check_live_browser.py scripts/check_live_application_guides.py
           node --check scripts/write_release_marker.mjs
           python -m unittest discover -s tests -p 'test_lot120_cloudflare_live_smoke.py' -v
+          python -m unittest discover -s tests -p 'test_lot122_cloudflare_illustration_live.py' -v
 
   verify-production:
     if: github.event_name != 'pull_request'
@@ -66,6 +69,11 @@ jobs:
             --origin https://nextgen-buildingsolutions.com \
             --expected-sha "$EXPECTED_MAIN_SHA" \
             --attempts 24 --interval 20 --timeout 15
+      - name: Verify all 150 deployed application walkthroughs and original user drawings
+        run: |
+          python scripts/check_live_application_guides.py \
+            --origin https://nextgen-buildingsolutions.com \
+            --workers 6 --timeout 15
       - name: Install isolated Chromium smoke test tools
         run: |
           python -m pip install --disable-pip-version-check "playwright==1.56.0"

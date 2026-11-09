@@ -400,3 +400,13 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - 6 dessins utilisateur intégrés pour 5 colles carrelage, 50 mappings et 150 guides localisés, 45 autres références à pictogrammes adaptés ; impression A4 une page conservée.
 - Aucune donnée métier Supabase publiée ; tous les guides restent **éditoriaux/provisoires**, ratios et délais à certifier.
 - Suivi technique dans `docs/LOT121_GUIDES_APPLICATION_ILLUSTRES_20261109.md`. Contrôle du déploiement réel Cloudflare distinct.
+
+## 09/11/2026 — Lot 122 : vérifier les 150 guides réellement servis par Cloudflare
+- Capture utilisateur : production Cloudflare verte sur `44560a0` puis `dc025bc` ; prévisualisation `c8333c6` en échec sans incidence sur la production.
+- Le moniteur du lot 120 ne vérifiait pas encore les 150 parcours illustrés du lot 121 ; nouvelle vérification en lecture seule et à couverture exhaustive.
+- `scripts/check_live_application_guides.py` : 50 produits × 3 langues, 6 dessins pour cinq colles-carrelage ou 4 pictogrammes pour les autres références, code/HTML, accessibilité et SHA-256 du WebP.
+- Déclenchement via `.github/workflows/cloudflare-live-production-smoke.yml` après vérification du commit exact publié.
+- Tests hors ligne ajoutés : `tests/test_lot122_cloudflare_illustration_live.py`, nouveaux cas négatifs.
+- Aucune écriture Supabase / Cloudflare et aucun contenu certifié publié.
+- Rapport et reprise : `docs/LOT122_CLOUDFLARE_VERIFICATION_150_GUIDES_20261109.md`.
+- À vérifier : PR, CI et fusion ; la réussite de la vérification HTTP réelle se constatera seulement dans le workflow post-fusion.
