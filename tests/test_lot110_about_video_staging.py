@@ -13,7 +13,8 @@ class AboutV1Video(unittest.TestCase):
         story=(ROOT/"src/components/AboutStory.astro").read_text(encoding="utf-8")
         page=(ROOT/"src/pages/[lang]/[section].astro").read_text(encoding="utf-8")
         video=(ROOT/"src/components/AboutVideo.astro").read_text(encoding="utf-8")
-        for token in ('const src=\'/videos/nextgen-about-v2.mp4\'' ,
+        for token in ('const mp4=\'/videos/nextgen-about-v2.mp4\'' ,
+                      'const webm=\'/videos/nextgen-about-v2.webm\'',
                       'const poster=\'/videos/nextgen-about-v2-poster.webp\'',
                       "fr:","ar:","en:","data-about-video",'preload="none"',
                       "muted playsinline loop controls","IntersectionObserver",
