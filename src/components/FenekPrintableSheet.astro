@@ -9,6 +9,7 @@ import {conceptPackshot, packagingLabelFor, type CatalogueProject} from '../lib/
 import {guideFor} from '../data/fenek-guides';
 import {qualificationFor} from '../data/fenek-qualification-notes';
 import {applicationContextFor} from '../data/fenek-application-context';
+import {applicationStepsFor} from '../data/fenek-application-steps';
 
 interface Props { lang:Lang; product:CatalogueProject; }
 const {lang,product} = Astro.props;
@@ -59,6 +60,7 @@ const text = {
   },
 }[lang];
 const formats = product.conditionnements.map(c=>packagingLabelFor(c.format,lang)).join(' · ') || text.unavailable;
+const applicationSteps=applicationStepsFor(product.code,lang);
 ---
 <section class="fenek-print-document" lang={lang} dir={lang==='ar'?'rtl':'ltr'}>
   <div class="fenek-print-masthead">
@@ -117,9 +119,10 @@ const formats = product.conditionnements.map(c=>packagingLabelFor(c.format,lang)
   <section class="fenek-print-process">
     <h2>{text.steps}</h2>
     <ol>
-      <li><strong><span>01</span> {text.before}</strong><p>{guide.before}</p></li>
-      <li><strong><span>02</span> {text.method}</strong><p>{guide.method}</p></li>
-      <li><strong><span>03</span> {text.after}</strong><p>{guide.after}</p></li>
+      {applicationSteps.map((step,i)=><li>
+        <strong><span>{String(i+1).padStart(2,'0')}</span> {step.title}</strong>
+        <p>{step.description}</p>
+      </li>)}
     </ol>
   </section>
   <div class="fenek-print-source"><strong>{text.source} :</strong> {text.sourceNote}</div>
