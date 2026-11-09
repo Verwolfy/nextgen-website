@@ -1,0 +1,244 @@
+---
+import type { Lang } from '../data/site';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const copy = {
+  fr: {
+    open: 'Rechercher sur tout le site', close: 'Fermer la recherche', input: 'Produit, application, référence ou fiche…',
+    title: 'Que recherchez-vous ?', hint: 'Ex. : colle carrelage, étanchéité, FENEK-BOND C1T',
+    all: 'Tout', product: 'Produits', application: 'Applications', sheet: 'Fiches produit', page: 'Pages',
+    filters: 'Filtrer les résultats', ready: 'Saisissez un mot-clé pour chercher dans le site NextGen.',
+    loading: 'Recherche en cours…', empty: 'Aucun résultat. Essayez un autre terme.',
+    error: 'Index de recherche indisponible. Veuillez réessayer ultérieurement.',
+    results: 'résultats', one: 'résultat',
+  },
+  ar: {
+    open: 'البحث في الموقع', close: 'إغلاق البحث', input: 'منتج أو تطبيق أو مرجع أو بطاقة…',
+    title: 'عمّ تبحث؟', hint: 'مثال: لاصق البلاط، العزل المائي، FENEK-BOND C1T',
+    all: 'الكل', product: 'المنتجات', application: 'التطبيقات', sheet: 'بطاقات المنتجات', page: 'الصفحات',
+    filters: 'تصفية النتائج', ready: 'اكتب كلمة للبحث في موقع NextGen.',
+    loading: 'جارٍ البحث…', empty: 'لا توجد نتائج. جرّب عبارة أخرى.',
+    error: 'البحث غير متاح مؤقتًا. حاول لاحقًا.',
+    results: 'نتيجة', one: 'نتيجة',
+  },
+  en: {
+    open: 'Search the entire site', close: 'Close search', input: 'Product, application, reference or sheet…',
+    title: 'What are you looking for?', hint: 'E.g. tile adhesive, waterproofing, FENEK-BOND C1T',
+    all: 'All', product: 'Products', application: 'Applications', sheet: 'Product sheets', page: 'Pages',
+    filters: 'Filter results', ready: 'Enter a keyword to search NextGen.',
+    loading: 'Searching…', empty: 'No results. Try another keyword.',
+    error: 'Search index is temporarily unavailable. Please try again later.',
+    results: 'results', one: 'result',
+  },
+}[lang];
+const categories = [
+  {key:'all',label:copy.all},{key:'product',label:copy.product},
+  {key:'application',label:copy.application},{key:'sheet',label:copy.sheet},
+  {key:'page',label:copy.page},
+];
+---
+<div class="ng-search" data-site-search data-lang={lang}
+  data-ready={copy.ready} data-loading={copy.loading} data-empty={copy.empty}
+  data-error={copy.error} data-results-label={copy.results} data-one-label={copy.one}>
+  <button type="button" class="ng-search-trigger" data-search-trigger
+    aria-label={copy.open} title={copy.open} aria-expanded="false" aria-controls="ng-search-panel">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" aria-hidden="true">
+      <circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path>
+    </svg>
+  </button>
+  <div class="ng-search-panel" data-search-panel id="ng-search-panel" hidden>
+    <div class="container ng-search-inner" role="search" aria-label={copy.open}>
+      <div class="ng-search-heading">
+        <div><strong>{copy.title}</strong><p>{copy.hint}</p></div>
+        <button type="button" data-search-close class="ng-search-close" aria-label={copy.close}>×</button>
+      </div>
+      <div class="ng-search-input-wrap">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+        <input type="search" data-search-input enterkeyhint="search" spellcheck="false" autocomplete="off"
+          maxlength="100" placeholder={copy.input} aria-label={copy.input} />
+        <kbd>Esc</kbd>
+      </div>
+      <div class="ng-search-filters" role="group" aria-label={copy.filters}>
+        {categories.map(x=><button type="button" data-search-filter={x.key}
+          aria-pressed={x.key==='all'?'true':'false'}>{x.label}</button>)}
+      </div>
+      <p class="ng-search-status" data-search-status role="status" aria-live="polite">{copy.ready}</p>
+      <div class="ng-search-results" data-search-results></div>
+    </div>
+  </div>
+</div>
+<script>
+  interface IndexedPage { url:string; excerpt?:string; plain_excerpt?:string; meta?:{title?:string;kind?:string} }
+  interface SearchAPI {
+    init:()=>Promise<void>;
+    search:(term:string,options?:{filters:{kind:string}})=>Promise<{
+      results:Array<{data:()=>Promise<IndexedPage>}>
+    }>;
+    preload?:(term:string)=>Promise<void>;
+  }
+  const host=document.querySelector<HTMLElement>('[data-site-search]');
+  if(host){
+    const trigger=host.querySelector<HTMLButtonElement>('[data-search-trigger]')!;
+    const panel=host.querySelector<HTMLElement>('[data-search-panel]')!;
+    const closeButton=host.querySelector<HTMLButtonElement>('[data-search-close]')!;
+    const input=host.querySelector<HTMLInputElement>('[data-search-input]')!;
+    const status=host.querySelector<HTMLElement>('[data-search-status]')!;
+    const results=host.querySelector<HTMLElement>('[data-search-results]')!;
+    const tabs=Array.from(host.querySelectorAll<HTMLButtonElement>('[data-search-filter]'));
+    const lang=host.dataset.lang||'fr';
+    let selected='all';
+    let sequence=0;
+    let scheduled:ReturnType<typeof setTimeout>|undefined;
+    let enginePromise:Promise<SearchAPI>|undefined;
+    const load=()=>enginePromise??=(async()=>{
+      // Generated post-build by Pagefind. No search backend or Supabase secret in the browser.
+      const moduleUrl='/pagefind/pagefind.js';
+      const engine=await import(/* @vite-ignore */ moduleUrl) as SearchAPI;
+      await engine.init();
+      return engine;
+    })().catch(error=>{enginePromise=undefined;throw error;});
+    const close=(restore=true)=>{
+      if(panel.hidden)return;
+      panel.hidden=true;
+      trigger.setAttribute('aria-expanded','false');
+      host.classList.remove('is-open');
+      sequence++;
+      if(scheduled)clearTimeout(scheduled);
+      if(restore)trigger.focus();
+    };
+    const open=()=>{
+      panel.hidden=false;
+      trigger.setAttribute('aria-expanded','true');
+      host.classList.add('is-open');
+      input.focus();
+      void load().catch(()=>{if(!panel.hidden)status.textContent=host.dataset.error||'';});
+    };
+    const categoryText=(kind:string)=>tabs.find(t=>t.dataset.searchFilter===kind)?.textContent?.trim()||tabs[0].textContent?.trim()||'';
+    const run=async()=>{
+      const term=input.value.trim().slice(0,100);
+      const current=++sequence;
+      results.replaceChildren();
+      if(!term){status.textContent=host.dataset.ready||'';return;}
+      status.textContent=host.dataset.loading||'';
+      try {
+        const engine=await load();
+        const opts=selected==='all'?undefined:{filters:{kind:selected}};
+        const response=await engine.search(term,opts);
+        const pages=await Promise.all(response.results.slice(0,10).map(x=>x.data()));
+        if(current!==sequence||panel.hidden)return;
+        let visible=0;
+        for(const page of pages){
+          // Only local, public pages in the current language may become result links.
+          const link=new URL(page.url,window.location.origin);
+          if(link.origin!==window.location.origin||!link.pathname.startsWith('/'+lang+'/'))continue;
+          const item=document.createElement('a');
+          item.className='ng-search-result';
+          item.href=link.pathname+link.search+link.hash;
+          const type=document.createElement('span');
+          type.className='ng-search-result-kind';
+          type.textContent=categoryText(page.meta?.kind||'page');
+          const heading=document.createElement('strong');
+          heading.textContent=page.meta?.title||link.pathname;
+          const snippet=document.createElement('span');
+          snippet.className='ng-search-excerpt';
+          // Plain text insertion prevents HTML injection from indexed content.
+          snippet.textContent=page.plain_excerpt||'';
+          item.append(type,heading,snippet);
+          results.append(item);
+          visible++;
+        }
+        status.textContent=visible===0?(host.dataset.empty||''):response.results.length+' '+(response.results.length===1?host.dataset.oneLabel:host.dataset.resultsLabel);
+      }catch{
+        if(current===sequence&&!panel.hidden)status.textContent=host.dataset.error||'';
+      }
+    };
+    const schedule=()=>{
+      if(scheduled)clearTimeout(scheduled);
+      scheduled=setTimeout(()=>{void run();},160);
+    };
+    trigger.addEventListener('click',()=>panel.hidden?open():close());
+    closeButton.addEventListener('click',()=>close());
+    input.addEventListener('input',()=>{
+      if(enginePromise&&input.value.trim())void enginePromise.then(e=>e.preload?.(input.value.trim())).catch(()=>{});
+      schedule();
+    });
+    tabs.forEach(tab=>tab.addEventListener('click',()=>{
+      selected=tab.dataset.searchFilter||'all';
+      tabs.forEach(t=>t.setAttribute('aria-pressed',String(t===tab)));
+      void run();
+      input.focus();
+    }));
+    document.addEventListener('keydown',event=>{
+      if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='k'){
+        event.preventDefault();panel.hidden?open():input.focus();
+      }else if(event.key==='Escape'&&!panel.hidden){event.preventDefault();close();}
+    });
+    document.addEventListener('pointerdown',event=>{
+      if(!panel.hidden&&!host.contains(event.target as Node))close(false);
+    });
+  }
+</script>
+<style>
+  .ng-search{display:flex;align-items:center;flex:0 0 auto}
+  .ng-search-trigger{position:relative;isolation:isolate;width:46px;height:46px;display:grid;place-items:center;flex:none;
+    background:#0b318b;color:white;border:1px solid #244baa;border-radius:12px;cursor:pointer;
+    box-shadow:0 5px 14px #0c2a6a2b;transition:background .2s ease,transform .2s ease}
+  .ng-search-trigger:before{content:'';position:absolute;inset:-5px;border:2px solid #2dbb92;border-radius:16px;
+    opacity:0;pointer-events:none;animation:ng-search-call 5s ease-out infinite}
+  .ng-search-trigger svg{animation:ng-search-icon 5s ease-in-out infinite}
+  .ng-search-trigger:hover,.ng-search.is-open .ng-search-trigger{background:#087e64;transform:translateY(-1px)}
+  .ng-search.is-open .ng-search-trigger:before,.ng-search.is-open .ng-search-trigger svg{animation:none}
+  .ng-search-trigger:focus-visible,.ng-search-close:focus-visible,.ng-search-filters button:focus-visible,
+  .ng-search-input-wrap input:focus-visible,.ng-search-result:focus-visible{outline:3px solid #28b889;outline-offset:3px}
+  @keyframes ng-search-call{0%,57%,100%{opacity:0;transform:scale(.94)}64%{opacity:.65;transform:scale(1)}80%{opacity:0;transform:scale(1.16)}}
+  @keyframes ng-search-icon{0%,57%,100%{transform:scale(1)}64%{transform:scale(1.14)}70%{transform:scale(1)}}
+  .ng-search-panel{position:absolute;top:100%;inset-inline:0;width:100%;background:#fff;border-bottom:1px solid #d6e3e7;
+    color:#123047;box-shadow:0 22px 42px #08274335;z-index:39}
+  .ng-search-panel[hidden]{display:none!important}
+  .ng-search-inner{padding-block:24px 28px;max-height:min(78vh,680px);overflow-y:auto}
+  .ng-search-heading{display:flex;align-items:start;justify-content:space-between;gap:16px;margin-bottom:16px}
+  .ng-search-heading strong{font-size:clamp(1.15rem,2vw,1.6rem);color:#0e2940}
+  .ng-search-heading p{margin:3px 0 0;color:#5b7384;font-size:.85rem}
+  .ng-search-close{background:#edf4f4;border:1px solid #d7e4e5;border-radius:10px;width:40px;height:40px;
+    color:#31495c;cursor:pointer;font-size:1.7rem;line-height:1}
+  .ng-search-input-wrap{display:flex;align-items:center;gap:14px;padding:0 16px;background:#f6fafb;
+    border:2px solid #1c9475;border-radius:14px;min-height:62px;box-shadow:0 8px 24px #098d6c13}
+  .ng-search-input-wrap>svg{color:#087e64;flex:none}
+  .ng-search-input-wrap input{min-width:0;flex:1;border:0;background:transparent;color:#122c41;
+    font:inherit;font-size:1.08rem;outline:none;direction:inherit}
+  .ng-search-input-wrap input:focus-visible{outline:none}
+  .ng-search-input-wrap kbd{font-size:.72rem;color:#647c87;border:1px solid #dae4e5;
+    padding:3px 7px;border-radius:6px;background:#fff}
+  .ng-search-filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .ng-search-filters button{cursor:pointer;border:1px solid #cddde2;background:#f4f8fa;color:#35536a;
+    padding:7px 13px;border-radius:99px;font:inherit;font-size:.83rem;font-weight:700}
+  .ng-search-filters button[aria-pressed=true]{background:#0b7359;color:#fff;border-color:#0b7359}
+  .ng-search-status{color:#556c7c;font-size:.83rem;margin:13px 0 6px}
+  .ng-search-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .ng-search-result{display:flex;flex-direction:column;gap:3px;padding:13px 16px;border:1px solid #dce7ea;
+    border-radius:11px;color:#0f3345;background:#f9fcfc;min-width:0}
+  .ng-search-result:hover{background:#eaf6f0;border-color:#84cab2;text-decoration:none}
+  .ng-search-result-kind{font-size:.69rem;color:#087d5b;font-weight:780;text-transform:uppercase;letter-spacing:.04em}
+  .ng-search-result strong{font-size:.97rem;line-height:1.35;overflow-wrap:anywhere}
+  .ng-search-excerpt{font-size:.8rem;line-height:1.5;color:#516a77;overflow-wrap:anywhere}
+  :global(html[data-theme='dark']) .ng-search-panel{background:#112a41;border-color:#426178;color:#ecf6fb}
+  :global(html[data-theme='dark']) .ng-search-heading strong{color:#edf8fc}
+  :global(html[data-theme='dark']) .ng-search-heading p,:global(html[data-theme='dark']) .ng-search-status{color:#bcd0dd}
+  :global(html[data-theme='dark']) .ng-search-input-wrap{background:#183a4b;border-color:#52cda0}
+  :global(html[data-theme='dark']) .ng-search-input-wrap input{color:#fff}
+  :global(html[data-theme='dark']) .ng-search-input-wrap kbd,:global(html[data-theme='dark']) .ng-search-close{background:#213d53;color:#e5f5f9;border-color:#426178}
+  :global(html[data-theme='dark']) .ng-search-filters button{background:#213d53;color:#d6eaf0;border-color:#4e6b7f}
+  :global(html[data-theme='dark']) .ng-search-filters button[aria-pressed=true]{background:#178469;color:white}
+  :global(html[data-theme='dark']) .ng-search-result{background:#18364a;border-color:#456477;color:#eaf7fc}
+  :global(html[data-theme='dark']) .ng-search-result:hover{background:#214c51}
+  :global(html[data-theme='dark']) .ng-search-excerpt{color:#bbd1dc}
+  :global(html[data-theme='dark']) .ng-search-result-kind{color:#85e8ba}
+  @media(max-width:700px){.ng-search-results{grid-template-columns:1fr}.ng-search-inner{padding-block:18px 24px}}
+  @media(max-width:580px){.ng-search-trigger{width:39px;height:39px;border-radius:10px}.ng-search-trigger svg{width:21px;height:21px}
+    .ng-search-heading p{font-size:.77rem}.ng-search-input-wrap{min-height:53px;padding:0 11px;gap:8px}
+    .ng-search-input-wrap input{font-size:.9rem}.ng-search-input-wrap kbd{display:none}
+    .ng-search-filters{gap:5px}.ng-search-filters button{font-size:.74rem;padding:6px 9px}}
+  @media(max-width:360px){.ng-search-trigger{width:35px;height:35px}}
+  @media(prefers-reduced-motion:reduce){.ng-search-trigger,.ng-search-trigger svg,.ng-search-trigger:before{animation:none;transition:none}}
+  @media print{.ng-search{display:none}}
+</style>
