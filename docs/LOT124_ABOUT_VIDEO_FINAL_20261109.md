@@ -43,3 +43,12 @@ Puis GitHub Actions build/sécurité, Chromium, Lighthouse ; fusion PR seulement
 ## Compatibilité — correctif suite au test Chromium
 - Le test Playwright sur MP4 seul ne parvenait pas à décoder le H.264 sur la version open-source de Chromium utilisée en CI ; ajout de WebM VP9/Opus, sans remplacement du MP4 pour Safari.
 - Tous les nouveaux assets restent inférieurs au fichier source initial et ne sont chargés que lorsque la lecture est autorisée.
+
+## Livraison finale — 9 novembre 2026
+- PR **#123 fusionnée sur `main`** : commit `bf3fe73ad0cd29d5987a6696a87953fb03525898`.
+- Dernier commit testé et fusionné : `9155b5e29bf5e3f133b178ee1decddb228bc0c3f`.
+- Tests GitHub Actions **SUCCESS** : build/sécurité `42663453960`, Chromium `42663453949`, Lighthouse `42663453974`, moniteur hors-ligne `42663454002`.
+- Fichiers binaires `nextgen-about-v2.webm`, `nextgen-about-v2.mp4`, `nextgen-about-v2-poster.webp` vérifiés sur `main` par leurs SHA Git.
+- Compatibilité : Chromium VP9/Opus validé en lecture réelle ; MP4/H.264/AAC accessible en repli ; trois pages FR/AR/EN validées et navigateur testé.
+- Les trois fichiers temporaires utilisés pour transférer les médias via Google Drive ont été supprimés après leur transfert ; aucune copie de staging conservée dans Drive.
+- **Cloudflare** : la fusion GitHub et les tests de PR n'attestent pas, à eux seuls, du déploiement public. Vérifier séparément le dernier job `cloudflare-live-production-smoke.yml` (incluant vérification exacte du commit et des trois médias).
