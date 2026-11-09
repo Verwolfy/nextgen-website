@@ -25,7 +25,7 @@ class SilentHandler(SimpleHTTPRequestHandler):
 def check_lot118_global_search(browser, base: str) -> None:
     """Lot 118: accessible instant search, filters, responsive RTL and no private requests."""
     for lang in ("fr", "ar", "en"):
-        for width in (320, 390, 1280):
+        for width in (320, 390, 1280, 1440):
             page = browser.new_page(viewport={"width": width, "height": 780})
             requests = []
             page.on("request", lambda request: requests.append(request.url))
@@ -37,8 +37,9 @@ def check_lot118_global_search(browser, base: str) -> None:
                 assert panel.is_hidden() and trigger.get_attribute("aria-expanded") == "false"
                 label = trigger.locator(".ng-search-trigger-label")
                 assert label.count() == 1 and bool(label.inner_text().strip()), (lang, width)
-                if width == 1280:
+                if width == 1440:
                     assert label.is_visible(), (lang, "capsule label missing on desktop")
+                if width in (1280, 1440):
                     nav_links = page.locator(".header .nav a")
                     first, last = nav_links.first.bounding_box(), nav_links.last.bounding_box()
                     assert first and last and abs(first["y"] - last["y"]) <= 4, \
@@ -66,7 +67,7 @@ def check_lot118_global_search(browser, base: str) -> None:
                 assert panel.is_visible() and field.evaluate("el => el === document.activeElement"), (lang, width)
                 page.locator("[data-search-close]").click()
                 assert panel.is_hidden(), (lang, width)
-                if width == 1280:
+                if width == 1440:
                     before = trigger.evaluate("el => getComputedStyle(el).color")
                     page.locator("[data-theme-switch]").click()
                     assert page.locator("html").get_attribute("data-theme") == "dark"
