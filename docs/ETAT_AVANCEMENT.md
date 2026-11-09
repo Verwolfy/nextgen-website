@@ -416,3 +416,12 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Tests build/sécurité `42650722109` **SUCCESS**, 300 tests ; contrôle hors-ligne Cloudflare `42650722328` **SUCCESS**, 8 tests (3 lot 120, 5 lot 122).
 - Les 150 vérifications HTTP du site publié sont désormais intégrées au workflow push/`main`, quotidien et manuel, après le contrôle du SHA exact. Leurs résultats **post-fusion** ne sont pas visibles avec les outils actuels ; pas de confirmation live anticipée.
 - Documentation : `docs/LOT122_CLOUDFLARE_VERIFICATION_150_GUIDES_20261109.md`.
+
+## 09/11/2026 — Lot 123 : animation du logo de l'en-tête
+- Utilisateur : remplacement du logo statique par la vidéo `LogoA.mp4`, boucle naturelle et taille optimisée.
+- Original 10 s / H.264 / 1280×720 / 2 422 512 octets → `public/videos/nextgen-header-logo-v1.mp4` 400×226 / 24 fps / 50 519 octets (environ 97,9 % plus léger) + poster WebP 7 646 octets.
+- Fichiers binaires installés sur branche `feat/lot123-animated-header-logo-20261109` via GitHub Git blobs ; intégration `src/components/AnimatedHeaderLogo.astro` et `src/layouts/Layout.astro`.
+- Lecture silencieuse après chargement, fondu 350 ms, introduction une fois puis répétition de l'intervalle 4,20–9,65 s, pour éviter un nouveau départ blanc ; poster permanent en reduced-motion / data-saver.
+- Contenu FR/AR/EN, lien accueil, RTL et capsule de recherche conservés ; aucune modification Supabase.
+- Contrôles prévus : SHA-256, builds, tests Python et Chromium, Lighthouse, fusion GitHub, puis preuve séparée du déploiement Cloudflare.
+- Documentation : `docs/LOT123_HEADER_LOGO_VIDEO_20261109.md`.
