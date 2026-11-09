@@ -22,6 +22,58 @@ class SilentHandler(SimpleHTTPRequestHandler):
 
 
 
+def check_lot123_animated_brand(browser, base: str) -> None:
+    """Lot 123: real muted video, seamless loop segment, accessibility and fallback."""
+    for lang in ("fr", "ar", "en"):
+        for width in (320, 1440):
+            page = browser.new_page(viewport={"width": width, "height": 820})
+            try:
+                page.goto(f"{base}/{lang}/", wait_until="domcontentloaded")
+                brand = page.locator("[data-header-brand]")
+                video = brand.locator("[data-header-brand-video]")
+                poster = brand.locator(".ng-brand-poster")
+                assert brand.count() == 1 and brand.is_visible(), (lang, width)
+                assert brand.get_attribute("href") == f"/{lang}/", (lang, width)
+                assert brand.get_attribute("aria-label"), lang
+                assert poster.evaluate("img => img.complete && img.naturalWidth > 0"), lang
+                assert video.count() == 1 and video.get_attribute("loop") is not None, lang
+                assert video.get_attribute("muted") is not None, lang
+                assert video.get_attribute("playsinline") is not None, lang
+                page.wait_for_function("""() => {
+                    const el = document.querySelector('[data-header-brand-video]');
+                    return el && el.readyState >= 2 && !el.paused && el.videoWidth === 400;
+                }""", timeout=12000)
+                assert brand.get_attribute("class").find("ng-brand-playing") >= 0, (lang, "not playing")
+                # The native video must never reset to blank intro when looping.
+                video.evaluate("el => { el.currentTime=9.7 }")
+                page.wait_for_function("""() => {
+                    const el = document.querySelector('[data-header-brand-video]');
+                    return el && el.currentTime >= 4.19 && el.currentTime < 6;
+                }""", timeout=7000)
+                page.emulate_media(reduced_motion="reduce")
+                page.wait_for_function("""() => {
+                    const el = document.querySelector('[data-header-brand-video]');
+                    return el && el.paused;
+                }""", timeout=4000)
+                assert poster.is_visible(), (lang, "poster hidden in reduced motion")
+                assert video.evaluate("el => getComputedStyle(el).display") == "none"
+                assert page.evaluate("document.documentElement.scrollWidth-innerWidth") <= 4, (lang,width)
+            finally:
+                page.close()
+
+    # Data saver must NOT download or start the animated file at all.
+    page = browser.new_page(viewport={"width": 390, "height": 844})
+    page.add_init_script("Object.defineProperty(navigator,'connection',{configurable:true,value:{saveData:true}})")
+    try:
+        page.goto(base + "/fr/", wait_until="domcontentloaded")
+        video = page.locator("[data-header-brand-video]")
+        assert video.locator("source").get_attribute("src") is None, "Data saver loaded video"
+        assert video.evaluate("el => el.paused"), "Data saver started video"
+        assert page.locator("[data-header-brand] .ng-brand-poster").is_visible()
+    finally:
+        page.close()
+
+
 def check_lot118_global_search(browser, base: str) -> None:
     """Lot 118: accessible instant search, filters, responsive RTL and no private requests."""
     for lang in ("fr", "ar", "en"):
@@ -362,6 +414,7 @@ def check() -> None:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
             check_header_preferences(browser, base)
+            check_lot123_animated_brand(browser, base)
             check_lot118_global_search(browser, base)
             check_v3_reduced_motion_and_data_saver(browser, base)
             check_localized_news_ticker(browser, base)
