@@ -26,3 +26,13 @@ Aucune écriture Supabase, aucun changement de RLS/GRANT, aucun produit publié,
 
 ## État de publication
 Les tests GitHub certifient le code en dépôt. La mise en ligne réelle sur Cloudflare doit être vérifiée séparément avec l'URL déployée.
+
+## Validation finale — 09/11/2026
+- PR **#118 fusionnée sur `main`**, commit de fusion : `716f5d4a7fa99c0d269ce5d3343e92e59d598ca0`.
+- Commit validé par GitHub Actions : `16a147d9baa15a3fe96d6d3c281d17bfb172d1ad`.
+- Build + sécurité **SUCCESS** (workflow run **42634405948**).
+- Chromium **SUCCESS** (workflow run **42634405970**), incluant FR/AR/EN, 320/390/1280/1440 px, recherche C1T, clavier, contraste nuit, animation réduite, en-tête sans retour à la ligne à 1280 et 1440 px.
+- Lighthouse local **SUCCESS** (workflow run **42634406102**).
+- Code de capsule, traductions, styles sombres et chemin Pagefind relus sur `main` après fusion.
+- **Déploiement Cloudflare à vérifier séparément** : la fusion ne constitue pas une preuve de propagation du site réel.
+- Aucun changement Supabase, aucun produit réel ni PDF technique privé publié.
