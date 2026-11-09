@@ -61,7 +61,9 @@ class ApplicationGuideCoverage(unittest.TestCase):
         self.assertIn("max-width:550px",self.component)
         self.assertIn("html[data-theme='dark']",self.component)
         self.assertIn("FenekApplicationGuide lang={lang} product={product}",self.docs)
-        self.assertIn("applicationStepsFor(product.code,lang)",self.printable)
+        self.assertIn("guide.before",self.printable)
+        self.assertIn("guide.method",self.printable)
+        self.assertIn("guide.after",self.printable)
         for term in ("title:l(", "detail:l(", "Étaler au peigne", "إضافة", "Mix to consistency"):
             self.assertTrue(term in self.mapping or term in self.component,term)
         self.assertNotIn("SUPABASE_SERVICE_ROLE_KEY",self.component)
