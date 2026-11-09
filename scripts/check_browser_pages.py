@@ -536,7 +536,9 @@ def check() -> None:
                             assert whatsapp.get_attribute("rel") == "noopener noreferrer", path
                             assert page.locator(".contact-direct .contact-disclosure[role='note']").count() == 1, path
                             assert page.locator(".lead-preview, .lead-panel").count() == 0, path
-                            assert page.locator("form, input, textarea").count() == 0, path
+                            # A global, local-only search field is allowed; no contact/lead input.
+                            assert page.locator("form, input:not([data-search-input]), textarea").count() == 0, path
+                            assert page.locator("input[data-search-input][type=search]").count() == 1, path
                             if section == "distributeurs":
                                 assert page.locator("a[href='#contact-direct']").count() == 1, path
                         # Overflows on phone screens make navigation unusable.
