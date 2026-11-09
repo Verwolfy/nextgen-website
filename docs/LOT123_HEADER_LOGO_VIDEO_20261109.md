@@ -8,8 +8,11 @@ Remplacer l'image du logo statique, à gauche de la capsule « Rechercher », pa
 
 ## Origine et optimisation vérifiées
 - Fichier utilisateur : `LogoA.mp4`, 10 s, H.264, 1280×720, 24 images/s, 2 422 512 octets.
-- Traitement FFmpeg : recadrage central pour présenter **le logo et le nom** dans l'espace restreint de l'en-tête, sans bandeau de slogan inférieur ; conversion H.264 `yuv420p`, 400×226, 24 images/s, CRF 30, `faststart`, sans piste sonore.
+- Traitement FFmpeg : recadrage central pour présenter **le logo et le nom** dans l'espace restreint de l'en-tête, sans bandeau de slogan inférieur ; conversion H.264 `yuv420p`, 400×226, 24 images/s, CRF 30, `faststart`, sans piste sonore. La source WebM est également sans piste sonore.
 - Nouvelle vidéo : `public/videos/nextgen-header-logo-v1.mp4` — 50 519 octets, soit environ **97,9 % de données économisées**.
+- En complément : `public/videos/nextgen-header-logo-v1.webm` — 57 361 octets, VP9, 400×226, 20 images/s, optimisé pour Chromium/Firefox et autres moteurs compatibles. SHA-256 : `08162155ad64397604bbcd81befafec000b39f6c190999542a2788dd41bfb94d`.
+- Le composant référence WebM puis MP4 avec les bons types MIME ; le navigateur **sélectionne le format qu'il peut décoder**, sans télécharger les deux flux. Un diagnostic CI a montré que la distribution Chromium de test ne décodait pas H.264, d'où cet ajout pour compatibilité.
+
   SHA-256 : `ae3ec46c8123065c3178f0543de93ba8d1d8a8a646dff0a22c8bd4f1e277f116`.
 - Poster de secours à partir d'une image de la vidéo stabilisée : `public/images/nextgen-header-logo-poster-v1.webp` — 7 646 octets.
   SHA-256 : `a35f94aefd101087cc9a1609935790d1b64b79c938d782cb363ebe783753a60a`.
