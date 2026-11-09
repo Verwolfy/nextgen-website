@@ -68,3 +68,11 @@ Plus GitHub Actions Lighthouse et sécurité. La mise en ligne Cloudflare suit `
 
 ## Validation technique à effectuer ultérieurement
 Par référence : identité de la formulation, eau/masse, ordre de mélange, temps de repos autorisé, temps ouvert, classe, épaisseurs, outils et sécurité, cure, conditions atmosphériques, normes et dosages exacts. Le présent lot **n'approuve aucun de ces paramètres**.
+
+## Livraison finale — 09/11/2026
+- PR #120 fusionnée dans `main` : commit `44560a0220fad66094f4e7e9a48c8eda06025d75`.
+- Dernier commit contrôlé : `c8333c6423558e4a8871a38bab9f5517b52478cb`.
+- GitHub Actions build et sécurité **SUCCESS** (run `42648782262`), navigateur Chromium **SUCCESS** (run `42648782299`), Lighthouse local **SUCCESS** (run `42648782296`), moniteur Cloudflare hors-ligne **SUCCESS** (run `42648782387`).
+- CI : **295 tests unitaires**, **150 fiches produit FR/AR/EN** vérifiées ; empreinte SHA-256 de l'illustration utilisateur conforme. Le rendu imprimable A4 a été préservé à **une page**.
+- Les sources originales des FT/FDS industrielles des 50 formulations ne sont toujours pas disponibles/validées. Les guides sont illustratifs, non certifiants.
+- La validation du domaine Cloudflare se fait indépendamment via le workflow du lot 120 ; aucune réussite de déploiement live n'est déduite de la fusion.
