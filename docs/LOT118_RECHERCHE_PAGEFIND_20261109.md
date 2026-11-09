@@ -33,7 +33,10 @@ Plus les contrôles de build, sécurité et Lighthouse de la PR.
 ## Non inclus dans ce lot
 Aucune mutation Supabase, aucun changement RLS/GRANT, aucune activation du formulaire `/api/lead`, aucun changement Cloudflare Access / DNS / robots / noindex, aucune publication de produit réel. Aucun déploiement manuel de Cloudflare.
 
-## Points de validation
-- Vérifier les jobs GitHub Actions sur la PR.
-- Corriger les échecs éventuels, puis fusionner sur `main` après succès.
-- Contrôler le site réellement servi par Cloudflare si l'accès au site est possible ; ne pas déclarer le déploiement constaté sans preuve.
+## Validation finale (09/11/2026)
+- PR #117 fusionnée avec succès dans `main` : commit de fusion `7a9c20e319cd66e32c505cb4a420b3dda913c7be`.
+- Dernier commit testé avant fusion : `a7e16b9687537e0c4acad33b8dc115c0cd567757`.
+- GitHub Actions : **build/sécurité SUCCESS** (run 42627248702), **Chromium SUCCESS** (run 42627248323), **Lighthouse SUCCESS** (run 42627248350).
+- Index FR/AR/EN et quatre catégories validés dans le build. Test navigateur de recherche `C1T`, filtre produit, Escape, Ctrl+K, 320 px et direction RTL réussi.
+- Le domaine public et l'index Cloudflare n'ont pas pu être vérifiés par un accès HTTP externe lors de cette session ; **ne pas confondre fusion GitHub et déploiement confirmé**.
+- Toute publication de vrais PDF techniques reste soumise à validation produit et autorisation commerciale.
