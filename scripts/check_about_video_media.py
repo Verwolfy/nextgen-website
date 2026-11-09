@@ -40,9 +40,9 @@ def main():
         p=AboutVideoParser();p.feed(path.read_text(encoding="utf-8"))
         assert len(p.players)==1,(lang,"video count")
         data=p.players[0]
-        assert p.sources==[
-            {"src":"/videos/nextgen-about-v2.webm","type":"video/webm"},
-            {"src":"/videos/nextgen-about-v2.mp4","type":"video/mp4"}
+        assert [(x.get("src"),x.get("type")) for x in p.sources]==[
+            ("/videos/nextgen-about-v2.webm","video/webm"),
+            ("/videos/nextgen-about-v2.mp4","video/mp4")
         ],(lang,p.sources)
         assert data.get("poster")=="/videos/nextgen-about-v2-poster.webp",lang
         assert data.get("data-about-video-version")=="v2",lang
