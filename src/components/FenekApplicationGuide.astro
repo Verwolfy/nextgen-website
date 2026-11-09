@@ -1,0 +1,116 @@
+---
+/**
+ * Editorial application walkthrough, not a validated technical data sheet.
+ * Tile references reuse the user's six drawings (single lightweight WebP sprite).
+ * Other references use neutral original vector pictograms.
+ */
+import type { Lang } from '../data/site';
+import type { CatalogueProject } from '../lib/catalogue-projets';
+import { applicationStepsFor, isTileAdhesive } from '../data/fenek-application-steps';
+import { applicationContextFor } from '../data/fenek-application-context';
+interface Props { lang:Lang; product:CatalogueProject; }
+const {lang,product}=Astro.props;
+const steps=applicationStepsFor(product.code,lang);
+const tile=isTileAdhesive(product.code);
+const copy={
+  fr:{intro:'Parcours illustré de mise en œuvre',step:'Étape',alert:'Mode opératoire indicatif — présentation provisoire',warning:'Ces schémas expliquent les gestes de métier ; ils ne remplacent pas une FT/FDS FENEK approuvée. Ne déduisez jamais de ces illustrations un dosage, un temps ouvert, une épaisseur ou une résistance.',check:'Point spécifique à vérifier pour cette référence',photo:'Illustration fournie par le client'},
+  en:{intro:'Illustrated application journey',step:'Step',alert:'Indicative process — provisional presentation',warning:'These images illustrate general trade practice, not an approved FENEK TDS/SDS. Never infer ratios, open time, thickness or strength from drawings.',check:'Reference-specific verification',photo:'Customer-provided illustration'},
+  ar:{intro:'مراحل التطبيق المصورة',step:'المرحلة',alert:'إجراء إرشادي — عرض أولي',warning:'هذه الرسوم توضح خطوات العمل العامة ولا تحل محل النشرة الفنية ونشرة السلامة المعتمدتين. لا تستنتج نسب الخلط أو أوقات التشغيل أو السماكة أو المقاومة من الصور.',check:'نقطة فحص خاصة بهذا المرجع',photo:'رسم مقدم من العميل'}
+}[lang];
+const paths:Record<string,string>={
+ brush:'M4 18h16M4 6h16M6 10l2 2 3-3M13 14l7-7M3 21l3-3 3 3',
+ water:'M12 2C9 7 5 11 5 15a7 7 0 0 0 14 0c0-4-4-8-7-13Z',
+ mix:'M3 9a9 9 0 0 1 18 0M21 15a9 9 0 0 1-18 0M17 9l4 0-2-4M7 15H3l2 4M12 5v14',
+ clock:'M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 7v5l4 3',
+ trowel:'M3 15 17 3l4 4-12 12-6-4ZM4 20h13M8 12l4 4',
+ tile:'M4 4h16v16H4zM12 4v16M4 12h16M8 8h.01M16 16h.01',
+ shield:'M12 2 3 6v6c0 5 4 8 9 10 5-2 9-5 9-10V6zM8 12l3 3 5-6',
+ check:'M4 12l5 5L20 6M3 3h18v18H3z',
+ beaker:'M9 3h6M10 3v7l-6 9a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-6-9V3M8 16h8',
+ spray:'M8 5h8l2 3-2 3H8zM12 11v9M6 6l-3 1M6 10l-3-1M21 5h1M21 9h1M20 13h1',
+ roller:'M3 5h15v7H3zM10 12v4h8v3M18 19v3',
+ level:'M3 18h18M5 14l4-4 4 3 6-7M4 4h16v16H4z'
+};
+---
+<section class="fenek-application-visual" aria-label={copy.intro} data-application-visual data-reference={product.code} data-application-count={steps.length}>
+  <div class="fenek-application-visual-heading">
+    <span class="fenek-application-visual-eyebrow">{product.nom}</span>
+    <h3>{copy.intro}</h3>
+    <span class="fenek-application-visual-tag">{steps.length} {copy.step.toLowerCase()}</span>
+  </div>
+  <ol class:list={['fenek-application-visual-grid',{'has-drawings':tile}]}>
+    {steps.map((step,i)=><li class="fenek-application-visual-card" data-application-step={i+1}>
+      <figure class="fenek-application-visual-figure">
+        {step.image
+          ? <div class="fenek-application-visual-photo"
+              style={`--sprite-col:${(step.image-1)%3};--sprite-row:${Math.floor((step.image-1)/3)}`}
+              role="img" aria-label={copy.photo+' — '+step.title}></div>
+          : <div class="fenek-application-visual-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+                <path d={paths[step.icon]??paths.check}></path>
+              </svg>
+            </div>}
+        <figcaption>{String(i+1).padStart(2,'0')}</figcaption>
+      </figure>
+      <div class="fenek-application-visual-copy">
+        <h4>{step.title}</h4>
+        <p>{step.description}</p>
+      </div>
+    </li>)}
+  </ol>
+  <div class="fenek-application-visual-attention" role="note">
+    <strong>{copy.check} — <bdi dir="ltr">{product.nom}</bdi></strong>
+    <p>{applicationContextFor(product.code,lang)}</p>
+  </div>
+  <p class="fenek-application-visual-warning"><strong>{copy.alert}.</strong> {copy.warning}</p>
+</section>
+<style>
+ .fenek-application-visual{--ink:#113651;--accent:#07895e;margin:0 0 18px}
+ .fenek-application-visual-heading{display:flex;align-items:center;gap:10px 15px;flex-wrap:wrap;margin:0 0 19px}
+ .fenek-application-visual-heading h3{margin:0;flex:1 1 320px;color:var(--ink);font-size:clamp(1.12rem,2vw,1.45rem)}
+ .fenek-application-visual-eyebrow{flex-basis:100%;font-size:.74rem;letter-spacing:.08em;font-weight:820;color:#09875c}
+ .fenek-application-visual-tag{white-space:nowrap;border-radius:40px;background:#e7f4ee;color:#075f4e;font-weight:750;font-size:.75rem;padding:6px 12px}
+ .fenek-application-visual-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0;margin:0;list-style:none}
+ .fenek-application-visual-grid.has-drawings{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .fenek-application-visual-card{display:flex;flex-direction:column;overflow:hidden;min-width:0;border:1px solid #d8e5e6;border-radius:14px;background:linear-gradient(165deg,#fff 66%,#f3faf7);box-shadow:0 4px 16px #1136510a;break-inside:avoid}
+ .fenek-application-visual-figure{position:relative;display:grid;place-items:center;min-height:125px;margin:0;background:#f6faf9;border-bottom:1px solid #e1ebe8;overflow:hidden}
+ .fenek-application-visual-figure figcaption{position:absolute;top:10px;inset-inline-start:12px;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#12365b;color:white;font-size:.78rem;font-weight:850;box-shadow:0 3px 8px #08284320}
+ .fenek-application-visual-photo{width:min(100%,142px);aspect-ratio:1;background-image:url('/images/application/tile-application-6.webp');background-repeat:no-repeat;background-size:300% 200%;background-position:calc(var(--sprite-col) * 50%) calc(var(--sprite-row) * 100%);filter:contrast(1.04)}
+ .fenek-application-visual-icon{width:100px;height:100px;border-radius:27px;background:radial-gradient(circle at 25% 20%,#fff,#e7f3f0);display:grid;place-items:center;border:1px solid #d5e8e3;color:#16745f;box-shadow:inset 0 0 0 7px #f4faf8}
+ .fenek-application-visual-icon svg{height:58px;width:58px}
+ .fenek-application-visual-copy{padding:15px 16px 18px;flex:1}
+ .fenek-application-visual-copy h4{font-size:1rem;line-height:1.32;margin:0 0 8px;color:#133853}
+ .fenek-application-visual-copy p{margin:0;color:#425d68;font-size:.85rem;line-height:1.64;max-width:none}
+ .fenek-application-visual-attention{margin-top:18px;padding:14px 18px;border-radius:12px;background:#ecf6f2;border-inline-start:4px solid #00885d}
+ .fenek-application-visual-attention strong{color:#174456;font-size:.9rem}
+ .fenek-application-visual-attention p{margin:5px 0 0;font-size:.85rem;color:#395c66;line-height:1.7}
+ .fenek-application-visual-warning{margin:13px 0 0;padding:10px 13px;background:#f8f8f2;border:1px solid #e4e3d2;border-radius:8px;color:#465e64;font-size:.82rem;line-height:1.55;max-width:none}
+ :global(html[data-theme='dark']) .fenek-application-visual{--ink:#e7f5fb}
+ :global(html[data-theme='dark']) .fenek-application-visual-card{background:linear-gradient(160deg,#183749,#123042);border-color:#436075}
+ :global(html[data-theme='dark']) .fenek-application-visual-figure{background:#204354;border-color:#496b74}
+ :global(html[data-theme='dark']) .fenek-application-visual-copy h4{color:#f0fafc}
+ :global(html[data-theme='dark']) .fenek-application-visual-copy p{color:#c5dae5}
+ :global(html[data-theme='dark']) .fenek-application-visual-heading h3{color:#e8f6fa}
+ :global(html[data-theme='dark']) .fenek-application-visual-attention{background:#1c4b47;border-color:#45c69a}
+ :global(html[data-theme='dark']) .fenek-application-visual-attention strong,:global(html[data-theme='dark']) .fenek-application-visual-attention p{color:#deeee7}
+ :global(html[data-theme='dark']) .fenek-application-visual-warning{background:#283b40;border-color:#5c675c;color:#edf0e5}
+ :global(html[data-theme='dark']) .fenek-application-visual-tag{background:#206450;color:#eafff1}
+ :global(html[data-theme='dark']) .fenek-application-visual-eyebrow{color:#68dda7}
+ @media(max-width:870px){.fenek-application-visual-grid.has-drawings{grid-template-columns:repeat(2,minmax(0,1fr))}}
+ @media(max-width:550px){.fenek-application-visual-grid,.fenek-application-visual-grid.has-drawings{grid-template-columns:1fr}
+ .fenek-application-visual-card{display:grid;grid-template-columns:116px minmax(0,1fr);min-height:137px}
+ .fenek-application-visual-figure{min-height:135px;border-bottom:0;border-inline-end:1px solid #e2eae8}
+ .fenek-application-visual-figure figcaption{inset-inline-start:6px;top:7px;width:25px;height:25px;font-size:.67rem}
+ .fenek-application-visual-photo{width:113px}
+ .fenek-application-visual-icon{width:85px;height:85px;border-radius:18px}
+ .fenek-application-visual-icon svg{width:45px;height:45px}
+ .fenek-application-visual-copy{padding:12px 12px 13px}
+ .fenek-application-visual-copy h4{font-size:.92rem}
+ .fenek-application-visual-copy p{font-size:.79rem}
+ }
+ @media print{.fenek-application-visual{break-inside:auto}
+ .fenek-application-visual-card{box-shadow:none}
+ .fenek-application-visual-grid.has-drawings{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .fenek-application-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ }
+</style>
