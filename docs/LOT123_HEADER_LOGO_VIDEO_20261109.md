@@ -32,6 +32,7 @@ Remplacer l'image du logo statique, à gauche de la capsule « Rechercher », pa
 - `tests/test_lot123_animated_header_logo.py` : signatures des deux fichiers, poids, lien, attributs accessibles, logique de boucle, reduced motion / data saver, absence d'API privées.
 - `scripts/check_header_brand.py` intégré à `scripts/check_built_pages.py` : contenu binaire servi dans le build et en-tête FR/AR/EN intact.
 - `scripts/check_browser_pages.py` : essai Chromium de lecture, changement de segment à 9,65 s, fallback reduced-motion et économie des données, réponse mobile et RTL.
+- `scripts/check_live_production.py` : après chaque déploiement de `main`, contrôle HTTP des URL des médias sur le site public et empreintes SHA-256 exactes des versions MP4/WebM/WebP réellement servies par Cloudflare.
 
 ## Validation attendue
 1. CI build + sécurité, tests Python et HTML : verte.
