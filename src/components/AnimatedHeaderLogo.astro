@@ -16,6 +16,7 @@ const {lang,homeLabel,isHome=false}=Astro.props;
     aria-hidden="true" tabindex="-1" muted playsinline loop
     poster="/images/nextgen-header-logo-poster-v1.webp"
     width="400" height="226" preload="none">
+    <source data-src="/videos/nextgen-header-logo-v1.webm" type="video/webm" />
     <source data-src="/videos/nextgen-header-logo-v1.mp4" type="video/mp4" />
   </video>
 </a>
@@ -27,8 +28,8 @@ const {lang,homeLabel,isHome=false}=Astro.props;
   const hosts=Array.from(document.querySelectorAll<HTMLElement>('[data-header-brand]'));
   hosts.forEach(host=>{
     const video=host.querySelector<HTMLVideoElement>('[data-header-brand-video]');
-    const source=video?.querySelector<HTMLSourceElement>('source[data-src]');
-    if(!video||!source)return;
+    const sources=Array.from(video?.querySelectorAll<HTMLSourceElement>('source[data-src]')??[]);
+    if(!video||sources.length!==2)return;
     let started=false;
     let pending=false;
     const pause=()=>{
@@ -38,7 +39,8 @@ const {lang,homeLabel,isHome=false}=Astro.props;
     const begin=()=>{
       if(reduced.matches||saveData||document.visibilityState==='hidden')return;
       if(!started){
-        source.src=source.dataset.src||'';
+        sources.forEach(source=>{source.src=source.dataset.src||'';});
+        // The browser selects one supported codec; it does not download both.
         video.load();
         started=true;
       }
