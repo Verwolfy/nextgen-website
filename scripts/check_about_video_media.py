@@ -10,15 +10,24 @@ ROOT=Path(__file__).resolve().parents[1]/"dist"
 ASSETS={
     "videos/nextgen-about-v2.mp4":"e322aaf485a24fa3a6c8705077161616f0c129e34da8cd771f5a6f2e0605a17a",
     "videos/nextgen-about-v2-poster.webp":"b5ebd897a82c0e3c8b7d6668fcdd4dc9432911db187ef1d04d543439cf9a5936",
+    "videos/nextgen-about-v2.webm":"0c1d040f7984b3877c0c483780e70128cc5ac57eeed5cf8ef06da9378b2a908d",
 }
 class AboutVideoParser(HTMLParser):
     def __init__(self):
         super().__init__()
         self.players=[]
+        self.sources=[]
+        self.in_video=False
     def handle_starttag(self,tag,pairs):
         attr=dict(pairs)
         if tag=="video" and "data-about-video" in attr:
             self.players.append(attr)
+            self.in_video=True
+        if tag=="source" and self.in_video:
+            self.sources.append(attr)
+    def handle_endtag(self,tag):
+        if tag=="video":
+            self.in_video=False
 
 def main():
     for asset,digest in ASSETS.items():
@@ -31,7 +40,10 @@ def main():
         p=AboutVideoParser();p.feed(path.read_text(encoding="utf-8"))
         assert len(p.players)==1,(lang,"video count")
         data=p.players[0]
-        assert data.get("src")=="/videos/nextgen-about-v2.mp4",lang
+        assert p.sources==[
+            {"src":"/videos/nextgen-about-v2.webm","type":"video/webm"},
+            {"src":"/videos/nextgen-about-v2.mp4","type":"video/mp4"}
+        ],(lang,p.sources)
         assert data.get("poster")=="/videos/nextgen-about-v2-poster.webp",lang
         assert data.get("data-about-video-version")=="v2",lang
         assert data.get("preload")=="none",lang
