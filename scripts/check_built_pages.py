@@ -266,3 +266,6 @@ if __name__ == "__main__":
     # Lot 123: animated logo preserves the public pages and all three locales.
     from check_header_brand import main as check_header_brand
     check_header_brand()
+    # Lot 124: new 10-second About video and poster, all locales.
+    from check_about_video_media import main as check_about_video_media
+    check_about_video_media()
