@@ -372,3 +372,14 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Moteur Pagefind et contenu indexé FR/AR/EN inchangés. Pas d'écriture Supabase, de nouvelle publication de produit ou de PDF technique, ni de changement Cloudflare.
 - **À contrôler** : la nouvelle interface sur le domaine Cloudflare réellement déployé (la fusion GitHub ne démontre pas la mise en ligne).
 - Instructions détaillées : `docs/LOT119_CAPSULE_SIGNATURE_20261109.md`.
+
+## 09/11/2026 — Lot 120 : supervision Cloudflare Pages automatique
+- Connexion GitHub `Verwolfy/nextgen-website` → Cloudflare Pages vérifiée visuellement par l'utilisateur : `main`, `npm run build`, `dist`, déploiements automatiques activés.
+- Production Cloudflare vue comme déployée sur le commit `f3c193b`, contenant la Capsule Signature du lot 119.
+- Surveillance GitHub Actions ajoutée dans `.github/workflows/cloudflare-live-production-smoke.yml` (push `main`, quotidien, manuel).
+- Identifiant de livraison public `/deployment.json` créé à la compilation, depuis les variables natives `CF_PAGES_COMMIT_SHA`/`CF_PAGES_BRANCH`, sans secret.
+- Tests HTTP `scripts/check_live_production.py` : validation SHA exact et pages FR/AR/EN, contenu catalogue visible, index Pagefind, noindex et aucune donnée privée.
+- Tests Chromium `scripts/check_live_browser.py` : recherche « C1T », bouton, filtre produit et deux tailles d'écran par langue.
+- Tests unitaires hors ligne : `tests/test_lot120_cloudflare_live_smoke.py`.
+- Aucune modification Supabase, Cloudflare DNS, Access, backend Leads ou contenu métier. Documentation : `docs/LOT120_CLOUDFLARE_LIVE_MONITORING_20261109.md`.
+- À finaliser : tests CI de la PR, corrections éventuelles, fusion sur `main`, puis contrôle du premier workflow post-déploiement (dépendant de l'accès à GitHub Actions).
