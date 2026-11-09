@@ -40,6 +40,8 @@ BRAND_MEDIA = {
 ABOUT_MEDIA = {
     "/videos/nextgen-about-v2.mp4":
         "e322aaf485a24fa3a6c8705077161616f0c129e34da8cd771f5a6f2e0605a17a",
+    "/videos/nextgen-about-v2.webm":
+        "0c1d040f7984b3877c0c483780e70128cc5ac57eeed5cf8ef06da9378b2a908d",
     "/videos/nextgen-about-v2-poster.webp":
         "b5ebd897a82c0e3c8b7d6668fcdd4dc9432911db187ef1d04d543439cf9a5936",
 }
