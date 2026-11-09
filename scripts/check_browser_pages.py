@@ -85,7 +85,9 @@ def check_lot123_animated_brand(browser, base: str) -> None:
     try:
         page.goto(base + "/fr/", wait_until="domcontentloaded")
         video = page.locator("[data-header-brand-video]")
-        assert video.locator("source").get_attribute("src") is None, "Data saver loaded video"
+        assert video.locator("source").count() == 2
+        assert all(source.get_attribute("src") is None for source in video.locator("source").all()), \
+            "Data saver loaded video"
         assert video.evaluate("el => el.paused"), "Data saver started video"
         assert page.locator("[data-header-brand] .ng-brand-poster").is_visible()
     finally:
