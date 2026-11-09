@@ -9,7 +9,7 @@ Remplacer le pavé bleu de la loupe par le design **A — Capsule Signature**, n
 `feat/lot119-capsule-signature-search-20261109`
 
 - `src/components/SiteSearch.astro` : pastille/forme pilule vert d'eau, bordure douce, loupe sombre, libellés « Rechercher » / « بحث » / « Search », petit repère vert, lueur circulante discrète sur 6 secondes, survol sans mouvement agressif. L'arrêt des animations respecte `prefers-reduced-motion`.
-- Même composant : adaptation à moins de 1280 px en icône compacte ; contrôles 580 px et 360 px ; affichage clair et sombre ; balises `aria-label` et `aria-expanded` conservées.
+- Même composant : adaptation à moins de 1360 px en icône compacte ; contrôles 580 px et 360 px ; affichage clair et sombre ; balises `aria-label` et `aria-expanded` conservées.
 - `src/layouts/Layout.astro` : alignement du logo, capsule et navigation dans un en-tête plus spacieux sans modifier le contenu des pages.
 - `scripts/check_browser_pages.py` : recette FR/AR/EN à 320, 390, 1280 px ; vérification de la capsule, du retour des résultats, absence de débordement, de la navigation horizontale, de l'animation réduite et du mode nuit.
 - `tests/test_lot119_signature_capsule.py` : protections de la structure du bouton, du moteur Pagefind, des options de langues et de la confidentialité.
