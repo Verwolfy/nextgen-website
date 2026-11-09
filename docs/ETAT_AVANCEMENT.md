@@ -363,3 +363,12 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Recherche Chromium C1T, accès clavier, responsivité mobile et absence de requête Supabase pendant la recherche : tests réussis.
 - Supabase principale : **aucune modification effectuée**.
 - **Reste à confirmer** : activation du nouvel index sur le site effectivement déployé par Cloudflare ; la vérification HTTP externe ne répondait pas dans la session. Les fiches techniques PDF non validées restent exclues de l'index.
+
+## 09/11/2026 — Lot 119 : Capsule Signature, finition de la loupe
+- Design A adopté et réalisé : capsule vert d'eau avec texte trilingue, discret repère lumineux, reflet de six secondes ; mode nuit, RTL et réduction du mouvement.
+- L'en-tête garde sa navigation horizontale ; libellé visible à partir de 1360 px, loupe compacte en dessous (écrans 320/390/1280/1440 px vérifiés).
+- **PR #118 fusionnée sur `main`**, commit de fusion `716f5d4a7fa99c0d269ce5d3343e92e59d598ca0` (commit testé `16a147d9baa15a3fe96d6d3c281d17bfb172d1ad`).
+- GitHub Actions **SUCCESS** : build/sécurité `42634405948`, Chromium `42634405970`, Lighthouse local `42634406102`.
+- Moteur Pagefind et contenu indexé FR/AR/EN inchangés. Pas d'écriture Supabase, de nouvelle publication de produit ou de PDF technique, ni de changement Cloudflare.
+- **À contrôler** : la nouvelle interface sur le domaine Cloudflare réellement déployé (la fusion GitHub ne démontre pas la mise en ligne).
+- Instructions détaillées : `docs/LOT119_CAPSULE_SIGNATURE_20261109.md`.
