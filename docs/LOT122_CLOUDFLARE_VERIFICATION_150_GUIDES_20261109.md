@@ -40,3 +40,13 @@ Les contrôles CI existants doivent être verts : tests Python, build Astro, con
 - PR de livraison précédente : https://github.com/Verwolfy/nextgen-website/pull/120
 - Guides du lot 121 : `docs/LOT121_GUIDES_APPLICATION_ILLUSTRES_20261109.md`
 - Moniteur lot 120 : `docs/LOT120_CLOUDFLARE_LIVE_MONITORING_20261109.md`
+
+## Validation GitHub et livraison finale — 09/11/2026
+- PR **#121 fusionnée** sur `main` : commit de fusion `9a3bf287c65772175912b4766b0d20071a420d34`.
+- Dernier commit testé sur PR : `de9f74f5cfc0abe1e1372bdce2e7c39bdb3c503d`.
+- GitHub Actions `NextGen Astro build + security checks` : **SUCCESS** (run `42650722109`), **300 tests unitaires**, index Pagefind et 150 pages statiques contrôlés.
+- GitHub Actions `NextGen - Cloudflare live production smoke (read-only)` : **SUCCESS** sur PR (run `42650722328`) ; 3 contrats du lot 120 + 5 tests du lot 122 passés. La partie **production est skipped sur PR**, conformément à la protection prévue.
+- Scripts et workflow vérifiés directement sur `main` après la fusion.
+- Chromium et Lighthouse avaient réussi sur le lot 121, qui n'est pas modifié par ce lot de surveillance ; les workflows correspondants n'ont pas été déclenchés par les changements limités aux contrôles de production.
+- **Attention : le premier contrôle HTTP de 150 pages réellement exécuté sur `main` n'a pas pu être consulté via les outils disponibles ici. Il serait incorrect de déclarer ce contrôle réussi.**
+- Accès à consulter : https://github.com/Verwolfy/nextgen-website/actions/workflows/cloudflare-live-production-smoke.yml
