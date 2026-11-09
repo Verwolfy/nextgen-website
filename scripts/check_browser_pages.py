@@ -39,10 +39,28 @@ def check_lot123_animated_brand(browser, base: str) -> None:
                 assert video.count() == 1 and video.get_attribute("loop") is not None, lang
                 assert video.get_attribute("muted") is not None, lang
                 assert video.get_attribute("playsinline") is not None, lang
-                page.wait_for_function("""() => {
-                    const el = document.querySelector('[data-header-brand-video]');
-                    return el && el.readyState >= 2 && !el.paused && el.videoWidth === 400;
-                }""", timeout=12000)
+                try:
+                    page.wait_for_function("""() => {
+                        const el = document.querySelector('[data-header-brand-video]');
+                        return el && el.readyState >= 2 && !el.paused && el.videoWidth === 400;
+                    }""", timeout=12000)
+                except Exception:
+                    probe = page.evaluate("""() => {
+                        const v = document.querySelector('[data-header-brand-video]');
+                        const s = v.querySelector('source');
+                        return {
+                            currentSrc:v.currentSrc, source:s.getAttribute('src'),
+                            readyState:v.readyState, networkState:v.networkState,
+                            videoWidth:v.videoWidth, videoHeight:v.videoHeight,
+                            paused:v.paused, muted:v.muted, ended:v.ended,
+                            currentTime:v.currentTime, error:v.error?.message,
+                            reduced:matchMedia('(prefers-reduced-motion: reduce)').matches,
+                            saveData:navigator.connection?.saveData,
+                            visibility:document.visibilityState,
+                        };
+                    }""")
+                    print("DEBUG lot123 video browser:",lang,width,probe,flush=True)
+                    raise
                 assert brand.get_attribute("class").find("ng-brand-playing") >= 0, (lang, "not playing")
                 # The native video must never reset to blank intro when looping.
                 video.evaluate("el => { el.currentTime=9.7 }")
