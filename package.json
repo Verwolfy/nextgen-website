@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/copy_public_assets.mjs && astro build && npx --yes pagefind@1.5.2 --site dist",
+    "build": "node scripts/copy_public_assets.mjs && astro build && npx --yes pagefind@1.5.2 --site dist && node scripts/write_release_marker.mjs",
     "preview": "astro preview",
     "check:search": "python scripts/check_search_index.py"
   },
