@@ -13,15 +13,15 @@ class AboutV1Video(unittest.TestCase):
         story=(ROOT/"src/components/AboutStory.astro").read_text(encoding="utf-8")
         page=(ROOT/"src/pages/[lang]/[section].astro").read_text(encoding="utf-8")
         video=(ROOT/"src/components/AboutVideo.astro").read_text(encoding="utf-8")
-        for token in ('const mp4=\'/videos/nextgen-about-v3.mp4\'' ,
-                      'const webm=\'/videos/nextgen-about-v3.webm\'',
-                      'const poster=\'/videos/nextgen-about-v3-poster.webp\'',
+        for token in ('const mp4=\'/videos/nextgen-about-v4.mp4\'' ,
+                      'const webm=\'/videos/nextgen-about-v4.webm\'',
+                      'const poster=\'/videos/nextgen-about-v4-poster.webp\'',
                       "fr:","ar:","en:","data-about-video",'preload="none"',
                       "muted playsinline loop controls","IntersectionObserver",
                       "reduce.matches","connection?.saveData","video.pause()","video.play()"):
             self.assertIn(token,video,token)
         self.assertIn("aboutVideoReady=section==='a-propos' && existsSync",page)
-        self.assertIn("public/videos/nextgen-about-v3.mp4",page)
+        self.assertIn("public/videos/nextgen-about-v4.mp4",page)
         self.assertIn("<AboutVideo lang={lang} />",page)
         self.assertIn('src="/images/Nexo-Geno.webp"',page)
         self.assertNotIn("<AboutVideo",story)
