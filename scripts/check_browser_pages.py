@@ -300,12 +300,12 @@ def check_about_video_first(browser, base: str) -> None:
                 assert page.locator(".industrial-step").count()==3, (lang,"3 steps required")
                 assert hero.locator(".eyebrow").count()==0, (lang,"no redundant NextGen label")
                 assert player.locator("source").count() == 2,lang
-                assert player.locator("source").nth(0).get_attribute("src")=="/videos/nextgen-about-v3.webm",lang
+                assert player.locator("source").nth(0).get_attribute("src")=="/videos/nextgen-about-v4.webm",lang
                 assert player.locator("source").nth(0).get_attribute("type")=="video/webm",lang
-                assert player.locator("source").nth(1).get_attribute("src")=="/videos/nextgen-about-v3.mp4",lang
+                assert player.locator("source").nth(1).get_attribute("src")=="/videos/nextgen-about-v4.mp4",lang
                 assert player.locator("source").nth(1).get_attribute("type")=="video/mp4",lang
-                assert player.get_attribute("poster")=="/videos/nextgen-about-v3-poster.webp",lang
-                assert player.get_attribute("data-about-video-version")=="v3",lang
+                assert player.get_attribute("poster")=="/videos/nextgen-about-v4-poster.webp",lang
+                assert player.get_attribute("data-about-video-version")=="v4",lang
                 assert player.get_attribute("muted") is not None,lang
                 assert player.get_attribute("loop") is not None,lang
                 assert player.get_attribute("playsinline") is not None,lang
@@ -327,9 +327,9 @@ def check_about_video_first(browser, base: str) -> None:
                 page.wait_for_timeout(180)
                 assert player.evaluate("el => !el.muted && el.volume >= .69"), \
                     (lang,size,"visitors must be able to enable audio")
-                assert page.request.get(base + "/videos/nextgen-about-v3.mp4").status == 200, lang
-                assert page.request.get(base + "/videos/nextgen-about-v3.webm").status == 200, lang
-                assert page.request.get(base + "/videos/nextgen-about-v3-poster.webp").status == 200, lang
+                assert page.request.get(base + "/videos/nextgen-about-v4.mp4").status == 200, lang
+                assert page.request.get(base + "/videos/nextgen-about-v4.webm").status == 200, lang
+                assert page.request.get(base + "/videos/nextgen-about-v4-poster.webp").status == 200, lang
                 if size=="mobile":
                     assert title_box["y"]<200, (lang,title_box)
                     assert page.evaluate("document.documentElement.scrollWidth-innerWidth")<=4, (lang,"horizontal overflow")
