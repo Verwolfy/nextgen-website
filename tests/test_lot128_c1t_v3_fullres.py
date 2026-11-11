@@ -50,7 +50,7 @@ class ReviewedC1T(unittest.TestCase):
     def test_accessible_full_resolution_links_and_protection(self):
         markup=UI.read_text(encoding="utf8")
         self.assertIn("class=\"fenek-v3-detail-link\"",markup)
-        self.assertIn("href={reviewedV3.fullResolution[i]}",markup)
+        self.assertIn("href={fullSizeC1T[i]}",markup)
         self.assertIn('target="_blank" rel="noopener noreferrer"',markup)
         self.assertIn('aria-label={copy.zoom+',markup)
         self.assertIn('data-v3-step={i+1}',markup)
