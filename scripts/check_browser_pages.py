@@ -22,6 +22,37 @@ class SilentHandler(SimpleHTTPRequestHandler):
 
 
 
+def check_lot125_cm_o2p_20kg(browser, base: str) -> None:
+    """CM-O2P corrected sack mass is visible; canister remains 10 kg."""
+    image_path = "/images/maquettes/maquette-37-sac-20kg.svg"
+    for lang in ("fr", "ar", "en"):
+        page = browser.new_page(viewport={"width": 390, "height": 850})
+        try:
+            page.goto(f"{base}/{lang}/catalogue/fenek-proof-cm-o2p/", wait_until="domcontentloaded")
+            img = page.locator(f'img[src="{image_path}"]')
+            assert img.count() == 1, (lang, "corrected product image missing")
+            img.scroll_into_view_if_needed()
+            assert img.evaluate("el => el.complete && el.naturalWidth === 880"), (lang, "image decode")
+            html = page.content()
+            assert "Kit : sac 30 kg + bidon 10 kg" not in html, (lang, "stale wrong packaging")
+            if lang == "fr":
+                assert "20 kg + bidon 10 kg" in html, (lang, "corrected kit missing")
+            if lang == "en":
+                assert "20 kg bag + 10 kg canister" in html, (lang, "English packaging missing")
+            if lang == "ar":
+                assert "كيس 20 كغ" in html and "عبوة 10 كغ" in html, (lang, "Arabic packaging missing")
+            asset = page.request.get(base + image_path)
+            assert asset.status == 200 and "SAC 20 KG</text>" in asset.text(), lang
+            assert "data:image/webp;base64," in asset.text(), lang
+            page.goto(f"{base}/{lang}/catalogue/", wait_until="domcontentloaded")
+            card = page.locator('a.concept-product-card[href$="/fenek-proof-cm-o2p/"]')
+            assert card.count() == 1, (lang, "CM-O2P card missing")
+            assert card.locator(f'img[src="{image_path}"]').count() == 1, lang
+            assert page.evaluate("document.documentElement.scrollWidth-innerWidth") <= 4, lang
+        finally:
+            page.close()
+
+
 def check_lot123_animated_brand(browser, base: str) -> None:
     """Lot 123: real muted video, seamless loop segment, accessibility and fallback."""
     for lang in ("fr", "ar", "en"):
@@ -471,6 +502,7 @@ def check() -> None:
             check_localized_news_ticker(browser, base)
             check_about_video_first(browser, base)
             check_lot124_about_video_playback(browser, base)
+            check_lot125_cm_o2p_20kg(browser, base)
             check_localized_skip_keyboard(browser, base)
             for lang in ("fr", "ar", "en"):
                 for size, width, height in (("desktop", 1280, 900), ("mobile", 390, 844)):
