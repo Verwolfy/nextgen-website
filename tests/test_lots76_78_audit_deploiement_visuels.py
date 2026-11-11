@@ -28,7 +28,7 @@ class Lot76to78(unittest.TestCase):
             self.assertIn("'"+p["slug"]+"':",mapping)
             if r["reference"] == "PROOF-CM-O2P":
                 self.assertEqual(r["maquette_conceptuelle"],
-                                 "public/images/maquettes/maquette-37-sac-20kg.svg")
+                                 "public/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp")
                 self.assertEqual(r["maquette_source_archive"],
                                  "public/images/maquettes/maquette-37.webp")
                 self.assertIn("2026-11-11", r["correction_editoriale"])
