@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CODE = "PROOF-CM-O2P"
-FORMAT = "Kit : sac 30 kg + bidon 10 kg"
+FORMAT = "Kit : sac 20 kg + bidon 10 kg"
 
 class CM_O2P_ProvisionalKit(unittest.TestCase):
     @classmethod
@@ -26,7 +26,7 @@ class CM_O2P_ProvisionalKit(unittest.TestCase):
     def test_internal_registry_distinguishes_user_choice_from_technical_validation(self):
         row = next(x for x in self.register if x["pf_id"] == CODE)
         self.assertEqual(len(self.register), 50)
-        self.assertEqual(row["format_nominal"], "Sac 30 kg + bidon 10 kg (kit)")
+        self.assertEqual(row["format_nominal"], "Sac 20 kg + bidon 10 kg (kit 30 kg total)")
         self.assertEqual(row["unite_vente"], "KIT")
         self.assertIn("2026-11-05", row["emballage_envisage"])
         self.assertIn("A/B", row["densite_ou_masse"])
@@ -37,8 +37,8 @@ class CM_O2P_ProvisionalKit(unittest.TestCase):
 
     def test_localization_and_existing_indeterminate_kits(self):
         src = (ROOT / "src/lib/catalogue-projets.ts").read_text(encoding="utf-8")
-        for label in (FORMAT, "Kit: 30 kg bag + 10 kg canister",
-                      "طقم: كيس 30 كغ + عبوة 10 كغ"):
+        for label in (FORMAT, "Kit: 20 kg bag + 10 kg canister (30 kg total)",
+                      "طقم: كيس 20 كغ + عبوة 10 كغ (30 كغ إجمالاً)"):
             self.assertIn(label, src)
         pending = set()
         for prod in self.catalogue:

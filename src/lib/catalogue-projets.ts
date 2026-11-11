@@ -88,6 +88,14 @@ export const conceptPackshot=(product:CatalogueProject,variant:'card'|'full'='ca
    const updatedConcept=reviewedGalleryImage(product);
    if(updatedConcept) return updatedConcept;
  }
+ // CM-O2P correction, lot 125: the dry component is a 20 kg bag,
+ // with a separate 10 kg canister. Preserve the old gallery image as archive.
+ if(product.code==='PROOF-CM-O2P'){
+   const corrected='images/maquettes/maquette-37-sac-20kg.svg';
+   if(!existsSync(resolve(process.cwd(),'public',corrected)))
+     throw Error('Corrected 20 kg concept mockup missing for '+product.code);
+   return '/'+corrected;
+ }
  const flow = product.gamme==='flow' && product.conditionnements.some(c=>c.format==='Bidon 20 L');
  const bond = product.gamme==='bond' && product.conditionnements.some(c=>c.format==='Sac 25 kg');
  if(flow || bond){
@@ -177,10 +185,10 @@ export const packagingLabelFor = (format:string, lang:Lang):string => {
     en:"600 mL dual-component cartridge (A: resin + B: hardener)",
     ar:"خرطوشة مزدوجة المكونات 600 مل (أ: راتنج + ب: مصلّب)",
   }[lang];
-  if(format==="Kit : sac 30 kg + bidon 10 kg") return {
-    fr:"Kit : sac 30 kg + bidon 10 kg",
-    en:"Kit: 30 kg bag + 10 kg canister",
-    ar:"طقم: كيس 30 كغ + عبوة 10 كغ",
+  if(format==="Kit : sac 20 kg + bidon 10 kg") return {
+    fr:"Kit : sac 20 kg + bidon 10 kg (30 kg au total)",
+    en:"Kit: 20 kg bag + 10 kg canister (30 kg total)",
+    ar:"طقم: كيس 20 كغ + عبوة 10 كغ (30 كغ إجمالاً)",
   }[lang];
   if(format==="Cartouche 300 mL") return {
     fr:"Cartouche 300 mL",

@@ -26,7 +26,15 @@ class Lot76to78(unittest.TestCase):
             self.assertEqual(r["slug"],p["slug"])
             self.assertEqual(r["conditionnements_catalogue"],[x["format"] for x in p["conditionnements"]])
             self.assertIn("'"+p["slug"]+"':",mapping)
-            self.assertRegex(r["maquette_conceptuelle"],r"^public/images/maquettes/maquette-[0-9]{2}\.webp$")
+            if r["reference"] == "PROOF-CM-O2P":
+                self.assertEqual(r["maquette_conceptuelle"],
+                                 "public/images/maquettes/maquette-37-sac-20kg.svg")
+                self.assertEqual(r["maquette_source_archive"],
+                                 "public/images/maquettes/maquette-37.webp")
+                self.assertIn("2026-11-11", r["correction_editoriale"])
+            else:
+                self.assertRegex(r["maquette_conceptuelle"],
+                                 r"^public/images/maquettes/maquette-[0-9]{2}\.webp$")
             self.assertEqual(r["verification_identite_visuelle"],"NON VERIFIE")
             self.assertEqual(r["verification_emballage_physique"],"NON VERIFIE")
 

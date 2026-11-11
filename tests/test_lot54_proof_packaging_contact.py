@@ -26,7 +26,7 @@ class ProofPackaging(unittest.TestCase):
                 ], p["code"])
             elif p["code"] == "PROOF-CM-O2P":
                 self.assertEqual(p["conditionnements"], [
-                    {"format":"Kit : sac 30 kg + bidon 10 kg","poids_net":None,"unite":"KIT"}
+                    {"format":"Kit : sac 20 kg + bidon 10 kg","poids_net":None,"unite":"KIT"}
                 ], p["code"])
             elif p["code"] == "PROOF-EP-ANC":
                 self.assertEqual(p["conditionnements"], [
