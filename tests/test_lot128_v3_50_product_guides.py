@@ -51,7 +51,7 @@ class ReviewedV3(unittest.TestCase):
                 for lang in ("fr","ar","en"):
                     self.assertTrue(label[lang].strip(),(item["code"],lang))
                     self.assertNotIn("[LABO]",label[lang])
-                self.assertFalse(re.search(r"\\b\\d+\\s*(?:kg|l|ml|h|min|mm|cm)\\b",label["fr"],re.I),
+                self.assertFalse(re.search(r"\b\d+\s*(?:kg|l|ml|h|min|mm|cm)\b",label["fr"],re.I),
                                  (item["code"],"unapproved numeric specification"))
         for code in ("BOND-R2","BOND-R3","BOND-R4"):
             row=next(e for e in self.manifest if e["code"]==code)
@@ -67,7 +67,7 @@ class ReviewedV3(unittest.TestCase):
                 self.assertEqual(len(members),count)
                 for member in members:
                     self.assertTrue(member.isfile())
-                    self.assertRegex(member.name,r"^fenek-[a-z0-9-]+-steps\\.webp$")
+                    self.assertRegex(member.name,r"^fenek-[a-z0-9-]+-steps\.webp$")
                     self.assertNotIn(member.name,seen)
                     seen.add(member.name)
                     slug=member.name.removesuffix("-steps.webp")
