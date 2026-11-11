@@ -62,14 +62,23 @@ def main():
             assert parser.guides[0].get("data-reference")==product["code"],(lang,product["code"],"reference mismatch")
             assert int(parser.guides[0].get("data-application-count","-1"))==exp,(lang,product["code"],"step count")
             assert parser.steps==[str(i) for i in range(1,exp+1)],(lang,product["code"],parser.steps)
-            if product["code"] in {"BOND-C1T","BOND-C1TE"}:
+            if product["code"] in {"BOND-C1T","BOND-C1TE","BOND-C2FT"}:
                 assert parser.guides[0].get("data-v3-reviewed")=="BROUILLON",(lang,"V3 status")
                 assert parser.v3_steps==[str(i) for i in range(1,7)],(lang,"V3 step number mismatch")
-                expected_image="fenek-bond-c1te-steps.webp" if product["code"]=="BOND-C1TE" else "fenek-bond-c1t-steps.webp"
+                expected_image="fenek-bond-c1t-steps.webp" if product["code"]=="BOND-C1T" else "fenek-bond-c1te-steps.webp"
                 html=path.read_text(encoding="utf-8")
                 assert expected_image in html,(lang,"V3 sprite missing")
-                other_image="fenek-bond-c1t-steps.webp" if product["code"]=="BOND-C1TE" else "fenek-bond-c1te-steps.webp"
+                other_image="fenek-bond-c1te-steps.webp" if product["code"]=="BOND-C1T" else "fenek-bond-c1t-steps.webp"
                 assert other_image not in html,(lang,"cross-reference sprite leak")
+                if product["code"]=="BOND-C2FT":
+                    # Only the six illustrated regions are shared. Source captions
+                    # diverge at image row 1590 and MUST be hidden.
+                    assert "is-caption-cropped" in html,(lang,"C2FT must crop embedded C1TE captions")
+                    expected_title={"fr":"Remalaxer conformément à la fiche",
+                                    "en":"Remix in accordance with the approved sheet",
+                                    "ar":"أعد الخلط وفق النشرة دون تأخير"}[lang]
+                    assert expected_title in html,(lang,"C2FT step 4 incorrect")
+                    assert "fenek-bond-c1t-steps.webp" not in html,(lang,"C1T image leak")
                 if product["code"]=="BOND-C1T":
                     actual=path.read_text(encoding="utf-8")
                     for name in verified_c1t:
@@ -82,7 +91,7 @@ def main():
 
             n+=1
     assert n==150,n
-    print("PASS: 150 localized FENEK guides, 2 independently reviewed tile V3 guides across FR/AR/EN, both sprite SHAs")
+    print("PASS: 150 localized FENEK guides, 3 individually reviewed tile V3 guides across FR/AR/EN, both sprite SHAs")
 
 if __name__=="__main__":
     main()
