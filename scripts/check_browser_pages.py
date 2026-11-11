@@ -107,6 +107,42 @@ def check_lot128_v3_c1te(browser, base: str) -> None:
         )
 
 
+def check_lot129_v3_c2ft(browser, base: str) -> None:
+    """C2FT fast-setting adhesive: dedicated six V3 panels, no cross-reference."""
+    import hashlib
+    image_path="/images/application-v3/fenek-bond-c2ft-steps.webp"
+    for lang in ("fr","ar","en"):
+        for width in (390,1280):
+            page=browser.new_page(viewport={"width":width,"height":850})
+            try:
+                page.goto(f"{base}/{lang}/documentation/fenek-bond-c2ft/",wait_until="domcontentloaded")
+                guide=page.locator('section[data-reference="BOND-C2FT"][data-v3-reviewed="BROUILLON"]')
+                assert guide.count()==1,(lang,width,"C2FT code/status mismatch")
+                panels=guide.locator("[data-v3-step]")
+                assert panels.count()==6,(lang,width,"Missing C2FT steps")
+                assert [panel.get_attribute("data-v3-step") for panel in panels.all()] == [str(i) for i in range(1,7)]
+                text=guide.inner_text()
+                caption=("Remalaxer conformément à la fiche" if lang=="fr"
+                         else "Remix as instructed, without delay" if lang=="en"
+                         else "أعد الخلط وفق النشرة دون تأخير")
+                assert caption in text,(lang,width,"C2FT fast-setting sequence mismatch")
+                first=panels.nth(0)
+                first.scroll_into_view_if_needed()
+                css=first.evaluate("(el)=>getComputedStyle(el).backgroundImage")
+                assert image_path in css,(lang,width,"C2FT image mismatch")
+                assert "fenek-bond-c1te-steps.webp" not in css and "fenek-bond-c1t-steps.webp" not in css
+                assert first.bounding_box()["width"] >= (240 if width==390 else 150),(lang,width,"unreadable illustration")
+                assert page.evaluate("document.documentElement.scrollWidth-innerWidth")<=4,(lang,width,"horizontal overflow")
+                if lang=="fr" and width==390:
+                    SHOTS.mkdir(parents=True,exist_ok=True)
+                    guide.screenshot(path=str(SHOTS/"lot129-c2ft-v3-mobile-fr.png"))
+            finally:
+                page.close()
+    import urllib.request
+    with urllib.request.urlopen(base+image_path,timeout=10) as response:
+        assert hashlib.sha256(response.read()).hexdigest()=="3256b9e424511146ca4f4f7e9fd7da1e8d484b74c258e5de18e588aa97e87cbf"
+
+
 def check_lot125_cm_o2p_20kg(browser, base: str) -> None:
     """CM-O2P corrected sack mass is visible; canister remains 10 kg."""
     image_path = "/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
@@ -592,6 +628,7 @@ def check() -> None:
             check_lot125_cm_o2p_20kg(browser, base)
             check_lot127_v3_c1t(browser, base)
             check_lot128_v3_c1te(browser, base)
+            check_lot129_v3_c2ft(browser, base)
             check_localized_skip_keyboard(browser, base)
             for lang in ("fr", "ar", "en"):
                 for size, width, height in (("desktop", 1280, 900), ("mobile", 390, 844)):
