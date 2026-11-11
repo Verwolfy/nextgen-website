@@ -40,11 +40,12 @@ class V3_C1T_Quality(unittest.TestCase):
         self.assertIn("sprite:'/images/application-v3/fenek-bond-c1t-steps.webp'",manifest)
         self.assertIn("status:'BROUILLON'",manifest)
         self.assertIn("if(guide.slug!==slug || guide.code!==code)",manifest)
-        self.assertEqual(manifest.count("image:1,icon:"),1)
+        self.assertEqual(manifest.count("image:1,icon:"),2)
         for i in range(2,7):
             self.assertIn("image:"+str(i)+",icon:",manifest)
         self.assertIn("if(guide.steps.length!==6",manifest)
-        self.assertIn("['BOND-C1T':c1t]",manifest.replace("Object.freeze({'BOND-C1T':c1t})","['BOND-C1T':c1t]"))
+        self.assertIn("'BOND-C1T':c1t",manifest)
+        self.assertIn("'BOND-C1TE':c1te",manifest)
 
     def test_six_stage_alignment_and_accessibility(self):
         src=MANIFEST.read_text(encoding="utf-8")
