@@ -45,12 +45,12 @@ class PublicIllustrationContracts(unittest.TestCase):
                 with self.assertRaises(AssertionError):
                     live.validate_guide(html.replace(b'data-application-count="6"', b'data-application-count="5"'), lang, p)
 
-    def test_others_require_four_icon_stages(self):
+    def test_all_other_references_require_six_product_specific_drawings(self):
         for code in ("BOND-R4", "FLOW-SP-HR", "PAINT-INT-M", "PROOF-CM-O2P"):
             for lang in live.LANGS:
-                live.validate_guide(markup(code, lang, 4, False), lang, {"code": code})
+                live.validate_guide(markup(code, lang, 6, True), lang, {"code": code})
                 with self.assertRaises(AssertionError):
-                    live.validate_guide(markup(code, lang, 6, True), lang, {"code": code})
+                    live.validate_guide(markup(code, lang, 4, False), lang, {"code": code})
 
     def test_missing_wrong_or_unsafe_guide_rejected(self):
         html = markup("BOND-C1T", "fr", 6, True)
@@ -70,6 +70,11 @@ class PublicIllustrationContracts(unittest.TestCase):
         self.assertEqual(len({p["slug"] for p in catalog}), 50)
         self.assertEqual({p["gamme"] for p in catalog}, {"bond", "flow", "proof", "paint"})
         self.assertEqual(len(live.LANGS) * len(catalog), 150)
+        manuals = json.loads(live.MANUALS.read_text(encoding="utf-8"))
+        self.assertEqual(len(manuals),50)
+        self.assertEqual({x["code"] for x in manuals},{x["code"] for x in catalog})
+        self.assertTrue(all(len(x["steps"])==6 for x in manuals))
+
 
     def test_no_credentials_or_unsafe_http_mutations(self):
         script = (ROOT / "scripts/check_live_application_guides.py").read_text(encoding="utf-8")
