@@ -190,11 +190,6 @@ export const packagingLabelFor = (format:string, lang:Lang):string => {
     en:"Kit: 20 kg bag + 10 kg canister (30 kg total)",
     ar:"طقم: كيس 20 كغ + عبوة 10 كغ (30 كغ إجمالاً)",
   }[lang];
-  if(format==="Kit : sac 30 kg + bidon 10 kg") return {
-    fr:"Kit : sac 30 kg + bidon 10 kg",
-    en:"Kit: 30 kg bag + 10 kg canister",
-    ar:"طقم: كيس 30 كغ + عبوة 10 كغ",
-  }[lang];
   if(format==="Cartouche 300 mL") return {
     fr:"Cartouche 300 mL",
     en:"300 mL cartridge",
