@@ -107,6 +107,38 @@ def check_lot128_v3_c1te(browser, base: str) -> None:
         )
 
 
+def check_lot129_v3_c2ft(browser, base: str) -> None:
+    """C2FT: correct reference and captions; common pixel-identical art, text cropped."""
+    sprite = "/images/application-v3/fenek-bond-c1te-steps.webp"
+    for lang in ("fr", "ar", "en"):
+        for width in (390, 1280):
+            page = browser.new_page(viewport={"width": width, "height": 850})
+            try:
+                page.goto(f"{base}/{lang}/documentation/fenek-bond-c2ft/", wait_until="domcontentloaded")
+                guide = page.locator('section[data-reference="BOND-C2FT"][data-v3-reviewed="BROUILLON"]')
+                assert guide.count() == 1, (lang, width, "C2FT reference mismatch")
+                assert guide.locator("ol.is-caption-cropped").count() == 1, (lang,width,"source captions must be hidden")
+                panels=guide.locator("[data-v3-step]")
+                assert [p.get_attribute("data-v3-step") for p in panels.all()] == [str(i) for i in range(1,7)]
+                fourth={"fr":"Remalaxer conformément à la fiche",
+                        "en":"Remix in accordance with the approved sheet",
+                        "ar":"أعد الخلط وفق النشرة دون تأخير"}[lang]
+                assert fourth in guide.inner_text(), (lang,width,"incorrect C2FT quick-set procedure")
+                first=panels.nth(0)
+                first.scroll_into_view_if_needed()
+                bg=first.evaluate("(el)=>getComputedStyle(el).backgroundImage")
+                assert sprite in bg and "fenek-bond-c1t-steps.webp" not in bg, (lang,width)
+                figure=first.locator("..").bounding_box()
+                image=first.bounding_box()
+                assert figure and image and figure["height"] < image["height"] * .80, (lang,width,"baked captions exposed")
+                assert page.evaluate("document.documentElement.scrollWidth-innerWidth") <= 4, (lang,width)
+                if lang=="fr" and width==390:
+                    SHOTS.mkdir(parents=True,exist_ok=True)
+                    guide.screenshot(path=str(SHOTS/"lot129-c2ft-v3-mobile-fr.png"))
+            finally:
+                page.close()
+
+
 def check_lot125_cm_o2p_20kg(browser, base: str) -> None:
     """CM-O2P corrected sack mass is visible; canister remains 10 kg."""
     image_path = "/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
@@ -592,6 +624,7 @@ def check() -> None:
             check_lot125_cm_o2p_20kg(browser, base)
             check_lot127_v3_c1t(browser, base)
             check_lot128_v3_c1te(browser, base)
+            check_lot129_v3_c2ft(browser, base)
             check_localized_skip_keyboard(browser, base)
             for lang in ("fr", "ar", "en"):
                 for size, width, height in (("desktop", 1280, 900), ("mobile", 390, 844)):
