@@ -177,7 +177,7 @@ def main() -> None:
         from hashlib import sha256
         artwork = corrected_asset.read_bytes()
         assert artwork[:4] == b"RIFF" and artwork[8:12] == b"WEBP", "Invalid corrected WebP"
-        assert sha256(artwork).hexdigest() == "61f63d15aafa46202126ce7033f8cdfdb21397784f0e9ccbb002a03780e9ed53", "Artwork does not match the uploaded correction"
+        assert sha256(artwork).hexdigest() == "552f3f850fca117410d0268265f5f7db8c4506dcbc93620ba07529657ea291b7", "Artwork does not match the uploaded correction"
         for lang in LANGS:
             for route in ("catalogue/fenek-proof-cm-o2p", "documentation/fenek-proof-cm-o2p"):
                 html = (ROOT / lang / route / "index.html").read_text(encoding="utf-8")
