@@ -59,7 +59,7 @@ class CM_O2P_BagWeight(unittest.TestCase):
         data=base64.b64decode(match.group(1),validate=True)
         self.assertEqual(data,ORIGINAL.read_bytes())
         expected="eea49dc00e63d7668d88504b17a310ec2783c017"
-        git_blob=b"blob "+str(len(data)).encode()+b"\\0"+data
+        git_blob=b"blob "+str(len(data)).encode()+bytes([0])+data
         self.assertEqual(hashlib.sha1(git_blob).hexdigest(),expected)
         self.assertGreater(self.art.index('SAC 20 KG'),self.art.index('data:image/webp;base64,'))
 
