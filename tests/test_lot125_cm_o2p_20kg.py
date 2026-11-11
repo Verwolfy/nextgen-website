@@ -61,7 +61,7 @@ class CM_O2P_BagWeight(unittest.TestCase):
         expected="eea49dc00e63d7668d88504b17a310ec2783c017"
         git_blob=b"blob "+str(len(data)).encode()+bytes([0])+data
         self.assertEqual(hashlib.sha1(git_blob).hexdigest(),expected)
-        self.assertGreater(self.art.index('SAC 20 KG'),self.art.index('data:image/webp;base64,'))
+        self.assertGreater(self.art.rfind('SAC 20 KG</text>'),self.art.index('data:image/webp;base64,'))
 
     def test_no_unrelated_publications(self):
         self.assertEqual((ROOT/"public/data/products.json").read_text(encoding="utf-8").strip(),"[]")
