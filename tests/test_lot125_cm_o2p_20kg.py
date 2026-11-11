@@ -17,7 +17,7 @@ NEW="Kit : sac 20 kg + bidon 10 kg"
 SVG=ROOT/"public/images/maquettes/maquette-37-sac-20kg.svg"
 ORIGINAL=ROOT/"public/images/maquettes/maquette-37.webp"
 CORRECTED=ROOT/"public/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
-CORRECTED_SHA="61f63d15aafa46202126ce7033f8cdfdb21397784f0e9ccbb002a03780e9ed53"
+CORRECTED_SHA="552f3f850fca117410d0268265f5f7db8c4506dcbc93620ba07529657ea291b7"
 
 
 class CM_O2P_BagWeight(unittest.TestCase):
@@ -69,7 +69,7 @@ class CM_O2P_BagWeight(unittest.TestCase):
         image=CORRECTED.read_bytes()
         self.assertEqual(image[:4],b"RIFF")
         self.assertEqual(image[8:12],b"WEBP")
-        self.assertEqual(len(image),31688)
+        self.assertEqual(len(image),40494)
         self.assertEqual(hashlib.sha256(image).hexdigest(),CORRECTED_SHA)
         self.assertIn("fenek-proof-cm-o2p-sac-20kg-v2.webp",self.packaging)
         self.assertTrue(SVG.is_file(), "Prior SVG mockup stays archived")
