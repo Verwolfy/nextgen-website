@@ -164,7 +164,7 @@ def main() -> None:
         for slug, number in reviewed_visuals.items():
             # Lot 125: CM-O2P retains archived image 37 but publicly displays
             # the corrected bag label "SAC 20 KG" (canister unchanged at 10 KG).
-            asset = ("/images/maquettes/maquette-37-sac-20kg.svg"
+            asset = ("/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
                      if slug == "fenek-proof-cm-o2p"
                      else f"/images/maquettes/maquette-{number:02d}.webp")
             assert asset in catalog, f"Missing reference visual in {lang}: {slug}"
