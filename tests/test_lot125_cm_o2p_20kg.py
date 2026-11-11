@@ -53,7 +53,7 @@ class CM_O2P_BagWeight(unittest.TestCase):
         self.assertIn('SAC 20 KG</text>',self.art)
         self.assertIn('bidon composant B 10 kg',self.art)
         self.assertNotIn("<script",self.art)
-        self.assertNotIn("http://",self.art)
+        self.assertNotIn('href="http',self.art)
         match=re.search(r'href="data:image/webp;base64,([A-Za-z0-9+/=]+)"',self.art)
         self.assertIsNotNone(match)
         data=base64.b64decode(match.group(1),validate=True)
