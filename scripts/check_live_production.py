@@ -179,6 +179,34 @@ def verify_content(origin: str, timeout: float) -> None:
             raise AssertionError(f"Live optimized final About media altered: {asset}")
     print("PASS final About MP4/WebM and poster WebP (exact SHA256)", flush=True)
 
+    # Lot 126: verify the actual new mockup and the corrected bag/canister
+    # figures on the deployed site (not merely the GitHub source).
+    cm_image = "/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
+    cm_expected = {
+        "fr": "Kit : sac 20 kg + bidon 10 kg (30 kg au total)",
+        "en": "Kit: 20 kg bag + 10 kg canister (30 kg total)",
+        "ar": "طقم: كيس 20 كغ + عبوة 10 كغ (30 كغ إجمالاً)",
+    }
+    for lang in LANGS:
+        for path in (
+            f"/{lang}/catalogue/fenek-proof-cm-o2p/",
+            f"/{lang}/documentation/fenek-proof-cm-o2p/",
+        ):
+            html = fetch(origin, path, timeout).decode("utf-8")
+            if cm_image not in html:
+                raise AssertionError(f"{path}: old CM-O2P mockup still served")
+            if cm_expected[lang] not in html:
+                raise AssertionError(f"{path}: outdated CM-O2P bag/canister packaging")
+            if "Kit : sac 30 kg + bidon 10 kg" in html:
+                raise AssertionError(f"{path}: obsolete 30 kg bag still displayed")
+        listing = fetch(origin, f"/{lang}/catalogue/", timeout).decode("utf-8")
+        if cm_image not in listing:
+            raise AssertionError(f"/{lang}/catalogue/: obsolete CM-O2P image")
+    art = fetch(origin, cm_image, timeout)
+    if hashlib.sha256(art).hexdigest() != "61f63d15aafa46202126ce7033f8cdfdb21397784f0e9ccbb002a03780e9ed53":
+        raise AssertionError("CM-O2P production artwork differs from the optimized approved image")
+    print("PASS CM-O2P 20 kg bag + 10 kg canister, 30 kg kit, exact artwork across FR/AR/EN", flush=True)
+
     js = fetch(origin, "/pagefind/pagefind.js", timeout)
     assert len(js) > 100 and b"<html" not in js[:300].lower(), "Missing Pagefind runtime"
     entry = json.loads(fetch(origin, "/pagefind/pagefind-entry.json", timeout))
