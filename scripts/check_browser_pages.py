@@ -60,18 +60,50 @@ def check_lot127_v3_c1t(browser, base: str) -> None:
             finally:
                 page.close()
 
-    page = browser.new_page()
-    try:
-        page.goto(f"{base}/fr/documentation/fenek-bond-c1te/", wait_until="domcontentloaded")
-        assert page.locator("[data-v3-reviewed]").count() == 0, "unreviewed C1TE received C1T artwork"
-        assert page.locator("[data-v3-step]").count() == 0, "V3 asset leaked to C1TE"
-    finally:
-        page.close()
     # The transfer itself must be the exact tested user-supplied V3 artwork.
     import urllib.request
     with urllib.request.urlopen(base+image_path, timeout=10) as response:
         assert hashlib.sha256(response.read()).hexdigest() == (
             "9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3"
+        )
+
+
+def check_lot128_v3_c1te(browser, base: str) -> None:
+    """C1TE V3: own figures, correct code, conditional open time, all languages."""
+    import hashlib
+    sprite = "/images/application-v3/fenek-bond-c1te-steps.webp"
+    for lang in ("fr", "ar", "en"):
+        for width in (390, 1280):
+            page = browser.new_page(viewport={"width": width, "height": 850})
+            try:
+                page.goto(f"{base}/{lang}/documentation/fenek-bond-c1te/", wait_until="domcontentloaded")
+                guide = page.locator('section[data-reference="BOND-C1TE"][data-v3-reviewed="BROUILLON"]')
+                assert guide.count() == 1, (lang, width, "C1TE review mapping")
+                panels = guide.locator("[data-v3-step]")
+                assert panels.count() == 6
+                assert [panel.get_attribute("data-v3-step") for panel in panels.all()] == [
+                    str(i) for i in range(1, 7)
+                ]
+                title = ("Poser avant la fin du temps ouvert" if lang=="fr"
+                         else "Set tiles within the open time" if lang=="en"
+                         else "اضغط البلاط قبل انتهاء الزمن المفتوح")
+                assert title in guide.inner_text(), (lang, width, "C1TE final step mismatch")
+                image = panels.nth(0)
+                image.scroll_into_view_if_needed()
+                image_css = image.evaluate("(el) => getComputedStyle(el).backgroundImage")
+                assert sprite in image_css, (lang, width, "wrong C1TE sprite")
+                assert "fenek-bond-c1t-steps.webp" not in image_css, (lang, width)
+                assert image.bounding_box()["width"] >= (240 if width==390 else 150), (lang,width)
+                assert page.evaluate("document.documentElement.scrollWidth - innerWidth") <= 4, (lang,width)
+                if lang=="fr" and width==390:
+                    SHOTS.mkdir(parents=True,exist_ok=True)
+                    guide.screenshot(path=str(SHOTS/"lot128-c1te-v3-mobile-fr.png"))
+            finally:
+                page.close()
+    import urllib.request
+    with urllib.request.urlopen(base+sprite,timeout=10) as response:
+        assert hashlib.sha256(response.read()).hexdigest() == (
+            "0d4ea8e4b5fc7ec44e3b772f470aeffa81cc50009b2f724d0420c89fd8cd58ce"
         )
 
 
@@ -559,6 +591,7 @@ def check() -> None:
             check_lot124_about_video_playback(browser, base)
             check_lot125_cm_o2p_20kg(browser, base)
             check_lot127_v3_c1t(browser, base)
+            check_lot128_v3_c1te(browser, base)
             check_localized_skip_keyboard(browser, base)
             for lang in ("fr", "ar", "en"):
                 for size, width, height in (("desktop", 1280, 900), ("mobile", 390, 844)):
