@@ -14,7 +14,6 @@ export type ReviewedV3Guide = {
   sprite:string;
   sha256:string;
   fullResolution?:ReadonlyArray<string>;
-  artworkOnly?:boolean; // crop baked-in captions when shared source art is pixel-identical
   steps:ReviewStep[];
   status:'BROUILLON';
 };
@@ -93,37 +92,8 @@ const c1te:ReviewedV3Guide={
  * titles below come from C2FT's own legends.csv. Replace by its own full-res
  * assets when the binary upload is available. Never infer C2FT working times.
  */
-const c2ft:ReviewedV3Guide={
-  code:'BOND-C2FT',
-  slug:'fenek-bond-c2ft',
-  sprite:'/images/application-v3/fenek-bond-c1te-steps.webp',
-  sha256:'0d4ea8e4b5fc7ec44e3b772f470aeffa81cc50009b2f724d0420c89fd8cd58ce',
-  status:'BROUILLON',
-  artworkOnly:true,
-  steps:[
-    {image:1,icon:'brush',
-      title:l('Nettoyer et vérifier le support','نظّف السطح وتحقق من ثباته','Clean and inspect substrate'),
-      description:l('Contrôler la cohésion, la propreté et la planéité avant l’encollage.','تحقق من تماسك السطح ونظافته واستوائه قبل فرد اللاصق.','Check that the substrate is sound, clean and flat before application.')},
-    {image:2,icon:'shield',
-      title:l('Porter gants, lunettes et masque','ارتدِ القفازات والنظارات والكمامة','Wear gloves, goggles and mask'),
-      description:l('Adapter les équipements de protection à la FDS FENEK approuvée.','استخدم معدات الوقاية حسب نشرة السلامة المعتمدة.','Use PPE prescribed by the approved FENEK safety sheet.')},
-    {image:3,icon:'water',
-      title:l('Ajouter l’eau selon la fiche technique','أضف الماء حسب النشرة الفنية','Add water as specified'),
-      description:l('Le dosage eau/poudre doit provenir de la FT FENEK validée ; ne pas l’estimer.','اعتمد كمية الماء ونسبة الخلط من النشرة الفنية المعتمدة فقط.','Follow the approved water-to-powder ratio, never an estimated amount.')},
-    {image:4,icon:'mix',
-      title:l('Remalaxer conformément à la fiche','أعد الخلط وفق النشرة دون تأخير','Remix in accordance with the approved sheet'),
-      description:l('Pour C2FT à prise rapide, ne présumer ni repos ni durée : suivre uniquement la procédure validée.','بالنسبة إلى C2FT سريع الشك لا تفترض فترة انتظار؛ اتبع الإجراء المعتمد.','For fast-setting C2FT, do not assume a resting duration; follow the validated procedure.')},
-    {image:5,icon:'trowel',
-      title:l('Étaler avec une spatule crantée','وزّع اللاصق بمالج مسنن','Spread with a notched trowel'),
-      description:l('Choisir le peigne selon le carreau et vérifier le transfert de colle.','اختر المشط المناسب للبلاط وتحقق من تغطية اللاصق.','Select the suitable trowel notch and check adhesive transfer.')},
-    {image:6,icon:'tile',
-      title:l('Poser dans le temps prescrit','ركّب البلاط ضمن زمن العمل المحدد','Set tiles within the prescribed working time'),
-      description:l('Respecter le temps de pose uniquement après sa validation pour C2FT ; vérifier la couverture.','التزم بزمن التشغيل المعتمد لمرجع C2FT وتحقق من التغطية.','Observe only the verified C2FT working time and inspect coverage.')},
-  ]
-};
-
 const reviewed:Readonly<Record<string,ReviewedV3Guide>>=Object.freeze((()=>{
-  const all:Record<string,ReviewedV3Guide>={'BOND-C1T':c1t,'BOND-C1TE':c1te,'BOND-C2FT':c2ft};
+  const all:Record<string,ReviewedV3Guide>={'BOND-C1T':c1t,'BOND-C1TE':c1te};
   const seen=new Set<string>();
   for(const entry of manualEntries){
     if(seen.has(entry.code) || !/^[A-Z][A-Z0-9-]+$/.test(entry.code) || !/^fenek-[a-z0-9-]+$/.test(entry.slug))
