@@ -70,14 +70,13 @@ def main():
                 assert expected_image in html,(lang,"V3 sprite missing")
                 other_image="fenek-bond-c1t-steps.webp" if product["code"]=="BOND-C1TE" else "fenek-bond-c1te-steps.webp"
                 assert other_image not in html,(lang,"cross-reference sprite leak")
-                actual=path.read_text(encoding="utf-8")
-                for name in verified_c1t:
-                    assert name in actual,(
-                        lang,"Full-size V3 reference missing",name,
-                        actual.count('class="fenek-v3-detail-link"'),
-                        actual[max(0,actual.find('fenek-v3-reviewed-photo')-700):actual.find('fenek-v3-reviewed-photo')+700]
-                    )
-                assert actual.count('class="fenek-v3-detail-link"')==6,(lang,"Full-size link count")
+                if product["code"]=="BOND-C1T":
+                    actual=path.read_text(encoding="utf-8")
+                    for name in verified_c1t:
+                        assert name in actual,(lang,"C1T full-size image missing",name)
+                    assert actual.count('class="fenek-v3-detail-link"')==6,(lang,"C1T six full-size links required")
+                else:
+                    assert 'class="fenek-v3-detail-link"' not in html,(lang,"C1TE must not receive C1T full-size links")
             else:
                 assert not parser.v3_steps,(lang,product["code"],"unreviewed product received V3 image")
 
