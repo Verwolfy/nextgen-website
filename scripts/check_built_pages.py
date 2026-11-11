@@ -162,12 +162,27 @@ def main() -> None:
             "fenek-proof-pu-seal":4,
         }
         for slug, number in reviewed_visuals.items():
-            asset = f"/images/maquettes/maquette-{number:02d}.webp"
+            # Lot 125: CM-O2P retains archived image 37 but publicly displays
+            # the corrected bag label "SAC 20 KG" (canister unchanged at 10 KG).
+            asset = ("/images/maquettes/maquette-37-sac-20kg.svg"
+                     if slug == "fenek-proof-cm-o2p"
+                     else f"/images/maquettes/maquette-{number:02d}.webp")
             assert asset in catalog, f"Missing reference visual in {lang}: {slug}"
             detail = ROOT / lang / "catalogue" / slug / "index.html"
             assert detail.is_file() and asset in detail.read_text(encoding="utf-8"), (
                 f"Wrong detail image: {lang}/{slug}"
             )
+        corrected_asset = ROOT / "images/maquettes/maquette-37-sac-20kg.svg"
+        assert corrected_asset.is_file(), "Missing corrected CM-O2P 20 kg mockup"
+        corrected_markup = corrected_asset.read_text(encoding="utf-8")
+        assert "SAC 20 KG</text>" in corrected_markup
+        assert "image/webp;base64," in corrected_markup
+        assert "bidon composant B 10 kg" in corrected_markup
+        assert not any(
+            "Kit : sac 30 kg + bidon 10 kg" in
+            (ROOT / lang / "catalogue" / "fenek-proof-cm-o2p" / "index.html").read_text(encoding="utf-8")
+            for lang in LANGS
+        ), "Old wrong bag quantity still in catalog"
         # Lot 33: no unpublished field directions or numeric placeholders may
         # leak into the 150 public catalogue detail pages, even in a closed
         # disclosure widget. Their source remains private to the repository.
