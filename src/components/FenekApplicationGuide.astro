@@ -8,9 +8,13 @@ import type { Lang } from '../data/site';
 import type { CatalogueProject } from '../lib/catalogue-projets';
 import { applicationStepsFor, isTileAdhesive } from '../data/fenek-application-steps';
 import { applicationContextFor } from '../data/fenek-application-context';
+import { reviewedV3GuideFor } from '../data/fenek-v3-reviewed';
 interface Props { lang:Lang; product:CatalogueProject; }
 const {lang,product}=Astro.props;
-const steps=applicationStepsFor(product.code,lang);
+const reviewedV3=reviewedV3GuideFor(product.code,product.slug);
+const steps=reviewedV3
+  ? reviewedV3.steps.map(step=>({title:step.title[lang],description:step.description[lang],icon:step.icon,image:step.image}))
+  : applicationStepsFor(product.code,lang);
 const tile=isTileAdhesive(product.code);
 const copy={
   fr:{intro:'Parcours illustré de mise en œuvre',step:'Étape',alert:'Mode opératoire indicatif — présentation provisoire',warning:'Ces schémas expliquent les gestes de métier ; ils ne remplacent pas une FT/FDS FENEK approuvée. Ne déduisez jamais de ces illustrations un dosage, un temps ouvert, une épaisseur ou une résistance.',check:'Point spécifique à vérifier pour cette référence',photo:'Illustration fournie par le client'},
@@ -32,16 +36,21 @@ const paths:Record<string,string>={
  level:'M3 18h18M5 14l4-4 4 3 6-7M4 4h16v16H4z'
 };
 ---
-<section class="fenek-application-visual" aria-label={copy.intro} data-application-visual data-reference={product.code} data-application-count={steps.length}>
+<section class="fenek-application-visual" aria-label={copy.intro} data-application-visual data-reference={product.code} data-application-count={steps.length} data-v3-reviewed={reviewedV3 ? reviewedV3.status : undefined}>
   <div class="fenek-application-visual-heading">
     <span class="fenek-application-visual-eyebrow">{product.nom}</span>
     <h3>{copy.intro}</h3>
     <span class="fenek-application-visual-tag">{steps.length} {copy.step.toLowerCase()}</span>
   </div>
-  <ol class:list={['fenek-application-visual-grid',{'has-drawings':tile}]}>
+  <ol class:list={['fenek-application-visual-grid',{'has-drawings':tile,'v3-reviewed':Boolean(reviewedV3)}]}>
     {steps.map((step,i)=><li class="fenek-application-visual-card" data-application-step={i+1}>
       <figure class="fenek-application-visual-figure">
-        {step.image
+        {step.image && reviewedV3
+          ? <div class="fenek-application-visual-photo fenek-v3-reviewed-photo"
+              style={`--sprite-position:${((step.image-1)%3)*50}% ${Math.floor((step.image-1)/3)*100}%;--v3-sprite:url('${reviewedV3.sprite}')`}
+              data-v3-step={i+1}
+              role="img" aria-label={product.nom+' — '+copy.step+' '+(i+1)+': '+step.title}></div>
+          : step.image
           ? <div class="fenek-application-visual-photo"
               style={`--sprite-position:${((step.image-1)%3)*50}% ${Math.floor((step.image-1)/3)*100}%`}
               role="img" aria-label={copy.photo+' — '+step.title}></div>
@@ -76,6 +85,12 @@ const paths:Record<string,string>={
  .fenek-application-visual-figure{position:relative;display:grid;place-items:center;min-height:125px;margin:0;background:#f6faf9;border-bottom:1px solid #e1ebe8;overflow:hidden}
  .fenek-application-visual-figure figcaption{position:absolute;top:10px;inset-inline-start:12px;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#12365b;color:white;font-size:.78rem;font-weight:850;box-shadow:0 3px 8px #08284320}
  .fenek-application-visual-photo{width:min(100%,142px);aspect-ratio:1;background-image:url('/images/application/tile-application-6.webp');background-repeat:no-repeat;background-size:300% 200%;background-position:var(--sprite-position);filter:contrast(1.04)}
+ .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-card{background:#fff}
+ .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-figure{aspect-ratio:1/1;min-height:0;background:#fff;border-bottom:0;padding:3px}
+ .fenek-application-visual-grid.v3-reviewed .fenek-v3-reviewed-photo{width:100%;aspect-ratio:1;max-width:none;background-image:var(--v3-sprite);background-size:300% 200%;background-position:var(--sprite-position);background-repeat:no-repeat;filter:none}
+ .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-figure figcaption{display:none}
+ .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-copy{border-top:1px solid #e6efeb;padding:9px 13px 15px}
+ .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-copy h4{font-size:.89rem}
  .fenek-application-visual-icon{width:100px;height:100px;border-radius:27px;background:radial-gradient(circle at 25% 20%,#fff,#e7f3f0);display:grid;place-items:center;border:1px solid #d5e8e3;color:#16745f;box-shadow:inset 0 0 0 7px #f4faf8}
  .fenek-application-visual-icon svg{height:58px;width:58px}
  .fenek-application-visual-copy{padding:15px 16px 18px;flex:1}
@@ -87,6 +102,7 @@ const paths:Record<string,string>={
  .fenek-application-visual-warning{margin:13px 0 0;padding:10px 13px;background:#f8f8f2;border:1px solid #e4e3d2;border-radius:8px;color:#465e64;font-size:.82rem;line-height:1.55;max-width:none}
  :global(html[data-theme='dark']) .fenek-application-visual{--ink:#e7f5fb}
  :global(html[data-theme='dark']) .fenek-application-visual-card{background:linear-gradient(160deg,#183749,#123042);border-color:#436075}
+ :global(html[data-theme='dark']) .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-card{background:#183749}
  :global(html[data-theme='dark']) .fenek-application-visual-figure{background:#204354;border-color:#496b74}
  :global(html[data-theme='dark']) .fenek-application-visual-copy h4{color:#f0fafc}
  :global(html[data-theme='dark']) .fenek-application-visual-copy p{color:#c5dae5}
@@ -107,6 +123,10 @@ const paths:Record<string,string>={
  .fenek-application-visual-copy{padding:12px 12px 13px}
  .fenek-application-visual-copy h4{font-size:.92rem}
  .fenek-application-visual-copy p{font-size:.79rem}
+ .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-card{display:flex;flex-direction:column}
+ .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-figure{width:100%;aspect-ratio:1}
+ .fenek-application-visual-grid.v3-reviewed .fenek-v3-reviewed-photo{width:100%}
+ .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-copy{padding:12px 15px 15px}
  }
  @media print{.fenek-application-visual{break-inside:auto}
  .fenek-application-visual-card{box-shadow:none}
