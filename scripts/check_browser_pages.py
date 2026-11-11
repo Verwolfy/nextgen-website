@@ -32,7 +32,7 @@ def check_lot125_cm_o2p_20kg(browser, base: str) -> None:
             img = page.locator(f'img[src="{image_path}"]')
             assert img.count() == 1, (lang, "corrected product image missing")
             img.scroll_into_view_if_needed()
-            assert img.evaluate("el => el.complete && el.naturalWidth === 576"), (lang, "image decode")
+            assert img.evaluate("el => el.complete && el.naturalWidth === 640"), (lang, "image decode")
             html = page.content()
             assert "Kit : sac 30 kg + bidon 10 kg" not in html, (lang, "stale wrong packaging")
             if lang == "fr":
@@ -44,7 +44,7 @@ def check_lot125_cm_o2p_20kg(browser, base: str) -> None:
             asset = page.request.get(base + image_path)
             assert asset.status == 200 and asset.body()[:4] == b"RIFF", lang
             import hashlib
-            assert hashlib.sha256(asset.body()).hexdigest() == "61f63d15aafa46202126ce7033f8cdfdb21397784f0e9ccbb002a03780e9ed53", lang
+            assert hashlib.sha256(asset.body()).hexdigest() == "552f3f850fca117410d0268265f5f7db8c4506dcbc93620ba07529657ea291b7", lang
             assert img.get_attribute("alt"), (lang, "product packaging alt-text missing")
             page.goto(f"{base}/{lang}/catalogue/", wait_until="domcontentloaded")
             card = page.locator('a.concept-product-card[href$="/fenek-proof-cm-o2p/"]')
