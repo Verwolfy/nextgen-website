@@ -457,3 +457,17 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Garde-fous ajoutés : image SHA, vérification des trois locales et contrôle de l'image/du format réellement servi par Cloudflare dans `scripts/check_live_production.py`.
 - Rapport : `docs/LOT126_CM_O2P_MAQUETTE_SUPABASE_20261111.md`.
 - À conclure : PR, CI, fusion et contrôle live distinct.
+
+
+---
+
+## 2026-11-11 — Lot 129 : V3 BOND-C2FT, contrôle produit 3/50
+
+- Source utilisateur : `NEXTGEN_modes_emploi_V3.zip` (50 références × 6 PNG/SVG).
+- BOND-C1T et BOND-C1TE déjà revus ; BOND-C2FT contrôlé visuellement et ajouté sur branche `feat/lot129-v3-source-qa-c2ft-20261111`.
+- Les six **zones graphiques** C2FT/C1TE sont identiques au pixel près (SHA256 concaténé `6ea7fb90b80a57a5b0f293ba95e79afea2063765d5e2601563ca974758c0d321`) ; les légendes incrustées divergent. C2FT affiche uniquement la zone graphique commune via un recadrage à 72%, avec ses propres titres/explanations FR/AR/EN, sans dosage ni durée improvisés.
+- Vérification hors ligne de la découpe sur les 6 images effectuée ; **CI/build GitHub et déploiement Cloudflare non encore attestés** au moment de l'édition de cette entrée.
+- Le ZIP compte 43 lignes `suivi_50.csv` erronées (0 PNG/SVG alors que les dossiers contiennent six de chaque).
+- Blocage V3 de BOND-R2, R3, R4 : pastille « 3 » à l'étape 04, à corriger avant mise en ligne.
+- Aucun changement Supabase/produit commercial/FT/FDS. Reste : CI → revue PR → fusion si tests verts → contrôle live indépendant → BOND-C2TE.
+- Détails : `docs/LOT129_V3_C2FT_20261111.md`.
