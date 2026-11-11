@@ -23,7 +23,7 @@ Enrichir les 50 fiches produit avec le lot d'illustrations `NEXTGEN_modes_emploi
 - `scripts/check_browser_pages.py` : contrôle Chromium mobile/desktop FR/AR/EN, lisibilité, sprite, débordements, capture et absence de fuite de V3 vers C1TE.
 
 ## Anomalies détectées dans le lot non encore publié
-- **BOND-R4, étape 04** : la pastille du visuel affiche **« 3 »** au lieu de **« 4 »**. Doit être corrigée avant publication du R4.
+- **BOND-R2, BOND-R3 et BOND-R4 — étape 04** : les trois pastilles affichent **« 3 »** au lieu de **« 4 »**. Les trois images sont bloquées : chacune devra être corrigée et revérifiée avant publication de sa référence.
 - Certains panneaux montrent des opérations génériques hors contexte ; auditer par produit la séquence visuelle, la légende et les exigences HSE avant d'activer la référence.
 - Les images portent des légendes **AR/FR incrustées**. En page EN, une description anglaise est ajoutée sous les images ; aucune traduction dans l'illustration source n'est inventée.
 
