@@ -38,7 +38,7 @@ class ReviewedC1T(unittest.TestCase):
         self.assertIn("status:'BROUILLON'",mapping)
         self.assertEqual(mapping.count("/images/application/v3/fenek-bond-c1t/"),6)
         self.assertIn("throw Error('V3 illustration/product mismatch:",mapping)
-        self.assertEqual(set(re.findall(r"code:'([A-Z0-9-]+)'",mapping)),{"BOND-C1T","BOND-C1TE","BOND-C2FT"})
+        self.assertEqual(set(re.findall(r"code:'([A-Z0-9-]+)'",mapping)),{"BOND-C1T","BOND-C1TE"})
     def test_six_exact_pngs_from_supplied_zip(self):
         self.assertEqual({p.name for p in ART.glob("*.png")},set(SHAS))
         for name,digest in SHAS.items():
