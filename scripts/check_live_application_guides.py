@@ -19,6 +19,7 @@ from check_live_production import LANGS, fetch, validate_html
 ROOT = Path(__file__).resolve().parents[1]
 CATALOGUE = ROOT / "src" / "data" / "catalogue-projets.json"
 SPRITE_SHA256 = "55197582655ba03f9de8d933047236e63efbd5df27a1acde136c5fc342059b1c"
+C1T_V3_SHA256 = "9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3"
 TILE_ADHESIVES = frozenset({
     "BOND-C1T", "BOND-C1TE", "BOND-C2FT", "BOND-C2TE", "BOND-C2TE-S1",
 })
@@ -93,6 +94,12 @@ def verify_all_guides(origin: str, timeout: float, workers: int = 6) -> int:
     if digest != SPRITE_SHA256 or sprite[:4] != b"RIFF" or sprite[8:12] != b"WEBP":
         raise AssertionError("Six user-drawn application panels are missing or altered")
     print(f"PASS user illustration asset (SHA256 {digest[:14]}…)", flush=True)
+    reviewed = fetch(origin, "/images/application-v3/fenek-bond-c1t-steps.webp", timeout)
+    if hashlib.sha256(reviewed).hexdigest() != C1T_V3_SHA256:
+        raise AssertionError("Published C1T V3 artwork changed or missing")
+    if reviewed[:4] != b"RIFF" or reviewed[8:12] != b"WEBP":
+        raise AssertionError("Invalid reviewed C1T artwork format")
+
 
     tasks = [
         (lang, product, f"/{lang}/documentation/{product['slug']}/")
@@ -104,6 +111,16 @@ def verify_all_guides(origin: str, timeout: float, workers: int = 6) -> int:
         try:
             raw = fetch(origin, path, timeout)
             validate_guide(raw, lang, product)
+            if product["code"] == "BOND-C1T":
+                if b'data-v3-reviewed="BROUILLON"' not in raw:
+                    raise AssertionError("C1T V3 visual review status missing")
+                if raw.count(b'data-v3-step="') != 6:
+                    raise AssertionError("C1T V3 has incorrect number of illustrated stages")
+                if b"/images/application-v3/fenek-bond-c1t-steps.webp" not in raw:
+                    raise AssertionError("C1T V3 artwork URL absent")
+            elif b'data-v3-step="' in raw:
+                raise AssertionError("Unreviewed product received V3 artwork")
+
         except Exception as exc:
             raise AssertionError(f"{lang}/{product['code']} ({path}): {exc}") from exc
         return path
