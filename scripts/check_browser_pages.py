@@ -22,6 +22,59 @@ class SilentHandler(SimpleHTTPRequestHandler):
 
 
 
+def check_lot127_v3_c1t(browser, base: str) -> None:
+    """Visually test the first individually reviewed V3 reference, FR/AR/EN."""
+    import hashlib
+    image_path = "/images/application-v3/fenek-bond-c1t-steps.webp"
+    for lang in ("fr", "ar", "en"):
+        for width in (390, 1280):
+            page = browser.new_page(viewport={"width": width, "height": 850})
+            try:
+                page.goto(f"{base}/{lang}/documentation/fenek-bond-c1t/", wait_until="domcontentloaded")
+                guide = page.locator('section[data-reference="BOND-C1T"][data-v3-reviewed="BROUILLON"]')
+                assert guide.count() == 1, (lang, width, "V3 reference/status missing")
+                items = guide.locator("[data-v3-step]")
+                assert items.count() == 6, (lang, width, "not six V3 images")
+                assert [item.get_attribute("data-v3-step") for item in items.all()] == [
+                    str(i) for i in range(1, 7)
+                ], (lang, width, "incorrect V3 stage order")
+                expected = ("Porter gants, lunettes et masque" if lang == "fr"
+                            else "Wear gloves, goggles and dust mask" if lang == "en"
+                            else "ارتدِ القفازات والنظارات والكمامة")
+                assert expected in guide.inner_text(), (lang, width, "unmatched safety stage")
+                item = items.nth(0)
+                item.scroll_into_view_if_needed()
+                info = item.evaluate("""(el) => {
+                    const st = getComputedStyle(el);
+                    const r = el.getBoundingClientRect();
+                    return {image:st.backgroundImage,size:st.backgroundSize,width:r.width,height:r.height};
+                }""")
+                assert image_path in info["image"], (lang, width, "wrong sprite in CSS")
+                assert info["size"] == "300% 200%", (lang, width, "sprite crop scale")
+                assert info["width"] >= (240 if width == 390 else 150), (lang, width, "too small")
+                assert abs(info["width"]-info["height"]) <= 3, (lang, width, "distorted graphic")
+                assert page.evaluate("document.documentElement.scrollWidth - innerWidth") <= 4, (lang, width)
+                if lang == "fr" and width == 390:
+                    SHOTS.mkdir(parents=True, exist_ok=True)
+                    guide.screenshot(path=str(SHOTS/"lot127-c1t-v3-mobile-fr.png"))
+            finally:
+                page.close()
+
+    page = browser.new_page()
+    try:
+        page.goto(f"{base}/fr/documentation/fenek-bond-c1te/", wait_until="domcontentloaded")
+        assert page.locator("[data-v3-reviewed]").count() == 0, "unreviewed C1TE received C1T artwork"
+        assert page.locator("[data-v3-step]").count() == 0, "V3 asset leaked to C1TE"
+    finally:
+        page.close()
+    # The transfer itself must be the exact tested user-supplied V3 artwork.
+    import urllib.request
+    with urllib.request.urlopen(base+image_path, timeout=10) as response:
+        assert hashlib.sha256(response.read()).hexdigest() == (
+            "9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3"
+        )
+
+
 def check_lot125_cm_o2p_20kg(browser, base: str) -> None:
     """CM-O2P corrected sack mass is visible; canister remains 10 kg."""
     image_path = "/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
@@ -505,6 +558,7 @@ def check() -> None:
             check_about_video_first(browser, base)
             check_lot124_about_video_playback(browser, base)
             check_lot125_cm_o2p_20kg(browser, base)
+            check_lot127_v3_c1t(browser, base)
             check_localized_skip_keyboard(browser, base)
             for lang in ("fr", "ar", "en"):
                 for size, width, height in (("desktop", 1280, 900), ("mobile", 390, 844)):
