@@ -13,6 +13,13 @@ TILE={"BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1"}
 SHA="55197582655ba03f9de8d933047236e63efbd5df27a1acde136c5fc342059b1c"
 V3_C1T_SHA="9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3"
 V3_C1TE_SHA="0d4ea8e4b5fc7ec44e3b772f470aeffa81cc50009b2f724d0420c89fd8cd58ce"
+V3_C2FT_SHA="3256b9e424511146ca4f4f7e9fd7da1e8d484b74c258e5de18e588aa97e87cbf"
+V3_SPRITES={
+    "BOND-C1T":("fenek-bond-c1t-steps.webp",V3_C1T_SHA),
+    "BOND-C1TE":("fenek-bond-c1te-steps.webp",V3_C1TE_SHA),
+    "BOND-C2FT":("fenek-bond-c2ft-steps.webp",V3_C2FT_SHA),
+}
+
 
 class Parser(HTMLParser):
     def __init__(self):
@@ -30,14 +37,12 @@ def main():
     sprite=DIST/"images/application/tile-application-6.webp"
     assert sprite.is_file(),"Missing user illustrations in static output"
     assert hashlib.sha256(sprite.read_bytes()).hexdigest()==SHA,"Unexpected user sprite image"
-    new_sprite=DIST/"images/application-v3/fenek-bond-c1t-steps.webp"
-    assert new_sprite.is_file(),"Missing the reviewed BOND-C1T V3 artwork"
-    raw=new_sprite.read_bytes()
-    assert raw[:4]==b"RIFF" and raw[8:12]==b"WEBP","Invalid C1T V3 WebP"
-    assert hashlib.sha256(raw).hexdigest()==V3_C1T_SHA,"Changed C1T V3 asset"
-    c1te_sprite=DIST/"images/application-v3/fenek-bond-c1te-steps.webp"
-    assert c1te_sprite.is_file(),"Missing reviewed BOND-C1TE V3 artwork"
-    assert hashlib.sha256(c1te_sprite.read_bytes()).hexdigest()==V3_C1TE_SHA,"Changed C1TE artwork"
+    for code,(filename,digest) in V3_SPRITES.items():
+        asset=DIST/"images/application-v3"/filename
+        assert asset.is_file(),("Missing reviewed V3 artwork",code)
+        blob=asset.read_bytes()
+        assert blob[:4]==b"RIFF" and blob[8:12]==b"WEBP",("Invalid reviewed WebP",code)
+        assert hashlib.sha256(blob).hexdigest()==digest,("Changed reviewed V3 asset",code)
     verified_c1t={
         "01_support.png":"833a54cc1ac69570a446cc411423e22c5789a2efa597a4eef7ca701ad37fc74c",
         "02_epi.png":"c767d4dc7bc6381c8bbfd8e1f31e48549b594d939a787d5806ba091cbd4c7602",
@@ -62,27 +67,26 @@ def main():
             assert parser.guides[0].get("data-reference")==product["code"],(lang,product["code"],"reference mismatch")
             assert int(parser.guides[0].get("data-application-count","-1"))==exp,(lang,product["code"],"step count")
             assert parser.steps==[str(i) for i in range(1,exp+1)],(lang,product["code"],parser.steps)
-            if product["code"] in {"BOND-C1T","BOND-C1TE"}:
-                assert parser.guides[0].get("data-v3-reviewed")=="BROUILLON",(lang,"V3 status")
-                assert parser.v3_steps==[str(i) for i in range(1,7)],(lang,"V3 step number mismatch")
-                expected_image="fenek-bond-c1te-steps.webp" if product["code"]=="BOND-C1TE" else "fenek-bond-c1t-steps.webp"
+            if product["code"] in V3_SPRITES:
+                assert parser.guides[0].get("data-v3-reviewed")=="BROUILLON",(lang,"V3 review status",product["code"])
+                assert parser.v3_steps==[str(i) for i in range(1,7)],(lang,"V3 step order",product["code"])
                 html=path.read_text(encoding="utf-8")
-                assert expected_image in html,(lang,"V3 sprite missing")
-                other_image="fenek-bond-c1t-steps.webp" if product["code"]=="BOND-C1TE" else "fenek-bond-c1te-steps.webp"
-                assert other_image not in html,(lang,"cross-reference sprite leak")
+                expected=V3_SPRITES[product["code"]][0]
+                assert expected in html,(lang,"Wrong V3 image",product["code"])
+                for other,(filename,_) in V3_SPRITES.items():
+                    if other!=product["code"]:
+                        assert filename not in html,(lang,"Cross-reference V3 artwork leak",product["code"],other)
                 if product["code"]=="BOND-C1T":
-                    actual=path.read_text(encoding="utf-8")
                     for name in verified_c1t:
-                        assert name in actual,(lang,"C1T full-size image missing",name)
-                    assert actual.count('class="fenek-v3-detail-link"')==6,(lang,"C1T six full-size links required")
+                        assert name in html,(lang,"Missing C1T full-resolution image",name)
+                    assert html.count('class="fenek-v3-detail-link"')==6,(lang,"C1T full-resolution links")
                 else:
-                    assert 'class="fenek-v3-detail-link"' not in html,(lang,"C1TE must not receive C1T full-size links")
+                    assert 'class="fenek-v3-detail-link"' not in html,(lang,"Other product received C1T full-resolution links")
             else:
-                assert not parser.v3_steps,(lang,product["code"],"unreviewed product received V3 image")
-
+                assert not parser.v3_steps,(lang,product["code"],"Unreviewed product received V3 artwork")
             n+=1
     assert n==150,n
-    print("PASS: 150 localized FENEK guides, 2 independently reviewed tile V3 guides across FR/AR/EN, both sprite SHAs")
+    print("PASS: 150 localized FENEK guides, 3 independently reviewed tile V3 guides across FR/AR/EN, both sprite SHAs")
 
 if __name__=="__main__":
     main()
