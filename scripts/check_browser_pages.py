@@ -108,35 +108,64 @@ def check_lot128_v3_c1te(browser, base: str) -> None:
 
 
 def check_lot129_v3_c2ft(browser, base: str) -> None:
-    """C2FT: correct reference and captions; common pixel-identical art, text cropped."""
-    sprite = "/images/application-v3/fenek-bond-c1te-steps.webp"
+    """C2FT now serves its OWN six complete source illustrations and captions."""
+    sprite = "/images/application-v3/fenek-bond-c2ft-steps.webp"
     for lang in ("fr", "ar", "en"):
         for width in (390, 1280):
             page = browser.new_page(viewport={"width": width, "height": 850})
             try:
                 page.goto(f"{base}/{lang}/documentation/fenek-bond-c2ft/", wait_until="domcontentloaded")
-                guide = page.locator('section[data-reference="BOND-C2FT"][data-v3-reviewed="BROUILLON"]')
-                assert guide.count() == 1, (lang, width, "C2FT reference mismatch")
-                assert guide.locator("ol.is-caption-cropped").count() == 1, (lang,width,"source captions must be hidden")
+                guide=page.locator('section[data-reference="BOND-C2FT"][data-v3-reviewed="BROUILLON"]')
+                assert guide.count()==1,(lang,width,"C2FT source reference mismatch")
+                assert guide.get_attribute("data-v3-sprite")==sprite,(lang,width,"cross-reference")
+                assert guide.locator(".is-caption-cropped").count()==0,(lang,width,"source captions must be visible")
                 panels=guide.locator("[data-v3-step]")
-                assert [p.get_attribute("data-v3-step") for p in panels.all()] == [str(i) for i in range(1,7)]
+                assert [x.get_attribute("data-v3-step") for x in panels.all()]==[str(i) for i in range(1,7)]
                 fourth={"fr":"Remalaxer conformément à la fiche",
-                        "en":"Remix in accordance with the approved sheet",
+                        "en":"Remix as specified in the technical sheet",
                         "ar":"أعد الخلط وفق النشرة دون تأخير"}[lang]
-                assert fourth in guide.inner_text(), (lang,width,"incorrect C2FT quick-set procedure")
-                first=panels.nth(0)
-                first.scroll_into_view_if_needed()
+                assert fourth in guide.inner_text(),(lang,width,"C2FT step 04 instructions")
+                first=panels.nth(0);first.scroll_into_view_if_needed()
                 bg=first.evaluate("(el)=>getComputedStyle(el).backgroundImage")
-                assert sprite in bg and "fenek-bond-c1t-steps.webp" not in bg, (lang,width)
-                figure=first.locator("..").bounding_box()
-                image=first.bounding_box()
-                assert figure and image and figure["height"] < image["height"] * .80, (lang,width,"baked captions exposed")
-                assert page.evaluate("document.documentElement.scrollWidth-innerWidth") <= 4, (lang,width)
+                assert sprite in bg and "fenek-bond-c1te-steps.webp" not in bg,(lang,width)
+                assert abs(first.bounding_box()["width"]-first.bounding_box()["height"])<=3,(lang,width)
+                assert page.evaluate("document.documentElement.scrollWidth-innerWidth")<=4,(lang,width)
                 if lang=="fr" and width==390:
                     SHOTS.mkdir(parents=True,exist_ok=True)
                     guide.screenshot(path=str(SHOTS/"lot129-c2ft-v3-mobile-fr.png"))
             finally:
                 page.close()
+
+
+def check_lot130_all_v3(browser, base: str) -> None:
+    """Real mobile browser: 50 exact product media, 300 cards, no cross-reference bleed."""
+    import json
+    catalogue=json.loads((ROOT/"src/data/catalogue-projets.json").read_text(encoding="utf-8"))
+    manuals=json.loads((ROOT/"src/data/fenek-v3-manuals.json").read_text(encoding="utf-8"))
+    mapping={p["code"]:p for p in manuals}
+    assert len(catalogue)==len(mapping)==50
+    for product in catalogue:
+        slug,code=product["slug"],product["code"]
+        page=browser.new_page(viewport={"width":390,"height":850})
+        try:
+            response=page.goto(f"{base}/fr/documentation/{slug}/",wait_until="domcontentloaded")
+            assert response and response.status==200,(code,"missing page")
+            guide=page.locator(f'section[data-reference="{code}"][data-v3-reviewed="BROUILLON"]')
+            assert guide.count()==1,(code,"not reviewed")
+            sprite=f"/images/application-v3/{slug}-steps.webp"
+            assert guide.get_attribute("data-v3-sprite")==sprite,(code,"wrong sprite")
+            panels=guide.locator("[data-v3-step]")
+            assert panels.count()==6,(code,"not six source panels")
+            for i in range(6):
+                panel=panels.nth(i)
+                assert panel.get_attribute("data-v3-step")==str(i+1),(code,i,"stage order")
+                css=panel.evaluate("(el)=>getComputedStyle(el).backgroundImage")
+                assert sprite in css,(code,i,"illustration from wrong product")
+                label=panel.get_attribute("aria-label") or ""
+                assert mapping[code]["steps"][i]["title"]["fr"] in label or code in ("BOND-C1T","BOND-C1TE"),(code,i,"wrong legend")
+            assert page.evaluate("document.documentElement.scrollWidth-innerWidth")<=4,(code,"mobile overflow")
+        finally:
+            page.close()
 
 
 def check_lot125_cm_o2p_20kg(browser, base: str) -> None:
@@ -625,6 +654,7 @@ def check() -> None:
             check_lot127_v3_c1t(browser, base)
             check_lot128_v3_c1te(browser, base)
             check_lot129_v3_c2ft(browser, base)
+            check_lot130_all_v3(browser, base)
             check_localized_skip_keyboard(browser, base)
             for lang in ("fr", "ar", "en"):
                 for size, width, height in (("desktop", 1280, 900), ("mobile", 390, 844)):
