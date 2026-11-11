@@ -43,7 +43,8 @@ class MotionPerformance(unittest.TestCase):
         catalogue=(ROOT/"src/components/ConceptCatalogue.astro").read_text(encoding="utf-8")
         detail=(ROOT/"src/pages/[lang]/catalogue/[slug].astro").read_text(encoding="utf-8")
         self.assertIn('width="800" height="800" loading="lazy" decoding="async"',catalogue)
-        self.assertIn('width="800" height="800" alt="" loading="lazy" decoding="async"',detail)
+        self.assertIn('width="800" height="800" alt={packshotAlt} loading="lazy" decoding="async"',detail)
+        self.assertIn("product.code==='PROOF-CM-O2P'",detail)
         self.assertEqual((ROOT/"public/data/products.json").read_text().strip(),"[]")
         self.assertIn("Disallow: /",(ROOT/"public/robots.txt").read_text())
 
