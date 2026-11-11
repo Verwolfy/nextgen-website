@@ -31,6 +31,7 @@ class ApplicationGuideMarkup(HTMLParser):
         super().__init__()
         self.guides: list[dict[str, str | None]] = []
         self.steps: list[str] = []
+        self.v3_steps: list[str] = []
         self.drawing_count = 0
         self.pictogram_count = 0
         self.notes = 0
@@ -41,6 +42,8 @@ class ApplicationGuideMarkup(HTMLParser):
             self.guides.append(attrs)
         if tag == "li" and "data-application-step" in attrs:
             self.steps.append(attrs.get("data-application-step") or "")
+        if "data-v3-step" in attrs:
+            self.v3_steps.append(attrs["data-v3-step"] or "")
         if tag == "div":
             classes = (attrs.get("class") or "").split()
             if "fenek-application-visual-photo" in classes:
@@ -59,7 +62,7 @@ def validate_guide(raw: bytes, lang: str, product: dict) -> None:
     guide = ApplicationGuideMarkup()
     guide.feed(raw.decode("utf-8"))
     code = product["code"]
-    steps = 6 if code in TILE_ADHESIVES else 4
+    steps = 6
     if len(guide.guides) != 1:
         raise AssertionError((lang, code, "missing or duplicate illustrated guide"))
     item = guide.guides[0]
@@ -69,11 +72,12 @@ def validate_guide(raw: bytes, lang: str, product: dict) -> None:
         raise AssertionError((lang, code, "wrong declared stage count"))
     if guide.steps != [str(i) for i in range(1, steps + 1)]:
         raise AssertionError((lang, code, "incorrect/missing numbered stages"))
-    if code in TILE_ADHESIVES:
-        if guide.drawing_count != 6 or guide.pictogram_count:
-            raise AssertionError((lang, code, "six user illustrations not present"))
-    elif guide.pictogram_count != 4 or guide.drawing_count:
-        raise AssertionError((lang, code, "wrong family illustrations"))
+    if guide.drawing_count != 6 or guide.pictogram_count:
+        raise AssertionError((lang, code, "six approved-source V3 illustrations not present"))
+    if item.get("data-v3-reviewed") != "BROUILLON":
+        raise AssertionError((lang, code, "V3 draft label missing"))
+    if len(guide.v3_steps) != 6 or guide.v3_steps != [str(i) for i in range(1,7)]:
+        raise AssertionError((lang,code,"missing V3 image order"))
     if guide.notes != 1:
         raise AssertionError((lang, code, "missing reference-specific qualification note"))
     if b"SUPABASE_SERVICE_ROLE_KEY" in raw:
@@ -105,6 +109,25 @@ def verify_all_guides(origin: str, timeout: float, workers: int = 6) -> int:
         raise AssertionError("C1TE artwork missing or incorrect")
 
 
+    # 50 source-verified image hashes; no reliance on arbitrary cached images.
+    extra=json.loads((ROOT/"src/data/fenek-v3-verified-45.json").read_text(encoding="utf-8"))
+    artwork={
+        "BOND-C1T":("fenek-bond-c1t",C1T_V3_SHA256),
+        "BOND-C1TE":("fenek-bond-c1te",C1TE_V3_SHA256),
+        "BOND-C2FT":("fenek-bond-c2ft","506e65960964c110475562979fe315e4b5b883b2008e2c2b037405a163dd3e27"),
+        "BOND-C2TE":("fenek-bond-c2te","6c69deff4f07f9f9f2f212bc2358ce52d441aad6bf34e601e70142c8ce6a3711"),
+        "BOND-C2TE-S1":("fenek-bond-c2te-s1","21143de69601caf85196a931b30396c1332da1a8cc9e0ef3b0e1670d5d8d7499")
+    }
+    for item in extra:
+        if item["code"] in artwork:raise AssertionError("Duplicate product V3 identity")
+        artwork[item["code"]]=(item["slug"],item["sha256"])
+    if len(artwork)!=50 or {p["code"] for p in catalog}!=set(artwork):
+        raise AssertionError("Unreviewed or unknown V3 product identity")
+    for code,(slug,digest) in artwork.items():
+        raw=fetch(origin,"/images/application-v3/"+slug+"-steps.webp",timeout)
+        if raw[:4]!=b"RIFF" or raw[8:12]!=b"WEBP" or hashlib.sha256(raw).hexdigest()!=digest:
+            raise AssertionError("Wrong live V3 sprite for "+code)
+
     tasks = [
         (lang, product, f"/{lang}/documentation/{product['slug']}/")
         for lang in LANGS for product in catalog
@@ -115,19 +138,13 @@ def verify_all_guides(origin: str, timeout: float, workers: int = 6) -> int:
         try:
             raw = fetch(origin, path, timeout)
             validate_guide(raw, lang, product)
-            if product["code"] in {"BOND-C1T","BOND-C1TE"}:
-                if b'data-v3-reviewed="BROUILLON"' not in raw:
-                    raise AssertionError("Tile V3 visual review status missing")
-                if raw.count(b'data-v3-step="') != 6:
-                    raise AssertionError("Tile V3 has incorrect number of illustrated stages")
-                expected=("fenek-bond-c1te-steps.webp" if product["code"]=="BOND-C1TE"
-                          else "fenek-bond-c1t-steps.webp").encode("utf-8")
-                wrong=("fenek-bond-c1t-steps.webp" if product["code"]=="BOND-C1TE"
-                       else "fenek-bond-c1te-steps.webp").encode("utf-8")
-                if expected not in raw or wrong in raw:
-                    raise AssertionError("Cross-reference V3 artwork mismatch")
-            elif b'data-v3-step="' in raw:
-                raise AssertionError("Unreviewed product received V3 artwork")
+            if b'data-v3-reviewed="BROUILLON"' not in raw:
+                raise AssertionError("V3 draft status missing")
+            if raw.count(b'data-v3-step="') != 6:
+                raise AssertionError("Incorrect number of V3 illustrated steps")
+            expected=(artwork[product["code"]][0]+"-steps.webp").encode("utf-8")
+            if expected not in raw:
+                raise AssertionError("Cross-reference V3 artwork mismatch")
 
         except Exception as exc:
             raise AssertionError(f"{lang}/{product['code']} ({path}): {exc}") from exc

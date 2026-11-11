@@ -44,7 +44,7 @@ class ApplicationGuideCoverage(unittest.TestCase):
         self.assertEqual(image[:4],b"RIFF")
         self.assertEqual(image[8:12],b"WEBP")
         build=json.loads((ROOT/"package.json").read_text(encoding="utf-8"))["scripts"]["build"]
-        self.assertIn("node scripts/install_application_art.mjs && astro build",build)
+        self.assertIn("node scripts/install_application_art.mjs && node scripts/install_v3_guides.mjs && astro build",build)
         self.assertIn("pagefind@1.5.2",build)
         installer=(ROOT/"scripts/install_application_art.mjs").read_text(encoding="utf-8")
         self.assertIn(DIGEST,installer)

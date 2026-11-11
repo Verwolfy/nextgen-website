@@ -15,7 +15,7 @@ def markup(code: str, lang: str, steps: int, illustrations: bool) -> bytes:
     dir_ = "rtl" if lang == "ar" else "ltr"
     label = {"fr": "Rechercher", "ar": "بحث", "en": "Search"}[lang]
     figures = "".join(
-        f'<li data-application-step="{i}"><div class="fenek-application-visual-photo" '
+        f'<li data-application-step="{i}"><div class="fenek-application-visual-photo" data-v3-step="{i}" '
         f'role="img" aria-label="Etape {i}"></div></li>'
         if illustrations else
         f'<li data-application-step="{i}"><div class="fenek-application-visual-icon"></div></li>'
@@ -27,7 +27,7 @@ def markup(code: str, lang: str, steps: int, illustrations: bool) -> bytes:
 <span class="ng-search-signal"></span></button><div data-search-panel hidden></div>
 <input data-search-input type="search" />
 <main id="main" data-pagefind-body data-pagefind-filter="kind:sheet">
-<section data-application-visual data-reference="{code}" data-application-count="{steps}">
+<section data-application-visual data-reference="{code}" data-application-count="{steps}" data-v3-reviewed="BROUILLON">
 <ol>{figures}</ol><div class="fenek-application-visual-attention"></div>
 </section></main></body></html>''').encode("utf-8")
 
@@ -45,12 +45,12 @@ class PublicIllustrationContracts(unittest.TestCase):
                 with self.assertRaises(AssertionError):
                     live.validate_guide(html.replace(b'data-application-count="6"', b'data-application-count="5"'), lang, p)
 
-    def test_others_require_four_icon_stages(self):
+    def test_other_families_require_six_draft_v3_illustrations(self):
         for code in ("BOND-R4", "FLOW-SP-HR", "PAINT-INT-M", "PROOF-CM-O2P"):
             for lang in live.LANGS:
-                live.validate_guide(markup(code, lang, 4, False), lang, {"code": code})
+                live.validate_guide(markup(code, lang, 6, True), lang, {"code": code})
                 with self.assertRaises(AssertionError):
-                    live.validate_guide(markup(code, lang, 6, True), lang, {"code": code})
+                    live.validate_guide(markup(code, lang, 4, False), lang, {"code": code})
 
     def test_missing_wrong_or_unsafe_guide_rejected(self):
         html = markup("BOND-C1T", "fr", 6, True)

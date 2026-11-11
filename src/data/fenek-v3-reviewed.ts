@@ -1,4 +1,5 @@
 import type { Lang } from './site';
+import verified45 from './fenek-v3-verified-45.json';
 
 /**
  * Lot 127 — V3 product-by-product image QA, source: NEXTGEN_modes_emploi_V3.zip.
@@ -12,7 +13,6 @@ export type ReviewedV3Guide = {
   slug:string;
   sprite:string;
   sha256:string;
-  fullResolution?:ReadonlyArray<string>;
   steps:ReviewStep[];
   status:'BROUILLON';
 };
@@ -24,14 +24,6 @@ const c1t:ReviewedV3Guide={
   sprite:'/images/application-v3/fenek-bond-c1t-steps.webp',
   sha256:'9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3',
   status:'BROUILLON',
-  fullResolution:[
-    '/images/application/v3/fenek-bond-c1t/01_support.png',
-    '/images/application/v3/fenek-bond-c1t/02_epi.png',
-    '/images/application/v3/fenek-bond-c1t/03_gachage.png',
-    '/images/application/v3/fenek-bond-c1t/04_repos.png',
-    '/images/application/v3/fenek-bond-c1t/05_encollage.png',
-    '/images/application/v3/fenek-bond-c1t/06_pose.png',
-  ],
   steps:[
     {image:1,icon:'brush',
       title:l('Nettoyer et vérifier le support','نظّف السطح وتأكد من سلامته واستوائه','Clean and inspect substrate'),
@@ -82,7 +74,99 @@ const c1te:ReviewedV3Guide={
   ]
 };
 
-const reviewed:Readonly<Record<string,ReviewedV3Guide>>=Object.freeze({'BOND-C1T':c1t,'BOND-C1TE':c1te});
+
+/** Lot 128 — three independently audited V3 adhesive references.
+ * Captions come from their slug-matched directories in NEXTGEN_modes_emploi_V3.zip.
+ * English captions are technical translations with no unapproved numeric values.
+ */
+const reviewedTileCaptions=[
+  {
+    code:'BOND-C2FT',slug:'fenek-bond-c2ft',
+    sha256:'506e65960964c110475562979fe315e4b5b883b2008e2c2b037405a163dd3e27',
+    titles:[
+      l('Nettoyer et vérifier le support','نظّف السطح وتحقق من ثباته','Clean and inspect the substrate'),
+      l('Porter gants, lunettes et masque','ارتدِ القفازات والنظارات والكمامة','Wear gloves, goggles and a mask'),
+      l('Ajouter l’eau selon la fiche technique','أضف الماء حسب النشرة الفنية','Add water as specified in the technical sheet'),
+      l('Remalaxer conformément à la fiche','أعد الخلط وفق النشرة دون تأخير','Remix as instructed in the product sheet'),
+      l('Étaler avec une spatule crantée','وزّع اللاصق بمالج مسنن','Spread adhesive with a notched trowel'),
+      l('Poser dans le temps prescrit','ركّب البلاط ضمن زمن العمل المحدد','Set tiles within the specified working time')
+    ]
+  },
+  {
+    code:'BOND-C2TE',slug:'fenek-bond-c2te',
+    sha256:'6c69deff4f07f9f9f2f212bc2358ce52d441aad6bf34e601e70142c8ce6a3711',
+    titles:[
+      l('Nettoyer et vérifier le support','نظّف السطح وتحقق من ثباته','Clean and inspect the substrate'),
+      l('Porter gants, lunettes et masque','ارتدِ القفازات والنظارات والكمامة','Wear gloves, goggles and a mask'),
+      l('Ajouter l’eau selon la fiche technique','أضف الماء حسب النشرة الفنية','Add water as specified in the technical sheet'),
+      l('Laisser reposer puis remalaxer','اترك الخليط يرتاح ثم أعد الخلط','Rest and remix if required'),
+      l('Étaler avec une spatule crantée','وزّع اللاصق بمالج مسنن','Spread adhesive with a notched trowel'),
+      l('Poser et presser selon le temps ouvert','ضع البلاط واضغطه ضمن الزمن المحدد','Set and press tiles within the open time')
+    ]
+  },
+  {
+    code:'BOND-C2TE-S1',slug:'fenek-bond-c2te-s1',
+    sha256:'21143de69601caf85196a931b30396c1332da1a8cc9e0ef3b0e1670d5d8d7499',
+    titles:[
+      l('Nettoyer et vérifier le support','نظّف السطح وتحقق من ثباته','Clean and inspect the substrate'),
+      l('Porter gants, lunettes et masque','ارتدِ القفازات والنظارات والكمامة','Wear gloves, goggles and a mask'),
+      l('Ajouter l’eau selon la fiche technique','أضف الماء حسب النشرة الفنية','Add water as specified in the technical sheet'),
+      l('Laisser reposer puis remalaxer','اترك الخليط يرتاح ثم أعد الخلط','Rest and remix if required'),
+      l('Peigner ; double encollage si nécessaire','مشّط اللاصق وأضف لصقًا مزدوجًا عند الحاجة','Comb adhesive; back-butter if necessary'),
+      l('Poser et presser selon le temps ouvert','ضع البلاط واضغطه ضمن الزمن المحدد','Set and press tiles within the open time')
+    ]
+  }
+] as const;
+const reviewedTileDescriptions:Localized[]=[
+  l('Vérifier la cohésion et la planéité ; supprimer poussières et résidus.','تحقق من تماسك السطح واستوائه وأزل الغبار والبقايا.','Check soundness and flatness; remove dust and residues.'),
+  l('Utiliser les EPI correspondant au produit et à sa FDS validée.','استخدم وسائل الوقاية المنصوص عليها في نشرة السلامة المعتمدة.','Use PPE required by the approved product safety sheet.'),
+  l('Le dosage doit provenir de la FT FENEK approuvée ; ne pas inventer de quantité.','تُحدد كمية الماء حصريًا في النشرة الفنية المعتمدة.','Use the approved FENEK water ratio; never estimate quantities.'),
+  l('Respecter les opérations et délais de la FT : ne pas présumer d’un temps de repos.','اتبع تعليمات إعادة الخلط والتوقيت المعتمدة دون افتراض مدة استراحة.','Follow validated remixing instructions; do not assume a rest time.'),
+  l('Choisir le peigne adapté et vérifier le transfert ; double encollage seulement si nécessaire.','اختر المشط المناسب وتحقق من التغطية، واللصق المزدوج عند الحاجة فقط.','Choose an appropriate notch and check coverage; back-butter only when required.'),
+  l('Respecter le temps ouvert de la référence et vérifier le transfert et la planéité.','التزم بزمن الفتح الخاص بالمرجع وتحقق من التغطية والاستواء.','Observe the reference-specific open time; check coverage and flatness.')
+];
+const v3TileExtras:Record<string,ReviewedV3Guide>=Object.fromEntries(
+  reviewedTileCaptions.map(item=>[
+    item.code,
+    {code:item.code,slug:item.slug,sprite:'/images/application-v3/'+item.slug+'-steps.webp',
+     sha256:item.sha256,status:'BROUILLON' as const,
+     steps:item.titles.map((title,i)=>({
+       title,description:reviewedTileDescriptions[i],image:i+1,
+       icon:['brush','shield','water','clock','trowel','tile'][i]
+     }))}
+  ])
+);
+
+
+/**
+ * Product-by-product audited V3 catalogue: every manifest entry has a unique
+ * code+slug, one authentic sprite SHA-256, six source-based FR/AR legends and
+ * professionally translated English titles. No private validated TDS is used.
+ * Technical explanations outside the captions remain in FenekApplicationGuide
+ * and explicitly require an approved, reference-specific FENEK technical sheet.
+ */
+const verifiedOtherGuides:Record<string,ReviewedV3Guide>=Object.fromEntries(
+  verified45.map(item=>[
+    item.code,
+    {
+      code:item.code,
+      slug:item.slug,
+      sprite:item.sprite,
+      sha256:item.sha256,
+      status:'BROUILLON' as const,
+      steps:item.steps.map((step,i)=>({
+        image:i+1,
+        icon:'check',
+        title:{fr:step.fr,ar:step.ar,en:step.en},
+        description:{fr:'',ar:'',en:''}
+      }))
+    }
+  ])
+);
+if(Object.keys(verifiedOtherGuides).length!==45)
+  throw Error('V3 reference audit incomplete');
+
+const reviewed:Readonly<Record<string,ReviewedV3Guide>>=Object.freeze({'BOND-C1T':c1t,'BOND-C1TE':c1te,...v3TileExtras,...verifiedOtherGuides});
 export function reviewedV3GuideFor(code:string,slug:string):ReviewedV3Guide|null{
   const guide=reviewed[code];
   if(!guide)return null;

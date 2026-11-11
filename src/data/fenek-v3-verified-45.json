@@ -1,0 +1,1850 @@
+[
+  {
+    "slug": "fenek-bond-cg1",
+    "asset": "public/images/application-v3/fenek-bond-cg1-steps.webp",
+    "sha256": "7bef37cf246de5be3dc4cb414e7acf1fe8148fec0400fc33f777c016dd3686a0",
+    "bytes": 100776,
+    "steps": [
+      {
+        "fr": "Nettoyer et dépoussiérer les joints",
+        "ar": "نظّف الفواصل وأزل الغبار منها",
+        "en": "Clean and remove dust from joints"
+      },
+      {
+        "fr": "Porter gants, lunettes et masque",
+        "ar": "ارتدِ القفازات والنظارات والكمامة",
+        "en": "Wear gloves, goggles and a dust mask"
+      },
+      {
+        "fr": "Gâcher selon la fiche technique",
+        "ar": "اخلط بالماء حسب النشرة الفنية",
+        "en": "Mix according to the technical sheet"
+      },
+      {
+        "fr": "Remplir les joints en diagonale",
+        "ar": "املأ الفواصل بممسحة مطاطية قطريًا",
+        "en": "Fill joints diagonally with a rubber float"
+      },
+      {
+        "fr": "Nettoyer à l’éponge avant durcissement",
+        "ar": "نظّف بإسفنجة رطبة قبل التصلب",
+        "en": "Sponge clean before full hardening"
+      },
+      {
+        "fr": "Essuyer le voile après séchage",
+        "ar": "أزل بقايا الملاط بعد الجفاف",
+        "en": "Remove remaining haze after drying"
+      }
+    ],
+    "code": "BOND-CG1",
+    "sprite": "/images/application-v3/fenek-bond-cg1-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-bond-cg2wa",
+    "asset": "public/images/application-v3/fenek-bond-cg2wa-steps.webp",
+    "sha256": "7bef37cf246de5be3dc4cb414e7acf1fe8148fec0400fc33f777c016dd3686a0",
+    "bytes": 100776,
+    "steps": [
+      {
+        "fr": "Nettoyer et dépoussiérer les joints",
+        "ar": "نظّف الفواصل وأزل الغبار منها",
+        "en": "Clean and remove dust from joints"
+      },
+      {
+        "fr": "Porter gants, lunettes et masque",
+        "ar": "ارتدِ القفازات والنظارات والكمامة",
+        "en": "Wear gloves, goggles and a dust mask"
+      },
+      {
+        "fr": "Gâcher selon la fiche technique",
+        "ar": "اخلط بالماء حسب النشرة الفنية",
+        "en": "Mix according to the technical sheet"
+      },
+      {
+        "fr": "Remplir les joints en diagonale",
+        "ar": "املأ الفواصل بممسحة مطاطية قطريًا",
+        "en": "Fill joints diagonally with a rubber float"
+      },
+      {
+        "fr": "Nettoyer à l’éponge avant durcissement",
+        "ar": "نظّف بإسفنجة رطبة قبل التصلب",
+        "en": "Sponge clean before full hardening"
+      },
+      {
+        "fr": "Essuyer le voile après séchage",
+        "ar": "أزل بقايا الملاط بعد الجفاف",
+        "en": "Remove remaining haze after drying"
+      }
+    ],
+    "code": "BOND-CG2WA",
+    "sprite": "/images/application-v3/fenek-bond-cg2wa-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-bond-ct-c25-f5",
+    "asset": "public/images/application-v3/fenek-bond-ct-c25-f5-steps.webp",
+    "sha256": "d87497ba8f0e9bec2f5843b58e5b2dd8fa2089b6a6dd4ec1e078ec6d450a8cb9",
+    "bytes": 69480,
+    "steps": [
+      {
+        "fr": "Préparer le sol et son primaire",
+        "ar": "حضّر الأرضية ونظّفها وطبّق البرايمر اللازم",
+        "en": "Prepare floor and primer"
+      },
+      {
+        "fr": "Porter gants, lunettes et masque",
+        "ar": "ارتدِ القفازات والنظارات وكمامة الغبار",
+        "en": "Wear gloves, goggles and a dust mask"
+      },
+      {
+        "fr": "Gâcher selon la fiche technique",
+        "ar": "اخلط المسحوق بالماء حسب النشرة الفنية",
+        "en": "Mix according to the technical sheet"
+      },
+      {
+        "fr": "Verser le ragréage sur le sol",
+        "ar": "اسكب المونة السائلة على الأرضية",
+        "en": "Pour leveling compound onto the floor"
+      },
+      {
+        "fr": "Répartir à la lisseuse adaptée",
+        "ar": "سوّ السطح بالممسحة المناسبة",
+        "en": "Spread with a suitable smoothing tool"
+      },
+      {
+        "fr": "Débuller et protéger le mortier frais",
+        "ar": "أزل الفقاعات واحمِ السطح الطري",
+        "en": "De-air and protect fresh leveling mortar"
+      }
+    ],
+    "code": "BOND-CT-C25-F5",
+    "sprite": "/images/application-v3/fenek-bond-ct-c25-f5-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-bond-gp-csii",
+    "asset": "public/images/application-v3/fenek-bond-gp-csii-steps.webp",
+    "sha256": "dcde489bd5fe0ffec53ebb7f6e89b3170cd5859455b4e3dfc8214309b7effa98",
+    "bytes": 70676,
+    "steps": [
+      {
+        "fr": "Préparer et humidifier le support",
+        "ar": "نظّف الجدار واضبط ترطيبه عند الحاجة",
+        "en": "Prepare and dampen the substrate"
+      },
+      {
+        "fr": "Porter gants, lunettes et masque",
+        "ar": "ارتدِ القفازات والنظارات وكمامة الغبار",
+        "en": "Wear gloves, goggles and a dust mask"
+      },
+      {
+        "fr": "Gâcher l’enduit selon la fiche",
+        "ar": "اخلط مونة اللياسة حسب النشرة الفنية",
+        "en": "Mix render according to the technical sheet"
+      },
+      {
+        "fr": "Appliquer manuellement ou par projection",
+        "ar": "طبّق اللياسة بالمالج أو بالرش",
+        "en": "Apply by hand or spray"
+      },
+      {
+        "fr": "Dresser à la règle puis talocher",
+        "ar": "سوّ السطح بالقدّة ثم بالمحارة",
+        "en": "Level with a straightedge then float"
+      },
+      {
+        "fr": "Protéger l’enduit frais",
+        "ar": "احمِ اللياسة من الجفاف المبكر",
+        "en": "Protect freshly applied render"
+      }
+    ],
+    "code": "BOND-GP-CSII",
+    "sprite": "/images/application-v3/fenek-bond-gp-csii-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-bond-gr-hr",
+    "asset": "public/images/application-v3/fenek-bond-gr-hr-steps.webp",
+    "sha256": "2a116dfe6bb52090547717961110eaf1bc98d750ae94c25bb3af3d23713bb4e3",
+    "bytes": 54768,
+    "steps": [
+      {
+        "fr": "Nettoyer et étancher le coffrage",
+        "ar": "نظّف الركيزة وأحكم إغلاق القالب",
+        "en": "Clean and seal the formwork"
+      },
+      {
+        "fr": "Humidifier puis évacuer l’eau libre",
+        "ar": "رطّب الركيزة وأزل الماء الحر",
+        "en": "Dampen then remove free water"
+      },
+      {
+        "fr": "Porter les EPI et gâcher selon fiche",
+        "ar": "ارتدِ الوقاية واخلط حسب النشرة",
+        "en": "Wear PPE and mix as specified"
+      },
+      {
+        "fr": "Couler en continu d’un seul côté",
+        "ar": "اسكب المونة باستمرار من جانب واحد",
+        "en": "Pour continuously from one side"
+      },
+      {
+        "fr": "Contrôler le remplissage sans ségrégation",
+        "ar": "تحقّق من ملء الفراغات دون انفصال",
+        "en": "Check complete filling without segregation"
+      },
+      {
+        "fr": "Protéger les surfaces pendant la cure",
+        "ar": "احمِ الأجزاء المكشوفة أثناء المعالجة",
+        "en": "Protect surfaces during curing"
+      }
+    ],
+    "code": "BOND-GR-HR",
+    "sprite": "/images/application-v3/fenek-bond-gr-hr-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-bond-m10",
+    "asset": "public/images/application-v3/fenek-bond-m10-steps.webp",
+    "sha256": "ffaa5141f16b3ec34ce20a346aa3239350337b6e0d2bcfeea93cdc33b762e739",
+    "bytes": 65740,
+    "steps": [
+      {
+        "fr": "Humidifier les éléments poreux si requis",
+        "ar": "رطّب العناصر المسامية إذا لزم",
+        "en": "Dampen porous units if required"
+      },
+      {
+        "fr": "Porter gants, lunettes et masque",
+        "ar": "ارتدِ القفازات والنظارات وكمامة الغبار",
+        "en": "Wear gloves, goggles and a dust mask"
+      },
+      {
+        "fr": "Gâcher selon la fiche technique",
+        "ar": "حضّر مونة البناء حسب النشرة الفنية",
+        "en": "Mix according to the technical sheet"
+      },
+      {
+        "fr": "Étaler régulièrement le lit de mortier",
+        "ar": "وزّع طبقة المونة بانتظام",
+        "en": "Spread an even mortar bed"
+      },
+      {
+        "fr": "Poser les blocs et contrôler l’alignement",
+        "ar": "ركّب البلوكات وتحقّق من المحاذاة",
+        "en": "Lay blocks and check alignment"
+      },
+      {
+        "fr": "Serrer les joints et protéger",
+        "ar": "اضغط الفواصل واحمِ المونة من الجفاف",
+        "en": "Tool the joints and protect"
+      }
+    ],
+    "code": "BOND-M10",
+    "sprite": "/images/application-v3/fenek-bond-m10-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-bond-m5",
+    "asset": "public/images/application-v3/fenek-bond-m5-steps.webp",
+    "sha256": "c3873f987351d281991138767b7ad043eede9d89c9168431bc16035edf649f3c",
+    "bytes": 63384,
+    "steps": [
+      {
+        "fr": "Humidifier les blocs absorbants si nécessaire",
+        "ar": "رطّب وحدات البناء الماصّة عند الحاجة",
+        "en": "Dampen absorbent blocks if required"
+      },
+      {
+        "fr": "Porter gants, lunettes et masque",
+        "ar": "ارتدِ القفازات والنظارات وكمامة الغبار",
+        "en": "Wear gloves, goggles and a dust mask"
+      },
+      {
+        "fr": "Gâcher le mortier selon la fiche",
+        "ar": "اخلط مونة البناء حسب النشرة",
+        "en": "Mix mortar as specified"
+      },
+      {
+        "fr": "Déposer un lit de mortier",
+        "ar": "افرد طبقة مونة لتثبيت البلوكات",
+        "en": "Lay a bed of mortar"
+      },
+      {
+        "fr": "Poser et aligner les blocs",
+        "ar": "ضع البلوكات واضبط استقامتها",
+        "en": "Lay and align the blocks"
+      },
+      {
+        "fr": "Serrer les joints et protéger",
+        "ar": "أحكم الفواصل واحمِ البناء الطري",
+        "en": "Tool the joints and protect"
+      }
+    ],
+    "code": "BOND-M5",
+    "sprite": "/images/application-v3/fenek-bond-m5-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-bond-oc-csiii",
+    "asset": "public/images/application-v3/fenek-bond-oc-csiii-steps.webp",
+    "sha256": "3650e11c0dc77d70a2fc6c653a1b2bea8c78e215cb47953ae5e23a7f5f4ab958",
+    "bytes": 70006,
+    "steps": [
+      {
+        "fr": "Nettoyer et préparer la façade",
+        "ar": "نظّف الواجهة وحضّر الركيزة",
+        "en": "Clean and prepare the façade"
+      },
+      {
+        "fr": "Porter gants, lunettes et masque",
+        "ar": "ارتدِ القفازات والنظارات وكمامة الغبار",
+        "en": "Wear gloves, goggles and a dust mask"
+      },
+      {
+        "fr": "Gâcher selon la fiche technique",
+        "ar": "اخلط مونة الواجهة حسب النشرة",
+        "en": "Mix according to the technical sheet"
+      },
+      {
+        "fr": "Projeter ou appliquer l’enduit",
+        "ar": "طبّق المونة على الواجهة بالتساوي",
+        "en": "Spray or hand-apply the render"
+      },
+      {
+        "fr": "Dresser puis réaliser la finition prévue",
+        "ar": "سوّ السطح ونفّذ التشطيب الموصوف",
+        "en": "Level and finish as specified"
+      },
+      {
+        "fr": "Protéger du soleil et du vent",
+        "ar": "احمِ الواجهة من الشمس والرياح",
+        "en": "Protect against sun and wind"
+      }
+    ],
+    "code": "BOND-OC-CSIII",
+    "sprite": "/images/application-v3/fenek-bond-oc-csiii-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-bond-r2",
+    "asset": "public/images/application-v3/fenek-bond-r2-steps.webp",
+    "sha256": "23b3921b822dd0eafa85a7989630405ff971a9c25ccf73bb01f07647716b2eef",
+    "bytes": 61874,
+    "steps": [
+      {
+        "fr": "Éliminer le béton altéré",
+        "ar": "أزل الخرسانة الضعيفة ونظّف السطح",
+        "en": "Remove deteriorated concrete"
+      },
+      {
+        "fr": "Traiter les armatures exposées si nécessaire",
+        "ar": "نظّف حديد التسليح المكشوف عند الحاجة",
+        "en": "Treat exposed reinforcement if required"
+      },
+      {
+        "fr": "Humidifier sans eau stagnante",
+        "ar": "رطّب الخرسانة دون ترك ماء راكد",
+        "en": "Dampen without leaving standing water"
+      },
+      {
+        "fr": "Porter les EPI et gâcher selon fiche",
+        "ar": "ارتدِ معدات الوقاية واخلط حسب النشرة",
+        "en": "Wear PPE and mix as specified"
+      },
+      {
+        "fr": "Appliquer et serrer le mortier",
+        "ar": "اضغط المونة في التجويف ثم سوّها",
+        "en": "Apply and compact the mortar"
+      },
+      {
+        "fr": "Protéger et assurer la cure",
+        "ar": "احمِ الإصلاح من الجفاف المبكر",
+        "en": "Protect and provide proper curing"
+      }
+    ],
+    "qa_correction": "Step 4 badge corrected from erroneous numeral 3 to 4",
+    "code": "BOND-R2",
+    "sprite": "/images/application-v3/fenek-bond-r2-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-bond-r3",
+    "asset": "public/images/application-v3/fenek-bond-r3-steps.webp",
+    "sha256": "c6e0d968dd1c534792b6d948acbc263a06033cb268401355f486c3d69614c745",
+    "bytes": 61120,
+    "steps": [
+      {
+        "fr": "Purger le béton et dépoussiérer",
+        "ar": "أزل الخرسانة المتضررة ونظّف مكان الإصلاح",
+        "en": "Remove unsound concrete and dust"
+      },
+      {
+        "fr": "Préparer les armatures si apparentes",
+        "ar": "عالِج التسليح الظاهر عند الحاجة",
+        "en": "Prepare exposed reinforcement if present"
+      },
+      {
+        "fr": "Humidifier puis laisser ressuyer",
+        "ar": "بلّل السطح ثم اتركه رطبًا دون تجمع",
+        "en": "Dampen and allow excess water to evaporate"
+      },
+      {
+        "fr": "Porter les EPI et gâcher selon fiche",
+        "ar": "ارتدِ معدات الوقاية واخلط حسب النشرة",
+        "en": "Wear PPE and mix as specified"
+      },
+      {
+        "fr": "Serrer le mortier et talocher",
+        "ar": "اضغط المونة جيدًا ثم سوّها",
+        "en": "Compact and float the repair mortar"
+      },
+      {
+        "fr": "Protéger durant la cure",
+        "ar": "احمِ مونة الإصلاح أثناء المعالجة",
+        "en": "Protect during curing"
+      }
+    ],
+    "qa_correction": "Step 4 badge corrected from erroneous numeral 3 to 4",
+    "code": "BOND-R3",
+    "sprite": "/images/application-v3/fenek-bond-r3-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-bond-r4",
+    "asset": "public/images/application-v3/fenek-bond-r4-steps.webp",
+    "sha256": "c01bf2cf0e9dd8e661493c5137c683eb0cdb667999a9e4809e74c9c22daeb5f4",
+    "bytes": 62116,
+    "steps": [
+      {
+        "fr": "Purger et préparer les bords",
+        "ar": "أزل الخرسانة الهشة وحضّر الحواف",
+        "en": "Remove unsound material and prepare edges"
+      },
+      {
+        "fr": "Nettoyer et protéger les aciers si requis",
+        "ar": "نظّف التسليح وطبّق الحماية عند الحاجة",
+        "en": "Clean and protect reinforcement if specified"
+      },
+      {
+        "fr": "Humidifier le support puis ressuyer",
+        "ar": "رطّب الركيزة حتى تصبح دون لمعان",
+        "en": "Dampen substrate; allow excess water to evaporate"
+      },
+      {
+        "fr": "Porter les EPI et gâcher selon fiche",
+        "ar": "استعمل الوقاية واخلط وفق النشرة الفنية",
+        "en": "Wear PPE and mix as specified"
+      },
+      {
+        "fr": "Serrer et talocher le mortier",
+        "ar": "اضغط المونة الليفية وسوّها جيدًا",
+        "en": "Compact and float the mortar"
+      },
+      {
+        "fr": "Protéger du dessèchement précoce",
+        "ar": "احمِ السطح من الجفاف المبكر",
+        "en": "Protect against premature drying"
+      }
+    ],
+    "qa_correction": "Step 4 badge corrected from erroneous numeral 3 to 4",
+    "code": "BOND-R4",
+    "sprite": "/images/application-v3/fenek-bond-r4-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-flow-ac",
+    "asset": "public/images/application-v3/fenek-flow-ac-steps.webp",
+    "sha256": "ebcfeb0fec8082f8b29be65a664829ca23fa588fcd5458b6b5c6f2be88162fd8",
+    "bytes": 60046,
+    "steps": [
+      {
+        "fr": "Vérifier les matériaux et leur compatibilité",
+        "ar": "تحقق من مواد الخرسانة وتوافقها",
+        "en": "Check material compatibility"
+      },
+      {
+        "fr": "Porter gants et lunettes",
+        "ar": "ارتدِ القفازات والنظارات الواقية",
+        "en": "Wear gloves and safety goggles"
+      },
+      {
+        "fr": "Doser selon la fiche technique",
+        "ar": "قِس الجرعة حسب النشرة الفنية",
+        "en": "Measure dosage per technical sheet"
+      },
+      {
+        "fr": "Incorporer selon la fiche au malaxeur",
+        "ar": "أضف المنتج إلى ماء الخلط",
+        "en": "Add to mixer per technical sheet"
+      },
+      {
+        "fr": "Malaxer pour répartir l’adjuvant",
+        "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+        "en": "Mix to disperse the admixture"
+      },
+      {
+        "fr": "Vérifier prise et compatibilité armatures",
+        "ar": "تحقق من التسارع وخلو الكلوريدات",
+        "en": "Check setting and reinforcement compatibility"
+      }
+    ],
+    "code": "FLOW-AC",
+    "sprite": "/images/application-v3/fenek-flow-ac-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-flow-ae",
+    "asset": "public/images/application-v3/fenek-flow-ae-steps.webp",
+    "sha256": "38cb8a22a2f192944c621d9a7b44554622a11e304c79025c83837931b305850e",
+    "bytes": 59232,
+    "steps": [
+      {
+        "fr": "Vérifier les matériaux et leur compatibilité",
+        "ar": "تحقق من مواد الخرسانة وتوافقها",
+        "en": "Check material compatibility"
+      },
+      {
+        "fr": "Porter gants et lunettes",
+        "ar": "ارتدِ القفازات والنظارات الواقية",
+        "en": "Wear gloves and safety goggles"
+      },
+      {
+        "fr": "Doser selon la fiche technique",
+        "ar": "قِس الجرعة حسب النشرة الفنية",
+        "en": "Measure dosage per technical sheet"
+      },
+      {
+        "fr": "Incorporer selon la fiche au malaxeur",
+        "ar": "أضف المنتج إلى ماء الخلط",
+        "en": "Add to mixer per technical sheet"
+      },
+      {
+        "fr": "Malaxer pour répartir l’adjuvant",
+        "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+        "en": "Mix to disperse the admixture"
+      },
+      {
+        "fr": "Mesurer l’air du béton frais",
+        "ar": "قِس محتوى الهواء في الخرسانة الطرية",
+        "en": "Measure air content of fresh concrete"
+      }
+    ],
+    "code": "FLOW-AE",
+    "sprite": "/images/application-v3/fenek-flow-ae-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-flow-ci",
+    "asset": "public/images/application-v3/fenek-flow-ci-steps.webp",
+    "sha256": "91c72a72b877d5995599a64e57336c9f0d43faa9de137f176b323145d788da5d",
+    "bytes": 60134,
+    "steps": [
+      {
+        "fr": "Vérifier les matériaux et leur compatibilité",
+        "ar": "تحقق من مواد الخرسانة وتوافقها",
+        "en": "Check material compatibility"
+      },
+      {
+        "fr": "Porter gants et lunettes",
+        "ar": "ارتدِ القفازات والنظارات الواقية",
+        "en": "Wear gloves and safety goggles"
+      },
+      {
+        "fr": "Doser selon la fiche technique",
+        "ar": "قِس الجرعة حسب النشرة الفنية",
+        "en": "Measure dosage per technical sheet"
+      },
+      {
+        "fr": "Incorporer selon la fiche au malaxeur",
+        "ar": "أضف المنتج إلى ماء الخلط",
+        "en": "Add to mixer per technical sheet"
+      },
+      {
+        "fr": "Malaxer pour répartir l’adjuvant",
+        "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+        "en": "Mix to disperse the admixture"
+      },
+      {
+        "fr": "Vérifier la durabilité par essais",
+        "ar": "تحقق من أداء الحماية بالتجارب",
+        "en": "Verify durability through testing"
+      }
+    ],
+    "code": "FLOW-CI",
+    "sprite": "/images/application-v3/fenek-flow-ci-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-flow-cure",
+    "asset": "public/images/application-v3/fenek-flow-cure-steps.webp",
+    "sha256": "bc86f6a72132a2f100639fd466b3f8f3ac3ab27323aa236216376d08575e3045",
+    "bytes": 61778,
+    "steps": [
+      {
+        "fr": "Attendre la disparition du ressuage",
+        "ar": "انتظر اختفاء ماء النزف من الخرسانة",
+        "en": "Wait until surface bleed water disappears"
+      },
+      {
+        "fr": "Porter les EPI de pulvérisation",
+        "ar": "ارتدِ نظارات الرش والقفازات والوقاية",
+        "en": "Wear spraying PPE"
+      },
+      {
+        "fr": "Préparer sans dilution non autorisée",
+        "ar": "حضّر المنتج دون تخفيف غير معتمد",
+        "en": "Prepare without unauthorized dilution"
+      },
+      {
+        "fr": "Pulvériser sur le béton frais",
+        "ar": "رش مادة المعالجة على الخرسانة",
+        "en": "Spray onto fresh concrete"
+      },
+      {
+        "fr": "Vérifier la couverture uniforme",
+        "ar": "غطِّ السطح بطبقة منتظمة",
+        "en": "Check for uniform coverage"
+      },
+      {
+        "fr": "Protéger et vérifier avant revêtement",
+        "ar": "احمِ السطح وراجع التوافق قبل الطلاء",
+        "en": "Protect and check before recoating"
+      }
+    ],
+    "code": "FLOW-CURE",
+    "sprite": "/images/application-v3/fenek-flow-cure-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-flow-lat",
+    "asset": "public/images/application-v3/fenek-flow-lat-steps.webp",
+    "sha256": "47142883cfe69d7f3fc106046bc216a0fa0b113d6c4dcaf0f3083050d2870d2b",
+    "bytes": 62798,
+    "steps": [
+      {
+        "fr": "Nettoyer et humidifier sans eau stagnante",
+        "ar": "نظّف السطح ورطبه دون تجمع",
+        "en": "Clean and dampen; leave no standing water"
+      },
+      {
+        "fr": "Porter gants et lunettes",
+        "ar": "ارتدِ القفازات والنظارات الواقية",
+        "en": "Wear gloves and safety goggles"
+      },
+      {
+        "fr": "Préparer la solution selon fiche",
+        "ar": "حضّر المحلول حسب النشرة الفنية",
+        "en": "Prepare solution as specified"
+      },
+      {
+        "fr": "Brosser le pont d’adhérence",
+        "ar": "ادهن الجسر الرابط بالفرشاة",
+        "en": "Brush in the bonding slurry"
+      },
+      {
+        "fr": "Appliquer le mortier frais sur frais",
+        "ar": "طبّق المونة على الجسر وهو رطب",
+        "en": "Apply fresh mortar onto fresh bonding layer"
+      },
+      {
+        "fr": "Assurer la cure du mortier",
+        "ar": "احمِ المونة أثناء المعالجة",
+        "en": "Provide proper mortar curing"
+      }
+    ],
+    "code": "FLOW-LAT",
+    "sprite": "/images/application-v3/fenek-flow-lat-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-flow-rt",
+    "asset": "public/images/application-v3/fenek-flow-rt-steps.webp",
+    "sha256": "66daf7070f9b7a4fd422aafe6b51860ee3aff19d8f83a1e80bd0cc0d8cd5ee38",
+    "bytes": 59204,
+    "steps": [
+      {
+        "fr": "Vérifier les matériaux et leur compatibilité",
+        "ar": "تحقق من مواد الخرسانة وتوافقها",
+        "en": "Check material compatibility"
+      },
+      {
+        "fr": "Porter gants et lunettes",
+        "ar": "ارتدِ القفازات والنظارات الواقية",
+        "en": "Wear gloves and safety goggles"
+      },
+      {
+        "fr": "Doser selon la fiche technique",
+        "ar": "قِس الجرعة حسب النشرة الفنية",
+        "en": "Measure dosage per technical sheet"
+      },
+      {
+        "fr": "Incorporer selon la fiche au malaxeur",
+        "ar": "أضف المنتج إلى ماء الخلط",
+        "en": "Add to mixer per technical sheet"
+      },
+      {
+        "fr": "Malaxer pour répartir l’adjuvant",
+        "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+        "en": "Mix to disperse the admixture"
+      },
+      {
+        "fr": "Contrôler les temps de prise",
+        "ar": "راقب زمن الشك حسب الحرارة",
+        "en": "Check setting times"
+      }
+    ],
+    "code": "FLOW-RT",
+    "sprite": "/images/application-v3/fenek-flow-rt-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-flow-sp-hr",
+    "asset": "public/images/application-v3/fenek-flow-sp-hr-steps.webp",
+    "sha256": "9b413059aea4dacbb7eb5314977e7846cc64314bd2bf4d73202358991ccbdc20",
+    "bytes": 58932,
+    "steps": [
+      {
+        "fr": "Vérifier les matériaux et leur compatibilité",
+        "ar": "تحقق من مواد الخرسانة وتوافقها",
+        "en": "Check material compatibility"
+      },
+      {
+        "fr": "Porter gants et lunettes",
+        "ar": "ارتدِ القفازات والنظارات الواقية",
+        "en": "Wear gloves and safety goggles"
+      },
+      {
+        "fr": "Doser selon la fiche technique",
+        "ar": "قِس الجرعة حسب النشرة الفنية",
+        "en": "Measure dosage per technical sheet"
+      },
+      {
+        "fr": "Incorporer selon la fiche au malaxeur",
+        "ar": "أضف المنتج إلى ماء الخلط",
+        "en": "Add to mixer per technical sheet"
+      },
+      {
+        "fr": "Malaxer pour répartir l’adjuvant",
+        "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+        "en": "Mix to disperse the admixture"
+      },
+      {
+        "fr": "Contrôler la consistance par essais",
+        "ar": "تحقق من القوام بالتجارب الأولية",
+        "en": "Check consistency by testing"
+      }
+    ],
+    "code": "FLOW-SP-HR",
+    "sprite": "/images/application-v3/fenek-flow-sp-hr-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-flow-sp-pf",
+    "asset": "public/images/application-v3/fenek-flow-sp-pf-steps.webp",
+    "sha256": "b14b657ecdebbc164ee85f11acc8404083ff18be2632b21e8f9f188911c80002",
+    "bytes": 59882,
+    "steps": [
+      {
+        "fr": "Vérifier les matériaux et leur compatibilité",
+        "ar": "تحقق من مواد الخرسانة وتوافقها",
+        "en": "Check material compatibility"
+      },
+      {
+        "fr": "Porter gants et lunettes",
+        "ar": "ارتدِ القفازات والنظارات الواقية",
+        "en": "Wear gloves and safety goggles"
+      },
+      {
+        "fr": "Doser selon la fiche technique",
+        "ar": "قِس الجرعة حسب النشرة الفنية",
+        "en": "Measure dosage per technical sheet"
+      },
+      {
+        "fr": "Incorporer selon la fiche au malaxeur",
+        "ar": "أضف المنتج إلى ماء الخلط",
+        "en": "Add to mixer per technical sheet"
+      },
+      {
+        "fr": "Malaxer pour répartir l’adjuvant",
+        "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+        "en": "Mix to disperse the admixture"
+      },
+      {
+        "fr": "Contrôler les résistances par essais",
+        "ar": "تحقق من المقاومة المبكرة بالتجارب",
+        "en": "Verify strength through testing"
+      }
+    ],
+    "code": "FLOW-SP-PF",
+    "sprite": "/images/application-v3/fenek-flow-sp-pf-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-flow-sp-rt",
+    "asset": "public/images/application-v3/fenek-flow-sp-rt-steps.webp",
+    "sha256": "81052f70779ab324a790c6f0ce0a0204bb7acea6c191bda55463c21d248deec1",
+    "bytes": 59654,
+    "steps": [
+      {
+        "fr": "Vérifier les matériaux et leur compatibilité",
+        "ar": "تحقق من مواد الخرسانة وتوافقها",
+        "en": "Check material compatibility"
+      },
+      {
+        "fr": "Porter gants et lunettes",
+        "ar": "ارتدِ القفازات والنظارات الواقية",
+        "en": "Wear gloves and safety goggles"
+      },
+      {
+        "fr": "Doser selon la fiche technique",
+        "ar": "قِس الجرعة حسب النشرة الفنية",
+        "en": "Measure dosage per technical sheet"
+      },
+      {
+        "fr": "Incorporer selon la fiche au malaxeur",
+        "ar": "أضف المنتج إلى ماء الخلط",
+        "en": "Add to mixer per technical sheet"
+      },
+      {
+        "fr": "Malaxer pour répartir l’adjuvant",
+        "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+        "en": "Mix to disperse the admixture"
+      },
+      {
+        "fr": "Contrôler le maintien de consistance",
+        "ar": "تحقق من بقاء القوام خلال العمل",
+        "en": "Check slump retention"
+      }
+    ],
+    "code": "FLOW-SP-RT",
+    "sprite": "/images/application-v3/fenek-flow-sp-rt-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-flow-vma",
+    "asset": "public/images/application-v3/fenek-flow-vma-steps.webp",
+    "sha256": "de5438fdaab5556b3518c7bf73dadf0c416263b31783deb43d97c11e1cdfd4e8",
+    "bytes": 59996,
+    "steps": [
+      {
+        "fr": "Vérifier les matériaux et leur compatibilité",
+        "ar": "تحقق من مواد الخرسانة وتوافقها",
+        "en": "Check material compatibility"
+      },
+      {
+        "fr": "Porter gants et lunettes",
+        "ar": "ارتدِ القفازات والنظارات الواقية",
+        "en": "Wear gloves and safety goggles"
+      },
+      {
+        "fr": "Doser selon la fiche technique",
+        "ar": "قِس الجرعة حسب النشرة الفنية",
+        "en": "Measure dosage per technical sheet"
+      },
+      {
+        "fr": "Incorporer selon la fiche au malaxeur",
+        "ar": "أضف المنتج إلى ماء الخلط",
+        "en": "Add to mixer per technical sheet"
+      },
+      {
+        "fr": "Malaxer pour répartir l’adjuvant",
+        "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+        "en": "Mix to disperse the admixture"
+      },
+      {
+        "fr": "Contrôler étalement et stabilité",
+        "ar": "تحقق من الانتشار ومقاومة الانفصال",
+        "en": "Check flow and stability"
+      }
+    ],
+    "code": "FLOW-VMA",
+    "sprite": "/images/application-v3/fenek-flow-vma-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-flow-wp",
+    "asset": "public/images/application-v3/fenek-flow-wp-steps.webp",
+    "sha256": "c6942cceda35f8f5586131eee8b71e2eff6f70039bfc496156d5f2b55f84a2cb",
+    "bytes": 59214,
+    "steps": [
+      {
+        "fr": "Vérifier les matériaux et leur compatibilité",
+        "ar": "تحقق من مواد الخرسانة وتوافقها",
+        "en": "Check material compatibility"
+      },
+      {
+        "fr": "Porter gants et lunettes",
+        "ar": "ارتدِ القفازات والنظارات الواقية",
+        "en": "Wear gloves and safety goggles"
+      },
+      {
+        "fr": "Doser selon la fiche technique",
+        "ar": "قِس الجرعة حسب النشرة الفنية",
+        "en": "Measure dosage per technical sheet"
+      },
+      {
+        "fr": "Incorporer selon la fiche au malaxeur",
+        "ar": "أضف المنتج إلى ماء الخلط",
+        "en": "Add to mixer per technical sheet"
+      },
+      {
+        "fr": "Malaxer pour répartir l’adjuvant",
+        "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+        "en": "Mix to disperse the admixture"
+      },
+      {
+        "fr": "Vibrer puis assurer la cure",
+        "ar": "ادمك الخرسانة واحمها أثناء المعالجة",
+        "en": "Vibrate then provide curing"
+      }
+    ],
+    "code": "FLOW-WP",
+    "sprite": "/images/application-v3/fenek-flow-wp-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-flow-wr-n",
+    "asset": "public/images/application-v3/fenek-flow-wr-n-steps.webp",
+    "sha256": "9b413059aea4dacbb7eb5314977e7846cc64314bd2bf4d73202358991ccbdc20",
+    "bytes": 58932,
+    "steps": [
+      {
+        "fr": "Vérifier les matériaux et leur compatibilité",
+        "ar": "تحقق من مواد الخرسانة وتوافقها",
+        "en": "Check material compatibility"
+      },
+      {
+        "fr": "Porter gants et lunettes",
+        "ar": "ارتدِ القفازات والنظارات الواقية",
+        "en": "Wear gloves and safety goggles"
+      },
+      {
+        "fr": "Doser selon la fiche technique",
+        "ar": "قِس الجرعة حسب النشرة الفنية",
+        "en": "Measure dosage per technical sheet"
+      },
+      {
+        "fr": "Incorporer selon la fiche au malaxeur",
+        "ar": "أضف المنتج إلى ماء الخلط",
+        "en": "Add to mixer per technical sheet"
+      },
+      {
+        "fr": "Malaxer pour répartir l’adjuvant",
+        "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+        "en": "Mix to disperse the admixture"
+      },
+      {
+        "fr": "Contrôler la consistance par essais",
+        "ar": "تحقق من القوام بالتجارب الأولية",
+        "en": "Check consistency by testing"
+      }
+    ],
+    "code": "FLOW-WR-N",
+    "sprite": "/images/application-v3/fenek-flow-wr-n-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-paint-ent-l",
+    "asset": "public/images/application-v3/fenek-paint-ent-l-steps.webp",
+    "sha256": "98de35c091ade62ccd3ad517f1911499cefc871b638ffccfb514040b73f76ed1",
+    "bytes": 60990,
+    "steps": [
+      {
+        "fr": "Préparer et réparer le support",
+        "ar": "نظّف الجدار وأصلح عيوبه",
+        "en": "Prepare and repair the substrate"
+      },
+      {
+        "fr": "Porter gants et lunettes",
+        "ar": "ارتدِ القفازات والنظارات الواقية",
+        "en": "Wear gloves and safety goggles"
+      },
+      {
+        "fr": "Homogénéiser la pâte si nécessaire",
+        "ar": "حرّك المعجون إذا لزم",
+        "en": "Homogenize the paste if necessary"
+      },
+      {
+        "fr": "Appliquer à la lisseuse",
+        "ar": "افرد المعجون بمالج التسوية",
+        "en": "Apply with a smoothing trowel"
+      },
+      {
+        "fr": "Poncer après séchage",
+        "ar": "صنفر السطح بعد الجفاف",
+        "en": "Sand after drying"
+      },
+      {
+        "fr": "Dépoussiérer avant finition",
+        "ar": "أزل الغبار ثم حضّر الطلاء",
+        "en": "Remove dust before finishing"
+      }
+    ],
+    "code": "PAINT-ENT-L",
+    "sprite": "/images/application-v3/fenek-paint-ent-l-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-paint-fac-el",
+    "asset": "public/images/application-v3/fenek-paint-fac-el-steps.webp",
+    "sha256": "5f32fa5fd58e894c74391f500fcc3b53ec0b2c4c91c26122282587df0506964e",
+    "bytes": 62086,
+    "steps": [
+      {
+        "fr": "Nettoyer et réparer la façade",
+        "ar": "نظّف الواجهة وعالج العيوب",
+        "en": "Clean and repair the façade"
+      },
+      {
+        "fr": "Porter les EPI, éviter les intempéries",
+        "ar": "ارتدِ الوقاية وتجنب المطر والشمس",
+        "en": "Wear PPE; avoid adverse weather"
+      },
+      {
+        "fr": "Appliquer le primaire adapté",
+        "ar": "طبّق الأساس الموافق للسطح",
+        "en": "Apply the appropriate primer"
+      },
+      {
+        "fr": "Homogénéiser selon la fiche technique",
+        "ar": "حرّك الطلاء حسب النشرة الفنية",
+        "en": "Homogenize per the technical sheet"
+      },
+      {
+        "fr": "Appliquer sur façade au rouleau",
+        "ar": "اطلِ الواجهة بالتساوي بالرول",
+        "en": "Roll onto the façade"
+      },
+      {
+        "fr": "Protéger le revêtement pendant le séchage",
+        "ar": "احمِ الطلاء حتى الجفاف",
+        "en": "Protect the coating while drying"
+      }
+    ],
+    "code": "PAINT-FAC-EL",
+    "sprite": "/images/application-v3/fenek-paint-fac-el-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-paint-fac-m",
+    "asset": "public/images/application-v3/fenek-paint-fac-m-steps.webp",
+    "sha256": "5f32fa5fd58e894c74391f500fcc3b53ec0b2c4c91c26122282587df0506964e",
+    "bytes": 62086,
+    "steps": [
+      {
+        "fr": "Nettoyer et réparer la façade",
+        "ar": "نظّف الواجهة وعالج العيوب",
+        "en": "Clean and repair the façade"
+      },
+      {
+        "fr": "Porter les EPI, éviter les intempéries",
+        "ar": "ارتدِ الوقاية وتجنب المطر والشمس",
+        "en": "Wear PPE; avoid adverse weather"
+      },
+      {
+        "fr": "Appliquer le primaire adapté",
+        "ar": "طبّق الأساس الموافق للسطح",
+        "en": "Apply the appropriate primer"
+      },
+      {
+        "fr": "Homogénéiser selon la fiche technique",
+        "ar": "حرّك الطلاء حسب النشرة الفنية",
+        "en": "Homogenize per the technical sheet"
+      },
+      {
+        "fr": "Appliquer sur façade au rouleau",
+        "ar": "اطلِ الواجهة بالتساوي بالرول",
+        "en": "Roll onto the façade"
+      },
+      {
+        "fr": "Protéger le revêtement pendant le séchage",
+        "ar": "احمِ الطلاء حتى الجفاف",
+        "en": "Protect the coating while drying"
+      }
+    ],
+    "code": "PAINT-FAC-M",
+    "sprite": "/images/application-v3/fenek-paint-fac-m-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-paint-fac-sx",
+    "asset": "public/images/application-v3/fenek-paint-fac-sx-steps.webp",
+    "sha256": "5f32fa5fd58e894c74391f500fcc3b53ec0b2c4c91c26122282587df0506964e",
+    "bytes": 62086,
+    "steps": [
+      {
+        "fr": "Nettoyer et réparer la façade",
+        "ar": "نظّف الواجهة وعالج العيوب",
+        "en": "Clean and repair the façade"
+      },
+      {
+        "fr": "Porter les EPI, éviter les intempéries",
+        "ar": "ارتدِ الوقاية وتجنب المطر والشمس",
+        "en": "Wear PPE; avoid adverse weather"
+      },
+      {
+        "fr": "Appliquer le primaire adapté",
+        "ar": "طبّق الأساس الموافق للسطح",
+        "en": "Apply the appropriate primer"
+      },
+      {
+        "fr": "Homogénéiser selon la fiche technique",
+        "ar": "حرّك الطلاء حسب النشرة الفنية",
+        "en": "Homogenize per the technical sheet"
+      },
+      {
+        "fr": "Appliquer sur façade au rouleau",
+        "ar": "اطلِ الواجهة بالتساوي بالرول",
+        "en": "Roll onto the façade"
+      },
+      {
+        "fr": "Protéger le revêtement pendant le séchage",
+        "ar": "احمِ الطلاء حتى الجفاف",
+        "en": "Protect the coating while drying"
+      }
+    ],
+    "code": "PAINT-FAC-SX",
+    "sprite": "/images/application-v3/fenek-paint-fac-sx-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-paint-int-m",
+    "asset": "public/images/application-v3/fenek-paint-int-m-steps.webp",
+    "sha256": "130e3146e3e137bd2b80f5d59e0942159369a405e6c37677c80cbd3ec8c1726a",
+    "bytes": 61988,
+    "steps": [
+      {
+        "fr": "Réparer, nettoyer et sécher le mur",
+        "ar": "أصلح الجدار ونظفه وجففه",
+        "en": "Repair, clean and dry the wall"
+      },
+      {
+        "fr": "Porter gants, lunettes et ventiler",
+        "ar": "ارتدِ القفازات والنظارات مع التهوية",
+        "en": "Wear gloves and goggles; ventilate"
+      },
+      {
+        "fr": "Appliquer une sous-couche adaptée",
+        "ar": "طبّق طبقة الأساس المناسبة",
+        "en": "Apply a suitable undercoat"
+      },
+      {
+        "fr": "Homogénéiser et diluer si prescrit",
+        "ar": "حرّك الطلاء وخفّفه عند الحاجة",
+        "en": "Mix thoroughly; dilute only if specified"
+      },
+      {
+        "fr": "Peindre au rouleau régulièrement",
+        "ar": "طبّق الطلاء بالرول بالتساوي",
+        "en": "Apply paint evenly with a roller"
+      },
+      {
+        "fr": "Recouvrir après séchage selon fiche",
+        "ar": "أعد الطلاء بعد الجفاف المحدد",
+        "en": "Recoat after drying per technical sheet"
+      }
+    ],
+    "code": "PAINT-INT-M",
+    "sprite": "/images/application-v3/fenek-paint-int-m-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-paint-int-s",
+    "asset": "public/images/application-v3/fenek-paint-int-s-steps.webp",
+    "sha256": "130e3146e3e137bd2b80f5d59e0942159369a405e6c37677c80cbd3ec8c1726a",
+    "bytes": 61988,
+    "steps": [
+      {
+        "fr": "Réparer, nettoyer et sécher le mur",
+        "ar": "أصلح الجدار ونظفه وجففه",
+        "en": "Repair, clean and dry the wall"
+      },
+      {
+        "fr": "Porter gants, lunettes et ventiler",
+        "ar": "ارتدِ القفازات والنظارات مع التهوية",
+        "en": "Wear gloves and goggles; ventilate"
+      },
+      {
+        "fr": "Appliquer une sous-couche adaptée",
+        "ar": "طبّق طبقة الأساس المناسبة",
+        "en": "Apply a suitable undercoat"
+      },
+      {
+        "fr": "Homogénéiser et diluer si prescrit",
+        "ar": "حرّك الطلاء وخفّفه عند الحاجة",
+        "en": "Mix thoroughly; dilute only if specified"
+      },
+      {
+        "fr": "Peindre au rouleau régulièrement",
+        "ar": "طبّق الطلاء بالرول بالتساوي",
+        "en": "Apply paint evenly with a roller"
+      },
+      {
+        "fr": "Recouvrir après séchage selon fiche",
+        "ar": "أعد الطلاء بعد الجفاف المحدد",
+        "en": "Recoat after drying per technical sheet"
+      }
+    ],
+    "code": "PAINT-INT-S",
+    "sprite": "/images/application-v3/fenek-paint-int-s-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-paint-int-wa",
+    "asset": "public/images/application-v3/fenek-paint-int-wa-steps.webp",
+    "sha256": "130e3146e3e137bd2b80f5d59e0942159369a405e6c37677c80cbd3ec8c1726a",
+    "bytes": 61988,
+    "steps": [
+      {
+        "fr": "Réparer, nettoyer et sécher le mur",
+        "ar": "أصلح الجدار ونظفه وجففه",
+        "en": "Repair, clean and dry the wall"
+      },
+      {
+        "fr": "Porter gants, lunettes et ventiler",
+        "ar": "ارتدِ القفازات والنظارات مع التهوية",
+        "en": "Wear gloves and goggles; ventilate"
+      },
+      {
+        "fr": "Appliquer une sous-couche adaptée",
+        "ar": "طبّق طبقة الأساس المناسبة",
+        "en": "Apply a suitable undercoat"
+      },
+      {
+        "fr": "Homogénéiser et diluer si prescrit",
+        "ar": "حرّك الطلاء وخفّفه عند الحاجة",
+        "en": "Mix thoroughly; dilute only if specified"
+      },
+      {
+        "fr": "Peindre au rouleau régulièrement",
+        "ar": "طبّق الطلاء بالرول بالتساوي",
+        "en": "Apply paint evenly with a roller"
+      },
+      {
+        "fr": "Recouvrir après séchage selon fiche",
+        "ar": "أعد الطلاء بعد الجفاف المحدد",
+        "en": "Recoat after drying per technical sheet"
+      }
+    ],
+    "code": "PAINT-INT-WA",
+    "sprite": "/images/application-v3/fenek-paint-int-wa-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-paint-prim-a",
+    "asset": "public/images/application-v3/fenek-paint-prim-a-steps.webp",
+    "sha256": "d57b6845d82320ece174f99b04027e3005def6cca5e825a93f5065fa84225980",
+    "bytes": 62474,
+    "steps": [
+      {
+        "fr": "Nettoyer et dépoussiérer le support",
+        "ar": "نظّف السطح وأزل الغبار",
+        "en": "Clean the substrate and remove dust"
+      },
+      {
+        "fr": "Porter gants et lunettes",
+        "ar": "ارتدِ القفازات والنظارات الواقية",
+        "en": "Wear gloves and safety goggles"
+      },
+      {
+        "fr": "Préparer le primaire selon fiche",
+        "ar": "جهّز البرايمر حسب النشرة الفنية",
+        "en": "Prepare primer as instructed"
+      },
+      {
+        "fr": "Appliquer une couche uniforme",
+        "ar": "وزّع طبقة رقيقة ومتجانسة",
+        "en": "Apply an even coat"
+      },
+      {
+        "fr": "Contrôler l’absorption sans flaques",
+        "ar": "تحقق من تشرب السطح دون تجمع",
+        "en": "Check absorption without puddles"
+      },
+      {
+        "fr": "Recouvrir après séchage prescrit",
+        "ar": "أعد الطلاء بعد الجفاف المعتمد",
+        "en": "Recoat after the specified drying period"
+      }
+    ],
+    "code": "PAINT-PRIM-A",
+    "sprite": "/images/application-v3/fenek-paint-prim-a-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-paint-prim-fx",
+    "asset": "public/images/application-v3/fenek-paint-prim-fx-steps.webp",
+    "sha256": "d57b6845d82320ece174f99b04027e3005def6cca5e825a93f5065fa84225980",
+    "bytes": 62474,
+    "steps": [
+      {
+        "fr": "Nettoyer et dépoussiérer le support",
+        "ar": "نظّف السطح وأزل الغبار",
+        "en": "Clean the substrate and remove dust"
+      },
+      {
+        "fr": "Porter gants et lunettes",
+        "ar": "ارتدِ القفازات والنظارات الواقية",
+        "en": "Wear gloves and safety goggles"
+      },
+      {
+        "fr": "Préparer le primaire selon fiche",
+        "ar": "جهّز البرايمر حسب النشرة الفنية",
+        "en": "Prepare primer as instructed"
+      },
+      {
+        "fr": "Appliquer une couche uniforme",
+        "ar": "وزّع طبقة رقيقة ومتجانسة",
+        "en": "Apply an even coat"
+      },
+      {
+        "fr": "Contrôler l’absorption sans flaques",
+        "ar": "تحقق من تشرب السطح دون تجمع",
+        "en": "Check absorption without puddles"
+      },
+      {
+        "fr": "Recouvrir après séchage prescrit",
+        "ar": "أعد الطلاء بعد الجفاف المعتمد",
+        "en": "Recoat after the specified drying period"
+      }
+    ],
+    "code": "PAINT-PRIM-FX",
+    "sprite": "/images/application-v3/fenek-paint-prim-fx-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-paint-sol-a",
+    "asset": "public/images/application-v3/fenek-paint-sol-a-steps.webp",
+    "sha256": "532b319d541f9a2b021630bc6850c23469884476275ce77fcc39541fa2d7dd7a",
+    "bytes": 61424,
+    "steps": [
+      {
+        "fr": "Préparer un sol sain et sec",
+        "ar": "حضّر الأرضية وجففها جيدًا",
+        "en": "Prepare a sound, dry floor"
+      },
+      {
+        "fr": "Porter les EPI et ventiler",
+        "ar": "ارتدِ الوقاية ووفّر التهوية",
+        "en": "Wear PPE and ventilate"
+      },
+      {
+        "fr": "Appliquer un primaire si requis",
+        "ar": "طبّق الأساس إذا لزم",
+        "en": "Apply primer if required"
+      },
+      {
+        "fr": "Homogénéiser selon fiche technique",
+        "ar": "حرّك الطلاء حسب النشرة الفنية",
+        "en": "Homogenize as specified"
+      },
+      {
+        "fr": "Appliquer au rouleau régulièrement",
+        "ar": "وزّع الطلاء بالرول بالتساوي",
+        "en": "Apply evenly using a roller"
+      },
+      {
+        "fr": "Protéger puis marquer après cure",
+        "ar": "احمِ الأرضية ثم خطط بعد التصلب",
+        "en": "Protect and mark after curing"
+      }
+    ],
+    "code": "PAINT-SOL-A",
+    "sprite": "/images/application-v3/fenek-paint-sol-a-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-paint-txt-f",
+    "asset": "public/images/application-v3/fenek-paint-txt-f-steps.webp",
+    "sha256": "d50da597b5f75499e72de2bad8e9f796492d1fc2de761ba333fac4a14e5f1ea1",
+    "bytes": 61456,
+    "steps": [
+      {
+        "fr": "Nettoyer et primer le support",
+        "ar": "نظّف الجدار وطبّق الأساس",
+        "en": "Clean and prime the substrate"
+      },
+      {
+        "fr": "Porter gants et lunettes",
+        "ar": "ارتدِ القفازات والنظارات الواقية",
+        "en": "Wear gloves and safety goggles"
+      },
+      {
+        "fr": "Homogénéiser le revêtement en pâte",
+        "ar": "حرّك المعجون حتى يتجانس",
+        "en": "Homogenize the paste coating"
+      },
+      {
+        "fr": "Appliquer à la lisseuse inox",
+        "ar": "وزّع المعجون بمالج من الفولاذ",
+        "en": "Apply with a stainless steel trowel"
+      },
+      {
+        "fr": "Structurer à la taloche",
+        "ar": "شكّل الزخرفة بالمحارة المناسبة",
+        "en": "Texture with a float"
+      },
+      {
+        "fr": "Protéger pendant le séchage",
+        "ar": "احمِ التشطيب حتى الجفاف التام",
+        "en": "Protect during drying"
+      }
+    ],
+    "code": "PAINT-TXT-F",
+    "sprite": "/images/application-v3/fenek-paint-txt-f-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-proof-acr-rf",
+    "asset": "public/images/application-v3/fenek-proof-acr-rf-steps.webp",
+    "sha256": "4a6fe9e281b391f60d839022cbc0fae2ad6fb2d290274b26360be7d704d6731d",
+    "bytes": 72714,
+    "steps": [
+      {
+        "fr": "Réparer, nettoyer et sécher la toiture",
+        "ar": "أصلح السطح ونظّفه وجففه",
+        "en": "Repair, clean and dry the roof"
+      },
+      {
+        "fr": "Porter des gants et lunettes",
+        "ar": "ارتدِ القفازات والنظارات الواقية",
+        "en": "Wear gloves and goggles"
+      },
+      {
+        "fr": "Homogénéiser le produit avant application",
+        "ar": "حرّك المنتج حتى يتجانس",
+        "en": "Homogenize the product before application"
+      },
+      {
+        "fr": "Appliquer une première couche régulière",
+        "ar": "طبّق الطبقة الأولى بالرول",
+        "en": "Apply an even first coat"
+      },
+      {
+        "fr": "Armer joints et relevés",
+        "ar": "عزّز الفواصل والالتقاءات بالشريط",
+        "en": "Reinforce joints and upstands"
+      },
+      {
+        "fr": "Recouvrir après séchage selon fiche",
+        "ar": "طبّق الطبقة التالية بعد الجفاف المطلوب",
+        "en": "Recoat after drying per technical sheet"
+      }
+    ],
+    "code": "PROOF-ACR-RF",
+    "sprite": "/images/application-v3/fenek-proof-acr-rf-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-proof-cm-o1p",
+    "asset": "public/images/application-v3/fenek-proof-cm-o1p-steps.webp",
+    "sha256": "51f98891de346bb04ef5a93e3eac7edadcc8b7fc9a6e3e7a2979abe102c7d5d4",
+    "bytes": 94734,
+    "steps": [
+      {
+        "fr": "Nettoyer et humidifier sans eau stagnante",
+        "ar": "نظّف السطح واتركه رطبًا دون تجمع",
+        "en": "Clean and dampen; leave no standing water"
+      },
+      {
+        "fr": "Porter gants, lunettes et masque",
+        "ar": "ارتدِ القفازات والنظارات وكمامة الغبار",
+        "en": "Wear gloves, goggles and a dust mask"
+      },
+      {
+        "fr": "Gâcher selon la fiche technique",
+        "ar": "اخلط المسحوق حسب النشرة الفنية",
+        "en": "Mix according to the technical sheet"
+      },
+      {
+        "fr": "Renforcer les angles et joints",
+        "ar": "عزّز الزوايا والفواصل بشريط مناسب",
+        "en": "Reinforce corners and joints"
+      },
+      {
+        "fr": "Appliquer les couches croisées prévues",
+        "ar": "طبّق الطبقات المتقاطعة حسب النشرة",
+        "en": "Apply specified cross coats"
+      },
+      {
+        "fr": "Laisser durcir avant la pose",
+        "ar": "احمِ العزل قبل تركيب البلاط",
+        "en": "Allow curing before tiling"
+      }
+    ],
+    "code": "PROOF-CM-O1P",
+    "sprite": "/images/application-v3/fenek-proof-cm-o1p-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-proof-cm-o2p",
+    "asset": "public/images/application-v3/fenek-proof-cm-o2p-steps.webp",
+    "sha256": "031a748b1f6eedaca68553e5eaee464ccc41d2f2da1e7d155fa9f5c3d30bc023",
+    "bytes": 90476,
+    "steps": [
+      {
+        "fr": "Nettoyer et humidifier sans eau stagnante",
+        "ar": "نظّف السطح ورطّبه دون ماء راكد",
+        "en": "Clean and dampen; leave no standing water"
+      },
+      {
+        "fr": "Porter gants, lunettes et masque",
+        "ar": "ارتدِ القفازات والنظارات وكمامة الغبار",
+        "en": "Wear gloves, goggles and a dust mask"
+      },
+      {
+        "fr": "Mélanger les deux composants selon fiche",
+        "ar": "اخلط المكونين وفق النشرة الفنية",
+        "en": "Mix the two components as specified"
+      },
+      {
+        "fr": "Armer les angles et joints",
+        "ar": "ثبت شريط العزل عند الزوايا والفواصل",
+        "en": "Reinforce corners and joints"
+      },
+      {
+        "fr": "Appliquer les couches croisées prévues",
+        "ar": "طبّق الطبقات المتقاطعة حسب النشرة",
+        "en": "Apply specified cross coats"
+      },
+      {
+        "fr": "Attendre la cure avant carrelage",
+        "ar": "انتظر التصلب قبل التبليط أو الغمر",
+        "en": "Allow curing before tiling"
+      }
+    ],
+    "code": "PROOF-CM-O2P",
+    "sprite": "/images/application-v3/fenek-proof-cm-o2p-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-proof-ep-anc",
+    "asset": "public/images/application-v3/fenek-proof-ep-anc-steps.webp",
+    "sha256": "bd1dd731bc81bd8e2f55fb0be7be910d21b56db73f4cb2a2845c6172b5e03188",
+    "bytes": 59352,
+    "steps": [
+      {
+        "fr": "Percer selon les dimensions validées",
+        "ar": "اثقب حسب الأبعاد التي تحددها النشرة",
+        "en": "Drill to the validated dimensions"
+      },
+      {
+        "fr": "Brosser et souffler le trou",
+        "ar": "نظّف الثقب بالفرشاة والنفخ",
+        "en": "Brush and blow out the hole"
+      },
+      {
+        "fr": "Porter les EPI adaptés",
+        "ar": "ارتدِ القفازات والنظارات ومعدات الوقاية",
+        "en": "Wear appropriate PPE"
+      },
+      {
+        "fr": "Préparer et purger la cartouche",
+        "ar": "جهّز الخرطوشة وتخلص من الجرعة الأولى",
+        "en": "Prepare and purge the cartridge"
+      },
+      {
+        "fr": "Injecter en partant du fond",
+        "ar": "احقن من قاع الثقب تدريجيًا",
+        "en": "Inject starting from the bottom"
+      },
+      {
+        "fr": "Insérer puis attendre avant chargement",
+        "ar": "أدخل القضيب ولا تحمّله قبل التصلب",
+        "en": "Insert anchor and wait before loading"
+      }
+    ],
+    "code": "PROOF-EP-ANC",
+    "sprite": "/images/application-v3/fenek-proof-ep-anc-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-proof-ep-inj",
+    "asset": "public/images/application-v3/fenek-proof-ep-inj-steps.webp",
+    "sha256": "2082381abec010bbea5151dca0cd163d2204ed3a77a0838db4d661bffe27cc0f",
+    "bytes": 63706,
+    "steps": [
+      {
+        "fr": "Repérer les fissures et poser les injecteurs",
+        "ar": "حدّد الشقوق وثبّت منافذ الحقن",
+        "en": "Locate cracks and fit injection ports"
+      },
+      {
+        "fr": "Porter les EPI et ventiler",
+        "ar": "ارتدِ القفازات والنظارات والملابس الواقية",
+        "en": "Wear PPE and ventilate"
+      },
+      {
+        "fr": "Obturer la fissure en surface",
+        "ar": "أغلق الشق سطحيًا قبل الحقن",
+        "en": "Seal the crack at the surface"
+      },
+      {
+        "fr": "Mélanger A et B selon fiche",
+        "ar": "اخلط الراتنج حسب النشرة الفنية",
+        "en": "Mix components A and B as specified"
+      },
+      {
+        "fr": "Injecter progressivement par les packers",
+        "ar": "احقن الراتنج تدريجيًا من الأسفل",
+        "en": "Inject gradually through the packers"
+      },
+      {
+        "fr": "Retirer les injecteurs puis reboucher",
+        "ar": "انزع المنافذ ورمّم السطح بعد التصلب",
+        "en": "Remove injection ports and make good"
+      }
+    ],
+    "code": "PROOF-EP-INJ",
+    "sprite": "/images/application-v3/fenek-proof-ep-inj-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-proof-ep-prim",
+    "asset": "public/images/application-v3/fenek-proof-ep-prim-steps.webp",
+    "sha256": "54119d9352690f197aa1995e1848bd60df46eef12f7cad0972227f6e0445dffe",
+    "bytes": 64564,
+    "steps": [
+      {
+        "fr": "Préparer mécaniquement le support",
+        "ar": "حضّر الخرسانة ميكانيكيًا ونظّفها",
+        "en": "Mechanically prepare the substrate"
+      },
+      {
+        "fr": "Porter gants, lunettes et protection",
+        "ar": "ارتدِ القفازات والنظارات والملابس الواقية",
+        "en": "Wear gloves, goggles and protection"
+      },
+      {
+        "fr": "Mélanger A et B selon fiche",
+        "ar": "اخلط المكونين بالنسبة المعتمدة",
+        "en": "Mix components A and B as specified"
+      },
+      {
+        "fr": "Appliquer le primaire sans zones sèches",
+        "ar": "وزّع البرايمر بالرول أو الممسحة",
+        "en": "Apply primer without dry patches"
+      },
+      {
+        "fr": "Sabler si le système le prévoit",
+        "ar": "انثر الرمل عند اشتراط النظام",
+        "en": "Broadcast sand if the system specifies"
+      },
+      {
+        "fr": "Recouvrir dans le délai prescrit",
+        "ar": "طبّق الطلاء ضمن نافذة التغطية",
+        "en": "Overcoat within the specified interval"
+      }
+    ],
+    "code": "PROOF-EP-PRIM",
+    "sprite": "/images/application-v3/fenek-proof-ep-prim-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-proof-ep-sb",
+    "asset": "public/images/application-v3/fenek-proof-ep-sb-steps.webp",
+    "sha256": "d2b3da29d7930cbcdbfc660ba724f1cad562fc6d6892dcde1ea1bfc73f63734f",
+    "bytes": 66636,
+    "steps": [
+      {
+        "fr": "Rendre les deux faces propres et rugueuses",
+        "ar": "خشّن السطحين ونظّفهما وجففهما",
+        "en": "Clean and roughen both bonding faces"
+      },
+      {
+        "fr": "Porter les EPI adaptés",
+        "ar": "ارتدِ القفازات والنظارات والملابس الواقية",
+        "en": "Wear appropriate PPE"
+      },
+      {
+        "fr": "Mélanger A et B selon fiche",
+        "ar": "اخلط المكونين حتى يتجانسا",
+        "en": "Mix components A and B as specified"
+      },
+      {
+        "fr": "Enduire les deux faces à assembler",
+        "ar": "وزّع اللاصق على وجهي الالتصاق",
+        "en": "Coat both faces to be joined"
+      },
+      {
+        "fr": "Assembler et maintenir en pression",
+        "ar": "اجمع السطحين وثبّتهما تحت ضغط",
+        "en": "Assemble and hold under pressure"
+      },
+      {
+        "fr": "Maintenir jusqu’au durcissement prescrit",
+        "ar": "اترك التثبيت حتى التصلب الكامل",
+        "en": "Hold until specified curing is complete"
+      }
+    ],
+    "code": "PROOF-EP-SB",
+    "sprite": "/images/application-v3/fenek-proof-ep-sb-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-proof-ep-sr",
+    "asset": "public/images/application-v3/fenek-proof-ep-sr-steps.webp",
+    "sha256": "66a895f39d49a79a773e01e279da6a83d78f907cd981b3de047856482bf799c1",
+    "bytes": 64832,
+    "steps": [
+      {
+        "fr": "Préparer, sécher et primer le sol",
+        "ar": "حضّر الأرضية وجففها وطبّق البرايمر",
+        "en": "Prepare, dry and prime the floor"
+      },
+      {
+        "fr": "Porter les EPI et ventiler",
+        "ar": "ارتدِ معدات الوقاية واستعمل التهوية",
+        "en": "Wear PPE and ventilate"
+      },
+      {
+        "fr": "Mélanger les deux composants selon fiche",
+        "ar": "اخلط المكونين حسب النشرة الفنية",
+        "en": "Mix the two components as specified"
+      },
+      {
+        "fr": "Verser la résine sur le sol",
+        "ar": "اسكب الراتنج على السطح المجهز",
+        "en": "Pour resin onto the floor"
+      },
+      {
+        "fr": "Répartir à la raclette crantée",
+        "ar": "وزّع الطلاء بممسحة مسننة",
+        "en": "Spread with a notched squeegee"
+      },
+      {
+        "fr": "Débuller puis protéger la surface",
+        "ar": "مرر رول إزالة الفقاعات ثم احمِه",
+        "en": "De-air and protect the surface"
+      }
+    ],
+    "code": "PROOF-EP-SR",
+    "sprite": "/images/application-v3/fenek-proof-ep-sr-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-proof-pu-1k",
+    "asset": "public/images/application-v3/fenek-proof-pu-1k-steps.webp",
+    "sha256": "4326e5b975d1bcffb57c78ddcf445706351e7b1df46bb226172f7388c816328d",
+    "bytes": 71614,
+    "steps": [
+      {
+        "fr": "Préparer un support sec et propre",
+        "ar": "نظّف السطح الجاف وجهّزه",
+        "en": "Prepare a clean and dry substrate"
+      },
+      {
+        "fr": "Porter les EPI et ventiler",
+        "ar": "استخدم القفازات والنظارات ووسيلة تنفس مناسبة",
+        "en": "Wear PPE and ventilate"
+      },
+      {
+        "fr": "Homogénéiser sans ajout d’eau",
+        "ar": "حرّك المنتج دون إضافة ماء",
+        "en": "Homogenize without adding water"
+      },
+      {
+        "fr": "Appliquer un primaire si requis",
+        "ar": "طبّق البرايمر عند اشتراطه",
+        "en": "Apply primer if required"
+      },
+      {
+        "fr": "Appliquer uniformément la membrane",
+        "ar": "وزّع الغشاء السائل بالتساوي",
+        "en": "Apply the membrane evenly"
+      },
+      {
+        "fr": "Renforcer les points singuliers et protéger",
+        "ar": "عزّز التفاصيل واحترم زمن التغطية",
+        "en": "Reinforce critical details and protect"
+      }
+    ],
+    "code": "PROOF-PU-1K",
+    "sprite": "/images/application-v3/fenek-proof-pu-1k-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-proof-pu-inj",
+    "asset": "public/images/application-v3/fenek-proof-pu-inj-steps.webp",
+    "sha256": "d51fb055914b26b35091fcfbf348461221a2d1d3a9565e5f5adbe8872291e74c",
+    "bytes": 63906,
+    "steps": [
+      {
+        "fr": "Repérer la fuite et poser les injecteurs",
+        "ar": "حدّد تسرب الماء وثبّت منافذ الحقن",
+        "en": "Locate leakage and install injection ports"
+      },
+      {
+        "fr": "Porter les EPI et ventiler",
+        "ar": "استخدم الوقاية والتنفس الملائم حسب النشرة",
+        "en": "Wear PPE and ventilate"
+      },
+      {
+        "fr": "Préparer la résine selon fiche",
+        "ar": "حضّر مادة الحقن وفق النشرة الفنية",
+        "en": "Prepare resin as instructed"
+      },
+      {
+        "fr": "Injecter progressivement à la pompe",
+        "ar": "احقن بالمضخة تدريجيًا",
+        "en": "Inject gradually using a pump"
+      },
+      {
+        "fr": "Contrôler la fuite et réinjecter si nécessaire",
+        "ar": "تحقق من توقف التسرب وأعد عند الحاجة",
+        "en": "Check leakage; repeat injection if required"
+      },
+      {
+        "fr": "Retirer les injecteurs et reboucher",
+        "ar": "انزع المنافذ وأغلق فتحاتها",
+        "en": "Remove injection ports and repair openings"
+      }
+    ],
+    "code": "PROOF-PU-INJ",
+    "sprite": "/images/application-v3/fenek-proof-pu-inj-steps.webp",
+    "status": "BROUILLON"
+  },
+  {
+    "slug": "fenek-proof-pu-seal",
+    "asset": "public/images/application-v3/fenek-proof-pu-seal-steps.webp",
+    "sha256": "978583f15a4728fe4b54d9be82bb7d8f767c6410616d9e9e7a3a8f145f364327",
+    "bytes": 58402,
+    "steps": [
+      {
+        "fr": "Nettoyer et sécher le joint",
+        "ar": "نظّف الفاصل وجففه جيدًا",
+        "en": "Clean and dry the joint"
+      },
+      {
+        "fr": "Porter les EPI adaptés",
+        "ar": "ارتدِ القفازات والنظارات والوقاية الملائمة",
+        "en": "Wear appropriate PPE"
+      },
+      {
+        "fr": "Poser le fond de joint adapté",
+        "ar": "ركّب حبل خلفية الفاصل المناسب",
+        "en": "Install suitable backer rod"
+      },
+      {
+        "fr": "Appliquer un primaire si requis",
+        "ar": "طبّق البرايمر عند الحاجة",
+        "en": "Apply primer if required"
+      },
+      {
+        "fr": "Extruder le mastic sans bulles",
+        "ar": "املأ الفاصل بالمعجون دون فقاعات",
+        "en": "Extrude sealant without trapped air"
+      },
+      {
+        "fr": "Lisser puis protéger pendant la cure",
+        "ar": "سوّ الفاصل واتركه يتصلب",
+        "en": "Tool smooth and protect during curing"
+      }
+    ],
+    "code": "PROOF-PU-SEAL",
+    "sprite": "/images/application-v3/fenek-proof-pu-seal-steps.webp",
+    "status": "BROUILLON"
+  }
+]
