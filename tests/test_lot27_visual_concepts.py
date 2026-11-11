@@ -10,8 +10,13 @@ ASSETS = ROOT / "public/images/maquettes"
 class TestLot27VisualConcepts(unittest.TestCase):
     def test_exact_count_and_unique_webp_assets(self):
         files = sorted(ASSETS.glob("*.webp"))
+        # Preserve exactly the original 46 numbered user mockups; allow only
+        # one separately validated, customer-corrected CM-O2P product visual.
+        originals = sorted(p for p in files if p.name.startswith("maquette-"))
         expected = [f"maquette-{i:02d}.webp" for i in range(1, 47)]
-        self.assertEqual([f.name for f in files], expected)
+        self.assertEqual([p.name for p in originals], expected)
+        self.assertEqual([p.name for p in files if p not in originals],
+                         ["fenek-proof-cm-o2p-sac-20kg-v2.webp"])
         sha256 = [hashlib.sha256(p.read_bytes()).hexdigest() for p in files]
         self.assertEqual(len(sha256), len(set(sha256)))
         self.assertLess(sum(p.stat().st_size for p in files), 4_000_000)
