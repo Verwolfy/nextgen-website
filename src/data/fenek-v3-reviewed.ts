@@ -1,4 +1,5 @@
 import type { Lang } from './site';
+import verified45 from './fenek-v3-verified-45.json';
 
 /**
  * Lot 127 — V3 product-by-product image QA, source: NEXTGEN_modes_emploi_V3.zip.
@@ -136,7 +137,36 @@ const v3TileExtras:Record<string,ReviewedV3Guide>=Object.fromEntries(
   ])
 );
 
-const reviewed:Readonly<Record<string,ReviewedV3Guide>>=Object.freeze({'BOND-C1T':c1t,'BOND-C1TE':c1te,...v3TileExtras});
+
+/**
+ * Product-by-product audited V3 catalogue: every manifest entry has a unique
+ * code+slug, one authentic sprite SHA-256, six source-based FR/AR legends and
+ * professionally translated English titles. No private validated TDS is used.
+ * Technical explanations outside the captions remain in FenekApplicationGuide
+ * and explicitly require an approved, reference-specific FENEK technical sheet.
+ */
+const verifiedOtherGuides:Record<string,ReviewedV3Guide>=Object.fromEntries(
+  verified45.map(item=>[
+    item.code,
+    {
+      code:item.code,
+      slug:item.slug,
+      sprite:item.sprite,
+      sha256:item.sha256,
+      status:'BROUILLON' as const,
+      steps:item.steps.map((step,i)=>({
+        image:i+1,
+        icon:'check',
+        title:{fr:step.fr,ar:step.ar,en:step.en},
+        description:{fr:'',ar:'',en:''}
+      }))
+    }
+  ])
+);
+if(Object.keys(verifiedOtherGuides).length!==45)
+  throw Error('V3 reference audit incomplete');
+
+const reviewed:Readonly<Record<string,ReviewedV3Guide>>=Object.freeze({'BOND-C1T':c1t,'BOND-C1TE':c1te,...v3TileExtras,...verifiedOtherGuides});
 export function reviewedV3GuideFor(code:string,slug:string):ReviewedV3Guide|null{
   const guide=reviewed[code];
   if(!guide)return null;
