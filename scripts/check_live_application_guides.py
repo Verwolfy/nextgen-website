@@ -115,17 +115,25 @@ def verify_all_guides(origin: str, timeout: float, workers: int = 6) -> int:
         try:
             raw = fetch(origin, path, timeout)
             validate_guide(raw, lang, product)
-            if product["code"] in {"BOND-C1T","BOND-C1TE"}:
+            if product["code"] in {"BOND-C1T","BOND-C1TE","BOND-C2FT"}:
                 if b'data-v3-reviewed="BROUILLON"' not in raw:
                     raise AssertionError("Tile V3 visual review status missing")
                 if raw.count(b'data-v3-step="') != 6:
                     raise AssertionError("Tile V3 has incorrect number of illustrated stages")
-                expected=("fenek-bond-c1te-steps.webp" if product["code"]=="BOND-C1TE"
-                          else "fenek-bond-c1t-steps.webp").encode("utf-8")
-                wrong=("fenek-bond-c1t-steps.webp" if product["code"]=="BOND-C1TE"
-                       else "fenek-bond-c1te-steps.webp").encode("utf-8")
+                expected=("fenek-bond-c1t-steps.webp" if product["code"]=="BOND-C1T"
+                          else "fenek-bond-c1te-steps.webp").encode("utf-8")
+                wrong=("fenek-bond-c1te-steps.webp" if product["code"]=="BOND-C1T"
+                       else "fenek-bond-c1t-steps.webp").encode("utf-8")
                 if expected not in raw or wrong in raw:
                     raise AssertionError("Cross-reference V3 artwork mismatch")
+                if product["code"]=="BOND-C2FT":
+                    if b"is-caption-cropped" not in raw:
+                        raise AssertionError("C2FT original caption not cropped")
+                    required={"fr":"Remalaxer conformément à la fiche",
+                              "en":"Remix in accordance with the approved sheet",
+                              "ar":"أعد الخلط وفق النشرة دون تأخير"}[lang]
+                    if required.encode("utf-8") not in raw:
+                        raise AssertionError("C2FT reference-specific instructions missing")
             elif b'data-v3-step="' in raw:
                 raise AssertionError("Unreviewed product received V3 artwork")
 
