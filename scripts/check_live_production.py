@@ -203,7 +203,7 @@ def verify_content(origin: str, timeout: float) -> None:
         if cm_image not in listing:
             raise AssertionError(f"/{lang}/catalogue/: obsolete CM-O2P image")
     art = fetch(origin, cm_image, timeout)
-    if hashlib.sha256(art).hexdigest() != "61f63d15aafa46202126ce7033f8cdfdb21397784f0e9ccbb002a03780e9ed53":
+    if hashlib.sha256(art).hexdigest() != "552f3f850fca117410d0268265f5f7db8c4506dcbc93620ba07529657ea291b7":
         raise AssertionError("CM-O2P production artwork differs from the optimized approved image")
     print("PASS CM-O2P 20 kg bag + 10 kg canister, 30 kg kit, exact artwork across FR/AR/EN", flush=True)
 
