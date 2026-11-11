@@ -45,13 +45,13 @@ const paths:Record<string,string>={
  level:'M3 18h18M5 14l4-4 4 3 6-7M4 4h16v16H4z'
 };
 ---
-<section class="fenek-application-visual" aria-label={copy.intro} data-application-visual data-reference={product.code} data-application-count={steps.length} data-v3-reviewed={reviewedV3 ? reviewedV3.status : undefined}>
+<section class="fenek-application-visual" aria-label={copy.intro} data-application-visual data-reference={product.code} data-application-count={steps.length} data-v3-reviewed={reviewedV3 ? reviewedV3.status : undefined} data-v3-sprite={reviewedV3?.sprite} data-v3-hash={reviewedV3?.sha256}>
   <div class="fenek-application-visual-heading">
     <span class="fenek-application-visual-eyebrow">{product.nom}</span>
     <h3>{copy.intro}</h3>
     <span class="fenek-application-visual-tag">{steps.length} {copy.step.toLowerCase()}</span>
   </div>
-  <ol class:list={['fenek-application-visual-grid',{'has-drawings':tile,'v3-reviewed':Boolean(reviewedV3),'is-caption-cropped':Boolean(reviewedV3?.artworkOnly)}]}>
+  <ol class:list={['fenek-application-visual-grid',{'has-drawings':tile || Boolean(reviewedV3),'v3-reviewed':Boolean(reviewedV3),'is-caption-cropped':Boolean(reviewedV3?.artworkOnly)}]}>
     {steps.map((step,i)=><li class="fenek-application-visual-card" data-application-step={i+1}>
       <figure class="fenek-application-visual-figure">
         {step.image && reviewedV3
