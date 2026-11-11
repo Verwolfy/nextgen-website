@@ -45,7 +45,35 @@ const c1t:ReviewedV3Guide={
   ]
 };
 
-const reviewed:Readonly<Record<string,ReviewedV3Guide>>=Object.freeze({'BOND-C1T':c1t});
+const c1te:ReviewedV3Guide={
+  code:'BOND-C1TE',
+  slug:'fenek-bond-c1te',
+  sprite:'/images/application-v3/fenek-bond-c1te-steps.webp',
+  sha256:'0d4ea8e4b5fc7ec44e3b772f470aeffa81cc50009b2f724d0420c89fd8cd58ce',
+  status:'BROUILLON',
+  steps:[
+    {image:1,icon:'brush',
+      title:l('Nettoyer et vérifier le support','نظّف السطح وتحقق من ثباته','Clean and inspect substrate'),
+      description:l('Contrôler adhérence, propreté et planéité avant encollage.','التحقق من نظافة السطح وثباته واستوائه قبل الفرد.','Check that the substrate is sound, clean and flat.')},
+    {image:2,icon:'shield',
+      title:l('Porter gants, lunettes et masque','ارتدِ القفازات والنظارات والكمامة','Wear gloves, goggles and dust mask'),
+      description:l('Utiliser les EPI adaptés selon la FDS approuvée lors de la manipulation et du gâchage.','استخدم وسائل الوقاية المطلوبة في نشرة السلامة أثناء الخلط.','Wear PPE specified by the approved safety sheet during handling and mixing.')},
+    {image:3,icon:'water',
+      title:l('Ajouter l’eau selon la fiche technique','أضف الماء حسب النشرة الفنية','Measure water as specified'),
+      description:l('Ne pas deviner le dosage : respecter les quantités de la FT FENEK validée.','لا تخمّن الجرعة؛ اتبع كميات الماء في النشرة الفنية المعتمدة.','Follow the approved FENEK water ratio; never estimate quantities.')},
+    {image:4,icon:'clock',
+      title:l('Laisser reposer puis remalaxer','اترك الخليط يرتاح ثم أعد الخلط','Rest and remix if required'),
+      description:l('Suivre le temps de repos et le remalaxage seulement si la procédure approuvée les prescrit.','اتبع الاستراحة وإعادة الخلط فقط إذا نصت النشرة المعتمدة.','Observe resting and remixing only if required by the approved procedure.')},
+    {image:5,icon:'trowel',
+      title:l('Étaler avec une spatule crantée','وزّع اللاصق بمالج مسنن','Spread with a notched trowel'),
+      description:l('Choisir le peigne selon le format du carreau et vérifier le transfert.','اختر المشط بحسب حجم البلاط وتحقق من تغطية اللاصق.','Choose the correct notch for the tile and verify adhesive transfer.')},
+    {image:6,icon:'tile',
+      title:l('Poser avant la fin du temps ouvert','اضغط البلاط قبل انتهاء الزمن المفتوح','Set tiles within the open time'),
+      description:l('Respecter le temps ouvert réellement validé pour C1TE ; presser et contrôler la couverture.','التزم بزمن الفتح المعتمد لهذا المرجع واضغط البلاط وتحقق من التغطية.','Set and press within the approved C1TE open time; inspect tile-back coverage.')},
+  ]
+};
+
+const reviewed:Readonly<Record<string,ReviewedV3Guide>>=Object.freeze({'BOND-C1T':c1t,'BOND-C1TE':c1te});
 export function reviewedV3GuideFor(code:string,slug:string):ReviewedV3Guide|null{
   const guide=reviewed[code];
   if(!guide)return null;
