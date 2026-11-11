@@ -21,6 +21,13 @@ CATALOGUE = ROOT / "src" / "data" / "catalogue-projets.json"
 SPRITE_SHA256 = "55197582655ba03f9de8d933047236e63efbd5df27a1acde136c5fc342059b1c"
 C1T_V3_SHA256 = "9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3"
 C1TE_V3_SHA256 = "0d4ea8e4b5fc7ec44e3b772f470aeffa81cc50009b2f724d0420c89fd8cd58ce"
+C2FT_V3_SHA256 = "3256b9e424511146ca4f4f7e9fd7da1e8d484b74c258e5de18e588aa97e87cbf"
+V3_ARTWORK={
+    "BOND-C1T":("fenek-bond-c1t-steps.webp",C1T_V3_SHA256),
+    "BOND-C1TE":("fenek-bond-c1te-steps.webp",C1TE_V3_SHA256),
+    "BOND-C2FT":("fenek-bond-c2ft-steps.webp",C2FT_V3_SHA256),
+}
+
 TILE_ADHESIVES = frozenset({
     "BOND-C1T", "BOND-C1TE", "BOND-C2FT", "BOND-C2TE", "BOND-C2TE-S1",
 })
@@ -95,14 +102,13 @@ def verify_all_guides(origin: str, timeout: float, workers: int = 6) -> int:
     if digest != SPRITE_SHA256 or sprite[:4] != b"RIFF" or sprite[8:12] != b"WEBP":
         raise AssertionError("Six user-drawn application panels are missing or altered")
     print(f"PASS user illustration asset (SHA256 {digest[:14]}…)", flush=True)
-    reviewed = fetch(origin, "/images/application-v3/fenek-bond-c1t-steps.webp", timeout)
-    if hashlib.sha256(reviewed).hexdigest() != C1T_V3_SHA256:
-        raise AssertionError("Published C1T V3 artwork changed or missing")
-    if reviewed[:4] != b"RIFF" or reviewed[8:12] != b"WEBP":
-        raise AssertionError("Invalid reviewed C1T artwork format")
-    c1te=fetch(origin, "/images/application-v3/fenek-bond-c1te-steps.webp",timeout)
-    if hashlib.sha256(c1te).hexdigest()!=C1TE_V3_SHA256:
-        raise AssertionError("C1TE artwork missing or incorrect")
+    # Verify exact production assets for every individually reviewed V3 reference.
+    for code,(filename,digest) in V3_ARTWORK.items():
+        art=fetch(origin,"/images/application-v3/"+filename,timeout)
+        if art[:4]!=b"RIFF" or art[8:12]!=b"WEBP":
+            raise AssertionError(f"Invalid {code} V3 image format")
+        if hashlib.sha256(art).hexdigest()!=digest:
+            raise AssertionError(f"Missing or modified {code} V3 image")
 
 
     tasks = [
@@ -115,17 +121,22 @@ def verify_all_guides(origin: str, timeout: float, workers: int = 6) -> int:
         try:
             raw = fetch(origin, path, timeout)
             validate_guide(raw, lang, product)
-            if product["code"] in {"BOND-C1T","BOND-C1TE"}:
+            if product["code"] in V3_ARTWORK:
                 if b'data-v3-reviewed="BROUILLON"' not in raw:
-                    raise AssertionError("Tile V3 visual review status missing")
-                if raw.count(b'data-v3-step="') != 6:
-                    raise AssertionError("Tile V3 has incorrect number of illustrated stages")
-                expected=("fenek-bond-c1te-steps.webp" if product["code"]=="BOND-C1TE"
-                          else "fenek-bond-c1t-steps.webp").encode("utf-8")
-                wrong=("fenek-bond-c1t-steps.webp" if product["code"]=="BOND-C1TE"
-                       else "fenek-bond-c1te-steps.webp").encode("utf-8")
-                if expected not in raw or wrong in raw:
-                    raise AssertionError("Cross-reference V3 artwork mismatch")
+                    raise AssertionError("Missing reviewed V3 status")
+                if raw.count(b'data-v3-step="')!=6:
+                    raise AssertionError("Wrong number of V3 steps")
+                expected=V3_ARTWORK[product["code"]][0].encode()
+                if expected not in raw:
+                    raise AssertionError("Wrong image for the product reference")
+                for other,(filename,_) in V3_ARTWORK.items():
+                    if other!=product["code"] and filename.encode() in raw:
+                        raise AssertionError(f"{product['code']} displays {other} image")
+                if product["code"]=="BOND-C1T":
+                    if raw.count(b'class="fenek-v3-detail-link"')!=6:
+                        raise AssertionError("C1T full-resolution inspection links missing")
+                elif b'class="fenek-v3-detail-link"' in raw:
+                    raise AssertionError("Full-resolution links cross-reference leak")
             elif b'data-v3-step="' in raw:
                 raise AssertionError("Unreviewed product received V3 artwork")
 
