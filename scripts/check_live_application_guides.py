@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CATALOGUE = ROOT / "src" / "data" / "catalogue-projets.json"
 SPRITE_SHA256 = "55197582655ba03f9de8d933047236e63efbd5df27a1acde136c5fc342059b1c"
 C1T_V3_SHA256 = "9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3"
+C1TE_V3_SHA256 = "0d4ea8e4b5fc7ec44e3b772f470aeffa81cc50009b2f724d0420c89fd8cd58ce"
 TILE_ADHESIVES = frozenset({
     "BOND-C1T", "BOND-C1TE", "BOND-C2FT", "BOND-C2TE", "BOND-C2TE-S1",
 })
@@ -99,6 +100,9 @@ def verify_all_guides(origin: str, timeout: float, workers: int = 6) -> int:
         raise AssertionError("Published C1T V3 artwork changed or missing")
     if reviewed[:4] != b"RIFF" or reviewed[8:12] != b"WEBP":
         raise AssertionError("Invalid reviewed C1T artwork format")
+    c1te=fetch(origin, "/images/application-v3/fenek-bond-c1te-steps.webp",timeout)
+    if hashlib.sha256(c1te).hexdigest()!=C1TE_V3_SHA256:
+        raise AssertionError("C1TE artwork missing or incorrect")
 
 
     tasks = [
@@ -111,13 +115,17 @@ def verify_all_guides(origin: str, timeout: float, workers: int = 6) -> int:
         try:
             raw = fetch(origin, path, timeout)
             validate_guide(raw, lang, product)
-            if product["code"] == "BOND-C1T":
+            if product["code"] in {"BOND-C1T","BOND-C1TE"}:
                 if b'data-v3-reviewed="BROUILLON"' not in raw:
-                    raise AssertionError("C1T V3 visual review status missing")
+                    raise AssertionError("Tile V3 visual review status missing")
                 if raw.count(b'data-v3-step="') != 6:
-                    raise AssertionError("C1T V3 has incorrect number of illustrated stages")
-                if b"/images/application-v3/fenek-bond-c1t-steps.webp" not in raw:
-                    raise AssertionError("C1T V3 artwork URL absent")
+                    raise AssertionError("Tile V3 has incorrect number of illustrated stages")
+                expected=("fenek-bond-c1te-steps.webp" if product["code"]=="BOND-C1TE"
+                          else "fenek-bond-c1t-steps.webp").encode("utf-8")
+                wrong=("fenek-bond-c1t-steps.webp" if product["code"]=="BOND-C1TE"
+                       else "fenek-bond-c1te-steps.webp").encode("utf-8")
+                if expected not in raw or wrong in raw:
+                    raise AssertionError("Cross-reference V3 artwork mismatch")
             elif b'data-v3-step="' in raw:
                 raise AssertionError("Unreviewed product received V3 artwork")
 
