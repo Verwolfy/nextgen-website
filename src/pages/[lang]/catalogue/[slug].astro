@@ -27,6 +27,14 @@ const informationLabel = {
   ar: 'عرض معلومات المنتج',
   en: 'View product information',
 }[lang];
+const packshotAlt = product.code==='PROOF-CM-O2P'
+  ? {
+      fr:'Maquette FENEK-PROOF CM-O2P : sac de 20 kg et bidon de 10 kg (kit 30 kg)',
+      en:'FENEK-PROOF CM-O2P mockup: 20 kg bag and 10 kg canister (30 kg kit)',
+      ar:'تصميم FENEK-PROOF CM-O2P: كيس 20 كغ وعبوة 10 كغ (طقم 30 كغ)',
+    }[lang]
+  : '';
+
 ---
 <Layout lang={lang} title={product.nom} description={d.description}>
   <div class="page-head concept-detail-head" style={'--range-color:'+rangeColor[product.gamme]}>
@@ -52,7 +60,7 @@ const informationLabel = {
       </div>
       <aside class="concept-detail-aside" aria-label={t.format}>
         <div class="concept-detail-image concept-packshot-container" style={'--range-color:'+rangeColor[product.gamme]}>
-          <img src={conceptPackshot(product,"full")} width="800" height="800" alt="" loading="lazy" decoding="async"/>
+          <img src={conceptPackshot(product,"full")} width="800" height="800" alt={packshotAlt} loading="lazy" decoding="async"/>
         </div>
         <p class="concept-detail-note">{product.gamme==='paint'?t.paintConceptNote:hasProductPackshot(product)?t.packshotNote:t.pictureNote}</p>
         <div class="actions">

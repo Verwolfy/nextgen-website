@@ -24,7 +24,7 @@ class SilentHandler(SimpleHTTPRequestHandler):
 
 def check_lot125_cm_o2p_20kg(browser, base: str) -> None:
     """CM-O2P corrected sack mass is visible; canister remains 10 kg."""
-    image_path = "/images/maquettes/maquette-37-sac-20kg.svg"
+    image_path = "/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
     for lang in ("fr", "ar", "en"):
         page = browser.new_page(viewport={"width": 390, "height": 850})
         try:
@@ -32,7 +32,7 @@ def check_lot125_cm_o2p_20kg(browser, base: str) -> None:
             img = page.locator(f'img[src="{image_path}"]')
             assert img.count() == 1, (lang, "corrected product image missing")
             img.scroll_into_view_if_needed()
-            assert img.evaluate("el => el.complete && el.naturalWidth === 880"), (lang, "image decode")
+            assert img.evaluate("el => el.complete && el.naturalWidth === 640"), (lang, "image decode")
             html = page.content()
             assert "Kit : sac 30 kg + bidon 10 kg" not in html, (lang, "stale wrong packaging")
             if lang == "fr":
@@ -42,8 +42,10 @@ def check_lot125_cm_o2p_20kg(browser, base: str) -> None:
             if lang == "ar":
                 assert "كيس 20 كغ" in html and "عبوة 10 كغ" in html, (lang, "Arabic packaging missing")
             asset = page.request.get(base + image_path)
-            assert asset.status == 200 and "SAC 20 KG</text>" in asset.text(), lang
-            assert "data:image/webp;base64," in asset.text(), lang
+            assert asset.status == 200 and asset.body()[:4] == b"RIFF", lang
+            import hashlib
+            assert hashlib.sha256(asset.body()).hexdigest() == "552f3f850fca117410d0268265f5f7db8c4506dcbc93620ba07529657ea291b7", lang
+            assert img.get_attribute("alt"), (lang, "product packaging alt-text missing")
             page.goto(f"{base}/{lang}/catalogue/", wait_until="domcontentloaded")
             card = page.locator('a.concept-product-card[href$="/fenek-proof-cm-o2p/"]')
             assert card.count() == 1, (lang, "CM-O2P card missing")

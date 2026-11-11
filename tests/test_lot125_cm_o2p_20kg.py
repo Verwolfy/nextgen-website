@@ -16,6 +16,8 @@ OLD="Kit : sac 30 kg + bidon 10 kg"
 NEW="Kit : sac 20 kg + bidon 10 kg"
 SVG=ROOT/"public/images/maquettes/maquette-37-sac-20kg.svg"
 ORIGINAL=ROOT/"public/images/maquettes/maquette-37.webp"
+CORRECTED=ROOT/"public/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
+CORRECTED_SHA="552f3f850fca117410d0268265f5f7db8c4506dcbc93620ba07529657ea291b7"
 
 
 class CM_O2P_BagWeight(unittest.TestCase):
@@ -42,7 +44,7 @@ class CM_O2P_BagWeight(unittest.TestCase):
             'en:"Kit: 20 kg bag + 10 kg canister (30 kg total)"',
             'ar:"طقم: كيس 20 كغ + عبوة 10 كغ (30 كغ إجمالاً)"',
             "if(product.code==='PROOF-CM-O2P')",
-            "maquette-37-sac-20kg.svg",
+            "fenek-proof-cm-o2p-sac-20kg-v2.webp",
         ):
             self.assertIn(expected,self.packaging)
         self.assertIn("'fenek-proof-cm-o2p':37",self.packaging)
@@ -63,6 +65,15 @@ class CM_O2P_BagWeight(unittest.TestCase):
         self.assertEqual(hashlib.sha1(git_blob).hexdigest(),expected)
         self.assertGreater(self.art.rfind('SAC 20 KG</text>'),self.art.index('data:image/webp;base64,'))
 
+    def test_uploaded_optimized_artwork_is_the_active_mockup(self):
+        image=CORRECTED.read_bytes()
+        self.assertEqual(image[:4],b"RIFF")
+        self.assertEqual(image[8:12],b"WEBP")
+        self.assertEqual(len(image),40494)
+        self.assertEqual(hashlib.sha256(image).hexdigest(),CORRECTED_SHA)
+        self.assertIn("fenek-proof-cm-o2p-sac-20kg-v2.webp",self.packaging)
+        self.assertTrue(SVG.is_file(), "Prior SVG mockup stays archived")
+    
     def test_no_unrelated_publications(self):
         self.assertEqual((ROOT/"public/data/products.json").read_text(encoding="utf-8").strip(),"[]")
         self.assertNotIn("SUPABASE_SERVICE_ROLE",self.art)

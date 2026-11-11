@@ -164,7 +164,7 @@ def main() -> None:
         for slug, number in reviewed_visuals.items():
             # Lot 125: CM-O2P retains archived image 37 but publicly displays
             # the corrected bag label "SAC 20 KG" (canister unchanged at 10 KG).
-            asset = ("/images/maquettes/maquette-37-sac-20kg.svg"
+            asset = ("/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
                      if slug == "fenek-proof-cm-o2p"
                      else f"/images/maquettes/maquette-{number:02d}.webp")
             assert asset in catalog, f"Missing reference visual in {lang}: {slug}"
@@ -172,12 +172,18 @@ def main() -> None:
             assert detail.is_file() and asset in detail.read_text(encoding="utf-8"), (
                 f"Wrong detail image: {lang}/{slug}"
             )
-        corrected_asset = ROOT / "images/maquettes/maquette-37-sac-20kg.svg"
-        assert corrected_asset.is_file(), "Missing corrected CM-O2P 20 kg mockup"
-        corrected_markup = corrected_asset.read_text(encoding="utf-8")
-        assert "SAC 20 KG</text>" in corrected_markup
-        assert "image/webp;base64," in corrected_markup
-        assert "bidon composant B 10 kg" in corrected_markup
+        corrected_asset = ROOT / "images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
+        assert corrected_asset.is_file(), "Missing client-corrected CM-O2P 20 kg image"
+        from hashlib import sha256
+        artwork = corrected_asset.read_bytes()
+        assert artwork[:4] == b"RIFF" and artwork[8:12] == b"WEBP", "Invalid corrected WebP"
+        assert sha256(artwork).hexdigest() == "552f3f850fca117410d0268265f5f7db8c4506dcbc93620ba07529657ea291b7", "Artwork does not match the uploaded correction"
+        for lang in LANGS:
+            for route in ("catalogue/fenek-proof-cm-o2p", "documentation/fenek-proof-cm-o2p"):
+                html = (ROOT / lang / route / "index.html").read_text(encoding="utf-8")
+                assert "/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp" in html, (lang, route, "stale product mockup")
+            catalog_html = (ROOT / lang / "catalogue" / "index.html").read_text(encoding="utf-8")
+            assert "/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp" in catalog_html, (lang, "stale catalogue listing")
         assert not any(
             "Kit : sac 30 kg + bidon 10 kg" in
             (ROOT / lang / "catalogue" / "fenek-proof-cm-o2p" / "index.html").read_text(encoding="utf-8")

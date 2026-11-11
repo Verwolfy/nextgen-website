@@ -48,7 +48,7 @@
         "Kit : sac 20 kg + bidon 10 kg"
       ],
       "format_nominal_registre": "Sac 20 kg + bidon 10 kg (kit 30 kg total)",
-      "maquette_conceptuelle": "public/images/maquettes/maquette-37-sac-20kg.svg",
+      "maquette_conceptuelle": "public/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -58,7 +58,8 @@
       "autorisation_publication_fiche_technique": false,
       "autorisation_creation_sku_erp": false,
       "maquette_source_archive": "public/images/maquettes/maquette-37.webp",
-      "correction_editoriale": "2026-11-11 : sac corrigé à 20 kg sur instruction utilisateur ; bidon maintenu à 10 kg. Les statuts d'homologation restent EN ATTENTE."
+      "correction_editoriale": "2026-11-11 : sac corrigé à 20 kg sur instruction utilisateur ; bidon maintenu à 10 kg. Les statuts d'homologation restent EN ATTENTE. Version visuelle client optimisée 576x576 WebP, 2026-11-11; image WebP v2 remplace la superposition SVG sans changer les statuts.",
+      "maquette_precedente_corrigee": "public/images/maquettes/maquette-37-sac-20kg.svg"
     },
     {
       "reference": "PROOF-EP-ANC",

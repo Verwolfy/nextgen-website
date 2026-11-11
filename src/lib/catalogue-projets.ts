@@ -88,10 +88,10 @@ export const conceptPackshot=(product:CatalogueProject,variant:'card'|'full'='ca
    const updatedConcept=reviewedGalleryImage(product);
    if(updatedConcept) return updatedConcept;
  }
- // CM-O2P correction, lot 125: the dry component is a 20 kg bag,
+ // CM-O2P correction, lot 126: serve the client-validated, optimized WebP of the 20 kg sack;\n // use a new URL to invalidate old Cloudflare/browser image caches.\n // The dry component is a 20 kg bag,
  // with a separate 10 kg canister. Preserve the old gallery image as archive.
  if(product.code==='PROOF-CM-O2P'){
-   const corrected='images/maquettes/maquette-37-sac-20kg.svg';
+   const corrected='images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp';
    if(!existsSync(resolve(process.cwd(),'public',corrected)))
      throw Error('Corrected 20 kg concept mockup missing for '+product.code);
    return '/'+corrected;

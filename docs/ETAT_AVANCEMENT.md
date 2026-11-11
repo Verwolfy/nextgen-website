@@ -448,3 +448,12 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Tous les fichiers de référence v3 vérifiés sur `main`.
 - **À contrôler séparément** : le job de production après le déploiement Cloudflare du commit `4163d209` (workflow push `42668216401` initialement en cours). N'affirmer la mise en ligne réelle qu'après son succès.
 - Dossier : `docs/LOT124_ABOUT_FINAL_VIDEO_20261109.md`.
+
+## 11/11/2026 — Lot 126 : maquette réelle CM-O2P et synchronisation contrôlée Supabase
+- La capture du site montrait encore l'ancienne maquette 30 kg : nouvelle image unique WebP 640×640, 40 494 octets, SHA-256 `552f3f850fca117410d0268265f5f7db8c4506dcbc93620ba07529657ea291b7`, avec sac **20 kg** et bidon **10 kg**.
+- Lien du visuel actif `/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp` ; anti-cache, libellés FR/AR/EN, fiche catalogue, fiche produit et impression.
+- Supabase `site_produits` référence `PROOF-CM-O2P` synchronisée en **brouillon non publié** : 20 kg + 10 kg, kit total 30 kg, nouveau chemin de visuel ; aucun produit/FT activé.
+- Contrôle Supabase : pas de « sac 30 kg » dans ce brouillon, aucune demande historique concernée. Le SKU ERP existant `NG-SKU-PROOF-CM-O2P-KIT-NQ` reste actif mais volontairement non qualifié et sans poids : aucune modification commerciale.
+- Garde-fous ajoutés : image SHA, vérification des trois locales et contrôle de l'image/du format réellement servi par Cloudflare dans `scripts/check_live_production.py`.
+- Rapport : `docs/LOT126_CM_O2P_MAQUETTE_SUPABASE_20261111.md`.
+- À conclure : PR, CI, fusion et contrôle live distinct.
