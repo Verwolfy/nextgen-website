@@ -82,7 +82,36 @@ const c1te:ReviewedV3Guide={
   ]
 };
 
-const reviewed:Readonly<Record<string,ReviewedV3Guide>>=Object.freeze({'BOND-C1T':c1t,'BOND-C1TE':c1te});
+
+const c2ft:ReviewedV3Guide={
+  code:'BOND-C2FT',
+  slug:'fenek-bond-c2ft',
+  sprite:'/images/application-v3/fenek-bond-c2ft-steps.webp',
+  sha256:'3256b9e424511146ca4f4f7e9fd7da1e8d484b74c258e5de18e588aa97e87cbf',
+  status:'BROUILLON',
+  steps:[
+    {image:1,icon:'brush',
+      title:l('Nettoyer et vérifier le support','نظّف السطح وتحقق من ثباته','Clean and inspect substrate'),
+      description:l('Contrôler la stabilité, la propreté et la planéité ; éliminer poussières et matériaux friables.','تحقق من ثبات السطح ونظافته واستوائه وأزل الغبار والأجزاء الضعيفة.','Ensure the substrate is sound, clean and level before tiling.')},
+    {image:2,icon:'shield',
+      title:l('Porter gants, lunettes et masque','ارتدِ القفازات والنظارات والكمامة','Wear gloves, goggles and a dust mask'),
+      description:l('Employer les EPI requis par la FDS approuvée, particulièrement durant le gâchage de la poudre.','استخدم معدات الوقاية المطلوبة في نشرة السلامة، خاصة أثناء خلط المسحوق.','Use PPE specified in the approved safety sheet, especially while handling powder.')},
+    {image:3,icon:'water',
+      title:l('Ajouter l’eau selon la fiche technique','أضف الماء حسب النشرة الفنية','Add water per the technical sheet'),
+      description:l('Ne pas estimer les volumes : le rapport eau/poudre et le conditionnement restent à approuver par le laboratoire.','لا تقدّر الكميات عشوائياً، فجرعة الماء ووزن الكيس يخضعان لاعتماد المختبر.','Do not guess quantities: water/powder ratio and bag size require laboratory approval.')},
+    {image:4,icon:'clock',
+      title:l('Remalaxer conformément à la fiche','أعد الخلط وفق النشرة دون تأخير','Remix as instructed, without delay'),
+      description:l('Colle à prise rapide : suivre la séquence exacte et les éventuels temps de repos prescrits ; ne rien prolonger arbitrairement.','لاصق سريع التصلب: اتبع ترتيب الخلط وفترة الراحة إن نصت عليها النشرة، دون تأخير اعتباطي.','Fast-setting adhesive: follow the approved remixing sequence and any specified rest; do not improvise delays.')},
+    {image:5,icon:'trowel',
+      title:l('Étaler avec une spatule crantée','وزّع اللاصق بمالج مسنن','Spread with a notched trowel'),
+      description:l('Adapter la denture aux carreaux et contrôler le transfert de colle ; appliquer dans le temps utilisable confirmé.','اختر حجم الأسنان المناسب للبلاط وتحقق من التغطية خلال وقت التشغيل المعتمد.','Use an appropriate notch and check adhesive transfer within the validated working time.')},
+    {image:6,icon:'tile',
+      title:l('Poser dans le temps prescrit','ركّب البلاط ضمن زمن العمل المحدد','Set tiles within the specified time'),
+      description:l('Mettre en place, presser, vérifier la couverture et ne pas dépasser le temps ouvert approuvé pour C2FT.','ثبّت البلاط واضغطه وتحقق من التغطية ولا تتجاوز زمن الفتح المعتمد لهذا المنتج.','Press and inspect tiles without exceeding the approved C2FT open time.')},
+  ]
+};
+
+const reviewed:Readonly<Record<string,ReviewedV3Guide>>=Object.freeze({'BOND-C1T':c1t,'BOND-C1TE':c1te,'BOND-C2FT':c2ft});
 export function reviewedV3GuideFor(code:string,slug:string):ReviewedV3Guide|null{
   const guide=reviewed[code];
   if(!guide)return null;
