@@ -38,6 +38,18 @@ def main():
     c1te_sprite=DIST/"images/application-v3/fenek-bond-c1te-steps.webp"
     assert c1te_sprite.is_file(),"Missing reviewed BOND-C1TE V3 artwork"
     assert hashlib.sha256(c1te_sprite.read_bytes()).hexdigest()==V3_C1TE_SHA,"Changed C1TE artwork"
+    verified_c1t={
+        "01_support.png":"833a54cc1ac69570a446cc411423e22c5789a2efa597a4eef7ca701ad37fc74c",
+        "02_epi.png":"c767d4dc7bc6381c8bbfd8e1f31e48549b594d939a787d5806ba091cbd4c7602",
+        "03_gachage.png":"ecbb94776fa0c8491764dc13e11e0bb7fad2c7ddfbdaaafdbcc4b9be5102844d",
+        "04_repos.png":"5492a8016643a71794641c60b6ed030f733bef87ff9583cc8a1db10c4fc8377f",
+        "05_encollage.png":"75542d1f85bb51938463046d9d9a727c76fd1cadc9fcade06cadb90497ce9381",
+        "06_pose.png":"cb4decfb17ae12da149f6efc3d7d44bd625ea4a7c58893a4dd74ffb6fb05ac0d",
+    }
+    for name,digest in verified_c1t.items():
+        asset=DIST/"images/application/v3/fenek-bond-c1t"/name
+        assert asset.is_file(),("Missing V3 original PNG",name)
+        assert hashlib.sha256(asset.read_bytes()).hexdigest()==digest,("Changed V3 original PNG",name)
     n=0
     for product in CATALOGUE:
         exp=6 if product["code"] in TILE else 4
@@ -58,6 +70,13 @@ def main():
                 assert expected_image in html,(lang,"V3 sprite missing")
                 other_image="fenek-bond-c1t-steps.webp" if product["code"]=="BOND-C1TE" else "fenek-bond-c1te-steps.webp"
                 assert other_image not in html,(lang,"cross-reference sprite leak")
+                if product["code"]=="BOND-C1T":
+                    actual=path.read_text(encoding="utf-8")
+                    for name in verified_c1t:
+                        assert name in actual,(lang,"C1T full-size image missing",name)
+                    assert actual.count('class="fenek-v3-detail-link"')==6,(lang,"C1T six full-size links required")
+                else:
+                    assert 'class="fenek-v3-detail-link"' not in html,(lang,"C1TE must not receive C1T full-size links")
             else:
                 assert not parser.v3_steps,(lang,product["code"],"unreviewed product received V3 image")
 

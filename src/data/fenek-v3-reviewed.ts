@@ -12,6 +12,7 @@ export type ReviewedV3Guide = {
   slug:string;
   sprite:string;
   sha256:string;
+  fullResolution?:ReadonlyArray<string>;
   steps:ReviewStep[];
   status:'BROUILLON';
 };
@@ -23,6 +24,14 @@ const c1t:ReviewedV3Guide={
   sprite:'/images/application-v3/fenek-bond-c1t-steps.webp',
   sha256:'9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3',
   status:'BROUILLON',
+  fullResolution:[
+    '/images/application/v3/fenek-bond-c1t/01_support.png',
+    '/images/application/v3/fenek-bond-c1t/02_epi.png',
+    '/images/application/v3/fenek-bond-c1t/03_gachage.png',
+    '/images/application/v3/fenek-bond-c1t/04_repos.png',
+    '/images/application/v3/fenek-bond-c1t/05_encollage.png',
+    '/images/application/v3/fenek-bond-c1t/06_pose.png',
+  ],
   steps:[
     {image:1,icon:'brush',
       title:l('Nettoyer et vérifier le support','نظّف السطح وتأكد من سلامته واستوائه','Clean and inspect substrate'),
