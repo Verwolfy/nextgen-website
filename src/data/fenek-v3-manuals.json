@@ -1,0 +1,4352 @@
+[
+  {
+    "code": "BOND-C1T",
+    "slug": "fenek-bond-c1t",
+    "sprite": "/images/application-v3/fenek-bond-c1t-steps.webp",
+    "sha256": "2aee69e61307f97c06656fe99ef24ccbfc5b6f585f014930fe26d8e49603d4e6",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et vérifier le support",
+          "ar": "نظّف السطح وتأكد من سلامته واستوائه",
+          "en": "Clean and inspect the substrate"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et masque",
+          "ar": "ارتدِ القفازات والنظارات والكمامة",
+          "en": "Wear gloves, goggles and a mask"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Ajouter l’eau selon la fiche technique",
+          "ar": "أضف الماء حسب النشرة الفنية",
+          "en": "Add water according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Laisser reposer puis remalaxer",
+          "ar": "اترك الخليط يرتاح ثم أعد الخلط",
+          "en": "Allow to rest and remix if specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Étaler avec une spatule crantée",
+          "ar": "وزّع اللاصق بمالج مسنن",
+          "en": "Spread with a notched trowel"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Poser et presser les carreaux",
+          "ar": "ضع البلاط واضغطه جيدًا",
+          "en": "Set and press the tiles"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "BOND-C1TE",
+    "slug": "fenek-bond-c1te",
+    "sprite": "/images/application-v3/fenek-bond-c1te-steps.webp",
+    "sha256": "0c4e74135325cd3fa00df2f3d7f5e6718c65a2af528d3d64439c3eceb7b8d395",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et vérifier le support",
+          "ar": "نظّف السطح وتحقق من ثباته",
+          "en": "Clean and inspect the substrate"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et masque",
+          "ar": "ارتدِ القفازات والنظارات والكمامة",
+          "en": "Wear gloves, goggles and a mask"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Ajouter l’eau selon la fiche technique",
+          "ar": "أضف الماء حسب النشرة الفنية",
+          "en": "Add water according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Laisser reposer puis remalaxer",
+          "ar": "اترك الخليط يرتاح ثم أعد الخلط",
+          "en": "Allow to rest and remix if specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Étaler avec une spatule crantée",
+          "ar": "وزّع اللاصق بمالج مسنن",
+          "en": "Spread with a notched trowel"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Poser avant la fin du temps ouvert",
+          "ar": "اضغط البلاط قبل انتهاء الزمن المفتوح",
+          "en": "Set tiles within the specified open time"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "BOND-C2TE",
+    "slug": "fenek-bond-c2te",
+    "sprite": "/images/application-v3/fenek-bond-c2te-steps.webp",
+    "sha256": "e4cd09ab534bddef69f000e8348bd15cf798eae93b872eb117bd3ad9345c23b7",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et vérifier le support",
+          "ar": "نظّف السطح وتحقق من ثباته",
+          "en": "Clean and inspect the substrate"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et masque",
+          "ar": "ارتدِ القفازات والنظارات والكمامة",
+          "en": "Wear gloves, goggles and a mask"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Ajouter l’eau selon la fiche technique",
+          "ar": "أضف الماء حسب النشرة الفنية",
+          "en": "Add water according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Laisser reposer puis remalaxer",
+          "ar": "اترك الخليط يرتاح ثم أعد الخلط",
+          "en": "Allow to rest and remix if specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Étaler avec une spatule crantée",
+          "ar": "وزّع اللاصق بمالج مسنن",
+          "en": "Spread with a notched trowel"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Poser et presser selon le temps ouvert",
+          "ar": "ضع البلاط واضغطه ضمن الزمن المحدد",
+          "en": "Set and press tiles within the specified open time"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "BOND-C2TE-S1",
+    "slug": "fenek-bond-c2te-s1",
+    "sprite": "/images/application-v3/fenek-bond-c2te-s1-steps.webp",
+    "sha256": "fbaa477851e4b348ebfca050c3f2eb89f981bcce6688d8285e936ed124109ef3",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et vérifier le support",
+          "ar": "نظّف السطح وتحقق من ثباته",
+          "en": "Clean and inspect the substrate"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et masque",
+          "ar": "ارتدِ القفازات والنظارات والكمامة",
+          "en": "Wear gloves, goggles and a mask"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Ajouter l’eau selon la fiche technique",
+          "ar": "أضف الماء حسب النشرة الفنية",
+          "en": "Add water according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Laisser reposer puis remalaxer",
+          "ar": "اترك الخليط يرتاح ثم أعد الخلط",
+          "en": "Allow to rest and remix if specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Peigner ; double encollage si nécessaire",
+          "ar": "مشّط اللاصق وأضف لصقًا مزدوجًا عند الحاجة",
+          "en": "Comb the adhesive; back-butter if needed"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Poser et presser selon le temps ouvert",
+          "ar": "ضع البلاط واضغطه ضمن الزمن المحدد",
+          "en": "Set and press tiles within the specified open time"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "BOND-C2FT",
+    "slug": "fenek-bond-c2ft",
+    "sprite": "/images/application-v3/fenek-bond-c2ft-steps.webp",
+    "sha256": "dd49d5fe3200871aa32402b46bafa576279d2ff4a3d14a9cf5dcbaf5a34648d8",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et vérifier le support",
+          "ar": "نظّف السطح وتحقق من ثباته",
+          "en": "Clean and inspect the substrate"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et masque",
+          "ar": "ارتدِ القفازات والنظارات والكمامة",
+          "en": "Wear gloves, goggles and a mask"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Ajouter l’eau selon la fiche technique",
+          "ar": "أضف الماء حسب النشرة الفنية",
+          "en": "Add water according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Remalaxer conformément à la fiche",
+          "ar": "أعد الخلط وفق النشرة دون تأخير",
+          "en": "Remix as specified in the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Étaler avec une spatule crantée",
+          "ar": "وزّع اللاصق بمالج مسنن",
+          "en": "Spread with a notched trowel"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Poser dans le temps prescrit",
+          "ar": "ركّب البلاط ضمن زمن العمل المحدد",
+          "en": "Set tiles within the prescribed working time"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "BOND-CG1",
+    "slug": "fenek-bond-cg1",
+    "sprite": "/images/application-v3/fenek-bond-cg1-steps.webp",
+    "sha256": "a5d507e07d8ff2a54c33eb953734dcaaa06bada5bf2c63b017120c99a2c46dd3",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et dépoussiérer les joints",
+          "ar": "نظّف الفواصل وأزل الغبار منها",
+          "en": "Clean joints and remove dust"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et masque",
+          "ar": "ارتدِ القفازات والنظارات والكمامة",
+          "en": "Wear gloves, goggles and a mask"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Gâcher selon la fiche technique",
+          "ar": "اخلط بالماء حسب النشرة الفنية",
+          "en": "Mix according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Remplir les joints en diagonale",
+          "ar": "املأ الفواصل بممسحة مطاطية قطريًا",
+          "en": "Fill the joints diagonally"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Nettoyer à l’éponge avant durcissement",
+          "ar": "نظّف بإسفنجة رطبة قبل التصلب",
+          "en": "Sponge-clean before hardening"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Essuyer le voile après séchage",
+          "ar": "أزل بقايا الملاط بعد الجفاف",
+          "en": "Wipe off any haze after drying"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "BOND-CG2WA",
+    "slug": "fenek-bond-cg2wa",
+    "sprite": "/images/application-v3/fenek-bond-cg2wa-steps.webp",
+    "sha256": "a5d507e07d8ff2a54c33eb953734dcaaa06bada5bf2c63b017120c99a2c46dd3",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et dépoussiérer les joints",
+          "ar": "نظّف الفواصل وأزل الغبار منها",
+          "en": "Clean joints and remove dust"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et masque",
+          "ar": "ارتدِ القفازات والنظارات والكمامة",
+          "en": "Wear gloves, goggles and a mask"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Gâcher selon la fiche technique",
+          "ar": "اخلط بالماء حسب النشرة الفنية",
+          "en": "Mix according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Remplir les joints en diagonale",
+          "ar": "املأ الفواصل بممسحة مطاطية قطريًا",
+          "en": "Fill the joints diagonally"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Nettoyer à l’éponge avant durcissement",
+          "ar": "نظّف بإسفنجة رطبة قبل التصلب",
+          "en": "Sponge-clean before hardening"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Essuyer le voile après séchage",
+          "ar": "أزل بقايا الملاط بعد الجفاف",
+          "en": "Wipe off any haze after drying"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "BOND-CT-C25-F5",
+    "slug": "fenek-bond-ct-c25-f5",
+    "sprite": "/images/application-v3/fenek-bond-ct-c25-f5-steps.webp",
+    "sha256": "205c1296dbc76b41130a717b338ecd0d35152a77aeb6d6b5155445710750f88b",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Préparer le sol et son primaire",
+          "ar": "حضّر الأرضية ونظّفها وطبّق البرايمر اللازم",
+          "en": "Prepare the floor and its primer"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et masque",
+          "ar": "ارتدِ القفازات والنظارات وكمامة الغبار",
+          "en": "Wear gloves, goggles and a mask"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Gâcher selon la fiche technique",
+          "ar": "اخلط المسحوق بالماء حسب النشرة الفنية",
+          "en": "Mix according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Verser le ragréage sur le sol",
+          "ar": "اسكب المونة السائلة على الأرضية",
+          "en": "Pour the levelling compound onto the floor"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Répartir à la lisseuse adaptée",
+          "ar": "سوّ السطح بالممسحة المناسبة",
+          "en": "Spread with a suitable smoothing trowel"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Débuller et protéger le mortier frais",
+          "ar": "أزل الفقاعات واحمِ السطح الطري",
+          "en": "De-air and protect the fresh mortar"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "BOND-R2",
+    "slug": "fenek-bond-r2",
+    "sprite": "/images/application-v3/fenek-bond-r2-steps.webp",
+    "sha256": "cd8d16d6e7b7a7d6cc3714fbe09e82cc64a8deaa7e1176d0f3acaeffd99a31a1",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Éliminer le béton altéré",
+          "ar": "أزل الخرسانة الضعيفة ونظّف السطح",
+          "en": "Remove deteriorated concrete"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Traiter les armatures exposées si nécessaire",
+          "ar": "نظّف حديد التسليح المكشوف عند الحاجة",
+          "en": "Treat exposed reinforcement where necessary"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Humidifier sans eau stagnante",
+          "ar": "رطّب الخرسانة دون ترك ماء راكد",
+          "en": "Dampen without leaving standing water"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Porter les EPI et gâcher selon fiche",
+          "ar": "ارتدِ معدات الوقاية واخلط حسب النشرة",
+          "en": "Wear PPE and mix as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Appliquer et serrer le mortier",
+          "ar": "اضغط المونة في التجويف ثم سوّها",
+          "en": "Apply and compact the mortar"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Protéger et assurer la cure",
+          "ar": "احمِ الإصلاح من الجفاف المبكر",
+          "en": "Protect and cure the repair"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "BOND-R3",
+    "slug": "fenek-bond-r3",
+    "sprite": "/images/application-v3/fenek-bond-r3-steps.webp",
+    "sha256": "0b12c417c8f3bdd85bd5f6dcf584e585b9f09fe6f1253aa1ff7a24452e70c6b3",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Purger le béton et dépoussiérer",
+          "ar": "أزل الخرسانة المتضررة ونظّف مكان الإصلاح",
+          "en": "Remove loose concrete and dust"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Préparer les armatures si apparentes",
+          "ar": "عالِج التسليح الظاهر عند الحاجة",
+          "en": "Prepare visible reinforcement"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Humidifier puis laisser ressuyer",
+          "ar": "بلّل السطح ثم اتركه رطبًا دون تجمع",
+          "en": "Dampen and allow surface water to evaporate"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Porter les EPI et gâcher selon fiche",
+          "ar": "ارتدِ معدات الوقاية واخلط حسب النشرة",
+          "en": "Wear PPE and mix as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Serrer le mortier et talocher",
+          "ar": "اضغط المونة جيدًا ثم سوّها",
+          "en": "Compact and float the mortar"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Protéger durant la cure",
+          "ar": "احمِ مونة الإصلاح أثناء المعالجة",
+          "en": "Protect during curing"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "BOND-R4",
+    "slug": "fenek-bond-r4",
+    "sprite": "/images/application-v3/fenek-bond-r4-steps.webp",
+    "sha256": "49478e27c05c72e71926ad55193723e444ebe7d774504662478494b01aeebc72",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Purger et préparer les bords",
+          "ar": "أزل الخرسانة الهشة وحضّر الحواف",
+          "en": "Remove loose material and prepare edges"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Nettoyer et protéger les aciers si requis",
+          "ar": "نظّف التسليح وطبّق الحماية عند الحاجة",
+          "en": "Clean and protect steel where required"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Humidifier le support puis ressuyer",
+          "ar": "رطّب الركيزة حتى تصبح دون لمعان",
+          "en": "Dampen the substrate and allow it to surface-dry"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Porter les EPI et gâcher selon fiche",
+          "ar": "استعمل الوقاية واخلط وفق النشرة الفنية",
+          "en": "Wear PPE and mix as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Serrer et talocher le mortier",
+          "ar": "اضغط المونة الليفية وسوّها جيدًا",
+          "en": "Compact and float the mortar"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Protéger du dessèchement précoce",
+          "ar": "احمِ السطح من الجفاف المبكر",
+          "en": "Protect against premature drying"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "BOND-GR-HR",
+    "slug": "fenek-bond-gr-hr",
+    "sprite": "/images/application-v3/fenek-bond-gr-hr-steps.webp",
+    "sha256": "6497a257eb25aee3601d17258ef50992bfba00621fa706c7fa400f106d01f6a0",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et étancher le coffrage",
+          "ar": "نظّف الركيزة وأحكم إغلاق القالب",
+          "en": "Clean and seal the formwork"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Humidifier puis évacuer l’eau libre",
+          "ar": "رطّب الركيزة وأزل الماء الحر",
+          "en": "Dampen and remove excess water"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Porter les EPI et gâcher selon fiche",
+          "ar": "ارتدِ الوقاية واخلط حسب النشرة",
+          "en": "Wear PPE and mix as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Couler en continu d’un seul côté",
+          "ar": "اسكب المونة باستمرار من جانب واحد",
+          "en": "Pour continuously from one side"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Contrôler le remplissage sans ségrégation",
+          "ar": "تحقّق من ملء الفراغات دون انفصال",
+          "en": "Check complete filling without segregation"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Protéger les surfaces pendant la cure",
+          "ar": "احمِ الأجزاء المكشوفة أثناء المعالجة",
+          "en": "Protect surfaces during curing"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "BOND-GP-CSII",
+    "slug": "fenek-bond-gp-csii",
+    "sprite": "/images/application-v3/fenek-bond-gp-csii-steps.webp",
+    "sha256": "27a1294d889ef3df02f6799afe6451e5b3e3681f4dc41e6572826e485994ebe2",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Préparer et humidifier le support",
+          "ar": "نظّف الجدار واضبط ترطيبه عند الحاجة",
+          "en": "Prepare and dampen the substrate"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et masque",
+          "ar": "ارتدِ القفازات والنظارات وكمامة الغبار",
+          "en": "Wear gloves, goggles and a mask"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Gâcher l’enduit selon la fiche",
+          "ar": "اخلط مونة اللياسة حسب النشرة الفنية",
+          "en": "Mix the render as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Appliquer manuellement ou par projection",
+          "ar": "طبّق اللياسة بالمالج أو بالرش",
+          "en": "Apply by hand or spray"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Dresser à la règle puis talocher",
+          "ar": "سوّ السطح بالقدّة ثم بالمحارة",
+          "en": "Level with a straightedge then float"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Protéger l’enduit frais",
+          "ar": "احمِ اللياسة من الجفاف المبكر",
+          "en": "Protect the fresh render"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "BOND-OC-CSIII",
+    "slug": "fenek-bond-oc-csiii",
+    "sprite": "/images/application-v3/fenek-bond-oc-csiii-steps.webp",
+    "sha256": "264cc63a6dcd774c2eb8c5fcba66bd56db2801124874076d27e712fd44cfeb90",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et préparer la façade",
+          "ar": "نظّف الواجهة وحضّر الركيزة",
+          "en": "Clean and prepare the façade"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et masque",
+          "ar": "ارتدِ القفازات والنظارات وكمامة الغبار",
+          "en": "Wear gloves, goggles and a mask"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Gâcher selon la fiche technique",
+          "ar": "اخلط مونة الواجهة حسب النشرة",
+          "en": "Mix according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Projeter ou appliquer l’enduit",
+          "ar": "طبّق المونة على الواجهة بالتساوي",
+          "en": "Spray or apply the render"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Dresser puis réaliser la finition prévue",
+          "ar": "سوّ السطح ونفّذ التشطيب الموصوف",
+          "en": "Level then apply the prescribed finish"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Protéger du soleil et du vent",
+          "ar": "احمِ الواجهة من الشمس والرياح",
+          "en": "Protect against sun and wind"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "BOND-M5",
+    "slug": "fenek-bond-m5",
+    "sprite": "/images/application-v3/fenek-bond-m5-steps.webp",
+    "sha256": "9800652fa44e2fd1a3a5b7206a407c55cdc63a2367628ae38828550b3569735d",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Humidifier les blocs absorbants si nécessaire",
+          "ar": "رطّب وحدات البناء الماصّة عند الحاجة",
+          "en": "Dampen absorbent blocks if needed"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et masque",
+          "ar": "ارتدِ القفازات والنظارات وكمامة الغبار",
+          "en": "Wear gloves, goggles and a mask"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Gâcher le mortier selon la fiche",
+          "ar": "اخلط مونة البناء حسب النشرة",
+          "en": "Mix mortar as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Déposer un lit de mortier",
+          "ar": "افرد طبقة مونة لتثبيت البلوكات",
+          "en": "Lay a mortar bed"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Poser et aligner les blocs",
+          "ar": "ضع البلوكات واضبط استقامتها",
+          "en": "Set and align the blocks"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Serrer les joints et protéger",
+          "ar": "أحكم الفواصل واحمِ البناء الطري",
+          "en": "Compact and protect the joints"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "BOND-M10",
+    "slug": "fenek-bond-m10",
+    "sprite": "/images/application-v3/fenek-bond-m10-steps.webp",
+    "sha256": "3fa9cd3bceba124e34a4271b425a067f98c04119eb8facadd2a3bf236d07d10f",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Humidifier les éléments poreux si requis",
+          "ar": "رطّب العناصر المسامية إذا لزم",
+          "en": "Dampen porous units where required"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et masque",
+          "ar": "ارتدِ القفازات والنظارات وكمامة الغبار",
+          "en": "Wear gloves, goggles and a mask"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Gâcher selon la fiche technique",
+          "ar": "حضّر مونة البناء حسب النشرة الفنية",
+          "en": "Mix according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Étaler régulièrement le lit de mortier",
+          "ar": "وزّع طبقة المونة بانتظام",
+          "en": "Spread the mortar bed evenly"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Poser les blocs et contrôler l’alignement",
+          "ar": "ركّب البلوكات وتحقّق من المحاذاة",
+          "en": "Set blocks and check alignment"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Serrer les joints et protéger",
+          "ar": "اضغط الفواصل واحمِ المونة من الجفاف",
+          "en": "Compact and protect the joints"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PROOF-CM-O1P",
+    "slug": "fenek-proof-cm-o1p",
+    "sprite": "/images/application-v3/fenek-proof-cm-o1p-steps.webp",
+    "sha256": "2054cb020b4ebe54b45f61898caece55b055b6b32de2ab4d37f00304b928ef39",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et humidifier sans eau stagnante",
+          "ar": "نظّف السطح واتركه رطبًا دون تجمع",
+          "en": "Clean and dampen without standing water"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et masque",
+          "ar": "ارتدِ القفازات والنظارات وكمامة الغبار",
+          "en": "Wear gloves, goggles and a mask"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Gâcher selon la fiche technique",
+          "ar": "اخلط المسحوق حسب النشرة الفنية",
+          "en": "Mix according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Renforcer les angles et joints",
+          "ar": "عزّز الزوايا والفواصل بشريط مناسب",
+          "en": "Reinforce corners and joints"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Appliquer les couches croisées prévues",
+          "ar": "طبّق الطبقات المتقاطعة حسب النشرة",
+          "en": "Apply the specified cross-coats"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Laisser durcir avant la pose",
+          "ar": "احمِ العزل قبل تركيب البلاط",
+          "en": "Allow to cure before tiling"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PROOF-CM-O2P",
+    "slug": "fenek-proof-cm-o2p",
+    "sprite": "/images/application-v3/fenek-proof-cm-o2p-steps.webp",
+    "sha256": "a04ba87727c6d1a2c0b30aa87235d3ee408aa604c4a2b2f2f6d17917ece82db8",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et humidifier sans eau stagnante",
+          "ar": "نظّف السطح ورطّبه دون ماء راكد",
+          "en": "Clean and dampen without standing water"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et masque",
+          "ar": "ارتدِ القفازات والنظارات وكمامة الغبار",
+          "en": "Wear gloves, goggles and a mask"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Mélanger les deux composants selon fiche",
+          "ar": "اخلط المكونين وفق النشرة الفنية",
+          "en": "Mix both components as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Armer les angles et joints",
+          "ar": "ثبت شريط العزل عند الزوايا والفواصل",
+          "en": "Reinforce corners and joints"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Appliquer les couches croisées prévues",
+          "ar": "طبّق الطبقات المتقاطعة حسب النشرة",
+          "en": "Apply the specified cross-coats"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Attendre la cure avant carrelage",
+          "ar": "انتظر التصلب قبل التبليط أو الغمر",
+          "en": "Wait for curing before tiling"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PROOF-PU-1K",
+    "slug": "fenek-proof-pu-1k",
+    "sprite": "/images/application-v3/fenek-proof-pu-1k-steps.webp",
+    "sha256": "4e9362fa3f76dd5e402d606606a844800e4919190e4be4c4d9d493e180e19990",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Préparer un support sec et propre",
+          "ar": "نظّف السطح الجاف وجهّزه",
+          "en": "Prepare a clean, dry substrate"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter les EPI et ventiler",
+          "ar": "استخدم القفازات والنظارات ووسيلة تنفس مناسبة",
+          "en": "Wear PPE and ensure ventilation"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Homogénéiser sans ajout d’eau",
+          "ar": "حرّك المنتج دون إضافة ماء",
+          "en": "Stir until uniform without adding water"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Appliquer un primaire si requis",
+          "ar": "طبّق البرايمر عند اشتراطه",
+          "en": "Apply primer if required"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Appliquer uniformément la membrane",
+          "ar": "وزّع الغشاء السائل بالتساوي",
+          "en": "Apply the membrane uniformly"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Renforcer les points singuliers et protéger",
+          "ar": "عزّز التفاصيل واحترم زمن التغطية",
+          "en": "Reinforce critical details and protect"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PROOF-ACR-RF",
+    "slug": "fenek-proof-acr-rf",
+    "sprite": "/images/application-v3/fenek-proof-acr-rf-steps.webp",
+    "sha256": "2ba8cb3b76e99fe9d120f939a3692b8b5afc30d4216b89e232fce740fb12d22a",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Réparer, nettoyer et sécher la toiture",
+          "ar": "أصلح السطح ونظّفه وجففه",
+          "en": "Repair, clean and dry the roof"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter des gants et lunettes",
+          "ar": "ارتدِ القفازات والنظارات الواقية",
+          "en": "Wear gloves and safety glasses"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Homogénéiser le produit avant application",
+          "ar": "حرّك المنتج حتى يتجانس",
+          "en": "Stir product until uniform before application"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Appliquer une première couche régulière",
+          "ar": "طبّق الطبقة الأولى بالرول",
+          "en": "Apply an even first coat"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Armer joints et relevés",
+          "ar": "عزّز الفواصل والالتقاءات بالشريط",
+          "en": "Reinforce joints and upstands"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Recouvrir après séchage selon fiche",
+          "ar": "طبّق الطبقة التالية بعد الجفاف المطلوب",
+          "en": "Overcoat after drying as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PROOF-EP-PRIM",
+    "slug": "fenek-proof-ep-prim",
+    "sprite": "/images/application-v3/fenek-proof-ep-prim-steps.webp",
+    "sha256": "6595c80e45471769f599f93da1564101e96e6a777a7c089accd6d1961323cb32",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Préparer mécaniquement le support",
+          "ar": "حضّر الخرسانة ميكانيكيًا ونظّفها",
+          "en": "Mechanically prepare the substrate"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et protection",
+          "ar": "ارتدِ القفازات والنظارات والملابس الواقية",
+          "en": "Wear gloves, goggles and protective equipment"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Mélanger A et B selon fiche",
+          "ar": "اخلط المكونين بالنسبة المعتمدة",
+          "en": "Mix components A and B as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Appliquer le primaire sans zones sèches",
+          "ar": "وزّع البرايمر بالرول أو الممسحة",
+          "en": "Apply primer without missed areas"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Sabler si le système le prévoit",
+          "ar": "انثر الرمل عند اشتراط النظام",
+          "en": "Broadcast sand if the system requires it"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Recouvrir dans le délai prescrit",
+          "ar": "طبّق الطلاء ضمن نافذة التغطية",
+          "en": "Overcoat within the prescribed time"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PROOF-EP-SR",
+    "slug": "fenek-proof-ep-sr",
+    "sprite": "/images/application-v3/fenek-proof-ep-sr-steps.webp",
+    "sha256": "3302af85546cde951d7f014f7661ac4c110c8fd8641608c5b29417dc96b56532",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Préparer, sécher et primer le sol",
+          "ar": "حضّر الأرضية وجففها وطبّق البرايمر",
+          "en": "Prepare, dry and prime the floor"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter les EPI et ventiler",
+          "ar": "ارتدِ معدات الوقاية واستعمل التهوية",
+          "en": "Wear PPE and ensure ventilation"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Mélanger les deux composants selon fiche",
+          "ar": "اخلط المكونين حسب النشرة الفنية",
+          "en": "Mix both components as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Verser la résine sur le sol",
+          "ar": "اسكب الراتنج على السطح المجهز",
+          "en": "Pour resin onto the floor"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Répartir à la raclette crantée",
+          "ar": "وزّع الطلاء بممسحة مسننة",
+          "en": "Spread with a notched squeegee"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Débuller puis protéger la surface",
+          "ar": "مرر رول إزالة الفقاعات ثم احمِه",
+          "en": "De-air and protect the surface"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PROOF-EP-SB",
+    "slug": "fenek-proof-ep-sb",
+    "sprite": "/images/application-v3/fenek-proof-ep-sb-steps.webp",
+    "sha256": "d7102e6370c5567157f8bd34c2d16ffe9e64cbe3cf599aac2d6bcf5e1dc00494",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Rendre les deux faces propres et rugueuses",
+          "ar": "خشّن السطحين ونظّفهما وجففهما",
+          "en": "Clean and roughen both bonding faces"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter les EPI adaptés",
+          "ar": "ارتدِ القفازات والنظارات والملابس الواقية",
+          "en": "Wear appropriate PPE"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Mélanger A et B selon fiche",
+          "ar": "اخلط المكونين حتى يتجانسا",
+          "en": "Mix components A and B as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Enduire les deux faces à assembler",
+          "ar": "وزّع اللاصق على وجهي الالتصاق",
+          "en": "Coat both faces to be joined"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Assembler et maintenir en pression",
+          "ar": "اجمع السطحين وثبّتهما تحت ضغط",
+          "en": "Assemble and hold under pressure"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Maintenir jusqu’au durcissement prescrit",
+          "ar": "اترك التثبيت حتى التصلب الكامل",
+          "en": "Hold until the prescribed cure is reached"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PROOF-EP-INJ",
+    "slug": "fenek-proof-ep-inj",
+    "sprite": "/images/application-v3/fenek-proof-ep-inj-steps.webp",
+    "sha256": "41dba2b1f37444c4395b9422b662647d3aab40affbe5b015ed49be3557b75f38",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Repérer les fissures et poser les injecteurs",
+          "ar": "حدّد الشقوق وثبّت منافذ الحقن",
+          "en": "Locate cracks and install injection ports"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter les EPI et ventiler",
+          "ar": "ارتدِ القفازات والنظارات والملابس الواقية",
+          "en": "Wear PPE and ensure ventilation"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Obturer la fissure en surface",
+          "ar": "أغلق الشق سطحيًا قبل الحقن",
+          "en": "Seal the crack at the surface"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Mélanger A et B selon fiche",
+          "ar": "اخلط الراتنج حسب النشرة الفنية",
+          "en": "Mix components A and B as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Injecter progressivement par les packers",
+          "ar": "احقن الراتنج تدريجيًا من الأسفل",
+          "en": "Inject progressively through the packers"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Retirer les injecteurs puis reboucher",
+          "ar": "انزع المنافذ ورمّم السطح بعد التصلب",
+          "en": "Remove the injection ports and fill holes"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PROOF-EP-ANC",
+    "slug": "fenek-proof-ep-anc",
+    "sprite": "/images/application-v3/fenek-proof-ep-anc-steps.webp",
+    "sha256": "17ff8224e3231b11d8c8f167fcd954d88a2064fcdddf7efcac9187a7c58d4263",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Percer selon les dimensions validées",
+          "ar": "اثقب حسب الأبعاد التي تحددها النشرة",
+          "en": "Drill to the approved dimensions"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Brosser et souffler le trou",
+          "ar": "نظّف الثقب بالفرشاة والنفخ",
+          "en": "Brush and blow out the hole"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Porter les EPI adaptés",
+          "ar": "ارتدِ القفازات والنظارات ومعدات الوقاية",
+          "en": "Wear appropriate PPE"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Préparer et purger la cartouche",
+          "ar": "جهّز الخرطوشة وتخلص من الجرعة الأولى",
+          "en": "Prepare and purge the cartridge"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Injecter en partant du fond",
+          "ar": "احقن من قاع الثقب تدريجيًا",
+          "en": "Inject starting at the back of the hole"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Insérer puis attendre avant chargement",
+          "ar": "أدخل القضيب ولا تحمّله قبل التصلب",
+          "en": "Insert and wait before loading"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PROOF-PU-INJ",
+    "slug": "fenek-proof-pu-inj",
+    "sprite": "/images/application-v3/fenek-proof-pu-inj-steps.webp",
+    "sha256": "607c34bfba93beb69435f9f7758f8e781f311f8650479f0ea59d9dc044889bf5",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Repérer la fuite et poser les injecteurs",
+          "ar": "حدّد تسرب الماء وثبّت منافذ الحقن",
+          "en": "Locate the leak and install injection ports"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter les EPI et ventiler",
+          "ar": "استخدم الوقاية والتنفس الملائم حسب النشرة",
+          "en": "Wear PPE and ensure ventilation"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Préparer la résine selon fiche",
+          "ar": "حضّر مادة الحقن وفق النشرة الفنية",
+          "en": "Prepare the resin as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Injecter progressivement à la pompe",
+          "ar": "احقن بالمضخة تدريجيًا",
+          "en": "Inject progressively with the pump"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Contrôler la fuite et réinjecter si nécessaire",
+          "ar": "تحقق من توقف التسرب وأعد عند الحاجة",
+          "en": "Check the leak and reinject if needed"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Retirer les injecteurs et reboucher",
+          "ar": "انزع المنافذ وأغلق فتحاتها",
+          "en": "Remove injectors and fill the holes"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PROOF-PU-SEAL",
+    "slug": "fenek-proof-pu-seal",
+    "sprite": "/images/application-v3/fenek-proof-pu-seal-steps.webp",
+    "sha256": "80b503c876cebf6d9c36f97605ba666be9b931e8580f35945a9e5cffeec497bb",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et sécher le joint",
+          "ar": "نظّف الفاصل وجففه جيدًا",
+          "en": "Clean and dry the joint"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter les EPI adaptés",
+          "ar": "ارتدِ القفازات والنظارات والوقاية الملائمة",
+          "en": "Wear appropriate PPE"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Poser le fond de joint adapté",
+          "ar": "ركّب حبل خلفية الفاصل المناسب",
+          "en": "Insert the appropriate backer rod"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Appliquer un primaire si requis",
+          "ar": "طبّق البرايمر عند الحاجة",
+          "en": "Apply primer if required"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Extruder le mastic sans bulles",
+          "ar": "املأ الفاصل بالمعجون دون فقاعات",
+          "en": "Extrude sealant without air bubbles"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Lisser puis protéger pendant la cure",
+          "ar": "سوّ الفاصل واتركه يتصلب",
+          "en": "Tool the sealant and protect while curing"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "FLOW-WR-N",
+    "slug": "fenek-flow-wr-n",
+    "sprite": "/images/application-v3/fenek-flow-wr-n-steps.webp",
+    "sha256": "16c5fe878e04aba700c39cab03889ad1c73ea076a318249206eb7920580ca4f0",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Vérifier les matériaux et leur compatibilité",
+          "ar": "تحقق من مواد الخرسانة وتوافقها",
+          "en": "Check materials and compatibility"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants et lunettes",
+          "ar": "ارتدِ القفازات والنظارات الواقية",
+          "en": "Wear gloves and safety glasses"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Doser selon la fiche technique",
+          "ar": "قِس الجرعة حسب النشرة الفنية",
+          "en": "Measure dosage according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Incorporer selon la fiche au malaxeur",
+          "ar": "أضف المنتج إلى ماء الخلط",
+          "en": "Introduce into the mixer as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Malaxer pour répartir l’adjuvant",
+          "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+          "en": "Mix until the admixture is evenly dispersed"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Contrôler la consistance par essais",
+          "ar": "تحقق من القوام بالتجارب الأولية",
+          "en": "Check consistency through trials"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "FLOW-SP-HR",
+    "slug": "fenek-flow-sp-hr",
+    "sprite": "/images/application-v3/fenek-flow-sp-hr-steps.webp",
+    "sha256": "16c5fe878e04aba700c39cab03889ad1c73ea076a318249206eb7920580ca4f0",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Vérifier les matériaux et leur compatibilité",
+          "ar": "تحقق من مواد الخرسانة وتوافقها",
+          "en": "Check materials and compatibility"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants et lunettes",
+          "ar": "ارتدِ القفازات والنظارات الواقية",
+          "en": "Wear gloves and safety glasses"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Doser selon la fiche technique",
+          "ar": "قِس الجرعة حسب النشرة الفنية",
+          "en": "Measure dosage according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Incorporer selon la fiche au malaxeur",
+          "ar": "أضف المنتج إلى ماء الخلط",
+          "en": "Introduce into the mixer as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Malaxer pour répartir l’adjuvant",
+          "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+          "en": "Mix until the admixture is evenly dispersed"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Contrôler la consistance par essais",
+          "ar": "تحقق من القوام بالتجارب الأولية",
+          "en": "Check consistency through trials"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "FLOW-SP-RT",
+    "slug": "fenek-flow-sp-rt",
+    "sprite": "/images/application-v3/fenek-flow-sp-rt-steps.webp",
+    "sha256": "592bed2a43a11bf22bcdcc2965dd3e96ef25214071d37dbf9f2d2554835702e9",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Vérifier les matériaux et leur compatibilité",
+          "ar": "تحقق من مواد الخرسانة وتوافقها",
+          "en": "Check materials and compatibility"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants et lunettes",
+          "ar": "ارتدِ القفازات والنظارات الواقية",
+          "en": "Wear gloves and safety glasses"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Doser selon la fiche technique",
+          "ar": "قِس الجرعة حسب النشرة الفنية",
+          "en": "Measure dosage according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Incorporer selon la fiche au malaxeur",
+          "ar": "أضف المنتج إلى ماء الخلط",
+          "en": "Introduce into the mixer as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Malaxer pour répartir l’adjuvant",
+          "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+          "en": "Mix until the admixture is evenly dispersed"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Contrôler le maintien de consistance",
+          "ar": "تحقق من بقاء القوام خلال العمل",
+          "en": "Check slump retention"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "FLOW-SP-PF",
+    "slug": "fenek-flow-sp-pf",
+    "sprite": "/images/application-v3/fenek-flow-sp-pf-steps.webp",
+    "sha256": "e7c6ec49c0d1b95a722ba47c347e36d727cf7ed8dff59ff072ccf814be35ace3",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Vérifier les matériaux et leur compatibilité",
+          "ar": "تحقق من مواد الخرسانة وتوافقها",
+          "en": "Check materials and compatibility"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants et lunettes",
+          "ar": "ارتدِ القفازات والنظارات الواقية",
+          "en": "Wear gloves and safety glasses"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Doser selon la fiche technique",
+          "ar": "قِس الجرعة حسب النشرة الفنية",
+          "en": "Measure dosage according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Incorporer selon la fiche au malaxeur",
+          "ar": "أضف المنتج إلى ماء الخلط",
+          "en": "Introduce into the mixer as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Malaxer pour répartir l’adjuvant",
+          "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+          "en": "Mix until the admixture is evenly dispersed"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Contrôler les résistances par essais",
+          "ar": "تحقق من المقاومة المبكرة بالتجارب",
+          "en": "Verify strength through testing"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "FLOW-RT",
+    "slug": "fenek-flow-rt",
+    "sprite": "/images/application-v3/fenek-flow-rt-steps.webp",
+    "sha256": "24a7acc8f9e88bbf32bcee05d401d28976e3c6ae9b7a6a72105c26ec5deafbfd",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Vérifier les matériaux et leur compatibilité",
+          "ar": "تحقق من مواد الخرسانة وتوافقها",
+          "en": "Check materials and compatibility"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants et lunettes",
+          "ar": "ارتدِ القفازات والنظارات الواقية",
+          "en": "Wear gloves and safety glasses"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Doser selon la fiche technique",
+          "ar": "قِس الجرعة حسب النشرة الفنية",
+          "en": "Measure dosage according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Incorporer selon la fiche au malaxeur",
+          "ar": "أضف المنتج إلى ماء الخلط",
+          "en": "Introduce into the mixer as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Malaxer pour répartir l’adjuvant",
+          "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+          "en": "Mix until the admixture is evenly dispersed"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Contrôler les temps de prise",
+          "ar": "راقب زمن الشك حسب الحرارة",
+          "en": "Check setting times"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "FLOW-AC",
+    "slug": "fenek-flow-ac",
+    "sprite": "/images/application-v3/fenek-flow-ac-steps.webp",
+    "sha256": "0c7858a59aca29e0a1a6d23d85f7de4ed9a04cca6c30c50a029ffb4369f557b2",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Vérifier les matériaux et leur compatibilité",
+          "ar": "تحقق من مواد الخرسانة وتوافقها",
+          "en": "Check materials and compatibility"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants et lunettes",
+          "ar": "ارتدِ القفازات والنظارات الواقية",
+          "en": "Wear gloves and safety glasses"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Doser selon la fiche technique",
+          "ar": "قِس الجرعة حسب النشرة الفنية",
+          "en": "Measure dosage according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Incorporer selon la fiche au malaxeur",
+          "ar": "أضف المنتج إلى ماء الخلط",
+          "en": "Introduce into the mixer as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Malaxer pour répartir l’adjuvant",
+          "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+          "en": "Mix until the admixture is evenly dispersed"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Vérifier prise et compatibilité armatures",
+          "ar": "تحقق من التسارع وخلو الكلوريدات",
+          "en": "Check setting and reinforcement compatibility"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "FLOW-AE",
+    "slug": "fenek-flow-ae",
+    "sprite": "/images/application-v3/fenek-flow-ae-steps.webp",
+    "sha256": "0e5f768c2f0ae40992b051c6a751c4140599cc8bd73145c3691e5c189d373701",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Vérifier les matériaux et leur compatibilité",
+          "ar": "تحقق من مواد الخرسانة وتوافقها",
+          "en": "Check materials and compatibility"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants et lunettes",
+          "ar": "ارتدِ القفازات والنظارات الواقية",
+          "en": "Wear gloves and safety glasses"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Doser selon la fiche technique",
+          "ar": "قِس الجرعة حسب النشرة الفنية",
+          "en": "Measure dosage according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Incorporer selon la fiche au malaxeur",
+          "ar": "أضف المنتج إلى ماء الخلط",
+          "en": "Introduce into the mixer as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Malaxer pour répartir l’adjuvant",
+          "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+          "en": "Mix until the admixture is evenly dispersed"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Mesurer l’air du béton frais",
+          "ar": "قِس محتوى الهواء في الخرسانة الطرية",
+          "en": "Measure air content in fresh concrete"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "FLOW-WP",
+    "slug": "fenek-flow-wp",
+    "sprite": "/images/application-v3/fenek-flow-wp-steps.webp",
+    "sha256": "54e3b39e5004b2975e5788cedbfcf074a8166da92db593e97d8629a24d239f21",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Vérifier les matériaux et leur compatibilité",
+          "ar": "تحقق من مواد الخرسانة وتوافقها",
+          "en": "Check materials and compatibility"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants et lunettes",
+          "ar": "ارتدِ القفازات والنظارات الواقية",
+          "en": "Wear gloves and safety glasses"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Doser selon la fiche technique",
+          "ar": "قِس الجرعة حسب النشرة الفنية",
+          "en": "Measure dosage according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Incorporer selon la fiche au malaxeur",
+          "ar": "أضف المنتج إلى ماء الخلط",
+          "en": "Introduce into the mixer as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Malaxer pour répartir l’adjuvant",
+          "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+          "en": "Mix until the admixture is evenly dispersed"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Vibrer puis assurer la cure",
+          "ar": "ادمك الخرسانة واحمها أثناء المعالجة",
+          "en": "Vibrate then ensure curing"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "FLOW-VMA",
+    "slug": "fenek-flow-vma",
+    "sprite": "/images/application-v3/fenek-flow-vma-steps.webp",
+    "sha256": "0ecad6d855a3ff712f94ac09d2b47c7c0a68cf86ea7680b3f602f34cd48e25a9",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Vérifier les matériaux et leur compatibilité",
+          "ar": "تحقق من مواد الخرسانة وتوافقها",
+          "en": "Check materials and compatibility"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants et lunettes",
+          "ar": "ارتدِ القفازات والنظارات الواقية",
+          "en": "Wear gloves and safety glasses"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Doser selon la fiche technique",
+          "ar": "قِس الجرعة حسب النشرة الفنية",
+          "en": "Measure dosage according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Incorporer selon la fiche au malaxeur",
+          "ar": "أضف المنتج إلى ماء الخلط",
+          "en": "Introduce into the mixer as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Malaxer pour répartir l’adjuvant",
+          "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+          "en": "Mix until the admixture is evenly dispersed"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Contrôler étalement et stabilité",
+          "ar": "تحقق من الانتشار ومقاومة الانفصال",
+          "en": "Check flow and stability"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "FLOW-CI",
+    "slug": "fenek-flow-ci",
+    "sprite": "/images/application-v3/fenek-flow-ci-steps.webp",
+    "sha256": "aeceb9d4a9bfc2195175780c145f50a3930c33a222761b27ee427664501d98ee",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Vérifier les matériaux et leur compatibilité",
+          "ar": "تحقق من مواد الخرسانة وتوافقها",
+          "en": "Check materials and compatibility"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants et lunettes",
+          "ar": "ارتدِ القفازات والنظارات الواقية",
+          "en": "Wear gloves and safety glasses"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Doser selon la fiche technique",
+          "ar": "قِس الجرعة حسب النشرة الفنية",
+          "en": "Measure dosage according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Incorporer selon la fiche au malaxeur",
+          "ar": "أضف المنتج إلى ماء الخلط",
+          "en": "Introduce into the mixer as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Malaxer pour répartir l’adjuvant",
+          "ar": "اخلط حتى تتوزع الإضافة بالتساوي",
+          "en": "Mix until the admixture is evenly dispersed"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Vérifier la durabilité par essais",
+          "ar": "تحقق من أداء الحماية بالتجارب",
+          "en": "Verify durability through testing"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "FLOW-CURE",
+    "slug": "fenek-flow-cure",
+    "sprite": "/images/application-v3/fenek-flow-cure-steps.webp",
+    "sha256": "e15c45c2fadbadbae6ba7b43cb17d9e671f7e65e5ac751e9152ad636f83a5080",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Attendre la disparition du ressuage",
+          "ar": "انتظر اختفاء ماء النزف من الخرسانة",
+          "en": "Wait until bleeding has ceased"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter les EPI de pulvérisation",
+          "ar": "ارتدِ نظارات الرش والقفازات والوقاية",
+          "en": "Wear PPE suitable for spraying"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Préparer sans dilution non autorisée",
+          "ar": "حضّر المنتج دون تخفيف غير معتمد",
+          "en": "Prepare without unauthorized dilution"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Pulvériser sur le béton frais",
+          "ar": "رش مادة المعالجة على الخرسانة",
+          "en": "Spray onto fresh concrete"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Vérifier la couverture uniforme",
+          "ar": "غطِّ السطح بطبقة منتظمة",
+          "en": "Check even coverage"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Protéger et vérifier avant revêtement",
+          "ar": "احمِ السطح وراجع التوافق قبل الطلاء",
+          "en": "Protect and check before overcoating"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "FLOW-LAT",
+    "slug": "fenek-flow-lat",
+    "sprite": "/images/application-v3/fenek-flow-lat-steps.webp",
+    "sha256": "86fbc798843022e01c3b711e2c0f1fdb99b23f85a30e46ae0f12ee48100a6a7a",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et humidifier sans eau stagnante",
+          "ar": "نظّف السطح ورطبه دون تجمع",
+          "en": "Clean and dampen without standing water"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants et lunettes",
+          "ar": "ارتدِ القفازات والنظارات الواقية",
+          "en": "Wear gloves and safety glasses"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Préparer la solution selon fiche",
+          "ar": "حضّر المحلول حسب النشرة الفنية",
+          "en": "Prepare the solution as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Brosser le pont d’adhérence",
+          "ar": "ادهن الجسر الرابط بالفرشاة",
+          "en": "Brush on the bonding bridge"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Appliquer le mortier frais sur frais",
+          "ar": "طبّق المونة على الجسر وهو رطب",
+          "en": "Apply fresh mortar onto the fresh bonding coat"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Assurer la cure du mortier",
+          "ar": "احمِ المونة أثناء المعالجة",
+          "en": "Ensure mortar curing"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PAINT-INT-M",
+    "slug": "fenek-paint-int-m",
+    "sprite": "/images/application-v3/fenek-paint-int-m-steps.webp",
+    "sha256": "1f8399fdafdeb25758bac01ffe98122951c2db53babfff5b70648954c56c8aa0",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Réparer, nettoyer et sécher le mur",
+          "ar": "أصلح الجدار ونظفه وجففه",
+          "en": "Repair, clean and dry the wall"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et ventiler",
+          "ar": "ارتدِ القفازات والنظارات مع التهوية",
+          "en": "Wear gloves, goggles and ensure ventilation"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Appliquer une sous-couche adaptée",
+          "ar": "طبّق طبقة الأساس المناسبة",
+          "en": "Apply a suitable undercoat"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Homogénéiser et diluer si prescrit",
+          "ar": "حرّك الطلاء وخفّفه عند الحاجة",
+          "en": "Stir and dilute only as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Peindre au rouleau régulièrement",
+          "ar": "طبّق الطلاء بالرول بالتساوي",
+          "en": "Paint evenly with a roller"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Recouvrir après séchage selon fiche",
+          "ar": "أعد الطلاء بعد الجفاف المحدد",
+          "en": "Overcoat after drying as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PAINT-INT-S",
+    "slug": "fenek-paint-int-s",
+    "sprite": "/images/application-v3/fenek-paint-int-s-steps.webp",
+    "sha256": "1f8399fdafdeb25758bac01ffe98122951c2db53babfff5b70648954c56c8aa0",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Réparer, nettoyer et sécher le mur",
+          "ar": "أصلح الجدار ونظفه وجففه",
+          "en": "Repair, clean and dry the wall"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et ventiler",
+          "ar": "ارتدِ القفازات والنظارات مع التهوية",
+          "en": "Wear gloves, goggles and ensure ventilation"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Appliquer une sous-couche adaptée",
+          "ar": "طبّق طبقة الأساس المناسبة",
+          "en": "Apply a suitable undercoat"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Homogénéiser et diluer si prescrit",
+          "ar": "حرّك الطلاء وخفّفه عند الحاجة",
+          "en": "Stir and dilute only as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Peindre au rouleau régulièrement",
+          "ar": "طبّق الطلاء بالرول بالتساوي",
+          "en": "Paint evenly with a roller"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Recouvrir après séchage selon fiche",
+          "ar": "أعد الطلاء بعد الجفاف المحدد",
+          "en": "Overcoat after drying as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PAINT-INT-WA",
+    "slug": "fenek-paint-int-wa",
+    "sprite": "/images/application-v3/fenek-paint-int-wa-steps.webp",
+    "sha256": "1f8399fdafdeb25758bac01ffe98122951c2db53babfff5b70648954c56c8aa0",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Réparer, nettoyer et sécher le mur",
+          "ar": "أصلح الجدار ونظفه وجففه",
+          "en": "Repair, clean and dry the wall"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants, lunettes et ventiler",
+          "ar": "ارتدِ القفازات والنظارات مع التهوية",
+          "en": "Wear gloves, goggles and ensure ventilation"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Appliquer une sous-couche adaptée",
+          "ar": "طبّق طبقة الأساس المناسبة",
+          "en": "Apply a suitable undercoat"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Homogénéiser et diluer si prescrit",
+          "ar": "حرّك الطلاء وخفّفه عند الحاجة",
+          "en": "Stir and dilute only as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Peindre au rouleau régulièrement",
+          "ar": "طبّق الطلاء بالرول بالتساوي",
+          "en": "Paint evenly with a roller"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Recouvrir après séchage selon fiche",
+          "ar": "أعد الطلاء بعد الجفاف المحدد",
+          "en": "Overcoat after drying as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PAINT-FAC-M",
+    "slug": "fenek-paint-fac-m",
+    "sprite": "/images/application-v3/fenek-paint-fac-m-steps.webp",
+    "sha256": "0d8d9633dcc36e8096c09b52421eb5d745ab6a969960a5b389d2b5866084ed00",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et réparer la façade",
+          "ar": "نظّف الواجهة وعالج العيوب",
+          "en": "Clean and repair the façade"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter les EPI, éviter les intempéries",
+          "ar": "ارتدِ الوقاية وتجنب المطر والشمس",
+          "en": "Wear PPE and avoid severe weather"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Appliquer le primaire adapté",
+          "ar": "طبّق الأساس الموافق للسطح",
+          "en": "Apply a suitable primer"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Homogénéiser selon la fiche technique",
+          "ar": "حرّك الطلاء حسب النشرة الفنية",
+          "en": "Stir according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Appliquer sur façade au rouleau",
+          "ar": "اطلِ الواجهة بالتساوي بالرول",
+          "en": "Apply to façade with a roller"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Protéger le revêtement pendant le séchage",
+          "ar": "احمِ الطلاء حتى الجفاف",
+          "en": "Protect the coating while drying"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PAINT-FAC-EL",
+    "slug": "fenek-paint-fac-el",
+    "sprite": "/images/application-v3/fenek-paint-fac-el-steps.webp",
+    "sha256": "0d8d9633dcc36e8096c09b52421eb5d745ab6a969960a5b389d2b5866084ed00",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et réparer la façade",
+          "ar": "نظّف الواجهة وعالج العيوب",
+          "en": "Clean and repair the façade"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter les EPI, éviter les intempéries",
+          "ar": "ارتدِ الوقاية وتجنب المطر والشمس",
+          "en": "Wear PPE and avoid severe weather"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Appliquer le primaire adapté",
+          "ar": "طبّق الأساس الموافق للسطح",
+          "en": "Apply a suitable primer"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Homogénéiser selon la fiche technique",
+          "ar": "حرّك الطلاء حسب النشرة الفنية",
+          "en": "Stir according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Appliquer sur façade au rouleau",
+          "ar": "اطلِ الواجهة بالتساوي بالرول",
+          "en": "Apply to façade with a roller"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Protéger le revêtement pendant le séchage",
+          "ar": "احمِ الطلاء حتى الجفاف",
+          "en": "Protect the coating while drying"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PAINT-FAC-SX",
+    "slug": "fenek-paint-fac-sx",
+    "sprite": "/images/application-v3/fenek-paint-fac-sx-steps.webp",
+    "sha256": "0d8d9633dcc36e8096c09b52421eb5d745ab6a969960a5b389d2b5866084ed00",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et réparer la façade",
+          "ar": "نظّف الواجهة وعالج العيوب",
+          "en": "Clean and repair the façade"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter les EPI, éviter les intempéries",
+          "ar": "ارتدِ الوقاية وتجنب المطر والشمس",
+          "en": "Wear PPE and avoid severe weather"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Appliquer le primaire adapté",
+          "ar": "طبّق الأساس الموافق للسطح",
+          "en": "Apply a suitable primer"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Homogénéiser selon la fiche technique",
+          "ar": "حرّك الطلاء حسب النشرة الفنية",
+          "en": "Stir according to the technical sheet"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Appliquer sur façade au rouleau",
+          "ar": "اطلِ الواجهة بالتساوي بالرول",
+          "en": "Apply to façade with a roller"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Protéger le revêtement pendant le séchage",
+          "ar": "احمِ الطلاء حتى الجفاف",
+          "en": "Protect the coating while drying"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PAINT-PRIM-A",
+    "slug": "fenek-paint-prim-a",
+    "sprite": "/images/application-v3/fenek-paint-prim-a-steps.webp",
+    "sha256": "9291e07d5da28439e56e74558ee7b3d454dd077d1f1842023b9f02913c832d35",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et dépoussiérer le support",
+          "ar": "نظّف السطح وأزل الغبار",
+          "en": "Clean the substrate and remove dust"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants et lunettes",
+          "ar": "ارتدِ القفازات والنظارات الواقية",
+          "en": "Wear gloves and safety glasses"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Préparer le primaire selon fiche",
+          "ar": "جهّز البرايمر حسب النشرة الفنية",
+          "en": "Prepare primer as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Appliquer une couche uniforme",
+          "ar": "وزّع طبقة رقيقة ومتجانسة",
+          "en": "Apply an even coat"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Contrôler l’absorption sans flaques",
+          "ar": "تحقق من تشرب السطح دون تجمع",
+          "en": "Check absorption without puddles"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Recouvrir après séchage prescrit",
+          "ar": "أعد الطلاء بعد الجفاف المعتمد",
+          "en": "Overcoat after the prescribed drying time"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PAINT-PRIM-FX",
+    "slug": "fenek-paint-prim-fx",
+    "sprite": "/images/application-v3/fenek-paint-prim-fx-steps.webp",
+    "sha256": "9291e07d5da28439e56e74558ee7b3d454dd077d1f1842023b9f02913c832d35",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et dépoussiérer le support",
+          "ar": "نظّف السطح وأزل الغبار",
+          "en": "Clean the substrate and remove dust"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants et lunettes",
+          "ar": "ارتدِ القفازات والنظارات الواقية",
+          "en": "Wear gloves and safety glasses"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Préparer le primaire selon fiche",
+          "ar": "جهّز البرايمر حسب النشرة الفنية",
+          "en": "Prepare primer as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Appliquer une couche uniforme",
+          "ar": "وزّع طبقة رقيقة ومتجانسة",
+          "en": "Apply an even coat"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Contrôler l’absorption sans flaques",
+          "ar": "تحقق من تشرب السطح دون تجمع",
+          "en": "Check absorption without puddles"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Recouvrir après séchage prescrit",
+          "ar": "أعد الطلاء بعد الجفاف المعتمد",
+          "en": "Overcoat after the prescribed drying time"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PAINT-TXT-F",
+    "slug": "fenek-paint-txt-f",
+    "sprite": "/images/application-v3/fenek-paint-txt-f-steps.webp",
+    "sha256": "de2637d682c5038cfce6e0f01482ae6b8205a15baea1f94eac1bcfcb042c47e8",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Nettoyer et primer le support",
+          "ar": "نظّف الجدار وطبّق الأساس",
+          "en": "Clean and prime the substrate"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants et lunettes",
+          "ar": "ارتدِ القفازات والنظارات الواقية",
+          "en": "Wear gloves and safety glasses"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Homogénéiser le revêtement en pâte",
+          "ar": "حرّك المعجون حتى يتجانس",
+          "en": "Stir the paste coating until uniform"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Appliquer à la lisseuse inox",
+          "ar": "وزّع المعجون بمالج من الفولاذ",
+          "en": "Apply using a stainless-steel trowel"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Structurer à la taloche",
+          "ar": "شكّل الزخرفة بالمحارة المناسبة",
+          "en": "Create texture with a float"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Protéger pendant le séchage",
+          "ar": "احمِ التشطيب حتى الجفاف التام",
+          "en": "Protect during drying"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PAINT-SOL-A",
+    "slug": "fenek-paint-sol-a",
+    "sprite": "/images/application-v3/fenek-paint-sol-a-steps.webp",
+    "sha256": "bd5c66277a9d7e5ab2b43ebc024e04ed73ec5cdcb2e1717c33966b1cf8582994",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Préparer un sol sain et sec",
+          "ar": "حضّر الأرضية وجففها جيدًا",
+          "en": "Prepare a sound, dry floor"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter les EPI et ventiler",
+          "ar": "ارتدِ الوقاية ووفّر التهوية",
+          "en": "Wear PPE and ensure ventilation"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Appliquer un primaire si requis",
+          "ar": "طبّق الأساس إذا لزم",
+          "en": "Apply primer if required"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Homogénéiser selon fiche technique",
+          "ar": "حرّك الطلاء حسب النشرة الفنية",
+          "en": "Stir as specified"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Appliquer au rouleau régulièrement",
+          "ar": "وزّع الطلاء بالرول بالتساوي",
+          "en": "Apply evenly with a roller"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Protéger puis marquer après cure",
+          "ar": "احمِ الأرضية ثم خطط بعد التصلب",
+          "en": "Protect and mark only after curing"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  },
+  {
+    "code": "PAINT-ENT-L",
+    "slug": "fenek-paint-ent-l",
+    "sprite": "/images/application-v3/fenek-paint-ent-l-steps.webp",
+    "sha256": "985ac1db6e08735e7aaa9d2d86a4952d8d50f7ac6c621a560d4b6973ff3920bc",
+    "status": "BROUILLON",
+    "steps": [
+      {
+        "image": 1,
+        "title": {
+          "fr": "Préparer et réparer le support",
+          "ar": "نظّف الجدار وأصلح عيوبه",
+          "en": "Prepare and repair the substrate"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 2,
+        "title": {
+          "fr": "Porter gants et lunettes",
+          "ar": "ارتدِ القفازات والنظارات الواقية",
+          "en": "Wear gloves and safety glasses"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 3,
+        "title": {
+          "fr": "Homogénéiser la pâte si nécessaire",
+          "ar": "حرّك المعجون إذا لزم",
+          "en": "Stir the paste if necessary"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 4,
+        "title": {
+          "fr": "Appliquer à la lisseuse",
+          "ar": "افرد المعجون بمالج التسوية",
+          "en": "Apply with a smoothing trowel"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 5,
+        "title": {
+          "fr": "Poncer après séchage",
+          "ar": "صنفر السطح بعد الجفاف",
+          "en": "Sand after drying"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      },
+      {
+        "image": 6,
+        "title": {
+          "fr": "Dépoussiérer avant finition",
+          "ar": "أزل الغبار ثم حضّر الطلاء",
+          "en": "Remove dust before finishing"
+        },
+        "description": {
+          "fr": "Schéma indicatif. Consulter la FT et la FDS FENEK approuvées avant toute application.",
+          "ar": "رسم توضيحي فقط. يجب مراجعة النشرة الفنية ونشرة السلامة المعتمدتين قبل التطبيق.",
+          "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
+        }
+      }
+    ]
+  }
+]
