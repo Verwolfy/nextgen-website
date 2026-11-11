@@ -457,3 +457,35 @@ Créer le dépôt GitHub privé dédié (indisponible via le connecteur actuel),
 - Garde-fous ajoutés : image SHA, vérification des trois locales et contrôle de l'image/du format réellement servi par Cloudflare dans `scripts/check_live_production.py`.
 - Rapport : `docs/LOT126_CM_O2P_MAQUETTE_SUPABASE_20261111.md`.
 - À conclure : PR, CI, fusion et contrôle live distinct.
+
+
+---
+
+## 2026-11-11 — Lot 129 : V3 BOND-C2FT, contrôle produit 3/50
+
+- Source utilisateur : `NEXTGEN_modes_emploi_V3.zip` (50 références × 6 PNG/SVG).
+- BOND-C1T et BOND-C1TE déjà revus ; BOND-C2FT contrôlé visuellement et ajouté sur branche `feat/lot129-v3-source-qa-c2ft-20261111`.
+- Les six **zones graphiques** C2FT/C1TE sont identiques au pixel près (SHA256 concaténé `6ea7fb90b80a57a5b0f293ba95e79afea2063765d5e2601563ca974758c0d321`) ; les légendes incrustées divergent. C2FT affiche uniquement la zone graphique commune via un recadrage à 72%, avec ses propres titres/explanations FR/AR/EN, sans dosage ni durée improvisés.
+- Vérification hors ligne de la découpe sur les 6 images effectuée ; **CI/build GitHub et déploiement Cloudflare non encore attestés** au moment de l'édition de cette entrée.
+- Le ZIP compte 43 lignes `suivi_50.csv` erronées (0 PNG/SVG alors que les dossiers contiennent six de chaque).
+- Blocage V3 de BOND-R2, R3, R4 : pastille « 3 » à l'étape 04, à corriger avant mise en ligne.
+- Aucun changement Supabase/produit commercial/FT/FDS. Reste : CI → revue PR → fusion si tests verts → contrôle live indépendant → BOND-C2TE.
+- Détails : `docs/LOT129_V3_C2FT_20261111.md`.
+
+
+---
+
+## 2026-11-11 — Lot 130 : intégration complète des 50 notices V3, branche de vérification
+
+- Source utilisateur `NEXTGEN_modes_emploi_V3.zip`, SHA256 `ed89d4959c921bdfcb64a5c9eeb2fe205a78e6a32123000ef3d73ee60269d830`. Les 50 dossiers (300 PNG + 300 SVG) ont été inventoriés et contrôlés sur cinq planches-contact.
+- 50 codes et slugs comparés **sans écart** à `src/data/catalogue-projets.json` via le connecteur GitHub (50/50, trois langues renseignées).
+- 48 nouveaux sprites de référence publiés **sur la branche**, les deux sprites historiques C1T et C1TE conservés. 41 blobs Git distincts pour les 48 chemins ajoutés, empreintes Git retournées conformes aux empreintes calculées localement. Les images sources ne sont pas supprimées.
+- Les trois pastilles erronées de BOND-R2/R3/R4 à l'étape 04 sont remplacées par « 4 » dans les sprites propres aux produits ; rendu 6 panneaux contrôlé sur l'archive générée.
+- BOND-C2FT dispose désormais de son **propre** sprite issu de `fenek-bond-c2ft/`, sans recadrage ni texte C1TE.
+- `src/data/fenek-v3-manuals.json` : 50 références, 300 étapes, titres FR/AR d'origine et EN éditoriales ; toutes les notices et warnings restent `BROUILLON` et sans valeur [LABO] inventée.
+- `scripts/check_application_guides.py` + `scripts/check_live_application_guides.py` contrôlent 150 pages, les URL et les SHA exacts. Recette Chromium ajoute les 50 pages mobiles FR et vérifie chaque sprite et sa légende.
+- Tests ajoutés : `tests/test_lot130_v3_50_products.py`. Revue C2FT mise à jour et tests hérités compatibles avec les deux premiers sprites.
+- À la vérification pendant cette édition, CI **Astro build + sécurité : SUCCESS** et **Cloudflare smoke PR (sans confirmation de déploiement production) : SUCCESS** pour le commit `de47089b`; navigateur et Lighthouse sur ce commit étaient encore en exécution.
+- **Statut livraison : PR #134 ouverte, non fusionnée ; aucun SHA de déploiement Cloudflare validé pour ce lot**. Prochaine étape : obtenir tous les workflows applicables au vert, fusionner sur `main` sans force-push, puis contrôler le job LIVE avec comparaison SHA réel.
+- Aucun changement Supabase, RLS/GRANT, prix, produits certifiés/commercialisés, FT/FDS ni paramètres LABO.
+- Docs détaillées : `docs/LOT130_V3_50_PRODUITS_20261111.md` et `docs/NEXTGEN_V3_ASSET_AUDIT_20261111.json`.

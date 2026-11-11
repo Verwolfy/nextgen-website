@@ -1,0 +1,912 @@
+{
+  "source_zip_sha256": "ed89d4959c921bdfcb64a5c9eeb2fe205a78e6a32123000ef3d73ee60269d830",
+  "corrections_zip_sha256": "017f70b95d95e17886901f955d5b75d9c03f8af234811233336399c19f6df490",
+  "products": [
+    {
+      "code": "BOND-C1T",
+      "slug": "fenek-bond-c1t",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "833a54cc1ac69570a446cc411423e22c5789a2efa597a4eef7ca701ad37fc74c",
+        "02_epi.png": "c767d4dc7bc6381c8bbfd8e1f31e48549b594d939a787d5806ba091cbd4c7602",
+        "03_gachage.png": "ecbb94776fa0c8491764dc13e11e0bb7fad2c7ddfbdaaafdbcc4b9be5102844d",
+        "04_repos.png": "5492a8016643a71794641c60b6ed030f733bef87ff9583cc8a1db10c4fc8377f",
+        "05_encollage.png": "75542d1f85bb51938463046d9d9a727c76fd1cadc9fcade06cadb90497ce9381",
+        "06_pose.png": "cb4decfb17ae12da149f6efc3d7d44bd625ea4a7c58893a4dd74ffb6fb05ac0d"
+      },
+      "webp_sha256": "2aee69e61307f97c06656fe99ef24ccbfc5b6f585f014930fe26d8e49603d4e6",
+      "webp_bytes": 169484,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "BOND-C1TE",
+      "slug": "fenek-bond-c1te",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "8eb375dd08068028a0d1a2db7e5253a3bee05435cf8dbca7b40ce29a5a465123",
+        "02_epi.png": "c767d4dc7bc6381c8bbfd8e1f31e48549b594d939a787d5806ba091cbd4c7602",
+        "03_gachage.png": "ecbb94776fa0c8491764dc13e11e0bb7fad2c7ddfbdaaafdbcc4b9be5102844d",
+        "04_repos.png": "125b56bf0c6f3b81a37dd44587fd9162e9f43c2fd02addcedcecfc34d2bb9684",
+        "05_encollage.png": "3c87ae22d57d19e3d8470f1948b4c796482a42a2d8da06472c87f5a8819d95f4",
+        "06_pose.png": "a46b759a845dc94ae32a7c7d2b58b4c5d5c83a1fcae306053ab6c5e88a8fe797"
+      },
+      "webp_sha256": "0c4e74135325cd3fa00df2f3d7f5e6718c65a2af528d3d64439c3eceb7b8d395",
+      "webp_bytes": 179316,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "BOND-C2TE",
+      "slug": "fenek-bond-c2te",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "8eb375dd08068028a0d1a2db7e5253a3bee05435cf8dbca7b40ce29a5a465123",
+        "02_epi.png": "c767d4dc7bc6381c8bbfd8e1f31e48549b594d939a787d5806ba091cbd4c7602",
+        "03_gachage.png": "ecbb94776fa0c8491764dc13e11e0bb7fad2c7ddfbdaaafdbcc4b9be5102844d",
+        "04_repos.png": "125b56bf0c6f3b81a37dd44587fd9162e9f43c2fd02addcedcecfc34d2bb9684",
+        "05_encollage.png": "3c87ae22d57d19e3d8470f1948b4c796482a42a2d8da06472c87f5a8819d95f4",
+        "06_pose.png": "fb162099539169842d158f2f2be82dd308bdb82e5298dc0d33ef1886cdc79f56"
+      },
+      "webp_sha256": "e4cd09ab534bddef69f000e8348bd15cf798eae93b872eb117bd3ad9345c23b7",
+      "webp_bytes": 180034,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "BOND-C2TE-S1",
+      "slug": "fenek-bond-c2te-s1",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "8eb375dd08068028a0d1a2db7e5253a3bee05435cf8dbca7b40ce29a5a465123",
+        "02_epi.png": "c767d4dc7bc6381c8bbfd8e1f31e48549b594d939a787d5806ba091cbd4c7602",
+        "03_gachage.png": "ecbb94776fa0c8491764dc13e11e0bb7fad2c7ddfbdaaafdbcc4b9be5102844d",
+        "04_repos.png": "125b56bf0c6f3b81a37dd44587fd9162e9f43c2fd02addcedcecfc34d2bb9684",
+        "05_encollage.png": "e61dbd72393382c2ad4459fb2ea8eee191c302f215141b8fa9e406e50adc1a79",
+        "06_pose.png": "fb162099539169842d158f2f2be82dd308bdb82e5298dc0d33ef1886cdc79f56"
+      },
+      "webp_sha256": "fbaa477851e4b348ebfca050c3f2eb89f981bcce6688d8285e936ed124109ef3",
+      "webp_bytes": 183268,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "BOND-C2FT",
+      "slug": "fenek-bond-c2ft",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "8eb375dd08068028a0d1a2db7e5253a3bee05435cf8dbca7b40ce29a5a465123",
+        "02_epi.png": "c767d4dc7bc6381c8bbfd8e1f31e48549b594d939a787d5806ba091cbd4c7602",
+        "03_gachage.png": "ecbb94776fa0c8491764dc13e11e0bb7fad2c7ddfbdaaafdbcc4b9be5102844d",
+        "04_repos.png": "0982fefdbab403f8cf8456c3e2a5288e27487743fc973c158146c4a87d63205a",
+        "05_encollage.png": "3c87ae22d57d19e3d8470f1948b4c796482a42a2d8da06472c87f5a8819d95f4",
+        "06_pose.png": "d8cff3c39675177064bd25573edb3341d81f6b8610ccd3be6de3b119505395b0"
+      },
+      "webp_sha256": "dd49d5fe3200871aa32402b46bafa576279d2ff4a3d14a9cf5dcbaf5a34648d8",
+      "webp_bytes": 179584,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "BOND-CG1",
+      "slug": "fenek-bond-cg1",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "9a17c91c1443e89acf3c830f164b69bba2875882c99d6ef8418378cc5b05fb00",
+        "02_epi.png": "ff809c4f0fc30c72a3f979c7ecf4ae707121f54e6c850d0c02432d8f84dd6b47",
+        "03_gachage.png": "807c53956ea5eecb28fe659c7f734dcb67d62d8763fbd4ec18e1ac4f914acdfb",
+        "04_jointoiement.png": "df424b06bb8b4959beb15acb2c897f5fec2cd9c917ca0fb9be06ce4b33996d50",
+        "05_eponge.png": "aaf577bd3cd6b0f6bae2c9f6bef4a2e8682fcdf6ab63a544fbb0029df0509638",
+        "06_finition.png": "b66511d4c86f9a370de8c591aa31dd70a2d1b7b9f14edd60fa5cb2d6db9ba3b9"
+      },
+      "webp_sha256": "a5d507e07d8ff2a54c33eb953734dcaaa06bada5bf2c63b017120c99a2c46dd3",
+      "webp_bytes": 182066,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "BOND-CG2WA",
+      "slug": "fenek-bond-cg2wa",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "9a17c91c1443e89acf3c830f164b69bba2875882c99d6ef8418378cc5b05fb00",
+        "02_epi.png": "ff809c4f0fc30c72a3f979c7ecf4ae707121f54e6c850d0c02432d8f84dd6b47",
+        "03_gachage.png": "807c53956ea5eecb28fe659c7f734dcb67d62d8763fbd4ec18e1ac4f914acdfb",
+        "04_jointoiement.png": "df424b06bb8b4959beb15acb2c897f5fec2cd9c917ca0fb9be06ce4b33996d50",
+        "05_eponge.png": "aaf577bd3cd6b0f6bae2c9f6bef4a2e8682fcdf6ab63a544fbb0029df0509638",
+        "06_finition.png": "b66511d4c86f9a370de8c591aa31dd70a2d1b7b9f14edd60fa5cb2d6db9ba3b9"
+      },
+      "webp_sha256": "a5d507e07d8ff2a54c33eb953734dcaaa06bada5bf2c63b017120c99a2c46dd3",
+      "webp_bytes": 182066,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "BOND-CT-C25-F5",
+      "slug": "fenek-bond-ct-c25-f5",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "43a5b0692a1bd4dcfb6b21ce1b73a53735de5e790a9e194b1e1c3743af6d64ff",
+        "02_epi.png": "34864fe1a0cb2f28cf0ab644ac9b95304e937690f897d50949ee61ed63e2be11",
+        "03_malaxage.png": "206a5966ccbb6ae4a956ae85df3c4305aa748a1080d7ff1e47a3d6b95a5345ed",
+        "04_coulage.png": "f7013483e94b6db2a7237b15788e83c4c3e449de57256cfaac42306360998713",
+        "05_etalement.png": "8047ac15cbc26bf7e66e12e66568a1dd4b4a1747a91d6c5d6258ba8131625f59",
+        "06_debullage.png": "104626c4405ed452449133160598d32fbbfcf8c8d3568dd439331f4bc14f0e94"
+      },
+      "webp_sha256": "205c1296dbc76b41130a717b338ecd0d35152a77aeb6d6b5155445710750f88b",
+      "webp_bytes": 130062,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "BOND-R2",
+      "slug": "fenek-bond-r2",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [
+        4
+      ],
+      "source_png_sha256": {
+        "01_support.png": "292b584f08096a53ee717ef0efbab197fda099e83da4b8c0d09051bf4fb78b3b",
+        "02_armatures.png": "bf795c0d1ab5193d738dde0e83d1582c2d5c55ae88a0ec34a74201b13b90c0dc",
+        "03_humidification.png": "84a617f9ea19d0571937292535480849e9432bcf0371d9f36fee133efc2c4f71",
+        "04_gachage.png": "3b6b3a71e51a8cbd782bf4295f3ae5dda01c6001f5fdd38001f7ca159a9ead55",
+        "05_reparation.png": "a55063e50a64840ddcc2a202f45c2301d1a5110844d1d965d98854e64d666aa6",
+        "06_cure.png": "d189c7693054b1781fec17c47d775cb6f9a8917d7e7c875491f8f8190b2bb79f"
+      },
+      "webp_sha256": "cd8d16d6e7b7a7d6cc3714fbe09e82cc64a8deaa7e1176d0f3acaeffd99a31a1",
+      "webp_bytes": 118640,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "BOND-R3",
+      "slug": "fenek-bond-r3",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [
+        4
+      ],
+      "source_png_sha256": {
+        "01_support.png": "55f081da9d8c66362f389ebf2a4189e9ab1b2cc1875c8159202b2cdaca5ddcf4",
+        "02_armatures.png": "5b09b2e4d757c1e4c9ec01a0868d4cdc00d30050b5213498c6f1d17378e295f0",
+        "03_humidification.png": "bffae6d3fc18143585c3a5b9cc6ea88a056652ab1ba10abb05069d5d96a99a66",
+        "04_gachage.png": "3b6b3a71e51a8cbd782bf4295f3ae5dda01c6001f5fdd38001f7ca159a9ead55",
+        "05_reparation.png": "186c9f1c765fd464c3f6da681bec0178fac40c6171be58ef8ca945b2d8672e3d",
+        "06_cure.png": "8403a9984cdfc690dfd0cf072c4cdcd53090ba03f3224cee6cfccb1a152734c6"
+      },
+      "webp_sha256": "0b12c417c8f3bdd85bd5f6dcf584e585b9f09fe6f1253aa1ff7a24452e70c6b3",
+      "webp_bytes": 118954,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "BOND-R4",
+      "slug": "fenek-bond-r4",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [
+        4
+      ],
+      "source_png_sha256": {
+        "01_support.png": "2d5a8a979dd21d68831d48d42705d2341dee09a06b8cea52bf00fc6d71bbf496",
+        "02_armatures.png": "c83c4f49db3ae523bc748352028b0db89ca9b3a751ce7ff942157b1423088d19",
+        "03_humidification.png": "82571e1fb35fa25deeca8c800b277cfbada749d8d01949d1ff91a8c9ed59976f",
+        "04_gachage.png": "773f9df889952509e600fd9d2b456910b0273de6020b4a56dfcd72d7469414b1",
+        "05_reparation.png": "be5b25fd429dd0262bd43eacacb50a38a7329f4023300838069fd46473c7a847",
+        "06_cure.png": "7e8530fc890ff0b329179786e9479116c157a343e951aaccecafb71e22f17b8b"
+      },
+      "webp_sha256": "49478e27c05c72e71926ad55193723e444ebe7d774504662478494b01aeebc72",
+      "webp_bytes": 121276,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "BOND-GR-HR",
+      "slug": "fenek-bond-gr-hr",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_coffrage.png": "71f3d58e71ebb67082f46dfda4453309037edc5cc33464ef205e3f9042a13aa6",
+        "02_humidification.png": "68d498f49cd839a5d0f6f57191a0ec3f435509f1b641a95e0d5e246b93d7f729",
+        "03_gachage.png": "0344fc6b81338ea73a3b2233bbbd42a3fccd7d835a31ff49c05d3373c0c9cb42",
+        "04_coulage.png": "9900b6d8cc3cf8da5841c17a87de4247c006bdc5df1464bf0cb5b997284cf92a",
+        "05_remplissage.png": "6cbdc2e3de11787174d7e9d5fa7df881281b66ac3f6055864ce5b6e22c27aabb",
+        "06_cure.png": "96c9d04f4e0767db1734d3f4785497e744049f37725603090f4edbd1b64c0c29"
+      },
+      "webp_sha256": "6497a257eb25aee3601d17258ef50992bfba00621fa706c7fa400f106d01f6a0",
+      "webp_bytes": 107022,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "BOND-GP-CSII",
+      "slug": "fenek-bond-gp-csii",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "6b6f552bc2f0f035202caaf2be7ead6970c16bc35ded01422e91d6717e76b700",
+        "02_epi.png": "34864fe1a0cb2f28cf0ab644ac9b95304e937690f897d50949ee61ed63e2be11",
+        "03_gachage.png": "f8d2df62d69e1a731438350f730d5ffad6ce71eaa35596d470a2867f54b0af34",
+        "04_application.png": "c81662c1ee481d5e781fcdc94fe90a3d70b0f434bf898ed7e0531534655ee0ae",
+        "05_dressage.png": "63cfab32e26e77e34fcc72f2781597e487e43f874388b7993361660293fb699d",
+        "06_protection.png": "e160d4596b064a54b3d2f3fa0ebaf6a7910cc4def5285036ba293071df46f5a4"
+      },
+      "webp_sha256": "27a1294d889ef3df02f6799afe6451e5b3e3681f4dc41e6572826e485994ebe2",
+      "webp_bytes": 131386,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "BOND-OC-CSIII",
+      "slug": "fenek-bond-oc-csiii",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "29850befdca18ee6390f73f3affd3ea929851cd85e541c1e4fc7246a3ce1874a",
+        "02_epi.png": "34864fe1a0cb2f28cf0ab644ac9b95304e937690f897d50949ee61ed63e2be11",
+        "03_gachage.png": "9a98938dad14f1d0dd34cb5a8708c5d09da82fa84c3c8ed6aa5603eb14a03da1",
+        "04_application.png": "69a3d4b50541ad1ba08d10fa47596e06957030c496825dbce7cf34e6ba9a04bc",
+        "05_finition.png": "4bc74d8fadffe72d3f0774bd264de6972595ccbb97fa66b60c71fdd2bcff9d28",
+        "06_protection.png": "c5effef950e772df48087b973addb67cc914177a19430adabfbf4eed0378bbf2"
+      },
+      "webp_sha256": "264cc63a6dcd774c2eb8c5fcba66bd56db2801124874076d27e712fd44cfeb90",
+      "webp_bytes": 130932,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "BOND-M5",
+      "slug": "fenek-bond-m5",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_humidification.png": "bde85f1f6c976afd1824fc3e5ca58ee7111a4649fdb3f42c710970617007aef3",
+        "02_epi.png": "34864fe1a0cb2f28cf0ab644ac9b95304e937690f897d50949ee61ed63e2be11",
+        "03_gachage.png": "6dfd375f870817979a2b0e274d441b68dc357e30d5febb316d370bb323a84f7d",
+        "04_lit_mortier.png": "57f17f1d4d0d57a0e65c4199699cd97b3e28f5e9a9a398a35a36107ab9c64dc5",
+        "05_maconnerie.png": "2c6d2168bcf064f59c1cc20cec1c03d45bcef2d0d456952004df49dedc76f6db",
+        "06_joints.png": "21f77834f8767fa4567fa163e8198740586509ac8304cd4d3c9853336cdb8d40"
+      },
+      "webp_sha256": "9800652fa44e2fd1a3a5b7206a407c55cdc63a2367628ae38828550b3569735d",
+      "webp_bytes": 117432,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "BOND-M10",
+      "slug": "fenek-bond-m10",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_humidification.png": "8587d260996ec684544a23ebac372079ea755238fa0f5a02da8d2c091eb1df4d",
+        "02_epi.png": "34864fe1a0cb2f28cf0ab644ac9b95304e937690f897d50949ee61ed63e2be11",
+        "03_gachage.png": "8a0ed261cf4cea2ebabcbcb0980fa4bafb9a243e40fd11269d60bb19e6b2ec54",
+        "04_lit_mortier.png": "c8e39f18a8d0de76b17401628a26f39cfbaa550288827fab141bd42457271b06",
+        "05_maconnerie.png": "0995c1ea0df9ae201508e768059ce390a53b13d04cdaf96750b215576fb0ee03",
+        "06_joints.png": "1a04655a9abe1b7fee3f7fb4d7d2eac9da4739eb5b744a319c66985e5c428c40"
+      },
+      "webp_sha256": "3fa9cd3bceba124e34a4271b425a067f98c04119eb8facadd2a3bf236d07d10f",
+      "webp_bytes": 121516,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PROOF-CM-O1P",
+      "slug": "fenek-proof-cm-o1p",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "f2c0644ac70ff1e7a53a42735bbd7a01bce6fee80c81a3523459cf9dc9f0480a",
+        "02_epi.png": "67cd8d77c9da18525136793894e47cfa90d28856f8b1a001dd712133a5900535",
+        "03_gachage.png": "986d569519919ca9a46660d8b31b5335b6f2af02a29527ace80f4b29aa3fd082",
+        "04_renfort.png": "9f2468b1438dfa287db343f9c155c5948a936cbe15fb6bc12e8c43eb86ca5e2a",
+        "05_couches.png": "ae725bfcabe9777587e71f07b21a9bf74ae7c847daedee7ab9ed736ad1a15580",
+        "06_cure.png": "6674df9b4168c5ae8ff8ddd6770698d25857da9a8ae590a88686631df0c318cf"
+      },
+      "webp_sha256": "2054cb020b4ebe54b45f61898caece55b055b6b32de2ab4d37f00304b928ef39",
+      "webp_bytes": 170380,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PROOF-CM-O2P",
+      "slug": "fenek-proof-cm-o2p",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "4e27b0fda625912a3c1230f82c76338edc3a626d41b06bb13fa42dfc56ea684b",
+        "02_epi.png": "67cd8d77c9da18525136793894e47cfa90d28856f8b1a001dd712133a5900535",
+        "03_melange.png": "feaa9fec0d88001d484b0862e8700a9f06e80d58fe584586494f933e5f5cca9e",
+        "04_renfort.png": "2acca521cb2535fde6426f9e05d5539b9a9748c99e0bfb3fff97c44c0c7e65f6",
+        "05_application.png": "ae725bfcabe9777587e71f07b21a9bf74ae7c847daedee7ab9ed736ad1a15580",
+        "06_cure.png": "eb1bc234ab28c5a6364081ae085e3ae98d985fa3219600e533cf1d7209a11aca"
+      },
+      "webp_sha256": "a04ba87727c6d1a2c0b30aa87235d3ee408aa604c4a2b2f2f6d17917ece82db8",
+      "webp_bytes": 163598,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PROOF-PU-1K",
+      "slug": "fenek-proof-pu-1k",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "2ff6aaafda4e30e997a37239c03b3a26a78e0a8574b7bd24b9ae596aaad690d8",
+        "02_epi.png": "a4d956dba2181b18f77be141303ac6628fb7b7c48595b6804f1ce087a6881054",
+        "03_homogeneisation.png": "cff9a9ee56189a1ccee7293fd10623216e1919aec189fbf9cc5613842909a533",
+        "04_primaire.png": "d748d5199d1f05bec35a9928305d483591c16465a71b683490689417925df7fb",
+        "05_membrane.png": "74428ee423cdeb946a62d5fc3c6b98a5b78bdb5a25af8cf372ddafc39435a009",
+        "06_renfort.png": "7c3436562ec9a77e09bdb2b03efe78a86f40a5afed1d8e304c5a7c1d40b11445"
+      },
+      "webp_sha256": "4e9362fa3f76dd5e402d606606a844800e4919190e4be4c4d9d493e180e19990",
+      "webp_bytes": 135170,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PROOF-ACR-RF",
+      "slug": "fenek-proof-acr-rf",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "38887d8913dc2626d1b77a75cc58ee3ff5cdc9b317b8b0f9751dfd453daf94d7",
+        "02_epi.png": "d9322e733b36237507b55290fc586598fec76d3e420ff60685410abf0f049b3e",
+        "03_homogeneisation.png": "de32a9398d0e705c0acce78e49781984c747b8b65f8661ff9bc2095698c5a53e",
+        "04_premiere_couche.png": "5061daf39918a9f2935f73db60900bc6eb54d5d6c552b7aba84130a0b31d5ae2",
+        "05_renfort.png": "35a9f9a1686b367dba5f9f27f9c47fe96d58800ee013bb1234ec0a9067af36f3",
+        "06_recouvrement.png": "a660527782e471f3e5e3aa4b86e33d034d3c9e2d96b95b85d6a8c94ee0ac2648"
+      },
+      "webp_sha256": "2ba8cb3b76e99fe9d120f939a3692b8b5afc30d4216b89e232fce740fb12d22a",
+      "webp_bytes": 139216,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PROOF-EP-PRIM",
+      "slug": "fenek-proof-ep-prim",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "a067e021d755aa089e7dc28c7a7a59d677834a71252369fd665dba3a7461832b",
+        "02_epi.png": "1cb0e11099a1f787bd6d75585219e2dad043219015981f33085e77a3bb26371a",
+        "03_melange.png": "de647e6f881eae89e16ed5db73439db5e0712c2c43776a13f8d3050e20ff8712",
+        "04_primaire.png": "06c78a27e5f6dfa2062f8db4ff5ee23e0a4700b3e72d0f4fd8a63926269bd8ab",
+        "05_quartz.png": "53078cd37e9a14feb012a45628f48ef3ff41d3a9d15fcee940bbe5ba81d63d04",
+        "06_recouvrement.png": "476321dd69b0110c1f4552ca8a08da6e814da37dcc87533cc4e7e96b2f37194f"
+      },
+      "webp_sha256": "6595c80e45471769f599f93da1564101e96e6a777a7c089accd6d1961323cb32",
+      "webp_bytes": 122868,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PROOF-EP-SR",
+      "slug": "fenek-proof-ep-sr",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "0a0fe16969afce374bdf38ae1cfc5107656d8a83cf53b3ed658a44ccfdf82fdf",
+        "02_epi.png": "bc7732566dc2ee66730d41dbf7771d693b3c66a9261d8450440b28746d881673",
+        "03_melange.png": "01158733d9dacbeeacd0e44fe7e74b8770a3fc8fc373ce82b23d429b3c6b1e4c",
+        "04_coulage.png": "62f22aa5c72a2874d7dd60b89a06cf88e64864d1bbcc90625b2cc6d88dbb39a8",
+        "05_etalement.png": "e9693ad9f659309589f88c7a6d471935da24adbf63043e6a0f0e8f2a5ba94173",
+        "06_debullage.png": "b62c7282547156e463fcfa3592b03f594818c987ec79dabf3b54086a593a2716"
+      },
+      "webp_sha256": "3302af85546cde951d7f014f7661ac4c110c8fd8641608c5b29417dc96b56532",
+      "webp_bytes": 124002,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PROOF-EP-SB",
+      "slug": "fenek-proof-ep-sb",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "77f4a2dfea91d60e4ba73ef7a7d7f1acc778a1566d9dfa3b0b586f1e760144b9",
+        "02_epi.png": "b371298717ebd11cc470b64610302d3a798a572c5cdecb7cd108442d7c71d2f5",
+        "03_melange.png": "d5df70c5a2eb869f582cf7ae84a27db0293b9e92869e73458d1373df99ac34d7",
+        "04_encollage.png": "71d4d7dc1dd1790ead9e0b6dbe23730d992654f92f4cddb6115f0eacfa1d5965",
+        "05_assemblage.png": "b5458b9bb07f6914e0bea2a9f0c7af57a9640e322a7ba02d7f347b1d8590d71c",
+        "06_cure.png": "a9d0fc2b4f70cb4ef7a8153c3d9a80bfb1569809f78b1a1e35d1e311c9e08735"
+      },
+      "webp_sha256": "d7102e6370c5567157f8bd34c2d16ffe9e64cbe3cf599aac2d6bcf5e1dc00494",
+      "webp_bytes": 125676,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PROOF-EP-INJ",
+      "slug": "fenek-proof-ep-inj",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_fissure.png": "9969205e81ba8f08817371d71d4d9beeedb6e2ea58368864f82a1f5fd69f2c0e",
+        "02_epi.png": "c521b0bb95ed94989c7358ebdc8ecde7e731e7219345c3dde59a722f28ea1347",
+        "03_obturation.png": "671090310a7177e38ab4bc56c44c1daefd4eb7022364aad53610b040a60453b7",
+        "04_melange.png": "c00e1f43c33511a37ebfcce9b981275ec0c32af54be546602c9bcd3a8c9e892a",
+        "05_injection.png": "6c7579fbce2c2a0dde07ded5353d838828657cc2d98fa4fe3a1a432fd324fe8b",
+        "06_finition.png": "0aca90f620cae54a369e3bd8932853d59b2c7d31dc88bb0747ff4fa4247357df"
+      },
+      "webp_sha256": "41dba2b1f37444c4395b9422b662647d3aab40affbe5b015ed49be3557b75f38",
+      "webp_bytes": 118870,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PROOF-EP-ANC",
+      "slug": "fenek-proof-ep-anc",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_percement.png": "437e5a0144e710ec0f2ba53ad773ea4130644d7c54ea7f4465282e4853fe4166",
+        "02_nettoyage.png": "61d828607972d7045ba63a0b898d820a2448817bf6c1cd566a1394f46cf246d0",
+        "03_epi.png": "5030ec79a011023f8a3856432b5c0cdb465b566f85440f19ea37a0a23003d9cf",
+        "04_cartouche.png": "a09078a365a216a72e109065916a7fa2dccf545d51fd3544d041931527c4e406",
+        "05_injection.png": "0344463ae1c5e53730fa8bb5c7b045e3abe2a56b2e52705a4cb7dc25b9813f36",
+        "06_ancrage.png": "d57a65869b9ddcd31081dc75f1a82fd13ee703adc117d1255f4cf3a0de0a642f"
+      },
+      "webp_sha256": "17ff8224e3231b11d8c8f167fcd954d88a2064fcdddf7efcac9187a7c58d4263",
+      "webp_bytes": 113154,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PROOF-PU-INJ",
+      "slug": "fenek-proof-pu-inj",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_fissure.png": "97f6d697853fefb43cbd55567717dae579817352fda2db6cfa526333c3bf2b19",
+        "02_epi.png": "5eca72c89f1ccb0ded2a0496c2e923ea09a2a8ee10b9b33a47a5aae0267b705c",
+        "03_preparation.png": "8fd60e9c6605e91b771e88921b77ca85aaec8f0011899cedd1cb6b76a70deef6",
+        "04_injection.png": "18de75dd3e8f1aef9cd094975c545cbcba343644449b55b15ec28596ee8d7159",
+        "05_controle.png": "70c07288f486d841bf3adeb833c72a4907e71fe735a8cde34851ba50ee13acd9",
+        "06_rebouchage.png": "acc1556278d1c20de03cc709fa664be21f0aacac504209637fc49e72afc8dad1"
+      },
+      "webp_sha256": "607c34bfba93beb69435f9f7758f8e781f311f8650479f0ea59d9dc044889bf5",
+      "webp_bytes": 119536,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PROOF-PU-SEAL",
+      "slug": "fenek-proof-pu-seal",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_nettoyage.png": "292bee7577dcaefebbd0b796d376c9bea96c011aa899ca717a0cba92763b60e9",
+        "02_epi.png": "e9645acbcfe1174dea493b60227eaaa6f8d6ac6801e5de8ad7096ee03eb0726b",
+        "03_fond_joint.png": "7452439797d2410f7aabe1596a6f12aeaeb160dbe1583df2b6ca128807ca9be6",
+        "04_primaire.png": "26c7cefbe2daaa22f9e56d61af053548a128116fb1f4cf4104adb0c0ff801328",
+        "05_extrusion.png": "7b4dba570bb64b7e939e2fe9c02643bb9f64261a1c23631b450821af4cb41c50",
+        "06_lissage.png": "a15f13b18eb64f249d7a6a8e5b291a066de4ec732c7e0817cc2c3144ef4cfbbb"
+      },
+      "webp_sha256": "80b503c876cebf6d9c36f97605ba666be9b931e8580f35945a9e5cffeec497bb",
+      "webp_bytes": 109064,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "FLOW-WR-N",
+      "slug": "fenek-flow-wr-n",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_materiaux.png": "7acf6bea1e0191641e162fe6355d5bb5738e444244d4d880d85d86b35d45c10b",
+        "02_epi.png": "d38ad5d183e6580ae5b3206f83484c1ddb00364b3e01c72016132b51142c8e32",
+        "03_dosage.png": "c589315cbbbc56ee737c975985e2cb7a727604797b294d0035b46ab2c2c98f6f",
+        "04_incorporation.png": "92652a5edaaad7afecf92384e0040a7ea5be21c2c12b483be3d3a1541253df9a",
+        "05_malaxage.png": "4dfa40516282e6b08abf7c3d1308da8d74924801430c5a278c1de73349c43949",
+        "06_controle.png": "3d868f2c9811326c85f4f997e26793a4f703679cf5c03b1a3d5c57ee70a22724"
+      },
+      "webp_sha256": "16c5fe878e04aba700c39cab03889ad1c73ea076a318249206eb7920580ca4f0",
+      "webp_bytes": 112086,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "FLOW-SP-HR",
+      "slug": "fenek-flow-sp-hr",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_materiaux.png": "7acf6bea1e0191641e162fe6355d5bb5738e444244d4d880d85d86b35d45c10b",
+        "02_epi.png": "d38ad5d183e6580ae5b3206f83484c1ddb00364b3e01c72016132b51142c8e32",
+        "03_dosage.png": "c589315cbbbc56ee737c975985e2cb7a727604797b294d0035b46ab2c2c98f6f",
+        "04_incorporation.png": "92652a5edaaad7afecf92384e0040a7ea5be21c2c12b483be3d3a1541253df9a",
+        "05_malaxage.png": "4dfa40516282e6b08abf7c3d1308da8d74924801430c5a278c1de73349c43949",
+        "06_controle.png": "3d868f2c9811326c85f4f997e26793a4f703679cf5c03b1a3d5c57ee70a22724"
+      },
+      "webp_sha256": "16c5fe878e04aba700c39cab03889ad1c73ea076a318249206eb7920580ca4f0",
+      "webp_bytes": 112086,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "FLOW-SP-RT",
+      "slug": "fenek-flow-sp-rt",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_materiaux.png": "7acf6bea1e0191641e162fe6355d5bb5738e444244d4d880d85d86b35d45c10b",
+        "02_epi.png": "d38ad5d183e6580ae5b3206f83484c1ddb00364b3e01c72016132b51142c8e32",
+        "03_dosage.png": "c589315cbbbc56ee737c975985e2cb7a727604797b294d0035b46ab2c2c98f6f",
+        "04_incorporation.png": "92652a5edaaad7afecf92384e0040a7ea5be21c2c12b483be3d3a1541253df9a",
+        "05_malaxage.png": "4dfa40516282e6b08abf7c3d1308da8d74924801430c5a278c1de73349c43949",
+        "06_controle.png": "044acef4170307475910e1b43ac63ea4b971196e4654641ef890e8c9563396c3"
+      },
+      "webp_sha256": "592bed2a43a11bf22bcdcc2965dd3e96ef25214071d37dbf9f2d2554835702e9",
+      "webp_bytes": 112426,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "FLOW-SP-PF",
+      "slug": "fenek-flow-sp-pf",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_materiaux.png": "7acf6bea1e0191641e162fe6355d5bb5738e444244d4d880d85d86b35d45c10b",
+        "02_epi.png": "d38ad5d183e6580ae5b3206f83484c1ddb00364b3e01c72016132b51142c8e32",
+        "03_dosage.png": "c589315cbbbc56ee737c975985e2cb7a727604797b294d0035b46ab2c2c98f6f",
+        "04_incorporation.png": "92652a5edaaad7afecf92384e0040a7ea5be21c2c12b483be3d3a1541253df9a",
+        "05_malaxage.png": "4dfa40516282e6b08abf7c3d1308da8d74924801430c5a278c1de73349c43949",
+        "06_controle.png": "e2629822821c8e427b3293e70a9b9019fc92b65d6de54cd1c4db750c3f4d3e58"
+      },
+      "webp_sha256": "e7c6ec49c0d1b95a722ba47c347e36d727cf7ed8dff59ff072ccf814be35ace3",
+      "webp_bytes": 112678,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "FLOW-RT",
+      "slug": "fenek-flow-rt",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_materiaux.png": "7acf6bea1e0191641e162fe6355d5bb5738e444244d4d880d85d86b35d45c10b",
+        "02_epi.png": "d38ad5d183e6580ae5b3206f83484c1ddb00364b3e01c72016132b51142c8e32",
+        "03_dosage.png": "c589315cbbbc56ee737c975985e2cb7a727604797b294d0035b46ab2c2c98f6f",
+        "04_incorporation.png": "92652a5edaaad7afecf92384e0040a7ea5be21c2c12b483be3d3a1541253df9a",
+        "05_malaxage.png": "4dfa40516282e6b08abf7c3d1308da8d74924801430c5a278c1de73349c43949",
+        "06_prise.png": "f2e299da7c467c7f0610c0998278208bdd3dcfcd9c2732cf321fca2a36d75931"
+      },
+      "webp_sha256": "24a7acc8f9e88bbf32bcee05d401d28976e3c6ae9b7a6a72105c26ec5deafbfd",
+      "webp_bytes": 111622,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "FLOW-AC",
+      "slug": "fenek-flow-ac",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_materiaux.png": "7acf6bea1e0191641e162fe6355d5bb5738e444244d4d880d85d86b35d45c10b",
+        "02_epi.png": "d38ad5d183e6580ae5b3206f83484c1ddb00364b3e01c72016132b51142c8e32",
+        "03_dosage.png": "c589315cbbbc56ee737c975985e2cb7a727604797b294d0035b46ab2c2c98f6f",
+        "04_incorporation.png": "92652a5edaaad7afecf92384e0040a7ea5be21c2c12b483be3d3a1541253df9a",
+        "05_malaxage.png": "4dfa40516282e6b08abf7c3d1308da8d74924801430c5a278c1de73349c43949",
+        "06_prise.png": "50b35e1ff68870a8ba86f569d00dd6da8589a98c9f35c870e5e6d7409b8cab2b"
+      },
+      "webp_sha256": "0c7858a59aca29e0a1a6d23d85f7de4ed9a04cca6c30c50a029ffb4369f557b2",
+      "webp_bytes": 113192,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "FLOW-AE",
+      "slug": "fenek-flow-ae",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_materiaux.png": "7acf6bea1e0191641e162fe6355d5bb5738e444244d4d880d85d86b35d45c10b",
+        "02_epi.png": "d38ad5d183e6580ae5b3206f83484c1ddb00364b3e01c72016132b51142c8e32",
+        "03_dosage.png": "c589315cbbbc56ee737c975985e2cb7a727604797b294d0035b46ab2c2c98f6f",
+        "04_incorporation.png": "92652a5edaaad7afecf92384e0040a7ea5be21c2c12b483be3d3a1541253df9a",
+        "05_malaxage.png": "4dfa40516282e6b08abf7c3d1308da8d74924801430c5a278c1de73349c43949",
+        "06_air.png": "677daa983e4929f9297b11df270628e67251d17a8f8f8d3e2b2096745fb11acc"
+      },
+      "webp_sha256": "0e5f768c2f0ae40992b051c6a751c4140599cc8bd73145c3691e5c189d373701",
+      "webp_bytes": 112834,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "FLOW-WP",
+      "slug": "fenek-flow-wp",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_materiaux.png": "7acf6bea1e0191641e162fe6355d5bb5738e444244d4d880d85d86b35d45c10b",
+        "02_epi.png": "d38ad5d183e6580ae5b3206f83484c1ddb00364b3e01c72016132b51142c8e32",
+        "03_dosage.png": "c589315cbbbc56ee737c975985e2cb7a727604797b294d0035b46ab2c2c98f6f",
+        "04_incorporation.png": "92652a5edaaad7afecf92384e0040a7ea5be21c2c12b483be3d3a1541253df9a",
+        "05_malaxage.png": "4dfa40516282e6b08abf7c3d1308da8d74924801430c5a278c1de73349c43949",
+        "06_cure.png": "400bb9c2c00e23f2f0eb5df2f435af0e083e59a20052d454fce9db2fdacc0360"
+      },
+      "webp_sha256": "54e3b39e5004b2975e5788cedbfcf074a8166da92db593e97d8629a24d239f21",
+      "webp_bytes": 112228,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "FLOW-VMA",
+      "slug": "fenek-flow-vma",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_materiaux.png": "7acf6bea1e0191641e162fe6355d5bb5738e444244d4d880d85d86b35d45c10b",
+        "02_epi.png": "d38ad5d183e6580ae5b3206f83484c1ddb00364b3e01c72016132b51142c8e32",
+        "03_dosage.png": "c589315cbbbc56ee737c975985e2cb7a727604797b294d0035b46ab2c2c98f6f",
+        "04_incorporation.png": "92652a5edaaad7afecf92384e0040a7ea5be21c2c12b483be3d3a1541253df9a",
+        "05_malaxage.png": "4dfa40516282e6b08abf7c3d1308da8d74924801430c5a278c1de73349c43949",
+        "06_stabilite.png": "3ae525f854b6e81fdeec07ac39253ced4939e697fa6955e4a08f1dc4fc62f895"
+      },
+      "webp_sha256": "0ecad6d855a3ff712f94ac09d2b47c7c0a68cf86ea7680b3f602f34cd48e25a9",
+      "webp_bytes": 112898,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "FLOW-CI",
+      "slug": "fenek-flow-ci",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_materiaux.png": "7acf6bea1e0191641e162fe6355d5bb5738e444244d4d880d85d86b35d45c10b",
+        "02_epi.png": "d38ad5d183e6580ae5b3206f83484c1ddb00364b3e01c72016132b51142c8e32",
+        "03_dosage.png": "c589315cbbbc56ee737c975985e2cb7a727604797b294d0035b46ab2c2c98f6f",
+        "04_incorporation.png": "92652a5edaaad7afecf92384e0040a7ea5be21c2c12b483be3d3a1541253df9a",
+        "05_malaxage.png": "4dfa40516282e6b08abf7c3d1308da8d74924801430c5a278c1de73349c43949",
+        "06_durabilite.png": "f81fac84e287702cf94691bef0ca37590fd6fc3128ca6800dfe120763c7e223e"
+      },
+      "webp_sha256": "aeceb9d4a9bfc2195175780c145f50a3930c33a222761b27ee427664501d98ee",
+      "webp_bytes": 113306,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "FLOW-CURE",
+      "slug": "fenek-flow-cure",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_beton.png": "e8ee6eb2a056d9b4db05a32123656a793b50d9c9e8e5c8d404dd09aaec8ff926",
+        "02_epi.png": "945ddcf2244fa2fb4a1024aa658a9e7be199210e28d272d963289580bd41eae4",
+        "03_preparation.png": "b5928adfa38d47cb03629302f8cdecbf96abf0860ebf3e764b1795310c9495b5",
+        "04_pulverisation.png": "11dba88919cb719b20a52a02d4b56e9ff99d13841ab795044c25805f87330861",
+        "05_uniformite.png": "b6eb9619a4a75e9f379568f39821aa72768d9926d5a59d4749590cda12ffb342",
+        "06_protection.png": "0e30fa9726eaa93f56b4c8623f0fa2c264add04f5afd1650099cf760a9a9c101"
+      },
+      "webp_sha256": "e15c45c2fadbadbae6ba7b43cb17d9e671f7e65e5ac751e9152ad636f83a5080",
+      "webp_bytes": 116848,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "FLOW-LAT",
+      "slug": "fenek-flow-lat",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "cad89c154b316e2ecfa371ac4e251261f92be0fb2b6dc6b40413c653a3798b03",
+        "02_epi.png": "d38ad5d183e6580ae5b3206f83484c1ddb00364b3e01c72016132b51142c8e32",
+        "03_preparation.png": "890e4788d26aa0e8e096abd1fd0c8032316430a0b3bc2a069685bed9607a067e",
+        "04_pont.png": "f21c1a7685688a385ca73f32d669293d374bf021d8991ce63474761845d751f6",
+        "05_mortier.png": "473e16b5965f8bf5737a8ca1a1c98e9453efacdf9bde83e3eaec4ce7141a05e9",
+        "06_cure.png": "68556af86c922cad507baa9939f7bcbb25b1b0f4d0a1388e042f3384e0e82e50"
+      },
+      "webp_sha256": "86fbc798843022e01c3b711e2c0f1fdb99b23f85a30e46ae0f12ee48100a6a7a",
+      "webp_bytes": 118048,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PAINT-INT-M",
+      "slug": "fenek-paint-int-m",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "8c1761f1cf1018f102b62b8934be214e360f173ac1343d6558659f46ba5b5c2d",
+        "02_epi.png": "02fbc471781d32649e06205f18a286a2b3a189a60da196b7e73d1933cd7f6b06",
+        "03_primaire.png": "291b86c4e37960bfe0213f2ceb1af7ada40cfa6f5eb26ff731cd80bc2476a6b9",
+        "04_preparation.png": "30073e4cff23744ad3b43ef74c18f0489f55bc317bc09eeb52ea21013ca7ec32",
+        "05_peinture.png": "ab949747289162c94bca67df22001c402865460af7771b20ea1edd1fed21d5f9",
+        "06_recouvrement.png": "654719597ab1830410fa125133f14c36ab96ce6fdc90508cd21c0f6d985fc15a"
+      },
+      "webp_sha256": "1f8399fdafdeb25758bac01ffe98122951c2db53babfff5b70648954c56c8aa0",
+      "webp_bytes": 118862,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PAINT-INT-S",
+      "slug": "fenek-paint-int-s",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "8c1761f1cf1018f102b62b8934be214e360f173ac1343d6558659f46ba5b5c2d",
+        "02_epi.png": "02fbc471781d32649e06205f18a286a2b3a189a60da196b7e73d1933cd7f6b06",
+        "03_primaire.png": "291b86c4e37960bfe0213f2ceb1af7ada40cfa6f5eb26ff731cd80bc2476a6b9",
+        "04_preparation.png": "30073e4cff23744ad3b43ef74c18f0489f55bc317bc09eeb52ea21013ca7ec32",
+        "05_peinture.png": "ab949747289162c94bca67df22001c402865460af7771b20ea1edd1fed21d5f9",
+        "06_recouvrement.png": "654719597ab1830410fa125133f14c36ab96ce6fdc90508cd21c0f6d985fc15a"
+      },
+      "webp_sha256": "1f8399fdafdeb25758bac01ffe98122951c2db53babfff5b70648954c56c8aa0",
+      "webp_bytes": 118862,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PAINT-INT-WA",
+      "slug": "fenek-paint-int-wa",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "8c1761f1cf1018f102b62b8934be214e360f173ac1343d6558659f46ba5b5c2d",
+        "02_epi.png": "02fbc471781d32649e06205f18a286a2b3a189a60da196b7e73d1933cd7f6b06",
+        "03_primaire.png": "291b86c4e37960bfe0213f2ceb1af7ada40cfa6f5eb26ff731cd80bc2476a6b9",
+        "04_preparation.png": "30073e4cff23744ad3b43ef74c18f0489f55bc317bc09eeb52ea21013ca7ec32",
+        "05_peinture.png": "ab949747289162c94bca67df22001c402865460af7771b20ea1edd1fed21d5f9",
+        "06_recouvrement.png": "654719597ab1830410fa125133f14c36ab96ce6fdc90508cd21c0f6d985fc15a"
+      },
+      "webp_sha256": "1f8399fdafdeb25758bac01ffe98122951c2db53babfff5b70648954c56c8aa0",
+      "webp_bytes": 118862,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PAINT-FAC-M",
+      "slug": "fenek-paint-fac-m",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "a8cf4ba49863e5853c594f66ed26a1847844cb33bc217be3af946c6982bdf5a4",
+        "02_epi.png": "7150a12be8f0b4e299e153e0ce188031dddbdadc18364be7e5c7b20dabddcb24",
+        "03_primaire.png": "3a3a3fcda5af1919b7d6637e7468d1a903625bb38cd2b8a632aaf4372fa3f6d1",
+        "04_preparation.png": "1488ce03f0a5e2dee6c90fe51b47218ac63e32e1a8b59ee7aa6b11b70dd55067",
+        "05_application.png": "ad8e0d1fa8913be6687db2eb812a4f43852a3418907f4f7c0e53370b98dfe465",
+        "06_protection.png": "35ede13a578a9bbefd8698168cd2344eb5f46051d0fa2dfbea8798a01f4c5179"
+      },
+      "webp_sha256": "0d8d9633dcc36e8096c09b52421eb5d745ab6a969960a5b389d2b5866084ed00",
+      "webp_bytes": 117504,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PAINT-FAC-EL",
+      "slug": "fenek-paint-fac-el",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "a8cf4ba49863e5853c594f66ed26a1847844cb33bc217be3af946c6982bdf5a4",
+        "02_epi.png": "7150a12be8f0b4e299e153e0ce188031dddbdadc18364be7e5c7b20dabddcb24",
+        "03_primaire.png": "3a3a3fcda5af1919b7d6637e7468d1a903625bb38cd2b8a632aaf4372fa3f6d1",
+        "04_preparation.png": "1488ce03f0a5e2dee6c90fe51b47218ac63e32e1a8b59ee7aa6b11b70dd55067",
+        "05_application.png": "ad8e0d1fa8913be6687db2eb812a4f43852a3418907f4f7c0e53370b98dfe465",
+        "06_protection.png": "35ede13a578a9bbefd8698168cd2344eb5f46051d0fa2dfbea8798a01f4c5179"
+      },
+      "webp_sha256": "0d8d9633dcc36e8096c09b52421eb5d745ab6a969960a5b389d2b5866084ed00",
+      "webp_bytes": 117504,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PAINT-FAC-SX",
+      "slug": "fenek-paint-fac-sx",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "a8cf4ba49863e5853c594f66ed26a1847844cb33bc217be3af946c6982bdf5a4",
+        "02_epi.png": "7150a12be8f0b4e299e153e0ce188031dddbdadc18364be7e5c7b20dabddcb24",
+        "03_primaire.png": "3a3a3fcda5af1919b7d6637e7468d1a903625bb38cd2b8a632aaf4372fa3f6d1",
+        "04_preparation.png": "1488ce03f0a5e2dee6c90fe51b47218ac63e32e1a8b59ee7aa6b11b70dd55067",
+        "05_application.png": "ad8e0d1fa8913be6687db2eb812a4f43852a3418907f4f7c0e53370b98dfe465",
+        "06_protection.png": "35ede13a578a9bbefd8698168cd2344eb5f46051d0fa2dfbea8798a01f4c5179"
+      },
+      "webp_sha256": "0d8d9633dcc36e8096c09b52421eb5d745ab6a969960a5b389d2b5866084ed00",
+      "webp_bytes": 117504,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PAINT-PRIM-A",
+      "slug": "fenek-paint-prim-a",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "66fff24357c30597463fdc1bc7d993f36d6a1b9dad0e8cbc5196e8bc74e74b17",
+        "02_epi.png": "d38ad5d183e6580ae5b3206f83484c1ddb00364b3e01c72016132b51142c8e32",
+        "03_preparation.png": "8eb54b40b26bfe3113b59ff02448d6d526d38c4992133cb596402a0ead933033",
+        "04_primaire.png": "317c13d729669248ee1d2c04aa5e79663f2da622a5485b082ffd0dc99af86027",
+        "05_verification.png": "ca8f90547cf8dabd700002f5b6c5874e716b7d208e9d48d0ccdd65970e25c002",
+        "06_recouvrement.png": "2fa72c0a2dee8754924798f5dd86c31c7ecabf803c92d16df0e5461acd012f5e"
+      },
+      "webp_sha256": "9291e07d5da28439e56e74558ee7b3d454dd077d1f1842023b9f02913c832d35",
+      "webp_bytes": 118750,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PAINT-PRIM-FX",
+      "slug": "fenek-paint-prim-fx",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "66fff24357c30597463fdc1bc7d993f36d6a1b9dad0e8cbc5196e8bc74e74b17",
+        "02_epi.png": "d38ad5d183e6580ae5b3206f83484c1ddb00364b3e01c72016132b51142c8e32",
+        "03_preparation.png": "8eb54b40b26bfe3113b59ff02448d6d526d38c4992133cb596402a0ead933033",
+        "04_primaire.png": "317c13d729669248ee1d2c04aa5e79663f2da622a5485b082ffd0dc99af86027",
+        "05_verification.png": "ca8f90547cf8dabd700002f5b6c5874e716b7d208e9d48d0ccdd65970e25c002",
+        "06_recouvrement.png": "2fa72c0a2dee8754924798f5dd86c31c7ecabf803c92d16df0e5461acd012f5e"
+      },
+      "webp_sha256": "9291e07d5da28439e56e74558ee7b3d454dd077d1f1842023b9f02913c832d35",
+      "webp_bytes": 118750,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PAINT-TXT-F",
+      "slug": "fenek-paint-txt-f",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "8dea78248c33e8084b004e8c5e7a319cd05171b5aa6fcacfc89314244df4dc2f",
+        "02_epi.png": "d38ad5d183e6580ae5b3206f83484c1ddb00364b3e01c72016132b51142c8e32",
+        "03_preparation.png": "78b12f347e283e94381c153f64c61980c683a229e6125dd51eb922e94605e80c",
+        "04_application.png": "af5487cfd8709bf4afaa8c9c4895b156dd2c6be08d277eaf66ecc94d136080a8",
+        "05_structuration.png": "b4df05fa4155d54fafc7328092ff786b86a5f035f881ca93c760bbced17838bf",
+        "06_protection.png": "2dddc02317a4470c7678c0f4d3bb51cf2eb82a1b338abd100aa2a7082189f72e"
+      },
+      "webp_sha256": "de2637d682c5038cfce6e0f01482ae6b8205a15baea1f94eac1bcfcb042c47e8",
+      "webp_bytes": 115272,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PAINT-SOL-A",
+      "slug": "fenek-paint-sol-a",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "92aa9b519d9cdf95c562a077701d03d57650fff531bb9b49b899d5f0f8745be4",
+        "02_epi.png": "cb5062e3113ad2c87a9c7b2c9a7ae42116e40240ce6a0fdaa0191aed6e46a79b",
+        "03_primaire.png": "4e90d565b3fb55c6cd1e4cdbb185607be27d8717c6ca4f358bae77c53101d5ac",
+        "04_preparation.png": "43e40955cc593e195ea0a5a9a3014df4db6fdf8f232fa901aa1f251606b67226",
+        "05_rouleau.png": "5172919b5c6c7c58e36dba39c86ac65f31da6e2fb5166ce4e79a8639e20da092",
+        "06_marquage.png": "81123345e316d29eb8a2fb4a0a24dc43f349c464112c58f6c852ca342313551a"
+      },
+      "webp_sha256": "bd5c66277a9d7e5ab2b43ebc024e04ed73ec5cdcb2e1717c33966b1cf8582994",
+      "webp_bytes": 114766,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    },
+    {
+      "code": "PAINT-ENT-L",
+      "slug": "fenek-paint-ent-l",
+      "png": 6,
+      "svg": 6,
+      "corrected_steps": [],
+      "source_png_sha256": {
+        "01_support.png": "54d488552b5c8b9f847fdfa5cc684826b09e998a73cc82fd27cc7736615e4858",
+        "02_epi.png": "d38ad5d183e6580ae5b3206f83484c1ddb00364b3e01c72016132b51142c8e32",
+        "03_preparation.png": "a8f2d81b905e55d9abe315802f8782cde4369fe0e66be082c9a97c7c3feffa48",
+        "04_lissage.png": "a53e409ef1c4fe5812c39e8491818bbf9bb9897d45f047e4296bd6066ddc7613",
+        "05_poncage.png": "85ba5ef60240ee15081d789b9b735d88b03981e1cad3865d7bc852bd18f02cfa",
+        "06_finition.png": "d49e9588e585aa9354f3e005a52096c14437046d8083f10a4bda16de3b08d9ad"
+      },
+      "webp_sha256": "985ac1db6e08735e7aaa9d2d86a4952d8d50f7ac6c621a560d4b6973ff3920bc",
+      "webp_bytes": 113684,
+      "review": "source artwork and captions checked; provisional, laboratory/HSE approval outstanding"
+    }
+  ]
+}

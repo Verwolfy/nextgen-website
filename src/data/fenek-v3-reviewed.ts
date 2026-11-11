@@ -1,4 +1,5 @@
 import type { Lang } from './site';
+import manualEntries from './fenek-v3-manuals.json';
 
 /**
  * Lot 127 — V3 product-by-product image QA, source: NEXTGEN_modes_emploi_V3.zip.
@@ -82,7 +83,36 @@ const c1te:ReviewedV3Guide={
   ]
 };
 
-const reviewed:Readonly<Record<string,ReviewedV3Guide>>=Object.freeze({'BOND-C1T':c1t,'BOND-C1TE':c1te});
+/**
+ * C2FT / C1TE: six SOURCE illustrations have strictly identical RGB pixels
+ * in rows [0..1589] of every 2048×2048 PNG; only the embedded AR/FR captions
+ * (from row 1590) differ. Proof: SHA-256 of concatenated six RGB crops:
+ * 6ea7fb90b80a57a5b0f293ba95e79afea2063765d5e2601563ca974758c0d321.
+ * Reuse the already reviewed 6-panel bitmap ONLY with embedded captions cropped;
+ * titles below come from C2FT's own legends.csv. Replace by its own full-res
+ * assets when the binary upload is available. Never infer C2FT working times.
+ */
+const reviewed:Readonly<Record<string,ReviewedV3Guide>>=Object.freeze((()=>{
+  const all:Record<string,ReviewedV3Guide>={'BOND-C1T':c1t,'BOND-C1TE':c1te};
+  const seen=new Set<string>();
+  for(const entry of manualEntries){
+    if(seen.has(entry.code) || !/^[A-Z][A-Z0-9-]+$/.test(entry.code) || !/^fenek-[a-z0-9-]+$/.test(entry.slug))
+      throw Error('Invalid or duplicate V3 reference '+entry.code+'/'+entry.slug);
+    seen.add(entry.code);
+    if(entry.status!=='BROUILLON' || entry.steps.length!==6 || entry.steps.some((step,i)=>step.image!==i+1))
+      throw Error('Incorrect V3 source sequence '+entry.code);
+    // Preserve the original approved-for-editorial-display C1T and C1TE assets.
+    if(entry.code==='BOND-C1T' || entry.code==='BOND-C1TE') continue;
+    all[entry.code]={
+      code:entry.code,slug:entry.slug,sprite:entry.sprite,sha256:entry.sha256,
+      status:'BROUILLON',
+      steps:entry.steps.map((step)=>({image:step.image,icon:'check',title:step.title,description:step.description}))
+    };
+  }
+  if(seen.size!==50 || Object.keys(all).length!==50)
+    throw Error('V3 source catalogue is incomplete; expected exactly 50 distinct references');
+  return all;
+})());
 export function reviewedV3GuideFor(code:string,slug:string):ReviewedV3Guide|null{
   const guide=reviewed[code];
   if(!guide)return null;
