@@ -51,7 +51,7 @@ const paths:Record<string,string>={
     <h3>{copy.intro}</h3>
     <span class="fenek-application-visual-tag">{steps.length} {copy.step.toLowerCase()}</span>
   </div>
-  <ol class:list={['fenek-application-visual-grid',{'has-drawings':tile,'v3-reviewed':Boolean(reviewedV3)}]}>
+  <ol class:list={['fenek-application-visual-grid',{'has-drawings':tile || Boolean(reviewedV3),'v3-reviewed':Boolean(reviewedV3)}]}>
     {steps.map((step,i)=><li class="fenek-application-visual-card" data-application-step={i+1}>
       <figure class="fenek-application-visual-figure">
         {step.image && reviewedV3
@@ -72,7 +72,7 @@ const paths:Record<string,string>={
       </figure>
       <div class="fenek-application-visual-copy">
         <h4>{step.title}</h4>
-        <p>{step.description}</p>
+        {step.description && <p>{step.description}</p>}
         {fullSizeC1T?.[i] && <a class="fenek-v3-detail-link"
           href={fullSizeC1T[i]} target="_blank" rel="noopener noreferrer"
           aria-label={copy.zoom+' — '+product.nom+' — '+copy.step+' '+(i+1)}>
