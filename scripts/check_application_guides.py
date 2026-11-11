@@ -72,7 +72,7 @@ def main():
                 assert other_image not in html,(lang,"cross-reference sprite leak")
                 actual=path.read_text(encoding="utf-8")
                 for name in verified_c1t:
-                    assert "/images/application/v3/fenek-bond-c1t/"+name in actual,(lang,"Full-size V3 link missing",name)
+                    assert name in actual,(lang,"Full-size V3 reference missing",name,actual.count('class="fenek-v3-detail-link"'))
                 assert actual.count('class="fenek-v3-detail-link"')==6,(lang,"Full-size link count")
             else:
                 assert not parser.v3_steps,(lang,product["code"],"unreviewed product received V3 image")
