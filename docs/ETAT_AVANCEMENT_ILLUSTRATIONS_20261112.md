@@ -1,28 +1,51 @@
-# ÉTAT D’AVANCEMENT — illustrations des modes d’emploi FENEK
-Mise à jour : 12/11/2026
+# REPRISE PROJET NEXTGEN — illustrations des modes d'emploi (12/11/2026)
 
-## Référentiel et limites
-- Dépôt privé : `Verwolfy/nextgen-website` ; base `main` au démarrage : `d676565afc3353a439c76b1c2d5a038c8d042b11`.
-- Branche : `feat/lot139-140-professional-paint-illustrations-20261112` ; PR #140 : https://github.com/Verwolfy/nextgen-website/pull/140.
-- Ne pas inventer de dosage, valeur de performance, durée, certification, modèle de logo ou élément d'étiquette.
-- Tout reste `BROUILLON`, en attente de fiches FT/FDS approuvées.
+## Objectif et règles
+Moderniser les 6 étapes illustrées par produit FENEK, fidèles à `src/data/fenek-v3-manuals.json`, sans invention de dosage, durée, norme, certification, valeur de performance, logo ou information de sécurité. Toute la série reste **BROUILLON — non validé**. Les textes FR/AR/EN sont conservés dans les pages HTML, pas dans les images.
 
-## Réalisé et vérifié statiquement
-- 50 références du catalogue ont toujours leur sprite WebP remastérisé avec SHA historique.
-- **10 références** ont maintenant un SVG professionnel propre, total **60 scènes** : PAINT-INT-M/S/WA (139), PAINT-PRIM-A/FX (140), PAINT-TXT-F (141), PAINT-SOL-A (142), PAINT-ENT-L (143), PROOF-CM-O1P (144), PROOF-CM-O2P (145).
-- Tous les SVG ont six cases en grille 3×2 (1620×720), code produit sur chaque vignette, aucun texte technique incrusté. Les légendes FR/AR/EN sont dérivées de `fenek-v3-manuals.json`.
-- Vérification de tous les SVG via connecteur : fichier lisible, six panneaux et six badges, balises équilibrées, SHA-256 égal au registre, aucune référence externe, statut `BROUILLON`. Résultat : **10/10 sur ce périmètre uniquement**.
-- Registre `src/data/fenek-enhanced-artwork.json` modifié ; `FenekApplicationGuide.astro` utilise le SVG lorsqu'il est disponible, WebP V3 en repli.
-- Tests supplémentaires `test_lot139_140_paint_professional_svg.py`, `test_lot141_143_professional_paint.py`, `test_lot144_145_cement_waterproofing.py` ; moniteur live enrichi.
-- Documentation par lots : `LOT139_140_...`, `LOT141_143_PEINTURES_TECHNIQUES_20261112.md`, `LOT144_145_PROOF_CIMENTAIRE_20261112.md`.
+## Dépôt, branche et PR
+- GitHub : `Verwolfy/nextgen-website` (privé).
+- Branche de travail : `feat/lot139-140-professional-paint-illustrations-20261112`.
+- PR en brouillon : https://github.com/Verwolfy/nextgen-website/pull/140, base `main`.
+- `main` était à `d676565afc3353a439c76b1c2d5a038c8d042b11` au début de cette série.
+- **Aucune fusion vers main ni déploiement Cloudflare confirmé.**
 
-## Blocage réel — ne pas présenter la CI comme verte
-- Les quatre workflows Github Actions ont encore échoué au dernier commit consulté, sans étapes exécutées. Aucun succès `npm ci`, `npm run build`, `unittest`, QA navigateur ni déploiement Cloudflare n'est prouvé.
-- Réseau du container local vers `github.com` non résolu (`Could not resolve host`) ; tests du dépôt privé complet non exécutables par cette méthode.
-- **PR #140 maintenue en brouillon, non fusionnée à `main`.**
+## Lots livrés sur la branche
+- 139–140 : PAINT-INT-M, PAINT-INT-S, PAINT-INT-WA, PAINT-PRIM-A, PAINT-PRIM-FX.
+- 141–143 : PAINT-TXT-F, PAINT-SOL-A, PAINT-ENT-L.
+- 144–145 : PROOF-CM-O1P, PROOF-CM-O2P.
+- 146–149 : PROOF-PU-1K, PROOF-ACR-RF, PROOF-EP-PRIM, PROOF-EP-SR.
+- 150–154 : PROOF-EP-SB, PROOF-EP-INJ, PROOF-EP-ANC, PROOF-PU-INJ, PROOF-PU-SEAL.
 
-## Prochaines actions
-1. Diagnostiquer les échecs GitHub Actions sans étape (compte, runner, droits, quotas) ; exécuter le build Astro, la suite Python et les tests ciblés avec sorties réelles.
-2. Audit visuel des 60 panneaux et des guides FR/AR/EN sur 360 px + desktop. Corriger chaque défaut découvert.
-3. Fusionner PR #140 sans force push après validation, vérifier le commit du site, les 10 SVG publics, leur SHA-256 et les 150 pages documentaires.
-4. Continuer `PROOF-PU-1K`, `PROOF-ACR-RF`, autres `PROOF-*`, puis `BOND-*` et `FLOW-*`, en respectant les six gestes V3.
+**Total : 19 produits, 114 scènes vectorielles, gamme PROOF complète (11/11), 8 produits PAINT.** Les 50 WebP V3 améliorés déjà existants restent inchangés et associés à leur référence.
+
+## Fichiers et règles techniques
+- SVG créés dans `public/images/application-professional/<slug>-steps.svg`, planches 1620×720 en six cases (3×2, chacune 540×360).
+- Registre `src/data/fenek-enhanced-artwork.json` : `professionalSvg`, `professionalSvgSha256`, `professionalSvgDimensions`, `professionalSourceType`, `professionalSceneWorkflowWith`.
+- `src/components/FenekApplicationGuide.astro` choisit le SVG professionnel par `code+slug` et conserve le WebP remastérisé comme repli.
+- `scripts/check_live_application_guides.py` vérifie les médias enregistrés, leur SHA et les fiches FR/AR/EN en lecture seule.
+- Tests de lots : `tests/test_lot139_140_paint_professional_svg.py`, `tests/test_lot141_143_professional_paint.py`, `tests/test_lot144_145_cement_waterproofing.py`, `tests/test_lot146_149_proof_professional_svg.py`, `tests/test_lot150_154_remaining_proof_svg.py`.
+- Documentation lot par lot sous `docs/LOT139_140*`, `LOT141_143*`, `LOT144_145*`, `LOT146_149*`, `LOT150_154*`.
+
+## Contrôles réellement réalisés
+- Tous les 19 enregistrements professionnels ont code/slug conforme au catalogue et à la notice V3, SHA-256 à 64 caractères et statut BROUILLON.
+- Les 19 chemins de fichiers sont distincts ; les 19 SHA sont distincts ; aucun produit PROOF n'est manquant.
+- Les 9 SVG des lots 146–154 ont été créés et relus sur GitHub : 6 panneaux et 6 badges code-produit chacun, SHA-256 calculés, pas d'image/script/lien externe. Les 5 du lot 150–154 ont aussi passé un contrôle d'équilibrage de balises.
+- Avant cette session, les dix SVG des lots 139–145 avaient passé un audit statique équivalent.
+- Aucune preuve d'exécution complète de `npm ci`, `npm run build`, des tests Python, de QA navigateur ou des tests live sur Cloudflare. Ne pas les présenter comme réussis.
+
+## Blocage CI
+Au commit `113e6f1ed765522371cc8b7e054f76eed1611dc0`, les quatre workflows PR GitHub Actions ont conclu `failure` (run IDs 43225683247, 43225682873, 43225682662, 43225682986). Les jobs observés se terminent sans étapes ni runner attribué, donc le résultat ne constitue PAS un diagnostic du code. `.github/workflows/site-check.yml` utilise déjà `runs-on: ubuntu-latest`. Hypothèses possibles à contrôler : quota/billing Actions, compte, service GitHub, permissions. Éviter toute modification de secrets ou de protections de branche sans nécessité et autorisation.
+
+## Prochaines actions ordonnées
+1. Résoudre l'échec de démarrage CI ; inspecter l'exécution Actions dans GitHub et son éventuel avis de quota/facturation ; lancer les véritables tests.
+2. Exécuter `npm ci --no-audit --no-fund && npm run build`, `python -m unittest discover -s tests -q`, puis `python scripts/check_built_pages.py` et les audits.
+3. Vérifier visuellement les 114 scènes, mobile 360 px et desktop, FR/AR/EN. Contrôler que chaque représentation respecte les six titres V3.
+4. Seulement après vérifications suffisantes : fusionner PR #140, contrôler le commit déployé, les 19 SVG publics avec SHA, 50 WebP et 150 fiches de documentation.
+5. Poursuivre **FENEK-BOND** (17 codes dans le registre) puis **FENEK-FLOW** (11 codes) ; toujours conserver les sprites source. Vérifier les nombres exacts dans le registre avant production : les groupes non SVG sont au total **31 produits**.
+6. Continuer à considérer toutes les scènes comme des illustrations non contractuelles tant que le laboratoire n'a pas validé les FT/FDS.
+
+## Éviter
+- Ne pas annoncer que le code est en production.
+- Ne pas fusionner avec CI en échec sans évaluation explicite des risques.
+- Ne pas utiliser l'image ERP « lots C-H » produite par erreur dans une session précédente : elle ne correspond pas au site ni aux produits.
