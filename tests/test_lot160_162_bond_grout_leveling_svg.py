@@ -22,7 +22,7 @@ POSITIONS=["translate(0 0)","translate(540 0)","translate(1080 0)","translate(0 
 class BondGroutLevelingArt(unittest.TestCase):
  def test_per_reference_six_step_source(self):
   art={x["code"]:x for x in ART};man={x["code"]:x for x in MAN};cat={x["code"]:x for x in CAT}
-  self.assertEqual(len(ART),len(MAN),len(CAT),50)
+  self.assertEqual((len(ART), len(MAN), len(CAT)), (50, 50, 50))
   for code,titles in TITLES.items():
    with self.subTest(code=code):
     item=art[code];manual=man[code]
