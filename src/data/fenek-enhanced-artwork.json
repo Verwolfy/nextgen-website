@@ -507,7 +507,19 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-paint-int-m-steps.svg",
+    "professionalSvgSha256": "0126b8c9608f89bdb4cefe8628874e9ffafc39cdef146d661d3d5ccbc2eb3fee",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "PAINT-INT-M",
+      "PAINT-INT-S",
+      "PAINT-INT-WA"
+    ]
   },
   {
     "code": "PAINT-INT-S",
@@ -520,7 +532,19 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-paint-int-s-steps.svg",
+    "professionalSvgSha256": "f471fb6f676ff1cbf44691e33f986b17bbf3ce9645f61c9fb2a0e92dfc12528f",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "PAINT-INT-M",
+      "PAINT-INT-S",
+      "PAINT-INT-WA"
+    ]
   },
   {
     "code": "PAINT-INT-WA",
@@ -533,7 +557,19 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-paint-int-wa-steps.svg",
+    "professionalSvgSha256": "6ea34d548a6c7aac9add8899089de2fc685a8bc36e5934127493478bb9bcb617",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "PAINT-INT-M",
+      "PAINT-INT-S",
+      "PAINT-INT-WA"
+    ]
   },
   {
     "code": "PAINT-FAC-M",
@@ -600,7 +636,18 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-paint-prim-a-steps.svg",
+    "professionalSvgSha256": "1114a63104311bebe85bed94b62681aaaa16eedfcd591dccd9f2626412faa06f",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "PAINT-PRIM-A",
+      "PAINT-PRIM-FX"
+    ]
   },
   {
     "code": "PAINT-PRIM-FX",
@@ -613,7 +660,18 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-paint-prim-fx-steps.svg",
+    "professionalSvgSha256": "fcb94cbada4a494a92e4b496924cfda269d71873951d5e78d39f681db3107e1c",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "PAINT-PRIM-A",
+      "PAINT-PRIM-FX"
+    ]
   },
   {
     "code": "PAINT-TXT-F",
