@@ -24,7 +24,7 @@ class AllEnhancedApplicationArt(unittest.TestCase):
         catalogue = {x["code"]: x for x in CAT}
         guides = {x["code"]: x for x in MAN}
         registry = {x["code"]: x for x in ART}
-        self.assertEqual(len(CAT), len(MAN), len(ART), 50)
+        self.assertEqual((len(CAT), len(MAN), len(ART)), (50, 50, 50))
         self.assertEqual(set(catalogue), set(guides))
         self.assertEqual(set(catalogue), set(registry))
         self.assertEqual(len({x["slug"] for x in ART}), 50)
