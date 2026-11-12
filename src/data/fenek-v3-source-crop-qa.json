@@ -1,0 +1,65 @@
+[
+  {
+    "code": "BOND-GR-HR",
+    "slug": "fenek-bond-gr-hr",
+    "cropFraction": 0.78,
+    "sourceStatus": "BROUILLON",
+    "review": "Source V3 6x2048px visually checked; display only upper pictograms, keep localized HTML captions"
+  },
+  {
+    "code": "BOND-GP-CSII",
+    "slug": "fenek-bond-gp-csii",
+    "cropFraction": 0.78,
+    "sourceStatus": "BROUILLON",
+    "review": "Source V3 6x2048px visually checked; display only upper pictograms, keep localized HTML captions"
+  },
+  {
+    "code": "BOND-OC-CSIII",
+    "slug": "fenek-bond-oc-csiii",
+    "cropFraction": 0.78,
+    "sourceStatus": "BROUILLON",
+    "review": "Source V3 6x2048px visually checked; display only upper pictograms, keep localized HTML captions"
+  },
+  {
+    "code": "BOND-M5",
+    "slug": "fenek-bond-m5",
+    "cropFraction": 0.78,
+    "sourceStatus": "BROUILLON",
+    "review": "Source V3 6x2048px visually checked; display only upper pictograms, keep localized HTML captions"
+  },
+  {
+    "code": "BOND-M10",
+    "slug": "fenek-bond-m10",
+    "cropFraction": 0.78,
+    "sourceStatus": "BROUILLON",
+    "review": "Source V3 6x2048px visually checked; display only upper pictograms, keep localized HTML captions"
+  },
+  {
+    "code": "PROOF-CM-O1P",
+    "slug": "fenek-proof-cm-o1p",
+    "cropFraction": 0.78,
+    "sourceStatus": "BROUILLON",
+    "review": "Source V3 6x2048px visually checked; display only upper pictograms, keep localized HTML captions"
+  },
+  {
+    "code": "PROOF-CM-O2P",
+    "slug": "fenek-proof-cm-o2p",
+    "cropFraction": 0.78,
+    "sourceStatus": "BROUILLON",
+    "review": "Source V3 6x2048px visually checked; display only upper pictograms, keep localized HTML captions"
+  },
+  {
+    "code": "PROOF-PU-1K",
+    "slug": "fenek-proof-pu-1k",
+    "cropFraction": 0.78,
+    "sourceStatus": "BROUILLON",
+    "review": "Source V3 6x2048px visually checked; display only upper pictograms, keep localized HTML captions"
+  },
+  {
+    "code": "PROOF-ACR-RF",
+    "slug": "fenek-proof-acr-rf",
+    "cropFraction": 0.78,
+    "sourceStatus": "BROUILLON",
+    "review": "Source V3 6x2048px visually checked; display only upper pictograms, keep localized HTML captions"
+  }
+]
