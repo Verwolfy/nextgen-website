@@ -36,7 +36,7 @@ class BondTileProfessionalArt(unittest.TestCase):
         art={a["code"]:a for a in ART}
         man={a["code"]:a for a in MANUAL}
         cat={a["code"]:a for a in CAT}
-        self.assertEqual(len(ART),len(MANUAL),len(CAT),50)
+        self.assertEqual((len(ART), len(MANUAL), len(CAT)), (50, 50, 50))
         self.assertTrue(set(TITLES).issubset({x["code"] for x in ART if x.get("professionalSvg")}))
         for code,titles in TITLES.items():
             with self.subTest(code=code):
