@@ -23,7 +23,9 @@
       "BOND-C2TE",
       "BOND-C2TE-S1",
       "BOND-C2FT"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "BOND-C1TE",
@@ -49,7 +51,9 @@
       "BOND-C2TE",
       "BOND-C2TE-S1",
       "BOND-C2FT"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "BOND-C2FT",
@@ -75,7 +79,9 @@
       "BOND-C2TE",
       "BOND-C2TE-S1",
       "BOND-C2FT"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "BOND-C2TE",
@@ -101,7 +107,9 @@
       "BOND-C2TE",
       "BOND-C2TE-S1",
       "BOND-C2FT"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "BOND-C2TE-S1",
@@ -127,7 +135,9 @@
       "BOND-C2TE",
       "BOND-C2TE-S1",
       "BOND-C2FT"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "BOND-CG1",
@@ -150,7 +160,9 @@
     "professionalSceneWorkflowWith": [
       "BOND-CG1",
       "BOND-CG2WA"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "BOND-CG2WA",
@@ -173,7 +185,9 @@
     "professionalSceneWorkflowWith": [
       "BOND-CG1",
       "BOND-CG2WA"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "BOND-CT-C25-F5",
@@ -195,7 +209,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "BOND-CT-C25-F5"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "BOND-R2",
@@ -219,7 +235,9 @@
       "BOND-R2",
       "BOND-R3",
       "BOND-R4"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "BOND-R3",
@@ -243,7 +261,9 @@
       "BOND-R2",
       "BOND-R3",
       "BOND-R4"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "BOND-R4",
@@ -268,7 +288,9 @@
       "BOND-R2",
       "BOND-R3",
       "BOND-R4"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "BOND-GR-HR",
@@ -291,7 +313,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "BOND-GR-HR"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "BOND-GP-CSII",
@@ -314,7 +338,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "BOND-GP-CSII"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "BOND-OC-CSIII",
@@ -337,7 +363,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "BOND-OC-CSIII"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "BOND-M5",
@@ -361,7 +389,9 @@
     "professionalSceneWorkflowWith": [
       "BOND-M5",
       "BOND-M10"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "BOND-M10",
@@ -385,7 +415,9 @@
     "professionalSceneWorkflowWith": [
       "BOND-M5",
       "BOND-M10"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PROOF-CM-O1P",
@@ -409,7 +441,9 @@
     "professionalSceneWorkflowWith": [
       "PROOF-CM-O1P",
       "PROOF-CM-O2P"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PROOF-CM-O2P",
@@ -433,7 +467,9 @@
     "professionalSceneWorkflowWith": [
       "PROOF-CM-O1P",
       "PROOF-CM-O2P"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PROOF-PU-1K",
@@ -456,7 +492,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "PROOF-PU-1K"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PROOF-ACR-RF",
@@ -479,7 +517,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "PROOF-ACR-RF"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PROOF-EP-PRIM",
@@ -502,7 +542,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "PROOF-EP-PRIM"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PROOF-EP-SR",
@@ -525,7 +567,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "PROOF-EP-SR"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PROOF-EP-SB",
@@ -548,7 +592,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "PROOF-EP-SB"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PROOF-EP-INJ",
@@ -571,7 +617,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "PROOF-EP-INJ"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PROOF-EP-ANC",
@@ -594,7 +642,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "PROOF-EP-ANC"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PROOF-PU-INJ",
@@ -617,7 +667,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "PROOF-PU-INJ"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PROOF-PU-SEAL",
@@ -640,7 +692,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "PROOF-PU-SEAL"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "FLOW-WR-N",
@@ -664,7 +718,9 @@
     "professionalSceneWorkflowWith": [
       "FLOW-WR-N",
       "FLOW-SP-HR"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "FLOW-SP-HR",
@@ -688,7 +744,9 @@
     "professionalSceneWorkflowWith": [
       "FLOW-WR-N",
       "FLOW-SP-HR"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "FLOW-SP-RT",
@@ -711,7 +769,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "FLOW-SP-RT"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "FLOW-SP-PF",
@@ -734,7 +794,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "FLOW-SP-PF"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "FLOW-RT",
@@ -757,7 +819,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "FLOW-RT"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "FLOW-AC",
@@ -780,7 +844,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "FLOW-AC"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "FLOW-AE",
@@ -803,7 +869,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "FLOW-AE"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "FLOW-WP",
@@ -826,7 +894,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "FLOW-WP"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "FLOW-VMA",
@@ -849,7 +919,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "FLOW-VMA"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "FLOW-CI",
@@ -872,7 +944,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "FLOW-CI"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "FLOW-CURE",
@@ -895,7 +969,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "FLOW-CURE"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "FLOW-LAT",
@@ -918,7 +994,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "FLOW-LAT"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PAINT-INT-M",
@@ -943,7 +1021,9 @@
       "PAINT-INT-M",
       "PAINT-INT-S",
       "PAINT-INT-WA"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PAINT-INT-S",
@@ -968,7 +1048,9 @@
       "PAINT-INT-M",
       "PAINT-INT-S",
       "PAINT-INT-WA"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PAINT-INT-WA",
@@ -993,7 +1075,9 @@
       "PAINT-INT-M",
       "PAINT-INT-S",
       "PAINT-INT-WA"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PAINT-FAC-M",
@@ -1071,7 +1155,9 @@
     "professionalSceneWorkflowWith": [
       "PAINT-PRIM-A",
       "PAINT-PRIM-FX"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PAINT-PRIM-FX",
@@ -1095,7 +1181,9 @@
     "professionalSceneWorkflowWith": [
       "PAINT-PRIM-A",
       "PAINT-PRIM-FX"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PAINT-TXT-F",
@@ -1118,7 +1206,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "PAINT-TXT-F"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PAINT-SOL-A",
@@ -1141,7 +1231,9 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "PAINT-SOL-A"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   },
   {
     "code": "PAINT-ENT-L",
@@ -1164,6 +1256,8 @@
     "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
     "professionalSceneWorkflowWith": [
       "PAINT-ENT-L"
-    ]
+    ],
+    "visualQualityApproved": false,
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
   }
 ]
