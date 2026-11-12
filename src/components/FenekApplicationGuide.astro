@@ -22,7 +22,7 @@ const professionalArtwork=professionalCandidate?.visualQualityApproved===true ? 
 // A premium WebP may render only after separate visual AND FT/FDS technical approvals.
 // Keep the previously published WebP underneath, even after an approval.
 const premiumCandidate=enhancedV3 as (typeof enhancedV3 & {premiumWebp?:string;premiumWebpSha256?:string;premiumVisualApproved?:boolean;premiumTechnicalApproved?:boolean;premiumApprovalRecord?:string|null}) | undefined;
-const premiumArtwork=premiumCandidate?.premiumVisualApproved===true && premiumCandidate?.premiumTechnicalApproved===true && Boolean(premiumCandidate?.premiumApprovalRecord) ? premiumCandidate : undefined;
+const premiumArtwork=premiumCandidate?.premiumVisualApproved===true && premiumCandidate?.premiumTechnicalApproved===true && typeof premiumCandidate.premiumApprovalRecord==='string' && premiumCandidate.premiumApprovalRecord.trim().length>0 ? premiumCandidate : undefined;
 const cropReview=reviewedV3 && !enhancedV3 ? sourceCropReview.find(item=>item.code===product.code && item.slug===product.slug) : undefined;
 const steps=reviewedV3
   ? reviewedV3.steps.map(step=>({title:step.title[lang],description:step.description[lang],icon:step.icon,image:step.image}))
