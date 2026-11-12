@@ -76,7 +76,7 @@
 
 ## Priorité par lot
 
-1. **186 — PROOF-ACR-RF** : pilote de six scènes toiture semi-réalistes, source exacte de la notice, projet WebP V4 généré localement, non encore intégré dans le dépôt binaire.
+1. **186 — PROOF-ACR-RF** : pilote de six scènes toiture semi-réalistes, source exacte de la notice, WebP V4 pilote maintenant importé sur la branche via GitHub Git Blob, SHA vérifié, encore non approuvé.
 2. **187 — PROOF-ACR-RF / PU-1K / CM-O1P / CM-O2P** : montage du lot des étanchéités membranes et cimentaires, contrôle des gestes, EPI, rendu et crop.
 3. **188 — autres PROOF** (7 références) : époxy, joints, injection et scellements, scènes spécifiques.
 4. **189 — BOND restants** (5 références) : coulis, enduits et maçonnerie.
