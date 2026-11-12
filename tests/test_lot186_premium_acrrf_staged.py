@@ -15,6 +15,8 @@ class PremiumWaterproofingCandidate(unittest.TestCase):
         row=art["PROOF-ACR-RF"]
         self.assertEqual(row["slug"],"fenek-proof-acr-rf")
         self.assertIs(row["premiumVisualApproved"],False)
+        self.assertIs(row["premiumTechnicalApproved"],False)
+        self.assertIsNone(row["premiumApprovalRecord"])
         self.assertEqual(row["premiumVisualStatus"],"BROUILLON_REVUE_GRAPHIQUE_ET_FT_FDS")
         self.assertEqual(row["premiumWebp"],
                          "/images/application-premium/fenek-proof-acr-rf-steps-v4.webp")
@@ -43,12 +45,19 @@ class PremiumWaterproofingCandidate(unittest.TestCase):
         self.assertEqual([x["code"] for x in candidates],["PROOF-ACR-RF"])
         self.assertTrue(all(x["premiumVisualApproved"] is False for x in candidates))
         page=(ROOT/"src/components/FenekApplicationGuide.astro").read_text("utf-8")
-        self.assertNotIn("premiumWebp",page)
+        self.assertIn("premiumCandidate?.premiumVisualApproved===true",page)
+        self.assertIn("premiumCandidate?.premiumTechnicalApproved===true",page)
+        self.assertIn("Boolean(premiumCandidate?.premiumApprovalRecord)",page)
+        self.assertIn("--v4-premium:url(",page)
+        self.assertIn("data-v4-premium-webp={premiumArtwork?.premiumWebp}",page)
         audit=(ROOT/"scripts/check_professional_artwork_built.py").read_text("utf-8")
         self.assertIn('premium = art.get("premiumWebp")',audit)
         self.assertIn('verified_asset(premium, art["premiumWebpSha256"], False)',audit)
         self.assertIn('"Unapproved premium artwork must not render"',audit)
         self.assertIn("97 + premium_count",audit)
+        self.assertIn("approved_premium = None",audit)
+        self.assertIn("approved_premium = premium",audit)
+        self.assertIn("Unapproved premium artwork must not render",audit)
 
 if __name__=="__main__":
     unittest.main()
