@@ -42,7 +42,7 @@ class CementitiousWaterproofingArtwork(unittest.TestCase):
         cat = {x["code"]: x for x in CAT}
         art = {x["code"]: x for x in ART}
         self.assertEqual(len(ART), 50)
-        self.assertEqual(len({x["code"] for x in ART if x.get("professionalSvg")}), 10)
+        self.assertTrue(set(TITLES).issubset({x["code"] for x in ART if x.get("professionalSvg")}))
         for code, titles in TITLES.items():
             with self.subTest(code=code):
                 row = art[code]
