@@ -1,5 +1,16 @@
 # NEXTGEN — relais d’exécution des illustrations (12 novembre 2026)
 
+## CORRECTIF PRIORITAIRE — AUDIT VISUEL LOT 186 (12/11/2026)
+
+L'audit antérieur 50/50 ne mesurait que la présence/structure des images. Il **ne certifiait pas** que toutes les scènes avaient le rendu semi-réaliste de `FENEK-BOND C1T`. Une comparaison effective des 50 WebP du `main` et des 50 pages publiques en anglais a établi : **11 A** (qualité C1T), **3 B** (façades illustrées mais différentes), **36 C** (pictogrammes plats). **39 produits requièrent une harmonisation graphique**. Il existe 5 groupes d'images WebP partagées par 13 références.
+
+**IMPORTANT :** les **47 SVG de la PR #140 sont eux aussi des schémas**, et non une solution acceptable au niveau de qualité recherché. Ils sont désormais explicitement **désactivés** via `visualQualityApproved:false` dans `src/data/fenek-enhanced-artwork.json` et par garde `professionalCandidate?.visualQualityApproved===true` dans `FenekApplicationGuide.astro`. Les tests build/live sont mis à jour pour ne pas attendre ces SVG dans le HTML. Les 50 WebP originaux sont préservés.
+
+Livrables de l'audit : `docs/LOT186_AUDIT_VISUEL_50_PRODUITS_20261112.md` et `.json`, liste exacte des 50 produits et niveaux. Nouveau test : `tests/test_lot186_visual_quality_gate.py`. Le candidat illustré ACR-RF V4 est disponible localement en WebP 1620×720, SHA-256 `438694daefa3b97b2ca3d36f38d6bea78fbedb7070203f81b6e06ef3a76fa433`, **non transféré en binaire sur GitHub**, non déployé. Spécification : `docs/LOT186_PILOTE_SEMI_REALISTE_ACR_RF_20261112.md`.
+
+**Nouvelle suite :** importer et contrôler le binaire V4, corriger les marquages FENEK générés par IA non homologués, valider le geste de renforcement, visualiser 360px/desktop et les trois langues, puis poursuivre PROOF par lots. Les conditions CI/FT/FDS antérieures restent applicables.
+
+
 ## Références de projet
 - Site GitHub privé : `Verwolfy/nextgen-website`, branche principale `main`.
 - Branche d’optimisation : `feat/lot139-140-professional-paint-illustrations-20261112`.
