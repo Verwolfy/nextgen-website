@@ -16,7 +16,9 @@ const {lang,product}=Astro.props;
 const reviewedV3=reviewedV3GuideFor(product.code,product.slug);
 // Upgrade only the exact product code + slug. Keep V3 original assets and their hashes intact.
 const enhancedV3=reviewedV3 ? enhancedArtwork.find(item=>item.code===product.code && item.slug===product.slug) : undefined;
-const professionalArtwork=enhancedV3 as (typeof enhancedV3 & {professionalSvg?:string;professionalSvgSha256?:string}) | undefined;
+// The SVG files are editorial drafts. Never replace an existing image merely because a file exists.
+const professionalCandidate=enhancedV3 as (typeof enhancedV3 & {professionalSvg?:string;professionalSvgSha256?:string;visualQualityApproved?:boolean}) | undefined;
+const professionalArtwork=professionalCandidate?.visualQualityApproved===true ? professionalCandidate : undefined;
 const cropReview=reviewedV3 && !enhancedV3 ? sourceCropReview.find(item=>item.code===product.code && item.slug===product.slug) : undefined;
 const steps=reviewedV3
   ? reviewedV3.steps.map(step=>({title:step.title[lang],description:step.description[lang],icon:step.icon,image:step.image}))
