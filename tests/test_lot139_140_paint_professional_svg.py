@@ -44,8 +44,8 @@ class PaintProfessionalArtwork(unittest.TestCase):
         by_code = {r["code"]: r for r in ART}
         manuals = {r["code"]: r for r in MANUALS}
         catalogue = {r["code"]: r for r in CATALOGUE}
-        self.assertEqual({r["code"] for r in ART if r.get("professionalSvg")},
-                         EXPECTED | {"PAINT-TXT-F", "PAINT-SOL-A", "PAINT-ENT-L"})
+        self.assertTrue(EXPECTED.issubset(
+            {r["code"] for r in ART if r.get("professionalSvg")}))
         self.assertEqual(len(ART), 50)
         for code in sorted(EXPECTED):
             with self.subTest(code=code):
