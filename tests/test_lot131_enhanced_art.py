@@ -1,4 +1,4 @@
-"""Lot 131 — ten improved source-checked illustrations bound to their product pages."""
+"""Lot 131 — eleven source-checked illustrations bound to their product pages."""
 from __future__ import annotations
 import hashlib
 import json
@@ -10,11 +10,11 @@ CAT=json.loads((ROOT/"src/data/catalogue-projets.json").read_text(encoding="utf-
 MANUALS=json.loads((ROOT/"src/data/fenek-v3-manuals.json").read_text(encoding="utf-8"))
 UPGRADES=json.loads((ROOT/"src/data/fenek-enhanced-artwork.json").read_text(encoding="utf-8"))
 EXPECTED={"BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1",
-          "BOND-CG1","BOND-CG2WA","BOND-CT-C25-F5","BOND-R2","BOND-R3"}
+          "BOND-CG1","BOND-CG2WA","BOND-CT-C25-F5","BOND-R2","BOND-R3","BOND-R4"}
 
 class EnhancedV3ArtworkTest(unittest.TestCase):
     def test_every_upgrade_is_exact_code_slug_and_real_webp(self):
-        self.assertEqual(len(UPGRADES),10)
+        self.assertEqual(len(UPGRADES),11)
         self.assertEqual({x["code"] for x in UPGRADES},EXPECTED)
         by_code={x["code"]:x for x in CAT}
         manuals={x["code"]:x for x in MANUALS}
@@ -35,6 +35,15 @@ class EnhancedV3ArtworkTest(unittest.TestCase):
                 self.assertEqual(hashlib.sha256(data).hexdigest(),row["sha256"])
                 self.assertLess(len(data),250_000)
                 self.assertEqual(len(manuals[code]["steps"]),6)
+
+    def test_bond_r4_shared_artwork_is_semantically_audited(self):
+        index={p["code"]:p for p in UPGRADES}
+        self.assertEqual(index["BOND-R4"]["sharedArtworkFrom"],"BOND-R3")
+        self.assertEqual(index["BOND-R4"]["sha256"],index["BOND-R3"]["sha256"])
+        self.assertEqual(index["BOND-R4"]["slug"],"fenek-bond-r4")
+        # Both sources use six equivalent concrete-repair actions, with no numeric technical claims.
+        manual={p["code"]:p for p in MANUALS}["BOND-R4"]
+        self.assertEqual([x["image"] for x in manual["steps"]],list(range(1,7)))
 
     def test_upgrades_are_mapped_to_real_documentation_component(self):
         source=(ROOT/"src/components/FenekApplicationGuide.astro").read_text(encoding="utf-8")

@@ -118,5 +118,18 @@
       540,
       360
     ]
+  },
+  {
+    "code": "BOND-R4",
+    "slug": "fenek-bond-r4",
+    "sprite": "/images/application-upgraded/fenek-bond-r4-steps.webp",
+    "sha256": "c0d5aa7ab363de933c0e524bd976d3db13c53bbf820bbe9f6f81a8a49088fe9b",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sharedArtworkFrom": "BOND-R3"
   }
 ]
