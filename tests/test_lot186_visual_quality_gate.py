@@ -43,7 +43,7 @@ class GuardIllustrationVisualQuality(unittest.TestCase):
         self.assertIn("if approved_svg:", built)
         self.assertIn("upgraded.get('visualQualityApproved') is True", live)
         self.assertIn("Unapproved professional SVG must not be displayed", live)
-        self.assertIn("background-image:var(--v3-professional,none),var(--v3-sprite)", comp)
+        self.assertIn("background-image:var(--v4-premium,none),var(--v3-professional,none),var(--v3-sprite)", comp)
 
     def test_shared_media_are_not_misreported_as_unique(self):
         groups = AUDIT["summary"]["sharedSpriteGroups"]
