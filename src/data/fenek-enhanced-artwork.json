@@ -539,40 +539,55 @@
     "code": "PAINT-FAC-M",
     "slug": "fenek-paint-fac-m",
     "sprite": "/images/application-upgraded/fenek-paint-fac-m-steps.webp",
-    "sha256": "b94a813adc603af4da9e011b30d64cf5f6934cf8fe90331de3f76d2306faebea",
+    "sha256": "c8802153bfcd44f2c8e5217ef739f42421bcb66af56f97d35c1ae8742e14dab5",
     "status": "BROUILLON",
     "layout": "3x2",
     "artworkDimensions": [
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "illustration-professionnelle-façade-6-scènes",
+    "sharedSceneWorkflowWith": [
+      "PAINT-FAC-M",
+      "PAINT-FAC-EL",
+      "PAINT-FAC-SX"
+    ]
   },
   {
     "code": "PAINT-FAC-EL",
     "slug": "fenek-paint-fac-el",
     "sprite": "/images/application-upgraded/fenek-paint-fac-el-steps.webp",
-    "sha256": "b94a813adc603af4da9e011b30d64cf5f6934cf8fe90331de3f76d2306faebea",
+    "sha256": "36c66173f29ca5fcb572039ba669b9b6babbb3e9d99db898a5b08b8ca2e032ba",
     "status": "BROUILLON",
     "layout": "3x2",
     "artworkDimensions": [
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "illustration-professionnelle-façade-6-scènes",
+    "sharedSceneWorkflowWith": [
+      "PAINT-FAC-M",
+      "PAINT-FAC-EL",
+      "PAINT-FAC-SX"
+    ]
   },
   {
     "code": "PAINT-FAC-SX",
     "slug": "fenek-paint-fac-sx",
     "sprite": "/images/application-upgraded/fenek-paint-fac-sx-steps.webp",
-    "sha256": "b94a813adc603af4da9e011b30d64cf5f6934cf8fe90331de3f76d2306faebea",
+    "sha256": "ff800e58d5bce6478eb18f114ba234f7ce7bc20db06dcab97453457c5d6a430b",
     "status": "BROUILLON",
     "layout": "3x2",
     "artworkDimensions": [
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "illustration-professionnelle-façade-6-scènes",
+    "sharedSceneWorkflowWith": [
+      "PAINT-FAC-M",
+      "PAINT-FAC-EL",
+      "PAINT-FAC-SX"
+    ]
   },
   {
     "code": "PAINT-PRIM-A",
