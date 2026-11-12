@@ -256,7 +256,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-proof-pu-1k-steps.svg",
+    "professionalSvgSha256": "f250a61d08fe221c2ffb870a6e80e0eb131fcbd9adff3be674823685dd03906e",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "PROOF-PU-1K"
+    ]
   },
   {
     "code": "PROOF-ACR-RF",
@@ -269,7 +279,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-proof-acr-rf-steps.svg",
+    "professionalSvgSha256": "71a3182822030eb923cc9ad1b57e10284edfb4da6afbc6f21754d9c4f17386b1",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "PROOF-ACR-RF"
+    ]
   },
   {
     "code": "PROOF-EP-PRIM",
@@ -282,7 +302,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-proof-ep-prim-steps.svg",
+    "professionalSvgSha256": "3b4f5ce8b1ae41f7534e6625d0c3269b35d18f94f3129da56e7dd94c9cfec783",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "PROOF-EP-PRIM"
+    ]
   },
   {
     "code": "PROOF-EP-SR",
@@ -295,7 +325,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-proof-ep-sr-steps.svg",
+    "professionalSvgSha256": "856a87f57033f6e3e3c96ef1fa433ea54d1f87c899f60050ba2ed8a932e90708",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "PROOF-EP-SR"
+    ]
   },
   {
     "code": "PROOF-EP-SB",
