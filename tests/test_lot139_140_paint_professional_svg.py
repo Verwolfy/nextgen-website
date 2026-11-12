@@ -79,7 +79,7 @@ class PaintProfessionalArtwork(unittest.TestCase):
                                  ["translate(0 0)", "translate(540 0)", "translate(1080 0)",
                                   "translate(0 360)", "translate(540 360)", "translate(1080 360)"])
                 self.assertEqual(len(root.findall(".//{http://www.w3.org/2000/svg}text")), 12)
-                self.assertEqual(sum(code in (x.text or "") for x in root.iter()), 6)
+                self.assertEqual(sum(code in (x.text or "") for x in root.findall(".//{http://www.w3.org/2000/svg}text")), 6)
                 self.assertFalse(any(x.tag.rsplit("}", 1)[-1] in
                                      {"image", "script", "foreignObject", "use"} for x in root.iter()))
                 self.assertNotIn(b" href=", raw)
