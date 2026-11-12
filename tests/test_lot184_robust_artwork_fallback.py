@@ -36,7 +36,7 @@ class RobustApplicationIllustrationFallback(unittest.TestCase):
             'verified_asset(professional_svg, art["professionalSvgSha256"], True)',
             src,
         )
-        self.assertIn("(media_checks, page_checks) != (97, 150)", src)
+        self.assertIn("(media_checks, page_checks) != (97 + premium_count, 150)", src)
         self.assertIn("for i, image in enumerate(parser.illustrations, 1)", src)
         self.assertIn("from check_professional_artwork_built import main", entry)
         self.assertIn("check_professional_artwork_built()", entry)
