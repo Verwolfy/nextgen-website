@@ -107,6 +107,13 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
         updated=fetch(origin,upgraded_path,timeout)
         if updated[:4]!=b'RIFF' or updated[8:12]!=b'WEBP' or hashlib.sha256(updated).hexdigest()!=art['sha256']:
             raise AssertionError((code,'upgraded artwork not published',upgraded_path))
+        if art.get('professionalSvg'):
+            professional_path=f'/images/application-professional/{slug}-steps.svg'
+            if art['professionalSvg']!=professional_path or art.get('professionalSvgDimensions')!=[1620,720]:
+                raise AssertionError((code,'wrong professional SVG reference'))
+            professional=fetch(origin,professional_path,timeout)
+            if not professional.startswith(b'<svg') or hashlib.sha256(professional).hexdigest()!=art['professionalSvgSha256']:
+                raise AssertionError((code,'professional SVG is missing or altered',professional_path))
         return code
     with ThreadPoolExecutor(max_workers=workers) as pool:
         results=list(pool.map(test_asset,catalog))
@@ -135,6 +142,13 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
                 raise AssertionError('Upgraded image is not linked to this exact product')
             if upgraded['sprite'].encode('utf-8') not in raw:
                 raise AssertionError('New artwork is not actually referenced in the page')
+            if upgraded.get('professionalSvg'):
+                if attrs.get('data-v3-professional-svg')!=upgraded['professionalSvg'] or attrs.get('data-v3-professional-hash')!=upgraded['professionalSvgSha256']:
+                    raise AssertionError('Professional SVG is not linked to this exact product')
+                if upgraded['professionalSvg'].encode('utf-8') not in raw:
+                    raise AssertionError('Professional image not referenced by the rendered page')
+            elif attrs.get('data-v3-professional-svg'):
+                raise AssertionError('Unexpected professional image on a different product')
         except Exception as exc:
             raise AssertionError(f'{lang}/{p["code"]} ({path}): {exc}') from exc
         return path
@@ -144,7 +158,7 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
         for future in as_completed(futures):
             future.result();checked+=1
     if checked!=150: raise AssertionError(f'Only {checked}/150 application pages were checked')
-    print('PASS Cloudflare: 150 FR/AR/EN pages, 50 updated WebP SHAs, stage order and product identity',flush=True)
+    print('PASS Cloudflare: 150 FR/AR/EN pages, 50 WebP SHAs, 5 professional SVG SHAs, stage order and identity',flush=True)
     return checked
 
 
