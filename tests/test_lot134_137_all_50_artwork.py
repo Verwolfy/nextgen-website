@@ -33,7 +33,10 @@ class AllFenekArtwork(unittest.TestCase):
                 self.assertEqual(image["layout"],"3x2")
                 self.assertEqual(image["artworkDimensions"],[540,360])
                 self.assertEqual([s["image"] for s in guides[code]["steps"]],list(range(1,7)))
-                if code not in ARCHIVE:
+                if code in {"PAINT-FAC-M","PAINT-FAC-EL","PAINT-FAC-SX"}:
+                    self.assertEqual(image["sourceType"],"illustration-professionnelle-façade-6-scènes")
+                    self.assertEqual(set(image["sharedSceneWorkflowWith"]),{"PAINT-FAC-M","PAINT-FAC-EL","PAINT-FAC-SX"})
+                elif code not in ARCHIVE:
                     self.assertEqual(image["sourceType"],"remaster-graphique-des-six-PNG-V3-originaux")
                 p=ROOT/"public"/image["sprite"].lstrip("/")
                 self.assertTrue(p.is_file(),p)
