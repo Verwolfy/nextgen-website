@@ -653,7 +653,18 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-flow-wr-n-steps.svg",
+    "professionalSvgSha256": "04b848fcab51ca256e786d33c81633fcaf8efc29af42651ee377681c1c3ddfa3",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "FLOW-WR-N",
+      "FLOW-SP-HR"
+    ]
   },
   {
     "code": "FLOW-SP-HR",
@@ -666,7 +677,18 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-flow-sp-hr-steps.svg",
+    "professionalSvgSha256": "556c3965b1377f30a8c719143b0ea3d3511ce0ab4820759921e621101018b154",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "FLOW-WR-N",
+      "FLOW-SP-HR"
+    ]
   },
   {
     "code": "FLOW-SP-RT",
@@ -679,7 +701,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-flow-sp-rt-steps.svg",
+    "professionalSvgSha256": "1bd36dafc51d1e62cf5ee46437cb03d034a87d38fcac2dce1a2b1bba3fda54e0",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "FLOW-SP-RT"
+    ]
   },
   {
     "code": "FLOW-SP-PF",
@@ -692,7 +724,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-flow-sp-pf-steps.svg",
+    "professionalSvgSha256": "055e9524daa2d0becbef077369853c31d60ea04ab5b80e3390455c64399c5a19",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "FLOW-SP-PF"
+    ]
   },
   {
     "code": "FLOW-RT",
@@ -705,7 +747,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-flow-rt-steps.svg",
+    "professionalSvgSha256": "d80b42d939f046eeeab8a5d3c9fa48119e700ca1f1e4401fceffd2cf2d791f1d",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "FLOW-RT"
+    ]
   },
   {
     "code": "FLOW-AC",
@@ -718,7 +770,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-flow-ac-steps.svg",
+    "professionalSvgSha256": "ca7aa7da7a5af9393971f5129b8e283e4820cba0dc16da6dfe8510ae12617a82",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "FLOW-AC"
+    ]
   },
   {
     "code": "FLOW-AE",
@@ -731,7 +793,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-flow-ae-steps.svg",
+    "professionalSvgSha256": "36a7906f1296b089c304f8c6a6564ea7242e1964e5597824efd30b1bae147975",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "FLOW-AE"
+    ]
   },
   {
     "code": "FLOW-WP",
@@ -744,7 +816,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-flow-wp-steps.svg",
+    "professionalSvgSha256": "2f89f0eef59a70fb9520a74166ac72e7943cf27b2cfca79c2d2c8134e3e61f61",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "FLOW-WP"
+    ]
   },
   {
     "code": "FLOW-VMA",
@@ -757,7 +839,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-flow-vma-steps.svg",
+    "professionalSvgSha256": "0bec4cf19de95c3a76ee8a890ad69f155f451f328acfca7da83ce8c0cb4f7ca2",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "FLOW-VMA"
+    ]
   },
   {
     "code": "FLOW-CI",
@@ -770,7 +862,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-flow-ci-steps.svg",
+    "professionalSvgSha256": "fdbd332d5b6f65f40bc2874513d80ddefb6bef7ef819bf0cc54667e0f8fb5e49",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "FLOW-CI"
+    ]
   },
   {
     "code": "FLOW-CURE",
@@ -783,7 +885,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-flow-cure-steps.svg",
+    "professionalSvgSha256": "4983d5d07ca3025e7dff100b156c2b28f6b8d3eae61a5d98853323e81e47a019",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "FLOW-CURE"
+    ]
   },
   {
     "code": "FLOW-LAT",
@@ -796,7 +908,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-flow-lat-steps.svg",
+    "professionalSvgSha256": "f7659e72e3cdfefb82209d2299ac12f789e9198311a1e516dbceafc127683d48",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "FLOW-LAT"
+    ]
   },
   {
     "code": "PAINT-INT-M",
