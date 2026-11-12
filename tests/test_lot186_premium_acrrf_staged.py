@@ -47,7 +47,7 @@ class PremiumWaterproofingCandidate(unittest.TestCase):
         page=(ROOT/"src/components/FenekApplicationGuide.astro").read_text("utf-8")
         self.assertIn("premiumCandidate?.premiumVisualApproved===true",page)
         self.assertIn("premiumCandidate?.premiumTechnicalApproved===true",page)
-        self.assertIn("Boolean(premiumCandidate?.premiumApprovalRecord)",page)
+        self.assertIn("premiumCandidate.premiumApprovalRecord.trim().length>0",page)
         self.assertIn("--v4-premium:url(",page)
         self.assertIn("data-v4-premium-webp={premiumArtwork?.premiumWebp}",page)
         audit=(ROOT/"scripts/check_professional_artwork_built.py").read_text("utf-8")
