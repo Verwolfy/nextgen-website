@@ -51,7 +51,8 @@ class CementitiousWaterproofingArtwork(unittest.TestCase):
                 self.assertEqual(row["slug"], cat[code]["slug"])
                 self.assertEqual([x["title"]["fr"] for x in guide["steps"]], titles)
                 self.assertEqual([x["image"] for x in guide["steps"]], list(range(1, 7)))
-                self.assertEqual(row["status"], guide["status"], "BROUILLON")
+                self.assertEqual(row["status"], "BROUILLON")
+                self.assertEqual(guide["status"], "BROUILLON")
                 self.assertEqual(row["professionalSceneWorkflowWith"], sorted(TITLES))
                 self.assertEqual(row["professionalSvgDimensions"], [1620, 720])
                 self.assertEqual(row["professionalSourceType"],
