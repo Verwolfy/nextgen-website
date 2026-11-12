@@ -142,13 +142,13 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
                 raise AssertionError('Upgraded image is not linked to this exact product')
             if upgraded['sprite'].encode('utf-8') not in raw:
                 raise AssertionError('New artwork is not actually referenced in the page')
-            if upgraded.get('professionalSvg'):
+            if upgraded.get('professionalSvg') and upgraded.get('visualQualityApproved') is True:
                 if attrs.get('data-v3-professional-svg')!=upgraded['professionalSvg'] or attrs.get('data-v3-professional-hash')!=upgraded['professionalSvgSha256']:
                     raise AssertionError('Professional SVG is not linked to this exact product')
                 if upgraded['professionalSvg'].encode('utf-8') not in raw:
                     raise AssertionError('Professional image not referenced by the rendered page')
-            elif attrs.get('data-v3-professional-svg'):
-                raise AssertionError('Unexpected professional image on a different product')
+            elif attrs.get('data-v3-professional-svg') or attrs.get('data-v3-professional-hash'):
+                raise AssertionError('Unapproved professional SVG must not be displayed')
         except Exception as exc:
             raise AssertionError(f'{lang}/{p["code"]} ({path}): {exc}') from exc
         return path
