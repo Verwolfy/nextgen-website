@@ -114,6 +114,14 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
             professional=fetch(origin,professional_path,timeout)
             if not professional.startswith(b'<svg') or hashlib.sha256(professional).hexdigest()!=art['professionalSvgSha256']:
                 raise AssertionError((code,'professional SVG is missing or altered',professional_path))
+        premium=art.get('premiumWebp')
+        if premium:
+            premium_path=f'/images/application-premium/{slug}-steps-v4.webp'
+            if premium!=premium_path:
+                raise AssertionError((code,'wrong premium WebP reference'))
+            premium_data=fetch(origin,premium_path,timeout)
+            if premium_data[:4]!=b'RIFF' or premium_data[8:12]!=b'WEBP' or hashlib.sha256(premium_data).hexdigest()!=art['premiumWebpSha256']:
+                raise AssertionError((code,'premium WebP is missing or altered',premium_path))
         return code
     with ThreadPoolExecutor(max_workers=workers) as pool:
         results=list(pool.map(test_asset,catalog))
@@ -149,6 +157,23 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
                     raise AssertionError('Professional image not referenced by the rendered page')
             elif attrs.get('data-v3-professional-svg') or attrs.get('data-v3-professional-hash'):
                 raise AssertionError('Unapproved professional SVG must not be displayed')
+            premium=upgraded.get('premiumWebp')
+            approved_premium=(
+                bool(premium)
+                and upgraded.get('premiumVisualApproved') is True
+                and upgraded.get('premiumTechnicalApproved') is True
+                and isinstance(upgraded.get('premiumApprovalRecord'), str)
+                and bool(upgraded['premiumApprovalRecord'].strip())
+            )
+            if approved_premium:
+                if attrs.get('data-v4-premium-webp')!=premium or attrs.get('data-v4-premium-hash')!=upgraded['premiumWebpSha256']:
+                    raise AssertionError('Approved premium asset not linked to exact product')
+                if premium.encode('utf-8') not in raw:
+                    raise AssertionError('Approved premium missing in rendered page')
+            elif attrs.get('data-v4-premium-webp') or attrs.get('data-v4-premium-hash'):
+                raise AssertionError('Unapproved premium artwork must not be displayed')
+            if premium and not approved_premium and premium.encode('utf-8') in raw:
+                raise AssertionError('Unapproved premium asset leaked into page markup')
         except Exception as exc:
             raise AssertionError(f'{lang}/{p["code"]} ({path}): {exc}') from exc
         return path
@@ -160,7 +185,8 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
     if checked!=150: raise AssertionError(f'Only {checked}/150 application pages were checked')
     print(f"PASS Cloudflare: 150 FR/AR/EN pages, 50 WebP SHAs, "
           f"{sum(bool(a.get('professionalSvg')) for a in upgrades)} professional SVG SHAs, "
-          "stage order and product identity", flush=True)
+          f"{sum(bool(a.get('premiumWebp')) for a in upgrades)} premium WebP SHAs, "
+          "stage order, visual/technical approval gating and product identity", flush=True)
     return checked
 
 
