@@ -65,7 +65,7 @@ class RemainingProofIllustrations(unittest.TestCase):
         art={r["code"]:r for r in ART}
         manuals={r["code"]:r for r in MANUALS}
         cat={r["code"]:r for r in CAT}
-        self.assertEqual(len(ART),len(MANUALS),len(CAT),50)
+        self.assertEqual((len(ART), len(MANUALS), len(CAT)), (50, 50, 50))
         self.assertTrue(set(SOURCES).issubset(
             {x["code"] for x in ART if x.get("professionalSvg")}))
         for code,expected in SOURCES.items():
