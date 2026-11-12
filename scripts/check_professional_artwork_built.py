@@ -101,12 +101,21 @@ def main() -> None:
             media_checks += 1
 
         premium = art.get("premiumWebp")
+        approved_premium = None
         if premium:
             expected_premium = f"/images/application-premium/{slug}-steps-v4.webp"
             if premium != expected_premium:
                 raise AssertionError((code, "Wrong staged premium media path"))
-            if art.get("premiumVisualApproved") is not False:
-                raise AssertionError((code, "Staged media must remain unapproved until QA"))
+            if not isinstance(art.get("premiumVisualApproved"), bool) or not isinstance(art.get("premiumTechnicalApproved"), bool):
+                raise AssertionError((code, "Two explicit premium approvals are required"))
+            is_approved = (
+                art["premiumVisualApproved"] is True
+                and art["premiumTechnicalApproved"] is True
+                and isinstance(art.get("premiumApprovalRecord"), str)
+                and bool(art["premiumApprovalRecord"].strip())
+            )
+            if is_approved:
+                approved_premium = premium
             verified_asset(premium, art["premiumWebpSha256"], False)
             media_checks += 1
             premium_count += 1
@@ -131,6 +140,12 @@ def main() -> None:
                     raise AssertionError((code, lang, "Professional image mismatch"))
             elif attrs.get("data-v3-professional-svg") or attrs.get("data-v3-professional-hash"):
                 raise AssertionError((code, lang, "Unexpected SVG binding for facade"))
+            if approved_premium:
+                if (attrs.get("data-v4-premium-webp") != approved_premium or
+                        attrs.get("data-v4-premium-hash") != art["premiumWebpSha256"]):
+                    raise AssertionError((code, lang, "Approved premium image mismatch"))
+            elif attrs.get("data-v4-premium-webp") or attrs.get("data-v4-premium-hash"):
+                raise AssertionError((code, lang, "Unapproved premium image is linked"))
 
             for i, image in enumerate(parser.illustrations, 1):
                 style = image.get("style") or ""
@@ -138,7 +153,10 @@ def main() -> None:
                     raise AssertionError((code, lang, "Wrong step order or accessibility"))
                 if webp not in style or "--v3-sprite:" not in style:
                     raise AssertionError((code, lang, i, "Missing WebP fallback"))
-                if premium and premium in style:
+                if approved_premium:
+                    if approved_premium not in style or "--v4-premium:" not in style:
+                        raise AssertionError((code, lang, i, "Approved premium sprite missing"))
+                elif "--v4-premium:" in style or (premium and premium in style):
                     raise AssertionError((code, lang, i, "Unapproved premium artwork must not render"))
                 if approved_svg:
                     if approved_svg not in style or "--v3-professional:" not in style:
