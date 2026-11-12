@@ -139,6 +139,17 @@
     "artworkDimensions": [
       540,
       360
+    ],
+    "professionalSvg": "/images/application-professional/fenek-bond-cg1-steps.svg",
+    "professionalSvgSha256": "e371395f231d7458029d6a16e84670569a004162504b599c50360b4c292999e2",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "BOND-CG1",
+      "BOND-CG2WA"
     ]
   },
   {
@@ -151,6 +162,17 @@
     "artworkDimensions": [
       540,
       360
+    ],
+    "professionalSvg": "/images/application-professional/fenek-bond-cg2wa-steps.svg",
+    "professionalSvgSha256": "6965e4e132505a774fe3c9e5683ef64e90a0c95ee1e7e5333d2d40966be7c04c",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "BOND-CG1",
+      "BOND-CG2WA"
     ]
   },
   {
@@ -163,6 +185,16 @@
     "artworkDimensions": [
       540,
       360
+    ],
+    "professionalSvg": "/images/application-professional/fenek-bond-ct-c25-f5-steps.svg",
+    "professionalSvgSha256": "640eb8189c17c1e5cd0c867f0ea19951dc3e7bcc028828f56d0b6c51d0390831",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "BOND-CT-C25-F5"
     ]
   },
   {
