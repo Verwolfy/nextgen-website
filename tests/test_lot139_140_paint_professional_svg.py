@@ -92,7 +92,7 @@ class PaintProfessionalArtwork(unittest.TestCase):
     def test_component_priority_and_fallback_are_explicit(self):
         src = (ROOT / "src/components/FenekApplicationGuide.astro").read_text(encoding="utf-8")
         self.assertIn("professionalArtwork?.professionalSvg", src)
-        self.assertIn("background-image:var(--v3-professional,var(--v3-sprite))", src)
+        self.assertIn("background-image:var(--v3-professional,none),var(--v3-sprite)", src)
         self.assertIn("data-v3-professional-svg={professionalArtwork?.professionalSvg}", src)
         self.assertIn("data-v3-professional-hash={professionalArtwork?.professionalSvgSha256}", src)
         self.assertIn("enhancedV3?.sprite ?? reviewedV3.sprite", src)
