@@ -11,8 +11,10 @@ Date : 12 novembre 2026 · **BROUILLON / candidat visuel V4**, non approuvé pou
 ## Premier candidat produit en dehors du dépôt binaire
 Une planche V4 a été extraite d'une maquette de guide d'application semi-réaliste produite dans la conversation, puis nettoyée de son habillage de page et composée à partir de six scènes en une planche WebP de 1620×720 pixels (six cases 540×360).
 
-**Fichier à importer dans une étape ultérieure par accès binaire GitHub :**
-`fenek-proof-acr-rf-steps-v4.webp`
+**Fichier binaire effectivement importé dans GitHub et relu sur la branche :**
+`public/images/application-premium/fenek-proof-acr-rf-steps-v4.webp`
+
+**SHA de blob Git vérifié :** `2e3b418324ed3f5100225063d09022af518477a4`.
 
 **SHA-256 binaire :** `438694daefa3b97b2ca3d36f38d6bea78fbedb7070203f81b6e06ef3a76fa433`.
 
@@ -31,7 +33,7 @@ Les six étapes sont liées à la notice V3 existante :
 - Les inscriptions `FENEK` sur les EPI et outils sont du contenu **généré** ; ne pas les utiliser comme preuve de logo, d'emballage, ou de marque officiellement homologuée. Vérifier/retoucher toute représentation non authentifiée.
 - Aucun chiffre de dosage, taux, temps, température ou performance ne doit être ajouté.
 - Vérifier à l'écran 360px et desktop le cadrage des six panneaux, et les textes AR/FR/EN restent en HTML.
-- Il est impossible de considérer ce candidat comme présent dans le dépôt tant qu'un mécanisme de transfert binaire GitHub n'a pas été utilisé et que son SHA n'a pas été vérifié dans l'archive du dépôt.
+- **Transfert réalisé** via l’API Git Trees/Blobs sans force push. Le SHA-1 Git du fichier binaire relu dans le dépôt correspond au fichier local. Le candidat est versionné mais n'est pas affiché sur le site et reste en revue graphique/FT/FDS.
 
 ## Protection anti-régression installée sur PR #140
 Le site ne doit pas afficher automatiquement les 47 SVG schématiques en prépublication. Le manifeste porte `visualQualityApproved:false` pour eux. Dans `FenekApplicationGuide.astro`, le SVG n'est affiché que si `visualQualityApproved===true`. Le WebP existant reste la ressource principale, inchangée.
