@@ -48,6 +48,16 @@ Les quatre workflows GitHub Actions de la PR #140 concluent `failure` en quelque
 Le 12/11/2026, les quatre workflows **sur `main` lui-même**, commit `d676565a...` (vers 11:48 UTC), avaient déjà `conclusion=failure` : exemple build `43212345135`. Sur la PR, les échecs existent également. Le job de build récemment inspecté `131235550508` avait **0 étape exécutée**. Le dépôt distinct `Verwolfy/erp-mortier` possédait encore des workflows `success` le 09/11/2026. Cela renforce le diagnostic « blocage préalable au travail de cette PR », mais **ne détermine pas** la cause racine : vérifier les avertissements Actions et les limites du dépôt/compte.
 Le fichier public `https://nextgen-buildingsolutions.com/deployment.json` n’a pas pu être ouvert depuis l'outil web au cours de cet audit ; aucun statut de déploiement n’en a été déduit.
 
+## Lots 184–185 : durcissement avant publication
+
+**Lot 184 — défaut de repli corrigé :** auparavant, la variable CSS `--v3-professional` empêchait le WebP d'apparaître si la requête réseau du SVG échouait. Le composant `FenekApplicationGuide.astro` affiche désormais deux couches `background-image:var(--v3-professional,none),var(--v3-sprite)` avec tailles/positions identiques. Trois tests existants ont été mis à jour et un test `tests/test_lot184_robust_artwork_fallback.py` a été ajouté. La vérification visuelle d'un SVG volontairement bloqué reste à faire.
+
+**Audit post-build obligatoire :** `scripts/check_professional_artwork_built.py`, raccordé à `python scripts/check_built_pages.py`, contrôlera dans `dist/` la présence et les SHA des **97 médias** (47 SVG + 50 WebP), plus **150 pages FR/AR/EN** et leurs six liens d'images (300). Ce contrôle n'a pas encore été exécuté sur un site réellement compilé.
+
+**Lot 185 — correction de 7 tests :** des appels `self.assertEqual(len(A),len(B),len(C),50)` invalides ont été remplacés par des comparaisons de tuples `(len(A),len(B),len(C)) == (50,50,50)` dans sept fichiers de tests Python. Audit statique réalisé ensuite sur les **11 fichiers de tests de la série** : 212 assertions `assertEqual`/`assertNotEqual`, aucune signature invalide repérée. Comparaison des titres des six étapes pour 29 produits avec le référentiel de notices : 0 différence.
+
+**Limitation persistante :** GitHub Actions échoue aussi sur le `main` antérieur à cette PR, et les outils web n'ont pas pu accéder au site public. Aucun succès de la compilation, des tests Python, de la vérification 97 médias en `dist/`, de la QA visuelle mobile ou du déploiement Cloudflare ne peut être revendiqué.
+
 ## Prochaines actions recommandées
 1. Diagnostiquer l’indisponibilité des runners GitHub Actions (avertissements du dépôt, facturation/quota, droits, compte, service). Ne pas présumer du motif.
 2. Sur runner fonctionnel ou environnement local authentifié, exécuter : `python -m unittest discover -s tests -q`, `npm ci --no-audit --no-fund && npm run build`, puis `python scripts/check_built_pages.py` et audits préproduction.
