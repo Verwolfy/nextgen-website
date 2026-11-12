@@ -14,15 +14,15 @@ class RobustApplicationIllustrationFallback(unittest.TestCase):
     def test_css_two_media_layers_have_matching_crop_position(self):
         src = COMPONENT.read_text(encoding="utf-8")
         self.assertIn(
-            "background-image:var(--v3-professional,none),var(--v3-sprite)",
+            "background-image:var(--v4-premium,none),var(--v3-professional,none),var(--v3-sprite)",
             src,
         )
-        self.assertIn("background-size:300% 200%,300% 200%", src)
+        self.assertIn("background-size:300% 200%,300% 200%,300% 200%", src)
         self.assertIn(
-            "background-position:var(--sprite-position),var(--sprite-position)",
+            "background-position:var(--sprite-position),var(--sprite-position),var(--sprite-position)",
             src,
         )
-        self.assertIn("background-repeat:no-repeat,no-repeat", src)
+        self.assertIn("background-repeat:no-repeat,no-repeat,no-repeat", src)
         self.assertIn("--v3-professional:url(", src)
         self.assertIn("--v3-sprite:url(", src)
 
