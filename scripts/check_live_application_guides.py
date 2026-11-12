@@ -14,6 +14,7 @@ from check_live_production import LANGS, fetch, validate_html
 ROOT = Path(__file__).resolve().parents[1]
 CATALOGUE = ROOT / 'src' / 'data' / 'catalogue-projets.json'
 MANUALS = ROOT / 'src' / 'data' / 'fenek-v3-manuals.json'
+UPGRADE_MANIFEST = ROOT / 'src' / 'data' / 'fenek-enhanced-artwork.json'
 SPRITE_SHA256 = '55197582655ba03f9de8d933047236e63efbd5df27a1acde136c5fc342059b1c'
 C1T_V3_SHA256 = '9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3'
 C1TE_V3_SHA256 = '0d4ea8e4b5fc7ec44e3b772f470aeffa81cc50009b2f724d0420c89fd8cd58ce'
@@ -72,6 +73,10 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
     """Only run after the exact deployed Git SHA has been verified by the release gate."""
     catalog=json.loads(CATALOGUE.read_text(encoding='utf-8'))
     manuals=json.loads(MANUALS.read_text(encoding='utf-8'))
+    upgrades=json.loads(UPGRADE_MANIFEST.read_text(encoding='utf-8'))
+    upgraded_index={row['code']:row for row in upgrades}
+    if len(upgrades)!=50 or len(upgraded_index)!=50:
+        raise AssertionError('Expected upgraded artwork for all 50 references')
     if len(catalog)!=50 or len(manuals)!=50 or len({p['code'] for p in catalog})!=50:
         raise AssertionError('Source catalogue must contain 50 distinct references')
     if len({p['slug'] for p in catalog})!=50 or {p['gamme'] for p in catalog}!={'bond','flow','proof','paint'}:
@@ -95,11 +100,18 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
         expected=LEGACY.get(code,manual['sha256'])
         if raw[:4]!=b'RIFF' or raw[8:12]!=b'WEBP' or hashlib.sha256(raw).hexdigest()!=expected:
             raise AssertionError((code,'published image SHA incorrect',path))
+        art=upgraded_index[code]
+        upgraded_path=f'/images/application-upgraded/{slug}-steps.webp'
+        if art['slug']!=slug or art['sprite']!=upgraded_path or art['status']!='BROUILLON':
+            raise AssertionError((code,'new artwork does not match product identity'))
+        updated=fetch(origin,upgraded_path,timeout)
+        if updated[:4]!=b'RIFF' or updated[8:12]!=b'WEBP' or hashlib.sha256(updated).hexdigest()!=art['sha256']:
+            raise AssertionError((code,'upgraded artwork not published',upgraded_path))
         return code
     with ThreadPoolExecutor(max_workers=workers) as pool:
         results=list(pool.map(test_asset,catalog))
     if len(results)!=50: raise AssertionError('Some V3 media could not be verified')
-    print('PASS 50 served V3 reference-specific media SHA-256',flush=True)
+    print('PASS 50 original V3 + 50 new remastered media with matching SHA-256',flush=True)
 
     tasks=[(lang,p,f"/{lang}/documentation/{p['slug']}/") for lang in LANGS for p in catalog]
     def test_page(task):
@@ -118,8 +130,11 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
                 raise AssertionError('Provisional V3 status missing')
             if attrs.get('data-v3-sprite')!=expected_sprite or attrs.get('data-v3-hash')!=expected_hash:
                 raise AssertionError('Product linked to wrong illustration')
-            if expected_sprite.encode('utf-8') not in raw:
-                raise AssertionError('Source art not actually displayed')
+            upgraded=upgraded_index[code]
+            if attrs.get('data-v3-enhanced-sprite')!=upgraded['sprite'] or attrs.get('data-v3-enhanced-hash')!=upgraded['sha256']:
+                raise AssertionError('Upgraded image is not linked to this exact product')
+            if upgraded['sprite'].encode('utf-8') not in raw:
+                raise AssertionError('New artwork is not actually referenced in the page')
         except Exception as exc:
             raise AssertionError(f'{lang}/{p["code"]} ({path}): {exc}') from exc
         return path
@@ -129,7 +144,7 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
         for future in as_completed(futures):
             future.result();checked+=1
     if checked!=150: raise AssertionError(f'Only {checked}/150 application pages were checked')
-    print('PASS Cloudflare: 150 FR/AR/EN V3 pages, 50 art SHAs, noindex, stage order and identity',flush=True)
+    print('PASS Cloudflare: 150 FR/AR/EN pages, 50 updated WebP SHAs, stage order and product identity',flush=True)
     return checked
 
 

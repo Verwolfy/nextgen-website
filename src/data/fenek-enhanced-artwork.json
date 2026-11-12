@@ -131,5 +131,512 @@
       360
     ],
     "sharedArtworkFrom": "BOND-R3"
+  },
+  {
+    "code": "BOND-GR-HR",
+    "slug": "fenek-bond-gr-hr",
+    "sprite": "/images/application-upgraded/fenek-bond-gr-hr-steps.webp",
+    "sha256": "3d942fc632db030b6cba8fb463c301d7306325ae44529b4e4bb64042d8d7b417",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "BOND-GP-CSII",
+    "slug": "fenek-bond-gp-csii",
+    "sprite": "/images/application-upgraded/fenek-bond-gp-csii-steps.webp",
+    "sha256": "fa9cc15b893af2b6c65e3e032dddb6af1e985b58f6d71b87aa64aa0745a10a4e",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "BOND-OC-CSIII",
+    "slug": "fenek-bond-oc-csiii",
+    "sprite": "/images/application-upgraded/fenek-bond-oc-csiii-steps.webp",
+    "sha256": "6fc688360c81dc3cae37537b7dea14d7b0160879762b34e7badc6fe71f93352e",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "BOND-M5",
+    "slug": "fenek-bond-m5",
+    "sprite": "/images/application-upgraded/fenek-bond-m5-steps.webp",
+    "sha256": "d64f88d81aa116271d2bf3a42b39c792a34f4a34d8d783e37c5ff10df8ffa83b",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "BOND-M10",
+    "slug": "fenek-bond-m10",
+    "sprite": "/images/application-upgraded/fenek-bond-m10-steps.webp",
+    "sha256": "449ca507989972dfc0bc1402038a9c05bebb36b6964f3a250a3269a7543fb417",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PROOF-CM-O1P",
+    "slug": "fenek-proof-cm-o1p",
+    "sprite": "/images/application-upgraded/fenek-proof-cm-o1p-steps.webp",
+    "sha256": "08b2b0265b47cd90bc3f9979fda458e3ce49fbc6d1ebe5e0c3d2bacc22468f58",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PROOF-CM-O2P",
+    "slug": "fenek-proof-cm-o2p",
+    "sprite": "/images/application-upgraded/fenek-proof-cm-o2p-steps.webp",
+    "sha256": "1011e3c0f8ade74732c38941976fab1323051d65f1fdaf72ed6230209049c207",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PROOF-PU-1K",
+    "slug": "fenek-proof-pu-1k",
+    "sprite": "/images/application-upgraded/fenek-proof-pu-1k-steps.webp",
+    "sha256": "224dcc9cb1fa13a72f7015556672eb635b036d49d35066f4e31f3c822068e8dc",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PROOF-ACR-RF",
+    "slug": "fenek-proof-acr-rf",
+    "sprite": "/images/application-upgraded/fenek-proof-acr-rf-steps.webp",
+    "sha256": "7206d01026365ed9ecc46d6a6ba0218ed7b8972d503f9bc0409615ddaf36a0b4",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PROOF-EP-PRIM",
+    "slug": "fenek-proof-ep-prim",
+    "sprite": "/images/application-upgraded/fenek-proof-ep-prim-steps.webp",
+    "sha256": "d39fae15a92fea663fe4942247bb466b73e73ca143c04035024853975518dc31",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PROOF-EP-SR",
+    "slug": "fenek-proof-ep-sr",
+    "sprite": "/images/application-upgraded/fenek-proof-ep-sr-steps.webp",
+    "sha256": "cc5a9bfa499f20387abdffbe7a8e0220339b8ff46ff89b7a0af86dac93b4f6ee",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PROOF-EP-SB",
+    "slug": "fenek-proof-ep-sb",
+    "sprite": "/images/application-upgraded/fenek-proof-ep-sb-steps.webp",
+    "sha256": "3199c1fc7d6995b38df05fb939a39adbde60cf7883a8cfd904e40a15a3f79869",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PROOF-EP-INJ",
+    "slug": "fenek-proof-ep-inj",
+    "sprite": "/images/application-upgraded/fenek-proof-ep-inj-steps.webp",
+    "sha256": "2d8b3cee812d90a0d1c2b28cf0a95064e2f7e9a4491db34e921e002fd639fde3",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PROOF-EP-ANC",
+    "slug": "fenek-proof-ep-anc",
+    "sprite": "/images/application-upgraded/fenek-proof-ep-anc-steps.webp",
+    "sha256": "810f06d97d34875210dea5773e3e06375f96dc930818164741810a06d4dcc079",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PROOF-PU-INJ",
+    "slug": "fenek-proof-pu-inj",
+    "sprite": "/images/application-upgraded/fenek-proof-pu-inj-steps.webp",
+    "sha256": "58a786498ca911838147418e850d11dd19afcb43ac6dfa43fd3c545c6d2245ac",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PROOF-PU-SEAL",
+    "slug": "fenek-proof-pu-seal",
+    "sprite": "/images/application-upgraded/fenek-proof-pu-seal-steps.webp",
+    "sha256": "368cf5d94b4ee5d996c65d58baf88aa81a5463569b15112f8c9ccbe9c4726a54",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "FLOW-WR-N",
+    "slug": "fenek-flow-wr-n",
+    "sprite": "/images/application-upgraded/fenek-flow-wr-n-steps.webp",
+    "sha256": "4c29e05cfcbf0a11e84085b2fa3621e90d99c6707fc10058bcf256859953d2c6",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "FLOW-SP-HR",
+    "slug": "fenek-flow-sp-hr",
+    "sprite": "/images/application-upgraded/fenek-flow-sp-hr-steps.webp",
+    "sha256": "4c29e05cfcbf0a11e84085b2fa3621e90d99c6707fc10058bcf256859953d2c6",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "FLOW-SP-RT",
+    "slug": "fenek-flow-sp-rt",
+    "sprite": "/images/application-upgraded/fenek-flow-sp-rt-steps.webp",
+    "sha256": "cc85c03a4e959ac4c75ebe8ff1156bec182c662af0a92efbddca0521a01a88b9",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "FLOW-SP-PF",
+    "slug": "fenek-flow-sp-pf",
+    "sprite": "/images/application-upgraded/fenek-flow-sp-pf-steps.webp",
+    "sha256": "cc85c03a4e959ac4c75ebe8ff1156bec182c662af0a92efbddca0521a01a88b9",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "FLOW-RT",
+    "slug": "fenek-flow-rt",
+    "sprite": "/images/application-upgraded/fenek-flow-rt-steps.webp",
+    "sha256": "cc85c03a4e959ac4c75ebe8ff1156bec182c662af0a92efbddca0521a01a88b9",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "FLOW-AC",
+    "slug": "fenek-flow-ac",
+    "sprite": "/images/application-upgraded/fenek-flow-ac-steps.webp",
+    "sha256": "cc85c03a4e959ac4c75ebe8ff1156bec182c662af0a92efbddca0521a01a88b9",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "FLOW-AE",
+    "slug": "fenek-flow-ae",
+    "sprite": "/images/application-upgraded/fenek-flow-ae-steps.webp",
+    "sha256": "0d33f19875e597410878d4dffecd35a3a65b59f05eb2c1a14f3bb5915a84f230",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "FLOW-WP",
+    "slug": "fenek-flow-wp",
+    "sprite": "/images/application-upgraded/fenek-flow-wp-steps.webp",
+    "sha256": "5b05f6c755662f851a3b76aa5493eadece00429be027e057f68d251579dd7cf3",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "FLOW-VMA",
+    "slug": "fenek-flow-vma",
+    "sprite": "/images/application-upgraded/fenek-flow-vma-steps.webp",
+    "sha256": "e6e54361b75be6ef020a9e551193cc50075d5b5de2f73fdb81c49cca6749d690",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "FLOW-CI",
+    "slug": "fenek-flow-ci",
+    "sprite": "/images/application-upgraded/fenek-flow-ci-steps.webp",
+    "sha256": "5607bf40ed67855ddad20500949fc2e201fd6644106edfee8f121b13c0079b65",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "FLOW-CURE",
+    "slug": "fenek-flow-cure",
+    "sprite": "/images/application-upgraded/fenek-flow-cure-steps.webp",
+    "sha256": "b908c1bb0013796270ea445499b08b251a02b2ff68a8d0e3dcc8aa5fd85e1e57",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "FLOW-LAT",
+    "slug": "fenek-flow-lat",
+    "sprite": "/images/application-upgraded/fenek-flow-lat-steps.webp",
+    "sha256": "5158f111bfc2e5d4d2c57c72c127881ec8a3055243946a44fd317076a7d9ae25",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PAINT-INT-M",
+    "slug": "fenek-paint-int-m",
+    "sprite": "/images/application-upgraded/fenek-paint-int-m-steps.webp",
+    "sha256": "cc6e44625aab3947ce21d22021c3a5d55a07526ed154db6f09fd10baec4328c2",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PAINT-INT-S",
+    "slug": "fenek-paint-int-s",
+    "sprite": "/images/application-upgraded/fenek-paint-int-s-steps.webp",
+    "sha256": "cc6e44625aab3947ce21d22021c3a5d55a07526ed154db6f09fd10baec4328c2",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PAINT-INT-WA",
+    "slug": "fenek-paint-int-wa",
+    "sprite": "/images/application-upgraded/fenek-paint-int-wa-steps.webp",
+    "sha256": "cc6e44625aab3947ce21d22021c3a5d55a07526ed154db6f09fd10baec4328c2",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PAINT-FAC-M",
+    "slug": "fenek-paint-fac-m",
+    "sprite": "/images/application-upgraded/fenek-paint-fac-m-steps.webp",
+    "sha256": "b94a813adc603af4da9e011b30d64cf5f6934cf8fe90331de3f76d2306faebea",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PAINT-FAC-EL",
+    "slug": "fenek-paint-fac-el",
+    "sprite": "/images/application-upgraded/fenek-paint-fac-el-steps.webp",
+    "sha256": "b94a813adc603af4da9e011b30d64cf5f6934cf8fe90331de3f76d2306faebea",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PAINT-FAC-SX",
+    "slug": "fenek-paint-fac-sx",
+    "sprite": "/images/application-upgraded/fenek-paint-fac-sx-steps.webp",
+    "sha256": "b94a813adc603af4da9e011b30d64cf5f6934cf8fe90331de3f76d2306faebea",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PAINT-PRIM-A",
+    "slug": "fenek-paint-prim-a",
+    "sprite": "/images/application-upgraded/fenek-paint-prim-a-steps.webp",
+    "sha256": "eeec4552207f58d6a37f54dc93a2b8062e8ac14e0ecd06f18bb219626c1a3889",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PAINT-PRIM-FX",
+    "slug": "fenek-paint-prim-fx",
+    "sprite": "/images/application-upgraded/fenek-paint-prim-fx-steps.webp",
+    "sha256": "eeec4552207f58d6a37f54dc93a2b8062e8ac14e0ecd06f18bb219626c1a3889",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PAINT-TXT-F",
+    "slug": "fenek-paint-txt-f",
+    "sprite": "/images/application-upgraded/fenek-paint-txt-f-steps.webp",
+    "sha256": "489742dc1f5ff4f1b7c0d99027aff0ac90ea8ff1852ea5380a3c26db3732dc88",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PAINT-SOL-A",
+    "slug": "fenek-paint-sol-a",
+    "sprite": "/images/application-upgraded/fenek-paint-sol-a-steps.webp",
+    "sha256": "4f3881cb3957a6cba520ea940970efd734a36e4ad9c8242ea77b41f4ce662f3a",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+  },
+  {
+    "code": "PAINT-ENT-L",
+    "slug": "fenek-paint-ent-l",
+    "sprite": "/images/application-upgraded/fenek-paint-ent-l-steps.webp",
+    "sha256": "016eddf10fefe334c5bf75f8471b22d4014ce8c92c1ac37d8ec8467b11e7e331",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ],
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
   }
 ]

@@ -12,7 +12,7 @@ class SourceCropQATest(unittest.TestCase):
     def test_nine_reviewed_product_specific_source_crops(self):
         self.assertEqual(len(CROP),9)
         self.assertEqual({r["code"] for r in CROP},EXPECTED)
-        self.assertFalse(set(UPGRADES).intersection(EXPECTED),"Do not crop upgraded artworks")
+        self.assertTrue(EXPECTED.issubset(set(UPGRADES)),"All 9 fallback crops must now be superseded by product-specific remasters")
         for row in CROP:
             with self.subTest(code=row["code"]):
                 self.assertEqual(row["slug"],CAT[row["code"]]["slug"])

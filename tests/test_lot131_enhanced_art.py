@@ -14,8 +14,9 @@ EXPECTED={"BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1",
 
 class EnhancedV3ArtworkTest(unittest.TestCase):
     def test_every_upgrade_is_exact_code_slug_and_real_webp(self):
-        self.assertEqual(len(UPGRADES),11)
-        self.assertEqual({x["code"] for x in UPGRADES},EXPECTED)
+        self.assertEqual(len(UPGRADES),50)
+        self.assertTrue(EXPECTED.issubset({x["code"] for x in UPGRADES}))
+        self.assertEqual({x["code"] for x in UPGRADES}, {x["code"] for x in CAT})
         by_code={x["code"]:x for x in CAT}
         manuals={x["code"]:x for x in MANUALS}
         for row in UPGRADES:
