@@ -45,7 +45,7 @@ class RemainingBondArtwork(unittest.TestCase):
   self.assertEqual(len({x["professionalSvgSha256"] for x in bond}),16)
  def test_last_eight_exact_source_and_integrity(self):
   idx={x["code"]:x for x in ART};v3={x["code"]:x for x in MAN};cat={x["code"]:x for x in CAT}
-  self.assertEqual(len(ART),len(MAN),len(CAT),50)
+  self.assertEqual((len(ART), len(MAN), len(CAT)), (50, 50, 50))
   for code,titles in TITLES.items():
    with self.subTest(code=code):
     row=idx[code];src=v3[code]
