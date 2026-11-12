@@ -158,7 +158,9 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
         for future in as_completed(futures):
             future.result();checked+=1
     if checked!=150: raise AssertionError(f'Only {checked}/150 application pages were checked')
-    print('PASS Cloudflare: 150 FR/AR/EN pages, 50 WebP SHAs, 5 professional SVG SHAs, stage order and identity',flush=True)
+    print(f"PASS Cloudflare: 150 FR/AR/EN pages, 50 WebP SHAs, "
+          f"{sum(bool(a.get('professionalSvg')) for a in upgrades)} professional SVG SHAs, "
+          "stage order and product identity", flush=True)
     return checked
 
 
