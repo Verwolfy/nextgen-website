@@ -19,6 +19,10 @@ const enhancedV3=reviewedV3 ? enhancedArtwork.find(item=>item.code===product.cod
 // The SVG files are editorial drafts. Never replace an existing image merely because a file exists.
 const professionalCandidate=enhancedV3 as (typeof enhancedV3 & {professionalSvg?:string;professionalSvgSha256?:string;visualQualityApproved?:boolean}) | undefined;
 const professionalArtwork=professionalCandidate?.visualQualityApproved===true ? professionalCandidate : undefined;
+// A premium WebP may render only after separate visual AND FT/FDS technical approvals.
+// Keep the previously published WebP underneath, even after an approval.
+const premiumCandidate=enhancedV3 as (typeof enhancedV3 & {premiumWebp?:string;premiumWebpSha256?:string;premiumVisualApproved?:boolean;premiumTechnicalApproved?:boolean;premiumApprovalRecord?:string|null}) | undefined;
+const premiumArtwork=premiumCandidate?.premiumVisualApproved===true && premiumCandidate?.premiumTechnicalApproved===true && Boolean(premiumCandidate?.premiumApprovalRecord) ? premiumCandidate : undefined;
 const cropReview=reviewedV3 && !enhancedV3 ? sourceCropReview.find(item=>item.code===product.code && item.slug===product.slug) : undefined;
 const steps=reviewedV3
   ? reviewedV3.steps.map(step=>({title:step.title[lang],description:step.description[lang],icon:step.icon,image:step.image}))
@@ -53,7 +57,7 @@ const paths:Record<string,string>={
  level:'M3 18h18M5 14l4-4 4 3 6-7M4 4h16v16H4z'
 };
 ---
-<section class="fenek-application-visual" aria-label={copy.intro} data-application-visual data-reference={product.code} data-application-count={steps.length} data-v3-reviewed={reviewedV3 ? reviewedV3.status : undefined} data-v3-sprite={reviewedV3?.sprite} data-v3-hash={reviewedV3?.sha256} data-v3-enhanced-sprite={enhancedV3?.sprite} data-v3-enhanced-hash={enhancedV3?.sha256} data-v3-professional-svg={professionalArtwork?.professionalSvg} data-v3-professional-hash={professionalArtwork?.professionalSvgSha256} data-v3-source-crop={cropReview?.cropFraction}>
+<section class="fenek-application-visual" aria-label={copy.intro} data-application-visual data-reference={product.code} data-application-count={steps.length} data-v3-reviewed={reviewedV3 ? reviewedV3.status : undefined} data-v3-sprite={reviewedV3?.sprite} data-v3-hash={reviewedV3?.sha256} data-v3-enhanced-sprite={enhancedV3?.sprite} data-v3-enhanced-hash={enhancedV3?.sha256} data-v3-professional-svg={professionalArtwork?.professionalSvg} data-v3-professional-hash={professionalArtwork?.professionalSvgSha256} data-v4-premium-webp={premiumArtwork?.premiumWebp} data-v4-premium-hash={premiumArtwork?.premiumWebpSha256} data-v3-source-crop={cropReview?.cropFraction}>
   <div class="fenek-application-visual-heading">
     <span class="fenek-application-visual-eyebrow">{product.nom}</span>
     <h3>{copy.intro}</h3>
@@ -64,7 +68,7 @@ const paths:Record<string,string>={
       <figure class:list={['fenek-application-visual-figure',{'fenek-v3-upgraded-figure':Boolean(enhancedV3),'fenek-v3-source-crop-figure':Boolean(cropReview)}]} style={cropReview ? `--v3-source-crop:${cropReview.cropFraction}` : undefined}>
         {step.image && reviewedV3
           ? <div class:list={['fenek-application-visual-photo','fenek-v3-reviewed-photo',{'fenek-v3-upgraded-photo':Boolean(enhancedV3),'fenek-v3-source-crop-photo':Boolean(cropReview)}]}
-              style={`--sprite-position:${((step.image-1)%3)*50}% ${Math.floor((step.image-1)/3)*100}%;--v3-sprite:url('${enhancedV3?.sprite ?? reviewedV3.sprite}');${professionalArtwork?.professionalSvg ? `--v3-professional:url('${professionalArtwork.professionalSvg}')` : ''}` }
+              style={`--sprite-position:${((step.image-1)%3)*50}% ${Math.floor((step.image-1)/3)*100}%;--v3-sprite:url('${enhancedV3?.sprite ?? reviewedV3.sprite}');${professionalArtwork?.professionalSvg ? `--v3-professional:url('${professionalArtwork.professionalSvg}');` : ''}${premiumArtwork?.premiumWebp ? `--v4-premium:url('${premiumArtwork.premiumWebp}');` : ''}` }
               data-v3-step={i+1}
               role="img" aria-label={product.nom+' — '+copy.step+' '+(i+1)+': '+step.title}></div>
           : step.image
@@ -112,7 +116,7 @@ const paths:Record<string,string>={
  .fenek-application-visual-grid.v3-reviewed .fenek-v3-detail-link{display:inline-block;width:auto;max-width:100%;aspect-ratio:auto;margin-top:8px;padding:6px 9px;border-radius:8px;background:#e7f4ee;color:#075f4e;font-weight:750;font-size:.76rem;text-decoration:underline;text-underline-offset:2px;cursor:zoom-in}
  .fenek-v3-detail-link:focus-visible{outline:3px solid #009a44;outline-offset:-4px;border-radius:8px}
  .fenek-v3-detail-link:hover .fenek-v3-reviewed-photo{filter:contrast(1.08)}
- .fenek-v3-reviewed-photo{width:100%;aspect-ratio:1;max-width:none;/* Layer 2 remains visible even if the optional SVG URL fails to load. */background-image:var(--v3-professional,none),var(--v3-sprite);background-size:300% 200%,300% 200%;background-position:var(--sprite-position),var(--sprite-position);background-repeat:no-repeat,no-repeat;filter:none}
+ .fenek-v3-reviewed-photo{width:100%;aspect-ratio:1;max-width:none;/* Premium then optional SVG then original WebP, all six panels identically cropped. */background-image:var(--v4-premium,none),var(--v3-professional,none),var(--v3-sprite);background-size:300% 200%,300% 200%,300% 200%;background-position:var(--sprite-position),var(--sprite-position),var(--sprite-position);background-repeat:no-repeat,no-repeat,no-repeat;filter:none}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-figure figcaption{display:none}
  /* Crop only text baked into a source sprite when the upper artwork is pixel-identical to this product's V3 PNGs. */
  /* Artworks are intentionally caption-free: titles remain selectable, translated HTML outside the image. */
