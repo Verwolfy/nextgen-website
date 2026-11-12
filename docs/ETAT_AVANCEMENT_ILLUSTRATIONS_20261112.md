@@ -1,51 +1,57 @@
-# REPRISE PROJET NEXTGEN — illustrations des modes d'emploi (12/11/2026)
+# NEXTGEN — relais d’exécution des illustrations (12 novembre 2026)
 
-## Objectif et règles
-Moderniser les 6 étapes illustrées par produit FENEK, fidèles à `src/data/fenek-v3-manuals.json`, sans invention de dosage, durée, norme, certification, valeur de performance, logo ou information de sécurité. Toute la série reste **BROUILLON — non validé**. Les textes FR/AR/EN sont conservés dans les pages HTML, pas dans les images.
+## Références de projet
+- Site GitHub privé : `Verwolfy/nextgen-website`, branche principale `main`.
+- Branche d’optimisation : `feat/lot139-140-professional-paint-illustrations-20261112`.
+- Pull request : https://github.com/Verwolfy/nextgen-website/pull/140 — **brouillon, non fusionnée**.
+- Dernier `main` constaté au début de la série : `d676565afc3353a439c76b1c2d5a038c8d042b11` (lot 138). Relire `main` avant toute fusion.
+- Les changements n’ont **pas** été constatés déployés sur Cloudflare.
 
-## Dépôt, branche et PR
-- GitHub : `Verwolfy/nextgen-website` (privé).
-- Branche de travail : `feat/lot139-140-professional-paint-illustrations-20261112`.
-- PR en brouillon : https://github.com/Verwolfy/nextgen-website/pull/140, base `main`.
-- `main` était à `d676565afc3353a439c76b1c2d5a038c8d042b11` au début de cette série.
-- **Aucune fusion vers main ni déploiement Cloudflare confirmé.**
+## Bilan du catalogue au 12/11/2026
+- 50/50 produits disposent d’un média d’application amélioré avec six illustrations.
+- **47 SVG professionnels vectoriels** : 282 dessins, 47 chemins et SHA-256 uniques.
+- **3 WebP professionnels de façade** déjà réalisés au lot 138 (PAINT-FAC-M/EL/SX) : 18 dessins ; les conserver, car ils sont plus détaillés que les schémas SVG nouvellement créés.
+- **50 WebP remastérisés** historiques conservés pour repli sur les pages.
+- Total six étapes par produit : 300 scènes, titres et descriptions en français, arabe et anglais.
+- Couverture : BOND 16/16 SVG, PROOF 11/11 SVG, FLOW 12/12 SVG, PAINT 8/11 SVG + 3/11 WebP professionnels.
 
-## Lots livrés sur la branche
-- 139–140 : PAINT-INT-M, PAINT-INT-S, PAINT-INT-WA, PAINT-PRIM-A, PAINT-PRIM-FX.
-- 141–143 : PAINT-TXT-F, PAINT-SOL-A, PAINT-ENT-L.
-- 144–145 : PROOF-CM-O1P, PROOF-CM-O2P.
-- 146–149 : PROOF-PU-1K, PROOF-ACR-RF, PROOF-EP-PRIM, PROOF-EP-SR.
-- 150–154 : PROOF-EP-SB, PROOF-EP-INJ, PROOF-EP-ANC, PROOF-PU-INJ, PROOF-PU-SEAL.
+## Lots et fichiers
+- 139–140 : 5 produits PAINT-INT / PAINT-PRIM.
+- 141–143 : 3 autres produits PAINT (TXT-F, SOL-A, ENT-L).
+- 144–145 : 2 PROOF cimentaires.
+- 146–149 : 4 PROOF polyuréthane / acrylique / époxy.
+- 150–154 : 5 PROOF époxy/polyuréthane, gamme PROOF 11/11 terminée.
+- 155–159 : 5 mortiers-colles BOND carrelage.
+- 160–162 : 2 coulis joints et un ragréage BOND.
+- 163–165 : 3 mortiers de réparation BOND.
+- 166–170 : coulis, enduits, mortiers de maçonnerie BOND — BOND 16/16 terminé.
+- 171–180 : 10 adjuvants FLOW, cinq gestes communs + contrôle final propre au produit.
+- 181–182 : FLOW-CURE et FLOW-LAT, gestes d’application spécifiques.
+- 183 : test global et rapport 50/50.
 
-**Total : 19 produits, 114 scènes vectorielles, gamme PROOF complète (11/11), 8 produits PAINT.** Les 50 WebP V3 améliorés déjà existants restent inchangés et associés à leur référence.
+**Média :** `public/images/application-professional/<slug>-steps.svg`, 1620×720 (3×2 cellules 540×360). Les 47 SHA sont inscrits dans `src/data/fenek-enhanced-artwork.json`.
+**Composant :** `src/components/FenekApplicationGuide.astro`, association `code+slug` et priorité SVG avec repli WebP.
+**Source des gestes :** `src/data/fenek-v3-manuals.json` et `src/data/catalogue-projets.json`.
+**Audit de production :** `scripts/check_live_application_guides.py` doit vérifier 50 WebP, 47 SVG et les 150 pages trilingues après un déploiement réel.
+**Tests :** `tests/test_lot139_140_paint_professional_svg.py`, `test_lot141_143_professional_paint.py`, `test_lot144_145_cement_waterproofing.py`, `test_lot146_149_proof_professional_svg.py`, `test_lot150_154_remaining_proof_svg.py`, `test_lot155_159_bond_tile_professional_svg.py`, `test_lot160_162_bond_grout_leveling_svg.py`, `test_lot163_170_remaining_bond_svg.py`, `test_lot171_182_flow_professional_svg.py`, `test_lot183_global_50_professional_artwork.py`.
 
-## Fichiers et règles techniques
-- SVG créés dans `public/images/application-professional/<slug>-steps.svg`, planches 1620×720 en six cases (3×2, chacune 540×360).
-- Registre `src/data/fenek-enhanced-artwork.json` : `professionalSvg`, `professionalSvgSha256`, `professionalSvgDimensions`, `professionalSourceType`, `professionalSceneWorkflowWith`.
-- `src/components/FenekApplicationGuide.astro` choisit le SVG professionnel par `code+slug` et conserve le WebP remastérisé comme repli.
-- `scripts/check_live_application_guides.py` vérifie les médias enregistrés, leur SHA et les fiches FR/AR/EN en lecture seule.
-- Tests de lots : `tests/test_lot139_140_paint_professional_svg.py`, `tests/test_lot141_143_professional_paint.py`, `tests/test_lot144_145_cement_waterproofing.py`, `tests/test_lot146_149_proof_professional_svg.py`, `tests/test_lot150_154_remaining_proof_svg.py`.
-- Documentation lot par lot sous `docs/LOT139_140*`, `LOT141_143*`, `LOT144_145*`, `LOT146_149*`, `LOT150_154*`.
+## Contrôles réellement exécutés
+- Contrôles statiques sur les SVG lors de chaque lot : existence dans GitHub, six panneaux, étiquettes `code`, SHA-256 recalculés, structure équilibrée, pas de liens/scripts/images externes.
+- Contrôle global du registre : 50 identités code+slug cohérentes avec le catalogue et les notices, 47 SVG uniques, 3 WebP façade professionnels reconnus, 50 WebP de repli, 6 étapes chacune.
+- Contrôle des sources des 50 notices : chaque étape possède un numéro d’image 1–6, un titre et une description en FR/AR/EN, statut BROUILLON ; **0 anomalie** sur ces vérifications statiques.
+- **Aucune preuve d’exécution réussie** de `npm ci`, `npm run build`, `python -m unittest discover`, recettes navigateur ou tests live Cloudflare. Ne jamais confondre les audits JS de texte avec l’exécution de ces commandes.
 
-## Contrôles réellement réalisés
-- Tous les 19 enregistrements professionnels ont code/slug conforme au catalogue et à la notice V3, SHA-256 à 64 caractères et statut BROUILLON.
-- Les 19 chemins de fichiers sont distincts ; les 19 SHA sont distincts ; aucun produit PROOF n'est manquant.
-- Les 9 SVG des lots 146–154 ont été créés et relus sur GitHub : 6 panneaux et 6 badges code-produit chacun, SHA-256 calculés, pas d'image/script/lien externe. Les 5 du lot 150–154 ont aussi passé un contrôle d'équilibrage de balises.
-- Avant cette session, les dix SVG des lots 139–145 avaient passé un audit statique équivalent.
-- Aucune preuve d'exécution complète de `npm ci`, `npm run build`, des tests Python, de QA navigateur ou des tests live sur Cloudflare. Ne pas les présenter comme réussis.
+## Blocage de publication
+Les quatre workflows GitHub Actions de la PR #140 concluent `failure` en quelques secondes, avec jobs sans étape ni runner attribué d’après les observations précédentes. Le problème semble intervenir avant l’exécution du code ; la cause exacte n’est **pas établie**. Aucun contournement risqué, modification de secrets, fusion forcée ou déploiement manuel non vérifié ne doit être effectué.
 
-## Blocage CI
-Au commit `113e6f1ed765522371cc8b7e054f76eed1611dc0`, les quatre workflows PR GitHub Actions ont conclu `failure` (run IDs 43225683247, 43225682873, 43225682662, 43225682986). Les jobs observés se terminent sans étapes ni runner attribué, donc le résultat ne constitue PAS un diagnostic du code. `.github/workflows/site-check.yml` utilise déjà `runs-on: ubuntu-latest`. Hypothèses possibles à contrôler : quota/billing Actions, compte, service GitHub, permissions. Éviter toute modification de secrets ou de protections de branche sans nécessité et autorisation.
+## Prochaines actions recommandées
+1. Diagnostiquer l’indisponibilité des runners GitHub Actions (avertissements du dépôt, facturation/quota, droits, compte, service). Ne pas présumer du motif.
+2. Sur runner fonctionnel ou environnement local authentifié, exécuter : `python -m unittest discover -s tests -q`, `npm ci --no-audit --no-fund && npm run build`, puis `python scripts/check_built_pages.py` et audits préproduction.
+3. Faire l’inspection visuelle des 300 scènes en FR/AR/EN, mobile (360 px), desktop, RTL, et corriger les problèmes de perspective/gestes sans inventer les données techniques.
+4. Fusionner la PR uniquement après validation. Comparer le `deployment.json` public à la révision de `main`, puis vérifier 47 SVG, 50 WebP et 150 pages, ainsi que les SHA-256 servis.
+5. Obtenir validation des FT/FDS FENEK avant de changer les mentions BROUILLON ou de considérer les instructions comme officielles.
 
-## Prochaines actions ordonnées
-1. Résoudre l'échec de démarrage CI ; inspecter l'exécution Actions dans GitHub et son éventuel avis de quota/facturation ; lancer les véritables tests.
-2. Exécuter `npm ci --no-audit --no-fund && npm run build`, `python -m unittest discover -s tests -q`, puis `python scripts/check_built_pages.py` et les audits.
-3. Vérifier visuellement les 114 scènes, mobile 360 px et desktop, FR/AR/EN. Contrôler que chaque représentation respecte les six titres V3.
-4. Seulement après vérifications suffisantes : fusionner PR #140, contrôler le commit déployé, les 19 SVG publics avec SHA, 50 WebP et 150 fiches de documentation.
-5. Poursuivre **FENEK-BOND** (16 références) puis **FENEK-FLOW** (12 références) ; garder les anciens médias. Les **31 produits sans SVG professionnel** comprennent ces 28 références et les trois peintures de façade PAINT-FAC-M/EL/SX, déjà dotées de WebP professionnels au lot 138.
-6. Continuer à considérer toutes les scènes comme des illustrations non contractuelles tant que le laboratoire n'a pas validé les FT/FDS.
+## Règles
+Réponse concise, exécution automatique des actions non critiques, préférence pour la sûreté en production. Ne jamais inventer de dosage, durées, épaisseurs, résistances, normes, certificats, logo ou performances. Les illustrations sont des schémas éditoriaux non contractuels. Ne pas publier l’illustration ERP « lots C–H » générée par erreur dans un échange précédent : hors sujet.
 
-## Éviter
-- Ne pas annoncer que le code est en production.
-- Ne pas fusionner avec CI en échec sans évaluation explicite des risques.
-- Ne pas utiliser l'image ERP « lots C-H » produite par erreur dans une session précédente : elle ne correspond pas au site ni aux produits.
+Dernière mise à jour à la création de ce fichier : 12 novembre 2026. Vérifier la tête actuelle de PR #140 après chaque nouveau commit.
