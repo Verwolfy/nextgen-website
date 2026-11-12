@@ -42,7 +42,7 @@ Au commit `113e6f1ed765522371cc8b7e054f76eed1611dc0`, les quatre workflows PR Gi
 2. Exécuter `npm ci --no-audit --no-fund && npm run build`, `python -m unittest discover -s tests -q`, puis `python scripts/check_built_pages.py` et les audits.
 3. Vérifier visuellement les 114 scènes, mobile 360 px et desktop, FR/AR/EN. Contrôler que chaque représentation respecte les six titres V3.
 4. Seulement après vérifications suffisantes : fusionner PR #140, contrôler le commit déployé, les 19 SVG publics avec SHA, 50 WebP et 150 fiches de documentation.
-5. Poursuivre **FENEK-BOND** (17 codes dans le registre) puis **FENEK-FLOW** (11 codes) ; toujours conserver les sprites source. Vérifier les nombres exacts dans le registre avant production : les groupes non SVG sont au total **31 produits**.
+5. Poursuivre **FENEK-BOND** (16 références) puis **FENEK-FLOW** (12 références) ; garder les anciens médias. Les **31 produits sans SVG professionnel** comprennent ces 28 références et les trois peintures de façade PAINT-FAC-M/EL/SX, déjà dotées de WebP professionnels au lot 138.
 6. Continuer à considérer toutes les scènes comme des illustrations non contractuelles tant que le laboratoire n'a pas validé les FT/FDS.
 
 ## Éviter
