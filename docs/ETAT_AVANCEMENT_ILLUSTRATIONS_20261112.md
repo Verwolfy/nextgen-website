@@ -1,5 +1,25 @@
 # NEXTGEN — relais d’exécution des illustrations (12 novembre 2026)
 
+## LOT 188 — PRÉVISUALISATION PUBLIÉE ET CONFIRMÉE (12 NOVEMBRE 2026)
+
+**Résultat réel sur le site** : https://nextgen-buildingsolutions.com/fr/avant-premiere/fenek-proof-acr-rf/
+
+Le besoin utilisateur « voir les changements sur le site » a reçu une publication **isolée et marquée Brouillon**, sans changer les modes d'emploi actifs.
+
+- Petite branche `feat/lot188-site-visual-preview-acrrf-20261112` créée depuis `main`, séparée des 85 fichiers non validés de la PR #140.
+- **PR #142** : https://github.com/Verwolfy/nextgen-website/pull/142 **fusionnée**, commit `main` **`f747350684e749844f08db72d4836069ac378934`**.
+- Contenu fusionné : `public/fr/avant-premiere/fenek-proof-acr-rf/index.html` (12 cartes : 6 anciens pictogrammes + 6 scènes V4), `public/images/application-premium/fenek-proof-acr-rf-steps-v4.webp` (WebP premium à 6 scènes, 1620×720, SHA-256 `438694daefa3b97b2ca3d36f38d6bea78fbedb7070203f81b6e06ef3a76fa433`).
+- La page statique est sans script, sans formulaire, `noindex,nofollow,noarchive`, avec avertissements « brouillon / non contractuel ». **Aucune modification** de la page produit `/fr/documentation/fenek-proof-acr-rf/` et aucune activation de l'image dans celle-ci.
+- QA locale Chromium **1440 px et 390 px** : 12 cartes, 6 nouvelles images visibles, ratio 3:2 sans débordement horizontal.
+- GitHub check **Cloudflare Pages = success** sur ce commit.
+- `https://nextgen-buildingsolutions.com/deployment.json` est vérifié en public et retourne exactement **`f747350684e749844f08db72d4836069ac378934`** (branche main).
+- **Audit navigateur public confirmé** (TinyFish run `542e0739-c332-4794-9117-9d4418fa007c`) : les 6 images V4 et les 6 anciennes vignettes se chargent toutes, les deux WebP sont HTTP 200, aucun blanc, bonne grille 3×2, disclaimers visibles. La fiche produit officielle conserve l'ancien WebP.
+- **GitHub Actions reste rouge** (runner avant tests), donc ces vérifications ne remplacent pas la compilation Astro ou l'ensemble des tests. La PR #140 reste en brouillon et non fusionnée. Il reste 39 produits à harmoniser (11 A / 3 B / 36 C lors de l'audit graphique initial).
+- Le compte Cloudflare n'est pas connecté au navigateur TinyFish, mais l'intégration GitHub Pages existante a suffi à déployer la petite PR #142.
+
+**Suite** : produire les 18 scènes du lot 187 (PROOF-PU-1K, PROOF-CM-O1P, PROOF-CM-O2P), approuver graphiquement et techniquement les gestes avant activation des nouvelles images dans les pages produit, puis poursuivre les autres références. Conserver le mode Brouillon et ne pas inventer de marques/FT/FDS.
+
+
 ## Continuation finale du lot 187 — verrou premium robuste
 
 - `src/data/fenek-enhanced-artwork.json` : ACR-RF premium binaire toujours présent sous `public/images/application-premium/fenek-proof-acr-rf-steps-v4.webp`, SHA-256 `438694daefa3b97b2ca3d36f38d6bea78fbedb7070203f81b6e06ef3a76fa433`, `premiumVisualApproved:false`, **`premiumTechnicalApproved:false`**, `premiumApprovalRecord:null`.
