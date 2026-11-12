@@ -106,7 +106,7 @@ class ProfessionalPaintApplicationSets(unittest.TestCase):
     def test_site_respects_svg_priority_and_webp_fallback(self):
         src = (ROOT / "src/components/FenekApplicationGuide.astro").read_text(encoding="utf-8")
         self.assertIn("item.code===product.code && item.slug===product.slug", src)
-        self.assertIn("background-image:var(--v3-professional,var(--v3-sprite))", src)
+        self.assertIn("background-image:var(--v3-professional,none),var(--v3-sprite)", src)
         self.assertIn("enhancedV3?.sprite ?? reviewedV3.sprite", src)
         self.assertIn("data-v3-professional-hash={professionalArtwork?.professionalSvgSha256}", src)
         for code in NEW:
