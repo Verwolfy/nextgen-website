@@ -530,7 +530,9 @@
     "premiumVisualApproved": false,
     "premiumVisualStatus": "BROUILLON_REVUE_GRAPHIQUE_ET_FT_FDS",
     "premiumSourceType": "illustration-semi-realiste-generative-6-scenes",
-    "premiumVisualNotes": "Controler le renfort des joints/releves et les inscriptions FENEK generees; conserver le WebP historique tant que la revue est incomplete"
+    "premiumVisualNotes": "Controler le renfort des joints/releves et les inscriptions FENEK generees; conserver le WebP historique tant que la revue est incomplete",
+    "premiumTechnicalApproved": false,
+    "premiumApprovalRecord": null
   },
   {
     "code": "PROOF-EP-PRIM",
