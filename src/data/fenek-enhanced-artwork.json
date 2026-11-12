@@ -281,7 +281,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-bond-gr-hr-steps.svg",
+    "professionalSvgSha256": "5cd745ad4a3f2ef28a28eed7b68e9ea793894d3674fa3acfed048c6df168fc16",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "BOND-GR-HR"
+    ]
   },
   {
     "code": "BOND-GP-CSII",
@@ -294,7 +304,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-bond-gp-csii-steps.svg",
+    "professionalSvgSha256": "0de48eb4d78c320e0f9050136fcc5895af8e08bbe32349dd2cf31781bd5bd9e0",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "BOND-GP-CSII"
+    ]
   },
   {
     "code": "BOND-OC-CSIII",
@@ -307,7 +327,17 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-bond-oc-csiii-steps.svg",
+    "professionalSvgSha256": "8d7f4cafcfc356fab3cbbffa5dd6cbe6d0dcd5ccd91edb58975893d09a0e0bbb",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "BOND-OC-CSIII"
+    ]
   },
   {
     "code": "BOND-M5",
@@ -320,7 +350,18 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-bond-m5-steps.svg",
+    "professionalSvgSha256": "28731a2e205cd8f281b05e479f5d162720a1bd0550115de4270c740b0e1c4665",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "BOND-M5",
+      "BOND-M10"
+    ]
   },
   {
     "code": "BOND-M10",
@@ -333,7 +374,18 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-bond-m10-steps.svg",
+    "professionalSvgSha256": "6f7c2515db1c612d19767bc938ddc3caf440a6ae456adcc88d27e61c7688996f",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "BOND-M5",
+      "BOND-M10"
+    ]
   },
   {
     "code": "PROOF-CM-O1P",
