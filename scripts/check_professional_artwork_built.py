@@ -90,6 +90,8 @@ def main() -> None:
         media_checks += 1
 
         professional_svg = art.get("professionalSvg")
+        # All draft assets are shipped for QA; only visually approved ones may render.
+        approved_svg = professional_svg if art.get("visualQualityApproved") is True else None
         if professional_svg:
             expected_svg = f"/images/application-professional/{slug}-steps.svg"
             if professional_svg != expected_svg:
@@ -111,8 +113,8 @@ def main() -> None:
             if (attrs.get("data-v3-enhanced-sprite") != webp or
                     attrs.get("data-v3-enhanced-hash") != art["sha256"]):
                 raise AssertionError((code, lang, "Wrong WebP binding"))
-            if professional_svg:
-                if (attrs.get("data-v3-professional-svg") != professional_svg or
+            if approved_svg:
+                if (attrs.get("data-v3-professional-svg") != approved_svg or
                         attrs.get("data-v3-professional-hash") != art["professionalSvgSha256"]):
                     raise AssertionError((code, lang, "Professional image mismatch"))
             elif attrs.get("data-v3-professional-svg") or attrs.get("data-v3-professional-hash"):
@@ -124,8 +126,8 @@ def main() -> None:
                     raise AssertionError((code, lang, "Wrong step order or accessibility"))
                 if webp not in style or "--v3-sprite:" not in style:
                     raise AssertionError((code, lang, i, "Missing WebP fallback"))
-                if professional_svg:
-                    if professional_svg not in style or "--v3-professional:" not in style:
+                if approved_svg:
+                    if approved_svg not in style or "--v3-professional:" not in style:
                         raise AssertionError((code, lang, i, "Missing professional SVG"))
                 elif "--v3-professional:" in style:
                     raise AssertionError((code, lang, i, "Unexpected professional SVG"))
