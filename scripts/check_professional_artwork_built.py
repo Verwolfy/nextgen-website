@@ -77,6 +77,7 @@ def main() -> None:
         raise AssertionError("Expected 47 distinct professional SVGs")
 
     media_checks, page_checks = 0, 0
+    premium_count = 0
     for product in catalog:
         code, slug = product["code"], product["slug"]
         art = by_code[code]
@@ -98,6 +99,17 @@ def main() -> None:
                 raise AssertionError((code, "Wrong professional media path"))
             verified_asset(professional_svg, art["professionalSvgSha256"], True)
             media_checks += 1
+
+        premium = art.get("premiumWebp")
+        if premium:
+            expected_premium = f"/images/application-premium/{slug}-steps-v4.webp"
+            if premium != expected_premium:
+                raise AssertionError((code, "Wrong staged premium media path"))
+            if art.get("premiumVisualApproved") is not False:
+                raise AssertionError((code, "Staged media must remain unapproved until QA"))
+            verified_asset(premium, art["premiumWebpSha256"], False)
+            media_checks += 1
+            premium_count += 1
 
         for lang in LOCALES:
             page = DIST / lang / "documentation" / slug / "index.html"
@@ -126,16 +138,18 @@ def main() -> None:
                     raise AssertionError((code, lang, "Wrong step order or accessibility"))
                 if webp not in style or "--v3-sprite:" not in style:
                     raise AssertionError((code, lang, i, "Missing WebP fallback"))
+                if premium and premium in style:
+                    raise AssertionError((code, lang, i, "Unapproved premium artwork must not render"))
                 if approved_svg:
                     if approved_svg not in style or "--v3-professional:" not in style:
                         raise AssertionError((code, lang, i, "Missing professional SVG"))
                 elif "--v3-professional:" in style:
                     raise AssertionError((code, lang, i, "Unexpected professional SVG"))
             page_checks += 1
-    if (media_checks, page_checks) != (97, 150):
+    if (media_checks, page_checks) != (97 + premium_count, 150):
         raise AssertionError(("Wrong media or page totals", media_checks, page_checks))
-    print("PASS: 47 SVG, 50 WebP SHA-256, 150 trilingual product pages, "
-          "300 image bindings and fallback metadata", flush=True)
+    print(f"PASS: 47 SVG, 50 WebP, {premium_count} staged premium WebP SHA-256, "
+          "150 trilingual product pages, 300 image bindings and QA gating", flush=True)
 
 
 if __name__ == "__main__":
