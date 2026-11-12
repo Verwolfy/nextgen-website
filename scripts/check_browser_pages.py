@@ -2,6 +2,7 @@
 """Local Chromium browser acceptance tests. No external deployment or secrets."""
 from __future__ import annotations
 
+import json
 from functools import partial
 import re
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -14,6 +15,7 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 SHOTS = ROOT / ".ci-artifacts" / "screenshots"
+ENHANCED_BY_CODE = {item["code"]: item["sprite"] for item in json.loads((ROOT/"src/data/fenek-enhanced-artwork.json").read_text(encoding="utf-8"))}
 
 
 class SilentHandler(SimpleHTTPRequestHandler):
@@ -26,6 +28,7 @@ def check_lot127_v3_c1t(browser, base: str) -> None:
     """Visually test the first individually reviewed V3 reference, FR/AR/EN."""
     import hashlib
     image_path = "/images/application-v3/fenek-bond-c1t-steps.webp"
+    display_path = ENHANCED_BY_CODE["BOND-C1T"]
     for lang in ("fr", "ar", "en"):
         for width in (390, 1280):
             page = browser.new_page(viewport={"width": width, "height": 850})
@@ -49,10 +52,10 @@ def check_lot127_v3_c1t(browser, base: str) -> None:
                     const r = el.getBoundingClientRect();
                     return {image:st.backgroundImage,size:st.backgroundSize,width:r.width,height:r.height};
                 }""")
-                assert image_path in info["image"], (lang, width, "wrong sprite in CSS")
+                assert display_path in info["image"], (lang, width, "wrong upgraded sprite in CSS")
                 assert info["size"] == "300% 200%", (lang, width, "sprite crop scale")
                 assert info["width"] >= (240 if width == 390 else 150), (lang, width, "too small")
-                assert abs(info["width"]-info["height"]) <= 3, (lang, width, "distorted graphic")
+                assert abs(info["width"]/info["height"]-1.5) <= .04, (lang, width, "distorted graphic")
                 assert page.evaluate("document.documentElement.scrollWidth - innerWidth") <= 4, (lang, width)
                 if lang == "fr" and width == 390:
                     SHOTS.mkdir(parents=True, exist_ok=True)
@@ -72,6 +75,7 @@ def check_lot128_v3_c1te(browser, base: str) -> None:
     """C1TE V3: own figures, correct code, conditional open time, all languages."""
     import hashlib
     sprite = "/images/application-v3/fenek-bond-c1te-steps.webp"
+    display_sprite = ENHANCED_BY_CODE["BOND-C1TE"]
     for lang in ("fr", "ar", "en"):
         for width in (390, 1280):
             page = browser.new_page(viewport={"width": width, "height": 850})
@@ -91,7 +95,7 @@ def check_lot128_v3_c1te(browser, base: str) -> None:
                 image = panels.nth(0)
                 image.scroll_into_view_if_needed()
                 image_css = image.evaluate("(el) => getComputedStyle(el).backgroundImage")
-                assert sprite in image_css, (lang, width, "wrong C1TE sprite")
+                assert display_sprite in image_css, (lang, width, "wrong C1TE upgraded sprite")
                 assert "fenek-bond-c1t-steps.webp" not in image_css, (lang, width)
                 assert image.bounding_box()["width"] >= (240 if width==390 else 150), (lang,width)
                 assert page.evaluate("document.documentElement.scrollWidth - innerWidth") <= 4, (lang,width)
@@ -110,6 +114,7 @@ def check_lot128_v3_c1te(browser, base: str) -> None:
 def check_lot129_v3_c2ft(browser, base: str) -> None:
     """C2FT now serves its OWN six complete source illustrations and captions."""
     sprite = "/images/application-v3/fenek-bond-c2ft-steps.webp"
+    display_sprite = ENHANCED_BY_CODE["BOND-C2FT"]
     for lang in ("fr", "ar", "en"):
         for width in (390, 1280):
             page = browser.new_page(viewport={"width": width, "height": 850})
@@ -127,8 +132,8 @@ def check_lot129_v3_c2ft(browser, base: str) -> None:
                 assert fourth in guide.inner_text(),(lang,width,"C2FT step 04 instructions")
                 first=panels.nth(0);first.scroll_into_view_if_needed()
                 bg=first.evaluate("(el)=>getComputedStyle(el).backgroundImage")
-                assert sprite in bg and "fenek-bond-c1te-steps.webp" not in bg,(lang,width)
-                assert abs(first.bounding_box()["width"]-first.bounding_box()["height"])<=3,(lang,width)
+                assert display_sprite in bg and "fenek-bond-c1te-steps.webp" not in bg,(lang,width)
+                assert abs(first.bounding_box()["width"]/first.bounding_box()["height"]-1.5)<=.04,(lang,width)
                 assert page.evaluate("document.documentElement.scrollWidth-innerWidth")<=4,(lang,width)
                 if lang=="fr" and width==390:
                     SHOTS.mkdir(parents=True,exist_ok=True)
@@ -154,13 +159,14 @@ def check_lot130_all_v3(browser, base: str) -> None:
             assert guide.count()==1,(code,"not reviewed")
             sprite=f"/images/application-v3/{slug}-steps.webp"
             assert guide.get_attribute("data-v3-sprite")==sprite,(code,"wrong sprite")
+            assert guide.get_attribute("data-v3-enhanced-sprite")==ENHANCED_BY_CODE.get(code),(code,"enhanced artwork mismatch")
             panels=guide.locator("[data-v3-step]")
             assert panels.count()==6,(code,"not six source panels")
             for i in range(6):
                 panel=panels.nth(i)
                 assert panel.get_attribute("data-v3-step")==str(i+1),(code,i,"stage order")
                 css=panel.evaluate("(el)=>getComputedStyle(el).backgroundImage")
-                assert sprite in css,(code,i,"illustration from wrong product")
+                assert ENHANCED_BY_CODE.get(code,sprite) in css,(code,i,"illustration from wrong product")
                 label=panel.get_attribute("aria-label") or ""
                 assert mapping[code]["steps"][i]["title"]["fr"] in label or code in ("BOND-C1T","BOND-C1TE"),(code,i,"wrong legend")
             assert page.evaluate("document.documentElement.scrollWidth-innerWidth")<=4,(code,"mobile overflow")

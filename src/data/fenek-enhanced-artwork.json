@@ -1,0 +1,122 @@
+[
+  {
+    "code": "BOND-C1T",
+    "slug": "fenek-bond-c1t",
+    "sprite": "/images/application-upgraded/fenek-bond-c1t-steps.webp",
+    "sha256": "e0f2e25263fedb45a2ed3a7676243dedde34b568f002a28fabe4322c8f210855",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ]
+  },
+  {
+    "code": "BOND-C1TE",
+    "slug": "fenek-bond-c1te",
+    "sprite": "/images/application-upgraded/fenek-bond-c1te-steps.webp",
+    "sha256": "de47d3eeddbebfe59aa4bb10faeedc2170fd610d1a6aebdfee0602bfcfb77c88",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ]
+  },
+  {
+    "code": "BOND-C2FT",
+    "slug": "fenek-bond-c2ft",
+    "sprite": "/images/application-upgraded/fenek-bond-c2ft-steps.webp",
+    "sha256": "7fc5c5726aee359e106b555153bd18e47a3c0103767dec88ce20b34b8d83afec",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ]
+  },
+  {
+    "code": "BOND-C2TE",
+    "slug": "fenek-bond-c2te",
+    "sprite": "/images/application-upgraded/fenek-bond-c2te-steps.webp",
+    "sha256": "3c5823df7064815c05777226756dba1a08fd33c73a445146b331721b7cb3a7d4",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ]
+  },
+  {
+    "code": "BOND-C2TE-S1",
+    "slug": "fenek-bond-c2te-s1",
+    "sprite": "/images/application-upgraded/fenek-bond-c2te-s1-steps.webp",
+    "sha256": "5c53fe8dbf140c9991a9031ad0988d56755acdcaa32d6ee0d379cb00ac622254",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ]
+  },
+  {
+    "code": "BOND-CG1",
+    "slug": "fenek-bond-cg1",
+    "sprite": "/images/application-upgraded/fenek-bond-cg1-steps.webp",
+    "sha256": "d9d33985909badfbcfb4aabe71efb49f365d6e5cb1b6c98bf4f079a49e6ef659",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ]
+  },
+  {
+    "code": "BOND-CG2WA",
+    "slug": "fenek-bond-cg2wa",
+    "sprite": "/images/application-upgraded/fenek-bond-cg2wa-steps.webp",
+    "sha256": "ced38dc249f4aa6e499da49529ae3ce89436a20bda99a31000d2073ff4f3b784",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ]
+  },
+  {
+    "code": "BOND-CT-C25-F5",
+    "slug": "fenek-bond-ct-c25-f5",
+    "sprite": "/images/application-upgraded/fenek-bond-ct-c25-f5-steps.webp",
+    "sha256": "5af30d3a36edd75f42e5b6c9cc8334b246a8e3f2b8881478566d1f4d4123ca81",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ]
+  },
+  {
+    "code": "BOND-R2",
+    "slug": "fenek-bond-r2",
+    "sprite": "/images/application-upgraded/fenek-bond-r2-steps.webp",
+    "sha256": "98ba4d168699d1dc61b0cd361bf8d45da77f4064e7b888390d582c39e6c278fa",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ]
+  },
+  {
+    "code": "BOND-R3",
+    "slug": "fenek-bond-r3",
+    "sprite": "/images/application-upgraded/fenek-bond-r3-steps.webp",
+    "sha256": "c0d5aa7ab363de933c0e524bd976d3db13c53bbf820bbe9f6f81a8a49088fe9b",
+    "status": "BROUILLON",
+    "layout": "3x2",
+    "artworkDimensions": [
+      540,
+      360
+    ]
+  }
+]

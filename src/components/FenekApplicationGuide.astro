@@ -9,9 +9,12 @@ import type { CatalogueProject } from '../lib/catalogue-projets';
 import { applicationStepsFor, isTileAdhesive } from '../data/fenek-application-steps';
 import { applicationContextFor } from '../data/fenek-application-context';
 import { reviewedV3GuideFor } from '../data/fenek-v3-reviewed';
+import enhancedArtwork from '../data/fenek-enhanced-artwork.json';
 interface Props { lang:Lang; product:CatalogueProject; }
 const {lang,product}=Astro.props;
 const reviewedV3=reviewedV3GuideFor(product.code,product.slug);
+// Upgrade only the exact product code + slug. Keep V3 original assets and their hashes intact.
+const enhancedV3=reviewedV3 ? enhancedArtwork.find(item=>item.code===product.code && item.slug===product.slug) : undefined;
 const steps=reviewedV3
   ? reviewedV3.steps.map(step=>({title:step.title[lang],description:step.description[lang],icon:step.icon,image:step.image}))
   : applicationStepsFor(product.code,lang);
@@ -45,7 +48,7 @@ const paths:Record<string,string>={
  level:'M3 18h18M5 14l4-4 4 3 6-7M4 4h16v16H4z'
 };
 ---
-<section class="fenek-application-visual" aria-label={copy.intro} data-application-visual data-reference={product.code} data-application-count={steps.length} data-v3-reviewed={reviewedV3 ? reviewedV3.status : undefined} data-v3-sprite={reviewedV3?.sprite} data-v3-hash={reviewedV3?.sha256}>
+<section class="fenek-application-visual" aria-label={copy.intro} data-application-visual data-reference={product.code} data-application-count={steps.length} data-v3-reviewed={reviewedV3 ? reviewedV3.status : undefined} data-v3-sprite={reviewedV3?.sprite} data-v3-hash={reviewedV3?.sha256} data-v3-enhanced-sprite={enhancedV3?.sprite} data-v3-enhanced-hash={enhancedV3?.sha256}>
   <div class="fenek-application-visual-heading">
     <span class="fenek-application-visual-eyebrow">{product.nom}</span>
     <h3>{copy.intro}</h3>
@@ -53,10 +56,10 @@ const paths:Record<string,string>={
   </div>
   <ol class:list={['fenek-application-visual-grid',{'has-drawings':tile || Boolean(reviewedV3),'v3-reviewed':Boolean(reviewedV3)}]}>
     {steps.map((step,i)=><li class="fenek-application-visual-card" data-application-step={i+1}>
-      <figure class="fenek-application-visual-figure">
+      <figure class:list={['fenek-application-visual-figure',{'fenek-v3-upgraded-figure':Boolean(enhancedV3)}]}>
         {step.image && reviewedV3
-          ? <div class="fenek-application-visual-photo fenek-v3-reviewed-photo"
-              style={`--sprite-position:${((step.image-1)%3)*50}% ${Math.floor((step.image-1)/3)*100}%;--v3-sprite:url('${reviewedV3.sprite}')`}
+          ? <div class:list={['fenek-application-visual-photo','fenek-v3-reviewed-photo',{'fenek-v3-upgraded-photo':Boolean(enhancedV3)}]}
+              style={`--sprite-position:${((step.image-1)%3)*50}% ${Math.floor((step.image-1)/3)*100}%;--v3-sprite:url('${enhancedV3?.sprite ?? reviewedV3.sprite}')`}
               data-v3-step={i+1}
               role="img" aria-label={product.nom+' — '+copy.step+' '+(i+1)+': '+step.title}></div>
           : step.image
@@ -107,6 +110,9 @@ const paths:Record<string,string>={
  .fenek-v3-reviewed-photo{width:100%;aspect-ratio:1;max-width:none;background-image:var(--v3-sprite);background-size:300% 200%;background-position:var(--sprite-position);background-repeat:no-repeat;filter:none}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-figure figcaption{display:none}
  /* Crop only text baked into a source sprite when the upper artwork is pixel-identical to this product's V3 PNGs. */
+ /* Artworks are intentionally caption-free: titles remain selectable, translated HTML outside the image. */
+ .fenek-application-visual-grid.v3-reviewed .fenek-v3-upgraded-figure{aspect-ratio:3/2}
+ .fenek-application-visual-grid.v3-reviewed .fenek-v3-upgraded-photo{aspect-ratio:3/2}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-copy{border-top:1px solid #e6efeb;padding:9px 13px 15px}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-copy h4{font-size:.89rem}
  .fenek-application-visual-icon{width:100px;height:100px;border-radius:27px;background:radial-gradient(circle at 25% 20%,#fff,#e7f3f0);display:grid;place-items:center;border:1px solid #d5e8e3;color:#16745f;box-shadow:inset 0 0 0 7px #f4faf8}
@@ -143,6 +149,7 @@ const paths:Record<string,string>={
  .fenek-application-visual-copy p{font-size:.79rem}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-card{display:flex;flex-direction:column}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-figure{width:100%;aspect-ratio:1}
+ .fenek-application-visual-grid.v3-reviewed .fenek-v3-upgraded-figure{aspect-ratio:3/2}
  .fenek-application-visual-grid.v3-reviewed .fenek-v3-reviewed-photo{width:100%}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-copy{padding:12px 15px 15px}
  }
