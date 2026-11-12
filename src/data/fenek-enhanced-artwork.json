@@ -208,7 +208,18 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-proof-cm-o1p-steps.svg",
+    "professionalSvgSha256": "2cdf0ae0c189a5851e468c4debc3a7fadd18b2f73f260c92f76b528e2f687594",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "PROOF-CM-O1P",
+      "PROOF-CM-O2P"
+    ]
   },
   {
     "code": "PROOF-CM-O2P",
@@ -221,7 +232,18 @@
       540,
       360
     ],
-    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux"
+    "sourceType": "remaster-graphique-des-six-PNG-V3-originaux",
+    "professionalSvg": "/images/application-professional/fenek-proof-cm-o2p-steps.svg",
+    "professionalSvgSha256": "b84e1f203ad6bae595395e73d0af6c9853c2630328c5800e4b13b72e50f2b293",
+    "professionalSvgDimensions": [
+      1620,
+      720
+    ],
+    "professionalSourceType": "illustration-vectorielle-professionnelle-6-scenes",
+    "professionalSceneWorkflowWith": [
+      "PROOF-CM-O1P",
+      "PROOF-CM-O2P"
+    ]
   },
   {
     "code": "PROOF-PU-1K",
