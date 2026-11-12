@@ -519,7 +519,18 @@
       "PROOF-ACR-RF"
     ],
     "visualQualityApproved": false,
-    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique"
+    "visualQualityReview": "non-conforme-au-standard-C1T-sans-verification-visuelle-specifique",
+    "premiumWebp": "/images/application-premium/fenek-proof-acr-rf-steps-v4.webp",
+    "premiumWebpSha256": "438694daefa3b97b2ca3d36f38d6bea78fbedb7070203f81b6e06ef3a76fa433",
+    "premiumWebpDimensions": [
+      1620,
+      720
+    ],
+    "premiumWebpGitBlobSha": "2e3b418324ed3f5100225063d09022af518477a4",
+    "premiumVisualApproved": false,
+    "premiumVisualStatus": "BROUILLON_REVUE_GRAPHIQUE_ET_FT_FDS",
+    "premiumSourceType": "illustration-semi-realiste-generative-6-scenes",
+    "premiumVisualNotes": "Controler le renfort des joints/releves et les inscriptions FENEK generees; conserver le WebP historique tant que la revue est incomplete"
   },
   {
     "code": "PROOF-EP-PRIM",
