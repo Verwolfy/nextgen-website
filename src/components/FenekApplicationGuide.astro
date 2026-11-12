@@ -110,7 +110,7 @@ const paths:Record<string,string>={
  .fenek-application-visual-grid.v3-reviewed .fenek-v3-detail-link{display:inline-block;width:auto;max-width:100%;aspect-ratio:auto;margin-top:8px;padding:6px 9px;border-radius:8px;background:#e7f4ee;color:#075f4e;font-weight:750;font-size:.76rem;text-decoration:underline;text-underline-offset:2px;cursor:zoom-in}
  .fenek-v3-detail-link:focus-visible{outline:3px solid #009a44;outline-offset:-4px;border-radius:8px}
  .fenek-v3-detail-link:hover .fenek-v3-reviewed-photo{filter:contrast(1.08)}
- .fenek-v3-reviewed-photo{width:100%;aspect-ratio:1;max-width:none;background-image:var(--v3-professional,var(--v3-sprite));background-size:300% 200%;background-position:var(--sprite-position);background-repeat:no-repeat;filter:none}
+ .fenek-v3-reviewed-photo{width:100%;aspect-ratio:1;max-width:none;/* Layer 2 remains visible even if the optional SVG URL fails to load. */background-image:var(--v3-professional,none),var(--v3-sprite);background-size:300% 200%,300% 200%;background-position:var(--sprite-position),var(--sprite-position);background-repeat:no-repeat,no-repeat;filter:none}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-figure figcaption{display:none}
  /* Crop only text baked into a source sprite when the upper artwork is pixel-identical to this product's V3 PNGs. */
  /* Artworks are intentionally caption-free: titles remain selectable, translated HTML outside the image. */
