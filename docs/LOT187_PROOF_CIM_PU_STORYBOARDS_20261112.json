@@ -1,0 +1,227 @@
+{
+  "date": "2026-11-12",
+  "lot": 187,
+  "process": "generate six true separate realistic images per product then package as 3x2 WebP only after manual QA",
+  "status": "STORYBOARD_READY_IMAGES_NOT_YET_GENERATED",
+  "products": [
+    {
+      "code": "PROOF-PU-1K",
+      "slug": "fenek-proof-pu-1k",
+      "qualityReference": "FENEK-BOND C1T - photorealistic detailed construction illustrations",
+      "status": "BROUILLON_A_PRODUIRE",
+      "panels": 6,
+      "grid": [
+        3,
+        2
+      ],
+      "panelDimensions": [
+        540,
+        360
+      ],
+      "totalDimensions": [
+        1620,
+        720
+      ],
+      "avoid": [
+        "logos officiels reconstitues",
+        "dosages",
+        "epaisseurs",
+        "temperatures",
+        "temps de cure chiffres",
+        "normes et certifications",
+        "effets pictogrammes plats",
+        "fausses etiquettes produit"
+      ],
+      "scenes": [
+        {
+          "step": 1,
+          "titleFr": "Préparer un support sec et propre",
+          "titleEn": "Prepare a clean, dry substrate",
+          "titleAr": "نظّف السطح الجاف وجهّزه",
+          "shotBrief": "Travailleur sur toiture plane, inspectant le support sec, ramassant la poussiere avec une brosse puis verifiant la surface, avant le revetement"
+        },
+        {
+          "step": 2,
+          "titleFr": "Porter les EPI et ventiler",
+          "titleEn": "Wear PPE and ensure ventilation",
+          "titleAr": "استخدم القفازات والنظارات ووسيلة تنفس مناسبة",
+          "shotBrief": "Travailleur portant gants, lunettes de protection et tenue de chantier sur toiture ouverte ventilee, sans logo invente"
+        },
+        {
+          "step": 3,
+          "titleFr": "Homogénéiser sans ajout d’eau",
+          "titleEn": "Stir until uniform without adding water",
+          "titleAr": "حرّك المنتج دون إضافة ماء",
+          "shotBrief": "Vue rapprochee d'un melangeur dans un seul seau de produit visqueux, sans bidon d'eau ni ajout de liquide"
+        },
+        {
+          "step": 4,
+          "titleFr": "Appliquer un primaire si requis",
+          "titleEn": "Apply primer if required",
+          "titleAr": "طبّق البرايمر عند اشتراطه",
+          "shotBrief": "Vue de chantier d'un primaire etale en couche mince sur support de toiture, avec indication visuelle discrète que cette etape depend de la fiche"
+        },
+        {
+          "step": 5,
+          "titleFr": "Appliquer uniformément la membrane",
+          "titleEn": "Apply the membrane uniformly",
+          "titleAr": "وزّع الغشاء السائل بالتساوي",
+          "shotBrief": "Travailleur etalant une membrane continue au rouleau sur une toiture, effet de matiere realiste et gestes reguliers"
+        },
+        {
+          "step": 6,
+          "titleFr": "Renforcer les points singuliers et protéger",
+          "titleEn": "Reinforce critical details and protect",
+          "titleAr": "عزّز التفاصيل واحترم زمن التغطية",
+          "shotBrief": "Travailleur renforcant un raccord de toiture avec un releve vertical et protegeant le detail; pas de valeur de performance"
+        }
+      ]
+    },
+    {
+      "code": "PROOF-CM-O1P",
+      "slug": "fenek-proof-cm-o1p",
+      "qualityReference": "FENEK-BOND C1T - photorealistic detailed construction illustrations",
+      "status": "BROUILLON_A_PRODUIRE",
+      "panels": 6,
+      "grid": [
+        3,
+        2
+      ],
+      "panelDimensions": [
+        540,
+        360
+      ],
+      "totalDimensions": [
+        1620,
+        720
+      ],
+      "avoid": [
+        "logos officiels reconstitues",
+        "dosages",
+        "epaisseurs",
+        "temperatures",
+        "temps de cure chiffres",
+        "normes et certifications",
+        "effets pictogrammes plats",
+        "fausses etiquettes produit"
+      ],
+      "scenes": [
+        {
+          "step": 1,
+          "titleFr": "Nettoyer et humidifier sans eau stagnante",
+          "titleEn": "Clean and dampen without standing water",
+          "titleAr": "نظّف السطح واتركه رطبًا دون تجمع",
+          "shotBrief": "Artisan nettoyant puis humidifiant un support beton au pulverisateur, faible humidite sans flaques ni eau stagnante"
+        },
+        {
+          "step": 2,
+          "titleFr": "Porter gants, lunettes et masque",
+          "titleEn": "Wear gloves, goggles and a mask",
+          "titleAr": "ارتدِ القفازات والنظارات وكمامة الغبار",
+          "shotBrief": "Artisan en gants, lunettes et masque de protection, habillement de chantier sobre sans certification inventee"
+        },
+        {
+          "step": 3,
+          "titleFr": "Gâcher selon la fiche technique",
+          "titleEn": "Mix according to the technical sheet",
+          "titleAr": "اخلط المسحوق حسب النشرة الفنية",
+          "shotBrief": "Zoom d'un artisan gachant un mortier cimentaire monocomposant dans un seau, eau non quantifiee, geste de melange credible"
+        },
+        {
+          "step": 4,
+          "titleFr": "Renforcer les angles et joints",
+          "titleEn": "Reinforce corners and joints",
+          "titleAr": "عزّز الزوايا والفواصل بشريط مناسب",
+          "shotBrief": "Artisan posant une bande d'armature dans un angle rentrant mur-sol et la marouflant dans le revetement cimentaire"
+        },
+        {
+          "step": 5,
+          "titleFr": "Appliquer les couches croisées prévues",
+          "titleEn": "Apply the specified cross-coats",
+          "titleAr": "طبّق الطبقات المتقاطعة حسب النشرة",
+          "shotBrief": "Travailleur appliquant les couches cimentaires en sens croises avec outil adapte, visibles par deux orientations des passes"
+        },
+        {
+          "step": 6,
+          "titleFr": "Laisser durcir avant la pose",
+          "titleEn": "Allow to cure before tiling",
+          "titleAr": "احمِ العزل قبل تركيب البلاط",
+          "shotBrief": "Support cimentaire laisse en cure avant pose de carrelage; chantier protege, sans horloge, chiffres ni pose prematuree"
+        }
+      ]
+    },
+    {
+      "code": "PROOF-CM-O2P",
+      "slug": "fenek-proof-cm-o2p",
+      "qualityReference": "FENEK-BOND C1T - photorealistic detailed construction illustrations",
+      "status": "BROUILLON_A_PRODUIRE",
+      "panels": 6,
+      "grid": [
+        3,
+        2
+      ],
+      "panelDimensions": [
+        540,
+        360
+      ],
+      "totalDimensions": [
+        1620,
+        720
+      ],
+      "avoid": [
+        "logos officiels reconstitues",
+        "dosages",
+        "epaisseurs",
+        "temperatures",
+        "temps de cure chiffres",
+        "normes et certifications",
+        "effets pictogrammes plats",
+        "fausses etiquettes produit"
+      ],
+      "scenes": [
+        {
+          "step": 1,
+          "titleFr": "Nettoyer et humidifier sans eau stagnante",
+          "titleEn": "Clean and dampen without standing water",
+          "titleAr": "نظّف السطح ورطّبه دون ماء راكد",
+          "shotBrief": "Artisan nettoyant et humidifiant un support beton propre sans laisser de flaque"
+        },
+        {
+          "step": 2,
+          "titleFr": "Porter gants, lunettes et masque",
+          "titleEn": "Wear gloves, goggles and a mask",
+          "titleAr": "ارتدِ القفازات والنظارات وكمامة الغبار",
+          "shotBrief": "Artisan avec masque, lunettes et gants de protection, scene chantier contemporaine"
+        },
+        {
+          "step": 3,
+          "titleFr": "Mélanger les deux composants selon fiche",
+          "titleEn": "Mix both components as specified",
+          "titleAr": "اخلط المكونين وفق النشرة الفنية",
+          "shotBrief": "Melange de deux composants distincts A et B dans un seau; contenants neutres sans dosage ni marque inventes"
+        },
+        {
+          "step": 4,
+          "titleFr": "Armer les angles et joints",
+          "titleEn": "Reinforce corners and joints",
+          "titleAr": "ثبت شريط العزل عند الزوايا والفواصل",
+          "shotBrief": "Artisan integrant une bande d'armature dans un angle mur-sol avant une couche de membrane cimentaire"
+        },
+        {
+          "step": 5,
+          "titleFr": "Appliquer les couches croisées prévues",
+          "titleEn": "Apply the specified cross-coats",
+          "titleAr": "طبّق الطبقات المتقاطعة حسب النشرة",
+          "shotBrief": "Artisan appliquant les couches de membrane cimentaire croisees au rouleau ou pinceau adapte, two orientations visibles"
+        },
+        {
+          "step": 6,
+          "titleFr": "Attendre la cure avant carrelage",
+          "titleEn": "Wait for curing before tiling",
+          "titleAr": "انتظر التصلب قبل التبليط أو الغمر",
+          "shotBrief": "Zone d'etancheite protegee et en cure avant carrelage; carrelage stocke a proximite mais non pose, sans duree"
+        }
+      ]
+    }
+  ]
+}
