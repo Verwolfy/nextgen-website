@@ -82,8 +82,9 @@ class PaintProfessionalArtwork(unittest.TestCase):
                 self.assertEqual(sum(code in (x.text or "") for x in root.iter()), 6)
                 self.assertFalse(any(x.tag.rsplit("}", 1)[-1] in
                                      {"image", "script", "foreignObject", "use"} for x in root.iter()))
-                self.assertNotIn(b"http://", raw)
-                self.assertNotIn(b"https://", raw.replace(b"http://www.w3.org/2000/svg", b""))
+                self.assertNotIn(b" href=", raw)
+                self.assertNotIn(b"xlink:", raw)
+                self.assertNotIn(b"https://", raw)
                 self.assertNotIn(b"ISO 9001", raw)
                 self.assertNotIn(b"EN 12004", raw)
 
