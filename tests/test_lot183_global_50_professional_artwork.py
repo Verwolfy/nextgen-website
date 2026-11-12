@@ -93,7 +93,7 @@ class AllEnhancedApplicationArt(unittest.TestCase):
     def test_site_prioritizes_professional_svg_with_webp_fallback(self):
         ui = (ROOT / "src/components/FenekApplicationGuide.astro").read_text("utf-8")
         self.assertIn("item.code===product.code && item.slug===product.slug", ui)
-        self.assertIn("background-image:var(--v3-professional,none),var(--v3-sprite)",
+        self.assertIn("background-image:var(--v4-premium,none),var(--v3-professional,none),var(--v3-sprite)",
                       ui)
         self.assertIn("enhancedV3?.sprite ?? reviewedV3.sprite", ui)
         self.assertIn("data-v3-professional-svg={professionalArtwork?.professionalSvg}",
