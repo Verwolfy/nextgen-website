@@ -44,6 +44,10 @@
 ## Blocage de publication
 Les quatre workflows GitHub Actions de la PR #140 concluent `failure` en quelques secondes, avec jobs sans étape ni runner attribué d’après les observations précédentes. Le problème semble intervenir avant l’exécution du code ; la cause exacte n’est **pas établie**. Aucun contournement risqué, modification de secrets, fusion forcée ou déploiement manuel non vérifié ne doit être effectué.
 
+## Élément nouveau sur la cause CI (lecture GitHub API)
+Le 12/11/2026, les quatre workflows **sur `main` lui-même**, commit `d676565a...` (vers 11:48 UTC), avaient déjà `conclusion=failure` : exemple build `43212345135`. Sur la PR, les échecs existent également. Le job de build récemment inspecté `131235550508` avait **0 étape exécutée**. Le dépôt distinct `Verwolfy/erp-mortier` possédait encore des workflows `success` le 09/11/2026. Cela renforce le diagnostic « blocage préalable au travail de cette PR », mais **ne détermine pas** la cause racine : vérifier les avertissements Actions et les limites du dépôt/compte.
+Le fichier public `https://nextgen-buildingsolutions.com/deployment.json` n’a pas pu être ouvert depuis l'outil web au cours de cet audit ; aucun statut de déploiement n’en a été déduit.
+
 ## Prochaines actions recommandées
 1. Diagnostiquer l’indisponibilité des runners GitHub Actions (avertissements du dépôt, facturation/quota, droits, compte, service). Ne pas présumer du motif.
 2. Sur runner fonctionnel ou environnement local authentifié, exécuter : `python -m unittest discover -s tests -q`, `npm ci --no-audit --no-fund && npm run build`, puis `python scripts/check_built_pages.py` et audits préproduction.
