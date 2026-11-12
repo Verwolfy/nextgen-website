@@ -1,5 +1,20 @@
 # NEXTGEN — relais d’exécution des illustrations (12 novembre 2026)
 
+## Lot 187 en cours — import binaire pilote et storyboards de trois références
+
+Le WebP semi-réaliste de `PROOF-ACR-RF` a été **réellement ajouté à la branche GitHub** sous `public/images/application-premium/fenek-proof-acr-rf-steps-v4.webp` via `create_blob` (base64 binaire), `create_tree`, `create_commit`, `update_ref` sans force push. Il a été relu sur GitHub : objet Git SHA-1 **`2e3b418324ed3f5100225063d09022af518477a4`**, identique au `git hash-object` local, taille **260976 octets**, dimensions **1620×720**, SHA-256 binaire **`438694daefa3b97b2ca3d36f38d6bea78fbedb7070203f81b6e06ef3a76fa433`**. Candidat stocké, **pas activé** et **pas publié**.
+
+Le registre `src/data/fenek-enhanced-artwork.json` contient une entrée `premiumWebp` / `premiumWebpSha256` / `premiumWebpGitBlobSha` et `premiumVisualApproved:false`, statut `BROUILLON_REVUE_GRAPHIQUE_ET_FT_FDS`. Le WebP antérieur et les 47 SVG schématiques restent en repli / désactivés. Le post-build `scripts/check_professional_artwork_built.py` contrôle désormais le premium V4 en plus des 47 SVG+50 WebP, et refuse son affichage avant validation.
+
+Tests ajoutés : `tests/test_lot186_premium_acrrf_staged.py` (entête VP8, dimensions, 260976 octets, SHA, absence d'activation). Le test `test_lot184_robust_artwork_fallback.py` a été mis à jour pour le comptage dynamique des premiums.
+
+**Lot 187** : dossiers de cadrage liés aux notices V3 pour `PROOF-PU-1K`, `PROOF-CM-O1P`, `PROOF-CM-O2P` (18 étapes) dans `docs/LOT187_PROOF_CIM_PU_STORYBOARDS_20261112.json`, plus test `tests/test_lot187_proof_storyboards.py`. Script `scripts/assemble_premium_application_sprite.py` créé pour assembler six scènes réelles en une planche WebP 1620×720 avec badge numéroté et manifeste d'empreintes, **jamais auto-publiée**. Les 18 nouvelles scènes semi-réalistes ne sont pas encore produites / validées.
+
+**Incident de génération** : deux images infographiques hors du périmètre des nouvelles références ont été produites ; la seconde contenait des durées / vitesses de mélange non vérifiées et un faux logo. **Ne pas les réutiliser ni publier.** Seul le V4 ACR-RF antérieur, relu et marqué BROUILLON, a été transféré.
+
+Avant toute activation : supprimer / vérifier marquages générés, faire valider les six gestes ACR-RF par FT/FDS, revue qualité contre C1T, cadrages mobile, FR/AR/EN, vrais tests CI. Après les scènes du lot 187, poursuivre 7 autres PROOF, puis BOND/FLOW/PAINT. Maintenir PR #140 brouillon, aucune fusion ou déploiement non testé.
+
+
 ## CORRECTIF PRIORITAIRE — AUDIT VISUEL LOT 186 (12/11/2026)
 
 L'audit antérieur 50/50 ne mesurait que la présence/structure des images. Il **ne certifiait pas** que toutes les scènes avaient le rendu semi-réaliste de `FENEK-BOND C1T`. Une comparaison effective des 50 WebP du `main` et des 50 pages publiques en anglais a établi : **11 A** (qualité C1T), **3 B** (façades illustrées mais différentes), **36 C** (pictogrammes plats). **39 produits requièrent une harmonisation graphique**. Il existe 5 groupes d'images WebP partagées par 13 références.
