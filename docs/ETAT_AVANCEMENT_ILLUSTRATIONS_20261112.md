@@ -1,5 +1,16 @@
 # NEXTGEN — relais d’exécution des illustrations (12 novembre 2026)
 
+## Continuation finale du lot 187 — verrou premium robuste
+
+- `src/data/fenek-enhanced-artwork.json` : ACR-RF premium binaire toujours présent sous `public/images/application-premium/fenek-proof-acr-rf-steps-v4.webp`, SHA-256 `438694daefa3b97b2ca3d36f38d6bea78fbedb7070203f81b6e06ef3a76fa433`, `premiumVisualApproved:false`, **`premiumTechnicalApproved:false`**, `premiumApprovalRecord:null`.
+- `src/components/FenekApplicationGuide.astro` : couche de priorité `--v4-premium` ajoutée **au-dessus** du SVG `--v3-professional` et du WebP historique `--v3-sprite`. La couche premium ne devient active qu'avec accord visuel, accord FT/FDS et dossier de validation non vide (`trim()`). Aucun de ces accords n'est disponible.
+- `scripts/check_professional_artwork_built.py` et `scripts/check_live_application_guides.py` : contrôle SHA du premium, métadonnées HTML exactes après autorisation, refus de fuite prématurée dans les pages. Cinq anciens tests de CSS mis à jour pour trois couches ; test pilote ACR-RF complété par double statut.
+- Revue locale du pilote ACR-RF : **6 images de 540×360** dans le WebP 1620×720, empreinte SHA valide, gestes graphiquement distincts. Marquages FENEK générés à traiter et geste des joints/relevés à faire valider ; le pilote reste **non publié**.
+- `docs/LOT187_GARDE_PREMIUM_REVUE_VISUELLE_20261112.md` : QA de chaque scène, validations et blocages.
+- Tentatives de génération du lot 187 : les sorties obtenues étaient des tableaux de bord avec informations inventées, **écartées**. Aucune des **18 scènes premium définitives** pour PROOF-PU-1K/CM-O1P/CM-O2P n'est produite. **Ne pas déclarer le lot graphique terminé.**
+- GitHub Actions toujours en échec ; le connecteur n'expose pas les endpoints d'administration des runners et permissions. Aucun déploiement/fusion n'est effectué.
+
+
 ## Lot 187 en cours — import binaire pilote et storyboards de trois références
 
 Le WebP semi-réaliste de `PROOF-ACR-RF` a été **réellement ajouté à la branche GitHub** sous `public/images/application-premium/fenek-proof-acr-rf-steps-v4.webp` via `create_blob` (base64 binaire), `create_tree`, `create_commit`, `update_ref` sans force push. Il a été relu sur GitHub : objet Git SHA-1 **`2e3b418324ed3f5100225063d09022af518477a4`**, identique au `git hash-object` local, taille **260976 octets**, dimensions **1620×720**, SHA-256 binaire **`438694daefa3b97b2ca3d36f38d6bea78fbedb7070203f81b6e06ef3a76fa433`**. Candidat stocké, **pas activé** et **pas publié**.
