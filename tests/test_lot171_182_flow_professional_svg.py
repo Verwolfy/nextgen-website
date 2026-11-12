@@ -61,7 +61,7 @@ class FlowProfessionalIllustrations(unittest.TestCase):
         art = {x["code"]: x for x in ART}
         manuals = {x["code"]: x for x in MAN}
         cat = {x["code"]: x for x in CAT}
-        self.assertEqual(len(ART), len(MAN), len(CAT), 50)
+        self.assertEqual((len(ART), len(MAN), len(CAT)), (50, 50, 50))
         self.assertEqual(len([x for x in ART if x["code"].startswith("FLOW-")]), 12)
         self.assertTrue(all(art[code].get("professionalSvg") for code in EXPECTED))
         for code, titles in EXPECTED.items():
