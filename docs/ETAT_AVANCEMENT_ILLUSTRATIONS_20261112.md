@@ -7,8 +7,8 @@ Projet NextGen Building Solutions, site Astro trilingue (FR/AR/EN), depot GitHub
 - `main` au debut du travail : `d676565afc3353a439c76b1c2d5a038c8d042b11` (lot 138, peintures facade).
 - Branche creee : `feat/lot139-140-professional-paint-illustrations-20261112`.
 - Pull request ouverte : https://github.com/Verwolfy/nextgen-website/pull/140
-- Commit de tete confirme : `bf874659bc733f0393ccea19ff7b51d141689a67`.
-- PR : 10 fichiers modifies/ajoutes ; non fusionnee ; pas de publication Cloudflare verifiee.
+- Commit de la réalisation avant le relais documentaire : `bf874659bc733f0393ccea19ff7b51d141689a67` ; le commit du relais est `75542791585387900af6943c00b027ac954a5371` (vérifier le HEAD actuel avant fusion).
+- PR : 10 fichiers de réalisation plus ce fichier de relais ; non fusionnee ; pas de publication Cloudflare verifiee.
 
 ## Lots crees sur la branche
 - Lot 139 : `PAINT-INT-M`, `PAINT-INT-S`, `PAINT-INT-WA`.
