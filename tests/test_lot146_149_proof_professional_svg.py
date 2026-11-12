@@ -57,7 +57,7 @@ class ProofProfessionalArtwork(unittest.TestCase):
         artwork = {p["code"]: p for p in ART}
         guides = {p["code"]: p for p in MANUALS}
         catalogue = {p["code"]: p for p in CATALOGUE}
-        self.assertEqual(len(ART), len(guides), len(catalogue), 50)
+        self.assertEqual((len(ART), len(guides), len(catalogue)), (50, 50, 50))
         self.assertTrue(set(STEPS).issubset(
             {p["code"] for p in ART if p.get("professionalSvg")}))
         for code, expected_titles in STEPS.items():
