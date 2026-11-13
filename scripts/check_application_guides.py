@@ -71,6 +71,31 @@ def main():
                 assert '/images/application-premium/fenek-proof-acr-rf-steps-v4.webp' in html,(lang,code,'wrong premium image')
             else:
                 assert 'data-acrrf-v4-preview' not in html,(lang,code,'V4 draft leaked to other product')
+            # Lot 191: one clearly unapproved candidate on two PROOF guides only.
+            # The candidate is additive; it must not change the original 6-step sequence.
+            review_candidates={
+                'PROOF-PU-1K':(
+                    5,'/images/application-premium/fenek-proof-pu-1k-scene-05-candidate-v1.webp',
+                    'f8a758381f5a510b03b9bd231700925d5a5b02935d264c2fdc47844915a6c14f',
+                ),
+                'PROOF-CM-O1P':(
+                    1,'/images/application-premium/fenek-proof-cm-o1p-scene-01-candidate-v1.webp',
+                    '079bde85ae3e331bd2c654d8299ccde2e26a2141dce349b610130c080902a622',
+                ),
+            }
+            if code in review_candidates:
+                candidate_step, candidate_path, candidate_hash=review_candidates[code]
+                assert html.count('data-proof-partial-preview')==1,(lang,code,'one candidate preview required')
+                assert html.count('data-proof-partial-step=')==1,(lang,code,'exactly one preview scene')
+                assert f'data-proof-partial-step="{candidate_step}"' in html,(lang,code,'wrong preview step')
+                assert 'data-approval="BROUILLON"' in html,(lang,code,'missing review-only warning')
+                assert candidate_path in html,(lang,code,'wrong candidate image')
+                assert manual['steps'][candidate_step-1]['title'][lang] in html,(lang,code,'title missing')
+                candidate_file=DIST/candidate_path.lstrip('/')
+                assert candidate_file.is_file(),(lang,code,'candidate WebP missing from build')
+                assert hashlib.sha256(candidate_file.read_bytes()).hexdigest()==candidate_hash,(lang,code,'candidate SHA mismatch')
+            else:
+                assert 'data-proof-partial-preview' not in html,(lang,code,'candidate leaked to unrelated product')
             assert parser.steps==[str(i) for i in range(1,7)],(lang,code,'step order')
             assert [s[0] for s in parser.v3]==[str(i) for i in range(1,7)],(lang,code,'V3 step order')
             for i,(_,aria,role) in enumerate(parser.v3):
