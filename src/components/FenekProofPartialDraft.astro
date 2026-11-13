@@ -1,0 +1,73 @@
+---
+/**
+ * Lot 191. Editorial candidate preview for one stage of two PROOF products.
+ * No technical endorsement, approval, or replacement of the six published stages.
+ */
+import type { Lang } from '../data/site';
+interface Props { lang: Lang; code: string; title: string; }
+const {lang,code,title}=Astro.props;
+const candidate=code==='PROOF-PU-1K'
+  ? {step:5,src:'/images/application-premium/fenek-proof-pu-1k-scene-05-candidate-v1.webp'}
+  : code==='PROOF-CM-O1P'
+  ? {step:1,src:'/images/application-premium/fenek-proof-cm-o1p-scene-01-candidate-v1.webp'}
+  : null;
+const copy={
+  fr:{
+    heading:'Nouvelle illustration — aperçu non validé',
+    badge:'Brouillon graphique',
+    stage:'Étape',
+    note:'Une seule scène candidate sur les six étapes de ce produit. Image générée à titre de revue visuelle : gestes, EPI et matériaux à vérifier avec les FT/FDS FENEK approuvées. La notice illustrée actuelle reste conservée ci-dessous.',
+    original:'Parcours illustré actuel — six étapes conservées',
+    compare:'Ouvrir la comparaison avant / après du lot 187',
+  },
+  en:{
+    heading:'New illustration — unapproved preview',
+    badge:'Visual draft',
+    stage:'Step',
+    note:'One proposed scene out of this product’s six stages. This generated visual is for design review only: procedures, PPE and materials must be checked against approved FENEK technical and safety sheets. The existing six-step guide is preserved below.',
+    original:'Existing six-step illustrations — unchanged',
+    compare:'Open the Lot 187 before / after comparison (French)',
+  },
+  ar:{
+    heading:'رسم توضيحي جديد — معاينة غير معتمدة',
+    badge:'مسودة بصرية',
+    stage:'المرحلة',
+    note:'مشهد مقترح واحد فقط من ست مراحل لهذا المنتج. هذه الصورة المولدة مخصصة للمراجعة البصرية، ويجب التحقق من الخطوات ومعدات الوقاية والمواد وفق النشرات الفنية ونشرات السلامة المعتمدة. تبقى الرسومات الست الحالية محفوظة أدناه.',
+    original:'الرسومات الحالية للمراحل الست — دون تغيير',
+    compare:'فتح المقارنة قبل وبعد للدفعة 187 (بالفرنسية)',
+  }
+}[lang];
+---
+{candidate && <section class="fenek-proof-partial" data-proof-partial-preview data-reference={code} data-approval="BROUILLON">
+  <div class="fenek-proof-partial-head">
+    <h4>{copy.heading}</h4>
+    <span class="fenek-proof-partial-badge">{copy.badge}</span>
+  </div>
+  <p class="fenek-proof-partial-note" role="note">{copy.note}</p>
+  <figure class="fenek-proof-partial-figure" data-proof-partial-step={candidate.step}>
+    <img src={candidate.src} width="960" height="640" loading="lazy" decoding="async"
+      alt={`${copy.stage} ${candidate.step}: ${title} — ${copy.badge}`}/>
+    <figcaption><strong>{copy.stage} {candidate.step}.</strong> {title}</figcaption>
+  </figure>
+  <a class="fenek-proof-partial-link" href="/fr/avant-premiere/lot187-proof/">{copy.compare}</a>
+  <h4 class="fenek-proof-partial-original">{copy.original}</h4>
+</section>}
+<style>
+  .fenek-proof-partial{margin:0 0 18px;padding:clamp(10px,2vw,17px);background:#f5fbf8;border:1px solid #b9ddd0;border-radius:12px;color:#123a54;min-width:0}
+  .fenek-proof-partial-head{display:flex;justify-content:space-between;gap:8px 12px;align-items:center;flex-wrap:wrap}
+  .fenek-proof-partial-head h4{margin:0;font-size:clamp(1rem,1.7vw,1.22rem);line-height:1.35;color:#113752}
+  .fenek-proof-partial-badge{background:#e3f3e8;border:1px solid #a4d4b6;padding:5px 11px;border-radius:28px;font-weight:800;font-size:.73rem;color:#0a694b}
+  .fenek-proof-partial-note{line-height:1.55;font-size:.84rem;max-width:85ch;color:#3d5c65;margin:12px 0}
+  .fenek-proof-partial-figure{margin:0;max-width:650px;min-width:0;overflow:hidden;border:1px solid #ccdfde;border-radius:11px;background:#fff}
+  .fenek-proof-partial-figure img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+  .fenek-proof-partial-figure figcaption{padding:9px 12px 12px;font-size:.88rem;line-height:1.4;color:#123a54}
+  .fenek-proof-partial-link{display:inline-block;margin-top:13px;font-weight:730;color:#075e4b;font-size:.82rem;text-decoration:underline;text-underline-offset:3px}
+  .fenek-proof-partial-original{font-size:.95rem;margin:16px 0 12px;padding-top:13px;border-top:1px solid #bcd9ce;color:#123a54}
+  :global(html[data-theme='dark']) .fenek-proof-partial{background:#163b39;border-color:#3b7469;color:#e6f5ed}
+  :global(html[data-theme='dark']) .fenek-proof-partial-head h4,
+  :global(html[data-theme='dark']) .fenek-proof-partial-original{color:#e5f6ef}
+  :global(html[data-theme='dark']) .fenek-proof-partial-note{color:#c4dedb}
+  :global(html[data-theme='dark']) .fenek-proof-partial-figure figcaption{color:#123a54}
+  :global(html[data-theme='dark']) .fenek-proof-partial-link{color:#99efc6}
+  @media(max-width:480px){.fenek-proof-partial{padding:10px}.fenek-proof-partial-figure{max-width:100%}.fenek-proof-partial-note{font-size:.81rem}}
+</style>
