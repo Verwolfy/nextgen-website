@@ -90,6 +90,8 @@ def main():
                 assert f'data-proof-partial-step="{candidate_step}"' in html,(lang,code,'wrong preview step')
                 assert 'data-approval="BROUILLON"' in html,(lang,code,'missing review-only warning')
                 assert candidate_path in html,(lang,code,'wrong candidate image')
+                assert f'href="{candidate_path}"' in html,(lang,code,'full resolution link missing or wrong image')
+                assert 'target="_blank"' in html and 'rel="noopener noreferrer"' in html,(lang,code,'unsafe zoom link')
                 assert manual['steps'][candidate_step-1]['title'][lang] in html,(lang,code,'title missing')
                 candidate_file=DIST/candidate_path.lstrip('/')
                 assert candidate_file.is_file(),(lang,code,'candidate WebP missing from build')
