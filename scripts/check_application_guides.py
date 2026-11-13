@@ -62,6 +62,15 @@ def main():
             assert guide.get('data-v3-reviewed')=='BROUILLON',(lang,code,'approval status')
             assert guide.get('data-v3-sprite')==sprite,(lang,code,'wrong asset source')
             assert guide.get('data-v3-hash')==actual_sha,(lang,code,'wrong media SHA')
+            # Lot 189: separate, explicitly unapproved V4 design preview is visible
+            # only on ACR-RF. It must not create additional official application steps.
+            if code=='PROOF-ACR-RF':
+                assert 'data-acrrf-v4-preview' in html,(lang,code,'V4 preview missing')
+                assert 'data-approval="BROUILLON"' in html,(lang,code,'preview approval flag missing')
+                assert html.count('data-acrrf-v4-step=')==6,(lang,code,'six V4 scenes required')
+                assert '/images/application-premium/fenek-proof-acr-rf-steps-v4.webp' in html,(lang,code,'wrong premium image')
+            else:
+                assert 'data-acrrf-v4-preview' not in html,(lang,code,'V4 draft leaked to other product')
             assert parser.steps==[str(i) for i in range(1,7)],(lang,code,'step order')
             assert [s[0] for s in parser.v3]==[str(i) for i in range(1,7)],(lang,code,'V3 step order')
             for i,(_,aria,role) in enumerate(parser.v3):
