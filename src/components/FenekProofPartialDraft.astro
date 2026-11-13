@@ -19,6 +19,7 @@ const copy={
     note:'Une seule scène candidate sur les six étapes de ce produit. Image générée à titre de revue visuelle : gestes, EPI et matériaux à vérifier avec les FT/FDS FENEK approuvées. La notice illustrée actuelle reste conservée ci-dessous.',
     original:'Parcours illustré actuel — six étapes conservées',
     compare:'Ouvrir la comparaison avant / après du lot 187',
+    zoom:'Ouvrir cette illustration en haute résolution',
   },
   en:{
     heading:'New illustration — unapproved preview',
@@ -27,6 +28,7 @@ const copy={
     note:'One proposed scene out of this product’s six stages. This generated visual is for design review only: procedures, PPE and materials must be checked against approved FENEK technical and safety sheets. The existing six-step guide is preserved below.',
     original:'Existing six-step illustrations — unchanged',
     compare:'Open the Lot 187 before / after comparison (French)',
+    zoom:'Open this image at full resolution',
   },
   ar:{
     heading:'رسم توضيحي جديد — معاينة غير معتمدة',
@@ -35,6 +37,7 @@ const copy={
     note:'مشهد مقترح واحد فقط من ست مراحل لهذا المنتج. هذه الصورة المولدة مخصصة للمراجعة البصرية، ويجب التحقق من الخطوات ومعدات الوقاية والمواد وفق النشرات الفنية ونشرات السلامة المعتمدة. تبقى الرسومات الست الحالية محفوظة أدناه.',
     original:'الرسومات الحالية للمراحل الست — دون تغيير',
     compare:'فتح المقارنة قبل وبعد للدفعة 187 (بالفرنسية)',
+    zoom:'فتح هذه الصورة بدقتها الأصلية',
   }
 }[lang];
 ---
@@ -49,7 +52,10 @@ const copy={
       alt={`${copy.stage} ${candidate.step}: ${title} — ${copy.badge}`}/>
     <figcaption><strong>{copy.stage} {candidate.step}.</strong> {title}</figcaption>
   </figure>
-  <a class="fenek-proof-partial-link" href="/fr/avant-premiere/lot187-proof/">{copy.compare}</a>
+  <div class="fenek-proof-partial-actions">
+    <a class="fenek-proof-partial-link" href={candidate.src} target="_blank" rel="noopener noreferrer" aria-label={`${copy.zoom} — ${copy.stage} ${candidate.step}: ${title}`}>{copy.zoom}</a>
+    <a class="fenek-proof-partial-link" href="/fr/avant-premiere/lot187-proof/">{copy.compare}</a>
+  </div>
   <h4 class="fenek-proof-partial-original">{copy.original}</h4>
 </section>}
 <style>
@@ -61,7 +67,9 @@ const copy={
   .fenek-proof-partial-figure{margin:0;max-width:650px;min-width:0;overflow:hidden;border:1px solid #ccdfde;border-radius:11px;background:#fff}
   .fenek-proof-partial-figure img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
   .fenek-proof-partial-figure figcaption{padding:9px 12px 12px;font-size:.88rem;line-height:1.4;color:#123a54}
+  .fenek-proof-partial-actions{display:flex;flex-wrap:wrap;column-gap:22px;row-gap:5px;align-items:baseline}
   .fenek-proof-partial-link{display:inline-block;margin-top:13px;font-weight:730;color:#075e4b;font-size:.82rem;text-decoration:underline;text-underline-offset:3px}
+  .fenek-proof-partial-link:focus-visible{outline:3px solid #079a5b;outline-offset:4px;border-radius:4px}
   .fenek-proof-partial-original{font-size:.95rem;margin:16px 0 12px;padding-top:13px;border-top:1px solid #bcd9ce;color:#123a54}
   :global(html[data-theme='dark']) .fenek-proof-partial{background:#163b39;border-color:#3b7469;color:#e6f5ed}
   :global(html[data-theme='dark']) .fenek-proof-partial-head h4,
