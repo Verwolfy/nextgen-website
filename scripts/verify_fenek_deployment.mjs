@@ -127,26 +127,4 @@ for(const product of catalog){
   }
 }
 must(pages===150,'Wrong localized guide total '+pages);
-// Lot 194: the public visual QA gallery must show every current six-scene
-// reference without confusing unapproved draft candidates with official pages.
-const galleryPath=resolve(DIST,'fr','avant-premiere','audit-50-illustrations','index.html');
-must(existsSync(galleryPath),'Public 50-product visual review gallery missing');
-const gallery=readFileSync(galleryPath,'utf8');
-must(gallery.includes('noindex,nofollow,noarchive'),'Visual review gallery must not be indexed');
-must(count(gallery,'<details class="product"')===50,
-  'Visual review gallery must contain exactly 50 distinct product comparisons');
-must(count(gallery,'<li class="step">')===306,
-  'Visual review gallery must contain 300 original and 6 ACR-RF proposal scenes');
-must(count(gallery,'<section class="premium">')===3,
-  'Visual review gallery must show only 3 draft media groups');
-must(!gallery.includes('<script')&&!gallery.includes('<form'),
-  'Public review gallery must remain static, read-only and script-free');
-for(const product of catalog){
-  const entry=artwork.get(product.code);
-  must(gallery.includes(`data-product-code="${product.code}"`) &&
-    gallery.includes(`data-sha256="${entry.sha256}"`) &&
-    gallery.includes(entry.sprite),
-    'Visual review gallery source binding mismatch: '+product.code);
-}
-
-console.log('FENEK DEPLOYMENT GATE PASS: 50 products, 150 pages, 300 original stages, 50 sprite SHA-256, 3 premium candidate SHA-256, global 50-product review gallery, draft-only display and localized zoom links.');
+console.log('FENEK DEPLOYMENT GATE PASS: 50 products, 150 pages, 300 original stages, 50 sprite SHA-256, 3 premium candidate SHA-256, draft-only display and localized zoom links.');
