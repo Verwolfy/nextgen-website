@@ -36,7 +36,7 @@ class AcrRfInlinePreview(unittest.TestCase):
         self.assertIn("data-acrrf-v4-step={i+1}",preview)
         self.assertIn("background-size:300% 200%",preview)
         self.assertIn("aspect-ratio:3/2",preview)
-        self.assertIn("ref='/fr/avant-premiere/",preview.replace("href=","ref="))
+        self.assertIn('href="/fr/avant-premiere/fenek-proof-acr-rf/"',preview)
         self.assertNotIn("<script",preview)
         self.assertNotIn("<form",preview)
 
