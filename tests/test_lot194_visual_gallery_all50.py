@@ -66,6 +66,7 @@ class TestLot194FullVisualAudit(unittest.TestCase):
     def test_unapproved_graphic_review_is_not_a_technical_guide(self):
         text=HTML.read_text("utf-8")
         self.assertIn('name="robots" content="noindex,nofollow,noarchive"',text)
+        self.assertIn('data-pagefind-ignore="all"',text)
         self.assertIn("BROUILLON GRAPHIQUE",text)
         self.assertIn("NON VALIDÉ FT/FDS",text)
         self.assertNotIn("<script",text)
