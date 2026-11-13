@@ -1,4 +1,10 @@
 # Lot 194 — audit public des 50 modes d'emploi et galerie des 300 scènes
+## Incident de déploiement et correction compacte
+
+La PR #149 (commit `5f147353`) a été fusionnée, mais **Cloudflare Pages a échoué** ; le site conservait le commit stable du lot 193. La PR #150 (commit `5a9cec53`) a remis le garde-fou validé du lot 193 tout en conservant la galerie, **mais ce second build a également échoué**. Les logs Cloudflare nécessitent un accès connecté et ne sont pas disponibles à l'assistant. La cause exacte n'a pas été établie ; les audits de code source n'ont révélé aucun SHA manquant.
+
+Une nouvelle PR de correction **réduit la page statique de 154 868 à 82 975 octets (-46%)**. Les **50 volets et 306 cadrages** restent accessibles, mais les images historiques sont désormais découpées par **arrière-plans CSS variables partagés**, au lieu de créer six balises IMG complètes par produit ; seules les deux scènes candidates indépendantes emploient encore une balise IMG. La page demeure sans JavaScript, formulaire ou indexation. **N'affirmer la publication qu'après un check Cloudflare Pages success et le nouveau SHA dans `deployment.json`.**
+
 
 Date : 13 novembre 2026 · Marque : FENEK / NextGen Building Solutions · Site : https://nextgen-buildingsolutions.com/
 
@@ -96,9 +102,9 @@ Page ajoutée au dépôt, **non indexée**, route :
 - Pour chaque produit : volet déroulant, six découpes du WebP source, titres français exacts, qualité A/B/C, SHA-256, lien vers ses trois fiches FR/EN/AR et vers le média source.
 - Références BOND-C1T et PROOF-ACR-RF ouvertes au chargement pour comparer immédiatement le standard et le pictogramme.
 - Candidats graphiques disponibles (6 ACR + 1 PU-1K + 1 CM-O1P) visibles dans les fiches correspondantes, **sans modifier les procédures produit**.
-- 50 volets, 300 scènes historiques, 6 scènes V4 ACR et 2 images individuelles supplémentaires ; 308 images HTML et 3 groupes de prévisualisation.
+- 50 volets, 300 scènes historiques, 6 scènes V4 ACR et 2 images individuelles supplémentaires ; **306 panneaux CSS avec image sprite** et **2 balises IMG** pour les candidats indépendants, 3 groupes de prévisualisation.
 - `noindex,nofollow,noarchive`, pas de JavaScript ni formulaire. Groupes et produits accessibles au clavier. Images répétées à URL identique, chargement différé.
-- Garde-fou `scripts/verify_fenek_deployment.mjs` renforcé : il bloque maintenant le build Cloudflare si la galerie manque ou n'a plus 50 produits, 306 cases, 3 ensembles candidats, ou si un couple code/slug/SHA diverge.
+- Le garde-fou Cloudflare du **lot 193 reste actif** : 50 images, 150 pages, trois candidats SHA et statut brouillon. Son **extension de vérification de la galerie du lot 194 a été temporairement retirée** à la PR #150 pour isoler un échec du build; l'intégrité de la galerie est contrôlée séparément par `tests/test_lot194_visual_gallery_all50.py`.
 
 ## État réel et prochaines actions
 
