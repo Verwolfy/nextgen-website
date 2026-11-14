@@ -98,33 +98,16 @@ for(const product of catalog){
     must(count(html,'data-application-step=')===6 && count(html,'data-v3-step=')===6,
       'Six original illustrated steps missing '+lang+'/'+code);
     must(html.includes(art.sprite),'Original fallback not linked '+lang+'/'+code);
-    if(code===acr.code){
-      must(count(html,'data-acrrf-v4-preview')===1 &&
-        count(html,'data-acrrf-v4-step=')===6 &&
-        html.includes(acr.path) &&
-        html.includes('data-approval="BROUILLON"'),
-        'ACR-RF V4 must remain a distinct, labelled six-scene draft '+lang);
-    } else {
-      must(!html.includes('data-acrrf-v4-preview'),'ACR-RF V4 leaked to '+code);
-    }
-    if(expectedReview[code]){
-      const candidate=expectedReview[code];
-      must(count(html,'data-proof-partial-preview')===1 &&
-        count(html,'data-proof-partial-step=')===1 &&
-        html.includes(`data-proof-partial-step="${candidate.step}"`) &&
-        html.includes('data-approval="BROUILLON"'),
-        'Wrong one-scene draft label '+lang+'/'+code);
-      must(html.includes(`href="${candidate.path}"`) &&
-        html.includes('target="_blank"') &&
-        html.includes('rel="noopener noreferrer"'),
-        'Zoom link mismatch or unsafe '+lang+'/'+code);
-      const title=guide.steps[candidate.step-1].title[lang];
-      must(Boolean(title)&&html.includes(title),'Candidate title mismatch '+lang+'/'+code);
-    } else {
-      must(!html.includes('data-proof-partial-preview'),'Draft candidate leaked to '+code);
-    }
+    // Lot 203: official product pages display only the six original steps.
+    // Draft candidates remain SHA-checked above but are never embedded into
+    // FR/EN/AR official guides. Do not silently re-enable preview blocks.
+    must(!html.includes('data-acrrf-v4-preview') &&
+      !html.includes('data-acrrf-v4-step=') &&
+      !html.includes('data-proof-partial-preview') &&
+      !html.includes('data-proof-partial-step='),
+      'Unapproved draft candidate embedded in official guide '+lang+'/'+code);
     pages++;
   }
 }
 must(pages===150,'Wrong localized guide total '+pages);
-console.log('FENEK DEPLOYMENT GATE PASS: 50 products, 150 pages, 300 original stages, 50 sprite SHA-256, 3 premium candidate SHA-256, draft-only display and localized zoom links.');
+console.log('FENEK DEPLOYMENT GATE PASS: 50 products, 150 pages, 300 original stages, 50 sprite SHA-256, 3 premium candidate SHA-256, draft media preserved, no candidate embedded in official pages.');
