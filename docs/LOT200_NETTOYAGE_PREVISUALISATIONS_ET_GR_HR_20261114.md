@@ -19,7 +19,7 @@ Test dédié : `node --test tests/lot200_official_artwork_isolation.test.mjs`.
 
 ## Nouvelle planche candidate BOND-GR-HR — non publiée
 
-Une planche de six scènes a été assemblée **localement** à partir des scènes générées en présence de l'utilisateur : WebP 3×2, **1620×720**, SHA-256 `e54f549fd125df8976f12f01209931947e6fe18158899b01e8de04e43997298d`, 230 950 octets. Les six images sources WebP 960×640 et le logo utilisateur original sont inclus dans l'archive fournie dans la conversation `NextGen_GR_HR_6_scenes_lot200_brouillon_2026-11-14.zip`.
+Une planche de six scènes a été assemblée **localement** à partir des scènes générées en présence de l'utilisateur : WebP 3×2, **1620×720**, SHA-256 `8ad9273c8f79ebd3b41f09a65787a3b2e2853e0043abbfe7f901a084f219809a`, 222 430 octets. Les six images sources WebP 960×640 et le logo utilisateur original sont inclus dans l'archive fournie dans la conversation `NextGen_GR_HR_6_scenes_lot200_v2_brouillon_2026-11-14.zip`.
 
 **Important : ce fichier binaire n'est pas présent dans GitHub.** L'ajouter au manifeste de production serait un lien cassé ; ne pas le référencer dans `src/data/fenek-enhanced-artwork.json` avant upload réel, contrôle SHA, validation FT/FDS et build complet.
 
@@ -29,7 +29,7 @@ Une planche de six scènes a été assemblée **localement** à partir des scèn
 | 2 | Humidifier puis évacuer l’eau libre | À revoir | Gestes visibles, vérification technique requise |
 | 3 | Porter les EPI et gâcher selon fiche | À revoir | Outillage et procédé à vérifier |
 | 4 | Couler en continu d’un seul côté | À revoir | Continuité et méthode produit à vérifier |
-| **5** | **Contrôler le remplissage sans ségrégation** | **À corriger** | L'image montre du talochage/lissage, pas un contrôle explicite |
+| **5** | **Contrôler le remplissage sans ségrégation** | **À revoir** | L'image V2 montre désormais l'observation du remplissage sans lissage ; la non-ségrégation n'est pas vérifiable par cette photo |
 | 6 | Protéger les surfaces pendant la cure | À revoir | Protection visible, procédure produit à vérifier |
 
 Autres réserves : marquages générés sur les EPI non certifiés comme logo officiel ; style photographique à comparer à C1T semi-réaliste. **0/6 images validées visuellement, 0/6 techniquement.**
@@ -48,12 +48,14 @@ Autres réserves : marquages générés sur les EPI non certifiés comme logo of
 
 - Incident Cloudflare #154 non résolu.
 - CI GitHub Actions échoue sans lancement de job (aucun test complet GitHub prouvé).
-- GR-HR : scène 5 non conforme au geste ; aucun document FT/FDS approuvé disponible dans ce lot.
+- GR-HR : la scène 5 a été remplacée dans le brouillon V2. Le contrôle de la non-ségrégation et les autres gestes exigent encore FT/FDS approuvées.
 
 ## Reprise
 
 1. Exécuter le test ciblé du lot 200 dans Node 22 ; confirmer sur GitHub Actions.
-2. Corriger la scène 5 puis harmoniser les marquages/logo sur les six scènes ; double validation.
+2. Confirmer la pertinence technique de la scène 5, harmoniser les marquages/logo sur les six scènes ; double validation.
 3. Résoudre le déploiement pour voir réellement les nettoyages des aperçus officiels.
 4. Refaire le même lot pour BOND-GP-CSII et les 37 autres références à harmoniser.
 5. Mettre à jour un journal daté et les SHA de chaque lot ; **ne jamais déclarer les 39 séries corrigées avant preuve**.
+
+**Mise à jour du 14/11/2026** : la scène 5 V2 est désormais une inspection visuelle, pas un talochage. L'archive V2 et son manifeste SHA résident dans la conversation, **pas dans GitHub**. Les approbations restent toutes à `false`.
