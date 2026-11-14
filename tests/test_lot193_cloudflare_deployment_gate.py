@@ -20,20 +20,23 @@ class CloudflareFeneksGate(unittest.TestCase):
                        "pages===150", "data-application-step=", "data-v3-step="]:
             self.assertIn(phrase,GUARD)
 
-    def test_candidates_are_sha_locked_and_always_drafts(self):
+    def test_candidates_are_sha_locked_and_confined_to_noindex_reviews(self):
         for phrase in ["fenek-proof-pu-1k-scene-05-candidate-v1.webp",
                        "fenek-proof-cm-o1p-scene-01-candidate-v1.webp",
                        "fenek-proof-acr-rf-steps-v4.webp",
                        "data-proof-partial-preview",
                        "data-acrrf-v4-preview",
-                       "data-approval=\"BROUILLON\"",
-                       "noopener noreferrer",
-                       "Candidate title mismatch",
-                       "SHA-256 mismatch"]:
+                       "noindex,nofollow,noarchive",
+                       "fr/avant-premiere/fenek-proof-acr-rf/index.html",
+                       "fr/avant-premiere/lot187-proof/index.html",
+                       "Unapproved draft candidate embedded in official guide",
+                       "SHA-256 mismatch",
+                       "ACR-RF review must render six separate draft images",
+                       "One candidate image per reference in isolated review"]:
             self.assertIn(phrase,GUARD)
-        self.assertIn("candidate.step",GUARD)
-        self.assertIn("ACR-RF V4 leaked",GUARD)
-        self.assertIn("Draft candidate leaked",GUARD)
+        self.assertIn("verifyMedia(art.sprite,art.sha256",GUARD)
+        self.assertIn("verifyMedia(candidate.path,candidate.sha256",GUARD)
+        self.assertIn("reviewPage(",GUARD)
 
     def test_no_dynamic_network_or_secrets(self):
         for forbidden in ["fetch(", "https.request", "execSync(", "child_process",

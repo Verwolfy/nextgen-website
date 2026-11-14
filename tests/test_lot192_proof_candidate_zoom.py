@@ -32,10 +32,13 @@ class CandidateZoomAccessibility(unittest.TestCase):
     def test_post_build_requires_zoom_link_and_original_guide(self):
         src=BUILT_CHECK.read_text("utf-8")
         self.assertIn("full resolution link missing or wrong image",src)
-        self.assertIn("f'href=\"{candidate_path}\"' in html",src)
+        self.assertIn("f'href=\"{candidate_path}\"' in proof_html",src)
         self.assertIn("hashlib.sha256(candidate_file.read_bytes()).hexdigest()==candidate_hash",src)
         self.assertIn("parser.steps==[str(i) for i in range(1,7)]",src)
         self.assertIn("assert count==150,count",src)
+        review=(ROOT/"public/fr/avant-premiere/lot187-proof/index.html").read_text("utf-8")
+        self.assertEqual(review.count('target="_blank" rel="noopener noreferrer"'),2)
+        self.assertIn("noindex,nofollow,noarchive",review)
 
 if __name__=="__main__":
     unittest.main()

@@ -62,42 +62,12 @@ def main():
             assert guide.get('data-v3-reviewed')=='BROUILLON',(lang,code,'approval status')
             assert guide.get('data-v3-sprite')==sprite,(lang,code,'wrong asset source')
             assert guide.get('data-v3-hash')==actual_sha,(lang,code,'wrong media SHA')
-            # Lot 189: separate, explicitly unapproved V4 design preview is visible
-            # only on ACR-RF. It must not create additional official application steps.
-            if code=='PROOF-ACR-RF':
-                assert 'data-acrrf-v4-preview' in html,(lang,code,'V4 preview missing')
-                assert 'data-approval="BROUILLON"' in html,(lang,code,'preview approval flag missing')
-                assert html.count('data-acrrf-v4-step=')==6,(lang,code,'six V4 scenes required')
-                assert '/images/application-premium/fenek-proof-acr-rf-steps-v4.webp' in html,(lang,code,'wrong premium image')
-            else:
-                assert 'data-acrrf-v4-preview' not in html,(lang,code,'V4 draft leaked to other product')
-            # Lot 191: one clearly unapproved candidate on two PROOF guides only.
-            # The candidate is additive; it must not change the original 6-step sequence.
-            review_candidates={
-                'PROOF-PU-1K':(
-                    5,'/images/application-premium/fenek-proof-pu-1k-scene-05-candidate-v1.webp',
-                    'f8a758381f5a510b03b9bd231700925d5a5b02935d264c2fdc47844915a6c14f',
-                ),
-                'PROOF-CM-O1P':(
-                    1,'/images/application-premium/fenek-proof-cm-o1p-scene-01-candidate-v1.webp',
-                    '079bde85ae3e331bd2c654d8299ccde2e26a2141dce349b610130c080902a622',
-                ),
-            }
-            if code in review_candidates:
-                candidate_step, candidate_path, candidate_hash=review_candidates[code]
-                assert html.count('data-proof-partial-preview')==1,(lang,code,'one candidate preview required')
-                assert html.count('data-proof-partial-step=')==1,(lang,code,'exactly one preview scene')
-                assert f'data-proof-partial-step="{candidate_step}"' in html,(lang,code,'wrong preview step')
-                assert 'data-approval="BROUILLON"' in html,(lang,code,'missing review-only warning')
-                assert candidate_path in html,(lang,code,'wrong candidate image')
-                assert f'href="{candidate_path}"' in html,(lang,code,'full resolution link missing or wrong image')
-                assert 'target="_blank"' in html and 'rel="noopener noreferrer"' in html,(lang,code,'unsafe zoom link')
-                assert manual['steps'][candidate_step-1]['title'][lang] in html,(lang,code,'title missing')
-                candidate_file=DIST/candidate_path.lstrip('/')
-                assert candidate_file.is_file(),(lang,code,'candidate WebP missing from build')
-                assert hashlib.sha256(candidate_file.read_bytes()).hexdigest()==candidate_hash,(lang,code,'candidate SHA mismatch')
-            else:
-                assert 'data-proof-partial-preview' not in html,(lang,code,'candidate leaked to unrelated product')
+            # Lot 203: drafts have been removed from all official guides.
+            # They remain in noindex review pages validated below.
+            assert 'data-acrrf-v4-preview' not in html,(lang,code,'V4 draft on official guide')
+            assert 'data-proof-partial-preview' not in html,(lang,code,'partial draft on official guide')
+            assert 'data-acrrf-v4-step=' not in html,(lang,code,'unapproved stages leaked')
+            assert 'data-proof-partial-step=' not in html,(lang,code,'unapproved stages leaked')
             assert parser.steps==[str(i) for i in range(1,7)],(lang,code,'step order')
             assert [s[0] for s in parser.v3]==[str(i) for i in range(1,7)],(lang,code,'V3 step order')
             for i,(_,aria,role) in enumerate(parser.v3):
@@ -113,6 +83,39 @@ def main():
             else:
                 assert not parser.fullres,(lang,code,'unreviewed full-size links')
             count+=1
+    # Verify unapproved media are present only on noindex review pages.
+    premium=ROOT/"public/images/application-premium"
+    review_acr=(DIST/"fr/avant-premiere/fenek-proof-acr-rf/index.html")
+    review_proof=(DIST/"fr/avant-premiere/lot187-proof/index.html")
+    assert review_acr.is_file() and review_proof.is_file(),'Missing isolated review pages'
+    acr_html=review_acr.read_text(encoding='utf8')
+    proof_html=review_proof.read_text(encoding='utf8')
+    for page in (acr_html,proof_html):
+        assert 'noindex,nofollow,noarchive' in page,'Preview page must stay noindex'
+    acr_path='/images/application-premium/fenek-proof-acr-rf-steps-v4.webp'
+    assert acr_html.count("--image:url('"+acr_path+"')")==6,'Exactly six isolated ACR-RF scenes required'
+    assert 'Brouillon' in acr_html and 'non autorisée' in acr_html,'Missing ACR-RF draft warning'
+    acr_asset=DIST/acr_path.lstrip('/')
+    assert acr_asset.is_file(),'ACR-RF V4 asset missing from dist'
+    assert hashlib.sha256(acr_asset.read_bytes()).hexdigest()=='438694daefa3b97b2ca3d36f38d6bea78fbedb7070203f81b6e06ef3a76fa433'
+    review_candidates={
+        'PROOF-PU-1K':(
+            5,'/images/application-premium/fenek-proof-pu-1k-scene-05-candidate-v1.webp',
+            'f8a758381f5a510b03b9bd231700925d5a5b02935d264c2fdc47844915a6c14f',
+        ),
+        'PROOF-CM-O1P':(
+            1,'/images/application-premium/fenek-proof-cm-o1p-scene-01-candidate-v1.webp',
+            '079bde85ae3e331bd2c654d8299ccde2e26a2141dce349b610130c080902a622',
+        ),
+    }
+    assert proof_html.count('V4 · brouillon')==2,'Two PROOF draft labels required'
+    for code,(step,candidate_path,candidate_hash) in review_candidates.items():
+        candidate_file=DIST/candidate_path.lstrip('/')
+        assert candidate_file.is_file(),(code,'candidate WebP missing from build')
+        assert hashlib.sha256(candidate_file.read_bytes()).hexdigest()==candidate_hash,(code,'candidate SHA mismatch')
+        assert proof_html.count(f'src="{candidate_path}"')==1,(code,'one isolated candidate required')
+        assert f'href="{candidate_path}"' in proof_html,(code,'full resolution link missing or wrong image')
+        assert 'target="_blank"' in proof_html and 'rel="noopener noreferrer"' in proof_html,(code,'unsafe zoom link')
     assert count==150,count
     print('PASS: 150 V3 guides, 50 exact references, 300 images/steps, FR/AR/EN and SHA-256 integrity')
 

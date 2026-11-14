@@ -98,33 +98,39 @@ for(const product of catalog){
     must(count(html,'data-application-step=')===6 && count(html,'data-v3-step=')===6,
       'Six original illustrated steps missing '+lang+'/'+code);
     must(html.includes(art.sprite),'Original fallback not linked '+lang+'/'+code);
-    if(code===acr.code){
-      must(count(html,'data-acrrf-v4-preview')===1 &&
-        count(html,'data-acrrf-v4-step=')===6 &&
-        html.includes(acr.path) &&
-        html.includes('data-approval="BROUILLON"'),
-        'ACR-RF V4 must remain a distinct, labelled six-scene draft '+lang);
-    } else {
-      must(!html.includes('data-acrrf-v4-preview'),'ACR-RF V4 leaked to '+code);
-    }
-    if(expectedReview[code]){
-      const candidate=expectedReview[code];
-      must(count(html,'data-proof-partial-preview')===1 &&
-        count(html,'data-proof-partial-step=')===1 &&
-        html.includes(`data-proof-partial-step="${candidate.step}"`) &&
-        html.includes('data-approval="BROUILLON"'),
-        'Wrong one-scene draft label '+lang+'/'+code);
-      must(html.includes(`href="${candidate.path}"`) &&
-        html.includes('target="_blank"') &&
-        html.includes('rel="noopener noreferrer"'),
-        'Zoom link mismatch or unsafe '+lang+'/'+code);
-      const title=guide.steps[candidate.step-1].title[lang];
-      must(Boolean(title)&&html.includes(title),'Candidate title mismatch '+lang+'/'+code);
-    } else {
-      must(!html.includes('data-proof-partial-preview'),'Draft candidate leaked to '+code);
-    }
+    // Lot 203: official product pages display only the six original steps.
+    // Draft candidates remain SHA-checked above but are never embedded into
+    // FR/EN/AR official guides. Do not silently re-enable preview blocks.
+    must(!html.includes('data-acrrf-v4-preview') &&
+      !html.includes('data-acrrf-v4-step=') &&
+      !html.includes('data-proof-partial-preview') &&
+      !html.includes('data-proof-partial-step='),
+      'Unapproved draft candidate embedded in official guide '+lang+'/'+code);
     pages++;
   }
 }
+// Unapproved artwork is permitted only in isolated noindex review pages.
+// Verify the draft destinations as well as the original media SHA-256 above.
+function reviewPage(relative) {
+  const full=resolve(DIST,relative);
+  must(existsSync(full),'Missing isolated draft review '+relative);
+  const html=readFileSync(full,'utf8');
+  must(html.includes('noindex,nofollow,noarchive'),'Draft review must be noindex '+relative);
+  return html;
+}
+const acrReview=reviewPage('fr/avant-premiere/fenek-proof-acr-rf/index.html');
+must(acrReview.includes('Brouillon') && acrReview.includes('non autorisée'),
+  'ACR-RF review must remain explicitly unapproved');
+must(count(acrReview,"--image:url('"+acr.path+"')")===6,
+  'ACR-RF review must render six separate draft images');
+const partialReview=reviewPage('fr/avant-premiere/lot187-proof/index.html');
+must(count(partialReview,'V4 · brouillon')===2,
+  'The two single-scene candidates must be visibly labelled as drafts');
+for(const [code,candidate] of Object.entries(expectedReview)) {
+  must(count(partialReview,'src="'+candidate.path+'"')===1,
+    'One candidate image per reference in isolated review '+code);
+  must(partialReview.includes(code.replace('PROOF-','FENEK-PROOF ')),
+    'Isolated draft review missing product identity '+code);
+}
 must(pages===150,'Wrong localized guide total '+pages);
-console.log('FENEK DEPLOYMENT GATE PASS: 50 products, 150 pages, 300 original stages, 50 sprite SHA-256, 3 premium candidate SHA-256, draft-only display and localized zoom links.');
+console.log('FENEK DEPLOYMENT GATE PASS: 50 products, 150 pages, 300 original stages, 50 sprite SHA-256, 3 premium candidate SHA-256, draft media preserved only in separate noindex reviews, no candidate embedded in official pages.');
