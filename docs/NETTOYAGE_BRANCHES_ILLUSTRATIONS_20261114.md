@@ -83,3 +83,12 @@ Prochaine opération : suppression sûre des 86 anciennes branches, revue et che
 
 ### Reprise prioritaire
 Faire la revue technique et sélectionner les changements réellement utiles dans les 16 branches divergentes ; ensuite éliminer par lots les 90 branches secondaires en s'assurant qu'aucune PR ouverte ou workflow ne dépend de la branche. Réévaluer les compteurs à chaque lot car l'état GitHub évolue.
+
+## 14 novembre 2026 — migration REST GitHub sans TinyFish
+
+- API GitHub authentifiée : permissions du dépôt confirmées `admin=true`, `push=true` ; **91 branches**, dont `main`.
+- Workflow temporaire ajouté sur `main` : `.github/workflows/cleanup-merged-branches-20261114.yml`, commit `13363869af84d266b2de7ba38e45ea24bc4bb47d`. Il appelle `GET /branches`, `GET /pulls`, `GET /compare/main...branche`, `GET /git/ref`, puis `DELETE /git/refs/heads/branche` uniquement si zéro commit d'avance, SHA inchangée et aucune PR ouverte.
+- Exécution GitHub Actions [43607075314](https://github.com/Verwolfy/nextgen-website/actions/runs/43607075314) **FAILED avant toute étape** : job `132483915127`, `runner_id=0`, `steps=[]`, démarrage et échec en quelques secondes. Par conséquent **0 branche supprimée par cette tentative**.
+- L'outil GitHub connecté peut interroger les endpoints REST en GET mais n'expose pas DELETE pour les refs. Les droits GitHub du compte ne changent pas cette limite de l'outil.
+- Ne pas considérer le workflow comme exécuté. Corriger la disponibilité des runners/Actions ou exécuter le script par une voie REST authentifiée avec un jeton disposant de `Contents: write` ; **ne pas placer de jeton dans le dépôt ou cette conversation**.
+- Aucun merge de branche divergente ni retrait d'illustration dans cette tentative.
