@@ -38,3 +38,36 @@ Source : audit `NextGen_audit_50_illustrations_2026-11-13.md` joint à la conver
 
 ## Reprise
 Priorité : comparaison exhaustive des branches, classement, puis nettoyage des médias morts après scan des dépendances. Ne pas déclarer la fusion ni les suppressions réalisées avant preuve GitHub.
+
+## Mise à jour d'exécution — 14 novembre 2026
+
+Comparaison Github `main...branche` réalisée pour **125/125** branches secondaires : **109 strictement derrière main (0 commit exclusif)**, **16 divergentes**. Ceci mesure l'ascendance des commits, non une revue de tous les effets métier.
+
+**Suppression via interface GitHub :** le navigateur a annoncé la suppression de 23 branches déjà fusionnées. Un second inventaire GitHub a confirmé **103 branches restantes au total**, dont `main` (contre 126 initialement), et l'absence de trois branches échantillonnées parmi les 23 supprimées. **Aucune fusion nouvelle n'a été faite.**
+
+### Les 16 branches divergentes à traiter individuellement
+
+| Branche | Commits d'avance à la date du diagnostic | Position recommandée |
+|---|---:|---|
+| `diagnostic/cloudflare-domain-cache-20261102` | 10 | Audit diagnostic historique |
+| `docs/fenek-tds-drafts-20261103` | 12 | Brouillons FT/FDS : ne pas publier sans validation |
+| `feat/cloudflare-release-ready-20261101` | 2 | Examiner configuration et sécurité |
+| `feat/lot7-browser-recette-20261101` | 4 | Tester pertinence CI |
+| `feat/lot8-preproduction-gates-20261101` | 2 | Tester pertinence CI |
+| `feat/lot9-access-gate-20261101` | 2 | Examiner verrouillage d'accès |
+| `feat/lot60-theme-toggle-locale-menu-20261104` | 8 | Comparer UX actuelle |
+| `feat/lot116-home-v4-video-clean-hero-20261107` | 12 | Comparer rendu vidéo |
+| `feat/lot128-v3-product-by-product-20261111` | 16 | Vérifier guides produits |
+| `feat/lot129-v3-50-guides-reconciled-20261111` | 4 | Vérifier guides produits |
+| `feat/lot129-v3-guides-c2ft-20261111` | 9 | Vérifier guides produits |
+| `feat/lot139-140-professional-paint-illustrations-20261112` | 146 | 47 SVG schématiques non approuvés, PR #140 ; pas de fusion brute |
+| `fix/public-copy-cleanup-fr-ar-en-20261102` | 19 | Vérifier textes trilingues |
+| `fix/public-editorial-residual-lot34-20261102` | 18 | Vérifier textes trilingues |
+| `perf/v3-lots91-93-motion-a11y-mobile-20261105` | 7 | Comparer accessibilité/performance |
+| `preview/lot186-acr-rf-20261112` | 3 | V4 non approuvée, PR #141 ; isoler hors production |
+
+### Blocage restant
+
+**86 branches** ont zéro commit d'avance et restent présentes ; elles peuvent être supprimées après confirmation des dépendances PR/CI. Les **16 branches divergentes** doivent être réconciliées par contenus, et non fusionnées sans discernement. Le connecteur GitHub ne propose pas la suppression des refs ; navigateur GitHub utilisable mais la suppression via UI est lente. Les tests Astro/Node et l'état déployé n'ont pas été attestés dans cette phase.
+
+Prochaine opération : suppression sûre des 86 anciennes branches, revue et cherry-pick ciblé des 16 branches divergentes, puis tests avant toute suppression finale. Ne pas promettre une seule branche tant que GitHub n'en affiche pas une.
