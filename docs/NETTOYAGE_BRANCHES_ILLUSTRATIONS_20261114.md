@@ -71,3 +71,15 @@ Comparaison Github `main...branche` réalisée pour **125/125** branches seconda
 **86 branches** ont zéro commit d'avance et restent présentes ; elles peuvent être supprimées après confirmation des dépendances PR/CI. Les **16 branches divergentes** doivent être réconciliées par contenus, et non fusionnées sans discernement. Le connecteur GitHub ne propose pas la suppression des refs ; navigateur GitHub utilisable mais la suppression via UI est lente. Les tests Astro/Node et l'état déployé n'ont pas été attestés dans cette phase.
 
 Prochaine opération : suppression sûre des 86 anciennes branches, revue et cherry-pick ciblé des 16 branches divergentes, puis tests avant toute suppression finale. Ne pas promettre une seule branche tant que GitHub n'en affiche pas une.
+
+## Mise à jour — suppression supplémentaire de 12 branches déjà fusionnées (14 novembre 2026)
+
+- Navigateur GitHub authentifié : 12 branches supplémentaires portant explicitement un statut « Merged pull request » ont été supprimées, avec confirmation nominative.
+- Les PR fusionnées concernées sont : #103, #102, #99, #97, #96, #95, #94, #92, #91, #90, #89 et #88.
+- Nouvel inventaire direct via API GitHub `/branches?per_page=100&page=1,2` : **91 branches au total, dont main, donc 90 secondaires restantes** ; deux branches supprimées vérifiées absentes de cette liste.
+- Conjointement au lot précédent de 23 suppressions : **35 branches secondaires supprimées au total depuis l'inventaire initial de 126**. Les 16 branches divergentes sont conservées pour revue sélective.
+- Aucun nouveau merge dans `main`, aucun média officiel effacé, aucun test de build certifié.
+- **Blocage opérationnel** : crédit du navigateur connecté épuisé, donc autres suppressions via interface non poursuivies. Le connecteur GitHub ne dispose pas de la suppression de référence.
+
+### Reprise prioritaire
+Faire la revue technique et sélectionner les changements réellement utiles dans les 16 branches divergentes ; ensuite éliminer par lots les 90 branches secondaires en s'assurant qu'aucune PR ouverte ou workflow ne dépend de la branche. Réévaluer les compteurs à chaque lot car l'état GitHub évolue.
