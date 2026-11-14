@@ -21,3 +21,14 @@ test('current official six-stage artwork remains visible during cleanup', () => 
   assert.match(src, /fenek-v3-upgraded-photo/);
   assert.match(src, /fenek-application-visual-warning/);
 });
+
+test('predeployment gate rejects all inline draft previews while keeping 53 media hash checks', () => {
+  const gate = readFileSync(resolve('scripts/verify_fenek_deployment.mjs'),'utf8');
+  assert.match(gate, /Unapproved draft candidate embedded in official guide/);
+  assert.match(gate, /!html\.includes\('data-acrrf-v4-preview'\)/);
+  assert.match(gate, /!html\.includes\('data-proof-partial-preview'\)/);
+  assert.match(gate, /verifyMedia\(acr\.path,acr\.sha256/);
+  assert.match(gate, /verifyMedia\(candidate\.path,candidate\.sha256/);
+  assert.match(gate, /verifyMedia\(art\.sprite,art\.sha256/);
+  assert.doesNotMatch(gate, /must\(count\(html,'data-acrrf-v4-preview'\)===1/);
+});
