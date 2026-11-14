@@ -1,0 +1,818 @@
+{
+  "date": "2026-11-14",
+  "repository": "Verwolfy/nextgen-website",
+  "mainAtAudit": "6493b0006a53a954af92a21e15c119a19d24f43d",
+  "totalBranches": 150,
+  "main": "main",
+  "openPullRequests": [
+    {
+      "number": 155,
+      "title": "Lot 199 — contrôle bloquant de la version publique et des 300 scènes FENEK",
+      "head": "fix/lot199-live-publication-gate-20261114",
+      "head_sha": "a7432c211d9f7191a4d3cd4bf03f84cc27ca12ea",
+      "draft": true,
+      "base": "main"
+    },
+    {
+      "number": 141,
+      "title": "Aperçu visuel ACR-RF V4 — six scènes premium, comparaison FR/EN/AR",
+      "head": "preview/lot186-acr-rf-20261112",
+      "head_sha": "b7babd2a8f7aa0bd6adf4aecdb847b958afb3c29",
+      "draft": true,
+      "base": "main"
+    },
+    {
+      "number": 140,
+      "title": "Lots 186–187 · ACR-RF premium GitHub, 18 storyboards, double validation visuelle/FT-FDS",
+      "head": "feat/lot139-140-professional-paint-illustrations-20261112",
+      "head_sha": "7dc081ee7965965c0b059974160c6eb759bca287",
+      "draft": true,
+      "base": "main"
+    },
+    {
+      "number": 133,
+      "title": "feat(application): déployer les 50 guides V3 après contrôle produit par produit (conserve C1T haute résolution)",
+      "head": "feat/lot129-v3-50-guides-reconciled-20261111",
+      "head_sha": "5727a55d47d88038eff8ff8e538d00c1e984af54",
+      "draft": false,
+      "base": "main"
+    },
+    {
+      "number": 131,
+      "title": "feat(application): 6 guides V3 contrôlés pour BOND-C2FT à prise rapide (3/50)",
+      "head": "feat/lot129-v3-guides-c2ft-20261111",
+      "head_sha": "a5c0881bfb09156363f508521e2ccee8d0758d8a",
+      "draft": false,
+      "base": "main"
+    },
+    {
+      "number": 50,
+      "title": "DRAFT — 150 fiches techniques NextGen FR/AR/EN à valider",
+      "head": "docs/fenek-tds-drafts-20261103",
+      "head_sha": "e77365e2e322c46f972c33de5ac65d183333219c",
+      "draft": true,
+      "base": "main"
+    },
+    {
+      "number": 38,
+      "title": "Lot 34 — Nettoyage éditorial public FR/AR/EN après retrait des modes d’emploi incomplets",
+      "head": "fix/public-editorial-residual-lot34-20261102",
+      "head_sha": "6a6c02da6de5071a1bda8e3db95fbff14b190430",
+      "draft": false,
+      "base": "main"
+    }
+  ],
+  "branches": [
+    {
+      "name": "assets/bond-packshots-verified-20261102",
+      "sha": "ab438b2f7be109ae5c5d6f37d2b414e05647a707",
+      "protected": false
+    },
+    {
+      "name": "assets/flow-12-packshots-verified-20261102",
+      "sha": "5890c9531b13c1ee26bef384384a3d35abcfb051",
+      "protected": false
+    },
+    {
+      "name": "assets/paint-packshots-photorealistes-lot31-20261102",
+      "sha": "567cd153a0d947adaf61afb2c609787429ec826d",
+      "protected": false
+    },
+    {
+      "name": "audit/lot36-legal-gallery-20261102",
+      "sha": "f2f32b2e2df833191714706f5cfa0c9ee23509fb",
+      "protected": false
+    },
+    {
+      "name": "audit/lot62-live-video-readonly-20261105",
+      "sha": "a531dce2e8250ffb6877904267e014096703b593",
+      "protected": false
+    },
+    {
+      "name": "audit/lot80-verifier-demarche-live-20261105",
+      "sha": "431d0a509d60f5842721641eedbf933eca0e6b9c",
+      "protected": false
+    },
+    {
+      "name": "audit/lot90-live-v3-motion-readonly-20261105",
+      "sha": "e35b4d4319cc4337c880d825decf534375e3154a",
+      "protected": false
+    },
+    {
+      "name": "audit/lots76-78-deployment-visual-approval-20261105",
+      "sha": "aaf5ce4765e29d2b7dc776eef18d3e9bc703d81d",
+      "protected": false
+    },
+    {
+      "name": "audit/v3-lots95-97-metrics-rtl-css-20261105",
+      "sha": "87010dcced19983e6db2a3ce591f7973e9360342",
+      "protected": false
+    },
+    {
+      "name": "diagnostic/cloudflare-domain-cache-20261102",
+      "sha": "71d13f7001daa4d9809eaeba4574ddbd7f527c5a",
+      "protected": false
+    },
+    {
+      "name": "docs/fenek-tds-drafts-20261103",
+      "sha": "e77365e2e322c46f972c33de5ac65d183333219c",
+      "protected": false
+    },
+    {
+      "name": "docs/lot57-proof-kits-packaging-gaps-20261104",
+      "sha": "aa3a984b58764e33fb9ddc101e833390d2c2e424",
+      "protected": false
+    },
+    {
+      "name": "docs/lot62-confirm-live-v2-public-host-20261105",
+      "sha": "7df444f9292ece9d40823486ee0eebde54db5252",
+      "protected": false
+    },
+    {
+      "name": "docs/lot63-decide-public-access-20261105",
+      "sha": "b60b138db60c8cdce38848366f8f1dabb457dc51",
+      "protected": false
+    },
+    {
+      "name": "docs/reprise-siteweb-20261102",
+      "sha": "b07a65ec9dd3362007bce926487f3d0ca8681c86",
+      "protected": false
+    },
+    {
+      "name": "feat/cloudflare-release-ready-20261101",
+      "sha": "da66152e2c102e5d5e5a723ae43cad15dde3da14",
+      "protected": false
+    },
+    {
+      "name": "feat/galerie-maquettes-46-20261102",
+      "sha": "15f0ef57ff83dc8296da62f888315389367112a8",
+      "protected": false
+    },
+    {
+      "name": "feat/lot7-browser-recette-20261101",
+      "sha": "cb2a5ad8b895cc1ebb52db1cf212673d142366bd",
+      "protected": false
+    },
+    {
+      "name": "feat/lot8-preproduction-gates-20261101",
+      "sha": "f43f3a10314fd4a4c15222d69309e93c1a3c8ca7",
+      "protected": false
+    },
+    {
+      "name": "feat/lot9-access-gate-20261101",
+      "sha": "b1ce6ca9dd03908b595f19eca959100b0ca03fbf",
+      "protected": false
+    },
+    {
+      "name": "feat/lot10-mobile-navigation-accessibilite-20261101",
+      "sha": "dfcd6f620f8f3344ee4361fd0612c6054185c08b",
+      "protected": false
+    },
+    {
+      "name": "feat/lot11-home-3d-showcase-20261101",
+      "sha": "348290f011f105b5e7be8d6f9c72701f3d4bc897",
+      "protected": false
+    },
+    {
+      "name": "feat/lot12-editorial-hubs-20261101",
+      "sha": "1f36a66bde2f699caf53a6f6bf43a0bd652b8537",
+      "protected": false
+    },
+    {
+      "name": "feat/lot13-home-visual-integrity-20261101",
+      "sha": "a676a69584ba639b16e33575573dc8baaf1d3e75",
+      "protected": false
+    },
+    {
+      "name": "feat/lot14-contact-direct-previews-20261101",
+      "sha": "d2933640e630a09d9ec943718e4ff2d78c080155",
+      "protected": false
+    },
+    {
+      "name": "feat/lot16-arabic-rtl-visual-3d-20261101",
+      "sha": "034b33c3d9e71110f2c848196b828dcaf233187b",
+      "protected": false
+    },
+    {
+      "name": "feat/lot18-arabic-editorial-polish-20261101",
+      "sha": "071913a8a2ddb51b901c994f57c24ad11cd7e570",
+      "protected": false
+    },
+    {
+      "name": "feat/lot19-catalogue-readiness-20261101",
+      "sha": "08af5e48d4ed6d1609dacdb2928a966e0763d957",
+      "protected": false
+    },
+    {
+      "name": "feat/lot20-catalogue-50-editorial-20261101",
+      "sha": "fd613c7050688254e42509f93b0005c4df9d556e",
+      "protected": false
+    },
+    {
+      "name": "feat/lot21-flow-12-packshot-support-20261102",
+      "sha": "ca2a6e1958de82e5c115b93af3e1256708486b87",
+      "protected": false
+    },
+    {
+      "name": "feat/lot25-bond-10-packshot-support-20261102",
+      "sha": "c2078199313e337db855074708626f0d4bc72f0a",
+      "protected": false
+    },
+    {
+      "name": "feat/lot37-b2b-journeys-20261102",
+      "sha": "1be238768f743c70313e314d3579ea29c85d5a61",
+      "protected": false
+    },
+    {
+      "name": "feat/lot38-catalogue-local-filters-20261102",
+      "sha": "609cc5e956a857e4fb877f4adc2d599e1d21f0d1",
+      "protected": false
+    },
+    {
+      "name": "feat/lot39-search-public-keywords-20261102",
+      "sha": "19b97e4bdd218645353feda05054df530c8b3d2e",
+      "protected": false
+    },
+    {
+      "name": "feat/lot40-home-concept-slider-20261102",
+      "sha": "179c37d2a865f1a91cf0e0e6b17a6879c0d4ac11",
+      "protected": false
+    },
+    {
+      "name": "feat/lot44-comparators-missing-20261103",
+      "sha": "2f0dd4c80b5726c7ce29262d0dda495f64fc04fc",
+      "protected": false
+    },
+    {
+      "name": "feat/lot45-trilingual-market-summaries-20261103",
+      "sha": "953058aacc960dc348e232351b5e1cbce854586e",
+      "protected": false
+    },
+    {
+      "name": "feat/lot46-fenek-only-product-sheets-20261103",
+      "sha": "b7511beb3ad2a271a1e5715a97787da2c3d3b9b4",
+      "protected": false
+    },
+    {
+      "name": "feat/lot47-fenek-accordion-documentation-20261103",
+      "sha": "428cdc789bdad77096776e5bc830c897c15fda65",
+      "protected": false
+    },
+    {
+      "name": "feat/lot48-branded-tds-sds-layout-20261103",
+      "sha": "10d189cf6ccef9022ea2292709c21573164bb3bc",
+      "protected": false
+    },
+    {
+      "name": "feat/lot50-extraction-trilingue-50produits-20261104",
+      "sha": "f62a7dfb00a9c13072369ad39ec50b83e34f068a",
+      "protected": false
+    },
+    {
+      "name": "feat/lot58-hero-nexo-geno-video-temp-20261104",
+      "sha": "0deb7f0402fadd87f793cbc80e68cd4b0b90b7f8",
+      "protected": false
+    },
+    {
+      "name": "feat/lot60-header-lang-theme-nextgen-20261104",
+      "sha": "7d4c82f6533bd143c98abcd733d36b2dc4d8e3c0",
+      "protected": false
+    },
+    {
+      "name": "feat/lot60-theme-toggle-locale-menu-20261104",
+      "sha": "c1da5cc5ae53d8f9a279cabb99dbf5c3885faf39",
+      "protected": false
+    },
+    {
+      "name": "feat/lot61-video-nexo-geno-v2-20261105",
+      "sha": "45d263e0984e80992ddfde40ffe5f0a7cd4ebe70",
+      "protected": false
+    },
+    {
+      "name": "feat/lot64-video-nexo-geno-v3-20261105",
+      "sha": "2e7b5819102eac0e873363aa1fa96affb55a3e77",
+      "protected": false
+    },
+    {
+      "name": "feat/lot79-demarche-industrielle-btph-trilingue-20261105",
+      "sha": "b82f18199b783250b5c54d02169aeccd72b35299",
+      "protected": false
+    },
+    {
+      "name": "feat/lot113-daily-ticker-source-verified-20261107",
+      "sha": "73f9b83b37f7f1f90d0baf628aad5764dff070ed",
+      "protected": false
+    },
+    {
+      "name": "feat/lot116-home-v4-video-clean-hero-20261107",
+      "sha": "6f36272571e95afe094d0a0a1aa9b4bf887daa60",
+      "protected": false
+    },
+    {
+      "name": "feat/lot116-stage-welcome-v4-media-20261107",
+      "sha": "6b71d2c79d520bc5155fcb7cf7ea7a921921f7f9",
+      "protected": false
+    },
+    {
+      "name": "feat/lot116-welcome-video-v4-clean-hero-20261107",
+      "sha": "9544b850cd2308d7e0f24b2644443c6687ca971e",
+      "protected": false
+    },
+    {
+      "name": "feat/lot118-global-pagefind-search-20261109",
+      "sha": "a7e16b9687537e0c4acad33b8dc115c0cd567757",
+      "protected": false
+    },
+    {
+      "name": "feat/lot119-capsule-signature-search-20261109",
+      "sha": "16a147d9baa15a3fe96d6d3c281d17bfb172d1ad",
+      "protected": false
+    },
+    {
+      "name": "feat/lot120-cloudflare-live-monitoring-20261109",
+      "sha": "f4f64ed0b3d4d4d5db1f0f466626820b4f73ff6a",
+      "protected": false
+    },
+    {
+      "name": "feat/lot121-illustrated-application-guides-20261109",
+      "sha": "c8333c6423558e4a8871a38bab9f5517b52478cb",
+      "protected": false
+    },
+    {
+      "name": "feat/lot122-live-application-coverage-20261109",
+      "sha": "de9f74f5cfc0abe1e1372bdce2e7c39bdb3c503d",
+      "protected": false
+    },
+    {
+      "name": "feat/lot123-animated-header-logo-20261109",
+      "sha": "eec216f5010d8d80faaa1475d1b5bf3425bccbf5",
+      "protected": false
+    },
+    {
+      "name": "feat/lot124-about-video-final-20261109",
+      "sha": "9528fb3a0c322b346bd9e7c84eee12f3e007a4a7",
+      "protected": false
+    },
+    {
+      "name": "feat/lot124-about-video-v4-20261110",
+      "sha": "b7799ea5e6d3f804c8686af90aaf6694b3775fcd",
+      "protected": false
+    },
+    {
+      "name": "feat/lot127-c1t-v3-site-artwork-20261111",
+      "sha": "b362f20f63a823bacfd2ef7774c1c361f2a570b9",
+      "protected": false
+    },
+    {
+      "name": "feat/lot127-v3-guides-product-by-product-c1t-20261111",
+      "sha": "a85f08d0dd2895f8fdce7b765f1a44ad0e540e0c",
+      "protected": false
+    },
+    {
+      "name": "feat/lot128-v3-guides-c1te-20261111",
+      "sha": "87f79b0bb75d5ca57be4825672c5fc2a5fe4456f",
+      "protected": false
+    },
+    {
+      "name": "feat/lot128-v3-product-by-product-20261111",
+      "sha": "26f140c8966fd048bf83ef9164bda2b92573e605",
+      "protected": false
+    },
+    {
+      "name": "feat/lot129-v3-50-guides-reconciled-20261111",
+      "sha": "5727a55d47d88038eff8ff8e538d00c1e984af54",
+      "protected": false
+    },
+    {
+      "name": "feat/lot129-v3-guides-c2ft-20261111",
+      "sha": "a5c0881bfb09156363f508521e2ccee8d0758d8a",
+      "protected": false
+    },
+    {
+      "name": "feat/lot129-v3-source-qa-c2ft-20261111",
+      "sha": "cd70a0196dfb2e75d9534632e9cbc432993cddc5",
+      "protected": false
+    },
+    {
+      "name": "feat/lot132-r4-illustration-semantic-qa-20261112",
+      "sha": "d2e5cbe5cf57bef6ac9309876bc588af7da81971",
+      "protected": false
+    },
+    {
+      "name": "feat/lot133-source-artwork-9-crop-20261112",
+      "sha": "aea992076e203f3383438968e6a396541ee72882",
+      "protected": false
+    },
+    {
+      "name": "feat/lot134-137-39-fenek-technical-remaster-20261112",
+      "sha": "0c641f6213e07f663428fa4c804e8c6e5e76e954",
+      "protected": false
+    },
+    {
+      "name": "feat/lot138-peinture-facade-qualite-20261112",
+      "sha": "3e41011d4672928913047fa0179941ecdfcb31fb",
+      "protected": false
+    },
+    {
+      "name": "feat/lot139-140-professional-paint-illustrations-20261112",
+      "sha": "7dc081ee7965965c0b059974160c6eb759bca287",
+      "protected": false
+    },
+    {
+      "name": "feat/lot188-site-visual-preview-acrrf-20261112",
+      "sha": "a7e7ac4a65e155f35eaddf09b35c88d53cac9af5",
+      "protected": false
+    },
+    {
+      "name": "feat/lot189-acrrf-inline-premium-draft-20261113",
+      "sha": "4efd7b06076caef5aede2160a3bd5855fcf2da3f",
+      "protected": false
+    },
+    {
+      "name": "feat/lot190-proof-two-scene-visual-review-20261113",
+      "sha": "d6081480a69bc510766ca75ae0989fef9e438056",
+      "protected": false
+    },
+    {
+      "name": "feat/lot191-proof-partial-candidates-inline-20261113",
+      "sha": "dc373b905e95a1af394a8f7102ee0e8d8534b2ac",
+      "protected": false
+    },
+    {
+      "name": "feat/lot192-premium-candidate-zoom-20261113",
+      "sha": "5354b2a208a03e1f9968f7bec58f84f797e51a2a",
+      "protected": false
+    },
+    {
+      "name": "feat/lot193-cloudflare-fenek-quality-gate-20261113",
+      "sha": "b5626ed02a5a4a36a40aaa5e909a5ec430189829",
+      "protected": false
+    },
+    {
+      "name": "feat/lot194-global-50-illustration-gallery-20261113",
+      "sha": "fefbc79c9353101040c72390a875e03f6e2c79a9",
+      "protected": false
+    },
+    {
+      "name": "feat/lot195-198-39-product-realistic-shotlists-20261113",
+      "sha": "8d8f3fede95184bcc6ac4ef595e5bf4d6718af6d",
+      "protected": false
+    },
+    {
+      "name": "feat/market-reference-docs-20261103",
+      "sha": "1211af1dd1813004b120613729639b164ff23825",
+      "protected": false
+    },
+    {
+      "name": "feat/nextgen-about-copy-layout-silent-20261106",
+      "sha": "3b1cd711e75c3ec084bebd4d7b44a4382986b332",
+      "protected": false
+    },
+    {
+      "name": "feat/nextgen-about-video-first-mobile-20261106",
+      "sha": "1257e77c730dbdb9c3f23140c1353f785444103c",
+      "protected": false
+    },
+    {
+      "name": "feat/nextgen-about-video-v1-20261106",
+      "sha": "93657dca00d871f206c532129fbe7fcc47f550b6",
+      "protected": false
+    },
+    {
+      "name": "feat/nextgen-hero-bright-gradient-20261106",
+      "sha": "88e3f93ee185dd6eb5714f37532a05397c8495ef",
+      "protected": false
+    },
+    {
+      "name": "feat/nextgen-mixed-news-ticker-20261106",
+      "sha": "4653d0d364fdeceabc7ff27a5f9f1a2f3c63b791",
+      "protected": false
+    },
+    {
+      "name": "feat/nextgen-ticker-nonclick-freshness-20261106",
+      "sha": "fd582aa36cc173ab1c4348e2f1e9096dc2756b64",
+      "protected": false
+    },
+    {
+      "name": "feat/v3-illustrations-qualite-lot1-20261112",
+      "sha": "416736ac1b1134b17c738c136f672b06274e5943",
+      "protected": false
+    },
+    {
+      "name": "feat/v3-lots81-83-motion-industry-home-design-20261105",
+      "sha": "e0e6106ecbc1bfc7896a67dc101fe14794ec0b1a",
+      "protected": false
+    },
+    {
+      "name": "feat/v3-lots84-86-catalogue-gammes-fiches-20261105",
+      "sha": "e1bdd9437499ed983c20af0287021e3f3dbe65b8",
+      "protected": false
+    },
+    {
+      "name": "feat/v3-lots87-89-institutionnel-b2b-20261105",
+      "sha": "f1273a9804cb5fee8677fe672021a709215b160d",
+      "protected": false
+    },
+    {
+      "name": "feat/visionneuse-3d-dediee-20261102",
+      "sha": "4de807eeb6b44b85df9d20260e71b918291413e2",
+      "protected": false
+    },
+    {
+      "name": "fix/bond-visuels-photorealistes-lot29-20261102",
+      "sha": "8f21376e29039c75a5c165f07d5b9a11f8b1d293",
+      "protected": false
+    },
+    {
+      "name": "fix/catalogue-maquettes-par-reference-20261102",
+      "sha": "5ff5ffd65de583790531fecdbf1893d9a434dbd4",
+      "protected": false
+    },
+    {
+      "name": "fix/editorial-public-trilingual-cleanup-20261102",
+      "sha": "9e751987adcd7e0604afbc389821a91660634d89",
+      "protected": false
+    },
+    {
+      "name": "fix/hide-unverified-field-instructions-lot33-20261102",
+      "sha": "2f310df5e9d419dc7ef02d6b8599ce055cc55bac",
+      "protected": false
+    },
+    {
+      "name": "fix/lot15-apex-canonical-20261101",
+      "sha": "a2eef60fe3851a0c3a7647914714b769074f7245",
+      "protected": false
+    },
+    {
+      "name": "fix/lot17-arabic-section-eyebrows-20261101",
+      "sha": "2684ae0300be1dbc24fa5be978a06074a22dbd0c",
+      "protected": false
+    },
+    {
+      "name": "fix/lot18-arabic-final-ci-20261101",
+      "sha": "071913a8a2ddb51b901c994f57c24ad11cd7e570",
+      "protected": false
+    },
+    {
+      "name": "fix/lot22-flow-packshots-verified-manifest-20261102",
+      "sha": "6785b7293e228e8e1f5a6ea29c6581ecc47edd7c",
+      "protected": false
+    },
+    {
+      "name": "fix/lot40-resources-copy-20261102",
+      "sha": "abd8f837bee0fb07ae09f7ebe93f6612da306cfb",
+      "protected": false
+    },
+    {
+      "name": "fix/lot49-fenek-print-charte-nextgen-20261104",
+      "sha": "c579789f984fc0c184ae133b8ccb079d21bd9117",
+      "protected": false
+    },
+    {
+      "name": "fix/lot49-singlepage-pdf-20261104",
+      "sha": "85f4721dc01777152a25209275be0e1f0e35f682",
+      "protected": false
+    },
+    {
+      "name": "fix/lot51-bond-sacs-25kg-20261104",
+      "sha": "bfc61b2142c8fdf39d84bb9d38dab7ec4d1c0952",
+      "protected": false
+    },
+    {
+      "name": "fix/lot52-flow-conditionnements-confirmes-20261104",
+      "sha": "5a16697a3a1e241f9d99fa3d63d4b6de4d809dfd",
+      "protected": false
+    },
+    {
+      "name": "fix/lot53-paint-seaux-5-10-20kg-20261104",
+      "sha": "d0aa45bc0c1397e3588ebffeaee1f3e9a70a5017",
+      "protected": false
+    },
+    {
+      "name": "fix/lot54-proof-emballages-contact-20261104",
+      "sha": "1ab602fe2349caa45c6ed43b0ddfe29f7d36c9f3",
+      "protected": false
+    },
+    {
+      "name": "fix/lot55-proof-pu-seal-300ml-20261104",
+      "sha": "17dccd921de9d7e76e3fb161b470b1b195401328",
+      "protected": false
+    },
+    {
+      "name": "fix/lot56-proof-pu-seal-cartouche-300ml-20261104",
+      "sha": "2a7760f635bf5b99809ea062ff65038bff311089",
+      "protected": false
+    },
+    {
+      "name": "fix/lot59-remove-mascot-video-caption-20261104",
+      "sha": "2bcfc81303b8cb87bb7273c33ea8db76537ca697",
+      "protected": false
+    },
+    {
+      "name": "fix/lot65-cm-o2p-sac30-bidon10-20261105",
+      "sha": "a9b09b36f22c1b72041f1495cb6416ab20f7d3b0",
+      "protected": false
+    },
+    {
+      "name": "fix/lot66-proof-ep-anc-600ml-20261105",
+      "sha": "b4da115b851a29ec754642464393c4eae024f74d",
+      "protected": false
+    },
+    {
+      "name": "fix/lot67-ep-anc-double-cartouche-20261105",
+      "sha": "fb95c5a5784862343444ecdfe45765ed08b8af56",
+      "protected": false
+    },
+    {
+      "name": "fix/lot68-ep-inj-double-cartouche-300x2-20261105",
+      "sha": "a6e6119fc004e4f376f0f2070280256bd0cfa0cb",
+      "protected": false
+    },
+    {
+      "name": "fix/lot69-ep-prim-seaux-10kg-3kg-20261105",
+      "sha": "a9caa818288e58f33ccc4a4fa69c70cf6a2a3512",
+      "protected": false
+    },
+    {
+      "name": "fix/lot70-ep-sb-double-cartouche-300x2-20261105",
+      "sha": "732ba8fa693d90bfc1b84281bee620d2e8eae445",
+      "protected": false
+    },
+    {
+      "name": "fix/lot71-ep-sr-deux-seaux-10kg-3kg-20261105",
+      "sha": "8424364cf084d4413cd55e58e26391da0ed18fd0",
+      "protected": false
+    },
+    {
+      "name": "fix/lot72-pu-inj-deux-seaux-5kg-5kg-20261105",
+      "sha": "bee8cded77605b4b258f1485b577926f3335ee7e",
+      "protected": false
+    },
+    {
+      "name": "fix/lot73-75-audit-formats-traductions-gates-20261105",
+      "sha": "a9e0cda7af39b35aed23337a52b5088c421c4b4a",
+      "protected": false
+    },
+    {
+      "name": "fix/lot109-pause-news-not-video-20261106",
+      "sha": "83a67f3d2f11e711c791a8080e6eba875a9cea30",
+      "protected": false
+    },
+    {
+      "name": "fix/lot114-bank-tls-diagnostic-20261107",
+      "sha": "6b986ac13e737561feb234c8f2ac33106db72675",
+      "protected": false
+    },
+    {
+      "name": "fix/lot115-verified-digicert-chain-20261107",
+      "sha": "61d3d2649a3e523dfc26ac73b4cb2ff8117b874e",
+      "protected": false
+    },
+    {
+      "name": "fix/lot116-readonly-artifact-quota-20261107",
+      "sha": "6bf187f77d0b447c6a14a68cb51518d7c31b0740",
+      "protected": false
+    },
+    {
+      "name": "fix/lot116-v4-poster-final-20261107",
+      "sha": "e056cbcf43446fa791e516b92ed0a33ea4df1644",
+      "protected": false
+    },
+    {
+      "name": "fix/lot125-cm-o2p-sac-20kg-20261111",
+      "sha": "c3f1a6be1c835ead8a4083c21dbaa15f82b02c13",
+      "protected": false
+    },
+    {
+      "name": "fix/lot126-cm-o2p-maquette-20kg-supabase-20261111",
+      "sha": "ce61c83dc08e3b98a097ee79f439dbdde647c4c3",
+      "protected": false
+    },
+    {
+      "name": "fix/lot190-proof-preview-explicit-cm-o2p-20261113",
+      "sha": "86412eab803f3de1e58fb8f2b4336d7c2116bab4",
+      "protected": false
+    },
+    {
+      "name": "fix/lot194-audit-pagefind-ignore-20261113",
+      "sha": "5585f923572571dbd1bec860b61ac71fb2203395",
+      "protected": false
+    },
+    {
+      "name": "fix/lot194-compact-audit-gallery-20261113",
+      "sha": "7af287c91ec0fa6a51c343702207a7304b48730e",
+      "protected": false
+    },
+    {
+      "name": "fix/lot194-isolate-cloudflare-gallery-failure-20261113",
+      "sha": "0a8ee9e08388bc1bdc106169ecbc953e908e9f76",
+      "protected": false
+    },
+    {
+      "name": "fix/lot199-live-publication-gate-20261114",
+      "sha": "a7432c211d9f7191a4d3cd4bf03f84cc27ca12ea",
+      "protected": false
+    },
+    {
+      "name": "fix/lot200-isolate-unapproved-artwork-20261114",
+      "sha": "2e38e56d3a8da5404f0525b37ad3713e2240fc2e",
+      "protected": false
+    },
+    {
+      "name": "fix/nextgen-arabic-ticker-direction-20261106",
+      "sha": "c8fa07e2fae43d63b6d46538547fbe088d728e18",
+      "protected": false
+    },
+    {
+      "name": "fix/nextgen-arabic-ticker-rtl-20261106",
+      "sha": "39db93c1ce97791688987e3617035f2a8fe412fd",
+      "protected": false
+    },
+    {
+      "name": "fix/paint-visuels-individuels-editoriaux-20261102",
+      "sha": "5c1ea986e267ecc533ae019372a27bcc340bc61a",
+      "protected": false
+    },
+    {
+      "name": "fix/public-copy-cleanup-fr-ar-en-20261102",
+      "sha": "3a55bf7d1df1de107540da14990586e777091ba9",
+      "protected": false
+    },
+    {
+      "name": "fix/public-editorial-residual-lot34-20261102",
+      "sha": "6a6c02da6de5071a1bda8e3db95fbff14b190430",
+      "protected": false
+    },
+    {
+      "name": "fix/remaining-public-messages-fr-ar-en-20261102",
+      "sha": "bc89befcce8464a620886f586bb928f36d674c48",
+      "protected": false
+    },
+    {
+      "name": "fix/remove-all-3d-packaging-20261102",
+      "sha": "0630d89a2d980550697b3034c461254fa74cfac1",
+      "protected": false
+    },
+    {
+      "name": "fix/remove-home-3d-preview-20261102",
+      "sha": "6ecb041c1197ea0820ae1955fe2298af08a25973",
+      "protected": false
+    },
+    {
+      "name": "fix/remove-public-disabled-demo-forms-lot35-20261102",
+      "sha": "e29016bf3dc5be5ecb5a4c10a6162cd2a459ec09",
+      "protected": false
+    },
+    {
+      "name": "fix/remove-visual-gallery-route-20261102",
+      "sha": "62822dc4f993af0f296b6bf9000c283bfb29aefa",
+      "protected": false
+    },
+    {
+      "name": "fix/streamline-catalogue-technical-copy-lot34-20261102",
+      "sha": "d60910fd61fbce9182048cd0831a2186f376dad0",
+      "protected": false
+    },
+    {
+      "name": "fix/v3-lot94-skip-rtl-keyboard-20261105",
+      "sha": "08d65b88866fcc80dd5d19175e4341553fa05355",
+      "protected": false
+    },
+    {
+      "name": "fix/v3-lots101-103-favicon-best-practices-live-readonly-20261106",
+      "sha": "aef51b6101527faeb7b45d9a9d857223793cf287",
+      "protected": false
+    },
+    {
+      "name": "main",
+      "sha": "6493b0006a53a954af92a21e15c119a19d24f43d",
+      "protected": false
+    },
+    {
+      "name": "perf/lots91-93-v3-media-accessibility-budget-20261105",
+      "sha": "f66eb21205955a60d2f67630ffba3051f5a0a368",
+      "protected": false
+    },
+    {
+      "name": "perf/v3-lots91-93-motion-a11y-mobile-20261105",
+      "sha": "49610b122e451cfd74f20bf72c9d2632c148200c",
+      "protected": false
+    },
+    {
+      "name": "perf/v3-lots98-100-catalogue-lighthouse-a11y-20261105",
+      "sha": "f7850db3b9831bf81fd65f4bd789d54c1b8b3a8f",
+      "protected": false
+    },
+    {
+      "name": "preview/lot186-acr-rf-20261112",
+      "sha": "b7babd2a8f7aa0bd6adf4aecdb847b958afb3c29",
+      "protected": false
+    },
+    {
+      "name": "test/lot23-flow-assets-release-gate-20261102",
+      "sha": "eba0008b0e51aa71578c25d1ead798a37e8e1564",
+      "protected": false
+    }
+  ],
+  "purpose": "Inventory of pre-cleanup branch refs. SHA pointers are not permanent backups after refs are deleted; preserve unique work in main or tags before deletion."
+}
