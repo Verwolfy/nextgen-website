@@ -10,8 +10,6 @@ import { applicationStepsFor, isTileAdhesive } from '../data/fenek-application-s
 import { applicationContextFor } from '../data/fenek-application-context';
 import { reviewedV3GuideFor } from '../data/fenek-v3-reviewed';
 import enhancedArtwork from '../data/fenek-enhanced-artwork.json';
-import FenekAcrRfDraftPreview from './FenekAcrRfDraftPreview.astro';
-import FenekProofPartialDraft from './FenekProofPartialDraft.astro';
 import sourceCropReview from '../data/fenek-v3-source-crop-qa.json';
 interface Props { lang:Lang; product:CatalogueProject; }
 const {lang,product}=Astro.props;
@@ -23,12 +21,8 @@ const steps=reviewedV3
   ? reviewedV3.steps.map(step=>({title:step.title[lang],description:step.description[lang],icon:step.icon,image:step.image}))
   : applicationStepsFor(product.code,lang);
 const tile=isTileAdhesive(product.code);
-// Editorial V4 preview: only ACR-RF, explicitly separate from the published V3 guide.
-const previewAcrRf=product.code==='PROOF-ACR-RF' && product.slug==='fenek-proof-acr-rf' && Boolean(enhancedV3);
-// Two explicitly labelled, single-scene review candidates; the original six steps remain below.
-const partialDraftStep=product.code==='PROOF-PU-1K' && product.slug==='fenek-proof-pu-1k' ? 5
-  : product.code==='PROOF-CM-O1P' && product.slug==='fenek-proof-cm-o1p' ? 1
-  : null;
+// Draft illustration previews belong in an isolated, noindex review gallery.
+// Official FR/EN/AR product guides must show their current six steps only.
 const fullSizeC1T=product.code==='BOND-C1T' && product.slug==='fenek-bond-c1t' ? [
  '/images/application/v3/fenek-bond-c1t/01_support.png',
  '/images/application/v3/fenek-bond-c1t/02_epi.png',
@@ -64,8 +58,6 @@ const paths:Record<string,string>={
     <h3>{copy.intro}</h3>
     <span class="fenek-application-visual-tag">{steps.length} {copy.step.toLowerCase()}</span>
   </div>
-  {previewAcrRf && <FenekAcrRfDraftPreview lang={lang} steps={steps} />}
-  {partialDraftStep!==null && <FenekProofPartialDraft lang={lang} code={product.code} title={steps[partialDraftStep-1]?.title ?? ''} />}
   <ol class:list={['fenek-application-visual-grid',{'has-drawings':tile || Boolean(reviewedV3),'v3-reviewed':Boolean(reviewedV3)}]}>
     {steps.map((step,i)=><li class="fenek-application-visual-card" data-application-step={i+1}>
       <figure class:list={['fenek-application-visual-figure',{'fenek-v3-upgraded-figure':Boolean(enhancedV3),'fenek-v3-source-crop-figure':Boolean(cropReview)}]} style={cropReview ? `--v3-source-crop:${cropReview.cropFraction}` : undefined}>
