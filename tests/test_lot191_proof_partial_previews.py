@@ -38,9 +38,13 @@ class TestLot191DraftPreviews(unittest.TestCase):
   caller=(ROOT/"src/components/FenekApplicationGuide.astro").read_text("utf-8")
   self.assertIn("code==='PROOF-PU-1K'",component)
   self.assertIn("code==='PROOF-CM-O1P'",component)
-  self.assertIn("product.code==='PROOF-PU-1K' && product.slug==='fenek-proof-pu-1k'",caller)
-  self.assertIn("product.code==='PROOF-CM-O1P' && product.slug==='fenek-proof-cm-o1p'",caller)
-  self.assertIn("partialDraftStep!==null && <FenekProofPartialDraft",caller)
+  self.assertNotIn("FenekProofPartialDraft",caller)
+  self.assertNotIn("data-proof-partial-preview",caller)
+  review=(ROOT/"public/fr/avant-premiere/lot187-proof/index.html").read_text("utf-8")
+  self.assertIn("noindex,nofollow,noarchive",review)
+  self.assertEqual(review.count("V4 · brouillon"),2)
+  for _,(_,_,file,_) in ASSETS.items():
+   self.assertEqual(review.count('src="/images/application-premium/'+file+'"'),1)
   self.assertIn("enhancedV3?.sprite ?? reviewedV3.sprite",caller)
   self.assertIn("data-proof-partial-preview",component)
   self.assertIn('data-approval="BROUILLON"',component)
@@ -55,11 +59,11 @@ class TestLot191DraftPreviews(unittest.TestCase):
 
  def test_compiled_product_audit_enforces_identity_and_no_leakage(self):
   s=(ROOT/"scripts/check_application_guides.py").read_text("utf-8")
-  self.assertIn("html.count('data-proof-partial-preview')==1",s)
-  self.assertIn("html.count('data-proof-partial-step=')==1",s)
+  self.assertIn("'data-proof-partial-preview' not in html",s)
+  self.assertIn("'data-proof-partial-step=' not in html",s)
   self.assertIn("candidate_file.is_file()",s)
   self.assertIn("hashlib.sha256(candidate_file.read_bytes()).hexdigest()==candidate_hash",s)
-  self.assertIn("'candidate leaked to unrelated product'",s)
+  self.assertIn("'V4 draft on official guide'",s)
   self.assertIn("parser.steps==[str(i) for i in range(1,7)]",s)
 
 if __name__=="__main__":
