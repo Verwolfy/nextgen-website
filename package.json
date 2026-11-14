@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run test:artwork-cleanup && node scripts/copy_public_assets.mjs && node scripts/install_application_art.mjs && astro build && node scripts/verify_fenek_deployment.mjs && npx --yes pagefind@1.5.2 --site dist && node scripts/write_release_marker.mjs",
+    "build": "npm run test:artwork-cleanup && npm run check:illustrations && node scripts/copy_public_assets.mjs && node scripts/install_application_art.mjs && astro build && node scripts/verify_fenek_deployment.mjs && npx --yes pagefind@1.5.2 --site dist && node scripts/write_release_marker.mjs",
     "preview": "astro preview",
     "check:search": "python scripts/check_search_index.py",
-    "test:artwork-cleanup": "node --test tests/lot200_official_artwork_isolation.test.mjs"
+    "test:artwork-cleanup": "node --test tests/lot200_official_artwork_isolation.test.mjs",
+    "check:illustrations": "node --test tests/audit_fenek_live_release.test.mjs"
   },
   "engines": {
     "node": ">=22.12.0"
