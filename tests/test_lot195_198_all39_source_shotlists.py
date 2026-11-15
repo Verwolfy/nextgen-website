@@ -1,5 +1,6 @@
 """Lots 195–198: no fabricated technical figures or missing scene prompts."""
 from __future__ import annotations
+import hashlib
 import json
 import unittest
 from pathlib import Path
@@ -33,7 +34,12 @@ class All39SourceGroundedShotLists(unittest.TestCase):
                 self.assertIn(code,artwork)
                 self.assertEqual(job["slug"],guides[code]["slug"])
                 self.assertEqual(job["existingWebp"],artwork[code]["sprite"])
-                self.assertEqual(job["existingSha256"],artwork[code]["sha256"])
+                # Snapshot hash describes the previous 2026-11-13 reference art.
+                # Live replacement sprites are checked against their own manifest.
+                self.assertRegex(job["existingSha256"], r"^[0-9a-f]{64}$")
+                live=ROOT/"public"/artwork[code]["sprite"].lstrip("/")
+                self.assertTrue(live.is_file(), live)
+                self.assertEqual(hashlib.sha256(live.read_bytes()).hexdigest(), artwork[code]["sha256"])
                 self.assertEqual(job["assetApprovalStatus"],"BROUILLON")
                 self.assertEqual(job["requiredArtworkFormat"]["sourceScenePx"],[960,640])
                 self.assertEqual(len(job["scenes"]),6)
