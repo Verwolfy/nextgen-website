@@ -18,7 +18,6 @@ import sys
 import zipfile
 from io import BytesIO
 from pathlib import Path
-from PIL import Image
 
 LEGACY = [
     'public/images/application-upgraded',
@@ -43,6 +42,30 @@ def git(root: Path, *args: str) -> str:
         ['git', '-C', str(root), *args], text=True
     ).strip()
 
+REFERENCE_SCAN_TREES = ('src', 'tests', 'scripts', '.github', 'public')
+REFERENCE_SCAN_SUFFIXES = {'.astro', '.ts', '.tsx', '.js', '.mjs', '.css', '.json', '.html', '.py', '.yml', '.yaml', '.sh', '.md', '.txt'}
+
+def find_legacy_references(root: Path, directory: str) -> list[str]:
+    """Fail closed: an old image URL may be used outside src (e.g. public HTML previews)."""
+    url_prefix = '/' + directory.removeprefix('public/') + '/'
+    refs: set[str] = set()
+    for tree in REFERENCE_SCAN_TREES:
+        base = root / tree
+        if not base.is_dir():
+            continue
+        for path in base.rglob('*'):
+            if not path.is_file() or path.suffix.lower() not in REFERENCE_SCAN_SUFFIXES:
+                continue
+            try:
+                source = path.read_text(encoding='utf-8')
+            except (UnicodeDecodeError, OSError):
+                # An unreadable reference file cannot justify deleting assets.
+                refs.add(str(path.relative_to(root)) + ' (unreadable)')
+                continue
+            if url_prefix in source:
+                refs.add(str(path.relative_to(root)))
+    return sorted(refs)
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('archive', type=Path)
@@ -60,6 +83,8 @@ def main() -> None:
         sys.exit('Working tree must be clean')
     if not archive.is_file():
         sys.exit(f'Missing archive: {archive}')
+
+    from PIL import Image
 
     mapping = {}
     destination = root/'public/images/fenek-products'
@@ -159,13 +184,7 @@ def main() -> None:
 
     legacy_references = {}
     for directory in LEGACY:
-        url_prefix = '/' + directory.removeprefix('public/') + '/'
-        refs = []
-        for path in (root/'src').rglob('*'):
-            if path.suffix not in ('.ts','.tsx','.astro','.js','.json','.css'):
-                continue
-            if url_prefix in path.read_text(encoding='utf-8'):
-                refs.append(str(path.relative_to(root)))
+        refs = find_legacy_references(root, directory)
         legacy_references[directory] = refs
         if args.purge and not refs:
             shutil.rmtree(root/directory, ignore_errors=True)
