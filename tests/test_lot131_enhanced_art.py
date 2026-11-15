@@ -37,12 +37,18 @@ class EnhancedV3ArtworkTest(unittest.TestCase):
                 self.assertLess(len(data),250_000)
                 self.assertEqual(len(manuals[code]["steps"]),6)
 
-    def test_bond_r4_shared_artwork_is_semantically_audited(self):
+    def test_bond_r4_artwork_is_dedicated_after_in_place_replacement(self):
         index={p["code"]:p for p in UPGRADES}
-        self.assertEqual(index["BOND-R4"]["sharedArtworkFrom"],"BOND-R3")
-        self.assertEqual(index["BOND-R4"]["sha256"],index["BOND-R3"]["sha256"])
-        self.assertEqual(index["BOND-R4"]["slug"],"fenek-bond-r4")
-        # Both sources use six equivalent concrete-repair actions, with no numeric technical claims.
+        r4=index["BOND-R4"]
+        r3=index["BOND-R3"]
+        self.assertEqual(r4["slug"],"fenek-bond-r4")
+        # Before migration the historical R4 asset intentionally shared R3;
+        # after overwriting with the provided product-specific R4 scenes it must differ.
+        if "sharedArtworkFrom" in r4:
+            self.assertEqual(r4["sharedArtworkFrom"],"BOND-R3")
+            self.assertEqual(r4["sha256"],r3["sha256"])
+        else:
+            self.assertNotEqual(r4["sha256"],r3["sha256"])
         manual={p["code"]:p for p in MANUALS}["BOND-R4"]
         self.assertEqual([x["image"] for x in manual["steps"]],list(range(1,7)))
 

@@ -1,11 +1,18 @@
 #!/usr/bin/env python3
-"""Migrate all 50 FENEK illustration kits to public/images/fenek-products/.
+"""Replace 50 official FENEK WebP sprites IN PLACE on main.
 
-Usage (on an authenticated, clean checkout of main):
-  python3 scripts/migrate_fenek_illustrations.py /path/to/50-products.zip --purge
+No new branches, no public/images/fenek-products directory, no old-folder purge.
+The official files remain public/images/application-upgraded/<slug>-steps.webp.
+Only graphical assets and their SHA-256 in fenek-enhanced-artwork.json change.
+FR/EN/AR text and BROUILLON/FT-FDS validation restrictions stay unchanged.
 
-Requires Pillow: python3 -m pip install Pillow.
-This utility edits the local checkout only; review, build, commit and push separately.
+Usage from a clean main checkout (Pillow installed):
+  python3 scripts/migrate_fenek_illustrations.py /path/to/NEXTGEN_TEMP_50_PRODUCTS_FOR_GITHUB_MIGRATION.zip --dry-run
+  python3 scripts/migrate_fenek_illustrations.py /path/to/NEXTGEN_TEMP_50_PRODUCTS_FOR_GITHUB_MIGRATION.zip
+  npm ci --no-audit --no-fund && npm run build
+  git add public/images/application-upgraded src/data/fenek-enhanced-artwork.json
+  git commit -m "assets: replace 50 FENEK sprites in place"
+  git push origin main
 """
 from __future__ import annotations
 import argparse
@@ -66,141 +73,128 @@ def find_legacy_references(root: Path, directory: str) -> list[str]:
                 refs.add(str(path.relative_to(root)))
     return sorted(refs)
 
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('archive', type=Path)
     parser.add_argument('--repo', type=Path, default=Path(__file__).resolve().parent.parent)
-    parser.add_argument('--purge', action='store_true', help='Delete legacy folders only if unreferenced by site sources')
+    parser.add_argument('--dry-run', action='store_true', help='Check and render without writing files')
     args = parser.parse_args()
-    root = args.repo.resolve()
-    archive = args.archive.resolve()
-
-    if not (root/'.git').is_dir() or not (root/'src/components/FenekApplicationGuide.astro').exists():
+    root, archive = args.repo.resolve(), args.archive.resolve()
+    dest = root/'public/images/application-upgraded'
+    manifest_path = root/'src/data/fenek-enhanced-artwork.json'
+    if not (root/'.git').is_dir() or not dest.is_dir() or not manifest_path.is_file():
         sys.exit('Invalid nextgen-website checkout')
     if git(root, 'branch', '--show-current') != 'main':
-        sys.exit('Only the main branch may be migrated')
+        sys.exit('Only main may be migrated')
     if git(root, 'status', '--porcelain'):
-        sys.exit('Working tree must be clean')
+        sys.exit('Working tree must be clean before migration')
     if not archive.is_file():
-        sys.exit(f'Missing archive: {archive}')
-
+        sys.exit(f'Missing source ZIP: {archive}')
+    raw = archive.read_bytes()
+    if sha256(raw) != '40f32540218d95f6d987edf93ad210a9382fbed373cdcc926da5ed044988f719':
+        sys.exit('Source ZIP SHA-256 mismatch; exact user-supplied archive required')
+    rows = json.loads(manifest_path.read_text(encoding='utf-8'))
+    if len(rows) != 50 or len({r['code'] for r in rows}) != 50:
+        sys.exit('Expected 50 unique official codes')
+    by_code = {r['code']:r for r in rows}
+    expected = set(EXPECTED)
+    output, original = {}, {}
     from PIL import Image
-
-    mapping = {}
-    destination = root/'public/images/fenek-products'
-    with zipfile.ZipFile(archive) as z:
-        if z.testzip():
-            sys.exit('The source ZIP failed its integrity check')
-        names = set(z.namelist())
-        products = sorted({p.split('/')[0] for p in names if '/' in p})
-        if len(products) != 50 or len(names) != 400:
-            sys.exit(f'Expected 50 product folders and 400 files, got {len(products)} folders and {len(names)} files')
-
-        for product in products:
-            missing = {f'{product}/{f}' for f in EXPECTED} - names
-            if missing:
-                sys.exit(f'Missing files for {product}: {sorted(missing)}')
-            instructions = json.loads(z.read(product+'/instructions.json'))
-            if (instructions.get('language_order') or instructions.get('languages') or instructions.get('langue_ordre')) != ['ar', 'en', 'fr']:
-                sys.exit(f'Missing AR/EN/FR language order: {product}')
-            slug = instructions.get('slug') or product.lower().replace('_', '-')
-            code = instructions.get('product_code') or product.replace('FENEK-', '')
-            if slug in mapping:
-                sys.exit(f'Duplicate slug: {slug}')
-            target = destination/slug
-            pictures = []
-            for filename in EXPECTED:
-                payload = z.read(f'{product}/{filename}')
-                if filename.endswith('.webp'):
-                    with Image.open(BytesIO(payload)) as im:
-                        im.verify()
-                    if filename != 'planche-complete.webp':
-                        with Image.open(BytesIO(payload)) as im:
-                            frame = im.convert('RGB')
-                        if frame.size != (720, 480):
-                            if frame.width*2 != frame.height*3:
-                                sys.exit(f'Invalid image aspect ratio: {product}/{filename}')
-                            frame = frame.resize((720, 480), Image.Resampling.LANCZOS)
-                        pictures.append(frame)
-                write_file(target/filename, payload)
-
-            sprite = Image.new('RGB', (2160, 960), 'white')
-            for idx, frame in enumerate(pictures):
-                sprite.paste(frame, ((idx % 3)*720, (idx//3)*480))
-            stream = BytesIO()
-            sprite.save(stream, format='WEBP', quality=92, method=6)
-            sprite_data = stream.getvalue()
-            write_file(target/'sprite.webp', sprite_data)
-            mapping[slug] = {
-                'code': code,
-                'sprite': f'/images/fenek-products/{slug}/sprite.webp',
-                'folder': f'/images/fenek-products/{slug}',
-                'sha256': sha256(sprite_data),
-            }
-
-    sources = [
-        root/'src/data/fenek-enhanced-artwork.json',
-        root/'src/data/fenek-v3-manuals.json',
-        root/'src/data/fenek-v3-reviewed.ts',
-    ]
-    for path in sources:
-        if not path.is_file():
-            sys.exit(f'Missing Astro source: {path}')
-        text = path.read_text(encoding='utf-8')
-        for slug, info in mapping.items():
-            text = text.replace(
-                f'/images/application-upgraded/{slug}-steps.webp',
-                info['sprite'])
-            text = text.replace(
-                f'/images/application-v3/{slug}-steps.webp',
-                info['sprite'])
-            text = re.sub(
-                r'/images/application/v3/' + re.escape(slug) + r'/0([1-6])_[^\x27\x22\s,]+\.png',
-                lambda m: info['folder']+'/0'+m.group(1)+'.webp', text)
-
-        if path.suffix == '.json':
-            data = json.loads(text)
-            for entry in data:
-                slug = entry.get('slug')
-                if slug in mapping:
-                    entry['sprite'] = mapping[slug]['sprite']
-                    if 'sha256' in entry:
-                        entry['sha256'] = mapping[slug]['sha256']
-                    if 'artworkDimensions' in entry:
-                        entry['artworkDimensions'] = [720, 480]
-            text = json.dumps(data, ensure_ascii=False, indent=2)+'\n'
-        else:
-            for slug, info in mapping.items():
-                pos = text.find(f"slug:'{slug}'")
-                if pos < 0:
-                    continue
-                fragment = text[pos:pos+320]
-                fragment = re.sub(
-                    r"sha256:'[a-f0-9]{64}'",
-                    f"sha256:'{info['sha256']}'",
-                    fragment, count=1)
-                text = text[:pos] + fragment + text[pos+320:]
-        path.write_text(text, encoding='utf-8')
-
-    legacy_references = {}
-    for directory in LEGACY:
-        refs = find_legacy_references(root, directory)
-        legacy_references[directory] = refs
-        if args.purge and not refs:
-            shutil.rmtree(root/directory, ignore_errors=True)
-
-    report = {
-        'products': len(mapping),
-        'original_files': len(mapping)*8,
-        'output_assets': len(mapping)*9,
-        'destination': str(destination.relative_to(root)),
-        'legacy_references': legacy_references,
-        'deleted_only_unreferenced': bool(args.purge),
-    }
-    (root/'NEXTGEN_ILLUSTRATIONS_MIGRATION.json').write_text(
-        json.dumps(report, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
-    print(json.dumps(report, ensure_ascii=False, indent=2))
-    print('MIGRATION PREPARED: run npm ci && npm run build, review diff, then git add/commit/push.')
+    with zipfile.ZipFile(BytesIO(raw)) as z:
+        names = z.namelist()
+        if len(names) != 400 or len(set(names)) != 400 or z.testzip():
+            sys.exit('Archive must contain exactly 400 unique valid entries')
+        folders = {}
+        for name in names:
+            parts = name.split('/')
+            if len(parts) != 2 or not all(parts) or any(p in ('.','..') for p in parts):
+                sys.exit('Unexpected source ZIP path: '+name)
+            folders.setdefault(parts[0],set()).add(parts[1])
+        if len(folders) != 50:
+            sys.exit('Expected exactly 50 product folders')
+        for folder, files in folders.items():
+            if files != expected:
+                sys.exit('Incomplete image kit: '+folder)
+            code = folder.removeprefix('FENEK-')
+            if folder != 'FENEK-'+code or code not in by_code:
+                sys.exit('Unknown product: '+folder)
+            entry = by_code[code]
+            slug = entry['slug']
+            instructions = json.loads(z.read(folder+'/instructions.json'))
+            if instructions.get('product_code',code)!=code or instructions.get('code',folder)!=folder:
+                sys.exit('Product code mismatch: '+folder)
+            if instructions.get('slug',slug)!=slug:
+                sys.exit('Slug mismatch: '+folder)
+            langs = instructions.get('language_order') or instructions.get('langue_ordre') or instructions.get('languages')
+            if langs != ['ar','en','fr']:
+                sys.exit('AR/EN/FR order mismatch: '+folder)
+            steps = instructions.get('instructions') or instructions.get('steps')
+            if not isinstance(steps,list) or len(steps)!=6:
+                sys.exit('Expected six steps: '+folder)
+            for i,step in enumerate(steps,1):
+                if step.get('number',step.get('step',step.get('numero',i)))!=i or step.get('image',f'{i:02}.webp')!=f'{i:02}.webp':
+                    sys.exit('Step order mismatch: '+folder)
+            with Image.open(BytesIO(z.read(folder+'/planche-complete.webp'))) as board:
+                board.verify()
+            sheet = Image.new('RGB',(1620,720),'white')
+            for i in range(6):
+                payload = z.read(f'{folder}/{i+1:02}.webp')
+                with Image.open(BytesIO(payload)) as image:
+                    image.verify()
+                with Image.open(BytesIO(payload)) as image:
+                    if image.width*2 != image.height*3:
+                        sys.exit('Invalid source aspect ratio: '+folder+f' step {i+1}')
+                    frame = image.convert('RGB').resize((540,360),Image.Resampling.LANCZOS)
+                sheet.paste(frame,((i%3)*540,(i//3)*360))
+            data = None
+            for quality in (82,78,74,70,66):
+                stream = BytesIO()
+                sheet.save(stream,format='WEBP',quality=quality,method=3)
+                if len(stream.getvalue()) < 250000:
+                    data = stream.getvalue()
+                    break
+            if data is None:
+                sys.exit('WebP exceeds the 250-KB CI budget: '+folder)
+            link = f'/images/application-upgraded/{slug}-steps.webp'
+            path = root/'public'/link.lstrip('/')
+            if entry['sprite'] != link or entry.get('layout') != '3x2' or entry.get('artworkDimensions') != [540,360]:
+                sys.exit('Current official manifest mismatch: '+folder)
+            if not path.is_file():
+                sys.exit('Existing official image missing (no new files allowed): '+str(path))
+            old = path.read_bytes()
+            if sha256(old) != entry['sha256']:
+                sys.exit('Original asset checksum mismatch: '+folder)
+            output[path] = data
+            original[path] = old
+            entry['sha256'] = sha256(data)
+            if code == 'BOND-R4':
+                entry.pop('sharedArtworkFrom',None) # R4 now has its own source image.
+        if set(folders) != {'FENEK-'+code for code in by_code}:
+            sys.exit('Archive / official 50 products differ')
+    replacement = (json.dumps(rows,ensure_ascii=False,indent=2)+'\n').encode('utf-8')
+    print(json.dumps({'branch':'main','existing_directory':'public/images/application-upgraded',
+                      'images':len(output),'changed':sum(output[p]!=original[p] for p in output),
+                      'new_directories':0,'new_image_paths':0,'dry_run':args.dry_run},ensure_ascii=False))
+    if args.dry_run:
+        return
+    original_manifest = manifest_path.read_bytes()
+    written = []
+    try:
+        for path,data in output.items():
+            tmp = path.with_name(path.name+'.nextgen-temp')
+            tmp.write_bytes(data)
+            tmp.replace(path)
+            written.append(path)
+        tmp = manifest_path.with_name(manifest_path.name+'.nextgen-temp')
+        tmp.write_bytes(replacement)
+        tmp.replace(manifest_path)
+    except Exception:
+        for path in written:
+            path.write_bytes(original[path])
+        manifest_path.write_bytes(original_manifest)
+        raise
+    print('IN-PLACE SUCCESS: 50 sprites overwritten in working tree; run CI, then push main.')
 
 if __name__ == '__main__':
     main()
