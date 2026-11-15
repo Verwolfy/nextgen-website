@@ -10,7 +10,10 @@ class TestAstroScaffold(unittest.TestCase):
     def test_astro_pinned(self):
         p=json.loads((BASE/'package.json').read_text())
         self.assertEqual(p['dependencies']['astro'],'6.4.6')
-        self.assertTrue(p['scripts']['build'].startswith('node scripts/copy_public_assets.mjs'))
+        build = p['scripts']['build']
+        self.assertTrue(build.startswith('npm run test:artwork-cleanup && npm run check:illustrations &&'))
+        self.assertIn('node scripts/copy_public_assets.mjs', build)
+        self.assertLess(build.index('npm run check:illustrations'), build.index('node scripts/copy_public_assets.mjs'))
     def test_i18n_paths_exist(self):
         for item in ['src/pages/[lang]/index.astro','src/pages/[lang]/[section].astro', 'src/pages/[lang]/gammes/[slug].astro','src/pages/[lang]/produits/[slug].astro']:
             self.assertTrue((BASE/item).is_file(),item)
