@@ -16,7 +16,7 @@ ARCHIVE = {"BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1",
 
 class AllFenekArtwork(unittest.TestCase):
     def test_each_product_has_six_real_remastered_drawings(self):
-        self.assertEqual(len(CAT),len(GUIDES),len(RENDERED),50)
+        self.assertEqual((len(CAT),len(GUIDES),len(RENDERED)),(50,50,50))
         cat={x["code"]:x for x in CAT}
         guides={x["code"]:x for x in GUIDES}
         rendered={x["code"]:x for x in RENDERED}

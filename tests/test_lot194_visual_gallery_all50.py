@@ -24,7 +24,7 @@ class GalleryHTML(HTMLParser):
             self.entries.append(attrs)
         if tag=="li" and "step" in (attrs.get("class") or "").split():
             self.scene_count+=1
-        if tag=="section" and "premium" in (attrs.get("class") or "").split():
+        if tag in ("section","aside") and "premium" in (attrs.get("class") or "").split():
             self.premium_count+=1
         if tag=="a":
             self.link_targets.append(attrs.get("href"))
