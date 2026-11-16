@@ -113,8 +113,11 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
             if doc.v3!=[str(i) for i in range(1,7)]:
                 raise AssertionError('Incorrect V3 stage numbering')
             attrs=doc.guides[0]
-            if attrs.get('data-v3-reviewed')!='BROUILLON':
-                raise AssertionError('Provisional V3 status missing')
+            if code=='BOND-C1T':
+                if attrs.get('data-v3-reviewed') is not None:
+                    raise AssertionError('Internal pilot status leaked to public HTML')
+            elif attrs.get('data-v3-reviewed')!='BROUILLON':
+                raise AssertionError('Unapproved non-pilot guide status missing')
             if attrs.get('data-v3-sprite')!=expected_sprite or attrs.get('data-v3-hash')!=expected_hash:
                 raise AssertionError('Product linked to wrong illustration')
             upgraded=upgraded_index[code]

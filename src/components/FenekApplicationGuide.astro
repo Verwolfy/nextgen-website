@@ -47,10 +47,15 @@ const copy={
       </div>
     </li>)}
   </ol>
-  {!concise && <div class="fenek-application-visual-attention" role="note">
-    <strong>{copy.check} — <bdi dir="ltr">{product.nom}</bdi></strong>
-    <p>{applicationContextFor(product.code,lang)}</p>
-  </div>}
+  <div class="fenek-application-visual-attention" role="note">
+    {concise ? <>
+      <strong>{lang==='ar'?'نصيحة للتركيب':lang==='en'?'Installation tip':'Conseil de pose'}</strong>
+      <p>{lang==='ar'?'افحص تغطية ظهر البلاط واضغط القطعة جيدًا قبل تصلب اللاصق.':lang==='en'?'Check adhesive transfer to the back of each tile and press it firmly into the fresh bed.':'Vérifier le transfert de colle au dos du carreau et presser chaque pièce dans le lit frais.'}</p>
+    </> : <>
+      <strong>{copy.check} — <bdi dir="ltr">{product.nom}</bdi></strong>
+      <p>{applicationContextFor(product.code,lang)}</p>
+    </>}
+  </div>
   {!concise && <p class="fenek-application-visual-warning"><strong>{copy.alert}.</strong> {copy.warning}</p>}
 </section>
 <style>

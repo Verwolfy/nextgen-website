@@ -36,8 +36,9 @@ def check_lot127_v3_c1t(browser, base: str) -> None:
             page = browser.new_page(viewport={"width": width, "height": 850})
             try:
                 page.goto(f"{base}/{lang}/documentation/fenek-bond-c1t/", wait_until="domcontentloaded")
-                guide = page.locator('section[data-reference="BOND-C1T"][data-v3-reviewed="BROUILLON"]')
-                assert guide.count() == 1, (lang, width, "V3 reference/status missing")
+                guide = page.locator('section[data-reference="BOND-C1T"][data-application-visual]')
+                assert guide.count() == 1, (lang, width, "V3 reference missing")
+                assert guide.get_attribute("data-v3-reviewed") is None, (lang,width,"internal status leaked")
                 items = guide.locator("[data-v3-step]")
                 assert items.count() == 6, (lang, width, "not six V3 images")
                 assert [item.get_attribute("data-v3-step") for item in items.all()] == [
@@ -984,9 +985,11 @@ def check() -> None:
                     assert page.locator(".fenek-product-image img").evaluate(
                         "img => img.complete && img.naturalWidth > 0"), lang
                     assert page.locator(".fenek-section-nav a").count() == 4, lang
-                    assert page.locator(".fenek-doc-accordion").count() == 8, lang
-                    assert page.locator('.fenek-qualification-panel').count() == 2, lang
-                    assert page.locator(".fenek-doc-accordion[open]").count() == 4, lang
+                    assert page.locator("[data-c1t-pilot]").count() == 1, lang
+                    assert page.locator(".fenek-doc-accordion").count() == 0, lang
+                    assert page.locator(".c1t-table").count() == 3, lang
+                    assert page.locator('[data-c1t-source-type="norme"]').count() == 6, lang
+                    assert page.locator('[data-c1t-source-type="famille"]').count() == 3, lang
                     guide = page.locator("[data-application-visual]")
                     assert guide.count() == 1, lang
                     assert guide.get_attribute("data-application-count") == "6", lang
@@ -998,7 +1001,7 @@ def check() -> None:
                                    "fenek-application", "fenek-documents"):
                         assert page.locator("#" + marker).count() == 1, (lang, marker)
                     assert page.locator("meta[name='robots']").get_attribute("content") == "noindex,nofollow", lang
-                    assert page.locator(".fenek-document-row button[data-print-market-sheet]").count() == 1, lang
+                    assert page.locator("button[data-print-market-sheet]").count() == 1, lang
                     # Lot 49: browser PDF prints a dedicated branded A4 document.
                     assert page.locator(".fenek-print-document").count() == 1, lang
                     assert page.locator(".fenek-print-logo").get_attribute("src") == "/images/Logo1.jpg", lang

@@ -24,7 +24,10 @@ class TestLot20CatalogueProjects(unittest.TestCase):
             self.assertIs(p['certifie'],False,p['code'])
             self.assertIs(p['commercialise'],False,p['code'])
             self.assertTrue(p['mode_fr_preparatoire'],p['code'])
-            self.assertIn('[valeur à confirmer]',p['mode_fr_preparatoire'],p['code'])
+            if p['code']=='BOND-C1T':
+                self.assertNotIn('[valeur à confirmer]',p['mode_fr_preparatoire'],p['code'])
+            else:
+                self.assertIn('[valeur à confirmer]',p['mode_fr_preparatoire'],p['code'])
             self.assertNotIn('[LABO]',p['mode_fr_preparatoire'],p['code'])
             for lang in ('fr','ar','en'):
                 self.assertTrue(p['contenu'][lang]['description'],p['code'])
