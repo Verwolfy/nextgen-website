@@ -64,7 +64,11 @@ def main():
             guide=parser.guides[0]
             assert guide.get('data-reference')==code,(lang,code,'reference')
             assert guide.get('data-application-count')=='6',(lang,code,'six steps')
-            assert guide.get('data-v3-reviewed')=='BROUILLON',(lang,code,'approval status')
+            if code == 'BOND-C1T':
+                # Pilot HTML avoids internal editorial status; source gate stays closed.
+                assert 'data-v3-reviewed' not in guide,(lang,code,'pilot status leakage')
+            else:
+                assert guide.get('data-v3-reviewed')=='BROUILLON',(lang,code,'approval status')
             assert guide.get('data-v3-sprite')==sprite,(lang,code,'wrong asset source')
             assert guide.get('data-v3-hash')==actual_sha,(lang,code,'wrong media SHA')
             # Lot 203: drafts have been removed from all official guides.

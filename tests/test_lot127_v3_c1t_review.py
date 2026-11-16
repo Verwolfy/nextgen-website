@@ -59,11 +59,12 @@ class V3_C1T_Quality(unittest.TestCase):
         ):
             self.assertIn(fr,src)
         self.assertIn("only when required by the approved product method",src)
+        self.assertNotIn("Le dosage eau/poudre et la masse de référence restent à confirmer",src)
         self.assertNotIn("25 kg",src)
         self.assertNotIn("minutes",src)
         comp=COMPONENT.read_text(encoding="utf-8")
         self.assertIn("reviewedV3GuideFor(product.code,product.slug)",comp)
-        self.assertIn("data-v3-reviewed={reviewedV3.status}",comp)
+        self.assertIn("data-v3-reviewed={concise?undefined:reviewedV3.status}",comp)
         self.assertIn("data-v3-step={i+1}",comp)
         self.assertIn("role=\"img\" aria-label={product.nom",comp)
         self.assertIn("fenek-v3-reviewed-photo",comp)

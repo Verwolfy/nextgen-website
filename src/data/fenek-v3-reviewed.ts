@@ -33,7 +33,7 @@ const c1t:ReviewedV3Guide={
       description:l('Utiliser les EPI adaptés au produit et à sa FDS avant toute manipulation.','استعمال وسائل الوقاية المناسبة طبقًا لنشرة السلامة قبل الاستخدام.','Use suitable PPE in accordance with the approved safety sheet.')},
     {image:3,icon:'water',
       title:l('Ajouter l’eau selon la fiche technique','أضف الماء حسب النشرة الفنية','Measure water as specified'),
-      description:l('Le dosage eau/poudre et la masse de référence restent à confirmer par la FT FENEK approuvée.','تحديد كمية الماء وكتلة المسحوق من النشرة الفنية المعتمدة فقط.','Use only water and powder quantities from an approved FENEK sheet.')},
+      description:l('Ajouter la poudre dans la quantité d’eau indiquée dans la fiche technique, puis malaxer jusqu’à obtention d’une pâte homogène.','أضف المسحوق إلى كمية الماء المحددة في النشرة الفنية ثم اخلط حتى تتجانس العجينة.','Add powder to the mixing water specified in the product technical sheet and blend to a uniform paste.')},
     {image:4,icon:'clock',
       title:l('Laisser reposer puis remalaxer','اترك الخليط يرتاح ثم أعد الخلط','Rest and remix as specified'),
       description:l('Respecter un repos puis un nouveau malaxage uniquement si la procédure validée le prévoit.','اتباع مدة الاستراحة وإعادة الخلط إذا نصت النشرة المعتمدة على ذلك.','Allow a rest and remix only when required by the approved product method.')},
