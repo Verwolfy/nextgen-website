@@ -7,24 +7,30 @@
     "ordre": 1,
     "contenu": {
       "fr": {
-        "accroche": "Colle carrelage standard",
-        "description": "FENEK-BOND C1T — Colle carrelage standard. Gamme : Mortiers, colles et réparation. Domaine : Colles carrelage.",
+        "accroche": "Mortier-colle cimentaire C1T pour carrelage intérieur",
+        "description": "FENEK-BOND C1T : référence de mortier-colle cimentaire pour la pose de carreaux céramiques à l'intérieur sur supports minéraux préparés. La désignation C1T renvoie à l'adhérence de classe normale et au glissement vertical réduit selon EN 12004 ; les seuils de classe ne sont pas des résultats d'essais FENEK.",
         "usages": [
-          "Colles carrelage"
+          "Pose courante de carreaux céramiques sur murs et sols intérieurs",
+          "Supports en béton durci, chapes et enduits à base de ciment cohésifs",
+          "Préparation du support et contrôle du transfert de colle"
         ]
       },
       "ar": {
-        "accroche": "لاصق بلاط قياسي",
-        "description": "FENEK-BOND C1T — لاصق بلاط قياسي. الفئة: الملاط والمواد اللاصقة والإصلاح. المجال: لواصق البلاط.",
+        "accroche": "ملاط لاصق إسمنتي للبلاط الداخلي من فئة C1T",
+        "description": "FENEK-BOND C1T مرجع لملاط لاصق إسمنتي لتركيب البلاط الخزفي داخل المباني على أسطح إسمنتية مهيأة. يشير الرمز C1T إلى الالتصاق من الفئة العادية وانخفاض الانزلاق الرأسي وفق EN 12004؛ ولا تمثل الحدود المعيارية نتائج اختبارات خاصة بمنتج FENEK.",
         "usages": [
-          "لواصق البلاط"
+          "تركيب البلاط الخزفي على الجدران والأرضيات الداخلية",
+          "الخرسانة المتصلبة وطبقات التسوية والمحارة الإسمنتية المتماسكة",
+          "تحضير السطح والتحقق من توزيع اللاصق خلف البلاط"
         ]
       },
       "en": {
-        "accroche": "Standard tile adhesive",
-        "description": "FENEK-BOND C1T — Standard tile adhesive. Range: Mortars, adhesives and repair. Category: Tile adhesives.",
+        "accroche": "C1T cementitious tile adhesive for interior tiling",
+        "description": "FENEK-BOND C1T is a cementitious tile-adhesive reference for conventional interior ceramic tiling over properly prepared mineral substrates. The C1T designation refers to normal-class adhesion and reduced vertical slip under EN 12004; class thresholds are not measured FENEK performance.",
         "usages": [
-          "Tile adhesives"
+          "Conventional interior ceramic wall and floor tiling",
+          "Sound cured concrete, cement screeds and cement renders",
+          "Substrate preparation and checking adhesive transfer"
         ]
       }
     },
