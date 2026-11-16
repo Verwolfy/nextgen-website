@@ -10,6 +10,8 @@ test('C1T pilot is isolated from all other FENEK products',()=>{
   assert.match(pilot,/data-c1t-pilot/);
   assert.match(pilot,/FenekApplicationGuide/);
   assert.match(pilot,/data-print-market-sheet/);
+  assert.match(pilot,/hasPublishedPdf/);
+  assert.match(pilot,/download/);
   assert.match(pilot,/c1tFamilyReferences\.filter/);
   assert.match(pilot,/fenek-application/);
   assert.doesNotMatch(pilot,/Sika|Mapei|Bostik|BROUILLON|présentation provisoire/);
@@ -23,6 +25,9 @@ test('pilot requirements and family benchmarks remain distinct',()=>{
   assert.match(src,/c1tContent: Record<Lang/);
   assert.match(src,/temps-ouvert-comparatif/);
   assert.match(src,/ajustabilite-comparative/);
+  assert.match(src,/consommation-simple/);
+  assert.match(src,/consommation-double/);
+  assert.match(src,/downloadLabel/);
   assert.match(src,/fr:/);
   assert.match(src,/ar:/);
   assert.match(src,/en:/);
