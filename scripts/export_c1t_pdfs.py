@@ -41,15 +41,14 @@ def local_fetcher(dist: Path):
 
 
 def export_pdfs(dist: Path, output: Path) -> list[Path]:
-    try:
-        from weasyprint import HTML
-    except ImportError as exc:
-        raise RuntimeError("Install requirements-supports.txt before exporting PDFs") from exc
-
     dist = dist.resolve()
     output = output.resolve()
     if not dist.is_dir():
         raise RuntimeError("Missing dist/: run npm run build first")
+    try:
+        from weasyprint import HTML
+    except ImportError as exc:
+        raise RuntimeError("Install requirements-supports.txt before exporting PDFs") from exc
     output.mkdir(parents=True, exist_ok=True)
     generated: list[Path] = []
     for lang in LANGUAGES:
