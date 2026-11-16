@@ -66,5 +66,23 @@ class IllustrationLayoutTests(unittest.TestCase):
                      "/images/illustrations/application-premium/:splat"):
             self.assertNotIn(dest,redirects)
 
+
+    def test_retired_v3_redirects_and_site_wide_zoom_are_absent(self):
+        redirects=(ROOT/"public/_redirects").read_text(encoding="utf-8")
+        # A generic V3 redirect pointed removed PNGs at nonexistent PNGs.
+        # Old per-scene zoom files must stay retired rather than return a dead 301.
+        for wildcard in ("/images/application-v3/*",
+                         "/images/illustrations/application-v3/*"):
+            self.assertNotIn(wildcard,redirects)
+        forbidden=("Ouvrir en haute résolution","Open in high resolution",
+                   "fenek-v3-detail-link","fullSizeC1T","fullResolution",
+                   "application-premium/")
+        # The request applies to every page, not only the application guide.
+        for extension in ("*.astro","*.ts","*.css"):
+            for path in (ROOT/"src").rglob(extension):
+                source=path.read_text(encoding="utf-8")
+                for token in forbidden:
+                    self.assertNotIn(token,source,str(path))
+
 if __name__=="__main__":
     unittest.main()

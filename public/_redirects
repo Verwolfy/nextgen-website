@@ -80,8 +80,6 @@
 /images/illustrations/catalogue-projects/* /images/illustrations/produits/:splat 301
 /images/application-upgraded/* /images/illustrations/application-upgraded/:splat 301
 /images/approche/* /images/illustrations/approche/:splat 301
-/images/application-v3/* /images/illustrations/application-upgraded/:splat 301
-/images/illustrations/application-v3/* /images/illustrations/application-upgraded/:splat 301
 /fr/avant-premiere/fenek-proof-acr-rf/ /fr/catalogue/ 301
 /fr/avant-premiere/lot187-proof/ /fr/catalogue/ 301
 /fr/avant-premiere/audit-50-illustrations/ /fr/catalogue/ 301
