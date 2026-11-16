@@ -1020,30 +1020,23 @@ def check() -> None:
                         pdf_bytes = page.pdf(path=str(pdf_path), print_background=True,
                                              prefer_css_page_size=True)
                         assert pdf_bytes.startswith(b"%PDF") and len(pdf_bytes) > 10000, lang
-                        # Chromium PDFs keep uncompressed page dictionaries:
-                        # prohibit a nearly blank orphan page on the C1T reference.
+                        # The technical pilot intentionally has more material than
+                        # the former one-page catalogue summary; keep A4 readable.
                         pdf_page_count = len(re.findall(rb"/Type\s*/Page\b", pdf_bytes))
-                        assert pdf_page_count == 1, (lang, pdf_page_count)
+                        assert 1 <= pdf_page_count <= 3, (lang, pdf_page_count)
                     page.emulate_media(media="screen")
                     assert page.locator(".fenek-product-page").is_visible(), lang
                     assert not page.locator(".fenek-print-document").is_visible(), lang
                     assert page.locator("form").count() == 0, lang
-                    accordion = page.locator("#fenek-details .fenek-doc-accordion").nth(1)
-                    assert accordion.get_attribute("open") is None, lang
-                    accordion.locator("summary").click()
-                    assert accordion.get_attribute("open") is not None, lang
-                    accordion.locator("summary").focus()
-                    page.keyboard.press("Enter")
-                    assert accordion.get_attribute("open") is None, lang
-                    open_states = page.evaluate("""() => {
-                        const list = Array.from(document.querySelectorAll('.fenek-doc-accordion'));
-                        const before = list.map(d => d.open);
-                        window.dispatchEvent(new Event('beforeprint'));
-                        const expanded = list.every(d => d.open);
-                        window.dispatchEvent(new Event('afterprint'));
-                        return {expanded, restored: list.every((d,i) => d.open === before[i])};
-                    }""")
-                    assert open_states["expanded"] and open_states["restored"], (lang, open_states)
+                    # The C1T pilot replaces empty accordions with structured
+                    # requirements and family-reference tables.
+                    assert page.locator("#fenek-details .fenek-doc-accordion").count() == 0, lang
+                    assert page.locator("#fenek-details table").count() == 2, lang
+                    comparison = page.locator(f'a[href="/{lang}/documentation/fenek-bond-c1te/"]')
+                    assert comparison.count() == 1, lang
+                    comparison.focus()
+                    assert comparison.evaluate("el => el === document.activeElement"), lang
+                    assert page.locator("button[data-print-market-sheet]").is_visible(), lang
                     assert page.locator(".market-reference,.market-sheet-warning").count() == 0, lang
                     for other_brand in ("Sika", "Mapei", "Fosroc", "Jotun", "Granitex", "Weber"):
                         assert other_brand.lower() not in page.locator("main").inner_text().lower(), (
