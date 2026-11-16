@@ -1,4 +1,4 @@
-"""Lot 40 — B2B home mockup slider and documentation-focused resources."""
+"""B2B home video and product-only mockup resources."""
 import unittest
 from pathlib import Path
 
@@ -10,7 +10,7 @@ class Lot40HomepageTests(unittest.TestCase):
         self.assertFalse((ROOT / "src/components/HeroSlider.astro").exists())
         catalogue = (ROOT / "src/lib/catalogue-projets.ts").read_text(encoding="utf-8")
         self.assertIn("reviewedGalleryForReference", catalogue)
-        for n in ("01", "02", "15", "16"):
+        for n in ("04", "20", "30", "45"):
             image = ROOT / f"public/images/maquettes/maquette-{n}.webp"
             self.assertTrue(image.is_file(), str(image))
             self.assertEqual(image.read_bytes()[:4], b"RIFF", str(image))

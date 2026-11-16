@@ -1,4 +1,4 @@
-"""Lot 27: only the 46 unique user-provided PNG concepts appear as optimized previews."""
+"""Verify that only the product-linked mockups remain in deployable public assets."""
 import hashlib
 import unittest
 from pathlib import Path
@@ -10,10 +10,10 @@ ASSETS = ROOT / "public/images/maquettes"
 class TestLot27VisualConcepts(unittest.TestCase):
     def test_exact_count_and_unique_webp_assets(self):
         files = sorted(ASSETS.glob("*.webp"))
-        # Preserve exactly the original 46 numbered user mockups; allow only
-        # one separately validated, customer-corrected CM-O2P product visual.
+        # The removed home carousel and early concept boards are not shipped.
+        # Keep 27 label-matched BOND/PROOF sources and the corrected CM-O2P.
         originals = sorted(p for p in files if p.name.startswith("maquette-"))
-        expected = [f"maquette-{i:02d}.webp" for i in range(1, 47)]
+        expected = [f"maquette-{i:02d}.webp" for i in (4, *range(20, 46))]
         self.assertEqual([p.name for p in originals], expected)
         self.assertEqual([p.name for p in files if p not in originals],
                          ["fenek-proof-cm-o2p-sac-20kg-v2.webp"])

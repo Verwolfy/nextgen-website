@@ -131,14 +131,14 @@ def main() -> None:
             assert 'class="contact-direct"' in html and html.count('class="contact-channel"') == 3, fn
             assert "lead-preview" not in html and "lead-panel" not in html, fn
             assert not parsed.lead_controls, "Unexpected lead input: " + str(fn)
-        # Gallery pages are retired; keep their WebP files as catalogue/hero assets.
+        # The obsolete homepage gallery is retired; only product-linked WebPs remain.
         # Source-labelled documentation: every reference is viewable in three languages.
         info_index = ROOT / lang / "documentation" / "index.html"
         assert info_index.is_file(), str(info_index)
         refs += check_page(info_index, lang)
         checked += 1
         assert not (ROOT / lang / "maquettes").exists(), lang
-        for i in range(1, 47):
+        for i in (4, *range(20, 46)):
             image = ROOT / "images" / "maquettes" / f"maquette-{i:02d}.webp"
             assert image.is_file() and image.read_bytes()[:4] == b"RIFF", str(image)
         catalog = (ROOT / lang / "catalogue" / "index.html").read_text(encoding="utf-8")

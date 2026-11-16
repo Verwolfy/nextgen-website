@@ -37,12 +37,14 @@ class RetiredVisualizationGuards(unittest.TestCase):
             for token in patterns:
                 self.assertNotIn(token, content, str(path))
 
-    def test_retired_2d_gallery_route_and_preserved_images(self):
+    def test_retired_2d_gallery_route_and_product_only_images(self):
         self.assertFalse((ROOT / "src/components/HeroSlider.astro").exists())
         self.assertFalse((ROOT / "src/pages/[lang]/maquettes.astro").exists())
         source = (ROOT / "src/lib/catalogue-projets.ts").read_text(encoding="utf-8")
         self.assertIn("reviewedGalleryForReference", source)
-        for n in ("01", "02", "15", "16"):
+        for n in ("01", "02", "15", "16", "46"):
+            self.assertFalse((ROOT / f"public/images/maquettes/maquette-{n}.webp").exists())
+        for n in ("04", "20", "30", "45"):
             self.assertTrue((ROOT / f"public/images/maquettes/maquette-{n}.webp").is_file())
         self.assertEqual((ROOT / "public/data/products.json").read_text().strip(), "[]")
         self.assertIn("noindex,nofollow", (ROOT / "src/layouts/Layout.astro").read_text())

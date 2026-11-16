@@ -30,6 +30,7 @@ Les workflows maintenus dans `.github/workflows/` couvrent le build/sécurité, 
 - `src/` : composants, routes, styles et données éditoriales.
 - `public/` : ressources et pages statiques ; `public/images/application-upgraded/` est l'unique répertoire **officiel** des 50 sprites d'illustrations.
 - `public/images/application-v3/` : médias de repli encore référencés par les guides V3 ; ne pas supprimer sans adapter le code et les contrôles.
+- `public/images/maquettes/` : uniquement les 27 images numérotées liées aux produits BOND/PROOF, la correction CM-O2P et son SVG de traçabilité ; les 19 anciennes maquettes sans usage ont été retirées du déploiement.
 - `public/images/application-premium/` : candidatures de revue graphique séparées des notices officielles, non approuvées.
 - `functions/api/lead.js` : point de contact désactivé par défaut ; ne pas activer sans autorisations et configuration sécurisée.
 - `supports/assets/` : logos d'origine copiés dans le build par `scripts/copy_public_assets.mjs`.
