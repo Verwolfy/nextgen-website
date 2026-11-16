@@ -25,6 +25,8 @@ export const c1tFamilyReferences: ReferenceMetric[] = [
   {key:'consommation',kind:'famille',label:{fr:'Consommation selon peigne et encollage',ar:'الاستهلاك بحسب المشط وطريقة اللصق',en:'Coverage by trowel and bedding method'},value:'2–7 kg/m²'},
   {key:'eau',kind:'famille',label:{fr:'Eau observée sur produits comparables (sac de 25 kg)',ar:'الماء في منتجات مقارنة (كيس 25 كغ)',en:'Water used by comparable products (25 kg bag)'},value:'5–6,5 L / 25 kg'},
   {key:'temperature',kind:'famille',label:{fr:'Température de chantier couramment recommandée',ar:'درجة حرارة التطبيق الشائعة لدى منتجات مماثلة',en:'Common recommended application temperature'},value:'+5 à +30 °C'},
+  {key:'temps-ouvert-comparatif',kind:'famille',label:{fr:'Temps ouvert observé sur les produits comparables',ar:'الزمن المفتوح في المنتجات المقارنة',en:'Open time observed on comparable products'},value:'≈ 20 min'},
+  {key:'ajustabilite-comparative',kind:'famille',label:{fr:'Délai d’ajustement observé (variable selon la formulation)',ar:'مدة تعديل موضع البلاط في المنتجات المقارنة',en:'Observed adjustment time (formulation-dependent)'},value:'≈ 20–45 min'},
 ];
 
 export const c1tContent: Record<Lang, {
@@ -64,7 +66,7 @@ export const c1tContent: Record<Lang, {
     pageTitle:'FENEK-BOND C1T | ملاط لاصق للبلاط من فئة C1T',
     metaDescription:'FENEK-BOND C1T: ملاط لاصق إسمنتي للبلاط، مع شرح فئة C1T ومتطلبات EN 12004-1 وإرشادات تحضير السطح وطلب المستندات الفنية.',
     sheetTitle:'بطاقة المنتج – FENEK-BOND C1T',
-    lead:'ملاط لاصق إسمنتي يحمل الرمز C1T في تسميته. معلومات مرجعية عن تركيب البلاط على الأسطح المعدنية الإسمنتية المهيأة.',
+    lead:'ملاط لاصق إسمنتي يحمل الرمز C1T في تسميته. معلومات مرجعية عن تركيب البلاط على الأسطح الإسمنتية المهيأة.',
     nav:['نظرة عامة','تفاصيل المنتج','التطبيق','الوثائق'],
     uses:['تركيب البلاط والسيراميك على الجدران والأرضيات الداخلية وفق ملاءمة السطح.','تركيب البلاط الخزفي الممتص للماء على الأسطح الإسمنتية التقليدية.','أعمال البناء الجديدة على الخرسانة والمونة الإسمنتية المتماسكة والجافة بالقدر الملائم.'],
     benefits:['C: لاصق يعتمد على الإسمنت.','1: مستوى الالتصاق العادي كما تحدده المواصفة.','T: انخفاض الانزلاق الرأسي وفق الاختبار المعياري.'],

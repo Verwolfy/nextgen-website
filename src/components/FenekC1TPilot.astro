@@ -90,6 +90,11 @@ const schema={
         <div><h3>{t.preparationTitle}</h3><ul>{t.preparation.map(x=><li>{x}</li>)}</ul></div>
         <div><h3>{t.conditionsTitle}</h3><ul>{t.conditions.map(x=><li>{x}</li>)}</ul></div>
       </div>
+      <h3>{t.consumptionTitle}</h3>
+      <div class="c1t-table-wrap"><table class="c1t-table"><tbody>
+        {c1tFamilyReferences.filter(x=>x.key==='consommation'||x.key==='eau').map(x=><tr><th scope="row">{x.label[lang]}</th><td dir="ltr">{x.value}</td></tr>)}
+      </tbody></table></div>
+      <p class="c1t-table-note">{t.figuresNote}</p>
       <h3>{t.stepsTitle}</h3>
       <FenekApplicationGuide lang={lang} product={product} concise />
       <h3>{t.safetyTitle}</h3>
