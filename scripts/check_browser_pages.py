@@ -805,7 +805,7 @@ def check() -> None:
                                         f"{lang}: distorted, missing or broken FLOW card {k}"
                                     )
                             page.evaluate("window.scrollTo(0,0)")
-                        if section == "catalogue" and bond_images_present:
+                        if section == "catalogue":
                             # Lot 29: exact labels on the newly supplied studio mockups,
                             # rather than the first-generation flat-label WebP cards.
                             bags=page.locator("#catalogue-bond .concept-product-card img[src*='/images/illustrations/maquettes/']")
