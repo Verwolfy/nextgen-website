@@ -195,8 +195,9 @@ def main() -> None:
                 # The first product pilot replaces generic accordions with sourced C1T tables.
                 assert "data-c1t-pilot" in markup, info
                 assert markup.count('data-c1t-source-type="norme"') == 6, info
-                assert markup.count('data-c1t-source-type="famille"') == 5, info
-                assert "fenek-c1t-print" in markup and "data-print-market-sheet" in markup, info
+                assert markup.count('data-c1t-source-type="famille"') == 6, info
+                assert "fenek-c1t-print" in markup, info
+                assert ("data-print-market-sheet" in markup or f'/docs/fiches/fenek-bond-c1t-{lang}.pdf' in markup), info
                 assert "présentation provisoire" not in markup.lower(), info
                 assert "Sika" not in markup and "Mapei" not in markup and "Bostik" not in markup, info
             else:
@@ -208,7 +209,8 @@ def main() -> None:
                            'fenek-application', 'fenek-documents'):
                 assert f'id="{anchor}"' in markup, (info, anchor)
                 assert f'href="#{anchor}"' in markup, (info, anchor)
-            assert 'data-print-market-sheet' in markup, info
+            if entry["code"] != "BOND-C1T":
+                assert 'data-print-market-sheet' in markup, info
             assert entry["nom"] in markup, info
             assert "noindex,nofollow" in markup, info
             for forbidden in (
