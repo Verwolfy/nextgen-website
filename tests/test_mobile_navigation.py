@@ -26,9 +26,11 @@ class TestMobileNavigation(unittest.TestCase):
             self.assertIn(label, data)
         about = (ROOT / "src/pages/[lang]/[section].astro").read_text(encoding="utf-8")
         self.assertIn("alt={t.mascotsAlt}", about)
-        hero = (ROOT / "src/components/HeroSlider.astro").read_text(encoding="utf-8")
-        self.assertIn("alt={`${copy.visual} ${number} — ${copy.gallery}`}", hero)
-        for localized in ("Maquette précédente", "النموذج السابق", "Previous concept"):
+        self.assertFalse((ROOT / "src/components/HeroSlider.astro").exists())
+        hero = (ROOT / "src/components/HeroWelcomeVideo.astro").read_text(encoding="utf-8")
+        self.assertIn("data-welcome-video", hero)
+        for localized in ("Découvrir les produits NextGen", "اكتشفوا منتجات NextGen",
+                          "Discover NextGen products"):
             self.assertIn(localized, hero)
 
     def test_responsive_styles_and_focus_visible(self):

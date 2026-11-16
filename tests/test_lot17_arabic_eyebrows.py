@@ -13,9 +13,11 @@ class LocalizedSectionLabels(unittest.TestCase):
             self.assertIn(txt,s)
         self.assertNotIn('<span class="eyebrow">FENEK COLLECTION</span>',s)
 
-    def test_hero_keeps_localized_slide_copy(self):
-        s = (ROOT/'src/components/HeroSlider.astro').read_text(encoding='utf-8')
-        for txt in ('Maquette précédente', 'النموذج السابق', 'Previous concept'):
+    def test_current_hero_keeps_localized_product_links(self):
+        self.assertFalse((ROOT/'src/components/HeroSlider.astro').exists())
+        s = (ROOT/'src/components/HeroWelcomeVideo.astro').read_text(encoding='utf-8')
+        for txt in ('Découvrir les produits NextGen', 'اكتشفوا منتجات NextGen',
+                    'Discover NextGen products'):
             self.assertIn(txt, s)
 
     def test_catalogue_stays_unpublished(self):

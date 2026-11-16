@@ -15,10 +15,11 @@ class PrivacyGovernanceTests(unittest.TestCase):
             if path.is_file() and path.suffix in ('.astro', '.ts', '.js'):
                 self.assertNotIn('SUPABASE_SERVICE_ROLE_KEY', path.read_text(), str(path))
 
-    def test_frontend_forms_remain_disabled(self):
-        content = (ROOT / 'src/components/LeadForm.astro').read_text()
-        self.assertIn('disabled', content)
-        self.assertNotIn('<form', content)
+    def test_frontend_forms_are_absent(self):
+        self.assertFalse((ROOT / 'src/components/LeadForm.astro').exists())
+        self.assertFalse((ROOT / 'src/data/lead-forms.ts').exists())
+        for path in (ROOT / 'src/pages').rglob('*.astro'):
+            self.assertNotIn('<form', path.read_text(encoding='utf-8'), str(path))
 
     def test_backend_requires_explicit_activation(self):
         backend = (ROOT / 'functions/api/lead.js').read_text()
