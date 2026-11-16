@@ -36,7 +36,7 @@ export const c1tContent: Record<Lang, {
   identityTitle:string; codeLabel:string; rangeLabel:string; designationLabel:string; packLabel:string; classLabel:string;
   applicationTitle:string; preparationTitle:string; preparation:string[]; conditionsTitle:string; conditions:string[];
   stepsTitle:string; consumptionTitle:string; safetyTitle:string; safety:string[];
-  documentsTitle:string; exportLabel:string; documentAction:string; quoteAction:string; whatsappAction:string; sourceNote:string;
+  documentsTitle:string; exportLabel:string; downloadLabel:string; documentAction:string; quoteAction:string; whatsappAction:string; sourceNote:string;
   comparisonTitle:string; comparisonHeadings:string[]; comparisonNote:string; relatedTitle:string; important:string;
 }> = {
   fr:{
@@ -57,7 +57,7 @@ export const c1tContent: Record<Lang, {
     conditions:['Préparer une quantité adaptée à la surface qui pourra être carrelée avant formation d’une peau.','Éviter les supports surchauffés, le gel, les courants d’air forts et le séchage accéléré.','Utiliser le dosage et les délais de la fiche technique FENEK applicable au lot réellement fourni.'],
     stepsTitle:'Parcours illustré en six étapes',consumptionTitle:'Consommation et eau de gâchage : références de marché',safetyTitle:'Environnement et sécurité',
     safety:['Porter des gants, des lunettes adaptées et une protection respiratoire contre les poussières lors du mélange.','Limiter l’émission de poussière ; se laver les mains après manipulation et éviter le contact avec les yeux.','Conserver les sacs au sec et éliminer les résidus selon les règles locales ; ne pas déverser de mortier dans les réseaux d’eau.'],
-    documentsTitle:'Documents et contact',exportLabel:'Imprimer / enregistrer cette fiche en PDF',documentAction:'Demander la fiche technique et la FDS',quoteAction:'Obtenir un devis',whatsappAction:'Poser une question via WhatsApp',
+    documentsTitle:'Documents et contact',exportLabel:'Imprimer / enregistrer cette fiche en PDF',downloadLabel:'Télécharger la fiche produit (PDF)',documentAction:'Demander la fiche technique et la FDS',quoteAction:'Obtenir un devis',whatsappAction:'Poser une question via WhatsApp',
     sourceNote:'Fiche de présentation informative. La FT et la FDS propres à la formulation FENEK sont communiquées par l’équipe technique lorsqu’elles sont disponibles.',
     comparisonTitle:'Repères de la gamme BOND',comparisonHeadings:['Référence','Classe indiquée','Élément distinctif de la désignation'],comparisonNote:'Comparaison de désignations, sans comparaison de performances mesurées FENEK.',
     relatedTitle:'Produits complémentaires et références voisines',
@@ -80,7 +80,7 @@ export const c1tContent: Record<Lang, {
     conditionsTitle:'ظروف التنفيذ',conditions:['تحضير كمية تلائم المساحة التي يمكن تبليطها قبل تشكّل قشرة على اللاصق.','تجنب الأسطح شديدة السخونة والصقيع والتيارات الهوائية القوية والجفاف السريع.','اعتماد نسبة الخلط ومدد العمل الواردة في النشرة الفنية الخاصة بتشغيلة FENEK المستخدمة.'],
     stepsTitle:'ست مراحل تطبيق مصورة',consumptionTitle:'الاستهلاك وماء الخلط: مؤشرات من منتجات مماثلة',safetyTitle:'البيئة والسلامة',
     safety:['ارتداء قفازات ونظارات واقية ووسيلة مناسبة للوقاية من غبار المساحيق أثناء الخلط.','تقليل انتشار الغبار وغسل اليدين بعد العمل وتجنب ملامسة العينين.','حفظ الأكياس في مكان جاف والتخلص من المخلفات وفق القواعد المحلية، وعدم سكب الملاط في شبكات الصرف.'],
-    documentsTitle:'الوثائق والتواصل',exportLabel:'طباعة هذه البطاقة أو حفظها بصيغة PDF',documentAction:'طلب النشرة الفنية وصحيفة بيانات السلامة',quoteAction:'طلب عرض سعر',whatsappAction:'استفسار عبر واتساب',
+    documentsTitle:'الوثائق والتواصل',exportLabel:'طباعة هذه البطاقة أو حفظها بصيغة PDF',downloadLabel:'تنزيل بطاقة المنتج (PDF)',documentAction:'طلب النشرة الفنية وصحيفة بيانات السلامة',quoteAction:'طلب عرض سعر',whatsappAction:'استفسار عبر واتساب',
     sourceNote:'بطاقة تعريفية. يقدم الفريق الفني النشرة الفنية وصحيفة بيانات السلامة الخاصة بتركيبة FENEK عند توفرهما.',
     comparisonTitle:'مقارنة تسميات مجموعة BOND',comparisonHeadings:['المرجع','الفئة في التسمية','الخاصية التي يبينها الرمز'],comparisonNote:'هذه مقارنة بين رموز التصنيف وليست مقارنة لنتائج أداء منتجات FENEK.',
     relatedTitle:'مراجع قريبة ومنتجات مكملة',
@@ -104,7 +104,7 @@ export const c1tContent: Record<Lang, {
     conditions:['Mix only the quantity that can be installed before the adhesive skins over.','Avoid overheated backgrounds, freezing conditions, strong draughts and accelerated drying.','Follow the mixing ratio and working times in the FENEK technical sheet for the actual supplied batch.'],
     stepsTitle:'Six illustrated application stages',consumptionTitle:'Consumption and mixing water: market references',safetyTitle:'Environment and safety',
     safety:['Use gloves, protective eyewear and suitable dust respiratory protection when handling dry powder.','Minimize dust generation, wash hands after use and avoid eye contact.','Keep bags dry and dispose of residues according to local rules; do not discharge mortar to drains.'],
-    documentsTitle:'Documents and contacts',exportLabel:'Print / save this sheet as PDF',documentAction:'Request the technical and safety data sheets',quoteAction:'Request a quote',whatsappAction:'Ask via WhatsApp',
+    documentsTitle:'Documents and contacts',exportLabel:'Print / save this sheet as PDF',downloadLabel:'Download product sheet (PDF)',documentAction:'Request the technical and safety data sheets',quoteAction:'Request a quote',whatsappAction:'Ask via WhatsApp',
     sourceNote:'Informative product sheet. Product-specific FENEK technical and safety data sheets can be requested from the technical team when available.',
     comparisonTitle:'BOND range designation comparison',comparisonHeadings:['Reference','Class in name','Meaning of code'],comparisonNote:'Designation comparison only; no comparison of measured FENEK performance.',
     relatedTitle:'Related references and complementary products',
