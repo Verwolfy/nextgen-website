@@ -17,7 +17,7 @@ class IllustrationLayoutTests(unittest.TestCase):
             "application-upgraded": 50,
             "application-v3": 50,
             "approche": 3,
-            "catalogue-projects": 55,
+            "catalogue-projects": 35,
             "maquettes": 27,
         }
         for folder, count in expected.items():

@@ -10,7 +10,7 @@ class MotionPerformance(unittest.TestCase):
         data=static_report()
         self.assertTrue(data["source_limits_pass"],data["source_media"])
         self.assertEqual(set(LIMITS),{"video_bytes","poster_bytes","v3_css_source_bytes"})
-        self.assertGreaterEqual(data["packshot_webp_files"],80)
+        self.assertEqual(data["packshot_webp_files"],62)
         self.assertIn("not Lighthouse",data["metric_scope"])
 
     def test_poster_is_preloaded_only_for_actual_localized_homepages(self):

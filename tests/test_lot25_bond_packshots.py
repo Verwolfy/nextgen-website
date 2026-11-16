@@ -16,7 +16,7 @@ class CurrentBondVisuals(unittest.TestCase):
         source = SOURCE.read_text("utf-8")
         mapping = source.split("export const reviewedGalleryForReference", 1)[1].split("};", 1)[0]
         assigned = dict((slug, int(num)) for slug, num in
-                        re.findall(r"'(fenek-bond-[a-z0-9-]+)'\\s*:\\s*(\\d+)", mapping))
+                        re.findall(r"'(fenek-bond-[a-z0-9-]+)'\s*:\s*(\d+)", mapping))
         self.assertEqual(len(bond), 16)
         self.assertEqual({p["slug"] for p in bond}, set(assigned))
         self.assertIn("if(product.gamme==='bond')", source)
