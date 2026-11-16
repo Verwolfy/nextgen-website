@@ -163,6 +163,11 @@ const schema={
   .c1t-identity{max-width:780px}
   .c1t-safety{max-width:900px}
   .c1t-legal{margin:36px 0 0;font-size:.86rem;line-height:1.6}
+  :global(html[data-theme='dark']) .fenek-c1t-pilot .c1t-table tbody tr:nth-child(even){background:#19384a}
+  :global(html[data-theme='dark']) .fenek-c1t-pilot .c1t-table tbody th,
+  :global(html[data-theme='dark']) .fenek-c1t-pilot .c1t-table tbody td{color:#edf7fa;border-color:#4a6677}
+  :global(html[data-theme='dark']) .fenek-c1t-pilot .c1t-table thead{background:#1d4b58;color:#fff}
+  :global(html[data-theme='dark']) .fenek-c1t-pilot .c1t-table-note{color:#c5dce8}
   .fenek-c1t-pilot a:focus-visible,.fenek-c1t-pilot button:focus-visible{outline:3px solid #00895e;outline-offset:4px}
   @media(max-width:760px){.c1t-duo{grid-template-columns:1fr}.c1t-table{font-size:.86rem}.c1t-table th,.c1t-table td{padding:9px}}
   @media print {
