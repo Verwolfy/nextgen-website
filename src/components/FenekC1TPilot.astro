@@ -1,5 +1,7 @@
 ---
 import {brand, type Lang, rangeName} from '../data/site';
+import {existsSync} from 'node:fs';
+import {join} from 'node:path';
 import {catalogueProjects, conceptPackshot, packagingLabelFor, type CatalogueProject} from '../lib/catalogue-projets';
 import {productWhatsappHref} from '../data/contact-channels';
 import FenekApplicationGuide from './FenekApplicationGuide.astro';
@@ -17,6 +19,8 @@ const comparison=otherCodes.map(code=>{
 });
 const emailHref='mailto:'+brand.email+'?subject='+encodeURIComponent(t.documentAction+' — '+product.nom);
 const image=conceptPackshot(product,'full');
+const pdfHref=`/docs/fiches/fenek-bond-c1t-${lang}.pdf`;
+const hasPublishedPdf=existsSync(join(process.cwd(),'public',pdfHref.slice(1)));
 const schema={
   '@context':'https://schema.org',
   '@type':'Product',
@@ -92,7 +96,7 @@ const schema={
       </div>
       <h3>{t.consumptionTitle}</h3>
       <div class="c1t-table-wrap"><table class="c1t-table"><tbody>
-        {c1tFamilyReferences.filter(x=>x.key==='consommation'||x.key==='eau').map(x=><tr><th scope="row">{x.label[lang]}</th><td dir="ltr">{x.value}</td></tr>)}
+        {c1tFamilyReferences.filter(x=>x.key.startsWith('consommation-')||x.key==='eau').map(x=><tr><th scope="row">{x.label[lang]}</th><td dir="ltr">{x.value}</td></tr>)}
       </tbody></table></div>
       <p class="c1t-table-note">{t.figuresNote}</p>
       <h3>{t.stepsTitle}</h3>
@@ -104,7 +108,7 @@ const schema={
       <h2 id="fenek-documents-heading">{t.documentsTitle}</h2>
       <p>{t.sourceNote}</p>
       <div class="actions">
-        <button class="btn" type="button" data-print-market-sheet>{t.exportLabel}</button>
+        {hasPublishedPdf ? <a class="btn" href={pdfHref} download>{t.downloadLabel}</a> : <button class="btn" type="button" data-print-market-sheet>{t.exportLabel}</button>}
         <a class="btn btn-muted" href={emailHref}>{t.documentAction}</a>
         <a class="btn btn-muted" href={'/'+lang+'/contact/'}>{t.quoteAction}</a>
         <a class="btn btn-muted" href={productWhatsappHref(lang,product,'documentation')} target="_blank" rel="noopener noreferrer">{t.whatsappAction}</a>
