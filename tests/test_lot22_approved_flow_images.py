@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-ASSET_DIR=ROOT/"public/images/illustrations/catalogue-projects"
+ASSET_DIR=ROOT/"public/images/illustrations/produits"
 MANIFEST=ROOT/"scripts/flow-packshots-approved.json"
 
 class TestApprovedFlowPackshots(unittest.TestCase):
@@ -45,7 +45,9 @@ class TestApprovedFlowPackshots(unittest.TestCase):
     def test_no_partial_upload_or_stretched_packshot(self):
         source=(ROOT/"src/lib/catalogue-projets.ts").read_text(encoding="utf-8")
         css=(ROOT/"src/styles/site.css").read_text(encoding="utf-8")
-        self.assertIn("existsSync(absolute)&&existsSync(alternate)",source)
+        self.assertIn("FENEK-FLOW card/full pair incomplete:",source)
+        self.assertIn("productImageName(product,'card')",source)
+        self.assertIn("productImageName(product,'full')",source)
         self.assertIn("object-fit:contain",css)
         self.assertIn("conceptPackshot",source)
         self.assertEqual((ROOT/"public/data/products.json").read_text(encoding="utf-8").strip(),"[]")

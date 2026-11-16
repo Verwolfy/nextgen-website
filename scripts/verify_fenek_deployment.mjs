@@ -4,7 +4,7 @@
  * inside the working Cloudflare Pages Node build instead.
  * No network, secrets or image generation. Read-only; all media are BROUILLON.
  */
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,26 +12,6 @@ import { fileURLToPath } from 'node:url';
 const ROOT=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const DIST=resolve(ROOT,'dist');
 const LOCALES=['fr','en','ar'];
-const expectedReview={
-  'PROOF-PU-1K':{
-    step:5,
-    path:'/images/illustrations/application-premium/fenek-proof-pu-1k-scene-05-candidate-v1.webp',
-    sha256:'f8a758381f5a510b03b9bd231700925d5a5b02935d264c2fdc47844915a6c14f',
-    width:960,height:640
-  },
-  'PROOF-CM-O1P':{
-    step:1,
-    path:'/images/illustrations/application-premium/fenek-proof-cm-o1p-scene-01-candidate-v1.webp',
-    sha256:'079bde85ae3e331bd2c654d8299ccde2e26a2141dce349b610130c080902a622',
-    width:960,height:640
-  }
-};
-const acr={
-  code:'PROOF-ACR-RF',
-  path:'/images/illustrations/application-premium/fenek-proof-acr-rf-steps-v4.webp',
-  sha256:'438694daefa3b97b2ca3d36f38d6bea78fbedb7070203f81b6e06ef3a76fa433',
-  width:1620,height:720
-};
 function must(test, detail) {if(!test) throw new Error('FENEK predeployment gate: '+detail);}
 function fromRoot(path){return readFileSync(resolve(ROOT,path),'utf8');}
 function json(path){return JSON.parse(fromRoot(path));}
@@ -74,10 +54,37 @@ must(guides.size===50&&artwork.size===50,'Duplicate guide/artwork reference');
 const catalogCodes=new Set(catalog.map(p=>p.code));
 must(catalogCodes.size===50,'Duplicate catalogue code');
 must([...catalogCodes].every(code=>guides.has(code)&&artwork.has(code)),'Catalogue/guide/media identities disagree');
-verifyMedia(acr.path,acr.sha256,[acr.width,acr.height]);
-for(const candidate of Object.values(expectedReview)){
-  verifyMedia(candidate.path,candidate.sha256,[candidate.width,candidate.height]);
+// Every current packaging visual comes from the same product-specific folder.
+const PRODUCT_DIR=resolve(DIST,'images/illustrations/produits');
+must(existsSync(PRODUCT_DIR),'Missing unified packaging illustrations');
+const expectedProducts=new Set();
+for(const p of catalog){
+  const basename=p.code==='PROOF-CM-O2P'?'fenek-proof-cm-o2p-sac-20kg-v2':p.slug;
+  const names=p.gamme==='flow'?[basename+'.webp',basename+'-card.webp']:[basename+'.webp'];
+  for(const name of names){
+    must(!expectedProducts.has(name),'Duplicate product illustration '+name);
+    expectedProducts.add(name);
+    const file=resolve(PRODUCT_DIR,name);
+    must(existsSync(file),'Missing product-specific image '+p.code+' -> '+name);
+    webpSize(readFileSync(file)); // WebP file structure, never accept a missing/HTML placeholder.
+  }
 }
+const actualProducts=readdirSync(PRODUCT_DIR).filter(name=>name.endsWith('.webp'));
+must(expectedProducts.size===62 && actualProducts.length===62 &&
+     actualProducts.every(name=>expectedProducts.has(name)),
+     'Expected 62 exact current WebPs for 50 BOND/PROOF/FLOW/PAINT references');
+must(sha256(readFileSync(resolve(PRODUCT_DIR,'fenek-proof-cm-o2p-sac-20kg-v2.webp')))===
+     '552f3f850fca117410d0268265f5f7db8c4506dcbc93620ba07529657ea291b7',
+     'Corrected CM-O2P 20 kg image SHA-256 changed');
+for(const retired of [
+  'images/illustrations/application-premium',
+  'images/illustrations/application/v3/fenek-bond-c1t',
+  'images/illustrations/catalogue-projects',
+  'images/illustrations/maquettes',
+  'fr/avant-premiere/fenek-proof-acr-rf',
+  'fr/avant-premiere/lot187-proof',
+  'fr/avant-premiere/audit-50-illustrations'
+]) must(!existsSync(resolve(DIST,retired)),'Retired media or preview still published '+retired);
 let pages=0;
 for(const product of catalog){
   const {code,slug}=product;
@@ -99,39 +106,16 @@ for(const product of catalog){
     must(count(html,'data-application-step=')===6 && count(html,'data-v3-step=')===6,
       'Six original illustrated steps missing '+lang+'/'+code);
     must(html.includes(art.sprite),'Current product sprite not linked '+lang+'/'+code);
-    // Lot 203: official product pages display only the six original steps.
-    // Draft candidates remain SHA-checked above but are never embedded into
-    // FR/EN/AR official guides. Do not silently re-enable preview blocks.
+    // Only verified guide sprites; all former premium reviews and zoom UI are retired.
     must(!html.includes('data-acrrf-v4-preview') &&
       !html.includes('data-acrrf-v4-step=') &&
       !html.includes('data-proof-partial-preview') &&
       !html.includes('data-proof-partial-step='),
       'Unapproved draft candidate embedded in official guide '+lang+'/'+code);
+    must(!html.includes('fenek-v3-detail-link') &&
+         !html.includes('application-premium/'),'Retired zoom or premium media in official guide '+lang+'/'+code);
     pages++;
   }
 }
-// Unapproved artwork is permitted only in isolated noindex review pages.
-// Verify the draft destinations as well as the original media SHA-256 above.
-function reviewPage(relative) {
-  const full=resolve(DIST,relative);
-  must(existsSync(full),'Missing isolated draft review '+relative);
-  const html=readFileSync(full,'utf8');
-  must(html.includes('noindex,nofollow,noarchive'),'Draft review must be noindex '+relative);
-  return html;
-}
-const acrReview=reviewPage('fr/avant-premiere/fenek-proof-acr-rf/index.html');
-must(acrReview.includes('Brouillon') && acrReview.includes('non autorisée'),
-  'ACR-RF review must remain explicitly unapproved');
-must(count(acrReview,"--image:url('"+acr.path+"')")===6,
-  'ACR-RF review must render six separate draft images');
-const partialReview=reviewPage('fr/avant-premiere/lot187-proof/index.html');
-must(count(partialReview,'V4 · brouillon')===2,
-  'The two single-scene candidates must be visibly labelled as drafts');
-for(const [code,candidate] of Object.entries(expectedReview)) {
-  must(count(partialReview,'src="'+candidate.path+'"')===1,
-    'One candidate image per reference in isolated review '+code);
-  must(partialReview.includes(code.replace('PROOF-','FENEK-PROOF ')),
-    'Isolated draft review missing product identity '+code);
-}
 must(pages===150,'Wrong localized guide total '+pages);
-console.log('FENEK DEPLOYMENT GATE PASS: 50 products, 150 pages, 300 original stages, 50 sprite SHA-256, 3 premium candidate SHA-256, draft media preserved only in separate noindex reviews, no candidate embedded in official pages.');
+console.log('FENEK DEPLOYMENT GATE PASS: 50 products, 150 localized guides, 300 stages, 50 verified guide sprites and 62 packaging WebPs, no premium/zoom/old directories.');

@@ -178,7 +178,7 @@ def check_lot130_all_v3(browser, base: str) -> None:
 
 def check_lot125_cm_o2p_20kg(browser, base: str) -> None:
     """CM-O2P corrected sack mass is visible; canister remains 10 kg."""
-    image_path = "/images/illustrations/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
+    image_path = "/images/illustrations/produits/fenek-proof-cm-o2p-sac-20kg-v2.webp"
     for lang in ("fr", "ar", "en"):
         page = browser.new_page(viewport={"width": 390, "height": 850})
         try:
@@ -646,7 +646,7 @@ def check() -> None:
     base = "http://127.0.0.1:" + str(srv.server_address[1])
     errors = []
     snapshots = 0
-    flow_images_present = bool(list((ROOT / "public/images/illustrations/catalogue-projects").glob("fenek-flow-*.webp")))
+    flow_images_present = bool(list((ROOT / "public/images/illustrations/produits").glob("fenek-flow-*.webp")))
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
@@ -762,12 +762,12 @@ def check() -> None:
                         if section == "catalogue":
                             # Lot 31: 27 BOND/PROOF gallery photo renders plus
                             # 11 individual code-matched PAINT WebPs from source board.
-                            gallery_cards = page.locator(".concept-product-card img[src*='/images/illustrations/maquettes/']")
+                            gallery_cards = page.locator("#catalogue-bond .concept-product-card img[src*='/images/illustrations/produits/'], #catalogue-proof .concept-product-card img[src*='/images/illustrations/produits/']")
                             assert gallery_cards.count() == 27, f"{lang}, {size}: incorrect gallery mapping"
-                            paint_imgs = page.locator("#catalogue-paint .concept-product-card img[src*='/images/illustrations/catalogue-projects/fenek-paint-']")
+                            paint_imgs = page.locator("#catalogue-paint .concept-product-card img[src*='/images/illustrations/produits/fenek-paint-']")
                             assert paint_imgs.count() == 11, f"{lang}, {size}: missing PAINT product images"
                             srcs = paint_imgs.evaluate_all("els => els.map(e => e.getAttribute('src'))")
-                            required = {f"/images/illustrations/catalogue-projects/fenek-paint-{slug}.webp"
+                            required = {f"/images/illustrations/produits/fenek-paint-{slug}.webp"
                                         for slug in ("ent-l","fac-el","fac-m","fac-sx","int-m","int-s",
                                                      "int-wa","prim-a","prim-fx","sol-a","txt-f")}
                             assert set(srcs) == required, f"{lang}: wrong PAINT source-to-product mapping"
@@ -794,7 +794,7 @@ def check() -> None:
                                     }"""), f"{lang}, {size}: paint render {k} missing or deformed"
                                 page.evaluate("window.scrollTo(0,0)")
                         if section == "catalogue" and flow_images_present:
-                            packshots = page.locator(".concept-product-card .concept-product-image img[src*='/images/illustrations/catalogue-projects/fenek-flow-']")
+                            packshots = page.locator(".concept-product-card .concept-product-image img[src*='/images/illustrations/produits/fenek-flow-']")
                             assert packshots.count() == 12, f"{lang}, {size}: missing FLOW card imagery"
                             if size == "mobile":
                                 for k in range(packshots.count()):
@@ -810,9 +810,9 @@ def check() -> None:
                         if section == "catalogue":
                             # Lot 29: exact labels on the newly supplied studio mockups,
                             # rather than the first-generation flat-label WebP cards.
-                            bags=page.locator("#catalogue-bond .concept-product-card img[src*='/images/illustrations/maquettes/']")
+                            bags=page.locator("#catalogue-bond .concept-product-card img[src*='/images/illustrations/produits/fenek-bond-']")
                             assert bags.count()==16, f"{lang}, {size}: incomplete updated BOND cards"
-                            assert page.locator(".concept-product-card img[src*='/images/illustrations/catalogue-projects/fenek-bond-']").count()==0, (
+                            assert page.locator(".concept-product-card img[src*='/images/illustrations/maquettes/']").count()==0, (
                                 f"{lang}, {size}: old BOND label design is still displayed"
                             )
                             if size=="mobile":
@@ -897,7 +897,7 @@ def check() -> None:
                         assert detail_overflow<=4, f"Concept details overflow: {concept_path}, {width}px, {detail_overflow}px"
                         if slug=="fenek-paint-int-m":
                             full = page.locator(".concept-detail-aside img")
-                            assert full.count()==1 and full.get_attribute("src")=="/images/illustrations/catalogue-projects/fenek-paint-int-m.webp", concept_path
+                            assert full.count()==1 and full.get_attribute("src")=="/images/illustrations/produits/fenek-paint-int-m.webp", concept_path
                             full.scroll_into_view_if_needed()
                             assert full.evaluate("""async im => {
                                 try { await im.decode(); } catch (_) { return false; }
@@ -911,7 +911,7 @@ def check() -> None:
                                 try { await im.decode(); } catch (_) { return false; }
                                 return im.complete && im.naturalWidth === 880 &&
                                     im.naturalHeight === 880 &&
-                                    im.getAttribute('src') === '/images/illustrations/maquettes/maquette-20.webp' &&
+                                    im.getAttribute('src') === '/images/illustrations/produits/fenek-bond-c1t.webp' &&
                                     getComputedStyle(im).objectFit === 'contain';
                             }"""), f"{lang}, {size}: detailed BOND C1T bag missing or distorted"
                             page.screenshot(path=str(SHOTS/(lang+"-"+size+"-fenek-bond-c1t.png")),full_page=True)
@@ -990,6 +990,7 @@ def check() -> None:
                     guide = page.locator("[data-application-visual]")
                     assert guide.count() == 1, lang
                     assert guide.get_attribute("data-application-count") == "6", lang
+                    assert page.locator(".fenek-v3-detail-link").count() == 0, (lang, "retired zoom still visible")
                     assert page.locator("[data-application-step]").count() == 6, lang
                     art = page.request.get(base + ENHANCED_BY_CODE["BOND-C1T"])
                     assert art.status == 200 and art.body()[8:12] == b"WEBP", lang

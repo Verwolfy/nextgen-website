@@ -9,9 +9,9 @@ class Lot40HomepageTests(unittest.TestCase):
     def test_catalogue_mockups_remain_without_retired_home_slider(self):
         self.assertFalse((ROOT / "src/components/HeroSlider.astro").exists())
         catalogue = (ROOT / "src/lib/catalogue-projets.ts").read_text(encoding="utf-8")
-        self.assertIn("reviewedGalleryForReference", catalogue)
-        for n in ("04", "20", "30", "45"):
-            image = ROOT / f"public/images/illustrations/maquettes/maquette-{n}.webp"
+        self.assertIn("images/illustrations/produits/", catalogue)
+        for slug in ("fenek-proof-pu-seal", "fenek-bond-c1t", "fenek-bond-r4", "fenek-proof-pu-inj"):
+            image = ROOT / f"public/images/illustrations/produits/{slug}.webp"
             self.assertTrue(image.is_file(), str(image))
             self.assertEqual(image.read_bytes()[:4], b"RIFF", str(image))
             self.assertEqual(image.read_bytes()[8:12], b"WEBP", str(image))

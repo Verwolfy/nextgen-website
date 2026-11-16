@@ -1,34 +1,34 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync, existsSync} from 'node:fs';
 import {resolve} from 'node:path';
-const src = readFileSync(resolve('src/components/FenekApplicationGuide.astro'),'utf8');
+const src=readFileSync(resolve('src/components/FenekApplicationGuide.astro'),'utf8');
+const gate=readFileSync(resolve('scripts/verify_fenek_deployment.mjs'),'utf8');
 
-test('official product guide never embeds unapproved PROOF draft previews', () => {
-  assert.doesNotMatch(src, /FenekAcrRfDraftPreview|FenekProofPartialDraft|previewAcrRf|partialDraftStep/);
+test('only the 50 current per-product guide illustrations are rendered',()=>{
+ assert.match(src,/reviewedV3GuideFor\(product.code,product.slug\)/);
+ assert.match(src,/enhancedArtwork\.find\(item=>item.code===product.code && item.slug===product.slug\)/);
+ assert.match(src,/data-application-count=\{steps.length\}/);
+ assert.match(src,/data-application-step=\{i\+1\}/);
+ assert.match(src,/data-v3-enhanced-hash=\{enhancedV3.sha256\}/);
+ assert.match(src,/fenek-v3-upgraded-photo/);
 });
-
-test('official guides keep exact per-product approved fallback and six-step structure', () => {
-  assert.match(src, /reviewedV3GuideFor\(product.code,product.slug\)/);
-  assert.match(src, /enhancedArtwork\.find\(item=>item.code===product.code && item.slug===product.slug\)/);
-  assert.match(src, /data-application-count=\{steps.length\}/);
-  assert.match(src, /data-application-step=\{i\+1\}/);
-  assert.match(src, /data-v3-enhanced-hash=\{enhancedV3.sha256\}/);
+test('draft previews and zoom links cannot return to official guide',()=>{
+ assert.doesNotMatch(src,/FenekAcrRfDraftPreview|FenekProofPartialDraft|fullSizeC1T|fullResolution|fenek-v3-detail-link|copy\.zoom/);
+ assert.match(gate,/!html\.includes\('data-acrrf-v4-preview'\)/);
+ assert.match(gate,/!html\.includes\('data-proof-partial-preview'\)/);
+ assert.match(gate,/Retired media or preview still published/);
+ assert.match(gate,/verifyMedia\(art\.sprite,art\.sha256/);
+ assert.doesNotMatch(gate,/verifyMedia\(candidate\.path|verifyMedia\(acr\.path/);
 });
-
-test('current official six-stage artwork remains visible during cleanup', () => {
-  assert.match(src, /enhancedV3\.sprite/);
-  assert.match(src, /fenek-v3-upgraded-photo/);
-  assert.match(src, /fenek-application-visual-warning/);
-});
-
-test('predeployment gate rejects all inline draft previews while keeping 53 media hash checks', () => {
-  const gate = readFileSync(resolve('scripts/verify_fenek_deployment.mjs'),'utf8');
-  assert.match(gate, /Unapproved draft candidate embedded in official guide/);
-  assert.match(gate, /!html\.includes\('data-acrrf-v4-preview'\)/);
-  assert.match(gate, /!html\.includes\('data-proof-partial-preview'\)/);
-  assert.match(gate, /verifyMedia\(acr\.path,acr\.sha256/);
-  assert.match(gate, /verifyMedia\(candidate\.path,candidate\.sha256/);
-  assert.match(gate, /verifyMedia\(art\.sprite,art\.sha256/);
-  assert.doesNotMatch(gate, /must\(count\(html,'data-acrrf-v4-preview'\)===1/);
+test('all removed premium media and preview pages stay deleted',()=>{
+ for(const path of [
+ 'public/images/illustrations/application-premium',
+ 'public/images/illustrations/application/v3/fenek-bond-c1t',
+ 'public/fr/avant-premiere/fenek-proof-acr-rf',
+ 'public/fr/avant-premiere/lot187-proof',
+ 'public/fr/avant-premiere/audit-50-illustrations',
+ 'src/components/FenekProofPartialDraft.astro',
+ 'src/components/FenekAcrRfDraftPreview.astro',
+ ])assert.equal(existsSync(resolve(path)),false,path);
 });

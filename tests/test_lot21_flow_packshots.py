@@ -5,15 +5,15 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 
 class TestLot21FlowPackshots(unittest.TestCase):
-    def test_product_specific_image_with_safe_fallback(self):
+    def test_product_specific_flow_image_pair_is_required(self):
         src=(ROOT/"src/lib/catalogue-projets.ts").read_text(encoding="utf8")
         self.assertIn("export const conceptPackshot=",src)
-        self.assertIn("existsSync(absolute)",src)
-        self.assertIn("return reviewedGalleryImage(product)??conceptImage[product.gamme]",src)
-        self.assertIn("existsSync(absolute)&&existsSync(alternate)",src)
+        self.assertIn("images/illustrations/produits/",src)
+        self.assertIn("productImageName(product,'card')",src)
+        self.assertIn("productImageName(product,'full')",src)
+        self.assertIn("FENEK-FLOW card/full pair incomplete:",src)
+        self.assertIn("FENEK product illustration missing:",src)
         self.assertIn("product.gamme==='flow'",src)
-        self.assertIn("product.gamme==='bond'",src)
-        self.assertIn("Bidon 20 L",src)
         self.assertIn("hasProductPackshot",src)
 
     def test_no_warping_in_card_or_detail(self):

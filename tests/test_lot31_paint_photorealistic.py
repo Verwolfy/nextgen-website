@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "scripts/paint-packshots-concepts.json"
-BASE = ROOT / "public/images/illustrations/catalogue-projects"
+BASE = ROOT / "public/images/illustrations/produits"
 CODES = ("ENT-L", "FAC-EL", "FAC-M", "FAC-SX",
          "INT-M", "INT-S", "INT-WA", "PRIM-A", "PRIM-FX", "SOL-A", "TXT-F")
 
@@ -54,9 +54,9 @@ class PaintVisualTests(unittest.TestCase):
 
     def test_source_code_still_prevents_fictitious_product_approval(self):
         src=(ROOT/"src/lib/catalogue-projets.ts").read_text(encoding="utf8")
-        self.assertIn("FENEK-PAINT concept asset missing:",src)
-        self.assertIn("if(product.gamme==='paint')",src)
-        self.assertIn("product.slug+'.webp'",src)
+        self.assertIn("FENEK product illustration missing:",src)
+        self.assertIn("images/illustrations/produits/",src)
+        self.assertIn("productImageName(product,variant)",src)
         self.assertIn("if(!existsSync(resolve(process.cwd(),'public',relative)))",src)
         self.assertEqual((ROOT/"public/data/products.json").read_text().strip(),"[]")
 

@@ -58,7 +58,10 @@ class All39SourceGroundedShotLists(unittest.TestCase):
                         self.assertIn("NI logo",scene["oneScenePromptFr"])
                         if scene["existingCandidate"]:
                             self.assertEqual(scene["artStatus"],"CANDIDAT_A_REVOIR")
-                            self.assertIn("/images/illustrations/application-premium/",scene["existingCandidate"]["asset"])
+                            historical_path=scene["existingCandidate"]["asset"]
+                            self.assertIn("/images/illustrations/application-premium/",historical_path)
+                            self.assertFalse((ROOT/"public"/historical_path.lstrip("/")).exists(),
+                                             "Archived candidate must not be published")
                         else:
                             self.assertEqual(scene["artStatus"],"NON_GENERE")
 

@@ -13,7 +13,7 @@
         "Seau 5 kg"
       ],
       "format_nominal_registre": "5 kg / 20 kg",
-      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-39.webp",
+      "maquette_conceptuelle": "public/images/illustrations/produits/fenek-proof-acr-rf.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -21,7 +21,8 @@
       "validation_industrielle": "EN ATTENTE",
       "validation_commerciale": "EN ATTENTE",
       "autorisation_publication_fiche_technique": false,
-      "autorisation_creation_sku_erp": false
+      "autorisation_creation_sku_erp": false,
+      "migration_illustrations": "2026-11-16 : fichier de présentation déplacé dans le dossier commun aux quatre gammes ; droits et validations produit inchangés"
     },
     {
       "reference": "PROOF-CM-O1P",
@@ -31,7 +32,7 @@
         "Seau 5 kg"
       ],
       "format_nominal_registre": "5 kg / 20 kg",
-      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-36.webp",
+      "maquette_conceptuelle": "public/images/illustrations/produits/fenek-proof-cm-o1p.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -39,7 +40,8 @@
       "validation_industrielle": "EN ATTENTE",
       "validation_commerciale": "EN ATTENTE",
       "autorisation_publication_fiche_technique": false,
-      "autorisation_creation_sku_erp": false
+      "autorisation_creation_sku_erp": false,
+      "migration_illustrations": "2026-11-16 : fichier de présentation déplacé dans le dossier commun aux quatre gammes ; droits et validations produit inchangés"
     },
     {
       "reference": "PROOF-CM-O2P",
@@ -48,7 +50,7 @@
         "Kit : sac 20 kg + bidon 10 kg"
       ],
       "format_nominal_registre": "Sac 20 kg + bidon 10 kg (kit 30 kg total)",
-      "maquette_conceptuelle": "public/images/illustrations/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp",
+      "maquette_conceptuelle": "public/images/illustrations/produits/fenek-proof-cm-o2p-sac-20kg-v2.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -59,7 +61,8 @@
       "autorisation_creation_sku_erp": false,
       "maquette_source_archive": "public/images/illustrations/maquettes/maquette-37.webp",
       "correction_editoriale": "2026-11-11 : sac corrigé à 20 kg sur instruction utilisateur ; bidon maintenu à 10 kg. Les statuts d'homologation restent EN ATTENTE. Version visuelle client optimisée 576x576 WebP, 2026-11-11; image WebP v2 remplace la superposition SVG sans changer les statuts.",
-      "maquette_precedente_corrigee": "public/images/illustrations/maquettes/maquette-37-sac-20kg.svg"
+      "maquette_precedente_corrigee": "public/images/illustrations/maquettes/maquette-37-sac-20kg.svg",
+      "migration_illustrations": "2026-11-16 : fichier de présentation déplacé dans le dossier commun aux quatre gammes ; droits et validations produit inchangés"
     },
     {
       "reference": "PROOF-EP-ANC",
@@ -68,7 +71,7 @@
         "Double cartouche bicomposant 600 mL (A : résine + B : durcisseur)"
       ],
       "format_nominal_registre": "Double cartouche A/B — 600 mL au total",
-      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-44.webp",
+      "maquette_conceptuelle": "public/images/illustrations/produits/fenek-proof-ep-anc.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -76,7 +79,8 @@
       "validation_industrielle": "EN ATTENTE",
       "validation_commerciale": "EN ATTENTE",
       "autorisation_publication_fiche_technique": false,
-      "autorisation_creation_sku_erp": false
+      "autorisation_creation_sku_erp": false,
+      "migration_illustrations": "2026-11-16 : fichier de présentation déplacé dans le dossier commun aux quatre gammes ; droits et validations produit inchangés"
     },
     {
       "reference": "PROOF-EP-INJ",
@@ -85,7 +89,7 @@
         "Double cartouche 300 + 300 mL (600 mL au total)"
       ],
       "format_nominal_registre": "Double cartouche 300 + 300 mL — total 600 mL",
-      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-43.webp",
+      "maquette_conceptuelle": "public/images/illustrations/produits/fenek-proof-ep-inj.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -93,7 +97,8 @@
       "validation_industrielle": "EN ATTENTE",
       "validation_commerciale": "EN ATTENTE",
       "autorisation_publication_fiche_technique": false,
-      "autorisation_creation_sku_erp": false
+      "autorisation_creation_sku_erp": false,
+      "migration_illustrations": "2026-11-16 : fichier de présentation déplacé dans le dossier commun aux quatre gammes ; droits et validations produit inchangés"
     },
     {
       "reference": "PROOF-EP-PRIM",
@@ -102,7 +107,7 @@
         "Kit : seau A 10 kg + seau B 3 kg"
       ],
       "format_nominal_registre": "Seau A 10 kg + seau B 3 kg (kit 13 kg)",
-      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-40.webp",
+      "maquette_conceptuelle": "public/images/illustrations/produits/fenek-proof-ep-prim.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -110,7 +115,8 @@
       "validation_industrielle": "EN ATTENTE",
       "validation_commerciale": "EN ATTENTE",
       "autorisation_publication_fiche_technique": false,
-      "autorisation_creation_sku_erp": false
+      "autorisation_creation_sku_erp": false,
+      "migration_illustrations": "2026-11-16 : fichier de présentation déplacé dans le dossier commun aux quatre gammes ; droits et validations produit inchangés"
     },
     {
       "reference": "PROOF-EP-SB",
@@ -119,7 +125,7 @@
         "Double cartouche 300 + 300 mL (600 mL au total)"
       ],
       "format_nominal_registre": "Double cartouche 300 + 300 mL — total 600 mL",
-      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-42.webp",
+      "maquette_conceptuelle": "public/images/illustrations/produits/fenek-proof-ep-sb.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -127,7 +133,8 @@
       "validation_industrielle": "EN ATTENTE",
       "validation_commerciale": "EN ATTENTE",
       "autorisation_publication_fiche_technique": false,
-      "autorisation_creation_sku_erp": false
+      "autorisation_creation_sku_erp": false,
+      "migration_illustrations": "2026-11-16 : fichier de présentation déplacé dans le dossier commun aux quatre gammes ; droits et validations produit inchangés"
     },
     {
       "reference": "PROOF-EP-SR",
@@ -136,7 +143,7 @@
         "Kit : seau 10 kg + seau 3 kg"
       ],
       "format_nominal_registre": "Seau 10 kg + seau 3 kg (kit 13 kg)",
-      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-41.webp",
+      "maquette_conceptuelle": "public/images/illustrations/produits/fenek-proof-ep-sr.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -144,7 +151,8 @@
       "validation_industrielle": "EN ATTENTE",
       "validation_commerciale": "EN ATTENTE",
       "autorisation_publication_fiche_technique": false,
-      "autorisation_creation_sku_erp": false
+      "autorisation_creation_sku_erp": false,
+      "migration_illustrations": "2026-11-16 : fichier de présentation déplacé dans le dossier commun aux quatre gammes ; droits et validations produit inchangés"
     },
     {
       "reference": "PROOF-PU-1K",
@@ -154,7 +162,7 @@
         "Seau 5 kg"
       ],
       "format_nominal_registre": "5 kg / 20 kg",
-      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-38.webp",
+      "maquette_conceptuelle": "public/images/illustrations/produits/fenek-proof-pu-1k.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -162,7 +170,8 @@
       "validation_industrielle": "EN ATTENTE",
       "validation_commerciale": "EN ATTENTE",
       "autorisation_publication_fiche_technique": false,
-      "autorisation_creation_sku_erp": false
+      "autorisation_creation_sku_erp": false,
+      "migration_illustrations": "2026-11-16 : fichier de présentation déplacé dans le dossier commun aux quatre gammes ; droits et validations produit inchangés"
     },
     {
       "reference": "PROOF-PU-INJ",
@@ -171,7 +180,7 @@
         "Kit : seau 5 kg + seau 5 kg"
       ],
       "format_nominal_registre": "Seau 5 kg + seau 5 kg (kit 10 kg)",
-      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-45.webp",
+      "maquette_conceptuelle": "public/images/illustrations/produits/fenek-proof-pu-inj.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -179,7 +188,8 @@
       "validation_industrielle": "EN ATTENTE",
       "validation_commerciale": "EN ATTENTE",
       "autorisation_publication_fiche_technique": false,
-      "autorisation_creation_sku_erp": false
+      "autorisation_creation_sku_erp": false,
+      "migration_illustrations": "2026-11-16 : fichier de présentation déplacé dans le dossier commun aux quatre gammes ; droits et validations produit inchangés"
     },
     {
       "reference": "PROOF-PU-SEAL",
@@ -188,7 +198,7 @@
         "Cartouche 300 mL"
       ],
       "format_nominal_registre": "300 mL",
-      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-04.webp",
+      "maquette_conceptuelle": "public/images/illustrations/produits/fenek-proof-pu-seal.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -196,7 +206,9 @@
       "validation_industrielle": "EN ATTENTE",
       "validation_commerciale": "EN ATTENTE",
       "autorisation_publication_fiche_technique": false,
-      "autorisation_creation_sku_erp": false
+      "autorisation_creation_sku_erp": false,
+      "migration_illustrations": "2026-11-16 : fichier de présentation déplacé dans le dossier commun aux quatre gammes ; droits et validations produit inchangés"
     }
-  ]
+  ],
+  "active_image_directory": "public/images/illustrations/produits/"
 }

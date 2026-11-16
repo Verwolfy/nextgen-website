@@ -5,6 +5,7 @@ No HTTP requests, no secrets, no access to Supabase, no publishing.
 """
 from __future__ import annotations
 
+import json
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -138,57 +139,35 @@ def main() -> None:
         refs += check_page(info_index, lang)
         checked += 1
         assert not (ROOT / lang / "maquettes").exists(), lang
-        for i in (4, *(n for n in range(20, 46) if n != 37)):
-            image = ROOT / "images" / "illustrations" / "maquettes" / f"maquette-{i:02d}.webp"
-            assert image.is_file() and image.read_bytes()[:4] == b"RIFF", str(image)
         catalog = (ROOT / lang / "catalogue" / "index.html").read_text(encoding="utf-8")
-        # Lots 28–29: all 27 BOND/PROOF references must show
-        # their actual label-matched, reviewed gallery image in all 3 locales.
-        reviewed_visuals = {
-            # Lot 29: render the detailed BOND images from the real gallery.
-            "fenek-bond-c1t":20,"fenek-bond-c1te":21,
-            "fenek-bond-c2te":22,"fenek-bond-c2te-s1":23,
-            "fenek-bond-c2ft":24,"fenek-bond-cg1":25,
-            "fenek-bond-cg2wa":26,"fenek-bond-ct-c25-f5":27,
-            "fenek-bond-gr-hr":31,"fenek-bond-gp-csii":32,
-            "fenek-bond-m10":35, "fenek-bond-m5":34,
-            "fenek-bond-oc-csiii":33, "fenek-bond-r2":28,
-            "fenek-bond-r3":29, "fenek-bond-r4":30,
-            "fenek-proof-acr-rf":39, "fenek-proof-cm-o1p":36,
-            "fenek-proof-cm-o2p":37, "fenek-proof-ep-anc":44,
-            "fenek-proof-ep-inj":43, "fenek-proof-ep-prim":40,
-            "fenek-proof-ep-sb":42, "fenek-proof-ep-sr":41,
-            "fenek-proof-pu-1k":38, "fenek-proof-pu-inj":45,
-            "fenek-proof-pu-seal":4,
-        }
-        for slug, number in reviewed_visuals.items():
-            # Lot 125: CM-O2P uses the corrected "SAC 20 KG" visual;
-            # the obsolete original image 37 is not deployed.
-            asset = ("/images/illustrations/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
-                     if slug == "fenek-proof-cm-o2p"
-                     else f"/images/illustrations/maquettes/maquette-{number:02d}.webp")
-            assert asset in catalog, f"Missing reference visual in {lang}: {slug}"
-            detail = ROOT / lang / "catalogue" / slug / "index.html"
-            assert detail.is_file() and asset in detail.read_text(encoding="utf-8"), (
-                f"Wrong detail image: {lang}/{slug}"
-            )
-        corrected_asset = ROOT / "images/illustrations/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
-        assert corrected_asset.is_file(), "Missing client-corrected CM-O2P 20 kg image"
+        products = json.loads((ROOT.parent/"src/data/catalogue-projets.json").read_text(encoding="utf-8"))
+        assert len(products)==50 and len({p["slug"] for p in products})==50
+        asset_dir=ROOT/"images/illustrations/produits"
+        assert len(list(asset_dir.glob("*.webp")))==62, "One complete product directory expected"
+        for p in products:
+            slug=p["slug"];code=p["code"]
+            name="fenek-proof-cm-o2p-sac-20kg-v2" if code=="PROOF-CM-O2P" else slug
+            card=name+("-card" if p["gamme"]=="flow" else "")+".webp"
+            full=name+".webp"
+            for filename in {card,full}:
+                image=asset_dir/filename
+                assert image.is_file(),("Missing product image",code,filename)
+                raw=image.read_bytes()
+                assert raw[:4]==b"RIFF" and raw[8:12]==b"WEBP",(code,filename)
+            card_url="/images/illustrations/produits/"+card
+            full_url="/images/illustrations/produits/"+full
+            assert card_url in catalog,(lang,code,"Missing catalogue card")
+            for scope in ("catalogue","documentation"):
+                detail=ROOT/lang/scope/slug/"index.html"
+                assert detail.is_file() and full_url in detail.read_text(encoding="utf-8"),(lang,scope,code)
         from hashlib import sha256
-        artwork = corrected_asset.read_bytes()
-        assert artwork[:4] == b"RIFF" and artwork[8:12] == b"WEBP", "Invalid corrected WebP"
-        assert sha256(artwork).hexdigest() == "552f3f850fca117410d0268265f5f7db8c4506dcbc93620ba07529657ea291b7", "Artwork does not match the uploaded correction"
-        for lang in LANGS:
-            for route in ("catalogue/fenek-proof-cm-o2p", "documentation/fenek-proof-cm-o2p"):
-                html = (ROOT / lang / route / "index.html").read_text(encoding="utf-8")
-                assert "/images/illustrations/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp" in html, (lang, route, "stale product mockup")
-            catalog_html = (ROOT / lang / "catalogue" / "index.html").read_text(encoding="utf-8")
-            assert "/images/illustrations/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp" in catalog_html, (lang, "stale catalogue listing")
+        corrected=(asset_dir/"fenek-proof-cm-o2p-sac-20kg-v2.webp").read_bytes()
+        assert sha256(corrected).hexdigest()=="552f3f850fca117410d0268265f5f7db8c4506dcbc93620ba07529657ea291b7", "Incorrect CM-O2P correction"
         assert not any(
             "Kit : sac 30 kg + bidon 10 kg" in
             (ROOT / lang / "catalogue" / "fenek-proof-cm-o2p" / "index.html").read_text(encoding="utf-8")
             for lang in LANGS
-        ), "Old wrong bag quantity still in catalog"
+        ), "Old wrong bag quantity still in catalogue"
         # Lot 33: no unpublished field directions or numeric placeholders may
         # leak into the 150 public catalogue detail pages, even in a closed
         # disclosure widget. Their source remains private to the repository.
@@ -245,18 +224,18 @@ def main() -> None:
                        "int-m", "int-s", "int-wa",
                        "prim-a", "prim-fx", "sol-a", "txt-f")
         assert len(paint_slugs) == 11
-        assert catalog.count("/images/illustrations/catalogue-projects/fenek-paint-") == 11, lang
+        assert catalog.count("/images/illustrations/produits/fenek-paint-") == 11, lang
         assert 'class="paint-concept-art"' not in catalog, lang
-        assert '/images/illustrations/maquettes/maquette-19.webp' not in catalog, lang
+        assert '/images/illustrations/produits/maquette-19.webp' not in catalog, lang
         for item in paint_slugs:
             slug = "fenek-paint-" + item
-            asset = f"/images/illustrations/catalogue-projects/{slug}.webp"
+            asset = f"/images/illustrations/produits/{slug}.webp"
             built_asset = ROOT / asset.lstrip("/")
             assert built_asset.is_file() and built_asset.read_bytes()[8:12] == b"WEBP", slug
             assert asset in catalog, f"Wrong card image in {lang}/{slug}"
             detail = (ROOT / lang / "catalogue" / slug / "index.html").read_text(encoding="utf-8")
             assert asset in detail, f"Wrong full-size PAINT concept: {lang}/{slug}"
-            assert 'class="paint-concept-art"' not in detail and '/images/illustrations/maquettes/maquette-19.webp' not in detail, slug
+            assert 'class="paint-concept-art"' not in detail and '/images/illustrations/produits/maquette-19.webp' not in detail, slug
             assert "concept-detail-note" in detail, slug
         assert "PF-001" not in catalog and "PF-006" not in catalog
         assert not (ROOT / lang / "produits").is_dir(), "No real product was approved"

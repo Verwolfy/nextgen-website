@@ -25,10 +25,12 @@ class Lot76to78(unittest.TestCase):
             p=proof[r["reference"]]
             self.assertEqual(r["slug"],p["slug"])
             self.assertEqual(r["conditionnements_catalogue"],[x["format"] for x in p["conditionnements"]])
-            self.assertIn("'"+p["slug"]+"':",mapping)
+            self.assertIn("images/illustrations/produits/",mapping)
+            self.assertTrue((ROOT/r["maquette_conceptuelle"]).is_file())
+            self.assertIn("2026-11-16",r["migration_illustrations"])
             if r["reference"] == "PROOF-CM-O2P":
                 self.assertEqual(r["maquette_conceptuelle"],
-                                 "public/images/illustrations/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp")
+                                 "public/images/illustrations/produits/fenek-proof-cm-o2p-sac-20kg-v2.webp")
                 self.assertEqual(r["maquette_source_archive"],
                                  "public/images/illustrations/maquettes/maquette-37.webp")
                 self.assertIn("2026-11-11", r["correction_editoriale"])

@@ -28,89 +28,37 @@ for(const p of projects){
 }
 export const catalogueProjects = projects;
 export const projectsByRange=(range:Range)=>catalogueProjects.filter(p=>p.gamme===range);
-/** Exact product codes visually read from the uploaded 46-image concept gallery.
- * This links editorial mockups, not technical/certified/contractual imagery.
- * Eleven FENEK-PAINT references have no individual image in this archive.
- */
-export const reviewedGalleryForReference:Readonly<Record<string,number>> = {
-  // Lot 29: studio bag renders replacing ten flat-label concept shots.
-  'fenek-bond-c1t':20, 'fenek-bond-c1te':21,
-  'fenek-bond-c2te':22, 'fenek-bond-c2te-s1':23,
-  'fenek-bond-c2ft':24, 'fenek-bond-cg1':25,
-  'fenek-bond-cg2wa':26, 'fenek-bond-ct-c25-f5':27,
-  'fenek-bond-gr-hr':31, 'fenek-bond-gp-csii':32,
-  'fenek-bond-m10':35, 'fenek-bond-m5':34, 'fenek-bond-oc-csiii':33,
-  'fenek-bond-r2':28, 'fenek-bond-r3':29, 'fenek-bond-r4':30,
-  'fenek-proof-acr-rf':39, 'fenek-proof-cm-o1p':36, 'fenek-proof-cm-o2p':37,
-  'fenek-proof-ep-anc':44, 'fenek-proof-ep-inj':43, 'fenek-proof-ep-prim':40,
-  'fenek-proof-ep-sb':42, 'fenek-proof-ep-sr':41, 'fenek-proof-pu-1k':38,
-  'fenek-proof-pu-inj':45, 'fenek-proof-pu-seal':4
-};
-const reviewedGalleryImage=(product:CatalogueProject):string|null=>{
-  const number=reviewedGalleryForReference[product.slug];
-  if(number===undefined) return null;
-  const relative='images/illustrations/maquettes/maquette-'+String(number).padStart(2,'0')+'.webp';
-  if(!existsSync(resolve(process.cwd(),'public',relative))) {
-    throw Error('Maquette de conception absente: '+product.code+' -> '+relative);
-  }
-  return '/'+relative;
-};
-
-export const conceptImage:Record<Range,string>={
-  // Neutral branding only: never substitute a packaging concept for another SKU.
-  bond:'/images/Logo1.jpg',
-  proof:'/images/Logo1.jpg',
-  flow:'/images/Logo1.jpg',
-  paint:'' // no fallback: missing individual PAINT artwork fails the build
-};
-
-
 /**
- * A product-specific mockup is used only if the exact reviewed WebP exists
- * in the repository at build time. Never show broken src URLs and never infer
- * a certified pack or an approved net-volume label from an AI picture.
- * No dynamic client JS, network request or external image host is involved.
+ * One product-only image directory for BOND, PROOF, FLOW and PAINT.
+ * All 50 product references have their own editable-label illustration.
+ * FLOW uses a smaller -card thumbnail, with both variants required.
+ * The corrected 20 kg CM-O2P packaging retains an explicit versioned name.
+ * These are unapproved editorial visuals, never certified packaging.
  */
-export const conceptPackshot=(product:CatalogueProject,variant:'card'|'full'='card'):string=>{
- // Exact code-specific photorealistic editorial PAINT assets from the
- // user's 11-reference concept board. Fail closed if one binary is missing:
- // never silently show the generic 15 L collage or a different product code.
- if(product.gamme==='paint'){
-   const relative='images/illustrations/catalogue-projects/'+product.slug+'.webp';
-   if(!existsSync(resolve(process.cwd(),'public',relative)))
-      throw Error('FENEK-PAINT concept asset missing: '+product.code+' -> '+relative);
-   return '/'+relative;
- }
- // All sixteen BOND references have verified product-specific mockups.
- // Old BOND packshot variants are retired, not shipped or used as fallbacks.
- if(product.gamme==='bond'){
-   const image=reviewedGalleryImage(product);
-   if(!image) throw Error('FENEK-BOND concept asset missing: '+product.code);
-   return image;
- }
- // CM-O2P correction, lot 126: serve the client-validated, optimized WebP of the 20 kg sack;\n // use a new URL to invalidate old Cloudflare/browser image caches.\n // The dry component is a 20 kg bag,
- // with a separate 10 kg canister. Do not serve the obsolete 30 kg artwork.
- if(product.code==='PROOF-CM-O2P'){
-   const corrected='images/illustrations/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp';
-   if(!existsSync(resolve(process.cwd(),'public',corrected)))
-     throw Error('Corrected 20 kg concept mockup missing for '+product.code);
-   return '/'+corrected;
- }
- const flow = product.gamme==='flow' && product.conditionnements.some(c=>c.format==='Bidon 20 L');
- if(flow){
-   const name=product.slug+(variant==='card'?'-card':'')+'.webp';
-   const relative='images/illustrations/catalogue-projects/'+name;
-   const absolute=resolve(process.cwd(),'public',relative);
-   const alternate=resolve(process.cwd(),'public','images/illustrations/catalogue-projects/',
-      product.slug+(variant==='card'?'': '-card')+'.webp');
-   // Never show an incomplete binary upload (only card or only full).
-   if(existsSync(absolute)&&existsSync(alternate)) return '/'+relative;
- }
- // Reuse exact label-matched design concepts from Lot 27 before generic art.
- return reviewedGalleryImage(product)??conceptImage[product.gamme];
+const productImageName=(product:CatalogueProject,variant:'card'|'full'):string=>{
+ const slug=product.code==='PROOF-CM-O2P'
+   ? 'fenek-proof-cm-o2p-sac-20kg-v2' : product.slug;
+ return slug+(product.gamme==='flow' && variant==='card'?'-card':'')+'.webp';
 };
-export const hasProductPackshot=(product:CatalogueProject):boolean=>
- conceptPackshot(product,'full')!==conceptImage[product.gamme];
+
+export const conceptPackshot=(product:CatalogueProject,variant:'card'|'full'='card'):string=>{
+ const base='images/illustrations/produits/';
+ const file=productImageName(product,variant);
+ const relative=base+file;
+ if(!existsSync(resolve(process.cwd(),'public',relative)))
+   throw Error('FENEK product illustration missing: '+product.code+' -> '+relative);
+ // Do not publish FLOW if either the full-size or catalogue thumbnail is absent.
+ if(product.gamme==='flow' &&
+   (!existsSync(resolve(process.cwd(),'public',base+productImageName(product,'card'))) ||
+    !existsSync(resolve(process.cwd(),'public',base+productImageName(product,'full')))))
+   throw Error('FENEK-FLOW card/full pair incomplete: '+product.code);
+ return '/'+relative;
+};
+
+export const hasProductPackshot=(product:CatalogueProject):boolean=>{
+ conceptPackshot(product,'full');
+ return true;
+};
 
 
 /**

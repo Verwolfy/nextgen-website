@@ -16,21 +16,12 @@ const enhancedV3=enhancedArtwork.find(item=>item.code===product.code && item.slu
 if(!reviewedV3 || !enhancedV3 || enhancedV3.sprite!==reviewedV3.sprite || enhancedV3.sha256!==reviewedV3.sha256)
   throw Error('FENEK illustration missing or mismatched: '+product.code);
 const steps=reviewedV3.steps.map(step=>({title:step.title[lang],description:step.description[lang],icon:step.icon,image:step.image}));
-// Draft illustration previews belong in an isolated, noindex review gallery.
-// Official FR/EN/AR product guides must show their current six steps only.
-const fullSizeC1T=product.code==='BOND-C1T' && product.slug==='fenek-bond-c1t' ? [
- '/images/illustrations/application/v3/fenek-bond-c1t/01_support.png',
- '/images/illustrations/application/v3/fenek-bond-c1t/02_epi.png',
- '/images/illustrations/application/v3/fenek-bond-c1t/03_gachage.png',
- '/images/illustrations/application/v3/fenek-bond-c1t/04_repos.png',
- '/images/illustrations/application/v3/fenek-bond-c1t/05_encollage.png',
- '/images/illustrations/application/v3/fenek-bond-c1t/06_pose.png',
-] : null;
+// Only the exact current six-step illustration is rendered per reference.
 
 const copy={
-  fr:{intro:'Parcours illustré de mise en œuvre',step:'Étape',alert:'Mode opératoire indicatif — présentation provisoire',warning:'Ces schémas expliquent les gestes de métier ; ils ne remplacent pas une FT/FDS FENEK approuvée. Ne déduisez jamais de ces illustrations un dosage, un temps ouvert, une épaisseur ou une résistance.',check:'Point spécifique à vérifier pour cette référence',photo:'Illustration fournie par le client',zoom:'Ouvrir en haute résolution'},
-  en:{intro:'Illustrated application journey',step:'Step',alert:'Indicative process — provisional presentation',warning:'These images illustrate general trade practice, not an approved FENEK TDS/SDS. Never infer ratios, open time, thickness or strength from drawings.',check:'Reference-specific verification',photo:'Customer-provided illustration',zoom:'Open full-resolution illustration'},
-  ar:{intro:'مراحل التطبيق المصورة',step:'المرحلة',alert:'إجراء إرشادي — عرض أولي',warning:'هذه الرسوم توضح خطوات العمل العامة ولا تحل محل النشرة الفنية ونشرة السلامة المعتمدتين. لا تستنتج نسب الخلط أو أوقات التشغيل أو السماكة أو المقاومة من الصور.',check:'نقطة فحص خاصة بهذا المرجع',photo:'رسم مقدم من العميل',zoom:'فتح الرسم بالحجم الكامل'}
+  fr:{intro:'Parcours illustré de mise en œuvre',step:'Étape',alert:'Mode opératoire indicatif — présentation provisoire',warning:'Ces schémas expliquent les gestes de métier ; ils ne remplacent pas une FT/FDS FENEK approuvée. Ne déduisez jamais de ces illustrations un dosage, un temps ouvert, une épaisseur ou une résistance.',check:'Point spécifique à vérifier pour cette référence',photo:'Illustration fournie par le client'},
+  en:{intro:'Illustrated application journey',step:'Step',alert:'Indicative process — provisional presentation',warning:'These images illustrate general trade practice, not an approved FENEK TDS/SDS. Never infer ratios, open time, thickness or strength from drawings.',check:'Reference-specific verification',photo:'Customer-provided illustration'},
+  ar:{intro:'مراحل التطبيق المصورة',step:'المرحلة',alert:'إجراء إرشادي — عرض أولي',warning:'هذه الرسوم توضح خطوات العمل العامة ولا تحل محل النشرة الفنية ونشرة السلامة المعتمدتين. لا تستنتج نسب الخلط أو أوقات التشغيل أو السماكة أو المقاومة من الصور.',check:'نقطة فحص خاصة بهذا المرجع',photo:'رسم مقدم من العميل'}
 }[lang];
 
 ---
@@ -52,11 +43,7 @@ const copy={
       <div class="fenek-application-visual-copy">
         <h4>{step.title}</h4>
         <p>{step.description}</p>
-        {fullSizeC1T?.[i] && <a class="fenek-v3-detail-link"
-          href={fullSizeC1T[i]} target="_blank" rel="noopener noreferrer"
-          aria-label={copy.zoom+' — '+product.nom+' — '+copy.step+' '+(i+1)}>
-          {copy.zoom}
-        </a>}
+
       </div>
     </li>)}
   </ol>
@@ -80,9 +67,6 @@ const copy={
  .fenek-application-visual-photo{width:min(100%,142px);aspect-ratio:1;background-repeat:no-repeat;background-size:300% 200%;background-position:var(--sprite-position);filter:contrast(1.04)}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-card{background:#fff}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-figure{aspect-ratio:1/1;min-height:0;background:#fff;border-bottom:0;padding:3px}
- .fenek-application-visual-grid.v3-reviewed .fenek-v3-detail-link{display:inline-block;width:auto;max-width:100%;aspect-ratio:auto;margin-top:8px;padding:6px 9px;border-radius:8px;background:#e7f4ee;color:#075f4e;font-weight:750;font-size:.76rem;text-decoration:underline;text-underline-offset:2px;cursor:zoom-in}
- .fenek-v3-detail-link:focus-visible{outline:3px solid #009a44;outline-offset:-4px;border-radius:8px}
- .fenek-v3-detail-link:hover .fenek-v3-reviewed-photo{filter:contrast(1.08)}
  .fenek-v3-reviewed-photo{width:100%;aspect-ratio:1;max-width:none;background-image:var(--v3-sprite);background-size:300% 200%;background-position:var(--sprite-position);background-repeat:no-repeat;filter:none}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-figure figcaption{display:none}
  /* Crop only text baked into a source sprite when the upper artwork is pixel-identical to this product's V3 PNGs. */

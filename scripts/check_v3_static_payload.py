@@ -26,8 +26,8 @@ def static_report(root:Path=ROOT)->dict:
     media={"video_bytes":video.stat().st_size,
            "poster_bytes":poster.stat().st_size,
            "v3_css_source_bytes":css.stat().st_size}
-    image_dirs=[root/"public/images/illustrations/catalogue-projects",root/"public/images/illustrations/maquettes"]
-    images=[p for directory in image_dirs for p in directory.glob("*.webp")]
+    image_dir=root/"public/images/illustrations/produits"
+    images=list(image_dir.glob("*.webp"))
     result={
       "checked_utc":datetime.now(timezone.utc).isoformat(),
       "source_media":media,

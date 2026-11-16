@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-IMAGES = ROOT / "public/images/illustrations/maquettes"
+IMAGES = ROOT / "public/images/illustrations/produits"
 CORRECTED = IMAGES / "fenek-proof-cm-o2p-sac-20kg-v2.webp"
 CORRECTED_SHA = "552f3f850fca117410d0268265f5f7db8c4506dcbc93620ba07529657ea291b7"
 
@@ -22,8 +22,8 @@ class CorrectedCmO2pVisual(unittest.TestCase):
         self.assertFalse(target[0]["commercialise"])
         self.assertNotIn("Kit : sac 30 kg + bidon 10 kg", json.dumps(data, ensure_ascii=False))
         source = (ROOT / "src/lib/catalogue-projets.ts").read_text("utf-8")
-        for phrase in ("if(product.code==='PROOF-CM-O2P')",
-                       "fenek-proof-cm-o2p-sac-20kg-v2.webp",
+        for phrase in ("product.code==='PROOF-CM-O2P'",
+                       "fenek-proof-cm-o2p-sac-20kg-v2",
                        "Kit: 20 kg bag + 10 kg canister (30 kg total)",
                        "Kit : sac 20 kg + bidon 10 kg (30 kg au total)"):
             self.assertIn(phrase, source)

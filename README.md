@@ -28,14 +28,13 @@ Les workflows maintenus dans `.github/workflows/` couvrent le build/sécurité, 
 ## Organisation
 
 - `src/` : composants, routes, styles et données éditoriales.
-- `public/` : ressources et pages statiques. Toutes les illustrations (catalogue, guides, maquettes, approche et revues) sont sous le dossier principal `public/images/illustrations/` ; les fichiers de marque et les vidéos restent distincts. Les 50 sprites de `illustrations/application-upgraded/` sont les visuels officiels du site.
-- `public/images/illustrations/application-upgraded/` : les 50 planches WebP réellement utilisées par les 50 guides. Les 50 anciennes planches de `application-v3/` ont été retirées : leurs empreintes historiques restent dans `src/data/fenek-v3-manuals.json` (`sourceV3Sha256`), et leurs URL sont redirigées.
-- L'ancien sprite générique `tile-application-6.webp`, son installateur et le recadrage de secours V3 inutilisé ont été supprimés. Le build échoue si une planche spécifique manque.
-- `public/images/illustrations/maquettes/` : 26 maquettes numérotées réellement affichées et la seule image corrigée de CM-O2P (27 WebP). L'ancienne maquette n°37 et son SVG sont retirés, mais restent récupérables dans l'historique Git.
-- `public/images/illustrations/catalogue-projects/` : seules les images utilisées par les produits FLOW (24 formats) et PAINT (11 visuels). Les 20 anciens packshots BOND non affichés et leur chaîne d'installation/test ont été supprimés ; les 16 produits BOND utilisent leurs maquettes spécifiques.
-- `public/_redirects` : redirections 301 depuis les anciennes URL d'illustrations vers le dossier consolidé, pour préserver les liens externes déjà diffusés.
-- `public/images/illustrations/application-premium/` : candidatures de revue graphique séparées des notices officielles, non approuvées.
-- `functions/api/lead.js` : point de contact désactivé par défaut ; ne pas activer sans autorisations et configuration sécurisée.
+- `public/` : ressources statiques ; illustrations conservées sous la racine `public/images/illustrations/`, médias de marque et vidéos distincts.
+- `public/images/illustrations/produits/` : **dossier unique des 62 WebP pour les 50 produits** BOND (16), PROOF (11), FLOW (12 images + 12 miniatures), PAINT (11). Nommage par slug produit ; correction CM-O2P 20 kg conservée avec son nom versionné. Aucune ancienne `maquette-XX` ou copie `catalogue-projects` n'est publiée.
+- `public/images/illustrations/application-upgraded/` : les 50 planches de six étapes réellement affichées par les guides FENEK. Les 50 anciennes planches V3 sont retirées ; empreintes historiques en métadonnées.
+- `public/images/illustrations/approche/` : trois illustrations utilisées dans la présentation industrielle.
+- Les anciens brouillons `application-premium/` et les six PNG `fenek-bond-c1t/` ont été retirés, tout comme leurs pages d'avant-première, composants et liens d'ouverture en haute résolution. Les illustrations restent consultables normalement dans les pages produits.
+- Les URL historiques des anciens packshots et maquettes sont redirigées vers les nouveaux noms ; les pages d'avant-première supprimées sont redirigées vers le catalogue.
+
 - `supports/assets/` : logos d'origine copiés dans le build par `scripts/copy_public_assets.mjs`.
 - `supports/`, `docs/`, `sql/` : matériel de travail documentaire, audits et propositions techniques ; **non équivalents à des certifications ou à un aval commercial**.
 - `tests/` et `scripts/` : garde-fous, validation et automatisations réellement maintenus.

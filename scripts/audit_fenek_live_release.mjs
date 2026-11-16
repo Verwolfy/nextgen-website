@@ -35,30 +35,6 @@ export function validateSource(catalog, artwork, expectedProducts = 50) {
   return true;
 }
 
-export function inspectGallery(html, artwork) {
-  const entries = [...html.matchAll(/<details\b[^>]*\bdata-product-code="([^"]+)"[^>]*>[\s\S]*?<\/details>/g)];
-  if (entries.length !== artwork.length) throw Error('gallery: expected ' + artwork.length + ' products, got ' + entries.length);
-  const found = new Set();
-  for (const match of entries) {
-    const code = match[1], block = match[0];
-    if (found.has(code)) throw Error('gallery: duplicate product ' + code);
-    found.add(code);
-    const item = artwork.find(a => a.code === code);
-    if (!item) throw Error('gallery: unexpected product ' + code);
-    if (!block.includes('data-sha256="' + item.sha256 + '"')) throw Error('gallery: SHA identity mismatch ' + code);
-    const backgrounds = ["--media:url('" + item.sprite + "')", '--media:url(' + item.sprite + ')', '--media:url("' + item.sprite + '")'];
-    if (!backgrounds.some(value => block.includes(value))) throw Error('gallery: artwork not rendered ' + code);
-    const grid = block.match(/<ol class="steps">([\s\S]*?)<\/ol>/);
-    const positions = ['0% 0%','50% 0%','100% 0%','0% 100%','50% 100%','100% 100%'];
-    const tiles = grid ? [...grid[1].matchAll(/<li class="step">([\s\S]*?)<\/li>/g)] : [];
-    if (tiles.length !== 6 || tiles.some((tile, i) =>
-        !tile[1].includes('class="crop"') || !tile[1].includes('style="--pos:' + positions[i] + '"')))
-      throw Error('gallery: missing or displaced six image crops ' + code);
-  }
-  for (const item of artwork) if (!found.has(item.code)) throw Error('gallery: absent ' + item.code);
-  return { products: found.size, officialScenes: found.size * 6 };
-}
-
 export function inspectGuide(html, code, sprite, digest) {
   if (!html.includes('data-reference="' + code + '"')) throw Error('page: wrong reference ' + code);
   if (!html.includes('data-application-count="6"')) throw Error('page: wrong scene count ' + code);
@@ -106,10 +82,17 @@ export async function verifyLiveRelease({ origin, expectedCommit, catalog, artwo
       marker.commit !== expectedCommit.toLowerCase())
     throw Error('DEPLOYMENT DRIFT: expected ' + expectedCommit.toLowerCase() +
       ', public ' + (marker.commit ?? 'missing'));
-  const html = await get('/fr/avant-premiere/audit-50-illustrations/');
-  const gallery = inspectGallery(html, artwork);
-  const report = { commit: marker.commit, gallery, pagesChecked: 0, mediaChecked: 0, status: 'PASS' };
-  if (!full) return report;
+  const report = { commit: marker.commit, products: catalog.length,
+    pagesChecked: 0, mediaChecked: 0, status: 'PASS' };
+  // Quick mode now checks a real official guide instead of a deleted preview gallery.
+  if (!full) {
+    const first=catalog[0], art=artwork.find(a=>a.code===first.code);
+    if(!art) throw Error('Missing first product illustration');
+    const page=await get('/fr/documentation/'+first.slug+'/');
+    inspectGuide(page, first.code, art.sprite, art.sha256);
+    report.pagesChecked=1;
+    return report;
+  }
   const artworkByCode = new Map(artwork.map(a => [a.code, a]));
   if (catalog.length !== 50 || artwork.length !== 50 || artworkByCode.size !== 50)
     throw Error('Expected exactly 50 source catalog/artwork entries');

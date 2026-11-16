@@ -24,7 +24,9 @@ class Parser(HTMLParser):
         if 'data-application-visual' in d:self.guides.append(d)
         if 'data-application-step' in d:self.steps.append(d['data-application-step'])
         if 'data-v3-step' in d:self.v3.append((d['data-v3-step'],d.get('aria-label',''),d.get('role','')))
-        if tag=='a' and 'fenek-v3-detail-link' in (d.get('class','')).split():self.fullres.append(d.get('href'))
+        
+        if tag=='a' and 'fenek-v3-detail-link' in (d.get('class','')).split():
+            self.fullres.append(d.get('href'))
 
 def main():
     if len(CATALOGUE)!=50 or len(MANUALS)!=50:
@@ -81,44 +83,16 @@ def main():
                 else:
                     assert role=='img' and title in aria,(lang,code,i,'wrong title for image')
             assert sprite in html,(lang,code,'sprite not shown')
-            if code=='BOND-C1T':
-                assert len(parser.fullres)==6,(lang,code,'C1T full-resolution links')
-            else:
-                assert not parser.fullres,(lang,code,'unreviewed full-size links')
+            assert not parser.fullres,(lang,code,'retired high-resolution zoom link')
             count+=1
-    # Verify unapproved media are present only on noindex review pages.
-    premium=ROOT/"public/images/illustrations/application-premium"
-    review_acr=(DIST/"fr/avant-premiere/fenek-proof-acr-rf/index.html")
-    review_proof=(DIST/"fr/avant-premiere/lot187-proof/index.html")
-    assert review_acr.is_file() and review_proof.is_file(),'Missing isolated review pages'
-    acr_html=review_acr.read_text(encoding='utf8')
-    proof_html=review_proof.read_text(encoding='utf8')
-    for page in (acr_html,proof_html):
-        assert 'noindex,nofollow,noarchive' in page,'Preview page must stay noindex'
-    acr_path='/images/illustrations/application-premium/fenek-proof-acr-rf-steps-v4.webp'
-    assert acr_html.count("--image:url('"+acr_path+"')")==6,'Exactly six isolated ACR-RF scenes required'
-    assert 'Brouillon' in acr_html and 'non autorisée' in acr_html,'Missing ACR-RF draft warning'
-    acr_asset=DIST/acr_path.lstrip('/')
-    assert acr_asset.is_file(),'ACR-RF V4 asset missing from dist'
-    assert hashlib.sha256(acr_asset.read_bytes()).hexdigest()=='438694daefa3b97b2ca3d36f38d6bea78fbedb7070203f81b6e06ef3a76fa433'
-    review_candidates={
-        'PROOF-PU-1K':(
-            5,'/images/illustrations/application-premium/fenek-proof-pu-1k-scene-05-candidate-v1.webp',
-            'f8a758381f5a510b03b9bd231700925d5a5b02935d264c2fdc47844915a6c14f',
-        ),
-        'PROOF-CM-O1P':(
-            1,'/images/illustrations/application-premium/fenek-proof-cm-o1p-scene-01-candidate-v1.webp',
-            '079bde85ae3e331bd2c654d8299ccde2e26a2141dce349b610130c080902a622',
-        ),
-    }
-    assert proof_html.count('V4 · brouillon')==2,'Two PROOF draft labels required'
-    for code,(step,candidate_path,candidate_hash) in review_candidates.items():
-        candidate_file=DIST/candidate_path.lstrip('/')
-        assert candidate_file.is_file(),(code,'candidate WebP missing from build')
-        assert hashlib.sha256(candidate_file.read_bytes()).hexdigest()==candidate_hash,(code,'candidate SHA mismatch')
-        assert proof_html.count(f'src="{candidate_path}"')==1,(code,'one isolated candidate required')
-        assert f'href="{candidate_path}"' in proof_html,(code,'full resolution link missing or wrong image')
-        assert 'target="_blank"' in proof_html and 'rel="noopener noreferrer"' in proof_html,(code,'unsafe zoom link')
+    for retired in ("images/illustrations/application-premium",
+                    "images/illustrations/application/v3/fenek-bond-c1t",
+                    "images/illustrations/catalogue-projects",
+                    "images/illustrations/maquettes",
+                    "fr/avant-premiere/audit-50-illustrations",
+                    "fr/avant-premiere/fenek-proof-acr-rf",
+                    "fr/avant-premiere/lot187-proof"):
+        assert not (DIST/retired).exists(),('Retired asset or preview still published',retired)
     assert count==150,count
     print('PASS: 150 V3 guides, 50 exact references, 300 images/steps, FR/AR/EN and SHA-256 integrity')
 
