@@ -11,6 +11,8 @@ import AnimatedHeaderLogo from '../components/AnimatedHeaderLogo.astro';
 import ThemeInit from '../components/ThemeInit.astro';
 interface Props { lang:Lang; title:string; description:string; }
 const {lang,title,description}=Astro.props;
+const pageTitle=`${title} · NextGen Building Solutions`;
+const ogLocale:Record<Lang,string>={fr:'fr_FR',ar:'ar_DZ',en:'en_US'};
 const t=messages[lang];
 const suffix=Astro.url.pathname.replace(/^\/(?:fr|ar|en)/,'') || '/';
 const translate=(next:Lang)=>`/${next}${suffix}`.replace(/\/+/g,'/');
@@ -39,11 +41,15 @@ const skipLabel:Record<Lang,string>={fr:'Aller au contenu principal',ar:'الا�
   <meta name="description" content={description} />
   <meta name="robots" content="noindex,nofollow" />
   {preloadWelcomePoster && <link rel="preload" as="image" href={welcomePosterUrl} fetchpriority="high" />}
-  <meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" />
+  <meta property="og:title" content={pageTitle} /><meta property="og:description" content={description} /><meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} /><meta property="og:site_name" content={brand.name} />
+  <meta property="og:locale" content={ogLocale[lang]} />
+  {languages.filter(l=>l!==lang).map(l=><meta property="og:locale:alternate" content={ogLocale[l]} />)}
+  <meta name="twitter:card" content="summary" /><meta name="twitter:title" content={pageTitle} /><meta name="twitter:description" content={description} />
   <link rel="canonical" href={canonical} />
   {languages.map(l=><link rel="alternate" hreflang={l} href={publicOrigin+translate(l)} />)}
   <link rel="alternate" hreflang="x-default" href={publicOrigin+translate('fr')} />
-  <title>{title} · NextGen Building Solutions</title>
+  <title>{pageTitle}</title>
  </head>
  <body>
   <a class="skip" href="#main">{skipLabel[lang]}</a>

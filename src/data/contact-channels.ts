@@ -1,4 +1,4 @@
-import type { Lang } from './site';
+import { brand, type Lang } from './site';
 
 type ContactCopy = {
   heading: string;
@@ -45,4 +45,30 @@ export const contactCopy: Record<Lang, ContactCopy> = {
     inboxNotice: 'Choose your preferred contact channel.',
     previewAnchor: 'Contact NextGen',
   },
+};
+/**
+ * Contextualized trilingual enquiries open WhatsApp directly, without sending
+ * personal information through the NextGen website.
+ */
+export const productWhatsappHref = (
+  lang: Lang,
+  product: { code: string; nom: string },
+  topic: 'question' | 'documentation' = 'question'
+): string => {
+  const text = {
+    fr: {
+      question: 'Bonjour, je souhaite des informations sur la référence',
+      documentation: 'Bonjour, je souhaite connaître les documents techniques disponibles pour la référence',
+    },
+    ar: {
+      question: 'مرحبًا، أود الاستفسار عن المرجع',
+      documentation: 'مرحبًا، أود معرفة الوثائق الفنية المتاحة للمرجع',
+    },
+    en: {
+      question: 'Hello, I would like information about reference',
+      documentation: 'Hello, I would like to know which technical documents are available for reference',
+    },
+  } satisfies Record<Lang, Record<'question' | 'documentation', string>>;
+  const message = `${text[lang][topic]} ${product.nom} (${product.code}).`;
+  return `https://wa.me/${brand.whatsapp}?text=${encodeURIComponent(message)}`;
 };

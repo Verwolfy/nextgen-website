@@ -7,6 +7,7 @@ import {catalogueProjects, conceptPackshot, packagingLabelFor, type CataloguePro
 import {guideFor} from '../../../data/fenek-guides';
 import {qualificationFor} from '../../../data/fenek-qualification-notes';
 import {applicationContextFor} from '../../../data/fenek-application-context';
+import {productWhatsappHref} from '../../../data/contact-channels';
 
 export function getStaticPaths() {
   return languages.flatMap(lang => catalogueProjects.map(product => ({
@@ -35,7 +36,7 @@ const t = {
     documentProduct:'Fiche produit FENEK',documentTechnical:'Dossier technique et FDS',documentDesc:'Résumé de la gamme, domaines d’emploi et présentations.',
     documentTechnicalText:'Pour la fiche technique détaillée et les documents de sécurité propres à cette référence, adressez votre demande à notre équipe.',
     summary:'Données de comparaison issues d’une synthèse documentaire par famille ; les valeurs spécifiques et instructions finales relèvent du dossier technique du produit.',
-    contact:'Demander la documentation',email:'Écrire à NextGen',print:'Imprimer / enregistrer en PDF',
+    contact:'Demander la documentation',email:'Écrire à NextGen',whatsapp:'Demander via WhatsApp',print:'Imprimer / enregistrer en PDF',
     view:'Consulter la fiche',download:'Imprimer le document',back:'Retour au catalogue',
     color:'Présentation visuelle',footer:'Visuel et formats indicatifs. Les conditions de mise en œuvre dépendent de la documentation propre au produit.',
     nav:'Navigation dans la fiche',topic:'Éléments techniques de la famille',sourceHint:'Les informations de mise en œuvre détaillées sont communiquées pour la référence concernée.',
@@ -55,7 +56,7 @@ const t = {
     documentProduct:'بطاقة منتج FENEK',documentTechnical:'الملف الفني وصحيفة بيانات السلامة',documentDesc:'ملخص المجموعة ومجالات الاستخدام وأشكال العبوات.',
     documentTechnicalText:'للحصول على النشرة الفنية التفصيلية ووثائق السلامة الخاصة بهذا المرجع، يُرجى مراسلة فريقنا.',
     summary:'معلومات مستخلصة من دراسة وثائق منتجات مماثلة حسب الفئة؛ أما القيم والتعليمات الخاصة بكل مرجع فترجع إلى ملفه الفني.',
-    contact:'طلب الوثائق الفنية',email:'مراسلة NextGen',print:'طباعة / حفظ PDF',
+    contact:'طلب الوثائق الفنية',email:'مراسلة NextGen',whatsapp:'الطلب عبر واتساب',print:'طباعة / حفظ PDF',
     view:'عرض البطاقة',download:'طباعة الوثيقة',back:'العودة إلى الكتالوج',
     color:'صورة توضيحية',footer:'الصورة والعبوات إرشادية. تعتمد شروط التطبيق على الوثائق الفنية الخاصة بالمنتج.',
     nav:'التنقل بين أقسام البطاقة',topic:'المعلومات الفنية المتعلقة بالفئة',sourceHint:'تُقدم تعليمات التطبيق المفصلة الخاصة بالمرجع عند طلبها.',
@@ -75,7 +76,7 @@ const t = {
     documentProduct:'FENEK product sheet',documentTechnical:'Technical dossier and SDS',documentDesc:'Overview of the product range, uses and packaging presentations.',
     documentTechnicalText:'For the detailed technical data sheet and safety information specific to this reference, contact our team.',
     summary:'Category-level information derived from a technical-document review; product-specific values and final instructions belong in the product’s own technical dossier.',
-    contact:'Request documentation',email:'Email NextGen',print:'Print / save PDF',
+    contact:'Request documentation',email:'Email NextGen',whatsapp:'Request via WhatsApp',print:'Print / save PDF',
     view:'Read sheet',download:'Print document',back:'Back to catalogue',
     color:'Presentation image',footer:'Illustrative image and formats. Application conditions depend on the product-specific technical documentation.',
     nav:'Navigate product sheet',topic:'Category technical topics',sourceHint:'Detailed instructions for this specific reference are provided on request.',
@@ -216,6 +217,7 @@ const emailHref = 'mailto:' + brand.email + '?subject=' +
               <div class="actions">
                 <a class="btn" href={`/${lang}/contact/`}>{t.contact}</a>
                 <a class="btn btn-muted" href={emailHref}>{t.email}</a>
+                 <a class="btn btn-muted" href={productWhatsappHref(lang,product,'documentation')} target="_blank" rel="noopener noreferrer">{t.whatsapp}</a>
               </div>
             </div>
           </details>

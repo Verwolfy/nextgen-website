@@ -112,6 +112,17 @@ def check_page(filename: Path, lang: str) -> int:
     return len(tags.links)
 
 
+def assert_product_whatsapp(markup: str, lang: str, code: str) -> None:
+    tags = Tags()
+    tags.feed(markup)
+    opening = {"fr": "Bonjour,", "ar": "مرحبًا،", "en": "Hello,"}[lang]
+    assert any(
+        link.startswith("https://wa.me/") and "?text=" in link
+        and f"({code})" in unquote(link) and opening in unquote(link)
+        for link in tags.links
+    ), f"Missing contextual WhatsApp link: {lang}/{code}"
+
+
 def main() -> None:
     assert ROOT.is_dir(), "Run npm run build first"
     checked = 0
@@ -179,6 +190,7 @@ def main() -> None:
             assert info.is_file(), f"Missing information page: {info}"
             markup = info.read_text(encoding="utf-8")
             assert 'class="fenek-product-intro"' in markup, info
+            assert_product_whatsapp(markup, lang, entry["code"])
             assert markup.count('class="fenek-doc-accordion"') == 8, info
             assert markup.count('<summary>') == 8, info
             assert markup.count('class="fenek-accordion-indicator"') == 8, info
@@ -216,6 +228,7 @@ def main() -> None:
                           "يمكن تحديث هذا المحتوى لاحقًا"):
                 assert stale not in markup, f"Old revision copy still public: {lang}/{entry['slug']}"
             assert "concept-detail-note" in markup, f"Missing documentation notice {lang}/{entry['slug']}"
+            assert_product_whatsapp(markup, lang, entry["code"])
         # Lot 31: eleven photo-realistic renderings cut from the user-selected
         # concept board, associated strictly with their true FENEK-PAINT code.
         # No flat vector pail and no shared 15 L image may appear.

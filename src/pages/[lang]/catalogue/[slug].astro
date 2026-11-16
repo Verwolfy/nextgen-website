@@ -1,8 +1,9 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-import {brand,languages,rangeName,rangeColor,type Lang} from '../../../data/site';
+import {brand,languages,rangeName,rangeColor,messages,type Lang} from '../../../data/site';
 import {catalogueProjects,conceptPackshot,hasProductPackshot,packagingLabelFor,type CatalogueProject} from '../../../lib/catalogue-projets';
 import {catalogueCopy} from '../../../data/catalogue-content';
+import {productWhatsappHref} from '../../../data/contact-channels';
 export function getStaticPaths(){
  return languages.flatMap(lang=>catalogueProjects.map(product=>({params:{lang,slug:product.slug},props:{product}})));
 }
@@ -33,7 +34,11 @@ const packshotAlt = product.code==='PROOF-CM-O2P'
       en:'FENEK-PROOF CM-O2P mockup: 20 kg bag and 10 kg canister (30 kg kit)',
       ar:'تصميم FENEK-PROOF CM-O2P: كيس 20 كغ وعبوة 10 كغ (طقم 30 كغ)',
     }[lang]
-  : '';
+  : {
+      fr: `Illustration provisoire de ${product.nom} ; conditionnement indicatif`,
+      ar: `صورة توضيحية أولية للمنتج ${product.nom}؛ العبوة إرشادية`,
+      en: `Provisional illustration of ${product.nom}; indicative packaging`,
+    }[lang];
 
 ---
 <Layout lang={lang} title={product.nom} description={d.description}>
@@ -66,6 +71,7 @@ const packshotAlt = product.code==='PROOF-CM-O2P'
         <div class="actions">
           <a class="btn" href={'/'+lang+'/contact/'}>{t.quote}</a>
           <a class="btn btn-muted" href={directEmail}>{directEmailLabel}</a>
+           <a class="btn btn-muted" href={productWhatsappHref(lang,product)} target="_blank" rel="noopener noreferrer">{messages[lang].whatsapp}</a>
         </div>
       </aside>
     </div>
