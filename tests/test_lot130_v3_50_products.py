@@ -77,7 +77,7 @@ class AllV3Manuals(unittest.TestCase):
                 self.assertNotEqual(original,corrected)
                 self.assertEqual(by_code[code]["corrected_steps"],[4])
                 self.assertEqual(by_code[code]["source_png_sha256"]["04_gachage.png"],corrected)
-                self.assertTrue((ROOT/"public/images/illustrations/application-v3"/
+                self.assertTrue((ROOT/"public/images/illustrations/application-upgraded"/
                                  (by_code[code]["slug"]+"-steps.webp")).is_file())
         self.assertEqual(sum(bool(p["corrected_steps"]) for p in AUDIT["products"]),3)
 

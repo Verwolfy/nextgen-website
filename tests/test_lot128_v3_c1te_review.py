@@ -29,7 +29,7 @@ class C1TE_VisualReview(unittest.TestCase):
         self.assertIn("code:'BOND-C1TE'",manifest)
         self.assertIn("slug:'fenek-bond-c1te'",manifest)
         self.assertIn(SHA,manifest)
-        self.assertIn("sprite:'/images/illustrations/application-v3/fenek-bond-c1te-steps.webp'",manifest)
+        self.assertIn("sprite:'/images/illustrations/application-upgraded/fenek-bond-c1te-steps.webp'",manifest)
         self.assertIn("'BOND-C1TE':c1te",manifest)
         self.assertIn("status:'BROUILLON'",manifest)
     def test_six_v3_actions_and_lab_safety(self):

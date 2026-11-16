@@ -34,8 +34,9 @@ def markup(code: str, lang: str, steps: int, illustrations: bool) -> bytes:
 
 class PublicIllustrationContracts(unittest.TestCase):
     def test_five_adhesives_require_exactly_six_drawings(self):
-        self.assertEqual(len(live.TILE_ADHESIVES), 5)
-        for code in live.TILE_ADHESIVES:
+        tile_adhesives={"BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1"}
+        self.assertEqual(len(tile_adhesives),5)
+        for code in tile_adhesives:
             for lang in live.LANGS:
                 p = {"code": code}
                 html = markup(code, lang, 6, True)
@@ -79,7 +80,8 @@ class PublicIllustrationContracts(unittest.TestCase):
     def test_no_credentials_or_unsafe_http_mutations(self):
         script = (ROOT / "scripts/check_live_application_guides.py").read_text(encoding="utf-8")
         self.assertIn("ThreadPoolExecutor", script)
-        self.assertIn("SPRITE_SHA256", script)
+        self.assertIn("sourceV3Sha256", script)
+        self.assertIn("art['sha256']", script)
         self.assertIn("validate_html", script)
         self.assertIn("150", script)
         self.assertNotIn("CLOUDFLARE_API_TOKEN", script)

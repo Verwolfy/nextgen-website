@@ -39,7 +39,7 @@ class FacadeIllustrations(unittest.TestCase):
         ui=(ROOT/"src/components/FenekApplicationGuide.astro").read_text(encoding="utf-8")
         self.assertIn("item.code===product.code && item.slug===product.slug",ui)
         self.assertIn("enhancedV3.sprite",ui)
-        self.assertIn("--v3-sprite:url('${enhancedV3?.sprite ?? reviewedV3.sprite}')",ui)
+        self.assertIn("--v3-sprite:url('${enhancedV3.sprite}')",ui)
         self.assertIn("data-v3-enhanced-sprite={enhancedV3.sprite}",ui)
         self.assertIn("data-v3-enhanced-hash={enhancedV3.sha256}",ui)
 

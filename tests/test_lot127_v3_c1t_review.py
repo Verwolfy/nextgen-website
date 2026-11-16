@@ -37,7 +37,7 @@ class V3_C1T_Quality(unittest.TestCase):
         self.assertEqual(hashlib.sha256(image).hexdigest(),SHA)
         manifest=MANIFEST.read_text(encoding="utf-8")
         self.assertIn(SHA,manifest)
-        self.assertIn("sprite:'/images/illustrations/application-v3/fenek-bond-c1t-steps.webp'",manifest)
+        self.assertIn("sprite:'/images/illustrations/application-upgraded/fenek-bond-c1t-steps.webp'",manifest)
         self.assertIn("status:'BROUILLON'",manifest)
         self.assertIn("if(guide.slug!==slug || guide.code!==code)",manifest)
         self.assertEqual(manifest.count("image:1,icon:"),2)  # original C1T and C1TE declarations

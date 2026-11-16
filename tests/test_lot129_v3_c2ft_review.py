@@ -24,7 +24,7 @@ class C2FTVisualReview(unittest.TestCase):
         manuals=json.loads(MANUALS.read_text(encoding="utf-8"))
         p=next(x for x in manuals if x["code"]=="BOND-C2FT")
         self.assertEqual(p["slug"],"fenek-bond-c2ft")
-        self.assertEqual(p["sprite"],"/images/illustrations/application-v3/fenek-bond-c2ft-steps.webp")
+        self.assertEqual(p["sprite"],"/images/illustrations/application-upgraded/fenek-bond-c2ft-steps.webp")
         self.assertEqual(p["status"],"BROUILLON")
         raw=IMAGE.read_bytes()
         self.assertEqual(raw[:4],b"RIFF")
