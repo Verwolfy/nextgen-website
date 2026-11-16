@@ -991,9 +991,9 @@ def check() -> None:
                     assert page.locator(".fenek-section-nav a").count() == 4, lang
                     assert page.locator("[data-c1t-pilot]").count() == 1, lang
                     assert page.locator(".fenek-doc-accordion").count() == 0, lang
-                    assert page.locator(".c1t-table").count() == 3, lang
+                    assert page.locator(".c1t-table").count() == 4, lang
                     assert page.locator('[data-c1t-source-type="norme"]').count() == 6, lang
-                    assert page.locator('[data-c1t-source-type="famille"]').count() == 3, lang
+                    assert page.locator('[data-c1t-source-type="famille"]').count() == 6, lang
                     guide = page.locator("[data-application-visual]")
                     assert guide.count() == 1, lang
                     assert guide.get_attribute("data-application-count") == "6", lang
