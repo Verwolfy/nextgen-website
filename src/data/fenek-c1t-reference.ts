@@ -22,7 +22,8 @@ export const c1tRequirements: ReferenceMetric[] = [
 ];
 
 export const c1tFamilyReferences: ReferenceMetric[] = [
-  {key:'consommation',kind:'famille',label:{fr:'Consommation selon peigne et encollage',ar:'الاستهلاك بحسب المشط وطريقة اللصق',en:'Coverage by trowel and bedding method'},value:'2–7 kg/m²'},
+  {key:'consommation-simple',kind:'famille',label:{fr:'Consommation de référence : simple encollage',ar:'استهلاك مرجعي: اللصق على السطح فقط',en:'Reference coverage: single-sided bedding'},value:'3–5 kg/m²'},
+  {key:'consommation-double',kind:'famille',label:{fr:'Consommation de référence : double encollage',ar:'استهلاك مرجعي: اللصق المزدوج',en:'Reference coverage: back-buttering and substrate'},value:'5–8 kg/m²'},
   {key:'eau',kind:'famille',label:{fr:'Eau observée sur produits comparables (sac de 25 kg)',ar:'الماء في منتجات مقارنة (كيس 25 كغ)',en:'Water used by comparable products (25 kg bag)'},value:'5–6,5 L / 25 kg'},
   {key:'temperature',kind:'famille',label:{fr:'Température de chantier couramment recommandée',ar:'درجة حرارة التطبيق الشائعة لدى منتجات مماثلة',en:'Common recommended application temperature'},value:'+5 à +30 °C'},
   {key:'temps-ouvert-comparatif',kind:'famille',label:{fr:'Temps ouvert observé sur les produits comparables',ar:'الزمن المفتوح في المنتجات المقارنة',en:'Open time observed on comparable products'},value:'≈ 20 min'},
