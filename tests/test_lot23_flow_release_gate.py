@@ -20,8 +20,8 @@ class TestFlowReleaseGate(unittest.TestCase):
             '"index.html"',
         ):
             self.assertIn(token,src)
-        self.assertIn('f"/images/catalogue-projects/{slug}-card.webp"',src)
-        self.assertIn('f"/images/catalogue-projects/{slug}.webp"',src)
+        self.assertIn('f"/images/illustrations/catalogue-projects/{slug}-card.webp"',src)
+        self.assertIn('f"/images/illustrations/catalogue-projects/{slug}.webp"',src)
 
     def test_browser_checks_real_images_when_present(self):
         script=(ROOT/"scripts/check_browser_pages.py").read_text(encoding="utf8")
@@ -33,7 +33,7 @@ class TestFlowReleaseGate(unittest.TestCase):
     def test_ci_is_triggered_on_binary_only_pr(self):
         browser=(ROOT/".github/workflows/site-browser-recette.yml").read_text(encoding="utf8")
         site=(ROOT/".github/workflows/site-check.yml").read_text(encoding="utf8")
-        self.assertIn('"public/images/catalogue-projects/**"',browser)
+        self.assertIn('"public/images/illustrations/catalogue-projects/**"',browser)
         self.assertIn('python scripts/check_flow_packshots_built.py',browser)
         self.assertIn('python scripts/check_flow_packshots_built.py',site)
         self.assertEqual((ROOT/"public/data/products.json").read_text(encoding="utf8").strip(),"[]")

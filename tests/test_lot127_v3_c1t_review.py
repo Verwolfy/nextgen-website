@@ -13,7 +13,7 @@ ROOT=Path(__file__).resolve().parents[1]
 CAT=ROOT/"src/data/catalogue-projets.json"
 COMPONENT=ROOT/"src/components/FenekApplicationGuide.astro"
 MANIFEST=ROOT/"src/data/fenek-v3-reviewed.ts"
-SPRITE=ROOT/"public/images/application-v3/fenek-bond-c1t-steps.webp"
+SPRITE=ROOT/"public/images/illustrations/application-v3/fenek-bond-c1t-steps.webp"
 SHA="9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3"
 
 class V3_C1T_Quality(unittest.TestCase):
@@ -37,7 +37,7 @@ class V3_C1T_Quality(unittest.TestCase):
         self.assertEqual(hashlib.sha256(image).hexdigest(),SHA)
         manifest=MANIFEST.read_text(encoding="utf-8")
         self.assertIn(SHA,manifest)
-        self.assertIn("sprite:'/images/application-v3/fenek-bond-c1t-steps.webp'",manifest)
+        self.assertIn("sprite:'/images/illustrations/application-v3/fenek-bond-c1t-steps.webp'",manifest)
         self.assertIn("status:'BROUILLON'",manifest)
         self.assertIn("if(guide.slug!==slug || guide.code!==code)",manifest)
         self.assertEqual(manifest.count("image:1,icon:"),2)  # original C1T and C1TE declarations

@@ -22,16 +22,16 @@ const l=(fr:string,ar:string,en:string):Localized=>({fr,ar,en});
 const c1t:ReviewedV3Guide={
   code:'BOND-C1T',
   slug:'fenek-bond-c1t',
-  sprite:'/images/application-v3/fenek-bond-c1t-steps.webp',
+  sprite:'/images/illustrations/application-v3/fenek-bond-c1t-steps.webp',
   sha256:'9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3',
   status:'BROUILLON',
   fullResolution:[
-    '/images/application/v3/fenek-bond-c1t/01_support.png',
-    '/images/application/v3/fenek-bond-c1t/02_epi.png',
-    '/images/application/v3/fenek-bond-c1t/03_gachage.png',
-    '/images/application/v3/fenek-bond-c1t/04_repos.png',
-    '/images/application/v3/fenek-bond-c1t/05_encollage.png',
-    '/images/application/v3/fenek-bond-c1t/06_pose.png',
+    '/images/illustrations/application/v3/fenek-bond-c1t/01_support.png',
+    '/images/illustrations/application/v3/fenek-bond-c1t/02_epi.png',
+    '/images/illustrations/application/v3/fenek-bond-c1t/03_gachage.png',
+    '/images/illustrations/application/v3/fenek-bond-c1t/04_repos.png',
+    '/images/illustrations/application/v3/fenek-bond-c1t/05_encollage.png',
+    '/images/illustrations/application/v3/fenek-bond-c1t/06_pose.png',
   ],
   steps:[
     {image:1,icon:'brush',
@@ -58,7 +58,7 @@ const c1t:ReviewedV3Guide={
 const c1te:ReviewedV3Guide={
   code:'BOND-C1TE',
   slug:'fenek-bond-c1te',
-  sprite:'/images/application-v3/fenek-bond-c1te-steps.webp',
+  sprite:'/images/illustrations/application-v3/fenek-bond-c1te-steps.webp',
   sha256:'0d4ea8e4b5fc7ec44e3b772f470aeffa81cc50009b2f724d0420c89fd8cd58ce',
   status:'BROUILLON',
   steps:[

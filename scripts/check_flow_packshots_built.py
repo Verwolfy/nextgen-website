@@ -11,7 +11,7 @@ import importlib.util
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PUBLIC = ROOT / "public/images/catalogue-projects"
+PUBLIC = ROOT / "public/images/illustrations/catalogue-projects"
 DIST = ROOT / "dist"
 INSTALLER = ROOT / "scripts/install_flow_packshots.py"
 
@@ -33,7 +33,7 @@ def check() -> None:
     if not actual:
         print("SKIP: 0/24 FENEK-FLOW packshots uploaded; generic placeholder images remain in use")
         # An obsolete build directory must never be mistaken for a verified upload.
-        assert not list((DIST / "images/catalogue-projects").glob("fenek-flow-*.webp")), (
+        assert not list((DIST / "images/illustrations/catalogue-projects").glob("fenek-flow-*.webp")), (
             "Stale packshots in dist despite no source assets"
         )
         return
@@ -55,12 +55,12 @@ def check() -> None:
         catalogue = DIST / lang / "catalogue/index.html"
         html = catalogue.read_text(encoding="utf-8")
         for slug in slugs:
-            card_url = f"/images/catalogue-projects/{slug}-card.webp"
+            card_url = f"/images/illustrations/catalogue-projects/{slug}-card.webp"
             assert card_url in html, f"Card not rendered: {lang}, {slug}"
             detail = DIST / lang / "catalogue" / slug / "index.html"
             assert detail.is_file(), f"Missing localized detail: {lang}/{slug}"
             body = detail.read_text(encoding="utf-8")
-            full_url = f"/images/catalogue-projects/{slug}.webp"
+            full_url = f"/images/illustrations/catalogue-projects/{slug}.webp"
             assert full_url in body, f"Specific packshot not rendered: {lang}/{slug}"
             assert "concept-detail-note" in body, f"Missing non-contractual notice: {lang}/{slug}"
 

@@ -15,20 +15,20 @@ const LOCALES=['fr','en','ar'];
 const expectedReview={
   'PROOF-PU-1K':{
     step:5,
-    path:'/images/application-premium/fenek-proof-pu-1k-scene-05-candidate-v1.webp',
+    path:'/images/illustrations/application-premium/fenek-proof-pu-1k-scene-05-candidate-v1.webp',
     sha256:'f8a758381f5a510b03b9bd231700925d5a5b02935d264c2fdc47844915a6c14f',
     width:960,height:640
   },
   'PROOF-CM-O1P':{
     step:1,
-    path:'/images/application-premium/fenek-proof-cm-o1p-scene-01-candidate-v1.webp',
+    path:'/images/illustrations/application-premium/fenek-proof-cm-o1p-scene-01-candidate-v1.webp',
     sha256:'079bde85ae3e331bd2c654d8299ccde2e26a2141dce349b610130c080902a622',
     width:960,height:640
   }
 };
 const acr={
   code:'PROOF-ACR-RF',
-  path:'/images/application-premium/fenek-proof-acr-rf-steps-v4.webp',
+  path:'/images/illustrations/application-premium/fenek-proof-acr-rf-steps-v4.webp',
   sha256:'438694daefa3b97b2ca3d36f38d6bea78fbedb7070203f81b6e06ef3a76fa433',
   width:1620,height:720
 };
@@ -86,7 +86,7 @@ for(const product of catalog){
   must(guide.status==='BROUILLON'&&art.status==='BROUILLON','Unapproved FT/FDS change '+code);
   must(guide.steps.length===6 && guide.steps.every((s,i)=>s.image===i+1),
     'Wrong six-step manual '+code);
-  must(art.sprite===`/images/application-upgraded/${slug}-steps.webp`,
+  must(art.sprite===`/images/illustrations/application-upgraded/${slug}-steps.webp`,
     'Wrong original fallback '+code);
   verifyMedia(art.sprite,art.sha256,[1620,720]);
   for(const lang of LOCALES){

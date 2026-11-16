@@ -28,7 +28,7 @@ class AllFenekArtwork(unittest.TestCase):
             with self.subTest(code=code):
                 self.assertEqual(product["slug"],guides[code]["slug"])
                 self.assertEqual(product["slug"],image["slug"])
-                self.assertEqual(image["sprite"],f"/images/application-upgraded/{product['slug']}-steps.webp")
+                self.assertEqual(image["sprite"],f"/images/illustrations/application-upgraded/{product['slug']}-steps.webp")
                 self.assertEqual(image["status"],"BROUILLON")
                 self.assertEqual(image["layout"],"3x2")
                 self.assertEqual(image["artworkDimensions"],[540,360])

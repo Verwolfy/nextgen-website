@@ -14,9 +14,9 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 OLD="Kit : sac 30 kg + bidon 10 kg"
 NEW="Kit : sac 20 kg + bidon 10 kg"
-SVG=ROOT/"public/images/maquettes/maquette-37-sac-20kg.svg"
-ORIGINAL=ROOT/"public/images/maquettes/maquette-37.webp"
-CORRECTED=ROOT/"public/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
+SVG=ROOT/"public/images/illustrations/maquettes/maquette-37-sac-20kg.svg"
+ORIGINAL=ROOT/"public/images/illustrations/maquettes/maquette-37.webp"
+CORRECTED=ROOT/"public/images/illustrations/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
 CORRECTED_SHA="552f3f850fca117410d0268265f5f7db8c4506dcbc93620ba07529657ea291b7"
 
 

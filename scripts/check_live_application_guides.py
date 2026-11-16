@@ -84,7 +84,7 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
     index={m['code']:m for m in manuals}
     if len(index)!=50 or set(index)!={p['code'] for p in catalog}:
         raise AssertionError('Manual reference map mismatch')
-    legacy=fetch(origin,'/images/application/tile-application-6.webp',timeout)
+    legacy=fetch(origin,'/images/illustrations/application/tile-application-6.webp',timeout)
     if hashlib.sha256(legacy).hexdigest()!=SPRITE_SHA256:
         raise AssertionError('Original customer illustration modified')
     print('PASS original V2 fallback integrity',flush=True)
@@ -94,14 +94,14 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
         code=p['code'];manual=index[code];slug=p['slug']
         if manual['slug']!=slug or manual['status']!='BROUILLON':
             raise AssertionError((code,'slug/status mismatch'))
-        path=f'/images/application-v3/{slug}-steps.webp'
+        path=f'/images/illustrations/application-v3/{slug}-steps.webp'
         if manual['sprite']!=path: raise AssertionError((code,'asset path mismatch'))
         raw=fetch(origin,path,timeout)
         expected=LEGACY.get(code,manual['sha256'])
         if raw[:4]!=b'RIFF' or raw[8:12]!=b'WEBP' or hashlib.sha256(raw).hexdigest()!=expected:
             raise AssertionError((code,'published image SHA incorrect',path))
         art=upgraded_index[code]
-        upgraded_path=f'/images/application-upgraded/{slug}-steps.webp'
+        upgraded_path=f'/images/illustrations/application-upgraded/{slug}-steps.webp'
         if art['slug']!=slug or art['sprite']!=upgraded_path or art['status']!='BROUILLON':
             raise AssertionError((code,'new artwork does not match product identity'))
         updated=fetch(origin,upgraded_path,timeout)
@@ -121,7 +121,7 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
             validate_guide(raw,lang,p)
             doc=ApplicationGuideMarkup();doc.feed(raw.decode('utf-8'))
             code=p['code'];manual=index[code]
-            expected_sprite=f'/images/application-v3/{p["slug"]}-steps.webp'
+            expected_sprite=f'/images/illustrations/application-v3/{p["slug"]}-steps.webp'
             expected_hash=LEGACY.get(code,manual['sha256'])
             if doc.v3!=[str(i) for i in range(1,7)]:
                 raise AssertionError('Incorrect V3 stage numbering')

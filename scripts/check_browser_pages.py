@@ -27,7 +27,7 @@ class SilentHandler(SimpleHTTPRequestHandler):
 def check_lot127_v3_c1t(browser, base: str) -> None:
     """Visually test the first individually reviewed V3 reference, FR/AR/EN."""
     import hashlib
-    image_path = "/images/application-v3/fenek-bond-c1t-steps.webp"
+    image_path = "/images/illustrations/application-v3/fenek-bond-c1t-steps.webp"
     display_path = ENHANCED_BY_CODE["BOND-C1T"]
     for lang in ("fr", "ar", "en"):
         for width in (390, 1280):
@@ -74,7 +74,7 @@ def check_lot127_v3_c1t(browser, base: str) -> None:
 def check_lot128_v3_c1te(browser, base: str) -> None:
     """C1TE V3: own figures, correct code, conditional open time, all languages."""
     import hashlib
-    sprite = "/images/application-v3/fenek-bond-c1te-steps.webp"
+    sprite = "/images/illustrations/application-v3/fenek-bond-c1te-steps.webp"
     display_sprite = ENHANCED_BY_CODE["BOND-C1TE"]
     for lang in ("fr", "ar", "en"):
         for width in (390, 1280):
@@ -113,7 +113,7 @@ def check_lot128_v3_c1te(browser, base: str) -> None:
 
 def check_lot129_v3_c2ft(browser, base: str) -> None:
     """C2FT now serves its OWN six complete source illustrations and captions."""
-    sprite = "/images/application-v3/fenek-bond-c2ft-steps.webp"
+    sprite = "/images/illustrations/application-v3/fenek-bond-c2ft-steps.webp"
     display_sprite = ENHANCED_BY_CODE["BOND-C2FT"]
     for lang in ("fr", "ar", "en"):
         for width in (390, 1280):
@@ -157,7 +157,7 @@ def check_lot130_all_v3(browser, base: str) -> None:
             assert response and response.status==200,(code,"missing page")
             guide=page.locator(f'section[data-reference="{code}"][data-v3-reviewed="BROUILLON"]')
             assert guide.count()==1,(code,"not reviewed")
-            sprite=f"/images/application-v3/{slug}-steps.webp"
+            sprite=f"/images/illustrations/application-v3/{slug}-steps.webp"
             assert guide.get_attribute("data-v3-sprite")==sprite,(code,"wrong sprite")
             assert guide.get_attribute("data-v3-enhanced-sprite")==ENHANCED_BY_CODE.get(code),(code,"enhanced artwork mismatch")
             panels=guide.locator("[data-v3-step]")
@@ -176,7 +176,7 @@ def check_lot130_all_v3(browser, base: str) -> None:
 
 def check_lot125_cm_o2p_20kg(browser, base: str) -> None:
     """CM-O2P corrected sack mass is visible; canister remains 10 kg."""
-    image_path = "/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
+    image_path = "/images/illustrations/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
     for lang in ("fr", "ar", "en"):
         page = browser.new_page(viewport={"width": 390, "height": 850})
         try:
@@ -644,8 +644,8 @@ def check() -> None:
     base = "http://127.0.0.1:" + str(srv.server_address[1])
     errors = []
     snapshots = 0
-    flow_images_present = bool(list((ROOT / "public/images/catalogue-projects").glob("fenek-flow-*.webp")))
-    bond_images_present = bool(list((ROOT / "public/images/catalogue-projects").glob("fenek-bond-*.webp")))
+    flow_images_present = bool(list((ROOT / "public/images/illustrations/catalogue-projects").glob("fenek-flow-*.webp")))
+    bond_images_present = bool(list((ROOT / "public/images/illustrations/catalogue-projects").glob("fenek-bond-*.webp")))
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
@@ -761,12 +761,12 @@ def check() -> None:
                         if section == "catalogue":
                             # Lot 31: 27 BOND/PROOF gallery photo renders plus
                             # 11 individual code-matched PAINT WebPs from source board.
-                            gallery_cards = page.locator(".concept-product-card img[src*='/images/maquettes/']")
+                            gallery_cards = page.locator(".concept-product-card img[src*='/images/illustrations/maquettes/']")
                             assert gallery_cards.count() == 27, f"{lang}, {size}: incorrect gallery mapping"
-                            paint_imgs = page.locator("#catalogue-paint .concept-product-card img[src*='/images/catalogue-projects/fenek-paint-']")
+                            paint_imgs = page.locator("#catalogue-paint .concept-product-card img[src*='/images/illustrations/catalogue-projects/fenek-paint-']")
                             assert paint_imgs.count() == 11, f"{lang}, {size}: missing PAINT product images"
                             srcs = paint_imgs.evaluate_all("els => els.map(e => e.getAttribute('src'))")
-                            required = {f"/images/catalogue-projects/fenek-paint-{slug}.webp"
+                            required = {f"/images/illustrations/catalogue-projects/fenek-paint-{slug}.webp"
                                         for slug in ("ent-l","fac-el","fac-m","fac-sx","int-m","int-s",
                                                      "int-wa","prim-a","prim-fx","sol-a","txt-f")}
                             assert set(srcs) == required, f"{lang}: wrong PAINT source-to-product mapping"
@@ -793,7 +793,7 @@ def check() -> None:
                                     }"""), f"{lang}, {size}: paint render {k} missing or deformed"
                                 page.evaluate("window.scrollTo(0,0)")
                         if section == "catalogue" and flow_images_present:
-                            packshots = page.locator(".concept-product-card .concept-product-image img[src*='/images/catalogue-projects/fenek-flow-']")
+                            packshots = page.locator(".concept-product-card .concept-product-image img[src*='/images/illustrations/catalogue-projects/fenek-flow-']")
                             assert packshots.count() == 12, f"{lang}, {size}: missing FLOW card imagery"
                             if size == "mobile":
                                 for k in range(packshots.count()):
@@ -809,9 +809,9 @@ def check() -> None:
                         if section == "catalogue" and bond_images_present:
                             # Lot 29: exact labels on the newly supplied studio mockups,
                             # rather than the first-generation flat-label WebP cards.
-                            bags=page.locator("#catalogue-bond .concept-product-card img[src*='/images/maquettes/']")
+                            bags=page.locator("#catalogue-bond .concept-product-card img[src*='/images/illustrations/maquettes/']")
                             assert bags.count()==16, f"{lang}, {size}: incomplete updated BOND cards"
-                            assert page.locator(".concept-product-card img[src*='/images/catalogue-projects/fenek-bond-']").count()==0, (
+                            assert page.locator(".concept-product-card img[src*='/images/illustrations/catalogue-projects/fenek-bond-']").count()==0, (
                                 f"{lang}, {size}: old BOND label design is still displayed"
                             )
                             if size=="mobile":
@@ -832,7 +832,7 @@ def check() -> None:
                             assert page.locator(".editorial-caution").count() >= 1, path
                         if section == "a-propos":
                             assert page.locator(".industrial-step").count() == 3, path
-                            assert page.locator(".industrial-step img[src^='/images/approche/']").count() == 3, path
+                            assert page.locator(".industrial-step img[src^='/images/illustrations/approche/']").count() == 3, path
                             assert page.locator(".industrial-link").get_attribute("href") == f"/{lang}/contact/", path
                             assert page.locator(".industrial-disclaimer[role='note']").count() == 1, path
                         if section == "ressources":
@@ -896,7 +896,7 @@ def check() -> None:
                         assert detail_overflow<=4, f"Concept details overflow: {concept_path}, {width}px, {detail_overflow}px"
                         if slug=="fenek-paint-int-m":
                             full = page.locator(".concept-detail-aside img")
-                            assert full.count()==1 and full.get_attribute("src")=="/images/catalogue-projects/fenek-paint-int-m.webp", concept_path
+                            assert full.count()==1 and full.get_attribute("src")=="/images/illustrations/catalogue-projects/fenek-paint-int-m.webp", concept_path
                             full.scroll_into_view_if_needed()
                             assert full.evaluate("""async im => {
                                 try { await im.decode(); } catch (_) { return false; }
@@ -910,7 +910,7 @@ def check() -> None:
                                 try { await im.decode(); } catch (_) { return false; }
                                 return im.complete && im.naturalWidth === 880 &&
                                     im.naturalHeight === 880 &&
-                                    im.getAttribute('src') === '/images/maquettes/maquette-20.webp' &&
+                                    im.getAttribute('src') === '/images/illustrations/maquettes/maquette-20.webp' &&
                                     getComputedStyle(im).objectFit === 'contain';
                             }"""), f"{lang}, {size}: detailed BOND C1T bag missing or distorted"
                             page.screenshot(path=str(SHOTS/(lang+"-"+size+"-fenek-bond-c1t.png")),full_page=True)
@@ -990,7 +990,7 @@ def check() -> None:
                     assert guide.count() == 1, lang
                     assert guide.get_attribute("data-application-count") == "6", lang
                     assert page.locator("[data-application-step]").count() == 6, lang
-                    art = page.request.get(base + "/images/application/tile-application-6.webp")
+                    art = page.request.get(base + "/images/illustrations/application/tile-application-6.webp")
                     assert art.status == 200 and art.body()[:4] == b"RIFF", lang
                     for marker in ("fenek-overview", "fenek-details",
                                    "fenek-application", "fenek-documents"):

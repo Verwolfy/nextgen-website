@@ -181,7 +181,7 @@ def verify_content(origin: str, timeout: float) -> None:
 
     # Lot 126: verify the actual new mockup and the corrected bag/canister
     # figures on the deployed site (not merely the GitHub source).
-    cm_image = "/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
+    cm_image = "/images/illustrations/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
     cm_expected = {
         "fr": "Kit : sac 20 kg + bidon 10 kg (30 kg au total)",
         "en": "Kit: 20 kg bag + 10 kg canister (30 kg total)",

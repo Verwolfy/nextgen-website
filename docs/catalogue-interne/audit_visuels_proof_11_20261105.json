@@ -13,7 +13,7 @@
         "Seau 5 kg"
       ],
       "format_nominal_registre": "5 kg / 20 kg",
-      "maquette_conceptuelle": "public/images/maquettes/maquette-39.webp",
+      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-39.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -31,7 +31,7 @@
         "Seau 5 kg"
       ],
       "format_nominal_registre": "5 kg / 20 kg",
-      "maquette_conceptuelle": "public/images/maquettes/maquette-36.webp",
+      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-36.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -48,7 +48,7 @@
         "Kit : sac 20 kg + bidon 10 kg"
       ],
       "format_nominal_registre": "Sac 20 kg + bidon 10 kg (kit 30 kg total)",
-      "maquette_conceptuelle": "public/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp",
+      "maquette_conceptuelle": "public/images/illustrations/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -57,9 +57,9 @@
       "validation_commerciale": "EN ATTENTE",
       "autorisation_publication_fiche_technique": false,
       "autorisation_creation_sku_erp": false,
-      "maquette_source_archive": "public/images/maquettes/maquette-37.webp",
+      "maquette_source_archive": "public/images/illustrations/maquettes/maquette-37.webp",
       "correction_editoriale": "2026-11-11 : sac corrigé à 20 kg sur instruction utilisateur ; bidon maintenu à 10 kg. Les statuts d'homologation restent EN ATTENTE. Version visuelle client optimisée 576x576 WebP, 2026-11-11; image WebP v2 remplace la superposition SVG sans changer les statuts.",
-      "maquette_precedente_corrigee": "public/images/maquettes/maquette-37-sac-20kg.svg"
+      "maquette_precedente_corrigee": "public/images/illustrations/maquettes/maquette-37-sac-20kg.svg"
     },
     {
       "reference": "PROOF-EP-ANC",
@@ -68,7 +68,7 @@
         "Double cartouche bicomposant 600 mL (A : résine + B : durcisseur)"
       ],
       "format_nominal_registre": "Double cartouche A/B — 600 mL au total",
-      "maquette_conceptuelle": "public/images/maquettes/maquette-44.webp",
+      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-44.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -85,7 +85,7 @@
         "Double cartouche 300 + 300 mL (600 mL au total)"
       ],
       "format_nominal_registre": "Double cartouche 300 + 300 mL — total 600 mL",
-      "maquette_conceptuelle": "public/images/maquettes/maquette-43.webp",
+      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-43.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -102,7 +102,7 @@
         "Kit : seau A 10 kg + seau B 3 kg"
       ],
       "format_nominal_registre": "Seau A 10 kg + seau B 3 kg (kit 13 kg)",
-      "maquette_conceptuelle": "public/images/maquettes/maquette-40.webp",
+      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-40.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -119,7 +119,7 @@
         "Double cartouche 300 + 300 mL (600 mL au total)"
       ],
       "format_nominal_registre": "Double cartouche 300 + 300 mL — total 600 mL",
-      "maquette_conceptuelle": "public/images/maquettes/maquette-42.webp",
+      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-42.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -136,7 +136,7 @@
         "Kit : seau 10 kg + seau 3 kg"
       ],
       "format_nominal_registre": "Seau 10 kg + seau 3 kg (kit 13 kg)",
-      "maquette_conceptuelle": "public/images/maquettes/maquette-41.webp",
+      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-41.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -154,7 +154,7 @@
         "Seau 5 kg"
       ],
       "format_nominal_registre": "5 kg / 20 kg",
-      "maquette_conceptuelle": "public/images/maquettes/maquette-38.webp",
+      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-38.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -171,7 +171,7 @@
         "Kit : seau 5 kg + seau 5 kg"
       ],
       "format_nominal_registre": "Seau 5 kg + seau 5 kg (kit 10 kg)",
-      "maquette_conceptuelle": "public/images/maquettes/maquette-45.webp",
+      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-45.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",
@@ -188,7 +188,7 @@
         "Cartouche 300 mL"
       ],
       "format_nominal_registre": "300 mL",
-      "maquette_conceptuelle": "public/images/maquettes/maquette-04.webp",
+      "maquette_conceptuelle": "public/images/illustrations/maquettes/maquette-04.webp",
       "verification_identite_visuelle": "NON VERIFIE",
       "verification_emballage_physique": "NON VERIFIE",
       "validation_r_d": "EN ATTENTE",

@@ -71,9 +71,9 @@ class TestLot194FullVisualAudit(unittest.TestCase):
         self.assertIn("NON VALIDÉ FT/FDS",text)
         self.assertNotIn("<script",text)
         self.assertNotIn("<form",text)
-        self.assertIn("/images/application-premium/fenek-proof-acr-rf-steps-v4.webp",text)
-        self.assertIn("/images/application-premium/fenek-proof-pu-1k-scene-05-candidate-v1.webp",text)
-        self.assertIn("/images/application-premium/fenek-proof-cm-o1p-scene-01-candidate-v1.webp",text)
+        self.assertIn("/images/illustrations/application-premium/fenek-proof-acr-rf-steps-v4.webp",text)
+        self.assertIn("/images/illustrations/application-premium/fenek-proof-pu-1k-scene-05-candidate-v1.webp",text)
+        self.assertIn("/images/illustrations/application-premium/fenek-proof-cm-o1p-scene-01-candidate-v1.webp",text)
         self.assertIn('background-image:var(--media)',text)
         self.assertIn('background-size:300% 200%',text)
 

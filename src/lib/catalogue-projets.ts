@@ -49,7 +49,7 @@ export const reviewedGalleryForReference:Readonly<Record<string,number>> = {
 const reviewedGalleryImage=(product:CatalogueProject):string|null=>{
   const number=reviewedGalleryForReference[product.slug];
   if(number===undefined) return null;
-  const relative='images/maquettes/maquette-'+String(number).padStart(2,'0')+'.webp';
+  const relative='images/illustrations/maquettes/maquette-'+String(number).padStart(2,'0')+'.webp';
   if(!existsSync(resolve(process.cwd(),'public',relative))) {
     throw Error('Maquette de conception absente: '+product.code+' -> '+relative);
   }
@@ -76,7 +76,7 @@ export const conceptPackshot=(product:CatalogueProject,variant:'card'|'full'='ca
  // user's 11-reference concept board. Fail closed if one binary is missing:
  // never silently show the generic 15 L collage or a different product code.
  if(product.gamme==='paint'){
-   const relative='images/catalogue-projects/'+product.slug+'.webp';
+   const relative='images/illustrations/catalogue-projects/'+product.slug+'.webp';
    if(!existsSync(resolve(process.cwd(),'public',relative)))
       throw Error('FENEK-PAINT concept asset missing: '+product.code+' -> '+relative);
    return '/'+relative;
@@ -91,7 +91,7 @@ export const conceptPackshot=(product:CatalogueProject,variant:'card'|'full'='ca
  // CM-O2P correction, lot 126: serve the client-validated, optimized WebP of the 20 kg sack;\n // use a new URL to invalidate old Cloudflare/browser image caches.\n // The dry component is a 20 kg bag,
  // with a separate 10 kg canister. Preserve the old gallery image as archive.
  if(product.code==='PROOF-CM-O2P'){
-   const corrected='images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp';
+   const corrected='images/illustrations/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp';
    if(!existsSync(resolve(process.cwd(),'public',corrected)))
      throw Error('Corrected 20 kg concept mockup missing for '+product.code);
    return '/'+corrected;
@@ -100,9 +100,9 @@ export const conceptPackshot=(product:CatalogueProject,variant:'card'|'full'='ca
  const bond = product.gamme==='bond' && product.conditionnements.some(c=>c.format==='Sac 25 kg');
  if(flow || bond){
    const name=product.slug+(variant==='card'?'-card':'')+'.webp';
-   const relative='images/catalogue-projects/'+name;
+   const relative='images/illustrations/catalogue-projects/'+name;
    const absolute=resolve(process.cwd(),'public',relative);
-   const alternate=resolve(process.cwd(),'public','images/catalogue-projects/',
+   const alternate=resolve(process.cwd(),'public','images/illustrations/catalogue-projects/',
       product.slug+(variant==='card'?'': '-card')+'.webp');
    // Never show an incomplete binary upload (only card or only full).
    if(existsSync(absolute)&&existsSync(alternate)) return '/'+relative;

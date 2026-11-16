@@ -25,7 +25,7 @@ class EnhancedV3ArtworkTest(unittest.TestCase):
                 self.assertEqual(by_code[code]["slug"],slug)
                 self.assertEqual(manuals[code]["slug"],slug)
                 self.assertEqual(row["status"],"BROUILLON")
-                self.assertEqual(row["sprite"],f"/images/application-upgraded/{slug}-steps.webp")
+                self.assertEqual(row["sprite"],f"/images/illustrations/application-upgraded/{slug}-steps.webp")
                 self.assertEqual(row["artworkDimensions"],[540,360])
                 self.assertEqual(row["layout"],"3x2")
                 file=ROOT/"public"/row["sprite"].lstrip("/")

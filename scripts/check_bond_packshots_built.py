@@ -11,7 +11,7 @@ import importlib.util
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PUBLIC = ROOT / "public/images/catalogue-projects"
+PUBLIC = ROOT / "public/images/illustrations/catalogue-projects"
 DIST = ROOT / "dist"
 INSTALLER = ROOT / "scripts/install_bond_packshots.py"
 
@@ -33,7 +33,7 @@ def check() -> None:
     if not actual:
         print("SKIP: 0/20 FENEK-BOND packshots uploaded; generic placeholder images remain in use")
         # An obsolete build directory must never be mistaken for a verified upload.
-        assert not list((DIST / "images/catalogue-projects").glob("fenek-bond-*.webp")), (
+        assert not list((DIST / "images/illustrations/catalogue-projects").glob("fenek-bond-*.webp")), (
             "Stale packshots in dist despite no source assets"
         )
         return
@@ -62,20 +62,20 @@ def check() -> None:
     slugs = sorted(mod.approved_assets()[1])
     assert len(slugs) == 10 and set(slugs) == set(source_gallery)
     for slug, number in source_gallery.items():
-        asset = DIST / "images" / "maquettes" / f"maquette-{number:02d}.webp"
+        asset = DIST / "images" / "illustrations" / "maquettes" / f"maquette-{number:02d}.webp"
         assert asset.is_file() and asset.read_bytes()[:4] == b"RIFF", str(asset)
     for lang in ("fr", "ar", "en"):
         catalogue = DIST / lang / "catalogue/index.html"
         html = catalogue.read_text(encoding="utf-8")
         for slug in slugs:
-            design_url = f"/images/maquettes/maquette-{source_gallery[slug]:02d}.webp"
+            design_url = f"/images/illustrations/maquettes/maquette-{source_gallery[slug]:02d}.webp"
             assert design_url in html, f"Updated card not rendered: {lang}, {slug}"
             detail = DIST / lang / "catalogue" / slug / "index.html"
             assert detail.is_file(), f"Missing localized detail: {lang}/{slug}"
             body = detail.read_text(encoding="utf-8")
             assert design_url in body, f"Updated full-size concept missing: {lang}/{slug}"
             assert "concept-detail-note" in body, f"Missing non-contractual notice: {lang}/{slug}"
-            assert f"/images/catalogue-projects/{slug}.webp" not in body, (
+            assert f"/images/illustrations/catalogue-projects/{slug}.webp" not in body, (
                 f"Legacy flat label still displayed: {lang}/{slug}"
             )
 

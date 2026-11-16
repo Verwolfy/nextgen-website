@@ -2,7 +2,7 @@
   {
     "code": "BOND-C1T",
     "slug": "fenek-bond-c1t",
-    "sprite": "/images/application-upgraded/fenek-bond-c1t-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-c1t-steps.webp",
     "sha256": "d3d6c1d5ef31bca31108d9ddafa82e5bb1ffd0b16350345caee13c19b1fe0213",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -14,7 +14,7 @@
   {
     "code": "BOND-C1TE",
     "slug": "fenek-bond-c1te",
-    "sprite": "/images/application-upgraded/fenek-bond-c1te-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-c1te-steps.webp",
     "sha256": "363e65cdf9d601a65037deca58b8e51667cbb5fdbd75fc1111ef7e142a7e521b",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -26,7 +26,7 @@
   {
     "code": "BOND-C2FT",
     "slug": "fenek-bond-c2ft",
-    "sprite": "/images/application-upgraded/fenek-bond-c2ft-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-c2ft-steps.webp",
     "sha256": "8884997824796c10f49506508eb54176eb88b0018133f11cb0d41214092efcce",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -38,7 +38,7 @@
   {
     "code": "BOND-C2TE",
     "slug": "fenek-bond-c2te",
-    "sprite": "/images/application-upgraded/fenek-bond-c2te-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-c2te-steps.webp",
     "sha256": "c6cabec486e5b982f1820ab9d8fbea05849b3774b76374d2ac0f870d1974b2f2",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -50,7 +50,7 @@
   {
     "code": "BOND-C2TE-S1",
     "slug": "fenek-bond-c2te-s1",
-    "sprite": "/images/application-upgraded/fenek-bond-c2te-s1-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-c2te-s1-steps.webp",
     "sha256": "145bc6fb9cd9d20e78c6060a59226004224fc5e84fed3e3fb6be964e12cac9f9",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -62,7 +62,7 @@
   {
     "code": "BOND-CG1",
     "slug": "fenek-bond-cg1",
-    "sprite": "/images/application-upgraded/fenek-bond-cg1-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-cg1-steps.webp",
     "sha256": "096b4f4ece74f4a9d93ea0fdf8472a8575404dab651ff31f8d181e5bfdfc6adb",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -74,7 +74,7 @@
   {
     "code": "BOND-CG2WA",
     "slug": "fenek-bond-cg2wa",
-    "sprite": "/images/application-upgraded/fenek-bond-cg2wa-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-cg2wa-steps.webp",
     "sha256": "40596e386c0b984a90c9d17470194938b06ba15b9f18d13641572c9486643f12",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -86,7 +86,7 @@
   {
     "code": "BOND-CT-C25-F5",
     "slug": "fenek-bond-ct-c25-f5",
-    "sprite": "/images/application-upgraded/fenek-bond-ct-c25-f5-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-ct-c25-f5-steps.webp",
     "sha256": "b6e39a60d317c406defd65b7cc99884acbbf150ed9fc834ac706c233ceb39716",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -98,7 +98,7 @@
   {
     "code": "BOND-R2",
     "slug": "fenek-bond-r2",
-    "sprite": "/images/application-upgraded/fenek-bond-r2-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-r2-steps.webp",
     "sha256": "19456517dfed7416f4efd6ea9e2813c335830d7d1cdbf3cd7dd8b65c04109519",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -110,7 +110,7 @@
   {
     "code": "BOND-R3",
     "slug": "fenek-bond-r3",
-    "sprite": "/images/application-upgraded/fenek-bond-r3-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-r3-steps.webp",
     "sha256": "d42332920fcb25bfc5582334694d6a0476d719b1eb168c29f13e13c2c8f30064",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -122,7 +122,7 @@
   {
     "code": "BOND-R4",
     "slug": "fenek-bond-r4",
-    "sprite": "/images/application-upgraded/fenek-bond-r4-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-r4-steps.webp",
     "sha256": "9b0b471dedf930e3e1b6566629f76140819cdec539c5595f5911a96129c10ccd",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -134,7 +134,7 @@
   {
     "code": "BOND-GR-HR",
     "slug": "fenek-bond-gr-hr",
-    "sprite": "/images/application-upgraded/fenek-bond-gr-hr-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-gr-hr-steps.webp",
     "sha256": "082caee8d5ef0c5ae43109caab00bfa03f091acb3aed6097278c5037658fdbed",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -147,7 +147,7 @@
   {
     "code": "BOND-GP-CSII",
     "slug": "fenek-bond-gp-csii",
-    "sprite": "/images/application-upgraded/fenek-bond-gp-csii-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-gp-csii-steps.webp",
     "sha256": "a86ea89048647f05397c574f0c195680558a888a307bcd4425f86140e6440de1",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -160,7 +160,7 @@
   {
     "code": "BOND-OC-CSIII",
     "slug": "fenek-bond-oc-csiii",
-    "sprite": "/images/application-upgraded/fenek-bond-oc-csiii-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-oc-csiii-steps.webp",
     "sha256": "4af7065e8234dbc32b8f5f7ac67219323c4ab96a818718927b0c4320692aa09d",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -173,7 +173,7 @@
   {
     "code": "BOND-M5",
     "slug": "fenek-bond-m5",
-    "sprite": "/images/application-upgraded/fenek-bond-m5-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-m5-steps.webp",
     "sha256": "817967dba97ea8bbf24a79ceed03fe101abee5234a425c9a6cf502e4a3742fae",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -186,7 +186,7 @@
   {
     "code": "BOND-M10",
     "slug": "fenek-bond-m10",
-    "sprite": "/images/application-upgraded/fenek-bond-m10-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-m10-steps.webp",
     "sha256": "0157e0f5f658f2d2698b6cc0d4c38f5ccc420bd0b3562f000f371bb9ec883394",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -199,7 +199,7 @@
   {
     "code": "PROOF-CM-O1P",
     "slug": "fenek-proof-cm-o1p",
-    "sprite": "/images/application-upgraded/fenek-proof-cm-o1p-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-cm-o1p-steps.webp",
     "sha256": "8f8b35eed7e1c5a466d5eb98c8e75d3b89bbbe30ad1400761c26a23aa61558ef",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -212,7 +212,7 @@
   {
     "code": "PROOF-CM-O2P",
     "slug": "fenek-proof-cm-o2p",
-    "sprite": "/images/application-upgraded/fenek-proof-cm-o2p-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-cm-o2p-steps.webp",
     "sha256": "41cab12355624b4ab882826847cd2e4aed864884fadca21224045521cfab5e41",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -225,7 +225,7 @@
   {
     "code": "PROOF-PU-1K",
     "slug": "fenek-proof-pu-1k",
-    "sprite": "/images/application-upgraded/fenek-proof-pu-1k-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-pu-1k-steps.webp",
     "sha256": "dcede890a2357fb122a35ce90ce99eddfac578a17db02fe6285dc58825e325f0",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -238,7 +238,7 @@
   {
     "code": "PROOF-ACR-RF",
     "slug": "fenek-proof-acr-rf",
-    "sprite": "/images/application-upgraded/fenek-proof-acr-rf-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-acr-rf-steps.webp",
     "sha256": "2458eb9395b7956cefd5189d1956ebb83068fbcd17761a08decd3afc2988a9b3",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -251,7 +251,7 @@
   {
     "code": "PROOF-EP-PRIM",
     "slug": "fenek-proof-ep-prim",
-    "sprite": "/images/application-upgraded/fenek-proof-ep-prim-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-ep-prim-steps.webp",
     "sha256": "24c86388db34e223b693587db97ce0acef1f29fc5ef0bbd98ada9b804fa759f4",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -264,7 +264,7 @@
   {
     "code": "PROOF-EP-SR",
     "slug": "fenek-proof-ep-sr",
-    "sprite": "/images/application-upgraded/fenek-proof-ep-sr-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-ep-sr-steps.webp",
     "sha256": "56b22f44b6e717878c7fac1b9d0d189260c6790de3c5a8977d071cac14e0654b",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -277,7 +277,7 @@
   {
     "code": "PROOF-EP-SB",
     "slug": "fenek-proof-ep-sb",
-    "sprite": "/images/application-upgraded/fenek-proof-ep-sb-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-ep-sb-steps.webp",
     "sha256": "7eb9dca7037e31bc43b5709052f20d52271a8c4fd5e649c2948c248488b7e42d",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -290,7 +290,7 @@
   {
     "code": "PROOF-EP-INJ",
     "slug": "fenek-proof-ep-inj",
-    "sprite": "/images/application-upgraded/fenek-proof-ep-inj-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-ep-inj-steps.webp",
     "sha256": "83a20c70671eea2b959d525b757fda51811a869318497c5cf6d5918a39188994",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -303,7 +303,7 @@
   {
     "code": "PROOF-EP-ANC",
     "slug": "fenek-proof-ep-anc",
-    "sprite": "/images/application-upgraded/fenek-proof-ep-anc-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-ep-anc-steps.webp",
     "sha256": "fd0b1e4eae2fbe88d12f4d4cdf2dae1b7a7af2214bb26df6f5b985168266a1d8",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -316,7 +316,7 @@
   {
     "code": "PROOF-PU-INJ",
     "slug": "fenek-proof-pu-inj",
-    "sprite": "/images/application-upgraded/fenek-proof-pu-inj-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-pu-inj-steps.webp",
     "sha256": "8a7a6f3cfe48f8c48cbbab2bc7628b80670bb121c6e20d615a7f5a33b506c391",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -329,7 +329,7 @@
   {
     "code": "PROOF-PU-SEAL",
     "slug": "fenek-proof-pu-seal",
-    "sprite": "/images/application-upgraded/fenek-proof-pu-seal-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-pu-seal-steps.webp",
     "sha256": "a0322e5573bb0e3242caed978026ba13b7155a488db983704f22390053ad0c7e",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -342,7 +342,7 @@
   {
     "code": "FLOW-WR-N",
     "slug": "fenek-flow-wr-n",
-    "sprite": "/images/application-upgraded/fenek-flow-wr-n-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-wr-n-steps.webp",
     "sha256": "d67e544631a33cac3be25fae7c6f6c7ea2f23ef12bc1f60cf1ad26bcc0d8922d",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -355,7 +355,7 @@
   {
     "code": "FLOW-SP-HR",
     "slug": "fenek-flow-sp-hr",
-    "sprite": "/images/application-upgraded/fenek-flow-sp-hr-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-sp-hr-steps.webp",
     "sha256": "0b1d4ce205708c33071d90d69caef8a6afff24c5999646e51d236a4c35b16a86",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -368,7 +368,7 @@
   {
     "code": "FLOW-SP-RT",
     "slug": "fenek-flow-sp-rt",
-    "sprite": "/images/application-upgraded/fenek-flow-sp-rt-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-sp-rt-steps.webp",
     "sha256": "7d9afed425ceafb6b621e6df5d077d39329aee8812691c89bcc36a6f692007a0",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -381,7 +381,7 @@
   {
     "code": "FLOW-SP-PF",
     "slug": "fenek-flow-sp-pf",
-    "sprite": "/images/application-upgraded/fenek-flow-sp-pf-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-sp-pf-steps.webp",
     "sha256": "ce9d645d4001828f6723db171eeacd106643e11a511118e63575a3d01358c0dc",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -394,7 +394,7 @@
   {
     "code": "FLOW-RT",
     "slug": "fenek-flow-rt",
-    "sprite": "/images/application-upgraded/fenek-flow-rt-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-rt-steps.webp",
     "sha256": "96647a20bdb763fa94d5defaca8e7acecdbb6a4668a7001eb27a315d117d0c6f",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -407,7 +407,7 @@
   {
     "code": "FLOW-AC",
     "slug": "fenek-flow-ac",
-    "sprite": "/images/application-upgraded/fenek-flow-ac-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-ac-steps.webp",
     "sha256": "e46687824a062f1bf4541993bb7db7477e3a74dc0408c43e0b437cc5dc54811f",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -420,7 +420,7 @@
   {
     "code": "FLOW-AE",
     "slug": "fenek-flow-ae",
-    "sprite": "/images/application-upgraded/fenek-flow-ae-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-ae-steps.webp",
     "sha256": "f56ab837588fa7dd02da83b712f14dd0056223a05a477c29d812a56c5d6c164e",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -433,7 +433,7 @@
   {
     "code": "FLOW-WP",
     "slug": "fenek-flow-wp",
-    "sprite": "/images/application-upgraded/fenek-flow-wp-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-wp-steps.webp",
     "sha256": "5c23366dc5a117c79e7b957fd394c99bd1d0f23c6978db6ced96ee0ba9ea6165",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -446,7 +446,7 @@
   {
     "code": "FLOW-VMA",
     "slug": "fenek-flow-vma",
-    "sprite": "/images/application-upgraded/fenek-flow-vma-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-vma-steps.webp",
     "sha256": "f782fb7f2ee650f24daa4fd91a6627c34e5835a9b32c9fd8f5de4aa70e3515a7",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -459,7 +459,7 @@
   {
     "code": "FLOW-CI",
     "slug": "fenek-flow-ci",
-    "sprite": "/images/application-upgraded/fenek-flow-ci-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-ci-steps.webp",
     "sha256": "5948a5e8505d32f352fcbda09a8c13c572c451eb1e2c05477d1d8a6215e0232c",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -472,7 +472,7 @@
   {
     "code": "FLOW-CURE",
     "slug": "fenek-flow-cure",
-    "sprite": "/images/application-upgraded/fenek-flow-cure-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-cure-steps.webp",
     "sha256": "5d1bc74c850d5ef513b6ac40ab7d0c99e4e8a12c343dd8773c464b0cf4d81794",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -485,7 +485,7 @@
   {
     "code": "FLOW-LAT",
     "slug": "fenek-flow-lat",
-    "sprite": "/images/application-upgraded/fenek-flow-lat-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-lat-steps.webp",
     "sha256": "ee71e7ac4573af9627d48a4f46e8b4296c1e067256fe373f7ddb3e6642f471c8",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -498,7 +498,7 @@
   {
     "code": "PAINT-INT-M",
     "slug": "fenek-paint-int-m",
-    "sprite": "/images/application-upgraded/fenek-paint-int-m-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-int-m-steps.webp",
     "sha256": "f96e3be6a388769b293877cabf9482a4630dff1793762f14bacb750b8ae5893f",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -511,7 +511,7 @@
   {
     "code": "PAINT-INT-S",
     "slug": "fenek-paint-int-s",
-    "sprite": "/images/application-upgraded/fenek-paint-int-s-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-int-s-steps.webp",
     "sha256": "8bfb52a222897621a3c6737f8bd2620cdf2ff854662e0382e9138b8c7eaea774",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -524,7 +524,7 @@
   {
     "code": "PAINT-INT-WA",
     "slug": "fenek-paint-int-wa",
-    "sprite": "/images/application-upgraded/fenek-paint-int-wa-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-int-wa-steps.webp",
     "sha256": "18af787a876eae4adac1b8b74f0a8a40003d596bf3c47aa094e7583481d9afce",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -537,7 +537,7 @@
   {
     "code": "PAINT-FAC-M",
     "slug": "fenek-paint-fac-m",
-    "sprite": "/images/application-upgraded/fenek-paint-fac-m-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-fac-m-steps.webp",
     "sha256": "36c432bc6ac6f074a94c1bb2ca4bdf567d23261733951646b0cdb132c762143f",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -555,7 +555,7 @@
   {
     "code": "PAINT-FAC-EL",
     "slug": "fenek-paint-fac-el",
-    "sprite": "/images/application-upgraded/fenek-paint-fac-el-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-fac-el-steps.webp",
     "sha256": "b67c5519b4232c5f37eab994b6d66b35bda1ace12f5bbc33948283f1c33b0d02",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -573,7 +573,7 @@
   {
     "code": "PAINT-FAC-SX",
     "slug": "fenek-paint-fac-sx",
-    "sprite": "/images/application-upgraded/fenek-paint-fac-sx-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-fac-sx-steps.webp",
     "sha256": "aaa114ab09c50e924c203214debc22615b27e107ef61c6ad9b526e192e0825c8",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -591,7 +591,7 @@
   {
     "code": "PAINT-PRIM-A",
     "slug": "fenek-paint-prim-a",
-    "sprite": "/images/application-upgraded/fenek-paint-prim-a-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-prim-a-steps.webp",
     "sha256": "74dd87437147e5a22cbc399bb2c772bab9feb214cce1ea5b9788a771477801a9",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -604,7 +604,7 @@
   {
     "code": "PAINT-PRIM-FX",
     "slug": "fenek-paint-prim-fx",
-    "sprite": "/images/application-upgraded/fenek-paint-prim-fx-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-prim-fx-steps.webp",
     "sha256": "d4538089b84a415dd36d43e9f57b272aa748b2bac6880414ade65ae51bc23d94",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -617,7 +617,7 @@
   {
     "code": "PAINT-TXT-F",
     "slug": "fenek-paint-txt-f",
-    "sprite": "/images/application-upgraded/fenek-paint-txt-f-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-txt-f-steps.webp",
     "sha256": "068001b6304552c7af0c3f11a3e6fd777bb5b211e5e6f8958c4789bc6d8f3c97",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -630,7 +630,7 @@
   {
     "code": "PAINT-SOL-A",
     "slug": "fenek-paint-sol-a",
-    "sprite": "/images/application-upgraded/fenek-paint-sol-a-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-sol-a-steps.webp",
     "sha256": "2c968d63ee19dc806bce393c6338b973e1ba13b6716987936f5a214f19b40f1b",
     "status": "BROUILLON",
     "layout": "3x2",
@@ -643,7 +643,7 @@
   {
     "code": "PAINT-ENT-L",
     "slug": "fenek-paint-ent-l",
-    "sprite": "/images/application-upgraded/fenek-paint-ent-l-steps.webp",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-ent-l-steps.webp",
     "sha256": "aae0ba09332ecf66e4e9961a9e5d490c4abc02202dbaaa32f8b04f34262535fe",
     "status": "BROUILLON",
     "layout": "3x2",

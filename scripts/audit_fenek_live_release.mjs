@@ -28,7 +28,7 @@ export function validateSource(catalog, artwork, expectedProducts = 50) {
   for (const item of artwork) {
     if (!item || seen.has(item.code) || codes.get(item.code) !== item.slug ||
         !/^[0-9a-f]{64}$/i.test(item.sha256 ?? '') ||
-        item.sprite !== '/images/application-upgraded/' + item.slug + '-steps.webp')
+        item.sprite !== '/images/illustrations/application-upgraded/' + item.slug + '-steps.webp')
       throw Error('source: artwork/slug/hash mismatch ' + (item?.code ?? 'missing'));
     seen.add(item.code);
   }

@@ -15,7 +15,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-ASSET_DIR = ROOT / "public" / "images" / "catalogue-projects"
+ASSET_DIR = ROOT / "public" / "images" / "illustrations" / "catalogue-projects"
 APPROVED = ROOT / "scripts" / "flow-packshots-approved.json"
 
 
@@ -50,7 +50,7 @@ def expected_files() -> dict[str, tuple[str, tuple[int, int]]]:
     for slug, asset in items.items():
         for kind, key in (("full", "full_sha256"), ("card", "card_sha256")):
             name = slug + ("-card.webp" if kind == "card" else ".webp")
-            files["public/images/catalogue-projects/" + name] = (
+            files["public/images/illustrations/catalogue-projects/" + name] = (
                 asset[key], tuple(approved["dimensions"][kind])
             )
     assert len(files) == 24
@@ -71,7 +71,7 @@ def check_package(archive: zipfile.ZipFile) -> dict[str, bytes]:
     for asset in inner["assets"]:
         for variant, sha_key in (("full", "full_sha256"), ("card", "card_sha256")):
             name = asset[variant]
-            expected_path = "public/images/catalogue-projects/" + asset["slug"] + (
+            expected_path = "public/images/illustrations/catalogue-projects/" + asset["slug"] + (
                 "-card.webp" if variant == "card" else ".webp"
             )
             assert name == expected_path, name
@@ -103,7 +103,7 @@ def main(archive_path: Path) -> None:
     for relative, data in payload.items():
         (ROOT / relative).write_bytes(data)
     verify_installed()
-    print("NEXT: commit public/images/catalogue-projects/*.webp on a PR and run CI.")
+    print("NEXT: commit public/images/illustrations/catalogue-projects/*.webp on a PR and run CI.")
 
 
 if __name__ == "__main__":

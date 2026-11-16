@@ -13,6 +13,6 @@ const expected='55197582655ba03f9de8d933047236e63efbd5df27a1acde136c5fc342059b1c
 if (bytes.length!==5902||sha!==expected||bytes.toString('ascii',0,4)!=='RIFF'||
     bytes.toString('ascii',8,12)!=='WEBP')
   throw Error('FENEK application illustrations corrupt or mismatched');
-await mkdir('public/images/application',{recursive:true});
-await writeFile('public/images/application/tile-application-6.webp',bytes);
+await mkdir('public/images/illustrations/application',{recursive:true});
+await writeFile('public/images/illustrations/application/tile-application-6.webp',bytes);
 console.log('PASS: six user-supplied application illustrations verified; WebP',bytes.length,'bytes');

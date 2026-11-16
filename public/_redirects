@@ -1,0 +1,8 @@
+/images/application/v3/* /images/illustrations/application/v3/:splat 301
+/images/application-premium/* /images/illustrations/application-premium/:splat 301
+/images/application-upgraded/* /images/illustrations/application-upgraded/:splat 301
+/images/application-v3/* /images/illustrations/application-v3/:splat 301
+/images/application/* /images/illustrations/application/:splat 301
+/images/approche/* /images/illustrations/approche/:splat 301
+/images/catalogue-projects/* /images/illustrations/catalogue-projects/:splat 301
+/images/maquettes/* /images/illustrations/maquettes/:splat 301

@@ -24,12 +24,12 @@ const tile=isTileAdhesive(product.code);
 // Draft illustration previews belong in an isolated, noindex review gallery.
 // Official FR/EN/AR product guides must show their current six steps only.
 const fullSizeC1T=product.code==='BOND-C1T' && product.slug==='fenek-bond-c1t' ? [
- '/images/application/v3/fenek-bond-c1t/01_support.png',
- '/images/application/v3/fenek-bond-c1t/02_epi.png',
- '/images/application/v3/fenek-bond-c1t/03_gachage.png',
- '/images/application/v3/fenek-bond-c1t/04_repos.png',
- '/images/application/v3/fenek-bond-c1t/05_encollage.png',
- '/images/application/v3/fenek-bond-c1t/06_pose.png',
+ '/images/illustrations/application/v3/fenek-bond-c1t/01_support.png',
+ '/images/illustrations/application/v3/fenek-bond-c1t/02_epi.png',
+ '/images/illustrations/application/v3/fenek-bond-c1t/03_gachage.png',
+ '/images/illustrations/application/v3/fenek-bond-c1t/04_repos.png',
+ '/images/illustrations/application/v3/fenek-bond-c1t/05_encollage.png',
+ '/images/illustrations/application/v3/fenek-bond-c1t/06_pose.png',
 ] : null;
 
 const copy={
@@ -105,7 +105,7 @@ const paths:Record<string,string>={
  .fenek-application-visual-card{display:flex;flex-direction:column;overflow:hidden;min-width:0;border:1px solid #d8e5e6;border-radius:14px;background:linear-gradient(165deg,#fff 66%,#f3faf7);box-shadow:0 4px 16px #1136510a;break-inside:avoid}
  .fenek-application-visual-figure{position:relative;display:grid;place-items:center;min-height:125px;margin:0;background:#f6faf9;border-bottom:1px solid #e1ebe8;overflow:hidden}
  .fenek-application-visual-figure figcaption{position:absolute;top:10px;inset-inline-start:12px;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#12365b;color:white;font-size:.78rem;font-weight:850;box-shadow:0 3px 8px #08284320}
- .fenek-application-visual-photo{width:min(100%,142px);aspect-ratio:1;background-image:url('/images/application/tile-application-6.webp');background-repeat:no-repeat;background-size:300% 200%;background-position:var(--sprite-position);filter:contrast(1.04)}
+ .fenek-application-visual-photo{width:min(100%,142px);aspect-ratio:1;background-image:url('/images/illustrations/application/tile-application-6.webp');background-repeat:no-repeat;background-size:300% 200%;background-position:var(--sprite-position);filter:contrast(1.04)}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-card{background:#fff}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-figure{aspect-ratio:1/1;min-height:0;background:#fff;border-bottom:0;padding:3px}
  .fenek-application-visual-grid.v3-reviewed .fenek-v3-detail-link{display:inline-block;width:auto;max-width:100%;aspect-ratio:auto;margin-top:8px;padding:6px 9px;border-radius:8px;background:#e7f4ee;color:#075f4e;font-weight:750;font-size:.76rem;text-decoration:underline;text-underline-offset:2px;cursor:zoom-in}

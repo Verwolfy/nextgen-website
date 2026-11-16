@@ -8,7 +8,7 @@ import unittest
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-ART=ROOT/"public/images/application/v3/fenek-bond-c1t"
+ART=ROOT/"public/images/illustrations/application/v3/fenek-bond-c1t"
 MAP=ROOT/"src/data/fenek-v3-reviewed.ts"
 UI=ROOT/"src/components/FenekApplicationGuide.astro"
 CAT=ROOT/"src/data/catalogue-projets.json"
@@ -36,7 +36,7 @@ class ReviewedC1T(unittest.TestCase):
         self.assertIn("code:'BOND-C1T'",mapping)
         self.assertIn("slug:'fenek-bond-c1t'",mapping)
         self.assertIn("status:'BROUILLON'",mapping)
-        self.assertEqual(mapping.count("/images/application/v3/fenek-bond-c1t/"),6)
+        self.assertEqual(mapping.count("/images/illustrations/application/v3/fenek-bond-c1t/"),6)
         self.assertIn("throw Error('V3 illustration/product mismatch:",mapping)
         self.assertEqual(set(re.findall(r"code:'([A-Z0-9-]+)'",mapping)),{"BOND-C1T","BOND-C1TE"})
     def test_six_exact_pngs_from_supplied_zip(self):

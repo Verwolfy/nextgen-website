@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "scripts/paint-packshots-concepts.json"
-BASE = ROOT / "public/images/catalogue-projects"
+BASE = ROOT / "public/images/illustrations/catalogue-projects"
 CODES = ("ENT-L", "FAC-EL", "FAC-M", "FAC-SX",
          "INT-M", "INT-S", "INT-WA", "PRIM-A", "PRIM-FX", "SOL-A", "TXT-F")
 

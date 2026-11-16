@@ -5,7 +5,7 @@ import { inspectGallery, inspectGuide, inspectWebP, validateSource, verifyLiveRe
 const sha = 'a'.repeat(40);
 const digest = 'b'.repeat(64);
 const art = { code: 'BOND-GR-HR', slug: 'fenek-bond-gr-hr', sha256: digest,
-  sprite: '/images/application-upgraded/fenek-bond-gr-hr-steps.webp' };
+  sprite: '/images/illustrations/application-upgraded/fenek-bond-gr-hr-steps.webp' };
 const positions = ['0% 0%','50% 0%','100% 0%','0% 100%','50% 100%','100% 100%'];
 const card = row => '<details data-product-code="' + row.code + '" data-sha256="' + row.sha256 +
   '" style="--media:url(' + row.sprite + ')"><ol class="steps">' +

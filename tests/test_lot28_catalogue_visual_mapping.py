@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PRODUCTS = ROOT / "src/data/catalogue-projets.json"
 SOURCE = ROOT / "src/lib/catalogue-projets.ts"
-GALLERY = ROOT / "public/images/maquettes"
+GALLERY = ROOT / "public/images/illustrations/maquettes"
 EXPECTED = {
     "fenek-bond-c1t":20, "fenek-bond-c1te":21,
     "fenek-bond-c2te":22, "fenek-bond-c2te-s1":23,
@@ -54,8 +54,8 @@ class TestLot28CatalogueVisuals(unittest.TestCase):
         self.assertIn("paint:''", src)
         self.assertIn("FENEK-PAINT concept asset missing:", src)
         self.assertIn("Maquette de conception absente:", src)
-        self.assertEqual(len(list((ROOT/"public/images/catalogue-projects").glob("fenek-bond-*.webp"))),20)
-        self.assertEqual(len(list((ROOT/"public/images/catalogue-projects").glob("fenek-flow-*.webp"))),24)
+        self.assertEqual(len(list((ROOT/"public/images/illustrations/catalogue-projects").glob("fenek-bond-*.webp"))),20)
+        self.assertEqual(len(list((ROOT/"public/images/illustrations/catalogue-projects").glob("fenek-flow-*.webp"))),24)
         catalogue = (ROOT/"src/components/ConceptCatalogue.astro").read_text(encoding="utf-8")
         detail = (ROOT/"src/pages/[lang]/catalogue/[slug].astro").read_text(encoding="utf-8")
         words = (ROOT/"src/data/catalogue-content.ts").read_text(encoding="utf-8")

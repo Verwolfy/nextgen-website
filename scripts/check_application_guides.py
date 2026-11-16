@@ -32,7 +32,7 @@ def main():
     by_code={m['code']:m for m in MANUALS}
     if len(by_code)!=50 or set(by_code)!={p['code'] for p in CATALOGUE}:
         raise AssertionError('V3 catalogue identity mismatch')
-    original=DIST/'images/application/tile-application-6.webp'
+    original=DIST/'images/illustrations/application/tile-application-6.webp'
     assert original.exists(), 'Missing legacy drawing - preserve old pages and tests'
     assert hashlib.sha256(original.read_bytes()).hexdigest()=="55197582655ba03f9de8d933047236e63efbd5df27a1acde136c5fc342059b1c"
     count=0
@@ -42,7 +42,7 @@ def main():
         assert manual['slug']==slug and manual['status']=='BROUILLON',(code,'source mismatch')
         assert not product['certifie'] and not product['commercialise'],code
         assert len(manual['steps'])==6 and [x['image'] for x in manual['steps']]==list(range(1,7)),code
-        sprite=f'/images/application-v3/{slug}-steps.webp'
+        sprite=f'/images/illustrations/application-v3/{slug}-steps.webp'
         assert manual['sprite']==sprite,(code,'wrong sprite path')
         actual_sha=LEGACY.get(code,manual['sha256'])
         asset=DIST/sprite.lstrip('/')
@@ -84,7 +84,7 @@ def main():
                 assert not parser.fullres,(lang,code,'unreviewed full-size links')
             count+=1
     # Verify unapproved media are present only on noindex review pages.
-    premium=ROOT/"public/images/application-premium"
+    premium=ROOT/"public/images/illustrations/application-premium"
     review_acr=(DIST/"fr/avant-premiere/fenek-proof-acr-rf/index.html")
     review_proof=(DIST/"fr/avant-premiere/lot187-proof/index.html")
     assert review_acr.is_file() and review_proof.is_file(),'Missing isolated review pages'
@@ -92,7 +92,7 @@ def main():
     proof_html=review_proof.read_text(encoding='utf8')
     for page in (acr_html,proof_html):
         assert 'noindex,nofollow,noarchive' in page,'Preview page must stay noindex'
-    acr_path='/images/application-premium/fenek-proof-acr-rf-steps-v4.webp'
+    acr_path='/images/illustrations/application-premium/fenek-proof-acr-rf-steps-v4.webp'
     assert acr_html.count("--image:url('"+acr_path+"')")==6,'Exactly six isolated ACR-RF scenes required'
     assert 'Brouillon' in acr_html and 'non autorisée' in acr_html,'Missing ACR-RF draft warning'
     acr_asset=DIST/acr_path.lstrip('/')
@@ -100,11 +100,11 @@ def main():
     assert hashlib.sha256(acr_asset.read_bytes()).hexdigest()=='438694daefa3b97b2ca3d36f38d6bea78fbedb7070203f81b6e06ef3a76fa433'
     review_candidates={
         'PROOF-PU-1K':(
-            5,'/images/application-premium/fenek-proof-pu-1k-scene-05-candidate-v1.webp',
+            5,'/images/illustrations/application-premium/fenek-proof-pu-1k-scene-05-candidate-v1.webp',
             'f8a758381f5a510b03b9bd231700925d5a5b02935d264c2fdc47844915a6c14f',
         ),
         'PROOF-CM-O1P':(
-            1,'/images/application-premium/fenek-proof-cm-o1p-scene-01-candidate-v1.webp',
+            1,'/images/illustrations/application-premium/fenek-proof-cm-o1p-scene-01-candidate-v1.webp',
             '079bde85ae3e331bd2c654d8299ccde2e26a2141dce349b610130c080902a622',
         ),
     }

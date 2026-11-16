@@ -23,12 +23,12 @@ class LiveManufacturingApproachAudit(unittest.TestCase):
             for lang,markers in live.PAGES.items():
                 if f"/{lang}/a-propos/" in url:
                     content=" ".join(markers)+" noindex,nofollow "+" ".join(
-                        "/images/approche/"+p for p in live.ASSETS)
+                        "/images/illustrations/approche/"+p for p in live.ASSETS)
                     return ({"status":200,"oversized":False},content.encode("utf-8"))
             for name in live.ASSETS:
                 if "/"+name+"?" in url:
                     return ({"status":200,"oversized":False},
-                            (ROOT/"public/images/approche"/name).read_bytes())
+                            (ROOT/"public/images/illustrations/approche"/name).read_bytes())
             raise AssertionError("Unexpected external request: "+url)
         with patch.object(live,"inspect_url",side_effect=fake) as fetch:
             report=live.audit_once()

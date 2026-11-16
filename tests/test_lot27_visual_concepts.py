@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-ASSETS = ROOT / "public/images/maquettes"
+ASSETS = ROOT / "public/images/illustrations/maquettes"
 
 
 class TestLot27VisualConcepts(unittest.TestCase):

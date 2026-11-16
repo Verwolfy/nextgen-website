@@ -11,7 +11,7 @@ class Lot40HomepageTests(unittest.TestCase):
         catalogue = (ROOT / "src/lib/catalogue-projets.ts").read_text(encoding="utf-8")
         self.assertIn("reviewedGalleryForReference", catalogue)
         for n in ("04", "20", "30", "45"):
-            image = ROOT / f"public/images/maquettes/maquette-{n}.webp"
+            image = ROOT / f"public/images/illustrations/maquettes/maquette-{n}.webp"
             self.assertTrue(image.is_file(), str(image))
             self.assertEqual(image.read_bytes()[:4], b"RIFF", str(image))
             self.assertEqual(image.read_bytes()[8:12], b"WEBP", str(image))

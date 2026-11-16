@@ -28,13 +28,13 @@ class Lot76to78(unittest.TestCase):
             self.assertIn("'"+p["slug"]+"':",mapping)
             if r["reference"] == "PROOF-CM-O2P":
                 self.assertEqual(r["maquette_conceptuelle"],
-                                 "public/images/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp")
+                                 "public/images/illustrations/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp")
                 self.assertEqual(r["maquette_source_archive"],
-                                 "public/images/maquettes/maquette-37.webp")
+                                 "public/images/illustrations/maquettes/maquette-37.webp")
                 self.assertIn("2026-11-11", r["correction_editoriale"])
             else:
                 self.assertRegex(r["maquette_conceptuelle"],
-                                 r"^public/images/maquettes/maquette-[0-9]{2}\.webp$")
+                                 r"^public/images/illustrations/maquettes/maquette-[0-9]{2}\.webp$")
             self.assertEqual(r["verification_identite_visuelle"],"NON VERIFIE")
             self.assertEqual(r["verification_emballage_physique"],"NON VERIFIE")
 

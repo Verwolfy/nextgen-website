@@ -12,77 +12,77 @@
     {
       "code": "PAINT-ENT-L",
       "slug": "fenek-paint-ent-l",
-      "path": "public/images/catalogue-projects/fenek-paint-ent-l.webp",
+      "path": "public/images/illustrations/catalogue-projects/fenek-paint-ent-l.webp",
       "sha256": "ddf4c81c1fb567d78d1880cec66fbe40de44c9f4e16f72eb9e4bc3af16e2c383",
       "bytes": 51840
     },
     {
       "code": "PAINT-FAC-EL",
       "slug": "fenek-paint-fac-el",
-      "path": "public/images/catalogue-projects/fenek-paint-fac-el.webp",
+      "path": "public/images/illustrations/catalogue-projects/fenek-paint-fac-el.webp",
       "sha256": "fbaf1f79fe66122060463d7b55f66092958f23440664d9074048b1e9ec5e2280",
       "bytes": 49450
     },
     {
       "code": "PAINT-FAC-M",
       "slug": "fenek-paint-fac-m",
-      "path": "public/images/catalogue-projects/fenek-paint-fac-m.webp",
+      "path": "public/images/illustrations/catalogue-projects/fenek-paint-fac-m.webp",
       "sha256": "7c660036bda6f95ded11e66131343976fdb511b87960859b2aa83c6505d31e1c",
       "bytes": 47928
     },
     {
       "code": "PAINT-FAC-SX",
       "slug": "fenek-paint-fac-sx",
-      "path": "public/images/catalogue-projects/fenek-paint-fac-sx.webp",
+      "path": "public/images/illustrations/catalogue-projects/fenek-paint-fac-sx.webp",
       "sha256": "860adff5e59d0fac990cae9561862d8a73ff79153d8b45abfd93337a06bb1b80",
       "bytes": 49932
     },
     {
       "code": "PAINT-INT-M",
       "slug": "fenek-paint-int-m",
-      "path": "public/images/catalogue-projects/fenek-paint-int-m.webp",
+      "path": "public/images/illustrations/catalogue-projects/fenek-paint-int-m.webp",
       "sha256": "b7415eacee9cfeb65005c8bf1ef537c539f98e24f07836c1192924e43ff4e766",
       "bytes": 46122
     },
     {
       "code": "PAINT-INT-S",
       "slug": "fenek-paint-int-s",
-      "path": "public/images/catalogue-projects/fenek-paint-int-s.webp",
+      "path": "public/images/illustrations/catalogue-projects/fenek-paint-int-s.webp",
       "sha256": "d43fdbbd988fa4d8244ff9000b7ea51df220e334e395f57dc5bc72fc81b53ae0",
       "bytes": 45864
     },
     {
       "code": "PAINT-INT-WA",
       "slug": "fenek-paint-int-wa",
-      "path": "public/images/catalogue-projects/fenek-paint-int-wa.webp",
+      "path": "public/images/illustrations/catalogue-projects/fenek-paint-int-wa.webp",
       "sha256": "0782abecd54097595490ccffa22dcd1afa07267328d732481f5282980eb3a87f",
       "bytes": 46714
     },
     {
       "code": "PAINT-PRIM-A",
       "slug": "fenek-paint-prim-a",
-      "path": "public/images/catalogue-projects/fenek-paint-prim-a.webp",
+      "path": "public/images/illustrations/catalogue-projects/fenek-paint-prim-a.webp",
       "sha256": "0e15a1e057ce0367ebb70434154efd374f1f4b0a47e29dcb2a9eb60c21fa4756",
       "bytes": 49090
     },
     {
       "code": "PAINT-PRIM-FX",
       "slug": "fenek-paint-prim-fx",
-      "path": "public/images/catalogue-projects/fenek-paint-prim-fx.webp",
+      "path": "public/images/illustrations/catalogue-projects/fenek-paint-prim-fx.webp",
       "sha256": "49b2ed2786768aa924975da570b4ada70bfb66311b4a14eefd0970af1c1a2006",
       "bytes": 51258
     },
     {
       "code": "PAINT-SOL-A",
       "slug": "fenek-paint-sol-a",
-      "path": "public/images/catalogue-projects/fenek-paint-sol-a.webp",
+      "path": "public/images/illustrations/catalogue-projects/fenek-paint-sol-a.webp",
       "sha256": "3adeeb0a98607c25c487d42720af1ba162943ceb83eadfeb9a3dfa5f220c5c10",
       "bytes": 50938
     },
     {
       "code": "PAINT-TXT-F",
       "slug": "fenek-paint-txt-f",
-      "path": "public/images/catalogue-projects/fenek-paint-txt-f.webp",
+      "path": "public/images/illustrations/catalogue-projects/fenek-paint-txt-f.webp",
       "sha256": "7cd8f687fe3b7b6cc79779dfd3ae4b1a4778c3aada0e470cb7820ca43bb8b198",
       "bytes": 50494
     }

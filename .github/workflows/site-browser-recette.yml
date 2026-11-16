@@ -6,7 +6,7 @@ on:
   pull_request:
     paths:
       - "src/**"
-      - "public/images/catalogue-projects/**"
+      - "public/images/illustrations/catalogue-projects/**"
       - "scripts/check_flow_packshots_built.py"
       - "scripts/check_bond_packshots_built.py"
       - "scripts/check_built_pages.py"

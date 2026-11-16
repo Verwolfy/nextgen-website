@@ -27,7 +27,7 @@ class FacadeIllustrations(unittest.TestCase):
                 self.assertEqual(x["status"],"BROUILLON")
                 self.assertEqual(x["sourceType"],"illustration-professionnelle-façade-6-scènes")
                 self.assertEqual(set(x["sharedSceneWorkflowWith"]),CODES)
-                self.assertEqual(x["sprite"],"/images/application-upgraded/"+x["slug"]+"-steps.webp")
+                self.assertEqual(x["sprite"],"/images/illustrations/application-upgraded/"+x["slug"]+"-steps.webp")
                 self.assertEqual(x["artworkDimensions"],[540,360])
                 raw=(ROOT/"public"/x["sprite"].lstrip("/")).read_bytes()
                 self.assertEqual(raw[:4],b"RIFF")

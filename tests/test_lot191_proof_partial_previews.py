@@ -28,7 +28,7 @@ class TestLot191DraftPreviews(unittest.TestCase):
     self.assertEqual(len(manual["steps"]),6)
     self.assertEqual([x["image"] for x in manual["steps"]],list(range(1,7)))
     self.assertTrue(all(manual["steps"][step-1]["title"][lang] for lang in ("en","fr","ar")))
-    raw=(ROOT/"public/images/application-premium"/file).read_bytes()
+    raw=(ROOT/"public/images/illustrations/application-premium"/file).read_bytes()
     self.assertEqual(raw[:4],b"RIFF")
     self.assertEqual(raw[8:12],b"WEBP")
     self.assertEqual(hashlib.sha256(raw).hexdigest(),sha)
@@ -44,7 +44,7 @@ class TestLot191DraftPreviews(unittest.TestCase):
   self.assertIn("noindex,nofollow,noarchive",review)
   self.assertEqual(review.count("V4 · brouillon"),2)
   for _,(_,_,file,_) in ASSETS.items():
-   self.assertEqual(review.count('src="/images/application-premium/'+file+'"'),1)
+   self.assertEqual(review.count('src="/images/illustrations/application-premium/'+file+'"'),1)
   self.assertIn("enhancedV3?.sprite ?? reviewedV3.sprite",caller)
   self.assertIn("data-proof-partial-preview",component)
   self.assertIn('data-approval="BROUILLON"',component)

@@ -36,7 +36,7 @@ def audit_page(lang:str)->dict:
     meta,body=inspect_url(url)
     text=html.unescape(body.decode("utf-8", errors="replace")) if meta["status"]==200 else ""
     markers={s:s in text for s in PAGES[lang]}
-    picture_paths={f"/images/approche/{s}":f"/images/approche/{s}" in text for s in ASSETS}
+    picture_paths={f"/images/illustrations/approche/{s}":f"/images/illustrations/approche/{s}" in text for s in ASSETS}
     noindex="noindex,nofollow" in text
     return {"lang":lang, "url":url, "http":meta["status"],
             "result":"new_content_visible" if meta["status"]==200
@@ -47,9 +47,9 @@ def audit_page(lang:str)->dict:
 
 
 def audit_asset(asset:str)->dict:
-    url=f"{ORIGIN}/images/approche/{asset}?verification=lot80-20261105"
+    url=f"{ORIGIN}/images/illustrations/approche/{asset}?verification=lot80-20261105"
     meta,body=inspect_url(url)
-    expected=(ROOT/"public/images/approche"/asset).read_bytes()
+    expected=(ROOT/"public/images/illustrations/approche"/asset).read_bytes()
     match=meta["status"]==200 and not meta.get("oversized") and hashlib.sha256(body).digest()==hashlib.sha256(expected).digest()
     return {"asset":asset,"http":meta["status"],"sha256_matches_source":match}
 

@@ -19,7 +19,7 @@ class C1TE_VisualReview(unittest.TestCase):
         self.assertFalse(found[0]["certifie"])
         self.assertFalse(found[0]["commercialise"])
     def test_image_integrity_and_provenance(self):
-        image=ROOT/"public/images/application-v3/fenek-bond-c1te-steps.webp"
+        image=ROOT/"public/images/illustrations/application-v3/fenek-bond-c1te-steps.webp"
         raw=image.read_bytes()
         self.assertEqual(raw[:4],b"RIFF")
         self.assertEqual(raw[8:12],b"WEBP")
@@ -29,7 +29,7 @@ class C1TE_VisualReview(unittest.TestCase):
         self.assertIn("code:'BOND-C1TE'",manifest)
         self.assertIn("slug:'fenek-bond-c1te'",manifest)
         self.assertIn(SHA,manifest)
-        self.assertIn("sprite:'/images/application-v3/fenek-bond-c1te-steps.webp'",manifest)
+        self.assertIn("sprite:'/images/illustrations/application-v3/fenek-bond-c1te-steps.webp'",manifest)
         self.assertIn("'BOND-C1TE':c1te",manifest)
         self.assertIn("status:'BROUILLON'",manifest)
     def test_six_v3_actions_and_lab_safety(self):

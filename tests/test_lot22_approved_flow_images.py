@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-ASSET_DIR=ROOT/"public/images/catalogue-projects"
+ASSET_DIR=ROOT/"public/images/illustrations/catalogue-projects"
 MANIFEST=ROOT/"scripts/flow-packshots-approved.json"
 
 class TestApprovedFlowPackshots(unittest.TestCase):

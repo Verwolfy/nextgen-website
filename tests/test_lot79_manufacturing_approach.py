@@ -23,7 +23,7 @@ class ManufacturingApproach(unittest.TestCase):
 
     def test_images_are_local_vector_illustrations_not_external_loads(self):
         for number,slug in enumerate(("concevoir","produire","distribuer"),1):
-            relative=f"images/approche/{number:02d}-{slug}.svg"
+            relative=f"images/illustrations/approche/{number:02d}-{slug}.svg"
             self.assertIn("/"+relative,self.about)
             data=(ROOT/"public"/relative).read_text(encoding="utf-8")
             self.assertIn("<svg",data)

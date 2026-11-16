@@ -9,7 +9,7 @@ on:
       - "scripts/check_public_manufacturing_approach.py"
       - "src/components/AboutStory.astro"
       - "src/data/editorial.ts"
-      - "public/images/approche/**"
+      - "public/images/illustrations/approche/**"
 
 permissions:
   contents: read

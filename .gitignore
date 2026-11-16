@@ -19,3 +19,6 @@ __pycache__/
 # Deterministically copied on build; original approved design references in supports/3d
 /public/models-demo/
 /public/images/3d-demo/
+
+# Generated verified WebP from the checked-in base64 source
+/public/images/illustrations/application/tile-application-6.webp
