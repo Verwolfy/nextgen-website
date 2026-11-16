@@ -1,47 +1,39 @@
-# NextGen — Source unique des illustrations des 50 guides FENEK
+# NextGen — Référentiel actuel des illustrations FENEK
 
-**Date : 14 novembre 2026** · **Décision effective : UNE seule source de vérité pour l'image officielle par code+slug.**
+**Mise à jour : 16 novembre 2026.** Cette version remplace les décisions historiques du 14 novembre sur la conservation des anciens dossiers. Les comptes-rendus `docs/LOT*.md` restent des archives et ne décrivent pas nécessairement les fichiers encore déployés.
 
-## Fichiers officiels
+## Répartition unique dans `public/images/illustrations/`
 
-- **Manifeste unique :** `src/data/fenek-enhanced-artwork.json` (50 entrées, code, slug, nom de fichier, SHA-256, layout 3×2).
-- **Dossier unique des 50 planches actuellement rendues par le guide FENEK :** `public/images/application-upgraded/` (50 WebP).
-- **Taille obligatoire par planche :** 1620×720, six volets de 540×360 disposés 3 colonnes × 2 lignes.
-- **Composant officiel :** `src/components/FenekApplicationGuide.astro` résout le produit par égalité **code ET slug**, puis récupère uniquement l'image référencée par le manifeste.
-- **Intégrité avant Cloudflare :** `scripts/verify_fenek_deployment.mjs` exige la présence en `dist`, l'empreinte SHA-256 et les six panneaux des **150 fiches FR/EN/AR**. Le complément `scripts/audit_fenek_live_release.mjs` contrôle la release publique.
-- **IMPORTANT :** statut `BROUILLON` sur les 50 guides ; une modification graphique ne vaut pas homologation FT/FDS.
+| Répertoire | Contenu réellement publié | Usage |
+|---|---:|---|
+| `produits/` | 62 WebP | 50 références BOND (16), PROOF (11), FLOW (12), PAINT (11) + 12 miniatures FLOW |
+| `application-upgraded/` | 50 WebP | Les six étapes illustrées de chaque guide (300 scènes au total) |
+| `approche/` | 3 SVG | Présentation de l'approche industrielle |
 
-## Ce qui N'EST PAS un deuxième dossier officiel
+**Les anciens répertoires `catalogue-projects/`, `maquettes/`, `application-premium/`, `application/v3/fenek-bond-c1t/` et `application-v3/` n'existent plus dans `main`.**
 
-| Chemin | Rôle actuel | Règle |
-|---|---|---|
-| `public/images/application-v3/` | 50 sources historiques / notices et vérifications V3 | **Conserver** tant que données/tests y font référence |
-| `public/images/application/v3/fenek-bond-c1t/` | Six PNG haute résolution encore proposés sur C1T | **Conserver** tant que les liens zoom existent |
-| `public/images/application-premium/` | Trois **brouillons non approuvés**, visibles seulement dans des revues `noindex` | **Ne pas injecter dans les fiches officielles** |
-| `public/images/catalogue-projects/` | 55 cartes/packshots de catalogue (pas des gestes) | **Conserver** : usages distincts |
-| `public/images/maquettes/` | 48 maquettes produits (pas des gestes) | **Conserver** : usages distincts |
-| `public/images/approche/` | Trois pictogrammes de l'approche industrielle | **Conserver** : utilisés par le site |
+## Référentiel des images produits
 
-**Ne jamais fusionner aveuglément les dossiers graphiques : les effacer casserait les médias ou les tests qui les référencent.**
+- Chaque référence se résout par le **slug exact du produit** dans `src/lib/catalogue-projets.ts` via `conceptPackshot(product, 'card'|'full')`. Il n'existe plus de mapping `maquette-XX` ni de substitut d'une autre référence.
+- Les douze FLOW disposent d'une paire `<slug>-card.webp` (miniature) / `<slug>.webp` (fiche). Les 38 autres utilisent une seule image `<slug>.webp` pour les deux affichages.
+- Exception explicitement conservée pour l'identité du packaging : `fenek-proof-cm-o2p-sac-20kg-v2.webp` remplace `maquette-37.webp`. Le sac représente **20 kg** avec un bidon de **10 kg** ; l'empreinte SHA-256 attendue est `552f3f850fca117410d0268265f5f7db8c4506dcbc93620ba07529657ea291b7`.
+- Les 62 WebP ont été **déplacés sans modification binaire**. Les anciens liens publics de packshots et les liens numérotés sont redirigés par `public/_redirects` vers les nouveaux noms.
+- Les sources de validation FLOW et PAINT restent `scripts/flow-packshots-approved.json` et `scripts/paint-packshots-concepts.json`. Les fichiers ne constituent pas une certification des emballages.
 
-## Procédure de remplacement sécurisée
+## Référentiel des guides
 
-1. Choisir un produit, vérifier les **six gestes** dans `src/data/fenek-v3-manuals.json`.
-2. Créer six scènes réalistes, identiques au niveau graphique de C1T, dans la charte NextGen ; **aucune marque/valeur inventée**.
-3. Valider chaque scène visuellement puis avec FT/FDS approuvées. Ne pas marquer comme validée sans preuves.
-4. Produire un WebP 1620×720 et remplacer **uniquement** `public/images/application-upgraded/<slug>-steps.webp`.
-5. Mettre à jour **uniquement** le SHA-256 de la référence correspondante dans `src/data/fenek-enhanced-artwork.json`.
-6. Faire contrôler Cloudflare build et comparaison des six panneaux sur FR/EN/AR ; confirmer `/deployment.json` sur le domaine principal.
-7. Après validation de la nouvelle planche, chercher les références restantes de l'ancien média dans code, tests, pages de revue et Git ; seulement alors supprimer les fichiers prouvés orphelins via une PR distincte.
+- Les 50 planches actuellement affichées sont `public/images/illustrations/application-upgraded/<slug>-steps.webp`, 1620×720 (3 colonnes × 2 lignes).
+- Les couples code/slug, six étapes et empreintes sont contrôlés dans `src/data/fenek-enhanced-artwork.json` et `src/data/fenek-v3-manuals.json`.
+- `src/components/FenekApplicationGuide.astro` affiche ces planches sans ancien sprite de secours, sans PNG zoom C1T et sans option **« Ouvrir en haute résolution »**.
+- Les brouillons `application-premium/`, leurs deux composants de revue, leurs pages d'avant-première et la galerie d'audit statique ancienne ont été supprimés. Les pages retirées renvoient vers le catalogue. Les anciennes URLs des PNG de zoom ne renvoient plus d'image.
+- Les métadonnées historiques (`sourceV3Sha256`) demeurent pour la traçabilité, mais leurs médias ne sont plus publiés.
 
-## Nettoyage branches au 14/11/2026
+## Contrôles de sécurité et de publication
 
-- Dépôt : `Verwolfy/nextgen-website` ; production `main`.
-- **150** refs initiales inventoriées dans `docs/maintenance/branches-inventory-2026-11-14.json` (noms et SHA pour retrouver l'historique).
-- **24** branches historiques fusionnées effectivement supprimées ; **126** branches restantes à la dernière vérification (dont `main`).
-- PR #41, #152 et #155 fusionnées dans `main`. Les PR ouvertes non validées restent à examiner ; **ne pas** fusionner les SVG schématiques de #140 ou les fiches FT non approuvées de #50.
-- GitHub **Automatically delete head branches** : ACTIVÉ pour les fusions futures.
-- L'inventaire des références est une piste de reprise, pas une sauvegarde permanente des commits non fusionnés ; conserver les changements uniques avant toute suppression supplémentaire.
-- Bloquant indépendant GitHub Actions : incident #157, facturation ou limite de dépenses ; Cloudflare Pages continue à valider les builds.
+Le build utilise `scripts/verify_fenek_deployment.mjs` pour vérifier les **50** guides, **150** pages FR/EN/AR, **300** étapes, **50** planches et **62** WebP produits exacts. Il refuse le retour des dossiers supprimés, des anciennes pages de revue et des liens de zoom. Les tests Python et Chromium contrôlent également les routes, l'accessibilité et les médias.
 
-**État final de ce document : canon graphique déterminé et protégé, dossiers non officiels encore nécessaires, purge physique des anciens dossiers non effectuée.**
+**Les 50 produits et guides restent au statut BROUILLON / présentation provisoire.** Le déplacement d'un visuel n'autorise ni certification FT/FDS, ni homologation du produit, ni création de SKU ERP.
+
+## Historique
+
+Les anciens rapports de lots et `docs/NETTOYAGE_BRANCHES_ILLUSTRATIONS_20261114.md` servent de journal de décisions à leur date de rédaction, et non d'instructions d'installation actuelles. La source d'exécution est la branche `main`, le code Astro et ses manifests.
