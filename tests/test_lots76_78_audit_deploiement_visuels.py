@@ -39,7 +39,7 @@ class Lot76to78(unittest.TestCase):
                 self.assertFalse((ROOT / r["maquette_source_archive"]).exists())
             else:
                 self.assertRegex(r["maquette_conceptuelle"],
-                                 r"^public/images/illustrations/maquettes/maquette-[0-9]{2}\.webp$")
+                                 r"^public/images/illustrations/produits/fenek-proof-[a-z0-9-]+\.webp$")
             self.assertEqual(r["verification_identite_visuelle"],"NON VERIFIE")
             self.assertEqual(r["verification_emballage_physique"],"NON VERIFIE")
 

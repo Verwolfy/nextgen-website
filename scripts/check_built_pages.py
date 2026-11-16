@@ -171,7 +171,6 @@ def main() -> None:
         # Lot 33: no unpublished field directions or numeric placeholders may
         # leak into the 150 public catalogue detail pages, even in a closed
         # disclosure widget. Their source remains private to the repository.
-        import json
         source = json.loads((ROOT.parent / "src" / "data" /
                              "catalogue-projets.json").read_text(encoding="utf-8"))
         assert len(source) == 50
