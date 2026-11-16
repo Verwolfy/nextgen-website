@@ -31,8 +31,9 @@ class TestLot27VisualConcepts(unittest.TestCase):
         self.assertFalse((ROOT / "src/pages/[lang]/maquettes.astro").exists())
         resources = (ROOT / "src/components/ResourcesHub.astro").read_text(encoding="utf-8")
         self.assertNotIn("/maquettes/", resources)
-        slider = (ROOT / "src/components/HeroSlider.astro").read_text(encoding="utf-8")
-        self.assertIn("['01', '02', '15', '16']", slider)
+        self.assertFalse((ROOT / "src/components/HeroSlider.astro").exists())
+        catalogue = (ROOT / "src/lib/catalogue-projets.ts").read_text(encoding="utf-8")
+        self.assertIn("reviewedGalleryImage(product)", catalogue)
         self.assertEqual((ROOT / "public/data/products.json").read_text().strip(), "[]")
         self.assertIn("noindex,nofollow", (ROOT / "src/layouts/Layout.astro").read_text())
 

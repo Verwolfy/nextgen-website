@@ -37,26 +37,18 @@ class TestDirectContactPaths(unittest.TestCase):
         self.assertNotIn('guaranteed response', copy.lower())
         self.assertNotIn('24/7', copy)
 
-    def test_field_preview_is_collapsible_and_never_active(self):
-        component = (ROOT / 'src/components/LeadForm.astro').read_text(encoding='utf-8')
-        self.assertIn('<details class="lead-preview">', component)
-        page = (ROOT / 'src/pages/[lang]/[section].astro').read_text(encoding='utf-8')
-        self.assertNotIn('<LeadForm', page)
-        self.assertIn('<summary>{t.previewTitle}</summary>', component)
-        self.assertIn('<textarea disabled', component)
-        self.assertIn('disabled type={typeFor(field)}', component)
-        self.assertIn('disabled aria-disabled="true"', component)
-        for forbidden in ('<form', '<script', 'fetch(', 'mailto:', 'wa.me', 'action='):
-            self.assertNotIn(forbidden, component)
-        privacy = (ROOT / 'src/data/lead-forms.ts').read_text(encoding='utf-8')
-        self.assertIn('Tous les champs restent désactivés', privacy)
-        self.assertIn('جميع الحقول معطلة', privacy)
-        self.assertIn('All fields are disabled', privacy)
+    def test_retired_lead_ui_is_absent(self):
+        self.assertFalse((ROOT / "src/components/LeadForm.astro").exists())
+        self.assertFalse((ROOT / "src/data/lead-forms.ts").exists())
+        page = (ROOT / "src/pages/[lang]/[section].astro").read_text(encoding="utf-8")
+        self.assertNotIn("<LeadForm", page)
+        self.assertNotIn("<form", page)
+        self.assertIn('<ContactChannels lang={lang} />', page)
 
     def test_private_catalogue_remains_empty(self):
         self.assertEqual(json.loads((ROOT / 'public/data/products.json').read_text()), [])
         css = (ROOT / 'src/styles/site.css').read_text(encoding='utf-8')
-        for token in ('.contact-channels', '.lead-preview', '.contact-channel a:focus-visible',
+        for token in ('.contact-channels', '.contact-disclosure', '.contact-channel a:focus-visible',
                       'max-width:620px', 'scroll-margin-top:110px'):
             self.assertIn(token, css)
 

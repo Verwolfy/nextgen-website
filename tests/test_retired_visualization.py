@@ -38,9 +38,10 @@ class RetiredVisualizationGuards(unittest.TestCase):
                 self.assertNotIn(token, content, str(path))
 
     def test_retired_2d_gallery_route_and_preserved_images(self):
-        slider = (ROOT / "src/components/HeroSlider.astro").read_text(encoding="utf-8")
+        self.assertFalse((ROOT / "src/components/HeroSlider.astro").exists())
         self.assertFalse((ROOT / "src/pages/[lang]/maquettes.astro").exists())
-        self.assertIn("['01', '02', '15', '16']", slider)
+        source = (ROOT / "src/lib/catalogue-projets.ts").read_text(encoding="utf-8")
+        self.assertIn("reviewedGalleryForReference", source)
         for n in ("01", "02", "15", "16"):
             self.assertTrue((ROOT / f"public/images/maquettes/maquette-{n}.webp").is_file())
         self.assertEqual((ROOT / "public/data/products.json").read_text().strip(), "[]")

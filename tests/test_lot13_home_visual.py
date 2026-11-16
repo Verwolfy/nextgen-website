@@ -46,9 +46,8 @@ class Lot13HomeVisualTests(unittest.TestCase):
         )
         css = (ROOT / "src/styles/site.css").read_text(encoding="utf-8")
         for marker in (
-            ".hero-showcase", ".hero-status", ".home-approach-portrait",
-            ".home-approach .editorial-caution", ".hero-slide-stack",
-            "max-width:580px", "prefers-reduced-motion:reduce",
+            ".hero-status", ".home-approach-portrait",
+            ".home-approach .editorial-caution", "max-width:580px", "prefers-reduced-motion:reduce",
         ):
             self.assertIn(marker, css)
 
