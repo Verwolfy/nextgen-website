@@ -1,0 +1,177 @@
+---
+import {brand, type Lang, rangeName} from '../data/site';
+import {catalogueProjects, conceptPackshot, packagingLabelFor, type CatalogueProject} from '../lib/catalogue-projets';
+import {productWhatsappHref} from '../data/contact-channels';
+import FenekApplicationGuide from './FenekApplicationGuide.astro';
+import {c1tContent, c1tRequirements, c1tFamilyReferences, c1tComparativeCodes} from '../data/fenek-c1t-reference';
+
+interface Props {lang: Lang; product: CatalogueProject;}
+const {lang, product} = Astro.props;
+if(product.code !== 'BOND-C1T') throw Error('C1T pilot must not render a different reference');
+const t = c1tContent[lang];
+const otherCodes=['BOND-C1T','BOND-C1TE','BOND-C2TE'] as const;
+const comparison=otherCodes.map(code=>{
+  const item=catalogueProjects.find(p=>p.code===code);
+  if(!item) throw Error('Missing related BOND reference: '+code);
+  return {item, meaning:c1tComparativeCodes[code][lang]};
+});
+const emailHref='mailto:'+brand.email+'?subject='+encodeURIComponent(t.documentAction+' — '+product.nom);
+const image=conceptPackshot(product,'full');
+const schema={
+  '@context':'https://schema.org',
+  '@type':'Product',
+  name:product.nom,
+  description:t.lead,
+  brand:{'@type':'Brand',name:'FENEK'},
+  identifier:product.code,
+  image:new URL(image, Astro.site ?? Astro.url).href,
+  url:Astro.url.href
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<div class="page-head fenek-sheet-head" style={'--range-color:#12295C'}>
+  <div class="container">
+    <a class="concept-back" href={'/'+lang+'/catalogue/'}>{lang==='ar'?'العودة إلى الكتالوج':lang==='en'?'Back to catalogue':'Retour au catalogue'}</a>
+    <span class="eyebrow">FENEK · BOND · C1T</span>
+    <h1><bdi dir="ltr">{product.nom}</bdi></h1>
+    <p>{t.lead}</p>
+  </div>
+</div>
+<article class="fenek-product-page fenek-c1t-pilot" data-c1t-pilot data-reference={product.code}>
+  <div class="container">
+    <header class="fenek-product-intro">
+      <div class="fenek-product-intro-copy">
+        <span class="fenek-sheet-overline">{t.sheetTitle}</span>
+        <h2>{t.introTitle}</h2>
+        <p>{t.lead}</p>
+        <ul class="fenek-product-quick-points">{t.benefits.map(point=><li>{point}</li>)}</ul>
+      </div>
+      <figure class="fenek-product-image">
+        <img src={image} alt={t.sheetTitle} width="800" height="800" loading="eager" decoding="async" />
+      </figure>
+    </header>
+    <nav class="fenek-section-nav" aria-label={lang==='ar'?'التنقل بين أقسام البطاقة':lang==='en'?'Product sheet sections':'Sections de la fiche'}>
+      {['fenek-overview','fenek-details','fenek-application','fenek-documents'].map((id,i)=><a href={'#'+id}>{t.nav[i]}</a>)}
+    </nav>
+    <section id="fenek-overview" class="fenek-document-section" aria-labelledby="fenek-overview-heading">
+      <h2 id="fenek-overview-heading">{t.nav[0]}</h2>
+      <div class="fenek-overview-grid">
+        <div><h3>{t.introTitle}</h3><ul>{t.uses.map(x=><li>{x}</li>)}</ul></div>
+        <div><h3>{t.preparationTitle}</h3><ul>{t.substrates.map(x=><li>{x}</li>)}</ul></div>
+        <div><h3>{t.identityTitle}</h3><dl class="fenek-document-data">
+          <div><dt>{t.codeLabel}</dt><dd><bdi dir="ltr">{product.code}</bdi></dd></div>
+          <div><dt>{t.packLabel}</dt><dd>{product.conditionnements.map(c=>packagingLabelFor(c.format,lang)).join(' · ')}</dd></div>
+        </dl></div>
+      </div>
+    </section>
+    <section id="fenek-details" class="fenek-document-section" aria-labelledby="fenek-details-heading">
+      <h2 id="fenek-details-heading">{t.nav[1]}</h2>
+      <h3>{t.identityTitle}</h3>
+      <dl class="fenek-document-data c1t-identity">
+        <div><dt>{t.designationLabel}</dt><dd><bdi dir="ltr">{product.nom}</bdi></dd></div>
+        <div><dt>{t.rangeLabel}</dt><dd><bdi dir="ltr">{rangeName[product.gamme]}</bdi></dd></div>
+        <div><dt>{t.classLabel}</dt><dd><bdi dir="ltr">C1T — EN 12004-1:2017</bdi></dd></div>
+      </dl>
+      <h3>{t.techTitle}</h3>
+      <div class="c1t-table-wrap">
+        <table class="c1t-table"><thead><tr><th scope="col">{t.techTitle}</th><th scope="col">{lang==='ar'?'حد الفئة':lang==='en'?'Class threshold':'Seuil de classe'}</th></tr></thead>
+          <tbody>{c1tRequirements.map(item=><tr data-c1t-source-type={item.kind}><th scope="row">{item.label[lang]}</th><td dir="ltr">{item.value}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <h3>{t.familyTitle}</h3>
+      <div class="c1t-table-wrap"><table class="c1t-table"><thead><tr><th scope="col">{t.familyTitle}</th><th scope="col">{lang==='ar'?'القيمة المقارنة':lang==='en'?'Comparative value':'Valeur comparative'}</th></tr></thead>
+        <tbody>{c1tFamilyReferences.map(item=><tr data-c1t-source-type={item.kind}><th scope="row">{item.label[lang]}</th><td dir="ltr">{item.value}</td></tr>)}</tbody>
+      </table></div>
+      <p class="c1t-table-note">{t.figuresNote}</p>
+    </section>
+    <section id="fenek-application" class="fenek-document-section" aria-labelledby="fenek-application-heading">
+      <h2 id="fenek-application-heading">{t.applicationTitle}</h2>
+      <div class="c1t-duo">
+        <div><h3>{t.preparationTitle}</h3><ul>{t.preparation.map(x=><li>{x}</li>)}</ul></div>
+        <div><h3>{t.conditionsTitle}</h3><ul>{t.conditions.map(x=><li>{x}</li>)}</ul></div>
+      </div>
+      <h3>{t.stepsTitle}</h3>
+      <FenekApplicationGuide lang={lang} product={product} concise />
+      <h3>{t.safetyTitle}</h3>
+      <ul class="c1t-safety">{t.safety.map(x=><li>{x}</li>)}</ul>
+    </section>
+    <section id="fenek-documents" class="fenek-document-section" aria-labelledby="fenek-documents-heading">
+      <h2 id="fenek-documents-heading">{t.documentsTitle}</h2>
+      <p>{t.sourceNote}</p>
+      <div class="actions">
+        <button class="btn" type="button" data-print-market-sheet>{t.exportLabel}</button>
+        <a class="btn btn-muted" href={emailHref}>{t.documentAction}</a>
+        <a class="btn btn-muted" href={'/'+lang+'/contact/'}>{t.quoteAction}</a>
+        <a class="btn btn-muted" href={productWhatsappHref(lang,product,'documentation')} target="_blank" rel="noopener noreferrer">{t.whatsappAction}</a>
+      </div>
+    </section>
+    <section class="fenek-document-section" aria-labelledby="c1t-compare-heading">
+      <h2 id="c1t-compare-heading">{t.comparisonTitle}</h2>
+      <p>{t.comparisonNote}</p>
+      <div class="c1t-table-wrap"><table class="c1t-table"><thead><tr>{t.comparisonHeadings.map(x=><th scope="col">{x}</th>)}</tr></thead><tbody>
+        {comparison.map(({item,meaning})=><tr><th scope="row"><a href={'/'+lang+'/documentation/'+item.slug+'/'}><bdi dir="ltr">{item.nom}</bdi></a></th><td dir="ltr">{item.code.replace('BOND-','')}</td><td>{meaning}</td></tr>)}
+      </tbody></table></div>
+      <h3>{t.relatedTitle}</h3>
+      <div class="actions">{comparison.filter(({item})=>item.code!==product.code).map(({item})=><a class="btn btn-muted" href={'/'+lang+'/catalogue/'+item.slug+'/'}><bdi dir="ltr">{item.nom}</bdi></a>)}</div>
+    </section>
+    <p class="fenek-document-footer c1t-legal">{t.important}</p>
+  </div>
+</article>
+<section class="fenek-print-document fenek-c1t-print" lang={lang} dir={lang==='ar'?'rtl':'ltr'}>
+  <div class="fenek-print-masthead">
+    <img class="fenek-print-logo" src="/images/Logo1.jpg" width="170" height="118" alt="NextGen Building Solutions" />
+    <div class="fenek-print-name">NEXTGEN BUILDING SOLUTIONS</div>
+    <div class="fenek-print-slants" aria-hidden="true"></div>
+  </div>
+  <div class="fenek-print-line" aria-hidden="true"></div>
+  <div class="fenek-print-banner"><span>{t.sheetTitle}</span></div>
+  <div class="fenek-print-product-name"><bdi dir="ltr">{product.nom}</bdi></div>
+  <p class="fenek-print-subtitle">{t.lead}</p>
+  <div class="fenek-print-intro">
+    <dl class="fenek-print-metadata">
+      <div><dt>{t.codeLabel}</dt><dd><bdi dir="ltr">{product.code}</bdi></dd></div>
+      <div><dt>{t.rangeLabel}</dt><dd><bdi dir="ltr">{rangeName[product.gamme]}</bdi></dd></div>
+      <div><dt>{t.classLabel}</dt><dd>C1T — EN 12004-1:2017</dd></div>
+      <div><dt>{t.packLabel}</dt><dd>{product.conditionnements.map(c=>packagingLabelFor(c.format,lang)).join(' · ')}</dd></div>
+    </dl>
+    <figure class="fenek-print-packshot"><img src={image} width="800" height="800" alt={t.sheetTitle} /></figure>
+  </div>
+  <section class="fenek-print-card c1t-print-grid"><h2>{t.techTitle}</h2>
+    <table class="c1t-print-table">{c1tRequirements.map(x=><tr><th scope="row">{x.label[lang]}</th><td dir="ltr">{x.value}</td></tr>)}</table>
+  </section>
+  <section class="fenek-print-card c1t-print-grid"><h2>{t.familyTitle}</h2>
+    <table class="c1t-print-table">{c1tFamilyReferences.map(x=><tr><th scope="row">{x.label[lang]}</th><td dir="ltr">{x.value}</td></tr>)}</table>
+  </section>
+  <section class="fenek-print-card"><h2>{t.preparationTitle}</h2><ul>{t.preparation.map(x=><li>{x}</li>)}</ul></section>
+  <section class="fenek-print-card"><h2>{t.safetyTitle}</h2><ul>{t.safety.map(x=><li>{x}</li>)}</ul></section>
+  <div class="fenek-print-footer"><strong>NEXTGEN BUILDING SOLUTIONS</strong><p>{t.important}</p><p>{brand.email}</p></div>
+</section>
+<style>
+  .fenek-c1t-pilot .fenek-document-section h3{font-size:clamp(1.15rem,2vw,1.35rem);margin:20px 0 12px}
+  .fenek-c1t-pilot .fenek-document-section ul{padding-inline-start:1.4rem}
+  .fenek-c1t-pilot .fenek-document-section li{margin-block:5px}
+  .c1t-table-wrap{overflow-x:auto;max-width:100%}
+  .c1t-table{border-collapse:collapse;width:100%;font-size:.94rem;margin:12px 0 22px}
+  .c1t-table th,.c1t-table td{padding:11px 15px;text-align:start;border-bottom:1px solid #dce7e7;vertical-align:top}
+  .c1t-table thead{background:#103651;color:white}
+  .c1t-table tbody th{font-weight:600}
+  .c1t-table tbody tr:nth-child(even){background:#f2f7f5}
+  .c1t-table td[dir="ltr"]{white-space:nowrap;font-variant-numeric:tabular-nums}
+  .c1t-table a{text-decoration:underline;text-decoration-color:#078d62;text-underline-offset:4px}
+  .c1t-table-note{font-size:.9rem;color:#45616f}
+  .c1t-duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .c1t-identity{max-width:780px}
+  .c1t-safety{max-width:900px}
+  .c1t-legal{margin:36px 0 0;font-size:.86rem;line-height:1.6}
+  .fenek-c1t-pilot a:focus-visible,.fenek-c1t-pilot button:focus-visible{outline:3px solid #00895e;outline-offset:4px}
+  @media(max-width:760px){.c1t-duo{grid-template-columns:1fr}.c1t-table{font-size:.86rem}.c1t-table th,.c1t-table td{padding:9px}}
+  @media print {
+    .fenek-c1t-print .fenek-print-card{break-inside:avoid;padding:3mm 4mm;margin-bottom:2.4mm}
+    .fenek-c1t-print .fenek-print-card h2{font-size:10pt}
+    .fenek-c1t-print .c1t-print-table{width:100%;border-collapse:collapse;font-size:8.3pt}
+    .fenek-c1t-print .c1t-print-table td,.fenek-c1t-print .c1t-print-table th{border-bottom:1px solid #d9e4e7;padding:1.6mm 2mm;text-align:start}
+    .fenek-c1t-print .c1t-print-table td[dir="ltr"]{white-space:nowrap}
+    .fenek-c1t-print .fenek-print-card ul{margin:1mm 0;padding-inline-start:6mm;font-size:8.1pt}
+    .fenek-c1t-print .fenek-print-footer{font-size:7.9pt}
+  }
+</style>

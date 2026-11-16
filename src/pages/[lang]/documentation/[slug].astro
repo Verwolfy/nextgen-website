@@ -2,11 +2,13 @@
 import Layout from '../../../layouts/Layout.astro';
 import FenekPrintableSheet from '../../../components/FenekPrintableSheet.astro';
 import FenekApplicationGuide from '../../../components/FenekApplicationGuide.astro';
+import FenekC1TPilot from '../../../components/FenekC1TPilot.astro';
 import {brand, languages, rangeName, rangeColor, type Lang} from '../../../data/site';
 import {catalogueProjects, conceptPackshot, packagingLabelFor, type CatalogueProject} from '../../../lib/catalogue-projets';
 import {guideFor} from '../../../data/fenek-guides';
 import {qualificationFor} from '../../../data/fenek-qualification-notes';
 import {applicationContextFor} from '../../../data/fenek-application-context';
+import {c1tContent} from '../../../data/fenek-c1t-reference';
 import {productWhatsappHref} from '../../../data/contact-channels';
 
 export function getStaticPaths() {
@@ -22,6 +24,7 @@ if (!product || !catalogueProjects.some(p => p.slug === product.slug)) {
 }
 const detail = product.contenu[lang];
 const guide = guideFor(product.code, product.gamme, lang);
+const isC1TPilot=product.code==='BOND-C1T';
 const t = {
   fr:{
     label:'Fiche produit',overview:'Aperçu',details:'Détails produits',application:'Application',documents:'Documents',
@@ -87,7 +90,8 @@ const t = {
 const emailHref = 'mailto:' + brand.email + '?subject=' +
   encodeURIComponent('FENEK technical documentation — ' + product.nom);
 ---
-<Layout lang={lang} title={product.nom + ' — ' + t.label} description={detail.description}>
+<Layout lang={lang} title={isC1TPilot ? c1tContent[lang].pageTitle : product.nom + ' — ' + t.label} description={isC1TPilot ? c1tContent[lang].metaDescription : detail.description} ogImage={isC1TPilot ? conceptPackshot(product,'full') : undefined}>
+  {isC1TPilot ? <FenekC1TPilot lang={lang} product={product} /> : <>
   <div class="page-head fenek-sheet-head" style={'--range-color:' + rangeColor[product.gamme]}>
     <div class="container">
       <a class="concept-back" href={`/${lang}/catalogue/`}>{t.back}</a>
@@ -227,6 +231,7 @@ const emailHref = 'mailto:' + brand.email + '?subject=' +
     </div>
   </article>
   <FenekPrintableSheet lang={lang} product={product} />
+  </>}
 </Layout>
 <script>
   const accordions = Array.from(document.querySelectorAll<HTMLDetailsElement>('.fenek-doc-accordion'));

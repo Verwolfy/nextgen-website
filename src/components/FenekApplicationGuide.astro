@@ -8,8 +8,8 @@ import type { CatalogueProject } from '../lib/catalogue-projets';
 import { applicationContextFor } from '../data/fenek-application-context';
 import { reviewedV3GuideFor } from '../data/fenek-v3-reviewed';
 import enhancedArtwork from '../data/fenek-enhanced-artwork.json';
-interface Props { lang:Lang; product:CatalogueProject; }
-const {lang,product}=Astro.props;
+interface Props { lang:Lang; product:CatalogueProject; concise?:boolean; }
+const {lang,product,concise=false}=Astro.props;
 const reviewedV3=reviewedV3GuideFor(product.code,product.slug);
 const enhancedV3=enhancedArtwork.find(item=>item.code===product.code && item.slug===product.slug);
 // Fail the static build rather than publishing another product's illustration.
@@ -25,7 +25,7 @@ const copy={
 }[lang];
 
 ---
-<section class="fenek-application-visual" aria-label={copy.intro} data-application-visual data-reference={product.code} data-application-count={steps.length} data-v3-reviewed={reviewedV3.status} data-v3-sprite={enhancedV3.sprite} data-v3-hash={enhancedV3.sha256} data-v3-enhanced-sprite={enhancedV3.sprite} data-v3-enhanced-hash={enhancedV3.sha256}>
+<section class="fenek-application-visual" aria-label={copy.intro} data-application-visual data-reference={product.code} data-application-count={steps.length} data-v3-reviewed={concise?undefined:reviewedV3.status} data-v3-sprite={enhancedV3.sprite} data-v3-hash={enhancedV3.sha256} data-v3-enhanced-sprite={enhancedV3.sprite} data-v3-enhanced-hash={enhancedV3.sha256}>
   <div class="fenek-application-visual-heading">
     <span class="fenek-application-visual-eyebrow">{product.nom}</span>
     <h3>{copy.intro}</h3>
@@ -47,11 +47,11 @@ const copy={
       </div>
     </li>)}
   </ol>
-  <div class="fenek-application-visual-attention" role="note">
+  {!concise && <div class="fenek-application-visual-attention" role="note">
     <strong>{copy.check} — <bdi dir="ltr">{product.nom}</bdi></strong>
     <p>{applicationContextFor(product.code,lang)}</p>
-  </div>
-  <p class="fenek-application-visual-warning"><strong>{copy.alert}.</strong> {copy.warning}</p>
+  </div>}
+  {!concise && <p class="fenek-application-visual-warning"><strong>{copy.alert}.</strong> {copy.warning}</p>}
 </section>
 <style>
  .fenek-application-visual{--ink:#113651;--accent:#07895e;margin:0 0 18px}

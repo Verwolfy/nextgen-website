@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "check:search": "python scripts/check_search_index.py",
     "test:artwork-cleanup": "node --test tests/lot200_official_artwork_isolation.test.mjs",
-    "check:illustrations": "node --test tests/audit_fenek_live_release.test.mjs"
+    "check:illustrations": "node --test tests/audit_fenek_live_release.test.mjs tests/c1t_pilot.test.mjs"
   },
   "engines": {
     "node": ">=22.12.0"

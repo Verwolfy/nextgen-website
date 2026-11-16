@@ -191,11 +191,19 @@ def main() -> None:
             markup = info.read_text(encoding="utf-8")
             assert 'class="fenek-product-intro"' in markup, info
             assert_product_whatsapp(markup, lang, entry["code"])
-            assert markup.count('class="fenek-doc-accordion"') == 8, info
-            assert markup.count('<summary>') == 8, info
-            assert markup.count('class="fenek-accordion-indicator"') == 8, info
-            # The expanded application walkthrough makes four default-open sections.
-            assert markup.count('class="fenek-doc-accordion" open') == 4, info
+            if entry["code"] == "BOND-C1T":
+                # The first product pilot replaces generic accordions with sourced C1T tables.
+                assert "data-c1t-pilot" in markup, info
+                assert markup.count('data-c1t-source-type="norme"') == 6, info
+                assert markup.count('data-c1t-source-type="famille"') == 3, info
+                assert "fenek-c1t-print" in markup and "data-print-market-sheet" in markup, info
+                assert "présentation provisoire" not in markup.lower(), info
+                assert "Sika" not in markup and "Mapei" not in markup and "Bostik" not in markup, info
+            else:
+                assert markup.count('class="fenek-doc-accordion"') == 8, info
+                assert markup.count('<summary>') == 8, info
+                assert markup.count('class="fenek-accordion-indicator"') == 8, info
+                assert markup.count('class="fenek-doc-accordion" open') == 4, info
             for anchor in ('fenek-overview', 'fenek-details',
                            'fenek-application', 'fenek-documents'):
                 assert f'id="{anchor}"' in markup, (info, anchor)
