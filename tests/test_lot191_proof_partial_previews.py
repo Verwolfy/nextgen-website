@@ -45,7 +45,7 @@ class TestLot191DraftPreviews(unittest.TestCase):
   self.assertEqual(review.count("V4 · brouillon"),2)
   for _,(_,_,file,_) in ASSETS.items():
    self.assertEqual(review.count('src="/images/illustrations/application-premium/'+file+'"'),1)
-  self.assertIn("enhancedV3?.sprite ?? reviewedV3.sprite",caller)
+  self.assertIn("enhancedV3.sprite",caller)
   self.assertIn("data-proof-partial-preview",component)
   self.assertIn('data-approval="BROUILLON"',component)
   self.assertIn("loading=\"lazy\"",component)

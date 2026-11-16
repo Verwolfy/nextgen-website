@@ -26,7 +26,7 @@ class AcrRfInlinePreview(unittest.TestCase):
         preview=PREVIEW.read_text("utf-8")
         self.assertNotIn("FenekAcrRfDraftPreview",guide)
         self.assertNotIn("data-acrrf-v4-preview",guide)
-        self.assertIn("enhancedV3?.sprite ?? reviewedV3.sprite",guide)
+        self.assertIn("enhancedV3.sprite",guide)
         review=(ROOT/"public/fr/avant-premiere/fenek-proof-acr-rf/index.html").read_text("utf-8")
         self.assertIn("noindex,nofollow,noarchive",review)
         self.assertEqual(review.count("--image:url('/images/illustrations/application-premium/fenek-proof-acr-rf-steps-v4.webp')"),6)

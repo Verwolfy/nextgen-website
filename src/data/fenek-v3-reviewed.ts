@@ -22,8 +22,8 @@ const l=(fr:string,ar:string,en:string):Localized=>({fr,ar,en});
 const c1t:ReviewedV3Guide={
   code:'BOND-C1T',
   slug:'fenek-bond-c1t',
-  sprite:'/images/illustrations/application-v3/fenek-bond-c1t-steps.webp',
-  sha256:'9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3',
+  sprite:'/images/illustrations/application-upgraded/fenek-bond-c1t-steps.webp',
+  sha256:'d3d6c1d5ef31bca31108d9ddafa82e5bb1ffd0b16350345caee13c19b1fe0213',
   status:'BROUILLON',
   fullResolution:[
     '/images/illustrations/application/v3/fenek-bond-c1t/01_support.png',
@@ -58,8 +58,8 @@ const c1t:ReviewedV3Guide={
 const c1te:ReviewedV3Guide={
   code:'BOND-C1TE',
   slug:'fenek-bond-c1te',
-  sprite:'/images/illustrations/application-v3/fenek-bond-c1te-steps.webp',
-  sha256:'0d4ea8e4b5fc7ec44e3b772f470aeffa81cc50009b2f724d0420c89fd8cd58ce',
+  sprite:'/images/illustrations/application-upgraded/fenek-bond-c1te-steps.webp',
+  sha256:'363e65cdf9d601a65037deca58b8e51667cbb5fdbd75fc1111ef7e142a7e521b',
   status:'BROUILLON',
   steps:[
     {image:1,icon:'brush',

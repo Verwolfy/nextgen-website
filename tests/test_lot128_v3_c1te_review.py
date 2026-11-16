@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 CODE="BOND-C1TE"
 SLUG="fenek-bond-c1te"
-SHA="0d4ea8e4b5fc7ec44e3b772f470aeffa81cc50009b2f724d0420c89fd8cd58ce"
+SHA="363e65cdf9d601a65037deca58b8e51667cbb5fdbd75fc1111ef7e142a7e521b"
 
 class C1TE_VisualReview(unittest.TestCase):
     def test_correct_product(self):
@@ -19,7 +19,7 @@ class C1TE_VisualReview(unittest.TestCase):
         self.assertFalse(found[0]["certifie"])
         self.assertFalse(found[0]["commercialise"])
     def test_image_integrity_and_provenance(self):
-        image=ROOT/"public/images/illustrations/application-v3/fenek-bond-c1te-steps.webp"
+        image=ROOT/"public/images/illustrations/application-upgraded/fenek-bond-c1te-steps.webp"
         raw=image.read_bytes()
         self.assertEqual(raw[:4],b"RIFF")
         self.assertEqual(raw[8:12],b"WEBP")

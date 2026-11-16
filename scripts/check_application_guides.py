@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 DIST=ROOT/"dist"
 CATALOGUE=json.loads((ROOT/"src/data/catalogue-projets.json").read_text(encoding="utf8"))
 MANUALS=json.loads((ROOT/"src/data/fenek-v3-manuals.json").read_text(encoding="utf8"))
-TILE={"BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1"}
+UPGRADES=json.loads((ROOT/"src/data/fenek-enhanced-artwork.json").read_text(encoding="utf8"))
 LEGACY={
     "BOND-C1T":"9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3",
     "BOND-C1TE":"0d4ea8e4b5fc7ec44e3b772f470aeffa81cc50009b2f724d0420c89fd8cd58ce",
@@ -32,9 +32,10 @@ def main():
     by_code={m['code']:m for m in MANUALS}
     if len(by_code)!=50 or set(by_code)!={p['code'] for p in CATALOGUE}:
         raise AssertionError('V3 catalogue identity mismatch')
-    original=DIST/'images/illustrations/application/tile-application-6.webp'
-    assert original.exists(), 'Missing legacy drawing - preserve old pages and tests'
-    assert hashlib.sha256(original.read_bytes()).hexdigest()=="55197582655ba03f9de8d933047236e63efbd5df27a1acde136c5fc342059b1c"
+    current={x["code"]:x for x in UPGRADES}
+    assert len(current)==50 and set(current)==set(by_code),"Current artwork registry mismatch"
+    assert not (DIST/"images/illustrations/application-v3").exists(),"Legacy sprite directory must not be published"
+    assert not (DIST/"images/illustrations/application/tile-application-6.webp").exists(),"Obsolete V2 sprite is still published"
     count=0
     for product in CATALOGUE:
         code,slug=product['code'],product['slug']
@@ -42,9 +43,11 @@ def main():
         assert manual['slug']==slug and manual['status']=='BROUILLON',(code,'source mismatch')
         assert not product['certifie'] and not product['commercialise'],code
         assert len(manual['steps'])==6 and [x['image'] for x in manual['steps']]==list(range(1,7)),code
-        sprite=f'/images/illustrations/application-v3/{slug}-steps.webp'
-        assert manual['sprite']==sprite,(code,'wrong sprite path')
-        actual_sha=LEGACY.get(code,manual['sha256'])
+        sprite=f'/images/illustrations/application-upgraded/{slug}-steps.webp'
+        actual_sha=current[code]['sha256']
+        assert manual['sprite']==sprite and current[code]['sprite']==sprite,(code,'wrong current sprite path')
+        assert manual['sha256']==actual_sha,(code,'current artwork hash mismatch')
+        assert len(manual['sourceV3Sha256'])==64,(code,'missing original artwork provenance')
         asset=DIST/sprite.lstrip('/')
         assert asset.is_file(),(code,'asset missing',sprite)
         raw=asset.read_bytes()

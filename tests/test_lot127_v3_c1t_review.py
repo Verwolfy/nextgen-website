@@ -13,8 +13,8 @@ ROOT=Path(__file__).resolve().parents[1]
 CAT=ROOT/"src/data/catalogue-projets.json"
 COMPONENT=ROOT/"src/components/FenekApplicationGuide.astro"
 MANIFEST=ROOT/"src/data/fenek-v3-reviewed.ts"
-SPRITE=ROOT/"public/images/illustrations/application-v3/fenek-bond-c1t-steps.webp"
-SHA="9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3"
+SPRITE=ROOT/"public/images/illustrations/application-upgraded/fenek-bond-c1t-steps.webp"
+SHA="d3d6c1d5ef31bca31108d9ddafa82e5bb1ffd0b16350345caee13c19b1fe0213"
 
 class V3_C1T_Quality(unittest.TestCase):
     def test_canonical_identity_and_guardrails(self):
@@ -63,7 +63,7 @@ class V3_C1T_Quality(unittest.TestCase):
         self.assertNotIn("minutes",src)
         comp=COMPONENT.read_text(encoding="utf-8")
         self.assertIn("reviewedV3GuideFor(product.code,product.slug)",comp)
-        self.assertIn("data-v3-reviewed={reviewedV3 ? reviewedV3.status : undefined}",comp)
+        self.assertIn("data-v3-reviewed={reviewedV3.status}",comp)
         self.assertIn("data-v3-step={i+1}",comp)
         self.assertIn("role=\"img\" aria-label={product.nom",comp)
         self.assertIn("fenek-v3-reviewed-photo",comp)

@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 CAT=ROOT/"src/data/catalogue-projets.json"
 MANUALS=ROOT/"src/data/fenek-v3-manuals.json"
-IMAGE=ROOT/"public/images/illustrations/application-v3/fenek-bond-c2ft-steps.webp"
+IMAGE=ROOT/"public/images/illustrations/application-upgraded/fenek-bond-c2ft-steps.webp"
 
 
 class C2FTVisualReview(unittest.TestCase):
@@ -51,8 +51,8 @@ class C2FTVisualReview(unittest.TestCase):
         self.assertIn("all[entry.code]",m)
         self.assertNotIn("artworkOnly",m)
         self.assertNotIn("is-caption-cropped",ui)
-        self.assertIn("data-v3-sprite={reviewedV3?.sprite}",ui)
-        self.assertIn("data-v3-hash={reviewedV3?.sha256}",ui)
+        self.assertIn("data-v3-sprite={enhancedV3.sprite}",ui)
+        self.assertIn("data-v3-hash={enhancedV3.sha256}",ui)
 
 
 if __name__=="__main__":unittest.main()

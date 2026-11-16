@@ -40,7 +40,7 @@ class AllV3Manuals(unittest.TestCase):
             with self.subTest(code=p["code"]):
                 self.assertEqual(p["status"],"BROUILLON")
                 self.assertEqual([s["image"] for s in p["steps"]],list(range(1,7)))
-                self.assertEqual(p["sprite"],"/images/illustrations/application-v3/"+p["slug"]+"-steps.webp")
+                self.assertEqual(p["sprite"],"/images/illustrations/application-upgraded/"+p["slug"]+"-steps.webp")
                 for step in p["steps"]:
                     self.assertEqual(set(step["title"]),{"fr","ar","en"})
                     self.assertEqual(set(step["description"]),{"fr","ar","en"})
@@ -62,8 +62,11 @@ class AllV3Manuals(unittest.TestCase):
                 self.assertEqual(data[:4],b"RIFF")
                 self.assertEqual(data[8:12],b"WEBP")
                 digest=hashlib.sha256(data).hexdigest()
-                self.assertEqual(digest,LEGACY.get(code,p["sha256"]))
-                if code not in LEGACY:self.assertEqual(digest,by_code[code]["webp_sha256"])
+                self.assertEqual(digest,p["sha256"])
+                if code in LEGACY:
+                    self.assertEqual(p["sourceV3Sha256"],LEGACY[code])
+                else:
+                    self.assertEqual(p["sourceV3Sha256"],by_code[code]["webp_sha256"])
                 self.assertEqual(by_code[code]["png"],6)
                 self.assertEqual(by_code[code]["svg"],6)
 
@@ -86,8 +89,8 @@ class AllV3Manuals(unittest.TestCase):
         self.assertIn("seen.size!==50",manifest)
         self.assertIn("all[entry.code]",manifest)
         self.assertIn("reviewedV3GuideFor(product.code,product.slug)",ui)
-        self.assertIn("data-v3-sprite={reviewedV3?.sprite}",ui)
-        self.assertIn("data-v3-hash={reviewedV3?.sha256}",ui)
+        self.assertIn("data-v3-sprite={enhancedV3.sprite}",ui)
+        self.assertIn("data-v3-hash={enhancedV3.sha256}",ui)
         self.assertIn("data-v3-step={i+1}",ui)
         self.assertIn("ne remplacent pas une FT/FDS FENEK approuvée",ui)
 

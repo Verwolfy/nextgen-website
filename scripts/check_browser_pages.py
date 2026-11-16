@@ -15,7 +15,9 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 SHOTS = ROOT / ".ci-artifacts" / "screenshots"
-ENHANCED_BY_CODE = {item["code"]: item["sprite"] for item in json.loads((ROOT/"src/data/fenek-enhanced-artwork.json").read_text(encoding="utf-8"))}
+ARTWORK_BY_CODE = {item["code"]: item for item in json.loads((ROOT/"src/data/fenek-enhanced-artwork.json").read_text(encoding="utf-8"))}
+ENHANCED_BY_CODE = {code: item["sprite"] for code, item in ARTWORK_BY_CODE.items()}
+ENHANCED_SHA_BY_CODE = {code: item["sha256"] for code, item in ARTWORK_BY_CODE.items()}
 
 
 class SilentHandler(SimpleHTTPRequestHandler):
@@ -27,7 +29,7 @@ class SilentHandler(SimpleHTTPRequestHandler):
 def check_lot127_v3_c1t(browser, base: str) -> None:
     """Visually test the first individually reviewed V3 reference, FR/AR/EN."""
     import hashlib
-    image_path = "/images/illustrations/application-v3/fenek-bond-c1t-steps.webp"
+    image_path = "/images/illustrations/application-upgraded/fenek-bond-c1t-steps.webp"
     display_path = ENHANCED_BY_CODE["BOND-C1T"]
     for lang in ("fr", "ar", "en"):
         for width in (390, 1280):
@@ -67,14 +69,14 @@ def check_lot127_v3_c1t(browser, base: str) -> None:
     import urllib.request
     with urllib.request.urlopen(base+image_path, timeout=10) as response:
         assert hashlib.sha256(response.read()).hexdigest() == (
-            "9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3"
+            ENHANCED_SHA_BY_CODE["BOND-C1T"]
         )
 
 
 def check_lot128_v3_c1te(browser, base: str) -> None:
     """C1TE V3: own figures, correct code, conditional open time, all languages."""
     import hashlib
-    sprite = "/images/illustrations/application-v3/fenek-bond-c1te-steps.webp"
+    sprite = "/images/illustrations/application-upgraded/fenek-bond-c1te-steps.webp"
     display_sprite = ENHANCED_BY_CODE["BOND-C1TE"]
     for lang in ("fr", "ar", "en"):
         for width in (390, 1280):
@@ -107,13 +109,13 @@ def check_lot128_v3_c1te(browser, base: str) -> None:
     import urllib.request
     with urllib.request.urlopen(base+sprite,timeout=10) as response:
         assert hashlib.sha256(response.read()).hexdigest() == (
-            "0d4ea8e4b5fc7ec44e3b772f470aeffa81cc50009b2f724d0420c89fd8cd58ce"
+            ENHANCED_SHA_BY_CODE["BOND-C1TE"]
         )
 
 
 def check_lot129_v3_c2ft(browser, base: str) -> None:
     """C2FT now serves its OWN six complete source illustrations and captions."""
-    sprite = "/images/illustrations/application-v3/fenek-bond-c2ft-steps.webp"
+    sprite = "/images/illustrations/application-upgraded/fenek-bond-c2ft-steps.webp"
     display_sprite = ENHANCED_BY_CODE["BOND-C2FT"]
     for lang in ("fr", "ar", "en"):
         for width in (390, 1280):
@@ -157,7 +159,7 @@ def check_lot130_all_v3(browser, base: str) -> None:
             assert response and response.status==200,(code,"missing page")
             guide=page.locator(f'section[data-reference="{code}"][data-v3-reviewed="BROUILLON"]')
             assert guide.count()==1,(code,"not reviewed")
-            sprite=f"/images/illustrations/application-v3/{slug}-steps.webp"
+            sprite=f"/images/illustrations/application-upgraded/{slug}-steps.webp"
             assert guide.get_attribute("data-v3-sprite")==sprite,(code,"wrong sprite")
             assert guide.get_attribute("data-v3-enhanced-sprite")==ENHANCED_BY_CODE.get(code),(code,"enhanced artwork mismatch")
             panels=guide.locator("[data-v3-step]")
@@ -989,8 +991,8 @@ def check() -> None:
                     assert guide.count() == 1, lang
                     assert guide.get_attribute("data-application-count") == "6", lang
                     assert page.locator("[data-application-step]").count() == 6, lang
-                    art = page.request.get(base + "/images/illustrations/application/tile-application-6.webp")
-                    assert art.status == 200 and art.body()[:4] == b"RIFF", lang
+                    art = page.request.get(base + ENHANCED_BY_CODE["BOND-C1T"])
+                    assert art.status == 200 and art.body()[8:12] == b"WEBP", lang
                     for marker in ("fenek-overview", "fenek-details",
                                    "fenek-application", "fenek-documents"):
                         assert page.locator("#" + marker).count() == 1, (lang, marker)

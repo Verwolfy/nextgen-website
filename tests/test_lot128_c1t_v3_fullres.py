@@ -61,7 +61,7 @@ class ReviewedC1T(unittest.TestCase):
         # Assets are under exact C1T slug, never in shared/legacy sprite path.
         self.assertTrue(ART.is_dir())
         self.assertFalse((ART.parent/"fenek-bond-c1te").exists())
-        self.assertTrue((ROOT/"src/assets/tile-application-6.webp.base64").is_file())
+        self.assertFalse((ROOT/"src/assets/tile-application-6.webp.base64").exists())
 
 if __name__=="__main__":
     unittest.main()

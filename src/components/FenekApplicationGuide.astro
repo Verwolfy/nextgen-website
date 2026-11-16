@@ -1,26 +1,21 @@
 ---
 /**
  * Editorial application walkthrough, not a validated technical data sheet.
- * Tile references reuse the user's six drawings (single lightweight WebP sprite).
- * Other references use neutral original vector pictograms.
+ * Every FENEK reference renders its own verified six-scene remastered WebP.
  */
 import type { Lang } from '../data/site';
 import type { CatalogueProject } from '../lib/catalogue-projets';
-import { applicationStepsFor, isTileAdhesive } from '../data/fenek-application-steps';
 import { applicationContextFor } from '../data/fenek-application-context';
 import { reviewedV3GuideFor } from '../data/fenek-v3-reviewed';
 import enhancedArtwork from '../data/fenek-enhanced-artwork.json';
-import sourceCropReview from '../data/fenek-v3-source-crop-qa.json';
 interface Props { lang:Lang; product:CatalogueProject; }
 const {lang,product}=Astro.props;
 const reviewedV3=reviewedV3GuideFor(product.code,product.slug);
-// Upgrade only the exact product code + slug. Keep V3 original assets and their hashes intact.
-const enhancedV3=reviewedV3 ? enhancedArtwork.find(item=>item.code===product.code && item.slug===product.slug) : undefined;
-const cropReview=reviewedV3 && !enhancedV3 ? sourceCropReview.find(item=>item.code===product.code && item.slug===product.slug) : undefined;
-const steps=reviewedV3
-  ? reviewedV3.steps.map(step=>({title:step.title[lang],description:step.description[lang],icon:step.icon,image:step.image}))
-  : applicationStepsFor(product.code,lang);
-const tile=isTileAdhesive(product.code);
+const enhancedV3=enhancedArtwork.find(item=>item.code===product.code && item.slug===product.slug);
+// Fail the static build rather than publishing another product's illustration.
+if(!reviewedV3 || !enhancedV3 || enhancedV3.sprite!==reviewedV3.sprite || enhancedV3.sha256!==reviewedV3.sha256)
+  throw Error('FENEK illustration missing or mismatched: '+product.code);
+const steps=reviewedV3.steps.map(step=>({title:step.title[lang],description:step.description[lang],icon:step.icon,image:step.image}));
 // Draft illustration previews belong in an isolated, noindex review gallery.
 // Official FR/EN/AR product guides must show their current six steps only.
 const fullSizeC1T=product.code==='BOND-C1T' && product.slug==='fenek-bond-c1t' ? [
@@ -37,44 +32,21 @@ const copy={
   en:{intro:'Illustrated application journey',step:'Step',alert:'Indicative process — provisional presentation',warning:'These images illustrate general trade practice, not an approved FENEK TDS/SDS. Never infer ratios, open time, thickness or strength from drawings.',check:'Reference-specific verification',photo:'Customer-provided illustration',zoom:'Open full-resolution illustration'},
   ar:{intro:'مراحل التطبيق المصورة',step:'المرحلة',alert:'إجراء إرشادي — عرض أولي',warning:'هذه الرسوم توضح خطوات العمل العامة ولا تحل محل النشرة الفنية ونشرة السلامة المعتمدتين. لا تستنتج نسب الخلط أو أوقات التشغيل أو السماكة أو المقاومة من الصور.',check:'نقطة فحص خاصة بهذا المرجع',photo:'رسم مقدم من العميل',zoom:'فتح الرسم بالحجم الكامل'}
 }[lang];
-const paths:Record<string,string>={
- brush:'M4 18h16M4 6h16M6 10l2 2 3-3M13 14l7-7M3 21l3-3 3 3',
- water:'M12 2C9 7 5 11 5 15a7 7 0 0 0 14 0c0-4-4-8-7-13Z',
- mix:'M3 9a9 9 0 0 1 18 0M21 15a9 9 0 0 1-18 0M17 9l4 0-2-4M7 15H3l2 4M12 5v14',
- clock:'M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 7v5l4 3',
- trowel:'M3 15 17 3l4 4-12 12-6-4ZM4 20h13M8 12l4 4',
- tile:'M4 4h16v16H4zM12 4v16M4 12h16M8 8h.01M16 16h.01',
- shield:'M12 2 3 6v6c0 5 4 8 9 10 5-2 9-5 9-10V6zM8 12l3 3 5-6',
- check:'M4 12l5 5L20 6M3 3h18v18H3z',
- beaker:'M9 3h6M10 3v7l-6 9a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-6-9V3M8 16h8',
- spray:'M8 5h8l2 3-2 3H8zM12 11v9M6 6l-3 1M6 10l-3-1M21 5h1M21 9h1M20 13h1',
- roller:'M3 5h15v7H3zM10 12v4h8v3M18 19v3',
- level:'M3 18h18M5 14l4-4 4 3 6-7M4 4h16v16H4z'
-};
+
 ---
-<section class="fenek-application-visual" aria-label={copy.intro} data-application-visual data-reference={product.code} data-application-count={steps.length} data-v3-reviewed={reviewedV3 ? reviewedV3.status : undefined} data-v3-sprite={reviewedV3?.sprite} data-v3-hash={reviewedV3?.sha256} data-v3-enhanced-sprite={enhancedV3?.sprite} data-v3-enhanced-hash={enhancedV3?.sha256} data-v3-source-crop={cropReview?.cropFraction}>
+<section class="fenek-application-visual" aria-label={copy.intro} data-application-visual data-reference={product.code} data-application-count={steps.length} data-v3-reviewed={reviewedV3.status} data-v3-sprite={enhancedV3.sprite} data-v3-hash={enhancedV3.sha256} data-v3-enhanced-sprite={enhancedV3.sprite} data-v3-enhanced-hash={enhancedV3.sha256}>
   <div class="fenek-application-visual-heading">
     <span class="fenek-application-visual-eyebrow">{product.nom}</span>
     <h3>{copy.intro}</h3>
     <span class="fenek-application-visual-tag">{steps.length} {copy.step.toLowerCase()}</span>
   </div>
-  <ol class:list={['fenek-application-visual-grid',{'has-drawings':tile || Boolean(reviewedV3),'v3-reviewed':Boolean(reviewedV3)}]}>
+  <ol class="fenek-application-visual-grid has-drawings v3-reviewed">
     {steps.map((step,i)=><li class="fenek-application-visual-card" data-application-step={i+1}>
-      <figure class:list={['fenek-application-visual-figure',{'fenek-v3-upgraded-figure':Boolean(enhancedV3),'fenek-v3-source-crop-figure':Boolean(cropReview)}]} style={cropReview ? `--v3-source-crop:${cropReview.cropFraction}` : undefined}>
-        {step.image && reviewedV3
-          ? <div class:list={['fenek-application-visual-photo','fenek-v3-reviewed-photo',{'fenek-v3-upgraded-photo':Boolean(enhancedV3),'fenek-v3-source-crop-photo':Boolean(cropReview)}]}
-              style={`--sprite-position:${((step.image-1)%3)*50}% ${Math.floor((step.image-1)/3)*100}%;--v3-sprite:url('${enhancedV3?.sprite ?? reviewedV3.sprite}')`}
-              data-v3-step={i+1}
-              role="img" aria-label={product.nom+' — '+copy.step+' '+(i+1)+': '+step.title}></div>
-          : step.image
-          ? <div class="fenek-application-visual-photo"
-              style={`--sprite-position:${((step.image-1)%3)*50}% ${Math.floor((step.image-1)/3)*100}%`}
-              role="img" aria-label={copy.photo+' — '+step.title}></div>
-          : <div class="fenek-application-visual-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
-                <path d={paths[step.icon]??paths.check}></path>
-              </svg>
-            </div>}
+      <figure class="fenek-application-visual-figure fenek-v3-upgraded-figure">
+        <div class="fenek-application-visual-photo fenek-v3-reviewed-photo fenek-v3-upgraded-photo"
+          style={`--sprite-position:${((step.image-1)%3)*50}% ${Math.floor((step.image-1)/3)*100}%;--v3-sprite:url('${enhancedV3.sprite}')`}
+          data-v3-step={i+1}
+          role="img" aria-label={product.nom+' — '+copy.step+' '+(i+1)+': '+step.title}></div>
         <figcaption>{String(i+1).padStart(2,'0')}</figcaption>
       </figure>
       <div class="fenek-application-visual-copy">
@@ -105,7 +77,7 @@ const paths:Record<string,string>={
  .fenek-application-visual-card{display:flex;flex-direction:column;overflow:hidden;min-width:0;border:1px solid #d8e5e6;border-radius:14px;background:linear-gradient(165deg,#fff 66%,#f3faf7);box-shadow:0 4px 16px #1136510a;break-inside:avoid}
  .fenek-application-visual-figure{position:relative;display:grid;place-items:center;min-height:125px;margin:0;background:#f6faf9;border-bottom:1px solid #e1ebe8;overflow:hidden}
  .fenek-application-visual-figure figcaption{position:absolute;top:10px;inset-inline-start:12px;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#12365b;color:white;font-size:.78rem;font-weight:850;box-shadow:0 3px 8px #08284320}
- .fenek-application-visual-photo{width:min(100%,142px);aspect-ratio:1;background-image:url('/images/illustrations/application/tile-application-6.webp');background-repeat:no-repeat;background-size:300% 200%;background-position:var(--sprite-position);filter:contrast(1.04)}
+ .fenek-application-visual-photo{width:min(100%,142px);aspect-ratio:1;background-repeat:no-repeat;background-size:300% 200%;background-position:var(--sprite-position);filter:contrast(1.04)}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-card{background:#fff}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-figure{aspect-ratio:1/1;min-height:0;background:#fff;border-bottom:0;padding:3px}
  .fenek-application-visual-grid.v3-reviewed .fenek-v3-detail-link{display:inline-block;width:auto;max-width:100%;aspect-ratio:auto;margin-top:8px;padding:6px 9px;border-radius:8px;background:#e7f4ee;color:#075f4e;font-weight:750;font-size:.76rem;text-decoration:underline;text-underline-offset:2px;cursor:zoom-in}
@@ -118,10 +90,8 @@ const paths:Record<string,string>={
  .fenek-application-visual-grid.v3-reviewed .fenek-v3-upgraded-figure{aspect-ratio:3/2}
  .fenek-application-visual-grid.v3-reviewed .fenek-v3-upgraded-photo{aspect-ratio:3/2}
  /* Source V3 includes baked AR/FR captions. QA-certified upper illustration crop prevents duplication and incorrect language. */
- .fenek-application-visual-grid.v3-reviewed .fenek-v3-source-crop-figure{aspect-ratio:1/var(--v3-source-crop,.78)}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-copy{border-top:1px solid #e6efeb;padding:9px 13px 15px}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-copy h4{font-size:.89rem}
- .fenek-application-visual-icon{width:100px;height:100px;border-radius:27px;background:radial-gradient(circle at 25% 20%,#fff,#e7f3f0);display:grid;place-items:center;border:1px solid #d5e8e3;color:#16745f;box-shadow:inset 0 0 0 7px #f4faf8}
  .fenek-application-visual-icon svg{height:58px;width:58px}
  .fenek-application-visual-copy{padding:15px 16px 18px;flex:1}
  .fenek-application-visual-copy h4{font-size:1rem;line-height:1.32;margin:0 0 8px;color:#133853}
@@ -148,7 +118,6 @@ const paths:Record<string,string>={
  .fenek-application-visual-figure{min-height:135px;border-bottom:0;border-inline-end:1px solid #e2eae8}
  .fenek-application-visual-figure figcaption{inset-inline-start:6px;top:7px;width:25px;height:25px;font-size:.67rem}
  .fenek-application-visual-photo{width:113px}
- .fenek-application-visual-icon{width:85px;height:85px;border-radius:18px}
  .fenek-application-visual-icon svg{width:45px;height:45px}
  .fenek-application-visual-copy{padding:12px 12px 13px}
  .fenek-application-visual-copy h4{font-size:.92rem}
@@ -156,7 +125,6 @@ const paths:Record<string,string>={
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-card{display:flex;flex-direction:column}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-figure{width:100%;aspect-ratio:1}
  .fenek-application-visual-grid.v3-reviewed .fenek-v3-upgraded-figure{aspect-ratio:3/2}
- .fenek-application-visual-grid.v3-reviewed .fenek-v3-source-crop-figure{aspect-ratio:1/var(--v3-source-crop,.78)}
  .fenek-application-visual-grid.v3-reviewed .fenek-v3-reviewed-photo{width:100%}
  .fenek-application-visual-grid.v3-reviewed .fenek-application-visual-copy{padding:12px 15px 15px}
  }

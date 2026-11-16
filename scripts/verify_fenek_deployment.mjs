@@ -83,11 +83,12 @@ for(const product of catalog){
   const {code,slug}=product;
   const guide=guides.get(code),art=artwork.get(code);
   must(guide.slug===slug&&art.slug===slug,'Wrong slug mapping '+code);
+  must(guide.sprite===art.sprite&&guide.sha256===art.sha256,'Manual and current artwork must share one exact media URL/SHA '+code);
   must(guide.status==='BROUILLON'&&art.status==='BROUILLON','Unapproved FT/FDS change '+code);
   must(guide.steps.length===6 && guide.steps.every((s,i)=>s.image===i+1),
     'Wrong six-step manual '+code);
   must(art.sprite===`/images/illustrations/application-upgraded/${slug}-steps.webp`,
-    'Wrong original fallback '+code);
+    'Wrong current product sprite '+code);
   verifyMedia(art.sprite,art.sha256,[1620,720]);
   for(const lang of LOCALES){
     const path=resolve(DIST,lang,'documentation',slug,'index.html');
@@ -97,7 +98,7 @@ for(const product of catalog){
     must(html.includes('data-application-count="6"'),'Wrong official guide count '+lang+'/'+code);
     must(count(html,'data-application-step=')===6 && count(html,'data-v3-step=')===6,
       'Six original illustrated steps missing '+lang+'/'+code);
-    must(html.includes(art.sprite),'Original fallback not linked '+lang+'/'+code);
+    must(html.includes(art.sprite),'Current product sprite not linked '+lang+'/'+code);
     // Lot 203: official product pages display only the six original steps.
     // Draft candidates remain SHA-checked above but are never embedded into
     // FR/EN/AR official guides. Do not silently re-enable preview blocks.

@@ -15,11 +15,6 @@ ROOT = Path(__file__).resolve().parents[1]
 CATALOGUE = ROOT / 'src' / 'data' / 'catalogue-projets.json'
 MANUALS = ROOT / 'src' / 'data' / 'fenek-v3-manuals.json'
 UPGRADE_MANIFEST = ROOT / 'src' / 'data' / 'fenek-enhanced-artwork.json'
-SPRITE_SHA256 = '55197582655ba03f9de8d933047236e63efbd5df27a1acde136c5fc342059b1c'
-C1T_V3_SHA256 = '9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3'
-C1TE_V3_SHA256 = '0d4ea8e4b5fc7ec44e3b772f470aeffa81cc50009b2f724d0420c89fd8cd58ce'
-LEGACY = {'BOND-C1T': C1T_V3_SHA256, 'BOND-C1TE': C1TE_V3_SHA256}
-TILE_ADHESIVES = frozenset({'BOND-C1T','BOND-C1TE','BOND-C2FT','BOND-C2TE','BOND-C2TE-S1'})
 
 
 class ApplicationGuideMarkup(HTMLParser):
@@ -84,34 +79,26 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
     index={m['code']:m for m in manuals}
     if len(index)!=50 or set(index)!={p['code'] for p in catalog}:
         raise AssertionError('Manual reference map mismatch')
-    legacy=fetch(origin,'/images/illustrations/application/tile-application-6.webp',timeout)
-    if hashlib.sha256(legacy).hexdigest()!=SPRITE_SHA256:
-        raise AssertionError('Original customer illustration modified')
-    print('PASS original V2 fallback integrity',flush=True)
-
-    # Check each actual, public image independently, not merely the source manifest.
+    # Only the 50 product-specific illustrations actually rendered by Astro
+    # are checked on the public site. Historical V3 hashes remain metadata.
     def test_asset(p:dict)->str:
         code=p['code'];manual=index[code];slug=p['slug']
-        if manual['slug']!=slug or manual['status']!='BROUILLON':
-            raise AssertionError((code,'slug/status mismatch'))
-        path=f'/images/illustrations/application-v3/{slug}-steps.webp'
-        if manual['sprite']!=path: raise AssertionError((code,'asset path mismatch'))
-        raw=fetch(origin,path,timeout)
-        expected=LEGACY.get(code,manual['sha256'])
-        if raw[:4]!=b'RIFF' or raw[8:12]!=b'WEBP' or hashlib.sha256(raw).hexdigest()!=expected:
-            raise AssertionError((code,'published image SHA incorrect',path))
         art=upgraded_index[code]
-        upgraded_path=f'/images/illustrations/application-upgraded/{slug}-steps.webp'
-        if art['slug']!=slug or art['sprite']!=upgraded_path or art['status']!='BROUILLON':
-            raise AssertionError((code,'new artwork does not match product identity'))
-        updated=fetch(origin,upgraded_path,timeout)
-        if updated[:4]!=b'RIFF' or updated[8:12]!=b'WEBP' or hashlib.sha256(updated).hexdigest()!=art['sha256']:
-            raise AssertionError((code,'upgraded artwork not published',upgraded_path))
+        path=f'/images/illustrations/application-upgraded/{slug}-steps.webp'
+        if manual['slug']!=slug or manual['status']!='BROUILLON' or art['slug']!=slug:
+            raise AssertionError((code,'identity/status mismatch'))
+        if manual['sprite']!=path or art['sprite']!=path or manual['sha256']!=art['sha256']:
+            raise AssertionError((code,'current asset registry mismatch'))
+        if len(manual.get('sourceV3Sha256',''))!=64:
+            raise AssertionError((code,'missing source provenance'))
+        raw=fetch(origin,path,timeout)
+        if raw[:4]!=b'RIFF' or raw[8:12]!=b'WEBP' or hashlib.sha256(raw).hexdigest()!=art['sha256']:
+            raise AssertionError((code,'wrong published artwork',path))
         return code
     with ThreadPoolExecutor(max_workers=workers) as pool:
         results=list(pool.map(test_asset,catalog))
-    if len(results)!=50: raise AssertionError('Some V3 media could not be verified')
-    print('PASS 50 original V3 + 50 new remastered media with matching SHA-256',flush=True)
+    if len(results)!=50: raise AssertionError('Some product images could not be verified')
+    print('PASS 50 current product-specific WebP images with exact SHA-256',flush=True)
 
     tasks=[(lang,p,f"/{lang}/documentation/{p['slug']}/") for lang in LANGS for p in catalog]
     def test_page(task):
@@ -121,8 +108,8 @@ def verify_all_guides(origin: str, timeout: float, workers: int=6) -> int:
             validate_guide(raw,lang,p)
             doc=ApplicationGuideMarkup();doc.feed(raw.decode('utf-8'))
             code=p['code'];manual=index[code]
-            expected_sprite=f'/images/illustrations/application-v3/{p["slug"]}-steps.webp'
-            expected_hash=LEGACY.get(code,manual['sha256'])
+            expected_sprite=upgraded_index[code]['sprite']
+            expected_hash=upgraded_index[code]['sha256']
             if doc.v3!=[str(i) for i in range(1,7)]:
                 raise AssertionError('Incorrect V3 stage numbering')
             attrs=doc.guides[0]

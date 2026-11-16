@@ -49,16 +49,17 @@ class AllFenekArtwork(unittest.TestCase):
     def test_actual_frontend_uses_upgraded_pictures_without_baked_captions(self):
         source=(ROOT/"src/components/FenekApplicationGuide.astro").read_text(encoding="utf-8")
         self.assertIn("item.code===product.code && item.slug===product.slug",source)
-        self.assertIn("enhancedV3?.sprite ?? reviewedV3.sprite",source)
-        self.assertIn("data-v3-enhanced-sprite={enhancedV3?.sprite}",source)
-        self.assertIn("data-v3-enhanced-hash={enhancedV3?.sha256}",source)
+        self.assertIn("enhancedV3.sprite",source)
+        self.assertIn("data-v3-enhanced-sprite={enhancedV3.sprite}",source)
+        self.assertIn("data-v3-enhanced-hash={enhancedV3.sha256}",source)
         self.assertIn(".fenek-v3-upgraded-figure{aspect-ratio:3/2}",source)
         self.assertIn("{step.title}",source)
         self.assertIn("{step.description}",source)
 
     def test_crop_fallback_is_suppressed_for_upgraded_artwork(self):
         source=(ROOT/"src/components/FenekApplicationGuide.astro").read_text(encoding="utf-8")
-        self.assertIn("reviewedV3 && !enhancedV3 ?",source)
+        self.assertIn("if(!reviewedV3 || !enhancedV3",source)
+        self.assertNotIn("sourceCropReview",source)
 
 if __name__ == "__main__":
     unittest.main()

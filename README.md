@@ -29,7 +29,8 @@ Les workflows maintenus dans `.github/workflows/` couvrent le build/sécurité, 
 
 - `src/` : composants, routes, styles et données éditoriales.
 - `public/` : ressources et pages statiques. Toutes les illustrations (catalogue, guides, maquettes, approche et revues) sont sous le dossier principal `public/images/illustrations/` ; les fichiers de marque et les vidéos restent distincts. Les 50 sprites de `illustrations/application-upgraded/` sont les visuels officiels du site.
-- `public/images/illustrations/application-v3/` : médias de repli encore référencés par les guides V3 ; ne pas supprimer sans adapter le code et les contrôles.
+- `public/images/illustrations/application-upgraded/` : les 50 planches WebP réellement utilisées par les 50 guides. Les 50 anciennes planches de `application-v3/` ont été retirées : leurs empreintes historiques restent dans `src/data/fenek-v3-manuals.json` (`sourceV3Sha256`), et leurs URL sont redirigées.
+- L'ancien sprite générique `tile-application-6.webp`, son installateur et le recadrage de secours V3 inutilisé ont été supprimés. Le build échoue si une planche spécifique manque.
 - `public/images/illustrations/maquettes/` : 26 maquettes numérotées réellement affichées et la seule image corrigée de CM-O2P (27 WebP). L'ancienne maquette n°37 et son SVG sont retirés, mais restent récupérables dans l'historique Git.
 - `public/images/illustrations/catalogue-projects/` : seules les images utilisées par les produits FLOW (24 formats) et PAINT (11 visuels). Les 20 anciens packshots BOND non affichés et leur chaîne d'installation/test ont été supprimés ; les 16 produits BOND utilisent leurs maquettes spécifiques.
 - `public/_redirects` : redirections 301 depuis les anciennes URL d'illustrations vers le dossier consolidé, pour préserver les liens externes déjà diffusés.

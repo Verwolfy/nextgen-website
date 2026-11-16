@@ -2,8 +2,8 @@
   {
     "code": "BOND-C1T",
     "slug": "fenek-bond-c1t",
-    "sprite": "/images/illustrations/application-v3/fenek-bond-c1t-steps.webp",
-    "sha256": "2aee69e61307f97c06656fe99ef24ccbfc5b6f585f014930fe26d8e49603d4e6",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-c1t-steps.webp",
+    "sha256": "d3d6c1d5ef31bca31108d9ddafa82e5bb1ffd0b16350345caee13c19b1fe0213",
     "status": "BROUILLON",
     "steps": [
       {
@@ -84,13 +84,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "9ba666ddca06c036e4f84c19416b03ea5f75e51d2ea55129d3527d58a4e166e3"
   },
   {
     "code": "BOND-C1TE",
     "slug": "fenek-bond-c1te",
-    "sprite": "/images/illustrations/application-v3/fenek-bond-c1te-steps.webp",
-    "sha256": "0c4e74135325cd3fa00df2f3d7f5e6718c65a2af528d3d64439c3eceb7b8d395",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-c1te-steps.webp",
+    "sha256": "363e65cdf9d601a65037deca58b8e51667cbb5fdbd75fc1111ef7e142a7e521b",
     "status": "BROUILLON",
     "steps": [
       {
@@ -171,13 +172,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "0d4ea8e4b5fc7ec44e3b772f470aeffa81cc50009b2f724d0420c89fd8cd58ce"
   },
   {
     "code": "BOND-C2TE",
     "slug": "fenek-bond-c2te",
-    "sprite": "/images/illustrations/application-v3/fenek-bond-c2te-steps.webp",
-    "sha256": "e4cd09ab534bddef69f000e8348bd15cf798eae93b872eb117bd3ad9345c23b7",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-c2te-steps.webp",
+    "sha256": "c6cabec486e5b982f1820ab9d8fbea05849b3774b76374d2ac0f870d1974b2f2",
     "status": "BROUILLON",
     "steps": [
       {
@@ -258,13 +260,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "e4cd09ab534bddef69f000e8348bd15cf798eae93b872eb117bd3ad9345c23b7"
   },
   {
     "code": "BOND-C2TE-S1",
     "slug": "fenek-bond-c2te-s1",
-    "sprite": "/images/illustrations/application-v3/fenek-bond-c2te-s1-steps.webp",
-    "sha256": "fbaa477851e4b348ebfca050c3f2eb89f981bcce6688d8285e936ed124109ef3",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-c2te-s1-steps.webp",
+    "sha256": "145bc6fb9cd9d20e78c6060a59226004224fc5e84fed3e3fb6be964e12cac9f9",
     "status": "BROUILLON",
     "steps": [
       {
@@ -345,13 +348,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "fbaa477851e4b348ebfca050c3f2eb89f981bcce6688d8285e936ed124109ef3"
   },
   {
     "code": "BOND-C2FT",
     "slug": "fenek-bond-c2ft",
-    "sprite": "/images/illustrations/application-v3/fenek-bond-c2ft-steps.webp",
-    "sha256": "dd49d5fe3200871aa32402b46bafa576279d2ff4a3d14a9cf5dcbaf5a34648d8",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-c2ft-steps.webp",
+    "sha256": "8884997824796c10f49506508eb54176eb88b0018133f11cb0d41214092efcce",
     "status": "BROUILLON",
     "steps": [
       {
@@ -432,13 +436,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "dd49d5fe3200871aa32402b46bafa576279d2ff4a3d14a9cf5dcbaf5a34648d8"
   },
   {
     "code": "BOND-CG1",
     "slug": "fenek-bond-cg1",
-    "sprite": "/images/illustrations/application-v3/fenek-bond-cg1-steps.webp",
-    "sha256": "a5d507e07d8ff2a54c33eb953734dcaaa06bada5bf2c63b017120c99a2c46dd3",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-cg1-steps.webp",
+    "sha256": "096b4f4ece74f4a9d93ea0fdf8472a8575404dab651ff31f8d181e5bfdfc6adb",
     "status": "BROUILLON",
     "steps": [
       {
@@ -519,13 +524,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "a5d507e07d8ff2a54c33eb953734dcaaa06bada5bf2c63b017120c99a2c46dd3"
   },
   {
     "code": "BOND-CG2WA",
     "slug": "fenek-bond-cg2wa",
-    "sprite": "/images/illustrations/application-v3/fenek-bond-cg2wa-steps.webp",
-    "sha256": "a5d507e07d8ff2a54c33eb953734dcaaa06bada5bf2c63b017120c99a2c46dd3",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-cg2wa-steps.webp",
+    "sha256": "40596e386c0b984a90c9d17470194938b06ba15b9f18d13641572c9486643f12",
     "status": "BROUILLON",
     "steps": [
       {
@@ -606,13 +612,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "a5d507e07d8ff2a54c33eb953734dcaaa06bada5bf2c63b017120c99a2c46dd3"
   },
   {
     "code": "BOND-CT-C25-F5",
     "slug": "fenek-bond-ct-c25-f5",
-    "sprite": "/images/illustrations/application-v3/fenek-bond-ct-c25-f5-steps.webp",
-    "sha256": "205c1296dbc76b41130a717b338ecd0d35152a77aeb6d6b5155445710750f88b",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-ct-c25-f5-steps.webp",
+    "sha256": "b6e39a60d317c406defd65b7cc99884acbbf150ed9fc834ac706c233ceb39716",
     "status": "BROUILLON",
     "steps": [
       {
@@ -693,13 +700,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "205c1296dbc76b41130a717b338ecd0d35152a77aeb6d6b5155445710750f88b"
   },
   {
     "code": "BOND-R2",
     "slug": "fenek-bond-r2",
-    "sprite": "/images/illustrations/application-v3/fenek-bond-r2-steps.webp",
-    "sha256": "cd8d16d6e7b7a7d6cc3714fbe09e82cc64a8deaa7e1176d0f3acaeffd99a31a1",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-r2-steps.webp",
+    "sha256": "19456517dfed7416f4efd6ea9e2813c335830d7d1cdbf3cd7dd8b65c04109519",
     "status": "BROUILLON",
     "steps": [
       {
@@ -780,13 +788,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "cd8d16d6e7b7a7d6cc3714fbe09e82cc64a8deaa7e1176d0f3acaeffd99a31a1"
   },
   {
     "code": "BOND-R3",
     "slug": "fenek-bond-r3",
-    "sprite": "/images/illustrations/application-v3/fenek-bond-r3-steps.webp",
-    "sha256": "0b12c417c8f3bdd85bd5f6dcf584e585b9f09fe6f1253aa1ff7a24452e70c6b3",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-r3-steps.webp",
+    "sha256": "d42332920fcb25bfc5582334694d6a0476d719b1eb168c29f13e13c2c8f30064",
     "status": "BROUILLON",
     "steps": [
       {
@@ -867,13 +876,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "0b12c417c8f3bdd85bd5f6dcf584e585b9f09fe6f1253aa1ff7a24452e70c6b3"
   },
   {
     "code": "BOND-R4",
     "slug": "fenek-bond-r4",
-    "sprite": "/images/illustrations/application-v3/fenek-bond-r4-steps.webp",
-    "sha256": "49478e27c05c72e71926ad55193723e444ebe7d774504662478494b01aeebc72",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-r4-steps.webp",
+    "sha256": "9b0b471dedf930e3e1b6566629f76140819cdec539c5595f5911a96129c10ccd",
     "status": "BROUILLON",
     "steps": [
       {
@@ -954,13 +964,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "49478e27c05c72e71926ad55193723e444ebe7d774504662478494b01aeebc72"
   },
   {
     "code": "BOND-GR-HR",
     "slug": "fenek-bond-gr-hr",
-    "sprite": "/images/illustrations/application-v3/fenek-bond-gr-hr-steps.webp",
-    "sha256": "6497a257eb25aee3601d17258ef50992bfba00621fa706c7fa400f106d01f6a0",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-gr-hr-steps.webp",
+    "sha256": "082caee8d5ef0c5ae43109caab00bfa03f091acb3aed6097278c5037658fdbed",
     "status": "BROUILLON",
     "steps": [
       {
@@ -1041,13 +1052,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "6497a257eb25aee3601d17258ef50992bfba00621fa706c7fa400f106d01f6a0"
   },
   {
     "code": "BOND-GP-CSII",
     "slug": "fenek-bond-gp-csii",
-    "sprite": "/images/illustrations/application-v3/fenek-bond-gp-csii-steps.webp",
-    "sha256": "27a1294d889ef3df02f6799afe6451e5b3e3681f4dc41e6572826e485994ebe2",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-gp-csii-steps.webp",
+    "sha256": "a86ea89048647f05397c574f0c195680558a888a307bcd4425f86140e6440de1",
     "status": "BROUILLON",
     "steps": [
       {
@@ -1128,13 +1140,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "27a1294d889ef3df02f6799afe6451e5b3e3681f4dc41e6572826e485994ebe2"
   },
   {
     "code": "BOND-OC-CSIII",
     "slug": "fenek-bond-oc-csiii",
-    "sprite": "/images/illustrations/application-v3/fenek-bond-oc-csiii-steps.webp",
-    "sha256": "264cc63a6dcd774c2eb8c5fcba66bd56db2801124874076d27e712fd44cfeb90",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-oc-csiii-steps.webp",
+    "sha256": "4af7065e8234dbc32b8f5f7ac67219323c4ab96a818718927b0c4320692aa09d",
     "status": "BROUILLON",
     "steps": [
       {
@@ -1215,13 +1228,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "264cc63a6dcd774c2eb8c5fcba66bd56db2801124874076d27e712fd44cfeb90"
   },
   {
     "code": "BOND-M5",
     "slug": "fenek-bond-m5",
-    "sprite": "/images/illustrations/application-v3/fenek-bond-m5-steps.webp",
-    "sha256": "9800652fa44e2fd1a3a5b7206a407c55cdc63a2367628ae38828550b3569735d",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-m5-steps.webp",
+    "sha256": "817967dba97ea8bbf24a79ceed03fe101abee5234a425c9a6cf502e4a3742fae",
     "status": "BROUILLON",
     "steps": [
       {
@@ -1302,13 +1316,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "9800652fa44e2fd1a3a5b7206a407c55cdc63a2367628ae38828550b3569735d"
   },
   {
     "code": "BOND-M10",
     "slug": "fenek-bond-m10",
-    "sprite": "/images/illustrations/application-v3/fenek-bond-m10-steps.webp",
-    "sha256": "3fa9cd3bceba124e34a4271b425a067f98c04119eb8facadd2a3bf236d07d10f",
+    "sprite": "/images/illustrations/application-upgraded/fenek-bond-m10-steps.webp",
+    "sha256": "0157e0f5f658f2d2698b6cc0d4c38f5ccc420bd0b3562f000f371bb9ec883394",
     "status": "BROUILLON",
     "steps": [
       {
@@ -1389,13 +1404,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "3fa9cd3bceba124e34a4271b425a067f98c04119eb8facadd2a3bf236d07d10f"
   },
   {
     "code": "PROOF-CM-O1P",
     "slug": "fenek-proof-cm-o1p",
-    "sprite": "/images/illustrations/application-v3/fenek-proof-cm-o1p-steps.webp",
-    "sha256": "2054cb020b4ebe54b45f61898caece55b055b6b32de2ab4d37f00304b928ef39",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-cm-o1p-steps.webp",
+    "sha256": "8f8b35eed7e1c5a466d5eb98c8e75d3b89bbbe30ad1400761c26a23aa61558ef",
     "status": "BROUILLON",
     "steps": [
       {
@@ -1476,13 +1492,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "2054cb020b4ebe54b45f61898caece55b055b6b32de2ab4d37f00304b928ef39"
   },
   {
     "code": "PROOF-CM-O2P",
     "slug": "fenek-proof-cm-o2p",
-    "sprite": "/images/illustrations/application-v3/fenek-proof-cm-o2p-steps.webp",
-    "sha256": "a04ba87727c6d1a2c0b30aa87235d3ee408aa604c4a2b2f2f6d17917ece82db8",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-cm-o2p-steps.webp",
+    "sha256": "41cab12355624b4ab882826847cd2e4aed864884fadca21224045521cfab5e41",
     "status": "BROUILLON",
     "steps": [
       {
@@ -1563,13 +1580,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "a04ba87727c6d1a2c0b30aa87235d3ee408aa604c4a2b2f2f6d17917ece82db8"
   },
   {
     "code": "PROOF-PU-1K",
     "slug": "fenek-proof-pu-1k",
-    "sprite": "/images/illustrations/application-v3/fenek-proof-pu-1k-steps.webp",
-    "sha256": "4e9362fa3f76dd5e402d606606a844800e4919190e4be4c4d9d493e180e19990",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-pu-1k-steps.webp",
+    "sha256": "dcede890a2357fb122a35ce90ce99eddfac578a17db02fe6285dc58825e325f0",
     "status": "BROUILLON",
     "steps": [
       {
@@ -1650,13 +1668,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "4e9362fa3f76dd5e402d606606a844800e4919190e4be4c4d9d493e180e19990"
   },
   {
     "code": "PROOF-ACR-RF",
     "slug": "fenek-proof-acr-rf",
-    "sprite": "/images/illustrations/application-v3/fenek-proof-acr-rf-steps.webp",
-    "sha256": "2ba8cb3b76e99fe9d120f939a3692b8b5afc30d4216b89e232fce740fb12d22a",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-acr-rf-steps.webp",
+    "sha256": "2458eb9395b7956cefd5189d1956ebb83068fbcd17761a08decd3afc2988a9b3",
     "status": "BROUILLON",
     "steps": [
       {
@@ -1737,13 +1756,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "2ba8cb3b76e99fe9d120f939a3692b8b5afc30d4216b89e232fce740fb12d22a"
   },
   {
     "code": "PROOF-EP-PRIM",
     "slug": "fenek-proof-ep-prim",
-    "sprite": "/images/illustrations/application-v3/fenek-proof-ep-prim-steps.webp",
-    "sha256": "6595c80e45471769f599f93da1564101e96e6a777a7c089accd6d1961323cb32",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-ep-prim-steps.webp",
+    "sha256": "24c86388db34e223b693587db97ce0acef1f29fc5ef0bbd98ada9b804fa759f4",
     "status": "BROUILLON",
     "steps": [
       {
@@ -1824,13 +1844,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "6595c80e45471769f599f93da1564101e96e6a777a7c089accd6d1961323cb32"
   },
   {
     "code": "PROOF-EP-SR",
     "slug": "fenek-proof-ep-sr",
-    "sprite": "/images/illustrations/application-v3/fenek-proof-ep-sr-steps.webp",
-    "sha256": "3302af85546cde951d7f014f7661ac4c110c8fd8641608c5b29417dc96b56532",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-ep-sr-steps.webp",
+    "sha256": "56b22f44b6e717878c7fac1b9d0d189260c6790de3c5a8977d071cac14e0654b",
     "status": "BROUILLON",
     "steps": [
       {
@@ -1911,13 +1932,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "3302af85546cde951d7f014f7661ac4c110c8fd8641608c5b29417dc96b56532"
   },
   {
     "code": "PROOF-EP-SB",
     "slug": "fenek-proof-ep-sb",
-    "sprite": "/images/illustrations/application-v3/fenek-proof-ep-sb-steps.webp",
-    "sha256": "d7102e6370c5567157f8bd34c2d16ffe9e64cbe3cf599aac2d6bcf5e1dc00494",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-ep-sb-steps.webp",
+    "sha256": "7eb9dca7037e31bc43b5709052f20d52271a8c4fd5e649c2948c248488b7e42d",
     "status": "BROUILLON",
     "steps": [
       {
@@ -1998,13 +2020,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "d7102e6370c5567157f8bd34c2d16ffe9e64cbe3cf599aac2d6bcf5e1dc00494"
   },
   {
     "code": "PROOF-EP-INJ",
     "slug": "fenek-proof-ep-inj",
-    "sprite": "/images/illustrations/application-v3/fenek-proof-ep-inj-steps.webp",
-    "sha256": "41dba2b1f37444c4395b9422b662647d3aab40affbe5b015ed49be3557b75f38",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-ep-inj-steps.webp",
+    "sha256": "83a20c70671eea2b959d525b757fda51811a869318497c5cf6d5918a39188994",
     "status": "BROUILLON",
     "steps": [
       {
@@ -2085,13 +2108,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "41dba2b1f37444c4395b9422b662647d3aab40affbe5b015ed49be3557b75f38"
   },
   {
     "code": "PROOF-EP-ANC",
     "slug": "fenek-proof-ep-anc",
-    "sprite": "/images/illustrations/application-v3/fenek-proof-ep-anc-steps.webp",
-    "sha256": "17ff8224e3231b11d8c8f167fcd954d88a2064fcdddf7efcac9187a7c58d4263",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-ep-anc-steps.webp",
+    "sha256": "fd0b1e4eae2fbe88d12f4d4cdf2dae1b7a7af2214bb26df6f5b985168266a1d8",
     "status": "BROUILLON",
     "steps": [
       {
@@ -2172,13 +2196,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "17ff8224e3231b11d8c8f167fcd954d88a2064fcdddf7efcac9187a7c58d4263"
   },
   {
     "code": "PROOF-PU-INJ",
     "slug": "fenek-proof-pu-inj",
-    "sprite": "/images/illustrations/application-v3/fenek-proof-pu-inj-steps.webp",
-    "sha256": "607c34bfba93beb69435f9f7758f8e781f311f8650479f0ea59d9dc044889bf5",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-pu-inj-steps.webp",
+    "sha256": "8a7a6f3cfe48f8c48cbbab2bc7628b80670bb121c6e20d615a7f5a33b506c391",
     "status": "BROUILLON",
     "steps": [
       {
@@ -2259,13 +2284,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "607c34bfba93beb69435f9f7758f8e781f311f8650479f0ea59d9dc044889bf5"
   },
   {
     "code": "PROOF-PU-SEAL",
     "slug": "fenek-proof-pu-seal",
-    "sprite": "/images/illustrations/application-v3/fenek-proof-pu-seal-steps.webp",
-    "sha256": "80b503c876cebf6d9c36f97605ba666be9b931e8580f35945a9e5cffeec497bb",
+    "sprite": "/images/illustrations/application-upgraded/fenek-proof-pu-seal-steps.webp",
+    "sha256": "a0322e5573bb0e3242caed978026ba13b7155a488db983704f22390053ad0c7e",
     "status": "BROUILLON",
     "steps": [
       {
@@ -2346,13 +2372,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "80b503c876cebf6d9c36f97605ba666be9b931e8580f35945a9e5cffeec497bb"
   },
   {
     "code": "FLOW-WR-N",
     "slug": "fenek-flow-wr-n",
-    "sprite": "/images/illustrations/application-v3/fenek-flow-wr-n-steps.webp",
-    "sha256": "16c5fe878e04aba700c39cab03889ad1c73ea076a318249206eb7920580ca4f0",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-wr-n-steps.webp",
+    "sha256": "d67e544631a33cac3be25fae7c6f6c7ea2f23ef12bc1f60cf1ad26bcc0d8922d",
     "status": "BROUILLON",
     "steps": [
       {
@@ -2433,13 +2460,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "16c5fe878e04aba700c39cab03889ad1c73ea076a318249206eb7920580ca4f0"
   },
   {
     "code": "FLOW-SP-HR",
     "slug": "fenek-flow-sp-hr",
-    "sprite": "/images/illustrations/application-v3/fenek-flow-sp-hr-steps.webp",
-    "sha256": "16c5fe878e04aba700c39cab03889ad1c73ea076a318249206eb7920580ca4f0",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-sp-hr-steps.webp",
+    "sha256": "0b1d4ce205708c33071d90d69caef8a6afff24c5999646e51d236a4c35b16a86",
     "status": "BROUILLON",
     "steps": [
       {
@@ -2520,13 +2548,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "16c5fe878e04aba700c39cab03889ad1c73ea076a318249206eb7920580ca4f0"
   },
   {
     "code": "FLOW-SP-RT",
     "slug": "fenek-flow-sp-rt",
-    "sprite": "/images/illustrations/application-v3/fenek-flow-sp-rt-steps.webp",
-    "sha256": "592bed2a43a11bf22bcdcc2965dd3e96ef25214071d37dbf9f2d2554835702e9",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-sp-rt-steps.webp",
+    "sha256": "7d9afed425ceafb6b621e6df5d077d39329aee8812691c89bcc36a6f692007a0",
     "status": "BROUILLON",
     "steps": [
       {
@@ -2607,13 +2636,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "592bed2a43a11bf22bcdcc2965dd3e96ef25214071d37dbf9f2d2554835702e9"
   },
   {
     "code": "FLOW-SP-PF",
     "slug": "fenek-flow-sp-pf",
-    "sprite": "/images/illustrations/application-v3/fenek-flow-sp-pf-steps.webp",
-    "sha256": "e7c6ec49c0d1b95a722ba47c347e36d727cf7ed8dff59ff072ccf814be35ace3",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-sp-pf-steps.webp",
+    "sha256": "ce9d645d4001828f6723db171eeacd106643e11a511118e63575a3d01358c0dc",
     "status": "BROUILLON",
     "steps": [
       {
@@ -2694,13 +2724,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "e7c6ec49c0d1b95a722ba47c347e36d727cf7ed8dff59ff072ccf814be35ace3"
   },
   {
     "code": "FLOW-RT",
     "slug": "fenek-flow-rt",
-    "sprite": "/images/illustrations/application-v3/fenek-flow-rt-steps.webp",
-    "sha256": "24a7acc8f9e88bbf32bcee05d401d28976e3c6ae9b7a6a72105c26ec5deafbfd",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-rt-steps.webp",
+    "sha256": "96647a20bdb763fa94d5defaca8e7acecdbb6a4668a7001eb27a315d117d0c6f",
     "status": "BROUILLON",
     "steps": [
       {
@@ -2781,13 +2812,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "24a7acc8f9e88bbf32bcee05d401d28976e3c6ae9b7a6a72105c26ec5deafbfd"
   },
   {
     "code": "FLOW-AC",
     "slug": "fenek-flow-ac",
-    "sprite": "/images/illustrations/application-v3/fenek-flow-ac-steps.webp",
-    "sha256": "0c7858a59aca29e0a1a6d23d85f7de4ed9a04cca6c30c50a029ffb4369f557b2",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-ac-steps.webp",
+    "sha256": "e46687824a062f1bf4541993bb7db7477e3a74dc0408c43e0b437cc5dc54811f",
     "status": "BROUILLON",
     "steps": [
       {
@@ -2868,13 +2900,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "0c7858a59aca29e0a1a6d23d85f7de4ed9a04cca6c30c50a029ffb4369f557b2"
   },
   {
     "code": "FLOW-AE",
     "slug": "fenek-flow-ae",
-    "sprite": "/images/illustrations/application-v3/fenek-flow-ae-steps.webp",
-    "sha256": "0e5f768c2f0ae40992b051c6a751c4140599cc8bd73145c3691e5c189d373701",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-ae-steps.webp",
+    "sha256": "f56ab837588fa7dd02da83b712f14dd0056223a05a477c29d812a56c5d6c164e",
     "status": "BROUILLON",
     "steps": [
       {
@@ -2955,13 +2988,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "0e5f768c2f0ae40992b051c6a751c4140599cc8bd73145c3691e5c189d373701"
   },
   {
     "code": "FLOW-WP",
     "slug": "fenek-flow-wp",
-    "sprite": "/images/illustrations/application-v3/fenek-flow-wp-steps.webp",
-    "sha256": "54e3b39e5004b2975e5788cedbfcf074a8166da92db593e97d8629a24d239f21",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-wp-steps.webp",
+    "sha256": "5c23366dc5a117c79e7b957fd394c99bd1d0f23c6978db6ced96ee0ba9ea6165",
     "status": "BROUILLON",
     "steps": [
       {
@@ -3042,13 +3076,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "54e3b39e5004b2975e5788cedbfcf074a8166da92db593e97d8629a24d239f21"
   },
   {
     "code": "FLOW-VMA",
     "slug": "fenek-flow-vma",
-    "sprite": "/images/illustrations/application-v3/fenek-flow-vma-steps.webp",
-    "sha256": "0ecad6d855a3ff712f94ac09d2b47c7c0a68cf86ea7680b3f602f34cd48e25a9",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-vma-steps.webp",
+    "sha256": "f782fb7f2ee650f24daa4fd91a6627c34e5835a9b32c9fd8f5de4aa70e3515a7",
     "status": "BROUILLON",
     "steps": [
       {
@@ -3129,13 +3164,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "0ecad6d855a3ff712f94ac09d2b47c7c0a68cf86ea7680b3f602f34cd48e25a9"
   },
   {
     "code": "FLOW-CI",
     "slug": "fenek-flow-ci",
-    "sprite": "/images/illustrations/application-v3/fenek-flow-ci-steps.webp",
-    "sha256": "aeceb9d4a9bfc2195175780c145f50a3930c33a222761b27ee427664501d98ee",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-ci-steps.webp",
+    "sha256": "5948a5e8505d32f352fcbda09a8c13c572c451eb1e2c05477d1d8a6215e0232c",
     "status": "BROUILLON",
     "steps": [
       {
@@ -3216,13 +3252,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "aeceb9d4a9bfc2195175780c145f50a3930c33a222761b27ee427664501d98ee"
   },
   {
     "code": "FLOW-CURE",
     "slug": "fenek-flow-cure",
-    "sprite": "/images/illustrations/application-v3/fenek-flow-cure-steps.webp",
-    "sha256": "e15c45c2fadbadbae6ba7b43cb17d9e671f7e65e5ac751e9152ad636f83a5080",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-cure-steps.webp",
+    "sha256": "5d1bc74c850d5ef513b6ac40ab7d0c99e4e8a12c343dd8773c464b0cf4d81794",
     "status": "BROUILLON",
     "steps": [
       {
@@ -3303,13 +3340,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "e15c45c2fadbadbae6ba7b43cb17d9e671f7e65e5ac751e9152ad636f83a5080"
   },
   {
     "code": "FLOW-LAT",
     "slug": "fenek-flow-lat",
-    "sprite": "/images/illustrations/application-v3/fenek-flow-lat-steps.webp",
-    "sha256": "86fbc798843022e01c3b711e2c0f1fdb99b23f85a30e46ae0f12ee48100a6a7a",
+    "sprite": "/images/illustrations/application-upgraded/fenek-flow-lat-steps.webp",
+    "sha256": "ee71e7ac4573af9627d48a4f46e8b4296c1e067256fe373f7ddb3e6642f471c8",
     "status": "BROUILLON",
     "steps": [
       {
@@ -3390,13 +3428,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "86fbc798843022e01c3b711e2c0f1fdb99b23f85a30e46ae0f12ee48100a6a7a"
   },
   {
     "code": "PAINT-INT-M",
     "slug": "fenek-paint-int-m",
-    "sprite": "/images/illustrations/application-v3/fenek-paint-int-m-steps.webp",
-    "sha256": "1f8399fdafdeb25758bac01ffe98122951c2db53babfff5b70648954c56c8aa0",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-int-m-steps.webp",
+    "sha256": "f96e3be6a388769b293877cabf9482a4630dff1793762f14bacb750b8ae5893f",
     "status": "BROUILLON",
     "steps": [
       {
@@ -3477,13 +3516,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "1f8399fdafdeb25758bac01ffe98122951c2db53babfff5b70648954c56c8aa0"
   },
   {
     "code": "PAINT-INT-S",
     "slug": "fenek-paint-int-s",
-    "sprite": "/images/illustrations/application-v3/fenek-paint-int-s-steps.webp",
-    "sha256": "1f8399fdafdeb25758bac01ffe98122951c2db53babfff5b70648954c56c8aa0",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-int-s-steps.webp",
+    "sha256": "8bfb52a222897621a3c6737f8bd2620cdf2ff854662e0382e9138b8c7eaea774",
     "status": "BROUILLON",
     "steps": [
       {
@@ -3564,13 +3604,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "1f8399fdafdeb25758bac01ffe98122951c2db53babfff5b70648954c56c8aa0"
   },
   {
     "code": "PAINT-INT-WA",
     "slug": "fenek-paint-int-wa",
-    "sprite": "/images/illustrations/application-v3/fenek-paint-int-wa-steps.webp",
-    "sha256": "1f8399fdafdeb25758bac01ffe98122951c2db53babfff5b70648954c56c8aa0",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-int-wa-steps.webp",
+    "sha256": "18af787a876eae4adac1b8b74f0a8a40003d596bf3c47aa094e7583481d9afce",
     "status": "BROUILLON",
     "steps": [
       {
@@ -3651,13 +3692,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "1f8399fdafdeb25758bac01ffe98122951c2db53babfff5b70648954c56c8aa0"
   },
   {
     "code": "PAINT-FAC-M",
     "slug": "fenek-paint-fac-m",
-    "sprite": "/images/illustrations/application-v3/fenek-paint-fac-m-steps.webp",
-    "sha256": "0d8d9633dcc36e8096c09b52421eb5d745ab6a969960a5b389d2b5866084ed00",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-fac-m-steps.webp",
+    "sha256": "36c432bc6ac6f074a94c1bb2ca4bdf567d23261733951646b0cdb132c762143f",
     "status": "BROUILLON",
     "steps": [
       {
@@ -3738,13 +3780,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "0d8d9633dcc36e8096c09b52421eb5d745ab6a969960a5b389d2b5866084ed00"
   },
   {
     "code": "PAINT-FAC-EL",
     "slug": "fenek-paint-fac-el",
-    "sprite": "/images/illustrations/application-v3/fenek-paint-fac-el-steps.webp",
-    "sha256": "0d8d9633dcc36e8096c09b52421eb5d745ab6a969960a5b389d2b5866084ed00",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-fac-el-steps.webp",
+    "sha256": "b67c5519b4232c5f37eab994b6d66b35bda1ace12f5bbc33948283f1c33b0d02",
     "status": "BROUILLON",
     "steps": [
       {
@@ -3825,13 +3868,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "0d8d9633dcc36e8096c09b52421eb5d745ab6a969960a5b389d2b5866084ed00"
   },
   {
     "code": "PAINT-FAC-SX",
     "slug": "fenek-paint-fac-sx",
-    "sprite": "/images/illustrations/application-v3/fenek-paint-fac-sx-steps.webp",
-    "sha256": "0d8d9633dcc36e8096c09b52421eb5d745ab6a969960a5b389d2b5866084ed00",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-fac-sx-steps.webp",
+    "sha256": "aaa114ab09c50e924c203214debc22615b27e107ef61c6ad9b526e192e0825c8",
     "status": "BROUILLON",
     "steps": [
       {
@@ -3912,13 +3956,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "0d8d9633dcc36e8096c09b52421eb5d745ab6a969960a5b389d2b5866084ed00"
   },
   {
     "code": "PAINT-PRIM-A",
     "slug": "fenek-paint-prim-a",
-    "sprite": "/images/illustrations/application-v3/fenek-paint-prim-a-steps.webp",
-    "sha256": "9291e07d5da28439e56e74558ee7b3d454dd077d1f1842023b9f02913c832d35",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-prim-a-steps.webp",
+    "sha256": "74dd87437147e5a22cbc399bb2c772bab9feb214cce1ea5b9788a771477801a9",
     "status": "BROUILLON",
     "steps": [
       {
@@ -3999,13 +4044,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "9291e07d5da28439e56e74558ee7b3d454dd077d1f1842023b9f02913c832d35"
   },
   {
     "code": "PAINT-PRIM-FX",
     "slug": "fenek-paint-prim-fx",
-    "sprite": "/images/illustrations/application-v3/fenek-paint-prim-fx-steps.webp",
-    "sha256": "9291e07d5da28439e56e74558ee7b3d454dd077d1f1842023b9f02913c832d35",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-prim-fx-steps.webp",
+    "sha256": "d4538089b84a415dd36d43e9f57b272aa748b2bac6880414ade65ae51bc23d94",
     "status": "BROUILLON",
     "steps": [
       {
@@ -4086,13 +4132,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "9291e07d5da28439e56e74558ee7b3d454dd077d1f1842023b9f02913c832d35"
   },
   {
     "code": "PAINT-TXT-F",
     "slug": "fenek-paint-txt-f",
-    "sprite": "/images/illustrations/application-v3/fenek-paint-txt-f-steps.webp",
-    "sha256": "de2637d682c5038cfce6e0f01482ae6b8205a15baea1f94eac1bcfcb042c47e8",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-txt-f-steps.webp",
+    "sha256": "068001b6304552c7af0c3f11a3e6fd777bb5b211e5e6f8958c4789bc6d8f3c97",
     "status": "BROUILLON",
     "steps": [
       {
@@ -4173,13 +4220,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "de2637d682c5038cfce6e0f01482ae6b8205a15baea1f94eac1bcfcb042c47e8"
   },
   {
     "code": "PAINT-SOL-A",
     "slug": "fenek-paint-sol-a",
-    "sprite": "/images/illustrations/application-v3/fenek-paint-sol-a-steps.webp",
-    "sha256": "bd5c66277a9d7e5ab2b43ebc024e04ed73ec5cdcb2e1717c33966b1cf8582994",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-sol-a-steps.webp",
+    "sha256": "2c968d63ee19dc806bce393c6338b973e1ba13b6716987936f5a214f19b40f1b",
     "status": "BROUILLON",
     "steps": [
       {
@@ -4260,13 +4308,14 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "bd5c66277a9d7e5ab2b43ebc024e04ed73ec5cdcb2e1717c33966b1cf8582994"
   },
   {
     "code": "PAINT-ENT-L",
     "slug": "fenek-paint-ent-l",
-    "sprite": "/images/illustrations/application-v3/fenek-paint-ent-l-steps.webp",
-    "sha256": "985ac1db6e08735e7aaa9d2d86a4952d8d50f7ac6c621a560d4b6973ff3920bc",
+    "sprite": "/images/illustrations/application-upgraded/fenek-paint-ent-l-steps.webp",
+    "sha256": "aae0ba09332ecf66e4e9961a9e5d490c4abc02202dbaaa32f8b04f34262535fe",
     "status": "BROUILLON",
     "steps": [
       {
@@ -4347,6 +4396,7 @@
           "en": "Illustrative only. Consult approved FENEK technical and safety sheets before use."
         }
       }
-    ]
+    ],
+    "sourceV3Sha256": "985ac1db6e08735e7aaa9d2d86a4952d8d50f7ac6c621a560d4b6973ff3920bc"
   }
 ]

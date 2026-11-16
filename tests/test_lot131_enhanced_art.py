@@ -56,13 +56,13 @@ class EnhancedV3ArtworkTest(unittest.TestCase):
         source=(ROOT/"src/components/FenekApplicationGuide.astro").read_text(encoding="utf-8")
         self.assertIn("import enhancedArtwork from '../data/fenek-enhanced-artwork.json'",source)
         self.assertIn("item.code===product.code && item.slug===product.slug",source)
-        self.assertIn("enhancedV3?.sprite ?? reviewedV3.sprite",source)
-        self.assertIn("data-v3-enhanced-sprite={enhancedV3?.sprite}",source)
-        self.assertIn("data-v3-enhanced-hash={enhancedV3?.sha256}",source)
+        self.assertIn("enhancedV3.sprite",source)
+        self.assertIn("data-v3-enhanced-sprite={enhancedV3.sprite}",source)
+        self.assertIn("data-v3-enhanced-hash={enhancedV3.sha256}",source)
         self.assertIn(".fenek-v3-upgraded-figure{aspect-ratio:3/2}",source)
         self.assertIn(".fenek-v3-upgraded-photo{aspect-ratio:3/2}",source)
-        self.assertIn("data-v3-sprite={reviewedV3?.sprite}",source)
-        self.assertIn("data-v3-hash={reviewedV3?.sha256}",source)
+        self.assertIn("data-v3-sprite={enhancedV3.sprite}",source)
+        self.assertIn("data-v3-hash={enhancedV3.sha256}",source)
 
 if __name__=="__main__":
     unittest.main()

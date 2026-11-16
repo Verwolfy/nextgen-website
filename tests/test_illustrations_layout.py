@@ -15,7 +15,6 @@ class IllustrationLayoutTests(unittest.TestCase):
         expected = {
             "application-premium": 3,
             "application-upgraded": 50,
-            "application-v3": 50,
             "approche": 3,
             "catalogue-projects": 35,
             "maquettes": 27,
@@ -26,6 +25,7 @@ class IllustrationLayoutTests(unittest.TestCase):
         self.assertEqual(len(list((ILLUSTRATIONS / "application/v3/fenek-bond-c1t").glob("*.png"))), 6)
         self.assertEqual(list((ILLUSTRATIONS / "catalogue-projects").glob("fenek-bond-*.webp")), [])
         self.assertFalse((ILLUSTRATIONS / "maquettes/maquette-37.webp").exists())
+        self.assertFalse((ILLUSTRATIONS / "application-v3").exists())
 
     def test_every_registered_sprite_resolves_from_public_root(self):
         for name in ("fenek-v3-manuals.json", "fenek-enhanced-artwork.json"):
@@ -48,9 +48,11 @@ class IllustrationLayoutTests(unittest.TestCase):
                 contents = path.read_text(encoding="utf-8")
                 self.assertIsNone(old.search(contents), str(path))
         redirects = (ROOT / "public/_redirects").read_text(encoding="utf-8")
-        for folder in ("application-premium", "application-upgraded", "application-v3",
+        for folder in ("application-premium", "application-upgraded",
                        "approche", "catalogue-projects", "maquettes"):
             self.assertIn(f"/images/{folder}/* /images/illustrations/{folder}/:splat 301", redirects)
+        old_alias = "/images/" + "application-v3/*"
+        self.assertIn(old_alias + " /images/illustrations/application-upgraded/:splat 301", redirects)
 
 if __name__ == "__main__":
     unittest.main()

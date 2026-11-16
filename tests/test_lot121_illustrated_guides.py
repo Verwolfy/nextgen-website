@@ -37,23 +37,22 @@ class ApplicationGuideCoverage(unittest.TestCase):
         self.assertEqual({code for code,mode in codes if mode=="tile"},TILE)
         self.assertIn("if(!mode)throw Error('Application guide missing for '",self.mapping)
     
-    def test_user_six_drawings_verified_and_build_installer(self):
-        image=base64.b64decode(SPRITE.read_text(encoding="ascii").strip(),validate=True)
-        self.assertEqual(len(image),5902)
-        self.assertEqual(hashlib.sha256(image).hexdigest(),DIGEST)
-        self.assertEqual(image[:4],b"RIFF")
-        self.assertEqual(image[8:12],b"WEBP")
+    def test_only_verified_product_sprites_are_built(self):
+        art=json.loads((ROOT/"src/data/fenek-enhanced-artwork.json").read_text("utf-8"))
+        self.assertEqual(len(art),50)
+        for entry in art:
+            self.assertTrue((ROOT/"public"/entry["sprite"].lstrip("/")).is_file())
+        self.assertFalse(SPRITE.exists())
+        self.assertFalse((ROOT/"scripts/install_application_art.mjs").exists())
         build=json.loads((ROOT/"package.json").read_text(encoding="utf-8"))["scripts"]["build"]
-        self.assertIn("node scripts/install_application_art.mjs && astro build",build)
+        self.assertIn("astro build && node scripts/verify_fenek_deployment.mjs",build)
+        self.assertNotIn("install_application_art",build)
         self.assertIn("pagefind@1.5.2",build)
-        installer=(ROOT/"scripts/install_application_art.mjs").read_text(encoding="utf-8")
-        self.assertIn(DIGEST,installer)
-        self.assertIn("tile-application-6.webp",installer)
         self.assertIn("background-size:300% 200%",self.component)
         self.assertIn("background-position:var(--sprite-position)",self.component)
 
     def test_localized_timeline_and_publication_guard(self):
-        self.assertIn("applicationStepsFor(product.code,lang)",self.component)
+        self.assertIn("reviewedV3GuideFor(product.code,product.slug)",self.component)
         self.assertIn("applicationContextFor(product.code,lang)",self.component)
         self.assertIn("product.nom",self.component)
         self.assertIn("présentation provisoire",self.component)
