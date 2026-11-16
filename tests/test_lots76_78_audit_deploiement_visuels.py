@@ -32,6 +32,9 @@ class Lot76to78(unittest.TestCase):
                 self.assertEqual(r["maquette_source_archive"],
                                  "public/images/illustrations/maquettes/maquette-37.webp")
                 self.assertIn("2026-11-11", r["correction_editoriale"])
+                # Historical source reference stays in the audit, but the
+                # superseded 30 kg file is no longer part of the deployed assets.
+                self.assertFalse((ROOT / r["maquette_source_archive"]).exists())
             else:
                 self.assertRegex(r["maquette_conceptuelle"],
                                  r"^public/images/illustrations/maquettes/maquette-[0-9]{2}\.webp$")

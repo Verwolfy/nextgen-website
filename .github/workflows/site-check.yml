@@ -56,8 +56,6 @@ jobs:
         run: python scripts/check_built_pages.py
       - name: Fail closed on partial FENEK-FLOW packshot uploads
         run: python scripts/check_flow_packshots_built.py
-      - name: Check 10 FENEK-BOND images when uploaded
-        run: python scripts/check_bond_packshots_built.py
       - name: Validate deployable Pages files (no deployment)
         run: |
           python scripts/preprod_static_audit.py

@@ -81,15 +81,15 @@ export const conceptPackshot=(product:CatalogueProject,variant:'card'|'full'='ca
       throw Error('FENEK-PAINT concept asset missing: '+product.code+' -> '+relative);
    return '/'+relative;
  }
- // Prefer the code-specific realistic studio render already in the concept
- // gallery for BOND. Preserve the original reviewed WebP files as archival
- // sources, but do not keep showing the older flat-label composition.
+ // All sixteen BOND references have verified product-specific mockups.
+ // Old BOND packshot variants are retired, not shipped or used as fallbacks.
  if(product.gamme==='bond'){
-   const updatedConcept=reviewedGalleryImage(product);
-   if(updatedConcept) return updatedConcept;
+   const image=reviewedGalleryImage(product);
+   if(!image) throw Error('FENEK-BOND concept asset missing: '+product.code);
+   return image;
  }
  // CM-O2P correction, lot 126: serve the client-validated, optimized WebP of the 20 kg sack;\n // use a new URL to invalidate old Cloudflare/browser image caches.\n // The dry component is a 20 kg bag,
- // with a separate 10 kg canister. Preserve the old gallery image as archive.
+ // with a separate 10 kg canister. Do not serve the obsolete 30 kg artwork.
  if(product.code==='PROOF-CM-O2P'){
    const corrected='images/illustrations/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp';
    if(!existsSync(resolve(process.cwd(),'public',corrected)))
@@ -97,8 +97,7 @@ export const conceptPackshot=(product:CatalogueProject,variant:'card'|'full'='ca
    return '/'+corrected;
  }
  const flow = product.gamme==='flow' && product.conditionnements.some(c=>c.format==='Bidon 20 L');
- const bond = product.gamme==='bond' && product.conditionnements.some(c=>c.format==='Sac 25 kg');
- if(flow || bond){
+ if(flow){
    const name=product.slug+(variant==='card'?'-card':'')+'.webp';
    const relative='images/illustrations/catalogue-projects/'+name;
    const absolute=resolve(process.cwd(),'public',relative);

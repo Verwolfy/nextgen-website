@@ -30,7 +30,8 @@ Les workflows maintenus dans `.github/workflows/` couvrent le build/sécurité, 
 - `src/` : composants, routes, styles et données éditoriales.
 - `public/` : ressources et pages statiques. Toutes les illustrations (catalogue, guides, maquettes, approche et revues) sont sous le dossier principal `public/images/illustrations/` ; les fichiers de marque et les vidéos restent distincts. Les 50 sprites de `illustrations/application-upgraded/` sont les visuels officiels du site.
 - `public/images/illustrations/application-v3/` : médias de repli encore référencés par les guides V3 ; ne pas supprimer sans adapter le code et les contrôles.
-- `public/images/illustrations/maquettes/` : uniquement les 27 images numérotées liées aux produits BOND/PROOF, la correction CM-O2P et son SVG de traçabilité ; les 19 anciennes maquettes sans usage ont été retirées du déploiement.
+- `public/images/illustrations/maquettes/` : 26 maquettes numérotées réellement affichées et la seule image corrigée de CM-O2P (27 WebP). L'ancienne maquette n°37 et son SVG sont retirés, mais restent récupérables dans l'historique Git.
+- `public/images/illustrations/catalogue-projects/` : seules les images utilisées par les produits FLOW (24 formats) et PAINT (11 visuels). Les 20 anciens packshots BOND non affichés et leur chaîne d'installation/test ont été supprimés ; les 16 produits BOND utilisent leurs maquettes spécifiques.
 - `public/_redirects` : redirections 301 depuis les anciennes URL d'illustrations vers le dossier consolidé, pour préserver les liens externes déjà diffusés.
 - `public/images/illustrations/application-premium/` : candidatures de revue graphique séparées des notices officielles, non approuvées.
 - `functions/api/lead.js` : point de contact désactivé par défaut ; ne pas activer sans autorisations et configuration sécurisée.

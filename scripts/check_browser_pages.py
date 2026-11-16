@@ -645,7 +645,6 @@ def check() -> None:
     errors = []
     snapshots = 0
     flow_images_present = bool(list((ROOT / "public/images/illustrations/catalogue-projects").glob("fenek-flow-*.webp")))
-    bond_images_present = bool(list((ROOT / "public/images/illustrations/catalogue-projects").glob("fenek-bond-*.webp")))
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
@@ -903,7 +902,7 @@ def check() -> None:
                                 return im.complete && im.naturalWidth === 800 &&
                                     im.naturalHeight === 800 && getComputedStyle(im).objectFit === 'contain';
                             }"""), f"{lang}, {size}: INT-M studio image missing or distorted"
-                        if slug=="fenek-bond-c1t" and bond_images_present:
+                        if slug=="fenek-bond-c1t":
                             full=page.locator(".concept-detail-image img")
                             full.scroll_into_view_if_needed()
                             assert full.evaluate("""async im => {

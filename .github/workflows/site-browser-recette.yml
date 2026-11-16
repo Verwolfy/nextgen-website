@@ -8,7 +8,6 @@ on:
       - "src/**"
       - "public/images/illustrations/catalogue-projects/**"
       - "scripts/check_flow_packshots_built.py"
-      - "scripts/check_bond_packshots_built.py"
       - "scripts/check_built_pages.py"
       - "scripts/check_browser_pages.py"
       - "scripts/measure_v3_local_browser.py"
@@ -40,8 +39,6 @@ jobs:
         run: python scripts/check_built_pages.py
       - name: Validate FENEK-FLOW images if uploaded
         run: python scripts/check_flow_packshots_built.py
-      - name: Check 10 FENEK-BOND images when uploaded
-        run: python scripts/check_bond_packshots_built.py
       - name: Install isolated browser recipe tooling
         run: |
           python -m pip install playwright==1.56.0

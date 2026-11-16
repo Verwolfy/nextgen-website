@@ -138,7 +138,7 @@ def main() -> None:
         refs += check_page(info_index, lang)
         checked += 1
         assert not (ROOT / lang / "maquettes").exists(), lang
-        for i in (4, *range(20, 46)):
+        for i in (4, *(n for n in range(20, 46) if n != 37)):
             image = ROOT / "images" / "illustrations" / "maquettes" / f"maquette-{i:02d}.webp"
             assert image.is_file() and image.read_bytes()[:4] == b"RIFF", str(image)
         catalog = (ROOT / lang / "catalogue" / "index.html").read_text(encoding="utf-8")
@@ -162,8 +162,8 @@ def main() -> None:
             "fenek-proof-pu-seal":4,
         }
         for slug, number in reviewed_visuals.items():
-            # Lot 125: CM-O2P retains archived image 37 but publicly displays
-            # the corrected bag label "SAC 20 KG" (canister unchanged at 10 KG).
+            # Lot 125: CM-O2P uses the corrected "SAC 20 KG" visual;
+            # the obsolete original image 37 is not deployed.
             asset = ("/images/illustrations/maquettes/fenek-proof-cm-o2p-sac-20kg-v2.webp"
                      if slug == "fenek-proof-cm-o2p"
                      else f"/images/illustrations/maquettes/maquette-{number:02d}.webp")

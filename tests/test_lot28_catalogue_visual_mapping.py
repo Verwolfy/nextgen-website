@@ -37,7 +37,8 @@ class TestLot28CatalogueVisuals(unittest.TestCase):
         self.assertEqual(sum(by_slug[p]["gamme"]=="proof" for p in actual), 11)
         for slug, number in actual.items():
             self.assertIn(slug, by_slug)
-            p = GALLERY / f"maquette-{number:02d}.webp"
+            p = GALLERY / (("fenek-proof-cm-o2p-sac-20kg-v2.webp" if slug == "fenek-proof-cm-o2p"
+                          else f"maquette-{number:02d}.webp"))
             self.assertTrue(p.is_file(), str(p))
             self.assertEqual(p.read_bytes()[:4], b"RIFF")
             self.assertEqual(p.read_bytes()[8:12], b"WEBP")
@@ -48,13 +49,13 @@ class TestLot28CatalogueVisuals(unittest.TestCase):
         src = SOURCE.read_text(encoding="utf-8")
         self.assertIn("existsSync(absolute)&&existsSync(alternate)", src)
         self.assertIn("if(product.gamme==='bond')", src)
-        self.assertIn("if(updatedConcept) return updatedConcept;", src)
+        self.assertIn("FENEK-BOND concept asset missing:", src)
         self.assertEqual(len([p for p in json.loads(PRODUCTS.read_text()) if p["gamme"]=="bond"]),16)
         self.assertIn("return reviewedGalleryImage(product)??conceptImage[product.gamme]", src)
         self.assertIn("paint:''", src)
         self.assertIn("FENEK-PAINT concept asset missing:", src)
         self.assertIn("Maquette de conception absente:", src)
-        self.assertEqual(len(list((ROOT/"public/images/illustrations/catalogue-projects").glob("fenek-bond-*.webp"))),20)
+        self.assertEqual(len(list((ROOT/"public/images/illustrations/catalogue-projects").glob("fenek-bond-*.webp"))),0)
         self.assertEqual(len(list((ROOT/"public/images/illustrations/catalogue-projects").glob("fenek-flow-*.webp"))),24)
         catalogue = (ROOT/"src/components/ConceptCatalogue.astro").read_text(encoding="utf-8")
         detail = (ROOT/"src/pages/[lang]/catalogue/[slug].astro").read_text(encoding="utf-8")

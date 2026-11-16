@@ -18,12 +18,14 @@ class IllustrationLayoutTests(unittest.TestCase):
             "application-v3": 50,
             "approche": 3,
             "catalogue-projects": 55,
-            "maquettes": 29,
+            "maquettes": 27,
         }
         for folder, count in expected.items():
             with self.subTest(folder=folder):
                 self.assertEqual(len([p for p in (ILLUSTRATIONS / folder).rglob("*") if p.is_file()]), count)
         self.assertEqual(len(list((ILLUSTRATIONS / "application/v3/fenek-bond-c1t").glob("*.png"))), 6)
+        self.assertEqual(list((ILLUSTRATIONS / "catalogue-projects").glob("fenek-bond-*.webp")), [])
+        self.assertFalse((ILLUSTRATIONS / "maquettes/maquette-37.webp").exists())
 
     def test_every_registered_sprite_resolves_from_public_root(self):
         for name in ("fenek-v3-manuals.json", "fenek-enhanced-artwork.json"):

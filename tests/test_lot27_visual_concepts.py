@@ -11,9 +11,9 @@ class TestLot27VisualConcepts(unittest.TestCase):
     def test_exact_count_and_unique_webp_assets(self):
         files = sorted(ASSETS.glob("*.webp"))
         # The removed home carousel and early concept boards are not shipped.
-        # Keep 27 label-matched BOND/PROOF sources and the corrected CM-O2P.
+        # Keep only 26 currently displayed numbered mockups plus corrected CM-O2P.
         originals = sorted(p for p in files if p.name.startswith("maquette-"))
-        expected = [f"maquette-{i:02d}.webp" for i in (4, *range(20, 46))]
+        expected = [f"maquette-{i:02d}.webp" for i in (4, *(n for n in range(20, 46) if n != 37))]
         self.assertEqual([p.name for p in originals], expected)
         self.assertEqual([p.name for p in files if p not in originals],
                          ["fenek-proof-cm-o2p-sac-20kg-v2.webp"])
