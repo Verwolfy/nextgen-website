@@ -158,8 +158,12 @@ def check_lot130_all_v3(browser, base: str) -> None:
         try:
             response=page.goto(f"{base}/fr/documentation/{slug}/",wait_until="domcontentloaded")
             assert response and response.status==200,(code,"missing page")
-            guide=page.locator(f'section[data-reference="{code}"][data-v3-reviewed="BROUILLON"]')
-            assert guide.count()==1,(code,"not reviewed")
+            # The C1T pilot omits internal editorial status from its public markup.
+            # All other references continue to require the existing guarded status.
+            selector=(f'section[data-reference="{code}"][data-application-visual]' if code=="BOND-C1T"
+                      else f'section[data-reference="{code}"][data-v3-reviewed="BROUILLON"]')
+            guide=page.locator(selector)
+            assert guide.count()==1,(code,"missing or mismatched guide")
             sprite=f"/images/illustrations/application-upgraded/{slug}-steps.webp"
             assert guide.get_attribute("data-v3-sprite")==sprite,(code,"wrong sprite")
             assert guide.get_attribute("data-v3-enhanced-sprite")==ENHANCED_BY_CODE.get(code),(code,"enhanced artwork mismatch")
