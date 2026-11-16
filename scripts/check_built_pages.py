@@ -195,7 +195,7 @@ def main() -> None:
                 # The first product pilot replaces generic accordions with sourced C1T tables.
                 assert "data-c1t-pilot" in markup, info
                 assert markup.count('data-c1t-source-type="norme"') == 6, info
-                assert markup.count('data-c1t-source-type="famille"') == 3, info
+                assert markup.count('data-c1t-source-type="famille"') == 5, info
                 assert "fenek-c1t-print" in markup and "data-print-market-sheet" in markup, info
                 assert "présentation provisoire" not in markup.lower(), info
                 assert "Sika" not in markup and "Mapei" not in markup and "Bostik" not in markup, info
