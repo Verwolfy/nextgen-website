@@ -27,9 +27,12 @@ def local_fetcher(dist: Path):
         parts = urlsplit(url)
         if parts.scheme == "data":
             return default_url_fetcher(url, **kwargs)
-        if parts.scheme != "https" or parts.netloc != "nextgen-buildingsolutions.com":
+        if parts.scheme == "file":
+            resource = Path(unquote(parts.path)).resolve()
+        elif parts.scheme == "https" and parts.netloc == "nextgen-buildingsolutions.com":
+            resource = (dist / unquote(parts.path).lstrip("/")).resolve()
+        else:
             raise ValueError("External resource forbidden during PDF generation: " + url)
-        resource = (dist / unquote(parts.path).lstrip("/")).resolve()
         if not resource.is_relative_to(dist) or not resource.is_file():
             raise ValueError("Missing or unsafe built asset: " + parts.path)
         return default_url_fetcher(resource.as_uri(), **kwargs)
