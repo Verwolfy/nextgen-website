@@ -22,7 +22,8 @@ export const c1tRequirements: ReferenceMetric[] = [
 ];
 
 export const c1tFamilyReferences: ReferenceMetric[] = [
-  {key:'consommation',kind:'famille',label:{fr:'Consommation selon peigne et encollage',ar:'الاستهلاك بحسب المشط وطريقة اللصق',en:'Coverage by trowel and bedding method'},value:'2–7 kg/m²'},
+  {key:'consommation-simple',kind:'famille',label:{fr:'Consommation de référence : simple encollage',ar:'استهلاك مرجعي: اللصق على السطح فقط',en:'Reference coverage: single-sided bedding'},value:'3–5 kg/m²'},
+  {key:'consommation-double',kind:'famille',label:{fr:'Consommation de référence : double encollage',ar:'استهلاك مرجعي: اللصق المزدوج',en:'Reference coverage: back-buttering and substrate'},value:'5–8 kg/m²'},
   {key:'eau',kind:'famille',label:{fr:'Eau observée sur produits comparables (sac de 25 kg)',ar:'الماء في منتجات مقارنة (كيس 25 كغ)',en:'Water used by comparable products (25 kg bag)'},value:'5–6,5 L / 25 kg'},
   {key:'temperature',kind:'famille',label:{fr:'Température de chantier couramment recommandée',ar:'درجة حرارة التطبيق الشائعة لدى منتجات مماثلة',en:'Common recommended application temperature'},value:'+5 à +30 °C'},
   {key:'temps-ouvert-comparatif',kind:'famille',label:{fr:'Temps ouvert observé sur les produits comparables',ar:'الزمن المفتوح في المنتجات المقارنة',en:'Open time observed on comparable products'},value:'≈ 20 min'},
@@ -35,8 +36,8 @@ export const c1tContent: Record<Lang, {
   identityTitle:string; codeLabel:string; rangeLabel:string; designationLabel:string; packLabel:string; classLabel:string;
   applicationTitle:string; preparationTitle:string; preparation:string[]; conditionsTitle:string; conditions:string[];
   stepsTitle:string; consumptionTitle:string; safetyTitle:string; safety:string[];
-  documentsTitle:string; exportLabel:string; documentAction:string; quoteAction:string; whatsappAction:string; sourceNote:string;
-  comparisonTitle:string; comparisonHeadings:string[]; comparisonNote:string; relatedTitle:string; important:string;
+  documentsTitle:string; exportLabel:string; downloadLabel:string; documentAction:string; quoteAction:string; whatsappAction:string; sourceNote:string;
+  comparisonTitle:string; comparisonHeadings:string[]; comparisonNote:string; relatedTitle:string;
 }> = {
   fr:{
     pageTitle:'FENEK-BOND C1T | Mortier-colle carrelage C1T',
@@ -56,11 +57,10 @@ export const c1tContent: Record<Lang, {
     conditions:['Préparer une quantité adaptée à la surface qui pourra être carrelée avant formation d’une peau.','Éviter les supports surchauffés, le gel, les courants d’air forts et le séchage accéléré.','Utiliser le dosage et les délais de la fiche technique FENEK applicable au lot réellement fourni.'],
     stepsTitle:'Parcours illustré en six étapes',consumptionTitle:'Consommation et eau de gâchage : références de marché',safetyTitle:'Environnement et sécurité',
     safety:['Porter des gants, des lunettes adaptées et une protection respiratoire contre les poussières lors du mélange.','Limiter l’émission de poussière ; se laver les mains après manipulation et éviter le contact avec les yeux.','Conserver les sacs au sec et éliminer les résidus selon les règles locales ; ne pas déverser de mortier dans les réseaux d’eau.'],
-    documentsTitle:'Documents et contact',exportLabel:'Imprimer / enregistrer cette fiche en PDF',documentAction:'Demander la fiche technique et la FDS',quoteAction:'Obtenir un devis',whatsappAction:'Poser une question via WhatsApp',
+    documentsTitle:'Documents et contact',exportLabel:'Imprimer / enregistrer cette fiche en PDF',downloadLabel:'Télécharger la fiche produit (PDF)',documentAction:'Demander la fiche technique et la FDS',quoteAction:'Obtenir un devis',whatsappAction:'Poser une question via WhatsApp',
     sourceNote:'Fiche de présentation informative. La FT et la FDS propres à la formulation FENEK sont communiquées par l’équipe technique lorsqu’elles sont disponibles.',
     comparisonTitle:'Repères de la gamme BOND',comparisonHeadings:['Référence','Classe indiquée','Élément distinctif de la désignation'],comparisonNote:'Comparaison de désignations, sans comparaison de performances mesurées FENEK.',
-    relatedTitle:'Produits complémentaires et références voisines',
-    important:'Informations importantes : les valeurs présentées sont des exigences de classe ou des ordres de grandeur issus de produits comparables. Elles ne constituent pas les performances mesurées de FENEK-BOND C1T. La tenue de l’ouvrage dépend du support et des conditions de chantier ; consulter la FT applicable avant emploi.'
+    relatedTitle:'Produits complémentaires et références voisines'
   },
   ar:{
     pageTitle:'FENEK-BOND C1T | ملاط لاصق للبلاط من فئة C1T',
@@ -79,11 +79,10 @@ export const c1tContent: Record<Lang, {
     conditionsTitle:'ظروف التنفيذ',conditions:['تحضير كمية تلائم المساحة التي يمكن تبليطها قبل تشكّل قشرة على اللاصق.','تجنب الأسطح شديدة السخونة والصقيع والتيارات الهوائية القوية والجفاف السريع.','اعتماد نسبة الخلط ومدد العمل الواردة في النشرة الفنية الخاصة بتشغيلة FENEK المستخدمة.'],
     stepsTitle:'ست مراحل تطبيق مصورة',consumptionTitle:'الاستهلاك وماء الخلط: مؤشرات من منتجات مماثلة',safetyTitle:'البيئة والسلامة',
     safety:['ارتداء قفازات ونظارات واقية ووسيلة مناسبة للوقاية من غبار المساحيق أثناء الخلط.','تقليل انتشار الغبار وغسل اليدين بعد العمل وتجنب ملامسة العينين.','حفظ الأكياس في مكان جاف والتخلص من المخلفات وفق القواعد المحلية، وعدم سكب الملاط في شبكات الصرف.'],
-    documentsTitle:'الوثائق والتواصل',exportLabel:'طباعة هذه البطاقة أو حفظها بصيغة PDF',documentAction:'طلب النشرة الفنية وصحيفة بيانات السلامة',quoteAction:'طلب عرض سعر',whatsappAction:'استفسار عبر واتساب',
+    documentsTitle:'الوثائق والتواصل',exportLabel:'طباعة هذه البطاقة أو حفظها بصيغة PDF',downloadLabel:'تنزيل بطاقة المنتج (PDF)',documentAction:'طلب النشرة الفنية وصحيفة بيانات السلامة',quoteAction:'طلب عرض سعر',whatsappAction:'استفسار عبر واتساب',
     sourceNote:'بطاقة تعريفية. يقدم الفريق الفني النشرة الفنية وصحيفة بيانات السلامة الخاصة بتركيبة FENEK عند توفرهما.',
     comparisonTitle:'مقارنة تسميات مجموعة BOND',comparisonHeadings:['المرجع','الفئة في التسمية','الخاصية التي يبينها الرمز'],comparisonNote:'هذه مقارنة بين رموز التصنيف وليست مقارنة لنتائج أداء منتجات FENEK.',
-    relatedTitle:'مراجع قريبة ومنتجات مكملة',
-    important:'معلومات مهمة: الأرقام المعروضة هي حدود معيارية للفئة أو قيم تقريبية لمنتجات مماثلة، وليست نتائج اختبارات مقاسة لمنتج FENEK-BOND C1T. يتأثر أداء التنفيذ بحالة السطح وظروف الورشة؛ يجب الرجوع إلى النشرة الفنية الخاصة بالمنتج قبل الاستخدام.'
+    relatedTitle:'مراجع قريبة ومنتجات مكملة'
   },
   en:{
     pageTitle:'FENEK-BOND C1T | C1T Cementitious Tile Adhesive',
@@ -103,11 +102,10 @@ export const c1tContent: Record<Lang, {
     conditions:['Mix only the quantity that can be installed before the adhesive skins over.','Avoid overheated backgrounds, freezing conditions, strong draughts and accelerated drying.','Follow the mixing ratio and working times in the FENEK technical sheet for the actual supplied batch.'],
     stepsTitle:'Six illustrated application stages',consumptionTitle:'Consumption and mixing water: market references',safetyTitle:'Environment and safety',
     safety:['Use gloves, protective eyewear and suitable dust respiratory protection when handling dry powder.','Minimize dust generation, wash hands after use and avoid eye contact.','Keep bags dry and dispose of residues according to local rules; do not discharge mortar to drains.'],
-    documentsTitle:'Documents and contacts',exportLabel:'Print / save this sheet as PDF',documentAction:'Request the technical and safety data sheets',quoteAction:'Request a quote',whatsappAction:'Ask via WhatsApp',
+    documentsTitle:'Documents and contacts',exportLabel:'Print / save this sheet as PDF',downloadLabel:'Download product sheet (PDF)',documentAction:'Request the technical and safety data sheets',quoteAction:'Request a quote',whatsappAction:'Ask via WhatsApp',
     sourceNote:'Informative product sheet. Product-specific FENEK technical and safety data sheets can be requested from the technical team when available.',
     comparisonTitle:'BOND range designation comparison',comparisonHeadings:['Reference','Class in name','Meaning of code'],comparisonNote:'Designation comparison only; no comparison of measured FENEK performance.',
-    relatedTitle:'Related references and complementary products',
-    important:'Important information: figures are class requirements or indicative values from comparable products, not measured FENEK-BOND C1T performance. Final results depend on the substrate and site conditions; consult the applicable FENEK technical data sheet before use.'
+    relatedTitle:'Related references and complementary products'
   }
 };
 

@@ -195,10 +195,61 @@ def main() -> None:
                 # The first product pilot replaces generic accordions with sourced C1T tables.
                 assert "data-c1t-pilot" in markup, info
                 assert markup.count('data-c1t-source-type="norme"') == 6, info
-                assert markup.count('data-c1t-source-type="famille"') == 5, info
-                assert "fenek-c1t-print" in markup and "data-print-market-sheet" in markup, info
+                assert markup.count('data-c1t-source-type="famille"') == 6, info
+                assert "fenek-c1t-print" in markup, info
+                assert ("data-print-market-sheet" in markup or f'/docs/fiches/fenek-bond-c1t-{lang}.pdf' in markup), info
                 assert "présentation provisoire" not in markup.lower(), info
                 assert "Sika" not in markup and "Mapei" not in markup and "Bostik" not in markup, info
+            elif entry["code"] == "BOND-C1TE":
+                assert "data-c1te-pilot" in markup, info
+                assert markup.count('data-c1te-source-type="norme"') == 7, info
+                assert markup.count('data-c1te-source-type="famille"') == 5, info
+                assert "fenek-c1te-print" in markup, info
+                assert ("data-print-market-sheet" in markup or f'/docs/fiches/fenek-bond-c1te-{lang}.pdf' in markup), info
+                assert "présentation provisoire" not in markup.lower(), info
+                assert all(brand not in markup for brand in ("Sika","Mapei","Bostik","Weber")), info
+            elif entry["code"] == "BOND-C2FT":
+                assert "data-c2ft-pilot" in markup, info
+                assert markup.count('data-c2ft-source-type="norme"') == 7, info
+                assert markup.count('data-c2ft-source-type="famille"') == 6, info
+                assert "fenek-c2ft-print" in markup, info
+                assert ("data-print-market-sheet" in markup or f'/docs/fiches/fenek-bond-c2ft-{lang}.pdf' in markup), info
+                assert "présentation provisoire" not in markup.lower(), info
+                assert "Les seuils de classe et les plages comparatives" not in markup, info
+                assert all(brand not in markup for brand in ("Sika","Mapei","Bostik","Weber")), info
+            elif entry["code"] in ("BOND-CG2WA", "BOND-CT-C25-F5", "BOND-GP-CSII", "BOND-GR-HR", "BOND-M10", "BOND-M5", "BOND-OC-CSIII", "BOND-R2", "BOND-R3", "BOND-R4"):
+                assert "data-bond-technical-pilot" in markup, info
+                assert markup.count('data-bond-source-type="norme"') >= 1, info
+                assert markup.count('data-bond-source-type="famille"') >= 3, info
+                assert "fenek-bond-technical-print" in markup, info
+                assert ("data-print-market-sheet" in markup or f'/docs/fiches/{entry["slug"]}-{lang}.pdf' in markup), info
+                assert "présentation provisoire" not in markup.lower(), info
+                assert "Les seuils de classe et les plages comparatives" not in markup, info
+            elif entry["code"] == "BOND-CG1":
+                assert "data-cg1-pilot" in markup, info
+                assert markup.count('data-cg1-source-type="norme"') == 8, info
+                assert markup.count('data-cg1-source-type="famille"') == 6, info
+                assert "fenek-cg1-print" in markup, info
+                assert ("data-print-market-sheet" in markup or f'/docs/fiches/fenek-bond-cg1-{lang}.pdf' in markup), info
+                assert "présentation provisoire" not in markup.lower(), info
+                assert "Les seuils de classe et les plages comparatives" not in markup, info
+            elif entry["code"] == "BOND-C2TE-S1":
+                assert "data-c2tes1-pilot" in markup, info
+                assert markup.count('data-c2tes1-source-type="norme"') == 8, info
+                assert markup.count('data-c2tes1-source-type="famille"') == 6, info
+                assert "fenek-c2tes1-print" in markup, info
+                assert ("data-print-market-sheet" in markup or f'/docs/fiches/fenek-bond-c2te-s1-{lang}.pdf' in markup), info
+                assert "présentation provisoire" not in markup.lower(), info
+                assert "Les seuils de classe et les plages comparatives" not in markup, info
+            elif entry["code"] == "BOND-C2TE":
+                assert "data-c2te-pilot" in markup, info
+                assert markup.count('data-c2te-source-type="norme"') == 7, info
+                assert markup.count('data-c2te-source-type="famille"') == 6, info
+                assert "fenek-c2te-print" in markup, info
+                assert ("data-print-market-sheet" in markup or f'/docs/fiches/fenek-bond-c2te-{lang}.pdf' in markup), info
+                assert "présentation provisoire" not in markup.lower(), info
+                assert "Les seuils de classe et les plages comparatives" not in markup, info
+                assert all(brand not in markup for brand in ("Sika", "Mapei", "Bostik", "Weber")), info
             else:
                 assert markup.count('class="fenek-doc-accordion"') == 8, info
                 assert markup.count('<summary>') == 8, info
@@ -208,7 +259,8 @@ def main() -> None:
                            'fenek-application', 'fenek-documents'):
                 assert f'id="{anchor}"' in markup, (info, anchor)
                 assert f'href="#{anchor}"' in markup, (info, anchor)
-            assert 'data-print-market-sheet' in markup, info
+            if entry["code"] not in ("BOND-C1T", "BOND-C1TE", "BOND-C2FT", "BOND-C2TE", "BOND-C2TE-S1", "BOND-CG1", "BOND-CG2WA", "BOND-CT-C25-F5", "BOND-GP-CSII", "BOND-GR-HR", "BOND-M10", "BOND-M5", "BOND-OC-CSIII", "BOND-R2", "BOND-R3", "BOND-R4"):
+                assert 'data-print-market-sheet' in markup, info
             assert entry["nom"] in markup, info
             assert "noindex,nofollow" in markup, info
             for forbidden in (
@@ -235,7 +287,8 @@ def main() -> None:
                           "This content can be revised as laboratory",
                           "يمكن تحديث هذا المحتوى لاحقًا"):
                 assert stale not in markup, f"Old revision copy still public: {lang}/{entry['slug']}"
-            assert "concept-detail-note" in markup, f"Missing documentation notice {lang}/{entry['slug']}"
+            if entry["code"] not in ("BOND-C1T", "BOND-C1TE", "BOND-C2FT", "BOND-C2TE", "BOND-C2TE-S1", "BOND-CG1", "BOND-CG2WA", "BOND-CT-C25-F5", "BOND-GP-CSII", "BOND-GR-HR", "BOND-M10", "BOND-M5", "BOND-OC-CSIII", "BOND-R2", "BOND-R3", "BOND-R4"):
+                assert "concept-detail-note" in markup, f"Missing documentation notice {lang}/{entry['slug']}"
             assert_product_whatsapp(markup, lang, entry["code"])
         # Lot 31: eleven photo-realistic renderings cut from the user-selected
         # concept board, associated strictly with their true FENEK-PAINT code.

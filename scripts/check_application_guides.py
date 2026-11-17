@@ -64,7 +64,7 @@ def main():
             guide=parser.guides[0]
             assert guide.get('data-reference')==code,(lang,code,'reference')
             assert guide.get('data-application-count')=='6',(lang,code,'six steps')
-            if code == 'BOND-C1T':
+            if code in ('BOND-C1T', 'BOND-C1TE', 'BOND-C2FT', 'BOND-C2TE', 'BOND-C2TE-S1', 'BOND-CG1', 'BOND-CG2WA', 'BOND-CT-C25-F5', 'BOND-GP-CSII', 'BOND-GR-HR', 'BOND-M10', 'BOND-M5', 'BOND-OC-CSIII', 'BOND-R2', 'BOND-R3', 'BOND-R4'):
                 # Pilot HTML avoids internal editorial status; source gate stays closed.
                 assert 'data-v3-reviewed' not in guide,(lang,code,'pilot status leakage')
             else:
@@ -82,7 +82,7 @@ def main():
             for i,(_,aria,role) in enumerate(parser.v3):
                 title=manual['steps'][i]['title'][lang]
                 if code in LEGACY:
-                    # C1T/C1TE use their already reviewed editorial titles.
+                    # Four BOND pilots preserve verified reference-specific six-step artwork.
                     assert role=='img' and aria,(lang,code,i,'missing access label')
                 else:
                     assert role=='img' and title in aria,(lang,code,i,'wrong title for image')
