@@ -21,6 +21,40 @@ const emailHref='mailto:'+brand.email+'?subject='+encodeURIComponent(t.documentA
 const image=conceptPackshot(product,'full');
 const pdfHref=`/docs/fiches/fenek-bond-c1t-${lang}.pdf`;
 const hasPublishedPdf=existsSync(join(process.cwd(),'public',pdfHref.slice(1)));
+const printCopy: Record<Lang,{
+  descriptionTitle:string;description:string;overviewTitle:string;
+  purposeTitle:string;methodTitle:string;method:string[];safetyTitle:string;
+  benchmarkTitle:string;
+}>={
+  fr:{
+    descriptionTitle:'Description du produit',
+    description:'Mortier-colle cimentaire destiné à la pose courante de carreaux céramiques sur supports minéraux préparés. La désignation C1T renvoie aux critères normatifs d’adhérence normale et de glissement réduit.',
+    overviewTitle:'Aperçu du produit',purposeTitle:'Applications principales',
+    methodTitle:'Mise en œuvre — 3 repères',
+    method:['Nettoyer et contrôler la cohésion du support.','Gâcher suivant la fiche FENEK du lot réellement fourni.','Étaler avec une spatule crantée, poser et vérifier le transfert de colle.'],
+    safetyTitle:'Précautions et stockage',
+    benchmarkTitle:'Repères comparatifs de la famille'
+  },
+  ar:{
+    descriptionTitle:'وصف المنتج',
+    description:'مونة لاصقة إسمنتية للتركيب المعتاد للبلاط الخزفي على الأسطح المعدنية المهيأة. يشير الرمز C1T إلى متطلبات الالتصاق العادي والانزلاق الرأسي المنخفض وفق المعيار.',
+    overviewTitle:'نظرة عامة على المنتج',purposeTitle:'مجالات الاستخدام الرئيسية',
+    methodTitle:'طريقة التطبيق — ٣ خطوات',
+    method:['نظّف السطح وتأكد من تماسكه.','اخلط وفق النشرة الفنية لدفعة FENEK المورّدة.','افرد المونة بالمجرفة المسننة وثبّت البلاط وتحقق من تغطية اللاصق.'],
+    safetyTitle:'احتياطات السلامة والتخزين',
+    benchmarkTitle:'مؤشرات مقارنة للمنتجات المماثلة'
+  },
+  en:{
+    descriptionTitle:'Product description',
+    description:'Cementitious tile adhesive intended for conventional ceramic tiling on prepared mineral substrates. The C1T designation refers to standard requirements for normal adhesion and reduced slip.',
+    overviewTitle:'Product overview',purposeTitle:'Main applications',
+    methodTitle:'Application — 3 key steps',
+    method:['Clean the substrate and check its soundness.','Mix according to the technical sheet for the actual FENEK batch.','Spread with a notched trowel, lay tiles and check adhesive transfer.'],
+    safetyTitle:'Safety and storage',
+    benchmarkTitle:'Comparable product-family benchmarks'
+  }
+};
+const p=printCopy[lang];
 const schema={
   '@context':'https://schema.org',
   '@type':'Product',
@@ -125,7 +159,7 @@ const schema={
     </section>
   </div>
 </article>
-<section class="fenek-print-document fenek-c1t-print" lang={lang} dir={lang==='ar'?'rtl':'ltr'}>
+<section class="fenek-print-document fenek-c1t-print" lang={lang} dir={lang==='ar'?'rtl':'ltr'} data-c1t-one-page>
   <div class="fenek-print-masthead">
     <img class="fenek-print-logo" src="/images/Logo1.jpg" width="170" height="118" alt="NextGen Building Solutions" />
     <div class="fenek-print-name">NEXTGEN BUILDING SOLUTIONS</div>
@@ -135,24 +169,49 @@ const schema={
   <div class="fenek-print-banner"><span>{t.sheetTitle}</span></div>
   <div class="fenek-print-product-name"><bdi dir="ltr">{product.nom}</bdi></div>
   <p class="fenek-print-subtitle">{t.lead}</p>
-  <div class="fenek-print-intro">
-    <dl class="fenek-print-metadata">
-      <div><dt>{t.codeLabel}</dt><dd><bdi dir="ltr">{product.code}</bdi></dd></div>
-      <div><dt>{t.rangeLabel}</dt><dd><bdi dir="ltr">{rangeName[product.gamme]}</bdi></dd></div>
-      <div><dt>{t.classLabel}</dt><dd>C1T — EN 12004-1:2017</dd></div>
-      <div><dt>{t.packLabel}</dt><dd>{product.conditionnements.map(c=>packagingLabelFor(c.format,lang)).join(' · ')}</dd></div>
-    </dl>
-    <figure class="fenek-print-packshot"><img src={image} width="800" height="800" alt={t.sheetTitle} /></figure>
-  </div>
-  <section class="fenek-print-card c1t-print-grid"><h2>{t.techTitle}</h2>
+
+  <section class="fenek-print-card c1t-print-description" data-print-description>
+    <h2>{p.descriptionTitle}</h2><p>{p.description}</p>
+  </section>
+
+  <section class="fenek-print-card c1t-print-overview" data-print-overview>
+    <h2>{p.overviewTitle}</h2>
+    <div class="fenek-print-intro">
+      <div class="c1t-print-overview-copy">
+        <dl class="fenek-print-metadata">
+          <div><dt>{t.codeLabel}</dt><dd><bdi dir="ltr">{product.code}</bdi></dd></div>
+          <div><dt>{t.classLabel}</dt><dd><bdi dir="ltr">C1T — EN 12004-1:2017</bdi></dd></div>
+          <div><dt>{t.packLabel}</dt><dd>{product.conditionnements.map(c=>packagingLabelFor(c.format,lang)).join(' · ')}</dd></div>
+        </dl>
+        <div class="c1t-print-uses"><strong>{p.purposeTitle}</strong><ul>{t.uses.slice(0,2).map(x=><li>{x}</li>)}</ul></div>
+      </div>
+      <figure class="fenek-print-packshot"><img src={image} width="800" height="800" alt={product.nom}/></figure>
+    </div>
+  </section>
+
+  <section class="fenek-print-card c1t-print-grid" data-print-standards>
+    <h2>{t.techTitle}</h2>
     <table class="c1t-print-table">{c1tRequirements.map(x=><tr><th scope="row">{x.label[lang]}</th><td dir="ltr">{x.value}</td></tr>)}</table>
   </section>
-  <section class="fenek-print-card c1t-print-grid"><h2>{t.familyTitle}</h2>
-    <table class="c1t-print-table">{c1tFamilyReferences.map(x=><tr><th scope="row">{x.label[lang]}</th><td dir="ltr">{x.value}</td></tr>)}</table>
+
+  <section class="fenek-print-card c1t-print-grid" data-print-benchmarks>
+    <h2>{p.benchmarkTitle}</h2>
+    <table class="c1t-print-table">{c1tFamilyReferences.filter(x=>['consommation-simple','consommation-double','eau','temperature'].includes(x.key)).map(x=><tr><th scope="row">{x.label[lang]}</th><td dir="ltr">{x.value}</td></tr>)}</table>
   </section>
-  <section class="fenek-print-card"><h2>{t.preparationTitle}</h2><ul>{t.preparation.map(x=><li>{x}</li>)}</ul></section>
-  <section class="fenek-print-card"><h2>{t.safetyTitle}</h2><ul>{t.safety.map(x=><li>{x}</li>)}</ul></section>
-  <div class="fenek-print-footer"><strong>NEXTGEN BUILDING SOLUTIONS</strong><p>{brand.email}</p></div>
+
+  <section class="fenek-print-card c1t-print-method" data-print-method>
+    <h2>{p.methodTitle}</h2>
+    <ol>{p.method.map((x,i)=><li><span>{i+1}</span>{x}</li>)}</ol>
+  </section>
+
+  <section class="fenek-print-card c1t-print-safety" data-print-safety>
+    <h2>{p.safetyTitle}</h2>
+    <ul>{t.safety.slice(0,2).map(x=><li>{x}</li>)}</ul>
+  </section>
+  <div class="fenek-print-footer">
+    <strong>NEXTGEN BUILDING SOLUTIONS</strong>
+    <span>{brand.email} · nextgen-buildingsolutions.com</span>
+  </div>
 </section>
 <style>
   .fenek-c1t-pilot .fenek-document-section h3{font-size:clamp(1.15rem,2vw,1.35rem);margin:20px 0 12px}
@@ -179,12 +238,101 @@ const schema={
   .fenek-c1t-pilot a:focus-visible,.fenek-c1t-pilot button:focus-visible{outline:3px solid #00895e;outline-offset:4px}
   @media(max-width:760px){.c1t-duo{grid-template-columns:1fr}.c1t-table{font-size:.86rem}.c1t-table th,.c1t-table td{padding:9px}}
   @media print {
-    .fenek-c1t-print .fenek-print-card{break-inside:avoid;padding:3mm 4mm;margin-bottom:2.4mm}
-    .fenek-c1t-print .fenek-print-card h2{font-size:10pt}
-    .fenek-c1t-print .c1t-print-table{width:100%;border-collapse:collapse;font-size:8.3pt}
-    .fenek-c1t-print .c1t-print-table td,.fenek-c1t-print .c1t-print-table th{border-bottom:1px solid #d9e4e7;padding:1.6mm 2mm;text-align:start}
+    /* C1T one-page A4 presentation, preserving the original navy/green identity. */
+    .fenek-c1t-print{
+      font-size:7.4pt!important;
+      line-height:1.22!important;
+    }
+    .fenek-c1t-print[dir="rtl"]{line-height:1.3!important}
+    .fenek-c1t-print .fenek-print-masthead{
+      grid-template-columns:26mm minmax(0,1fr) 13mm;
+      column-gap:4mm;
+      min-height:18mm;
+      margin-bottom:1mm;
+    }
+    .fenek-c1t-print .fenek-print-logo{width:26mm;height:18mm}
+    .fenek-c1t-print .fenek-print-name{
+      font-size:11.4pt;line-height:1.14;padding-inline-start:3mm
+    }
+    .fenek-c1t-print .fenek-print-slants{height:17mm}
+    .fenek-c1t-print .fenek-print-line{height:.7mm;margin-bottom:1.5mm}
+    .fenek-c1t-print .fenek-print-banner{
+      font-size:12pt;line-height:1.05;padding:1.3mm 6mm;margin-bottom:1mm;
+    }
+    .fenek-c1t-print .fenek-print-product-name{font-size:14pt;line-height:1.1;margin:0}
+    .fenek-c1t-print .fenek-print-subtitle{
+      font-size:8.5pt;line-height:1.18;font-weight:730;
+      max-width:164mm;margin:.7mm auto 1.5mm;
+    }
+    .fenek-c1t-print .fenek-print-card{
+      border-radius:1.8mm;padding:0;margin-bottom:1.55mm;break-inside:avoid;
+    }
+    .fenek-c1t-print .fenek-print-card h2{
+      font-size:8.5pt;line-height:1.1;padding:1mm 2.3mm;
+    }
+    .fenek-c1t-print .c1t-print-description p{
+      font-size:7.5pt;line-height:1.28;padding:1.5mm 2.5mm;
+    }
+    .fenek-c1t-print .fenek-print-intro{
+      grid-template-columns:minmax(0,1.45fr) minmax(0,.55fr);
+      gap:2mm;margin:0;padding:1.7mm;align-items:stretch;
+    }
+    .fenek-c1t-print .fenek-print-metadata{
+      gap:.7mm;padding:0;border-radius:1mm;min-height:0;
+    }
+    .fenek-c1t-print .fenek-print-metadata>div{
+      min-height:5.3mm;grid-template-columns:36% minmax(0,1fr);
+      border-radius:.9mm;
+    }
+    .fenek-c1t-print .fenek-print-metadata dt,
+    .fenek-c1t-print .fenek-print-metadata dd{
+      font-size:6.8pt;line-height:1.15;padding:.8mm 1.4mm;
+    }
+    .fenek-c1t-print .fenek-print-packshot{align-self:stretch}
+    .fenek-c1t-print .fenek-print-packshot img{height:31mm}
+    .fenek-c1t-print .c1t-print-uses{margin-top:1.3mm;color:#102b49}
+    .fenek-c1t-print .c1t-print-uses strong{font-size:7.1pt}
+    .fenek-c1t-print .c1t-print-uses ul{
+      padding-inline-start:4mm;margin:.5mm 0 0;
+      font-size:6.85pt;line-height:1.18;
+    }
+    .fenek-c1t-print .c1t-print-uses li{margin:0}
+    .fenek-c1t-print .c1t-print-table{
+      width:100%;border-collapse:collapse;font-size:7.25pt;line-height:1.1;
+    }
+    .fenek-c1t-print .c1t-print-table td,
+    .fenek-c1t-print .c1t-print-table th{
+      border-bottom:1px solid #d9e4e7;
+      padding:.92mm 2mm;text-align:start;
+    }
+    .fenek-c1t-print .c1t-print-table tr:last-child td,
+    .fenek-c1t-print .c1t-print-table tr:last-child th{border-bottom:0}
+    .fenek-c1t-print .c1t-print-table th{font-weight:610}
     .fenek-c1t-print .c1t-print-table td[dir="ltr"]{white-space:nowrap}
-    .fenek-c1t-print .fenek-print-card ul{margin:1mm 0;padding-inline-start:6mm;font-size:8.1pt}
-    .fenek-c1t-print .fenek-print-footer{font-size:7.9pt}
+    .fenek-c1t-print .c1t-print-method ol{
+      list-style:none;margin:0;padding:1.5mm 2mm;
+      display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2mm;
+    }
+    .fenek-c1t-print .c1t-print-method li{
+      display:flex;gap:1mm;font-size:6.85pt;line-height:1.22;
+      padding:0;align-items:flex-start;
+    }
+    .fenek-c1t-print .c1t-print-method li span{
+      flex:none;display:inline-grid;place-items:center;
+      width:4mm;height:4mm;border-radius:50%;
+      background:#07965b;color:white;font-weight:800;font-size:6.5pt;
+    }
+    .fenek-c1t-print .c1t-print-safety ul{
+      margin:0;padding:1mm 2.5mm 1.2mm 6mm;
+      font-size:6.8pt;line-height:1.2;
+    }
+    .fenek-c1t-print[dir="rtl"] .c1t-print-safety ul{padding:1mm 6mm 1.2mm 2.5mm}
+    .fenek-c1t-print .fenek-print-footer{
+      margin-top:1mm;padding-top:.9mm;font-size:6.8pt;display:flex;
+      justify-content:space-between;gap:3mm;
+    }
+    .fenek-c1t-print .fenek-print-footer span{
+      font-size:6.8pt;overflow-wrap:anywhere;text-align:end;
+    }
   }
 </style>
