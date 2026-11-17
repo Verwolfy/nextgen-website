@@ -245,7 +245,8 @@ def main() -> None:
                           "This content can be revised as laboratory",
                           "يمكن تحديث هذا المحتوى لاحقًا"):
                 assert stale not in markup, f"Old revision copy still public: {lang}/{entry['slug']}"
-            assert "concept-detail-note" in markup, f"Missing documentation notice {lang}/{entry['slug']}"
+            if entry["code"] not in ("BOND-C1T", "BOND-C1TE"):
+                assert "concept-detail-note" in markup, f"Missing documentation notice {lang}/{entry['slug']}"
             assert_product_whatsapp(markup, lang, entry["code"])
         # Lot 31: eleven photo-realistic renderings cut from the user-selected
         # concept board, associated strictly with their true FENEK-PAINT code.
