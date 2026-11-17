@@ -217,6 +217,15 @@ def main() -> None:
                 assert "présentation provisoire" not in markup.lower(), info
                 assert "Les seuils de classe et les plages comparatives" not in markup, info
                 assert all(brand not in markup for brand in ("Sika","Mapei","Bostik","Weber")), info
+            elif entry["code"] == "BOND-C2TE":
+                assert "data-c2te-pilot" in markup, info
+                assert markup.count('data-c2te-source-type="norme"') == 7, info
+                assert markup.count('data-c2te-source-type="famille"') == 6, info
+                assert "fenek-c2te-print" in markup, info
+                assert ("data-print-market-sheet" in markup or f'/docs/fiches/fenek-bond-c2te-{lang}.pdf' in markup), info
+                assert "présentation provisoire" not in markup.lower(), info
+                assert "Les seuils de classe et les plages comparatives" not in markup, info
+                assert all(brand not in markup for brand in ("Sika", "Mapei", "Bostik", "Weber")), info
             else:
                 assert markup.count('class="fenek-doc-accordion"') == 8, info
                 assert markup.count('<summary>') == 8, info
@@ -226,7 +235,7 @@ def main() -> None:
                            'fenek-application', 'fenek-documents'):
                 assert f'id="{anchor}"' in markup, (info, anchor)
                 assert f'href="#{anchor}"' in markup, (info, anchor)
-            if entry["code"] not in ("BOND-C1T", "BOND-C1TE", "BOND-C2FT"):
+            if entry["code"] not in ("BOND-C1T", "BOND-C1TE", "BOND-C2FT", "BOND-C2TE"):
                 assert 'data-print-market-sheet' in markup, info
             assert entry["nom"] in markup, info
             assert "noindex,nofollow" in markup, info
