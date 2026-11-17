@@ -12,7 +12,7 @@ const product=Astro.props.product as CatalogueProject;
 if(!product || !catalogueProjects.some(p=>p.slug===product.slug)) throw Error('Unknown catalogue concept');
 const d=product.contenu[lang];
 const t=catalogueCopy[lang];
-const editorialPilot=product.code==='BOND-C1T'||product.code==='BOND-C1TE';
+const editorialPilot=['BOND-C1T','BOND-C1TE','BOND-C2FT'].includes(product.code);
 const questionSubject = {
   fr: 'Question concernant la référence ',
   ar: 'استفسار عن المرجع ',
