@@ -118,4 +118,79 @@ for(const product of catalog){
   }
 }
 must(pages===150,'Wrong localized guide total '+pages);
+
+// Every legacy image redirect must continue to resolve to a published asset.
+// In particular, a generic :splat rule must never mask a missing product image.
+const redirectLines=fromRoot('public/_redirects').split(/\r?\n/)
+  .map(line=>line.trim()).filter(line=>line&&!line.startsWith('#'));
+const redirectRules=[];
+const redirectSources=new Set();
+for(const line of redirectLines){
+  const parts=line.split(/\s+/);
+  must(parts.length===3 && parts[2]==='301','Invalid legacy redirect rule: '+line);
+  const [source,target]=parts;
+  must(!redirectSources.has(source),'Duplicate redirect source '+source);
+  redirectSources.add(source);
+  if(target.includes(':splat')){
+    must(target.endsWith('/:splat'),'Unsupported wildcard redirect '+line);
+    must(existsSync(resolve(DIST,target.slice(1,-6))),
+      'Wildcard redirect destination folder missing: '+target);
+  } else if(target.startsWith('/images/') || target.startsWith('/videos/')){
+    must(existsSync(resolve(DIST,target.slice(1))),
+      'Broken legacy image redirect '+source+' -> '+target);
+  } else {
+    must(target.endsWith('/') && existsSync(resolve(DIST,target.slice(1),'index.html')),
+      'Broken retired preview redirect '+source+' -> '+target);
+  }
+  redirectRules.push({source,target});
+}
+function resolveLegacyRedirect(oldUrl){
+  for(const {source,target} of redirectRules){
+    if(source===oldUrl)return target;
+    if(source.endsWith('/*') && oldUrl.startsWith(source.slice(0,-1)))
+      return target.replace(':splat',oldUrl.slice(source.length-1));
+  }
+  return null;
+}
+let legacyChecked=0;
+for(const p of catalog){
+  const basename=p.code==='PROOF-CM-O2P'?'fenek-proof-cm-o2p-sac-20kg-v2':p.slug;
+  const files=[basename+'.webp',...(p.gamme==='flow'?[basename+'-card.webp']:[])];
+  for(const file of files){
+    for(const oldRoot of ['/images/catalogue-projects/','/images/illustrations/catalogue-projects/']){
+      const source=oldRoot+file;
+      const dest=resolveLegacyRedirect(source);
+      must(dest!==null && existsSync(resolve(DIST,dest.slice(1))),
+        'Broken former catalogue image URL '+source+' -> '+dest);
+      legacyChecked++;
+    }
+  }
+}
+must(legacyChecked===124,'Expected 124 checked old catalogue product URLs');
+
+// The no-zoom decision applies to the whole generated website, not just guides.
+const retiredPageTokens=[
+  'Ouvrir en haute résolution','Open in high resolution',
+  'fenek-v3-detail-link','fullSizeC1T','fullResolution',
+  '/images/illustrations/application-premium/',
+  '/images/illustrations/application/v3/fenek-bond-c1t/',
+  '/images/illustrations/catalogue-projects/',
+  '/images/illustrations/maquettes/'
+];
+let htmlPagesChecked=0;
+function inspectPublishedHTML(dir){
+  for(const entry of readdirSync(dir,{withFileTypes:true})){
+    const full=resolve(dir,entry.name);
+    if(entry.isDirectory()){inspectPublishedHTML(full);continue;}
+    if(!entry.isFile()||!entry.name.endsWith('.html'))continue;
+    const html=readFileSync(full,'utf8');
+    for(const token of retiredPageTokens)
+      must(!html.includes(token),'Retired illustration/zoom reference in '+full+': '+token);
+    htmlPagesChecked++;
+  }
+}
+inspectPublishedHTML(DIST);
+must(htmlPagesChecked>=150,'Unexpected number of published HTML pages: '+htmlPagesChecked);
+console.log('FENEK legacy redirect and no-zoom audit PASS: '+redirectRules.length+
+  ' redirects, '+legacyChecked+' old product URLs, '+htmlPagesChecked+' built HTML pages.');
 console.log('FENEK DEPLOYMENT GATE PASS: 50 products, 150 localized guides, 300 stages, 50 verified guide sprites and 62 packaging WebPs, no premium/zoom/old directories.');
