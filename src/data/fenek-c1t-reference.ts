@@ -37,7 +37,7 @@ export const c1tContent: Record<Lang, {
   applicationTitle:string; preparationTitle:string; preparation:string[]; conditionsTitle:string; conditions:string[];
   stepsTitle:string; consumptionTitle:string; safetyTitle:string; safety:string[];
   documentsTitle:string; exportLabel:string; downloadLabel:string; documentAction:string; quoteAction:string; whatsappAction:string; sourceNote:string;
-  comparisonTitle:string; comparisonHeadings:string[]; comparisonNote:string; relatedTitle:string; important:string;
+  comparisonTitle:string; comparisonHeadings:string[]; comparisonNote:string; relatedTitle:string;
 }> = {
   fr:{
     pageTitle:'FENEK-BOND C1T | Mortier-colle carrelage C1T',
@@ -60,8 +60,7 @@ export const c1tContent: Record<Lang, {
     documentsTitle:'Documents et contact',exportLabel:'Imprimer / enregistrer cette fiche en PDF',downloadLabel:'Télécharger la fiche produit (PDF)',documentAction:'Demander la fiche technique et la FDS',quoteAction:'Obtenir un devis',whatsappAction:'Poser une question via WhatsApp',
     sourceNote:'Fiche de présentation informative. La FT et la FDS propres à la formulation FENEK sont communiquées par l’équipe technique lorsqu’elles sont disponibles.',
     comparisonTitle:'Repères de la gamme BOND',comparisonHeadings:['Référence','Classe indiquée','Élément distinctif de la désignation'],comparisonNote:'Comparaison de désignations, sans comparaison de performances mesurées FENEK.',
-    relatedTitle:'Produits complémentaires et références voisines',
-    important:'Informations importantes : les valeurs présentées sont des exigences de classe ou des ordres de grandeur issus de produits comparables. Elles ne constituent pas les performances mesurées de FENEK-BOND C1T. La tenue de l’ouvrage dépend du support et des conditions de chantier ; consulter la FT applicable avant emploi.'
+    relatedTitle:'Produits complémentaires et références voisines'
   },
   ar:{
     pageTitle:'FENEK-BOND C1T | ملاط لاصق للبلاط من فئة C1T',
@@ -83,8 +82,7 @@ export const c1tContent: Record<Lang, {
     documentsTitle:'الوثائق والتواصل',exportLabel:'طباعة هذه البطاقة أو حفظها بصيغة PDF',downloadLabel:'تنزيل بطاقة المنتج (PDF)',documentAction:'طلب النشرة الفنية وصحيفة بيانات السلامة',quoteAction:'طلب عرض سعر',whatsappAction:'استفسار عبر واتساب',
     sourceNote:'بطاقة تعريفية. يقدم الفريق الفني النشرة الفنية وصحيفة بيانات السلامة الخاصة بتركيبة FENEK عند توفرهما.',
     comparisonTitle:'مقارنة تسميات مجموعة BOND',comparisonHeadings:['المرجع','الفئة في التسمية','الخاصية التي يبينها الرمز'],comparisonNote:'هذه مقارنة بين رموز التصنيف وليست مقارنة لنتائج أداء منتجات FENEK.',
-    relatedTitle:'مراجع قريبة ومنتجات مكملة',
-    important:'معلومات مهمة: الأرقام المعروضة هي حدود معيارية للفئة أو قيم تقريبية لمنتجات مماثلة، وليست نتائج اختبارات مقاسة لمنتج FENEK-BOND C1T. يتأثر أداء التنفيذ بحالة السطح وظروف الورشة؛ يجب الرجوع إلى النشرة الفنية الخاصة بالمنتج قبل الاستخدام.'
+    relatedTitle:'مراجع قريبة ومنتجات مكملة'
   },
   en:{
     pageTitle:'FENEK-BOND C1T | C1T Cementitious Tile Adhesive',
@@ -107,8 +105,7 @@ export const c1tContent: Record<Lang, {
     documentsTitle:'Documents and contacts',exportLabel:'Print / save this sheet as PDF',downloadLabel:'Download product sheet (PDF)',documentAction:'Request the technical and safety data sheets',quoteAction:'Request a quote',whatsappAction:'Ask via WhatsApp',
     sourceNote:'Informative product sheet. Product-specific FENEK technical and safety data sheets can be requested from the technical team when available.',
     comparisonTitle:'BOND range designation comparison',comparisonHeadings:['Reference','Class in name','Meaning of code'],comparisonNote:'Designation comparison only; no comparison of measured FENEK performance.',
-    relatedTitle:'Related references and complementary products',
-    important:'Important information: figures are class requirements or indicative values from comparable products, not measured FENEK-BOND C1T performance. Final results depend on the substrate and site conditions; consult the applicable FENEK technical data sheet before use.'
+    relatedTitle:'Related references and complementary products'
   }
 };
 
