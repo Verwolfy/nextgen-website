@@ -123,7 +123,6 @@ const schema={
       <h3>{t.relatedTitle}</h3>
       <div class="actions">{comparison.filter(({item})=>item.code!==product.code).map(({item})=><a class="btn btn-muted" href={'/'+lang+'/catalogue/'+item.slug+'/'}><bdi dir="ltr">{item.nom}</bdi></a>)}</div>
     </section>
-    <p class="fenek-document-footer c1t-legal">{t.important}</p>
   </div>
 </article>
 <section class="fenek-print-document fenek-c1t-print" lang={lang} dir={lang==='ar'?'rtl':'ltr'}>
@@ -153,7 +152,7 @@ const schema={
   </section>
   <section class="fenek-print-card"><h2>{t.preparationTitle}</h2><ul>{t.preparation.map(x=><li>{x}</li>)}</ul></section>
   <section class="fenek-print-card"><h2>{t.safetyTitle}</h2><ul>{t.safety.map(x=><li>{x}</li>)}</ul></section>
-  <div class="fenek-print-footer"><strong>NEXTGEN BUILDING SOLUTIONS</strong><p>{t.important}</p><p>{brand.email}</p></div>
+  <div class="fenek-print-footer"><strong>NEXTGEN BUILDING SOLUTIONS</strong><p>{brand.email}</p></div>
 </section>
 <style>
   .fenek-c1t-pilot .fenek-document-section h3{font-size:clamp(1.15rem,2vw,1.35rem);margin:20px 0 12px}
