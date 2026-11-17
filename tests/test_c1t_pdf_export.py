@@ -12,9 +12,9 @@ SPEC.loader.exec_module(MODULE)
 
 
 class C1TPdfExportTests(unittest.TestCase):
-    def test_scope_is_only_three_pilot_locales(self):
+    def test_scope_is_all_sixteen_bond_references_in_three_locales(self):
         self.assertEqual(MODULE.LANGUAGES, ("fr", "ar", "en"))
-        self.assertEqual(MODULE.PILOT_SLUGS, ("fenek-bond-c1t", "fenek-bond-c1te", "fenek-bond-c2ft", "fenek-bond-c2te", "fenek-bond-c2te-s1", "fenek-bond-cg1"))
+        self.assertEqual(MODULE.PILOT_SLUGS, ("fenek-bond-c1t", "fenek-bond-c1te", "fenek-bond-c2ft", "fenek-bond-c2te", "fenek-bond-c2te-s1", "fenek-bond-cg1", "fenek-bond-cg2wa", "fenek-bond-ct-c25-f5", "fenek-bond-gp-csii", "fenek-bond-gr-hr", "fenek-bond-m10", "fenek-bond-m5", "fenek-bond-oc-csiii", "fenek-bond-r2", "fenek-bond-r3", "fenek-bond-r4"))
 
     def test_missing_build_refused_without_network(self):
         with tempfile.TemporaryDirectory() as root:

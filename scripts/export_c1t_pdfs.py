@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export four BOND pilots as trilingual presentation sheets from the exact built Astro pages.
+"""Export all 16 BOND products as trilingual presentation sheets from the exact built Astro pages.
 
 This produces product INFORMATION sheets, not laboratory-approved TDS or SDS.
 Usage:
@@ -17,7 +17,8 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = "https://nextgen-buildingsolutions.com"
 LANGUAGES = ("fr", "ar", "en")
-PILOT_SLUGS = ("fenek-bond-c1t", "fenek-bond-c1te", "fenek-bond-c2ft", "fenek-bond-c2te", "fenek-bond-c2te-s1", "fenek-bond-cg1")
+BOND_REMAINING_SLUGS = ["fenek-bond-cg2wa","fenek-bond-ct-c25-f5","fenek-bond-gp-csii","fenek-bond-gr-hr","fenek-bond-m10","fenek-bond-m5","fenek-bond-oc-csiii","fenek-bond-r2","fenek-bond-r3","fenek-bond-r4"]
+PILOT_SLUGS = ("fenek-bond-c1t", "fenek-bond-c1te", "fenek-bond-c2ft", "fenek-bond-c2te", "fenek-bond-c2te-s1", "fenek-bond-cg1", "fenek-bond-cg2wa", "fenek-bond-ct-c25-f5", "fenek-bond-gp-csii", "fenek-bond-gr-hr", "fenek-bond-m10", "fenek-bond-m5", "fenek-bond-oc-csiii", "fenek-bond-r2", "fenek-bond-r3", "fenek-bond-r4")
 
 
 def local_fetcher(dist: Path):
@@ -59,7 +60,7 @@ def export_pdfs(dist: Path, output: Path) -> list[Path]:
             if not file.is_file():
                 raise RuntimeError(f"Missing built pilot sheet: {file}")
             markup = file.read_text(encoding="utf-8")
-            marker = "c2tes1" if slug == "fenek-bond-c2te-s1" else suffix
+            marker = "bond-technical" if slug in BOND_REMAINING_SLUGS else "c2tes1" if slug == "fenek-bond-c2te-s1" else suffix
             if f'data-{marker}-pilot' not in markup or f'fenek-{marker}-print' not in markup:
                 raise RuntimeError(f"Expected {suffix.upper()} presentation structure missing: {lang}")
             target = output / f"{slug}-{lang}.pdf"

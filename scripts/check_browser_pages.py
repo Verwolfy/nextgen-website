@@ -234,6 +234,35 @@ def check_lot131_v3_c2te(browser, base: str) -> None:
 
 
 
+def check_lot134_v3_remaining_bond(browser, base: str) -> None:
+    """Ten new technical BOND pages, with 30 localized A4 Chromium PDFs."""
+    codes = ["BOND-CG2WA","BOND-CT-C25-F5","BOND-GP-CSII","BOND-GR-HR","BOND-M10","BOND-M5","BOND-OC-CSIII","BOND-R2","BOND-R3","BOND-R4"]
+    for code in codes:
+        slug = "fenek-" + code.lower()
+        for lang in ("fr", "ar", "en"):
+            page = browser.new_page(viewport={"width": 390 if lang == "ar" else 1280, "height": 900})
+            try:
+                page.goto(f"{base}/{lang}/documentation/{slug}/", wait_until="domcontentloaded")
+                assert page.locator("[data-bond-technical-pilot]").count() == 1, (code, lang)
+                assert page.locator('[data-bond-source-type="norme"]').count() >= 1, (code, lang)
+                assert page.locator('[data-bond-source-type="famille"]').count() >= 3, (code, lang)
+                assert page.locator(".bond-technical-table").count() == 4, (code, lang)
+                assert page.locator(".fenek-bond-technical-print").count() == 1, (code, lang)
+                assert page.locator(f'section[data-reference="{code}"][data-application-visual]').count() == 1, (code, lang)
+                assert page.evaluate("document.documentElement.scrollWidth-innerWidth") <= 4, (code, lang)
+                if lang == "ar":
+                    assert page.locator("html").get_attribute("dir") == "rtl"
+                page.emulate_media(media="print")
+                assert page.locator(".fenek-bond-technical-print").is_visible(), (code, lang)
+                target = SHOTS / f"{slug}-branded-print-{lang}.pdf"
+                pdf = page.pdf(path=str(target), print_background=True, prefer_css_page_size=True)
+                assert pdf.startswith(b"%PDF") and len(pdf) > 10000, (code, lang)
+                count = len(re.findall(rb"/Type\s*/Page\b", pdf))
+                assert 1 <= count <= 7, (code, lang, count)
+            finally:
+                page.close()
+
+
 def check_lot133_v3_cg1(browser, base: str) -> None:
     """CG1 must be grout-focused, accessible, printable and localized."""
     for lang in ("fr", "ar", "en"):
@@ -323,7 +352,7 @@ def check_lot130_all_v3(browser, base: str) -> None:
             assert response and response.status==200,(code,"missing page")
             # The C1T pilot omits internal editorial status from its public markup.
             # All other references continue to require the existing guarded status.
-            selector=(f'section[data-reference="{code}"][data-application-visual]' if code in ("BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1","BOND-CG1")
+            selector=(f'section[data-reference="{code}"][data-application-visual]' if code in ("BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1","BOND-CG1","BOND-CG2WA","BOND-CT-C25-F5","BOND-GP-CSII","BOND-GR-HR","BOND-M10","BOND-M5","BOND-OC-CSIII","BOND-R2","BOND-R3","BOND-R4")
                       else f'section[data-reference="{code}"][data-v3-reviewed="BROUILLON"]')
             guide=page.locator(selector)
             assert guide.count()==1,(code,"missing or mismatched guide")
@@ -338,7 +367,7 @@ def check_lot130_all_v3(browser, base: str) -> None:
                 css=panel.evaluate("(el)=>getComputedStyle(el).backgroundImage")
                 assert ENHANCED_BY_CODE.get(code,sprite) in css,(code,i,"illustration from wrong product")
                 label=panel.get_attribute("aria-label") or ""
-                assert mapping[code]["steps"][i]["title"]["fr"] in label or code in ("BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1","BOND-CG1"),(code,i,"wrong legend")
+                assert mapping[code]["steps"][i]["title"]["fr"] in label or code in ("BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1","BOND-CG1","BOND-CG2WA","BOND-CT-C25-F5","BOND-GP-CSII","BOND-GR-HR","BOND-M10","BOND-M5","BOND-OC-CSIII","BOND-R2","BOND-R3","BOND-R4"),(code,i,"wrong legend")
             assert page.evaluate("document.documentElement.scrollWidth-innerWidth")<=4,(code,"mobile overflow")
         finally:
             page.close()
@@ -832,6 +861,7 @@ def check() -> None:
             check_lot131_v3_c2te(browser, base)
             check_lot132_v3_c2tes1(browser, base)
             check_lot133_v3_cg1(browser, base)
+            check_lot134_v3_remaining_bond(browser, base)
             check_lot130_all_v3(browser, base)
             check_localized_skip_keyboard(browser, base)
             for lang in ("fr", "ar", "en"):
