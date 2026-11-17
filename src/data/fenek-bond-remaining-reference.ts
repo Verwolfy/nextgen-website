@@ -131,9 +131,9 @@ const definitions=[
         "key": "sika",
         "kind": "famille",
         "label": {
-          "fr": "Largeur de joints Sika CG2WA",
-          "ar": "عرض فواصل سيكا",
-          "en": "Sika CG2WA joint width"
+          "fr": "Largeur de joints — comparable 1",
+          "ar": "عرض الفواصل — المقارن ١",
+          "en": "Joint width — comparable 1"
         },
         "value": "1–8 mm"
       },
@@ -141,9 +141,9 @@ const definitions=[
         "key": "mapei",
         "kind": "famille",
         "label": {
-          "fr": "Dosage d’un comparable Mapei CG2FWA",
-          "ar": "ماء خلط مابي CG2FWA",
-          "en": "Mapei CG2FWA mixing ratio"
+          "fr": "Eau de gâchage — comparable rapide",
+          "ar": "ماء الخلط — منتج مقارن سريع",
+          "en": "Mixing water — rapid-set comparable"
         },
         "value": "21–23 % eau"
       },
@@ -151,9 +151,9 @@ const definitions=[
         "key": "weber",
         "kind": "famille",
         "label": {
-          "fr": "Largeur d’un comparable Weber CG2WA",
-          "ar": "عرض فواصل ويبر",
-          "en": "Weber CG2WA joint width"
+          "fr": "Largeur de joints — comparable 2",
+          "ar": "عرض الفواصل — المقارن ٢",
+          "en": "Joint width — comparable 2"
         },
         "value": "1–20 mm"
       }
@@ -322,9 +322,9 @@ const definitions=[
         "key": "sika",
         "kind": "famille",
         "label": {
-          "fr": "Classe d’un ragréage Sika",
-          "ar": "فئة منتج تسوية سيكا",
-          "en": "Sika leveller grade"
+          "fr": "Classe d’un autolissant comparable",
+          "ar": "فئة منتج تسوية مقارن",
+          "en": "Comparable leveller class"
         },
         "value": "CT-C25-F5"
       },
@@ -332,9 +332,9 @@ const definitions=[
         "key": "mapei",
         "kind": "famille",
         "label": {
-          "fr": "Eau d’un ragréage Mapei",
-          "ar": "نسبة الماء لمنتج مابي",
-          "en": "Mapei leveller mixing water"
+          "fr": "Eau de gâchage d’un autolissant comparable",
+          "ar": "ماء خلط منتج تسوية مقارن",
+          "en": "Comparable leveller mixing water"
         },
         "value": "17–19 %"
       },
@@ -342,9 +342,9 @@ const definitions=[
         "key": "ardex",
         "kind": "famille",
         "label": {
-          "fr": "Ragréages ARDEX",
-          "ar": "منتجات التسوية من أردكس",
-          "en": "ARDEX levellers"
+          "fr": "Épaisseur selon famille d’autolissants",
+          "ar": "سماكة التطبيق حسب منتج التسوية",
+          "en": "Leveller thickness varies by product"
         },
         "value": "Épaisseur selon produit"
       }
@@ -503,9 +503,9 @@ const definitions=[
         "key": "mapei",
         "kind": "famille",
         "label": {
-          "fr": "Consommation Planitop 510",
-          "ar": "استهلاك Planitop 510",
-          "en": "Planitop 510 coverage"
+          "fr": "Consommation d’un enduit comparable",
+          "ar": "استهلاك لياسة مقارنة",
+          "en": "Comparable render consumption"
         },
         "value": "≈ 1,3 kg/m²/mm"
       },
@@ -513,9 +513,9 @@ const definitions=[
         "key": "caparol",
         "kind": "famille",
         "label": {
-          "fr": "Classification Caparol",
-          "ar": "فئة كابارول",
-          "en": "Caparol grade"
+          "fr": "Classe d’un enduit comparable 1",
+          "ar": "فئة لياسة مقارنة ١",
+          "en": "Comparable render class 1"
         },
         "value": "GP CS II"
       },
@@ -523,9 +523,9 @@ const definitions=[
         "key": "keim",
         "kind": "famille",
         "label": {
-          "fr": "Classification KEIM",
-          "ar": "فئة كايم",
-          "en": "KEIM grade"
+          "fr": "Classe d’un enduit comparable 2",
+          "ar": "فئة لياسة مقارنة ٢",
+          "en": "Comparable render class 2"
         },
         "value": "GP CS II"
       }
@@ -704,9 +704,9 @@ const definitions=[
         "key": "sika",
         "kind": "famille",
         "label": {
-          "fr": "Eau du SikaGrout-212 ZA",
-          "ar": "ماء SikaGrout-212 ZA",
-          "en": "SikaGrout-212 ZA water"
+          "fr": "Eau de gâchage d’un coulis comparable",
+          "ar": "ماء خلط مونة حشو مقارنة",
+          "en": "Comparable grout mixing water"
         },
         "value": "4,0 L / 25 kg"
       },
@@ -714,9 +714,9 @@ const definitions=[
         "key": "mapei",
         "kind": "famille",
         "label": {
-          "fr": "Consommation Mapefill GP ME",
-          "ar": "استهلاك Mapefill GP ME",
-          "en": "Mapefill GP ME coverage"
+          "fr": "Consommation d’un coulis comparable",
+          "ar": "استهلاك مونة حشو مقارنة",
+          "en": "Comparable grout consumption"
         },
         "value": "≈ 1,90 kg/m²/mm"
       },
@@ -724,9 +724,9 @@ const definitions=[
         "key": "weber",
         "kind": "famille",
         "label": {
-          "fr": "Gamme des calages Weber",
-          "ar": "مجموعة الحشو من ويبر",
-          "en": "Weber precision grouts"
+          "fr": "Consistance de produits de calage",
+          "ar": "قوام أنواع مونة الحشو",
+          "en": "Precision grout consistency"
         },
         "value": "Consistance selon système"
       }
@@ -885,9 +885,9 @@ const definitions=[
         "key": "weber",
         "kind": "famille",
         "label": {
-          "fr": "Classe du mortier Weber",
-          "ar": "فئة مونة ويبر",
-          "en": "Weber mortar class"
+          "fr": "Classe d’un mortier de montage comparable 1",
+          "ar": "فئة مونة بناء مقارنة ١",
+          "en": "Comparable masonry mortar class 1"
         },
         "value": "M10"
       },
@@ -895,9 +895,9 @@ const definitions=[
         "key": "lafac",
         "kind": "famille",
         "label": {
-          "fr": "Classe du mortier Lafac",
-          "ar": "فئة مونة لافاك",
-          "en": "Lafac mortar class"
+          "fr": "Classe d’un mortier de montage comparable 2",
+          "ar": "فئة مونة بناء مقارنة ٢",
+          "en": "Comparable masonry mortar class 2"
         },
         "value": "M10"
       },
@@ -905,9 +905,9 @@ const definitions=[
         "key": "suco",
         "kind": "famille",
         "label": {
-          "fr": "Classe du mortier SUCO",
-          "ar": "فئة مونة سوكو",
-          "en": "SUCO mortar class"
+          "fr": "Classe d’un mortier de montage comparable 3",
+          "ar": "فئة مونة بناء مقارنة ٣",
+          "en": "Comparable masonry mortar class 3"
         },
         "value": "M10"
       }
@@ -1066,9 +1066,9 @@ const definitions=[
         "key": "baumit",
         "kind": "famille",
         "label": {
-          "fr": "Joint d’assise cité par Baumit",
-          "ar": "سماكة فاصل بوميت",
-          "en": "Baumit bed joint"
+          "fr": "Épaisseur de joint d’assise comparable",
+          "ar": "سماكة فاصل البناء في منتج مقارن",
+          "en": "Comparable bed-joint thickness"
         },
         "value": "10–12 mm"
       },
@@ -1076,9 +1076,9 @@ const definitions=[
         "key": "weber",
         "kind": "famille",
         "label": {
-          "fr": "Classe du mortier Weber",
-          "ar": "فئة مونة ويبر",
-          "en": "Weber mortar class"
+          "fr": "Classe d’un mortier comparable 1",
+          "ar": "فئة مونة بناء مقارنة ١",
+          "en": "Comparable mortar class 1"
         },
         "value": "M5"
       },
@@ -1086,9 +1086,9 @@ const definitions=[
         "key": "lafac",
         "kind": "famille",
         "label": {
-          "fr": "Classe du mortier Lafac",
-          "ar": "فئة مونة لافاك",
-          "en": "Lafac mortar class"
+          "fr": "Classe d’un mortier comparable 2",
+          "ar": "فئة مونة بناء مقارنة ٢",
+          "en": "Comparable mortar class 2"
         },
         "value": "M5"
       }
@@ -1247,9 +1247,9 @@ const definitions=[
         "key": "ec",
         "kind": "famille",
         "label": {
-          "fr": "Consommation Morcemdur EC (10 mm)",
-          "ar": "استهلاك Morcemdur EC عند 10 مم",
-          "en": "Morcemdur EC coverage at 10 mm"
+          "fr": "Consommation d’un enduit comparable à 10 mm",
+          "ar": "استهلاك لياسة مقارنة عند 10 مم",
+          "en": "Comparable render consumption at 10 mm"
         },
         "value": "≈ 18 kg/m²"
       },
@@ -1257,9 +1257,9 @@ const definitions=[
         "key": "ft",
         "kind": "famille",
         "label": {
-          "fr": "Consommation Morcemdur FT",
-          "ar": "استهلاك Morcemdur FT",
-          "en": "Morcemdur FT coverage"
+          "fr": "Consommation d’un autre enduit comparable",
+          "ar": "استهلاك لياسة مقارنة ثانية",
+          "en": "Another render consumption"
         },
         "value": "≈ 1,6 kg/m²/mm"
       },
@@ -1267,9 +1267,9 @@ const definitions=[
         "key": "piedra",
         "kind": "famille",
         "label": {
-          "fr": "Classe Morcemdur Piedra",
-          "ar": "فئة Morcemdur Piedra",
-          "en": "Morcemdur Piedra class"
+          "fr": "Classe d’un enduit monocouche comparable",
+          "ar": "فئة لياسة أحادية الطبقة مقارنة",
+          "en": "Comparable one-coat render class"
         },
         "value": "OC CSIII W2"
       }
@@ -1448,31 +1448,31 @@ const definitions=[
         "key": "sika",
         "kind": "famille",
         "label": {
-          "fr": "Référence Sika",
-          "ar": "مرجع سيكا",
-          "en": "Sika comparable"
+          "fr": "Classe d’un mortier de réparation comparable 1",
+          "ar": "فئة مونة إصلاح مقارنة ١",
+          "en": "Comparable repair mortar class 1"
         },
-        "value": "MonoTop-2020 R2"
+        "value": "R2 — EN 1504-3"
       },
       {
         "key": "mapei",
         "kind": "famille",
         "label": {
-          "fr": "Référence Mapei",
-          "ar": "مرجع مابي",
-          "en": "Mapei comparable"
+          "fr": "Classe d’un mortier de réparation comparable 2",
+          "ar": "فئة مونة إصلاح مقارنة ٢",
+          "en": "Comparable repair mortar class 2"
         },
-        "value": "Planitop Rasa & Ripara R2"
+        "value": "R2 — EN 1504-3"
       },
       {
         "key": "emaco",
         "kind": "famille",
         "label": {
-          "fr": "Référence SikaEmaco",
-          "ar": "مرجع سيكا إيماكو",
-          "en": "SikaEmaco comparable"
+          "fr": "Classe d’un mortier de réparation comparable 3",
+          "ar": "فئة مونة إصلاح مقارنة ٣",
+          "en": "Comparable repair mortar class 3"
         },
-        "value": "N 5200 R2"
+        "value": "R2 — EN 1504-3"
       }
     ],
     "copy": {
@@ -1659,29 +1659,29 @@ const definitions=[
         "key": "sika",
         "kind": "famille",
         "label": {
-          "fr": "Référence Sika",
-          "ar": "مرجع سيكا",
-          "en": "Sika comparable"
+          "fr": "Classe d’un mortier de réparation comparable 1",
+          "ar": "فئة مونة إصلاح مقارنة ١",
+          "en": "Comparable repair mortar class 1"
         },
-        "value": "MonoTop-615 R3"
+        "value": "R3 — EN 1504-3"
       },
       {
         "key": "mapei",
         "kind": "famille",
         "label": {
-          "fr": "Référence Mapei",
-          "ar": "مرجع مابي",
-          "en": "Mapei comparable"
+          "fr": "Classe d’un mortier de réparation comparable 2",
+          "ar": "فئة مونة إصلاح مقارنة ٢",
+          "en": "Comparable repair mortar class 2"
         },
-        "value": "Mapegrout T40 R3"
+        "value": "R3 — EN 1504-3"
       },
       {
         "key": "puma",
         "kind": "famille",
         "label": {
-          "fr": "Épaisseur Morcemrest C5 R3",
-          "ar": "سماكة Morcemrest C5 R3",
-          "en": "Morcemrest C5 R3 layer"
+          "fr": "Épaisseur d’une couche comparable",
+          "ar": "سماكة طبقة مقارنة",
+          "en": "Comparable application layer"
         },
         "value": "2–5 mm"
       }
@@ -1870,29 +1870,29 @@ const definitions=[
         "key": "sika",
         "kind": "famille",
         "label": {
-          "fr": "Référence Sika fibrée",
-          "ar": "مرجع سيكا الليفي",
-          "en": "Sika reinforced comparable"
+          "fr": "Classe d’un mortier fibré comparable 1",
+          "ar": "فئة مونة إصلاح ليفية مقارنة ١",
+          "en": "Fibre-reinforced comparator class 1"
         },
-        "value": "MonoTop-412 N R4"
+        "value": "R4 — EN 1504-3"
       },
       {
         "key": "mapei",
         "kind": "famille",
         "label": {
-          "fr": "Référence Mapei fibrée",
-          "ar": "مرجع مابي الليفي",
-          "en": "Mapei reinforced comparable"
+          "fr": "Classe d’un mortier fibré comparable 2",
+          "ar": "فئة مونة إصلاح ليفية مقارنة ٢",
+          "en": "Fibre-reinforced comparator class 2"
         },
-        "value": "Mapegrout T60 R4"
+        "value": "R4 — EN 1504-3"
       },
       {
         "key": "puma",
         "kind": "famille",
         "label": {
-          "fr": "Conditionnement Morcemrest Repair",
-          "ar": "عبوة Morcemrest Repair",
-          "en": "Morcemrest Repair pack"
+          "fr": "Conditionnement d’un mortier comparable",
+          "ar": "عبوة مونة إصلاح مقارنة",
+          "en": "Comparable repair mortar packaging"
         },
         "value": "25 kg"
       },
@@ -1900,11 +1900,11 @@ const definitions=[
         "key": "weber",
         "kind": "famille",
         "label": {
-          "fr": "Référence Weber",
-          "ar": "مرجع ويبر",
-          "en": "Weber comparable"
+          "fr": "Classe d’un mortier comparable 3",
+          "ar": "فئة مونة إصلاح مقارنة ٣",
+          "en": "Comparable repair mortar class 3"
         },
-        "value": "webercem R4 duo"
+        "value": "R4 — EN 1504-3"
       }
     ],
     "copy": {
