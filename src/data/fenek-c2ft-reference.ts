@@ -16,12 +16,12 @@ export const c2ftRequirements:ReferenceMetric[]=[
 ];
 
 export const c2ftFamilyReferences:ReferenceMetric[]=[
- {key:'consommation-par-mm',kind:'famille',label:{fr:'Consommation de référence par mm de lit (Weber)',ar:'استهلاك مرجعي لكل ملم من طبقة اللاصق (ويبر)',en:'Reference coverage per mm of bed (Weber)'},value:'≈ 1,5 kg/m²/mm'},
+ {key:'consommation-par-mm',kind:'famille',label:{fr:'Consommation de référence par mm de lit',ar:'استهلاك مرجعي لكل ملم من طبقة اللاصق',en:'Reference coverage per mm of bed'},value:'≈ 1,5 kg/m²/mm'},
  {key:'eau',kind:'famille',label:{fr:'Eau des équivalents, ramenée à un sac de 25 kg',ar:'ماء الخلط في المنتجات المماثلة محسوباً لكل 25 كغ',en:'Comparable mixing water normalized to a 25 kg bag'},value:'≈ 4,75–6,25 L / 25 kg'},
- {key:'duree-vie',kind:'famille',label:{fr:'Durée pratique d’utilisation chez Mapei et Weber',ar:'مدة استعمال الخليط لدى مابي وويبر',en:'Pot life in Mapei and Weber documentation'},value:'≈ 30 min'},
+ {key:'duree-vie',kind:'famille',label:{fr:'Durée pratique d’utilisation de produits comparables',ar:'مدة استعمال الخليط في منتجات مماثلة',en:'Pot life in comparable technical sheets'},value:'≈ 30 min'},
  {key:'temps-ouvert',kind:'famille',label:{fr:'Temps ouvert déclaré selon formulation',ar:'الزمن المفتوح المعلن بحسب التركيبة',en:'Declared open time across comparable products'},value:'≈ 10–30 min'},
  {key:'jointoiement',kind:'famille',label:{fr:'Jointoiement annoncé après pose sur produits comparables',ar:'موعد تعبئة الفواصل لدى منتجات مماثلة',en:'Grouting times declared for comparable products'},value:'≈ 2–3 h'},
- {key:'ajustement',kind:'famille',label:{fr:'Délai d’ajustement de références Sika et Weber',ar:'مدة تعديل موضع البلاط لدى سيكا وويبر',en:'Adjustment times in Sika and Weber documentation'},value:'≈ 10 min'},
+ {key:'ajustement',kind:'famille',label:{fr:'Délai d’ajustement sur références comparables',ar:'مدة تعديل موضع البلاط في منتجات مماثلة',en:'Adjustment time in comparable technical sheets'},value:'≈ 10 min'},
 ];
 
 type Copy={
