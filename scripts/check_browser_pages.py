@@ -235,13 +235,13 @@ def check_lot131_v3_c2te(browser, base: str) -> None:
 
 def check_lot132_v3_c2tes1(browser, base: str) -> None:
     """C2TE-S1 now serves its OWN six complete source illustrations and captions."""
-    sprite = "/images/illustrations/application-upgraded/fenek-bond-c2tes1-steps.webp"
+    sprite = "/images/illustrations/application-upgraded/fenek-bond-c2te-s1-steps.webp"
     display_sprite = ENHANCED_BY_CODE["BOND-C2TE-S1"]
     for lang in ("fr", "ar", "en"):
         for width in (390, 1280):
             page = browser.new_page(viewport={"width": width, "height": 850})
             try:
-                page.goto(f"{base}/{lang}/documentation/fenek-bond-c2tes1/", wait_until="domcontentloaded")
+                page.goto(f"{base}/{lang}/documentation/fenek-bond-c2te-s1/", wait_until="domcontentloaded")
                 guide=page.locator('section[data-reference="BOND-C2TE-S1"][data-application-visual]')
                 assert guide.count()==1,(lang,width,"C2TE-S1 source reference mismatch")
                 assert page.locator("[data-c2tes1-pilot]").count()==1,(lang,width)
@@ -271,7 +271,7 @@ def check_lot132_v3_c2tes1(browser, base: str) -> None:
                     assert page.locator(".fenek-c2tes1-print").is_visible(),lang
                     assert not page.locator(".fenek-product-page").is_visible(),lang
                     SHOTS.mkdir(parents=True,exist_ok=True)
-                    target=SHOTS/("fenek-bond-c2tes1-branded-print-"+lang+".pdf")
+                    target=SHOTS/("fenek-bond-c2te-s1-branded-print-"+lang+".pdf")
                     pdf=page.pdf(path=str(target),print_background=True,prefer_css_page_size=True)
                     assert pdf.startswith(b"%PDF") and len(pdf)>10000,(lang,"invalid C2TE-S1 PDF")
                     page.emulate_media(media="screen")
