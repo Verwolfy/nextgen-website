@@ -42,3 +42,24 @@ test('internal source registry is never placed under public',()=>{
   assert.ok(csv.trimEnd().split('\n').length>=31);
   assert.match(csv,/saint-gobain-africa\.com/);
 });
+
+test('reviewed C1T A4 V3 keeps original assets and a nonredundant print layout',()=>{
+  const pilot=read('src/components/FenekC1TPilot.astro');
+  const print=pilot.slice(pilot.indexOf('<section class="fenek-print-document fenek-c1t-print"'),pilot.indexOf('<style>'));
+  const required=[
+    'data-c1t-one-page','src="/images/Logo1.jpg"','src={image}',
+    'data-print-hero','data-print-description','data-print-overview',
+    'data-print-designation','data-print-standards','data-print-method',
+    'data-print-safety','data-print-contact',
+    'c1tRequirements.map','p.designation.map'
+  ];
+  for(const item of required)assert.ok(print.includes(item),item);
+  const markers=['data-print-hero','data-print-description','data-print-overview','data-print-designation','data-print-standards','data-print-method','data-print-safety','data-print-contact'];
+  const positions=markers.map(m=>print.indexOf(m));
+  assert.ok(positions.every((p,i)=>p>=0&&(i===0||p>positions[i-1])),positions.join(','));
+  assert.ok(pilot.includes("conceptPackshot(product,'full')"));
+  assert.doesNotMatch(print,/c1tFamilyReferences|data-print-benchmarks|5–6,5 L|3–5 kg\/m²/);
+  assert.equal((print.match(/<section class="fenek-print-card/g)||[]).length,7);
+  assert.equal((print.match(/data-print-standards/g)||[]).length,1);
+  assert.ok(pilot.includes('grid-template-columns:repeat(3,minmax(0,1fr))'));
+});

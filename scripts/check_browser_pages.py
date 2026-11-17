@@ -1255,10 +1255,18 @@ def check() -> None:
                         pdf_bytes = page.pdf(path=str(pdf_path), print_background=True,
                                              prefer_css_page_size=True)
                         assert pdf_bytes.startswith(b"%PDF") and len(pdf_bytes) > 10000, lang
-                        # The technical pilot intentionally has more material than
-                        # the former one-page catalogue summary; keep A4 readable.
-                        pdf_page_count = len(re.findall(rb"/Type\s*/Page\b", pdf_bytes))
-                        assert 1 <= pdf_page_count <= 3, (lang, pdf_page_count)
+                        # Chromium may compress PDF page dictionaries: use a real parser.
+                        # The approved C1T layout is exactly one A4 page in FR, AR and EN.
+                        from io import BytesIO
+                        from pypdf import PdfReader
+                        pdf_reader = PdfReader(BytesIO(pdf_bytes))
+                        pdf_page_count = len(pdf_reader.pages)
+                        assert pdf_page_count == 1, (lang, pdf_page_count)
+                        media_box = pdf_reader.pages[0].mediabox
+                        pdf_width, pdf_height = float(media_box.width), float(media_box.height)
+                        assert abs(pdf_width - 595.28) <= 2 and abs(pdf_height - 841.89) <= 2, (
+                            lang, pdf_width, pdf_height, "not A4 portrait"
+                        )
                     page.emulate_media(media="screen")
                     assert page.locator(".fenek-product-page").is_visible(), lang
                     assert not page.locator(".fenek-print-document").is_visible(), lang
