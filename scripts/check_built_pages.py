@@ -217,6 +217,14 @@ def main() -> None:
                 assert "présentation provisoire" not in markup.lower(), info
                 assert "Les seuils de classe et les plages comparatives" not in markup, info
                 assert all(brand not in markup for brand in ("Sika","Mapei","Bostik","Weber")), info
+            elif entry["code"] == "BOND-C2TE-S1":
+                assert "data-c2tes1-pilot" in markup, info
+                assert markup.count('data-c2tes1-source-type="norme"') == 8, info
+                assert markup.count('data-c2tes1-source-type="famille"') == 6, info
+                assert "fenek-c2tes1-print" in markup, info
+                assert ("data-print-market-sheet" in markup or f'/docs/fiches/fenek-bond-c2te-s1-{lang}.pdf' in markup), info
+                assert "présentation provisoire" not in markup.lower(), info
+                assert "Les seuils de classe et les plages comparatives" not in markup, info
             elif entry["code"] == "BOND-C2TE":
                 assert "data-c2te-pilot" in markup, info
                 assert markup.count('data-c2te-source-type="norme"') == 7, info
@@ -235,7 +243,7 @@ def main() -> None:
                            'fenek-application', 'fenek-documents'):
                 assert f'id="{anchor}"' in markup, (info, anchor)
                 assert f'href="#{anchor}"' in markup, (info, anchor)
-            if entry["code"] not in ("BOND-C1T", "BOND-C1TE", "BOND-C2FT", "BOND-C2TE"):
+            if entry["code"] not in ("BOND-C1T", "BOND-C1TE", "BOND-C2FT", "BOND-C2TE", "BOND-C2TE-S1"):
                 assert 'data-print-market-sheet' in markup, info
             assert entry["nom"] in markup, info
             assert "noindex,nofollow" in markup, info
@@ -263,7 +271,7 @@ def main() -> None:
                           "This content can be revised as laboratory",
                           "يمكن تحديث هذا المحتوى لاحقًا"):
                 assert stale not in markup, f"Old revision copy still public: {lang}/{entry['slug']}"
-            if entry["code"] not in ("BOND-C1T", "BOND-C1TE", "BOND-C2FT", "BOND-C2TE"):
+            if entry["code"] not in ("BOND-C1T", "BOND-C1TE", "BOND-C2FT", "BOND-C2TE", "BOND-C2TE-S1"):
                 assert "concept-detail-note" in markup, f"Missing documentation notice {lang}/{entry['slug']}"
             assert_product_whatsapp(markup, lang, entry["code"])
         # Lot 31: eleven photo-realistic renderings cut from the user-selected
