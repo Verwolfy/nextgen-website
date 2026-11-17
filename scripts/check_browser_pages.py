@@ -1115,17 +1115,17 @@ def check() -> None:
                     assert not (DIST / lang / "emballages").exists(), lang
                     assert not (DIST / "models-demo").exists()
                     assert not (DIST / "images" / "3d-demo").exists()
-                    # Smoke-check four individual conceptual products, not certified SKUs.
+                    # Smoke-check four localized editorial catalogue products, still uncertified.
                     for slug in ("fenek-bond-c1t", "fenek-proof-cm-o1p",
                                  "fenek-flow-wr-n", "fenek-paint-int-m"):
                         concept_path = "/"+lang+"/catalogue/"+slug+"/"
                         response = page.goto(base+concept_path, wait_until="domcontentloaded", timeout=20000)
                         assert response is not None and response.status==200, concept_path
                         assert page.locator("h1").count()==1, concept_path
-                        assert page.locator(".concept-detail-status").count()==(0 if slug=="fenek-bond-c1t" else 1), concept_path
+                        assert page.locator(".concept-detail-status").count()==0, concept_path
                         assert page.locator(".concept-steps li").count()==0, concept_path
                         assert page.locator(".concept-source-method").count()==0, concept_path
-                        assert page.locator(".concept-detail-note").count() >= (0 if slug=="fenek-bond-c1t" else 1), concept_path
+                        assert page.locator(".concept-detail-note").count()==0, concept_path
                         email_action = page.locator(".concept-detail-aside a[href^='mailto:']")
                         assert email_action.count() == 1, concept_path
                         email_target = unquote(email_action.get_attribute("href"))
