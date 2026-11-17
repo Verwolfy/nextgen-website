@@ -1252,8 +1252,14 @@ def check() -> None:
                             url = base + "/" + lang + "/documentation/" + slug + "/"
                             response = page.goto(url, wait_until="domcontentloaded")
                             assert response and response.status == 200, (lang, url)
-                            assert page.locator(".fenek-doc-accordion").count() == 8, (lang, slug)
-                            assert page.locator('.fenek-qualification-panel').count() == 2, (lang, slug)
+                            if slug in ("fenek-bond-gp-csii", "fenek-bond-m5", "fenek-bond-m10", "fenek-bond-oc-csiii"):
+                                assert page.locator("[data-bond-technical-pilot]").count() == 1, (lang, slug)
+                                assert page.locator(".bond-technical-table").count() == 4, (lang, slug)
+                                assert page.locator(".fenek-doc-accordion").count() == 0, (lang, slug)
+                                assert page.locator(".fenek-qualification-panel").count() == 0, (lang, slug)
+                            else:
+                                assert page.locator(".fenek-doc-accordion").count() == 8, (lang, slug)
+                                assert page.locator('.fenek-qualification-panel').count() == 2, (lang, slug)
                             assert page.locator(".market-reference").count() == 0, (lang, slug)
                             assert page.locator(".fenek-product-image img").evaluate(
                                 "img => img.complete && img.naturalWidth > 0"), (lang,slug)
