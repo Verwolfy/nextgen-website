@@ -27,7 +27,7 @@ test('C2TE source-backed page remains unique, localized and without obsolete dis
  assert.doesNotMatch(component,/Sika|Mapei|Weber/i);
  assert.doesNotMatch(data,/important:|figuresNote:|Les seuils de classe et les plages comparatives/);
  assert.match(data,/value:'≥ 1,0 N\/mm²'/);
- assert.match(data,/value:'≥ 0,5 N\/mm² \\(30 min\\)'/);
+ assert.ok(data.includes("value:'≥ 0,5 N/mm² (30 min)'"));
  assert.match(data,/value:'≤ 0,5 mm'/);
  assert.match(data,/c2teCopy:Record<Lang,Copy>/);
  const normative=(data.match(/kind:'norme'/g)||[]).length;
