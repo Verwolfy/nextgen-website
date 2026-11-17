@@ -144,8 +144,17 @@ def check_lot129_v3_c2ft(browser, base: str) -> None:
             page = browser.new_page(viewport={"width": width, "height": 850})
             try:
                 page.goto(f"{base}/{lang}/documentation/fenek-bond-c2ft/", wait_until="domcontentloaded")
-                guide=page.locator('section[data-reference="BOND-C2FT"][data-v3-reviewed="BROUILLON"]')
+                guide=page.locator('section[data-reference="BOND-C2FT"][data-application-visual]')
                 assert guide.count()==1,(lang,width,"C2FT source reference mismatch")
+                assert page.locator("[data-c2ft-pilot]").count()==1,(lang,width)
+                assert page.locator(".c2ft-table").count()==4,(lang,width)
+                assert page.locator('[data-c2ft-source-type="norme"]').count()==7,(lang,width)
+                assert page.locator('[data-c2ft-source-type="famille"]').count()==6,(lang,width)
+                assert page.locator(".fenek-doc-accordion").count()==0,(lang,width)
+                assert page.locator(".fenek-c2ft-print").count()==1,(lang,width)
+                assert page.locator("button[data-print-market-sheet]").count()==1,(lang,width)
+                assert page.locator("meta[name='robots']").get_attribute("content")=="noindex,nofollow"
+                assert "Les seuils de classe et les plages comparatives" not in page.content()
                 assert guide.get_attribute("data-v3-sprite")==sprite,(lang,width,"cross-reference")
                 assert guide.locator(".is-caption-cropped").count()==0,(lang,width,"source captions must be visible")
                 panels=guide.locator("[data-v3-step]")
@@ -159,6 +168,15 @@ def check_lot129_v3_c2ft(browser, base: str) -> None:
                 assert display_sprite in bg and "fenek-bond-c1te-steps.webp" not in bg,(lang,width)
                 assert abs(first.bounding_box()["width"]/first.bounding_box()["height"]-1.5)<=.04,(lang,width)
                 assert page.evaluate("document.documentElement.scrollWidth-innerWidth")<=4,(lang,width)
+                if width==1280:
+                    page.emulate_media(media="print")
+                    assert page.locator(".fenek-c2ft-print").is_visible(),lang
+                    assert not page.locator(".fenek-product-page").is_visible(),lang
+                    SHOTS.mkdir(parents=True,exist_ok=True)
+                    target=SHOTS/("fenek-bond-c2ft-branded-print-"+lang+".pdf")
+                    pdf=page.pdf(path=str(target),print_background=True,prefer_css_page_size=True)
+                    assert pdf.startswith(b"%PDF") and len(pdf)>10000,(lang,"invalid C2FT PDF")
+                    page.emulate_media(media="screen")
                 if lang=="fr" and width==390:
                     SHOTS.mkdir(parents=True,exist_ok=True)
                     guide.screenshot(path=str(SHOTS/"lot129-c2ft-v3-mobile-fr.png"))
@@ -181,7 +199,7 @@ def check_lot130_all_v3(browser, base: str) -> None:
             assert response and response.status==200,(code,"missing page")
             # The C1T pilot omits internal editorial status from its public markup.
             # All other references continue to require the existing guarded status.
-            selector=(f'section[data-reference="{code}"][data-application-visual]' if code in ("BOND-C1T","BOND-C1TE")
+            selector=(f'section[data-reference="{code}"][data-application-visual]' if code in ("BOND-C1T","BOND-C1TE","BOND-C2FT")
                       else f'section[data-reference="{code}"][data-v3-reviewed="BROUILLON"]')
             guide=page.locator(selector)
             assert guide.count()==1,(code,"missing or mismatched guide")
@@ -196,7 +214,7 @@ def check_lot130_all_v3(browser, base: str) -> None:
                 css=panel.evaluate("(el)=>getComputedStyle(el).backgroundImage")
                 assert ENHANCED_BY_CODE.get(code,sprite) in css,(code,i,"illustration from wrong product")
                 label=panel.get_attribute("aria-label") or ""
-                assert mapping[code]["steps"][i]["title"]["fr"] in label or code in ("BOND-C1T","BOND-C1TE"),(code,i,"wrong legend")
+                assert mapping[code]["steps"][i]["title"]["fr"] in label or code in ("BOND-C1T","BOND-C1TE","BOND-C2FT"),(code,i,"wrong legend")
             assert page.evaluate("document.documentElement.scrollWidth-innerWidth")<=4,(code,"mobile overflow")
         finally:
             page.close()
