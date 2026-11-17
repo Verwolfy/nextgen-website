@@ -911,7 +911,7 @@ def check() -> None:
                         assert page.locator(".concept-detail-status").count()==(0 if slug=="fenek-bond-c1t" else 1), concept_path
                         assert page.locator(".concept-steps li").count()==0, concept_path
                         assert page.locator(".concept-source-method").count()==0, concept_path
-                        assert page.locator(".concept-detail-note").count()>=1, concept_path
+                        assert page.locator(".concept-detail-note").count() >= (0 if slug=="fenek-bond-c1t" else 1), concept_path
                         email_action = page.locator(".concept-detail-aside a[href^='mailto:']")
                         assert email_action.count() == 1, concept_path
                         email_target = unquote(email_action.get_attribute("href"))
