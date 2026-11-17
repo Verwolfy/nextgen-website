@@ -1,6 +1,6 @@
-# Export des fiches PDF des pilotes FENEK-BOND C1T, C1TE, C2FT et C2TE
+# Export des fiches PDF des pilotes FENEK-BOND C1T, C1TE, C2FT, C2TE et C2TE-S1
 
-**Portée : pilotes C1T, C1TE, C2FT et C2TE uniquement.** Cette opération génère les douze fiches de présentation à partir du HTML **déjà construit** par Astro, pour préserver la cohérence entre la fiche web et le PDF. Elle ne crée **aucune** FT homologuée ni FDS.
+**Portée : pilotes C1T, C1TE, C2FT, C2TE et C2TE-S1 uniquement.** Cette opération génère les quinze fiches de présentation à partir du HTML **déjà construit** par Astro, pour préserver la cohérence entre la fiche web et le PDF. Elle ne crée **aucune** FT homologuée ni FDS.
 
 ## Génération reproductible
 
@@ -13,13 +13,13 @@ npm run build
 python -m unittest discover -s tests -p 'test_c1t_pdf_export.py' -v
 ```
 
-Sorties : `public/docs/fiches/fenek-bond-{c1t,c1te,c2ft,c2te}-{fr,ar,en}.pdf` (les PDF doivent être ajoutés au commit **après** vérification visuelle). Le deuxième build copie les fichiers produits vers `dist/docs/fiches/`. Sur une installation sans fichiers générés, l'interface conserve le bouton d'impression/PDF du navigateur et n'affiche pas de lien cassé.
+Sorties : `public/docs/fiches/fenek-bond-{c1t,c1te,c2ft,c2te,c2te-s1}-{fr,ar,en}.pdf` (les PDF doivent être ajoutés au commit **après** vérification visuelle). Le deuxième build copie les fichiers produits vers `dist/docs/fiches/`. Sur une installation sans fichiers générés, l'interface conserve le bouton d'impression/PDF du navigateur et n'affiche pas de lien cassé.
 
-Le workflow navigateur `.github/workflows/site-browser-recette.yml` génère aussi les trois PDF **C1TE** et trois PDF **C2FT** et les trois PDF **C2TE** directement depuis Chromium/Astro, dans l'artefact GitHub Actions non servi par le site `nextgen-lot7-internal-browser-screenshots` (rétention de 7 jours). Ces PDF sont des candidats à relire avant une éventuelle copie dans `public/docs/fiches/`.
+Le workflow navigateur `.github/workflows/site-browser-recette.yml` génère aussi les trois PDF **C1TE** et trois PDF **C2FT** et les trois PDF **C2TE**, ainsi que les trois PDF **C2TE-S1** directement depuis Chromium/Astro, dans l'artefact GitHub Actions non servi par le site `nextgen-lot7-internal-browser-screenshots` (rétention de 7 jours). Ces PDF sont des candidats à relire avant une éventuelle copie dans `public/docs/fiches/`.
 
 ## Vérification manuelle obligatoire
 
-1. Ouvrir chacun des douze PDF et contrôler les tableaux, l'image produit, les sauts de page, l'en-tête de marque et la typographie arabe (sens de lecture RTL).
+1. Ouvrir chacun des quinze PDF et contrôler les tableaux, l'image produit, les sauts de page, l'en-tête de marque et la typographie arabe (sens de lecture RTL).
 2. Vérifier que les seuils EN 12004-1 restent qualifiés de **seuils de classe**, et non de mesures FENEK.
 3. Vérifier que les consommations de référence précisent le peigne, l'épaisseur ou le mode de pose et ne présument jamais de rendements en double encollage lorsqu'ils ne sont pas sourcés et qu'aucun dosage d'eau n'est recommandé pour la fabrication FENEK.
 4. Contrôler les données et URL de `docs/INTERNE-validation-donnees.csv`, accessible dans le dépôt GitHub public mais **non publié dans le site**.
