@@ -29,7 +29,7 @@ test('C2FT owns a distinct professional FR/AR/EN page without the removed footer
     assert.ok(prod.contenu[lang].description.length>110);
   }
   assert.match(content,/value:'≥ 1,0 N\/mm²'/);
-  assert.match(content,/value:'≥ 0,5 N\/mm² à 6 h au plus'/);
+  assert.match(content,/value:'≥ 0,5 N\/mm² \(≤ 6 h\)'/);
   assert.match(content,/value:'≤ 0,5 mm'/);
   assert.match(content,/c2ftCopy:Record<Lang,Copy>/);
   for(const key of ['c2-initial','f-precoce','f-ouvert','t-glissement','consommation-par-mm','eau']){
