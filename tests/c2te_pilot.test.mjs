@@ -30,7 +30,7 @@ test('C2TE source-backed page remains unique, localized and without obsolete dis
  assert.match(data,/value:'≥ 0,5 N\/mm² \\(30 min\\)'/);
  assert.match(data,/value:'≤ 0,5 mm'/);
  assert.match(data,/c2teCopy:Record<Lang,Copy>/);
- const normative=(data.match(/kind:'norme'/g)||[]).length-1;
+ const normative=(data.match(/kind:'norme'/g)||[]).length;
  const family=(data.match(/kind:'famille'/g)||[]).length;
  assert.equal(normative,7);
  assert.equal(family,6);
