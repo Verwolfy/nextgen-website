@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export the three C1T presentation sheets from the exact built Astro pages.
+"""Export the C1T and C1TE trilingual presentation sheets from the exact built Astro pages.
 
 This produces product INFORMATION sheets, not laboratory-approved TDS or SDS.
 Usage:
@@ -17,6 +17,7 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = "https://nextgen-buildingsolutions.com"
 LANGUAGES = ("fr", "ar", "en")
+PILOT_SLUGS = ("fenek-bond-c1t", "fenek-bond-c1te")
 
 
 def local_fetcher(dist: Path):
@@ -51,18 +52,20 @@ def export_pdfs(dist: Path, output: Path) -> list[Path]:
         raise RuntimeError("Install requirements-supports.txt before exporting PDFs") from exc
     output.mkdir(parents=True, exist_ok=True)
     generated: list[Path] = []
-    for lang in LANGUAGES:
-        file = dist / lang / "documentation" / "fenek-bond-c1t" / "index.html"
-        if not file.is_file():
-            raise RuntimeError(f"Missing built pilot sheet: {file}")
-        markup = file.read_text(encoding="utf-8")
-        if 'data-c1t-pilot' not in markup or 'fenek-c1t-print' not in markup:
-            raise RuntimeError(f"Expected approved C1T presentation structure missing: {lang}")
-        target = output / f"fenek-bond-c1t-{lang}.pdf"
-        HTML(string=markup, base_url=ORIGIN + "/", url_fetcher=local_fetcher(dist)).write_pdf(target)
-        if not target.read_bytes().startswith(b"%PDF-"):
-            raise RuntimeError(f"Invalid generated PDF: {target}")
-        generated.append(target)
+    for slug in PILOT_SLUGS:
+        suffix = slug.rsplit("-", 1)[-1]
+        for lang in LANGUAGES:
+            file = dist / lang / "documentation" / slug / "index.html"
+            if not file.is_file():
+                raise RuntimeError(f"Missing built pilot sheet: {file}")
+            markup = file.read_text(encoding="utf-8")
+            if f'data-{suffix}-pilot' not in markup or f'fenek-{suffix}-print' not in markup:
+                raise RuntimeError(f"Expected {suffix.upper()} presentation structure missing: {lang}")
+            target = output / f"{slug}-{lang}.pdf"
+            HTML(string=markup, base_url=ORIGIN + "/", url_fetcher=local_fetcher(dist)).write_pdf(target)
+            if not target.read_bytes().startswith(b"%PDF-"):
+                raise RuntimeError(f"Invalid generated PDF: {target}")
+            generated.append(target)
     return generated
 
 
