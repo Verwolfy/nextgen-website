@@ -64,7 +64,7 @@ def main():
             guide=parser.guides[0]
             assert guide.get('data-reference')==code,(lang,code,'reference')
             assert guide.get('data-application-count')=='6',(lang,code,'six steps')
-            if code in ('BOND-C1T', 'BOND-C1TE', 'BOND-C2FT', 'BOND-C2TE'):
+            if code in ('BOND-C1T', 'BOND-C1TE', 'BOND-C2FT', 'BOND-C2TE', 'BOND-C2TE-S1'):
                 # Pilot HTML avoids internal editorial status; source gate stays closed.
                 assert 'data-v3-reviewed' not in guide,(lang,code,'pilot status leakage')
             else:
