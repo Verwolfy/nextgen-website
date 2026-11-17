@@ -118,7 +118,6 @@ const comparisonMeaning:Record<string,Record<Lang,string>>={
       <h3>{t.relatedTitle}</h3>
       <div class="actions">{related.filter(item=>item.code!==product.code).map(item=><a class="btn btn-muted" href={`/${lang}/documentation/${item.slug}/`}><bdi dir="ltr">{item.nom}</bdi></a>)}</div>
     </section>
-    <p class="fenek-document-footer c1te-reference-note">{t.important}</p>
   </div>
 </article>
 <section class="fenek-print-document fenek-c1te-print" lang={lang} dir={lang==='ar'?'rtl':'ltr'}>
@@ -147,7 +146,7 @@ const comparisonMeaning:Record<string,Record<Lang,string>>={
   </section>
   <section class="fenek-print-card"><h2>{t.prepTitle}</h2><ul>{t.preparation.map(line=><li>{line}</li>)}</ul></section>
   <section class="fenek-print-card"><h2>{t.safetyTitle}</h2><ul>{t.safety.map(line=><li>{line}</li>)}</ul></section>
-  <div class="fenek-print-footer"><strong>NEXTGEN BUILDING SOLUTIONS</strong><p>{t.important}</p><p>{brand.email}</p></div>
+  <div class="fenek-print-footer"><strong>NEXTGEN BUILDING SOLUTIONS</strong><p>{brand.email}</p></div>
 </section>
 <style>
   .fenek-c1te-pilot .fenek-document-section h3{font-size:clamp(1.1rem,2vw,1.35rem);margin:20px 0 12px}
