@@ -54,24 +54,30 @@
     "ordre": 2,
     "contenu": {
       "fr": {
-        "accroche": "Colle carrelage standard, temps ouvert allongé",
-        "description": "FENEK-BOND C1TE — Colle carrelage standard, temps ouvert allongé. Gamme : Mortiers, colles et réparation. Domaine : Colles carrelage.",
+        "accroche": "Mortier-colle cimentaire C1TE à glissement réduit et temps ouvert prolongé",
+        "description": "Mortier-colle cimentaire destiné aux travaux courants de carrelage sur supports minéraux cohésifs. C1 désigne la classe d'adhérence normale, T le glissement vertical réduit et E un essai de temps ouvert prolongé selon EN 12004-1. Choisir le système selon le support et la taille des carreaux.",
         "usages": [
-          "Colles carrelage"
+          "Pose intérieure de carrelage et faïence sur béton préparé.",
+          "Collage sur chapes et enduits ciment cohésifs et propres.",
+          "Murs et sols : vérifier la compatibilité du support, le format du carreau et la méthode de pose."
         ]
       },
       "ar": {
-        "accroche": "لاصق بلاط قياسي بزمن تشغيل مفتوح ممتد",
-        "description": "FENEK-BOND C1TE — لاصق بلاط قياسي بزمن تشغيل مفتوح ممتد. الفئة: الملاط والمواد اللاصقة والإصلاح. المجال: لواصق البلاط.",
+        "accroche": "ملاط لاصق إسمنتي للبلاط بفئة C1TE: انزلاق منخفض وزمن مفتوح ممتد",
+        "description": "ملاط لاصق إسمنتي مخصص لتركيب البلاط على الأسطح الإسمنتية المتماسكة والمهيأة. يشير الرمز C1 إلى فئة الالتصاق العادي، وT إلى انخفاض الانزلاق الرأسي، وE إلى اختبار زمن مفتوح ممتد وفق EN 12004-1. يُختار نظام التركيب بحسب السطح ومقاس البلاط.",
         "usages": [
-          "لواصق البلاط"
+          "تركيب البلاط والقيشاني داخل المباني على الخرسانة المهيأة.",
+          "التثبيت على طبقات التسوية والمحارة الإسمنتية النظيفة والمتماسكة.",
+          "التركيب على الجدران والأرضيات بعد تقييم ملاءمة السطح ومقاس البلاط وطريقة اللصق."
         ]
       },
       "en": {
-        "accroche": "Standard tile adhesive with extended open time",
-        "description": "FENEK-BOND C1TE — Standard tile adhesive with extended open time. Range: Mortars, adhesives and repair. Category: Tile adhesives.",
+        "accroche": "C1TE cementitious tile adhesive with reduced slip and extended open time",
+        "description": "Cementitious adhesive for conventional fixing of ceramic tiles to sound, prepared mineral substrates. C1 denotes normal adhesion class criteria, T reduced vertical slip, and E an extended open-time test under EN 12004-1. Select the installation system for the substrate and tile format.",
         "usages": [
-          "Tile adhesives"
+          "Indoor fixing of ceramic wall and floor tiles to prepared concrete.",
+          "Tiling over clean, sound cement screeds and renders.",
+          "Wall and floor installation subject to substrate compatibility, tile size and bedding method."
         ]
       }
     },
