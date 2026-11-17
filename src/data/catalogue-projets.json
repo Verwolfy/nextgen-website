@@ -289,24 +289,30 @@
     "ordre": 7,
     "contenu": {
       "fr": {
-        "accroche": "Joint de carrelage amélioré, hydrofuge, résistant à l'abrasion",
-        "description": "FENEK-BOND CG2WA — Joint de carrelage amélioré, hydrofuge, résistant à l'abrasion. Gamme : Mortiers, colles et réparation. Domaine : Joints de carrelage.",
+        "accroche": "Joint de carrelage amélioré à absorption d’eau réduite et forte résistance à l’abrasion",
+        "description": "FENEK-BOND CG2WA : Joint de carrelage amélioré à absorption d’eau réduite et forte résistance à l’abrasion. La formulation, le procédé et les paramètres de mise en œuvre doivent être validés avec la fiche technique FENEK. Préparer et vérifier la cohésion du support avant mise en œuvre. Adapter le choix aux conditions de chantier et au système spécifié.",
         "usages": [
-          "Joints de carrelage"
+          "Joint de carrelage amélioré à absorption d’eau réduite et forte résistance à l’abrasion",
+          "Préparer et vérifier la cohésion du support avant mise en œuvre.",
+          "Adapter le choix aux conditions de chantier et au système spécifié."
         ]
       },
       "ar": {
-        "accroche": "مونة فواصل محسّنة طاردة للماء ومقاومة للاحتكاك",
-        "description": "FENEK-BOND CG2WA — مونة فواصل محسّنة طاردة للماء ومقاومة للاحتكاك. الفئة: الملاط والمواد اللاصقة والإصلاح. المجال: مونة فواصل البلاط.",
+        "accroche": "مونة فواصل محسنة قليلة امتصاص الماء وعالية مقاومة البري",
+        "description": "FENEK-BOND CG2WA : مونة فواصل محسنة قليلة امتصاص الماء وعالية مقاومة البري. تتطلب تركيبة المنتج وطريقة استخدامه ومقاييس التطبيق اعتماد النشرة الفنية الخاصة بمنتج FENEK. تحضير السطح وفحص تماسكه قبل الاستخدام. تحديد النظام وفق ظروف الورشة والمتطلبات الفنية.",
         "usages": [
-          "مونة فواصل البلاط"
+          "مونة فواصل محسنة قليلة امتصاص الماء وعالية مقاومة البري",
+          "تحضير السطح وفحص تماسكه قبل الاستخدام.",
+          "تحديد النظام وفق ظروف الورشة والمتطلبات الفنية."
         ]
       },
       "en": {
-        "accroche": "Enhanced water-repellent abrasion-resistant grout",
-        "description": "FENEK-BOND CG2WA — Enhanced water-repellent abrasion-resistant grout. Range: Mortars, adhesives and repair. Category: Tile grouts.",
+        "accroche": "Enhanced tile grout with reduced water absorption and high abrasion resistance",
+        "description": "FENEK-BOND CG2WA : Enhanced tile grout with reduced water absorption and high abrasion resistance. The formulation, installation method and working parameters require the product-specific FENEK technical sheet. Prepare and verify substrate integrity before application. Match system choice to site conditions and the project specification.",
         "usages": [
-          "Tile grouts"
+          "Enhanced tile grout with reduced water absorption and high abrasion resistance",
+          "Prepare and verify substrate integrity before application.",
+          "Match system choice to site conditions and the project specification."
         ]
       }
     },
@@ -330,24 +336,30 @@
     "ordre": 8,
     "contenu": {
       "fr": {
-        "accroche": "Ragréage autolissant de sol",
-        "description": "FENEK-BOND CT-C25-F5 — Ragréage autolissant de sol. Gamme : Mortiers, colles et réparation. Domaine : Ragréage.",
+        "accroche": "Ragréage autolissant cimentaire pour préparation des sols, classe CT-C25-F5",
+        "description": "FENEK-BOND CT-C25-F5 : Ragréage autolissant cimentaire pour préparation des sols, classe CT-C25-F5. La formulation, le procédé et les paramètres de mise en œuvre doivent être validés avec la fiche technique FENEK. Préparer et vérifier la cohésion du support avant mise en œuvre. Adapter le choix aux conditions de chantier et au système spécifié.",
         "usages": [
-          "Ragréage"
+          "Ragréage autolissant cimentaire pour préparation des sols, classe CT-C25-F5",
+          "Préparer et vérifier la cohésion du support avant mise en œuvre.",
+          "Adapter le choix aux conditions de chantier et au système spécifié."
         ]
       },
       "ar": {
-        "accroche": "مونة تسوية أرضيات ذاتية الانتشار",
-        "description": "FENEK-BOND CT-C25-F5 — مونة تسوية أرضيات ذاتية الانتشار. الفئة: الملاط والمواد اللاصقة والإصلاح. المجال: تسوية الأرضيات.",
+        "accroche": "مونة تسوية إسمنتية ذاتية الانسياب من فئة CT-C25-F5",
+        "description": "FENEK-BOND CT-C25-F5 : مونة تسوية إسمنتية ذاتية الانسياب من فئة CT-C25-F5. تتطلب تركيبة المنتج وطريقة استخدامه ومقاييس التطبيق اعتماد النشرة الفنية الخاصة بمنتج FENEK. تحضير السطح وفحص تماسكه قبل الاستخدام. تحديد النظام وفق ظروف الورشة والمتطلبات الفنية.",
         "usages": [
-          "تسوية الأرضيات"
+          "مونة تسوية إسمنتية ذاتية الانسياب من فئة CT-C25-F5",
+          "تحضير السطح وفحص تماسكه قبل الاستخدام.",
+          "تحديد النظام وفق ظروف الورشة والمتطلبات الفنية."
         ]
       },
       "en": {
-        "accroche": "Self-levelling floor compound",
-        "description": "FENEK-BOND CT-C25-F5 — Self-levelling floor compound. Range: Mortars, adhesives and repair. Category: Floor levelling.",
+        "accroche": "Self-levelling cement floor compound, CT-C25-F5",
+        "description": "FENEK-BOND CT-C25-F5 : Self-levelling cement floor compound, CT-C25-F5. The formulation, installation method and working parameters require the product-specific FENEK technical sheet. Prepare and verify substrate integrity before application. Match system choice to site conditions and the project specification.",
         "usages": [
-          "Floor levelling"
+          "Self-levelling cement floor compound, CT-C25-F5",
+          "Prepare and verify substrate integrity before application.",
+          "Match system choice to site conditions and the project specification."
         ]
       }
     },
@@ -371,24 +383,30 @@
     "ordre": 9,
     "contenu": {
       "fr": {
-        "accroche": "Enduit ciment d'usage courant",
-        "description": "FENEK-BOND GP-CSII — Enduit ciment d'usage courant. Gamme : Mortiers, colles et réparation. Domaine : Enduits.",
+        "accroche": "Enduit ciment général pour murs, catégorie GP CSII",
+        "description": "FENEK-BOND GP-CSII : Enduit ciment général pour murs, catégorie GP CSII. La formulation, le procédé et les paramètres de mise en œuvre doivent être validés avec la fiche technique FENEK. Préparer et vérifier la cohésion du support avant mise en œuvre. Adapter le choix aux conditions de chantier et au système spécifié.",
         "usages": [
-          "Enduits"
+          "Enduit ciment général pour murs, catégorie GP CSII",
+          "Préparer et vérifier la cohésion du support avant mise en œuvre.",
+          "Adapter le choix aux conditions de chantier et au système spécifié."
         ]
       },
       "ar": {
-        "accroche": "لياسة إسمنتية للاستعمال العام",
-        "description": "FENEK-BOND GP-CSII — لياسة إسمنتية للاستعمال العام. الفئة: الملاط والمواد اللاصقة والإصلاح. المجال: اللياسة.",
+        "accroche": "لياسة إسمنتية عامة للجدران GP CSII",
+        "description": "FENEK-BOND GP-CSII : لياسة إسمنتية عامة للجدران GP CSII. تتطلب تركيبة المنتج وطريقة استخدامه ومقاييس التطبيق اعتماد النشرة الفنية الخاصة بمنتج FENEK. تحضير السطح وفحص تماسكه قبل الاستخدام. تحديد النظام وفق ظروف الورشة والمتطلبات الفنية.",
         "usages": [
-          "اللياسة"
+          "لياسة إسمنتية عامة للجدران GP CSII",
+          "تحضير السطح وفحص تماسكه قبل الاستخدام.",
+          "تحديد النظام وفق ظروف الورشة والمتطلبات الفنية."
         ]
       },
       "en": {
-        "accroche": "General-purpose cement render",
-        "description": "FENEK-BOND GP-CSII — General-purpose cement render. Range: Mortars, adhesives and repair. Category: Renders and plasters.",
+        "accroche": "General-purpose wall render, GP CSII",
+        "description": "FENEK-BOND GP-CSII : General-purpose wall render, GP CSII. The formulation, installation method and working parameters require the product-specific FENEK technical sheet. Prepare and verify substrate integrity before application. Match system choice to site conditions and the project specification.",
         "usages": [
-          "Renders and plasters"
+          "General-purpose wall render, GP CSII",
+          "Prepare and verify substrate integrity before application.",
+          "Match system choice to site conditions and the project specification."
         ]
       }
     },
@@ -412,24 +430,30 @@
     "ordre": 10,
     "contenu": {
       "fr": {
-        "accroche": "Mortier de calage et scellement haute résistance (grout)",
-        "description": "FENEK-BOND GR-HR — Mortier de calage et scellement haute résistance (grout). Gamme : Mortiers, colles et réparation. Domaine : Scellement et calage.",
+        "accroche": "Mortier de calage et de scellement pour platines et équipements",
+        "description": "FENEK-BOND GR-HR : Mortier de calage et de scellement pour platines et équipements. La formulation, le procédé et les paramètres de mise en œuvre doivent être validés avec la fiche technique FENEK. Préparer et vérifier la cohésion du support avant mise en œuvre. Adapter le choix aux conditions de chantier et au système spécifié.",
         "usages": [
-          "Scellement et calage"
+          "Mortier de calage et de scellement pour platines et équipements",
+          "Préparer et vérifier la cohésion du support avant mise en œuvre.",
+          "Adapter le choix aux conditions de chantier et au système spécifié."
         ]
       },
       "ar": {
-        "accroche": "مونة حقن وتثبيت عالية المقاومة",
-        "description": "FENEK-BOND GR-HR — مونة حقن وتثبيت عالية المقاومة. الفئة: الملاط والمواد اللاصقة والإصلاح. المجال: التثبيت والحقن.",
+        "accroche": "مونة تثبيت وحشو أسفل قواعد المعدات",
+        "description": "FENEK-BOND GR-HR : مونة تثبيت وحشو أسفل قواعد المعدات. تتطلب تركيبة المنتج وطريقة استخدامه ومقاييس التطبيق اعتماد النشرة الفنية الخاصة بمنتج FENEK. تحضير السطح وفحص تماسكه قبل الاستخدام. تحديد النظام وفق ظروف الورشة والمتطلبات الفنية.",
         "usages": [
-          "التثبيت والحقن"
+          "مونة تثبيت وحشو أسفل قواعد المعدات",
+          "تحضير السطح وفحص تماسكه قبل الاستخدام.",
+          "تحديد النظام وفق ظروف الورشة والمتطلبات الفنية."
         ]
       },
       "en": {
-        "accroche": "High-strength grouting and bedding mortar",
-        "description": "FENEK-BOND GR-HR — High-strength grouting and bedding mortar. Range: Mortars, adhesives and repair. Category: Grouting and bedding.",
+        "accroche": "Precision bedding grout for equipment and base plates",
+        "description": "FENEK-BOND GR-HR : Precision bedding grout for equipment and base plates. The formulation, installation method and working parameters require the product-specific FENEK technical sheet. Prepare and verify substrate integrity before application. Match system choice to site conditions and the project specification.",
         "usages": [
-          "Grouting and bedding"
+          "Precision bedding grout for equipment and base plates",
+          "Prepare and verify substrate integrity before application.",
+          "Match system choice to site conditions and the project specification."
         ]
       }
     },
@@ -453,24 +477,30 @@
     "ordre": 11,
     "contenu": {
       "fr": {
-        "accroche": "Mortier de maçonnerie haute résistance",
-        "description": "FENEK-BOND M10 — Mortier de maçonnerie haute résistance. Gamme : Mortiers, colles et réparation. Domaine : Maçonnerie.",
+        "accroche": "Mortier de montage de maçonnerie, classe M10",
+        "description": "FENEK-BOND M10 : Mortier de montage de maçonnerie, classe M10. La formulation, le procédé et les paramètres de mise en œuvre doivent être validés avec la fiche technique FENEK. Préparer et vérifier la cohésion du support avant mise en œuvre. Adapter le choix aux conditions de chantier et au système spécifié.",
         "usages": [
-          "Maçonnerie"
+          "Mortier de montage de maçonnerie, classe M10",
+          "Préparer et vérifier la cohésion du support avant mise en œuvre.",
+          "Adapter le choix aux conditions de chantier et au système spécifié."
         ]
       },
       "ar": {
-        "accroche": "مونة بناء عالية المقاومة",
-        "description": "FENEK-BOND M10 — مونة بناء عالية المقاومة. الفئة: الملاط والمواد اللاصقة والإصلاح. المجال: مونة البناء.",
+        "accroche": "مونة بناء من فئة M10",
+        "description": "FENEK-BOND M10 : مونة بناء من فئة M10. تتطلب تركيبة المنتج وطريقة استخدامه ومقاييس التطبيق اعتماد النشرة الفنية الخاصة بمنتج FENEK. تحضير السطح وفحص تماسكه قبل الاستخدام. تحديد النظام وفق ظروف الورشة والمتطلبات الفنية.",
         "usages": [
-          "مونة البناء"
+          "مونة بناء من فئة M10",
+          "تحضير السطح وفحص تماسكه قبل الاستخدام.",
+          "تحديد النظام وفق ظروف الورشة والمتطلبات الفنية."
         ]
       },
       "en": {
-        "accroche": "High-strength masonry mortar",
-        "description": "FENEK-BOND M10 — High-strength masonry mortar. Range: Mortars, adhesives and repair. Category: Masonry.",
+        "accroche": "M10-class masonry bedding mortar",
+        "description": "FENEK-BOND M10 : M10-class masonry bedding mortar. The formulation, installation method and working parameters require the product-specific FENEK technical sheet. Prepare and verify substrate integrity before application. Match system choice to site conditions and the project specification.",
         "usages": [
-          "Masonry"
+          "M10-class masonry bedding mortar",
+          "Prepare and verify substrate integrity before application.",
+          "Match system choice to site conditions and the project specification."
         ]
       }
     },
@@ -494,24 +524,30 @@
     "ordre": 12,
     "contenu": {
       "fr": {
-        "accroche": "Mortier de maçonnerie courant",
-        "description": "FENEK-BOND M5 — Mortier de maçonnerie courant. Gamme : Mortiers, colles et réparation. Domaine : Maçonnerie.",
+        "accroche": "Mortier de montage de maçonnerie, classe M5",
+        "description": "FENEK-BOND M5 : Mortier de montage de maçonnerie, classe M5. La formulation, le procédé et les paramètres de mise en œuvre doivent être validés avec la fiche technique FENEK. Préparer et vérifier la cohésion du support avant mise en œuvre. Adapter le choix aux conditions de chantier et au système spécifié.",
         "usages": [
-          "Maçonnerie"
+          "Mortier de montage de maçonnerie, classe M5",
+          "Préparer et vérifier la cohésion du support avant mise en œuvre.",
+          "Adapter le choix aux conditions de chantier et au système spécifié."
         ]
       },
       "ar": {
-        "accroche": "مونة بناء للاستعمال العام",
-        "description": "FENEK-BOND M5 — مونة بناء للاستعمال العام. الفئة: الملاط والمواد اللاصقة والإصلاح. المجال: مونة البناء.",
+        "accroche": "مونة بناء من فئة M5",
+        "description": "FENEK-BOND M5 : مونة بناء من فئة M5. تتطلب تركيبة المنتج وطريقة استخدامه ومقاييس التطبيق اعتماد النشرة الفنية الخاصة بمنتج FENEK. تحضير السطح وفحص تماسكه قبل الاستخدام. تحديد النظام وفق ظروف الورشة والمتطلبات الفنية.",
         "usages": [
-          "مونة البناء"
+          "مونة بناء من فئة M5",
+          "تحضير السطح وفحص تماسكه قبل الاستخدام.",
+          "تحديد النظام وفق ظروف الورشة والمتطلبات الفنية."
         ]
       },
       "en": {
-        "accroche": "General-purpose masonry mortar",
-        "description": "FENEK-BOND M5 — General-purpose masonry mortar. Range: Mortars, adhesives and repair. Category: Masonry.",
+        "accroche": "M5-class masonry bedding mortar",
+        "description": "FENEK-BOND M5 : M5-class masonry bedding mortar. The formulation, installation method and working parameters require the product-specific FENEK technical sheet. Prepare and verify substrate integrity before application. Match system choice to site conditions and the project specification.",
         "usages": [
-          "Masonry"
+          "M5-class masonry bedding mortar",
+          "Prepare and verify substrate integrity before application.",
+          "Match system choice to site conditions and the project specification."
         ]
       }
     },
@@ -535,24 +571,30 @@
     "ordre": 13,
     "contenu": {
       "fr": {
-        "accroche": "Enduit monocouche de façade",
-        "description": "FENEK-BOND OC-CSIII — Enduit monocouche de façade. Gamme : Mortiers, colles et réparation. Domaine : Enduits.",
+        "accroche": "Enduit monocouche de façade, catégorie OC CSIII",
+        "description": "FENEK-BOND OC-CSIII : Enduit monocouche de façade, catégorie OC CSIII. La formulation, le procédé et les paramètres de mise en œuvre doivent être validés avec la fiche technique FENEK. Préparer et vérifier la cohésion du support avant mise en œuvre. Adapter le choix aux conditions de chantier et au système spécifié.",
         "usages": [
-          "Enduits"
+          "Enduit monocouche de façade, catégorie OC CSIII",
+          "Préparer et vérifier la cohésion du support avant mise en œuvre.",
+          "Adapter le choix aux conditions de chantier et au système spécifié."
         ]
       },
       "ar": {
-        "accroche": "لياسة واجهات أحادية الطبقة",
-        "description": "FENEK-BOND OC-CSIII — لياسة واجهات أحادية الطبقة. الفئة: الملاط والمواد اللاصقة والإصلاح. المجال: اللياسة.",
+        "accroche": "لياسة واجهات بطبقة واحدة من فئة OC CSIII",
+        "description": "FENEK-BOND OC-CSIII : لياسة واجهات بطبقة واحدة من فئة OC CSIII. تتطلب تركيبة المنتج وطريقة استخدامه ومقاييس التطبيق اعتماد النشرة الفنية الخاصة بمنتج FENEK. تحضير السطح وفحص تماسكه قبل الاستخدام. تحديد النظام وفق ظروف الورشة والمتطلبات الفنية.",
         "usages": [
-          "اللياسة"
+          "لياسة واجهات بطبقة واحدة من فئة OC CSIII",
+          "تحضير السطح وفحص تماسكه قبل الاستخدام.",
+          "تحديد النظام وفق ظروف الورشة والمتطلبات الفنية."
         ]
       },
       "en": {
-        "accroche": "Single-coat façade render",
-        "description": "FENEK-BOND OC-CSIII — Single-coat façade render. Range: Mortars, adhesives and repair. Category: Renders and plasters.",
+        "accroche": "One-coat exterior render, OC CSIII",
+        "description": "FENEK-BOND OC-CSIII : One-coat exterior render, OC CSIII. The formulation, installation method and working parameters require the product-specific FENEK technical sheet. Prepare and verify substrate integrity before application. Match system choice to site conditions and the project specification.",
         "usages": [
-          "Renders and plasters"
+          "One-coat exterior render, OC CSIII",
+          "Prepare and verify substrate integrity before application.",
+          "Match system choice to site conditions and the project specification."
         ]
       }
     },
@@ -576,24 +618,30 @@
     "ordre": 14,
     "contenu": {
       "fr": {
-        "accroche": "Mortier de réparation du béton (non structurel)",
-        "description": "FENEK-BOND R2 — Mortier de réparation du béton (non structurel). Gamme : Mortiers, colles et réparation. Domaine : Réparation du béton.",
+        "accroche": "Mortier de réparation non structurelle du béton, classe R2",
+        "description": "FENEK-BOND R2 : Mortier de réparation non structurelle du béton, classe R2. La formulation, le procédé et les paramètres de mise en œuvre doivent être validés avec la fiche technique FENEK. Préparer et vérifier la cohésion du support avant mise en œuvre. Adapter le choix aux conditions de chantier et au système spécifié.",
         "usages": [
-          "Réparation du béton"
+          "Mortier de réparation non structurelle du béton, classe R2",
+          "Préparer et vérifier la cohésion du support avant mise en œuvre.",
+          "Adapter le choix aux conditions de chantier et au système spécifié."
         ]
       },
       "ar": {
-        "accroche": "مونة إصلاح خرسانة غير إنشائية",
-        "description": "FENEK-BOND R2 — مونة إصلاح خرسانة غير إنشائية. الفئة: الملاط والمواد اللاصقة والإصلاح. المجال: إصلاح الخرسانة.",
+        "accroche": "مونة إصلاح غير إنشائي للخرسانة من فئة R2",
+        "description": "FENEK-BOND R2 : مونة إصلاح غير إنشائي للخرسانة من فئة R2. تتطلب تركيبة المنتج وطريقة استخدامه ومقاييس التطبيق اعتماد النشرة الفنية الخاصة بمنتج FENEK. تحضير السطح وفحص تماسكه قبل الاستخدام. تحديد النظام وفق ظروف الورشة والمتطلبات الفنية.",
         "usages": [
-          "إصلاح الخرسانة"
+          "مونة إصلاح غير إنشائي للخرسانة من فئة R2",
+          "تحضير السطح وفحص تماسكه قبل الاستخدام.",
+          "تحديد النظام وفق ظروف الورشة والمتطلبات الفنية."
         ]
       },
       "en": {
-        "accroche": "Non-structural concrete repair mortar",
-        "description": "FENEK-BOND R2 — Non-structural concrete repair mortar. Range: Mortars, adhesives and repair. Category: Concrete repair.",
+        "accroche": "R2 non-structural concrete repair mortar",
+        "description": "FENEK-BOND R2 : R2 non-structural concrete repair mortar. The formulation, installation method and working parameters require the product-specific FENEK technical sheet. Prepare and verify substrate integrity before application. Match system choice to site conditions and the project specification.",
         "usages": [
-          "Concrete repair"
+          "R2 non-structural concrete repair mortar",
+          "Prepare and verify substrate integrity before application.",
+          "Match system choice to site conditions and the project specification."
         ]
       }
     },
@@ -617,24 +665,30 @@
     "ordre": 15,
     "contenu": {
       "fr": {
-        "accroche": "Mortier de réparation structurelle",
-        "description": "FENEK-BOND R3 — Mortier de réparation structurelle. Gamme : Mortiers, colles et réparation. Domaine : Réparation du béton.",
+        "accroche": "Mortier de réparation structurelle du béton, classe R3",
+        "description": "FENEK-BOND R3 : Mortier de réparation structurelle du béton, classe R3. La formulation, le procédé et les paramètres de mise en œuvre doivent être validés avec la fiche technique FENEK. Préparer et vérifier la cohésion du support avant mise en œuvre. Adapter le choix aux conditions de chantier et au système spécifié.",
         "usages": [
-          "Réparation du béton"
+          "Mortier de réparation structurelle du béton, classe R3",
+          "Préparer et vérifier la cohésion du support avant mise en œuvre.",
+          "Adapter le choix aux conditions de chantier et au système spécifié."
         ]
       },
       "ar": {
-        "accroche": "مونة إصلاح خرسانة إنشائية",
-        "description": "FENEK-BOND R3 — مونة إصلاح خرسانة إنشائية. الفئة: الملاط والمواد اللاصقة والإصلاح. المجال: إصلاح الخرسانة.",
+        "accroche": "مونة إصلاح إنشائي للخرسانة من فئة R3",
+        "description": "FENEK-BOND R3 : مونة إصلاح إنشائي للخرسانة من فئة R3. تتطلب تركيبة المنتج وطريقة استخدامه ومقاييس التطبيق اعتماد النشرة الفنية الخاصة بمنتج FENEK. تحضير السطح وفحص تماسكه قبل الاستخدام. تحديد النظام وفق ظروف الورشة والمتطلبات الفنية.",
         "usages": [
-          "إصلاح الخرسانة"
+          "مونة إصلاح إنشائي للخرسانة من فئة R3",
+          "تحضير السطح وفحص تماسكه قبل الاستخدام.",
+          "تحديد النظام وفق ظروف الورشة والمتطلبات الفنية."
         ]
       },
       "en": {
-        "accroche": "Structural concrete repair mortar",
-        "description": "FENEK-BOND R3 — Structural concrete repair mortar. Range: Mortars, adhesives and repair. Category: Concrete repair.",
+        "accroche": "R3 structural concrete repair mortar",
+        "description": "FENEK-BOND R3 : R3 structural concrete repair mortar. The formulation, installation method and working parameters require the product-specific FENEK technical sheet. Prepare and verify substrate integrity before application. Match system choice to site conditions and the project specification.",
         "usages": [
-          "Concrete repair"
+          "R3 structural concrete repair mortar",
+          "Prepare and verify substrate integrity before application.",
+          "Match system choice to site conditions and the project specification."
         ]
       }
     },
@@ -658,24 +712,30 @@
     "ordre": 16,
     "contenu": {
       "fr": {
-        "accroche": "Mortier de réparation structurelle fibré, thixotrope",
-        "description": "FENEK-BOND R4 — Mortier de réparation structurelle fibré, thixotrope. Gamme : Mortiers, colles et réparation. Domaine : Réparation du béton.",
+        "accroche": "Mortier de réparation structurelle fibré thixotrope, classe R4",
+        "description": "FENEK-BOND R4 : Mortier de réparation structurelle fibré thixotrope, classe R4. La formulation, le procédé et les paramètres de mise en œuvre doivent être validés avec la fiche technique FENEK. Préparer et vérifier la cohésion du support avant mise en œuvre. Adapter le choix aux conditions de chantier et au système spécifié.",
         "usages": [
-          "Réparation du béton"
+          "Mortier de réparation structurelle fibré thixotrope, classe R4",
+          "Préparer et vérifier la cohésion du support avant mise en œuvre.",
+          "Adapter le choix aux conditions de chantier et au système spécifié."
         ]
       },
       "ar": {
-        "accroche": "مونة إصلاح إنشائية مدعّمة بالألياف وثيكسوتروبية",
-        "description": "FENEK-BOND R4 — مونة إصلاح إنشائية مدعّمة بالألياف وثيكسوتروبية. الفئة: الملاط والمواد اللاصقة والإصلاح. المجال: إصلاح الخرسانة.",
+        "accroche": "مونة إصلاح إنشائي ليفية من فئة R4",
+        "description": "FENEK-BOND R4 : مونة إصلاح إنشائي ليفية من فئة R4. تتطلب تركيبة المنتج وطريقة استخدامه ومقاييس التطبيق اعتماد النشرة الفنية الخاصة بمنتج FENEK. تحضير السطح وفحص تماسكه قبل الاستخدام. تحديد النظام وفق ظروف الورشة والمتطلبات الفنية.",
         "usages": [
-          "إصلاح الخرسانة"
+          "مونة إصلاح إنشائي ليفية من فئة R4",
+          "تحضير السطح وفحص تماسكه قبل الاستخدام.",
+          "تحديد النظام وفق ظروف الورشة والمتطلبات الفنية."
         ]
       },
       "en": {
-        "accroche": "Fibre-reinforced thixotropic structural repair mortar",
-        "description": "FENEK-BOND R4 — Fibre-reinforced thixotropic structural repair mortar. Range: Mortars, adhesives and repair. Category: Concrete repair.",
+        "accroche": "R4 fibre-reinforced structural repair mortar",
+        "description": "FENEK-BOND R4 : R4 fibre-reinforced structural repair mortar. The formulation, installation method and working parameters require the product-specific FENEK technical sheet. Prepare and verify substrate integrity before application. Match system choice to site conditions and the project specification.",
         "usages": [
-          "Concrete repair"
+          "R4 fibre-reinforced structural repair mortar",
+          "Prepare and verify substrate integrity before application.",
+          "Match system choice to site conditions and the project specification."
         ]
       }
     },

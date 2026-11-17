@@ -8,6 +8,7 @@ import FenekC2FTPilot from '../../../components/FenekC2FTPilot.astro';
 import FenekC2TEPilot from '../../../components/FenekC2TEPilot.astro';
 import FenekC2TES1Pilot from '../../../components/FenekC2TES1Pilot.astro';
 import FenekCG1Pilot from '../../../components/FenekCG1Pilot.astro';
+import FenekBondTechnicalPilot from '../../../components/FenekBondTechnicalPilot.astro';
 import {brand, languages, rangeName, rangeColor, type Lang} from '../../../data/site';
 import {catalogueProjects, conceptPackshot, packagingLabelFor, type CatalogueProject} from '../../../lib/catalogue-projets';
 import {guideFor} from '../../../data/fenek-guides';
@@ -19,6 +20,7 @@ import {c2ftCopy} from '../../../data/fenek-c2ft-reference';
 import {c2teCopy} from '../../../data/fenek-c2te-reference';
 import {c2tes1Copy} from '../../../data/fenek-c2tes1-reference';
 import {cg1Copy} from '../../../data/fenek-cg1-reference';
+import {bondRemainingRecords} from '../../../data/fenek-bond-remaining-reference';
 import {productWhatsappHref} from '../../../data/contact-channels';
 
 export function getStaticPaths() {
@@ -40,6 +42,7 @@ const isC2FTPilot=product.code==='BOND-C2FT';
 const isC2TEPilot=product.code==='BOND-C2TE';
 const isC2TES1Pilot=product.code==='BOND-C2TE-S1';
 const isCG1Pilot=product.code==='BOND-CG1';
+const bondRemaining=bondRemainingRecords[product.code];
 const t = {
   fr:{
     label:'Fiche produit',overview:'Aperçu',details:'Détails produits',application:'Application',documents:'Documents',
@@ -105,8 +108,8 @@ const t = {
 const emailHref = 'mailto:' + brand.email + '?subject=' +
   encodeURIComponent('FENEK technical documentation — ' + product.nom);
 ---
-<Layout lang={lang} title={isC1TPilot ? c1tContent[lang].pageTitle : isC1TEPilot ? c1teCopy[lang].pageTitle : isC2FTPilot ? c2ftCopy[lang].pageTitle : isC2TEPilot ? c2teCopy[lang].pageTitle : isC2TES1Pilot ? c2tes1Copy[lang].pageTitle : isCG1Pilot ? cg1Copy[lang].pageTitle : product.nom + ' — ' + t.label} description={isC1TPilot ? c1tContent[lang].metaDescription : isC1TEPilot ? c1teCopy[lang].metaDescription : isC2FTPilot ? c2ftCopy[lang].metaDescription : isC2TEPilot ? c2teCopy[lang].metaDescription : isC2TES1Pilot ? c2tes1Copy[lang].metaDescription : isCG1Pilot ? cg1Copy[lang].metaDescription : detail.description} ogImage={isC1TPilot || isC1TEPilot || isC2FTPilot || isC2TEPilot || isC2TES1Pilot || isCG1Pilot ? conceptPackshot(product,'full') : undefined}>
-  {isC1TPilot ? <FenekC1TPilot lang={lang} product={product} /> : isC1TEPilot ? <FenekC1TEPilot lang={lang} product={product} /> : isC2FTPilot ? <FenekC2FTPilot lang={lang} product={product} /> : isC2TEPilot ? <FenekC2TEPilot lang={lang} product={product} /> : isC2TES1Pilot ? <FenekC2TES1Pilot lang={lang} product={product} /> : isCG1Pilot ? <FenekCG1Pilot lang={lang} product={product} /> : <>
+<Layout lang={lang} title={isC1TPilot ? c1tContent[lang].pageTitle : isC1TEPilot ? c1teCopy[lang].pageTitle : isC2FTPilot ? c2ftCopy[lang].pageTitle : isC2TEPilot ? c2teCopy[lang].pageTitle : isC2TES1Pilot ? c2tes1Copy[lang].pageTitle : isCG1Pilot ? cg1Copy[lang].pageTitle : bondRemaining ? bondRemaining.copy[lang].pageTitle : product.nom + ' — ' + t.label} description={isC1TPilot ? c1tContent[lang].metaDescription : isC1TEPilot ? c1teCopy[lang].metaDescription : isC2FTPilot ? c2ftCopy[lang].metaDescription : isC2TEPilot ? c2teCopy[lang].metaDescription : isC2TES1Pilot ? c2tes1Copy[lang].metaDescription : isCG1Pilot ? cg1Copy[lang].metaDescription : bondRemaining ? bondRemaining.copy[lang].metaDescription : detail.description} ogImage={isC1TPilot || isC1TEPilot || isC2FTPilot || isC2TEPilot || isC2TES1Pilot || isCG1Pilot || bondRemaining ? conceptPackshot(product,'full') : undefined}>
+  {isC1TPilot ? <FenekC1TPilot lang={lang} product={product} /> : isC1TEPilot ? <FenekC1TEPilot lang={lang} product={product} /> : isC2FTPilot ? <FenekC2FTPilot lang={lang} product={product} /> : isC2TEPilot ? <FenekC2TEPilot lang={lang} product={product} /> : isC2TES1Pilot ? <FenekC2TES1Pilot lang={lang} product={product} /> : isCG1Pilot ? <FenekCG1Pilot lang={lang} product={product} /> : bondRemaining ? <FenekBondTechnicalPilot lang={lang} product={product} /> : <>
   <div class="page-head fenek-sheet-head" style={'--range-color:' + rangeColor[product.gamme]}>
     <div class="container">
       <a class="concept-back" href={`/${lang}/catalogue/`}>{t.back}</a>
