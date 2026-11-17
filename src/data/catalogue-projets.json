@@ -148,24 +148,30 @@
     "ordre": 4,
     "contenu": {
       "fr": {
-        "accroche": "Colle carrelage améliorée",
-        "description": "FENEK-BOND C2TE — Colle carrelage améliorée. Gamme : Mortiers, colles et réparation. Domaine : Colles carrelage.",
+        "accroche": "Mortier-colle amélioré C2TE : glissement réduit et temps ouvert prolongé",
+        "description": "FENEK-BOND C2TE : mortier-colle cimentaire pour la pose de carreaux sur des supports préparés. C2 indique une classe d’adhérence améliorée, T un glissement vertical réduit et E l’essai de temps ouvert prolongé selon EN 12004-1. La compatibilité du support et du procédé reste à spécifier pour chaque chantier.",
         "usages": [
-          "Colles carrelage"
+          "Pose de carrelage céramique sur murs et sols préparés.",
+          "Travaux avec besoin d’un temps ouvert prolongé dans les conditions de classement.",
+          "Contrôle de l’adhérence, de la couverture au dos des carreaux et de l’état du support."
         ]
       },
       "ar": {
-        "accroche": "لاصق بلاط محسّن",
-        "description": "FENEK-BOND C2TE — لاصق بلاط محسّن. الفئة: الملاط والمواد اللاصقة والإصلاح. المجال: لواصق البلاط.",
+        "accroche": "ملاط لاصق محسّن C2TE منخفض الانزلاق بزمن مفتوح ممتد",
+        "description": "FENEK-BOND C2TE: ملاط لاصق إسمنتي لتركيب البلاط على أسطح مجهزة. يشير C2 إلى فئة التصاق محسّن، وT إلى انخفاض الانزلاق الرأسي، وE إلى اختبار زمن مفتوح ممتد وفق EN 12004-1. يُحدد نظام التركيب المناسب حسب طبيعة السطح وظروف الورشة.",
         "usages": [
-          "لواصق البلاط"
+          "تركيب بلاط السيراميك على الجدران والأرضيات المهيأة.",
+          "أعمال التبليط التي تحتاج إلى زمن مفتوح ممتد وفق شروط التصنيف.",
+          "فحص تماسك السطح وتغطية ظهر البلاط وجودة اللصق."
         ]
       },
       "en": {
-        "accroche": "Improved tile adhesive",
-        "description": "FENEK-BOND C2TE — Improved tile adhesive. Range: Mortars, adhesives and repair. Category: Tile adhesives.",
+        "accroche": "C2TE improved cementitious tile adhesive with reduced slip and extended open time",
+        "description": "FENEK-BOND C2TE: cementitious tile adhesive for fixing tiles onto prepared backgrounds. C2 indicates improved adhesion class criteria, T reduced vertical slip, and E the extended open-time classification test under EN 12004-1. Substrate and installation method must be selected for each project.",
         "usages": [
-          "Tile adhesives"
+          "Ceramic wall and floor tiling on prepared substrates.",
+          "Installation projects requiring an extended open-time classification.",
+          "Checks on substrate soundness, adhesive transfer and tile-back coverage."
         ]
       }
     },
