@@ -10,8 +10,8 @@ export const c2ftRequirements:ReferenceMetric[]=[
  {key:'c2-eau',kind:'norme',label:{fr:'Adhérence après immersion dans l’eau',ar:'الالتصاق بعد الغمر في الماء',en:'Adhesion after water immersion'},value:'≥ 1,0 N/mm²'},
  {key:'c2-chaleur',kind:'norme',label:{fr:'Adhérence après vieillissement thermique',ar:'الالتصاق بعد التعتيق الحراري',en:'Adhesion after heat ageing'},value:'≥ 1,0 N/mm²'},
  {key:'c2-gel',kind:'norme',label:{fr:'Adhérence après cycles gel/dégel',ar:'الالتصاق بعد دورات التجمد والذوبان',en:'Adhesion after freeze-thaw cycles'},value:'≥ 1,0 N/mm²'},
- {key:'f-precoce',kind:'norme',label:{fr:'Adhérence précoce en traction (F)',ar:'الالتصاق المبكر بالشد (F)',en:'Early tensile adhesion (F)'},value:'≥ 0,5 N/mm² à 6 h au plus'},
- {key:'f-ouvert',kind:'norme',label:{fr:'Adhérence au temps ouvert pour prise rapide',ar:'الالتصاق بعد الزمن المفتوح للفئة سريعة التصلب',en:'Open-time adhesion for fast-setting class'},value:'≥ 0,5 N/mm² après 10 min'},
+ {key:'f-precoce',kind:'norme',label:{fr:'Adhérence précoce en traction (F)',ar:'الالتصاق المبكر بالشد (F)',en:'Early tensile adhesion (F)'},value:'≥ 0,5 N/mm² (≤ 6 h)'},
+ {key:'f-ouvert',kind:'norme',label:{fr:'Adhérence au temps ouvert pour prise rapide',ar:'الالتصاق بعد الزمن المفتوح للفئة سريعة التصلب',en:'Open-time adhesion for fast-setting class'},value:'≥ 0,5 N/mm² (10 min)'},
  {key:'t-glissement',kind:'norme',label:{fr:'Glissement vertical réduit (T)',ar:'انزلاق رأسي منخفض (T)',en:'Reduced vertical slip (T)'},value:'≤ 0,5 mm'},
 ];
 
