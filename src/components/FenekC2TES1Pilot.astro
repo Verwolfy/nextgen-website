@@ -12,7 +12,7 @@ const {lang,product}=Astro.props;
 if(product.code!=='BOND-C2TE-S1')throw Error('C2TE-S1 pilot cannot render other FENEK references');
 const t=c2tes1Copy[lang];
 const image=conceptPackshot(product,'full');
-const pdfHref=`/docs/fiches/fenek-bond-c2tes1-${lang}.pdf`;
+const pdfHref=`/docs/fiches/fenek-bond-c2te-s1-${lang}.pdf`;
 const hasPublishedPdf=existsSync(join(process.cwd(),'public',pdfHref.slice(1)));
 const emailHref='mailto:'+brand.email+'?subject='+encodeURIComponent(t.requestLabel+' — '+product.nom);
 const related=['BOND-C2TE','BOND-C2TE-S1','BOND-C2FT'].map(code=>{
