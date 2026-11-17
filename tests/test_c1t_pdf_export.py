@@ -14,6 +14,7 @@ SPEC.loader.exec_module(MODULE)
 class C1TPdfExportTests(unittest.TestCase):
     def test_scope_is_only_three_pilot_locales(self):
         self.assertEqual(MODULE.LANGUAGES, ("fr", "ar", "en"))
+        self.assertEqual(MODULE.PILOT_SLUGS, ("fenek-bond-c1t", "fenek-bond-c1te"))
 
     def test_missing_build_refused_without_network(self):
         with tempfile.TemporaryDirectory() as root:
