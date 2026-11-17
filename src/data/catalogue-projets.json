@@ -101,24 +101,30 @@
     "ordre": 3,
     "contenu": {
       "fr": {
-        "accroche": "Colle carrelage améliorée prise rapide",
-        "description": "FENEK-BOND C2FT — Colle carrelage améliorée prise rapide. Gamme : Mortiers, colles et réparation. Domaine : Colles carrelage.",
+        "accroche": "Mortier-colle C2FT amélioré, à prise rapide et glissement réduit",
+        "description": "FENEK-BOND C2FT : mortier-colle cimentaire désigné C2FT pour des travaux de carrelage sur supports préparés. C2 correspond à une classe d’adhérence améliorée, F à la prise rapide et T au glissement réduit selon EN 12004-1.",
         "usages": [
-          "Colles carrelage"
+          "Pose de carrelage céramique sur supports minéraux cohésifs.",
+          "Travaux de carrelage nécessitant une organisation de chantier à prise rapide.",
+          "Contrôle du support, du temps de pose et du transfert de colle."
         ]
       },
       "ar": {
-        "accroche": "لاصق بلاط محسّن سريع التصلب",
-        "description": "FENEK-BOND C2FT — لاصق بلاط محسّن سريع التصلب. الفئة: الملاط والمواد اللاصقة والإصلاح. المجال: لواصق البلاط.",
+        "accroche": "ملاط لاصق محسّن سريع التصلب ومنخفض الانزلاق من الفئة C2FT",
+        "description": "FENEK-BOND C2FT هو ملاط لاصق إسمنتي يحمل الرمز C2FT لتركيب البلاط على الأسطح المهيأة. يشير C2 إلى فئة التصاق محسن، وF إلى التصلب السريع، وT إلى انخفاض الانزلاق الرأسي وفق EN 12004-1.",
         "usages": [
-          "لواصق البلاط"
+          "تركيب بلاط السيراميك على أسطح إسمنتية متماسكة.",
+          "أعمال بلاط تتطلب تسلسل تنفيذ سريعاً.",
+          "فحص السطح ومدة التركيب وتغطية ظهر البلاطة باللاصق."
         ]
       },
       "en": {
-        "accroche": "Improved rapid-setting tile adhesive",
-        "description": "FENEK-BOND C2FT — Improved rapid-setting tile adhesive. Range: Mortars, adhesives and repair. Category: Tile adhesives.",
+        "accroche": "C2FT improved, rapid-setting and reduced-slip tile adhesive",
+        "description": "FENEK-BOND C2FT: cementitious tile adhesive designated C2FT for tiling over prepared substrates. C2 denotes improved adhesion class criteria, F fast setting and T reduced vertical slip under EN 12004-1.",
         "usages": [
-          "Tile adhesives"
+          "Fixing ceramic tiles onto sound mineral backgrounds.",
+          "Tiling workflows that require rapid sequencing.",
+          "Checking substrate suitability, open time and adhesive transfer."
         ]
       }
     },
