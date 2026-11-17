@@ -184,6 +184,55 @@ def check_lot129_v3_c2ft(browser, base: str) -> None:
                 page.close()
 
 
+def check_lot131_v3_c2te(browser, base: str) -> None:
+    """C2TE now serves its OWN six complete source illustrations and captions."""
+    sprite = "/images/illustrations/application-upgraded/fenek-bond-c2te-steps.webp"
+    display_sprite = ENHANCED_BY_CODE["BOND-C2TE"]
+    for lang in ("fr", "ar", "en"):
+        for width in (390, 1280):
+            page = browser.new_page(viewport={"width": width, "height": 850})
+            try:
+                page.goto(f"{base}/{lang}/documentation/fenek-bond-c2te/", wait_until="domcontentloaded")
+                guide=page.locator('section[data-reference="BOND-C2TE"][data-application-visual]')
+                assert guide.count()==1,(lang,width,"C2TE source reference mismatch")
+                assert page.locator("[data-c2te-pilot]").count()==1,(lang,width)
+                assert page.locator(".c2te-table").count()==4,(lang,width)
+                assert page.locator('[data-c2te-source-type="norme"]').count()==7,(lang,width)
+                assert page.locator('[data-c2te-source-type="famille"]').count()==6,(lang,width)
+                assert page.locator(".fenek-doc-accordion").count()==0,(lang,width)
+                assert page.locator(".fenek-c2te-print").count()==1,(lang,width)
+                assert page.locator("button[data-print-market-sheet]").count()==1,(lang,width)
+                assert page.locator("meta[name='robots']").get_attribute("content")=="noindex,nofollow"
+                assert "Les seuils de classe et les plages comparatives" not in page.content()
+                assert guide.get_attribute("data-v3-sprite")==sprite,(lang,width,"cross-reference")
+                assert guide.locator(".is-caption-cropped").count()==0,(lang,width,"source captions must be visible")
+                panels=guide.locator("[data-v3-step]")
+                assert [x.get_attribute("data-v3-step") for x in panels.all()]==[str(i) for i in range(1,7)]
+                fourth={"fr":"Laisser reposer puis remalaxer",
+                        "en":"Allow to rest and remix if specified",
+                        "ar":"اترك الخليط يرتاح ثم أعد الخلط"}[lang]
+                assert fourth in guide.inner_text(),(lang,width,"C2TE step 04 instructions")
+                first=panels.nth(0);first.scroll_into_view_if_needed()
+                bg=first.evaluate("(el)=>getComputedStyle(el).backgroundImage")
+                assert display_sprite in bg and "fenek-bond-c2ft-steps.webp" not in bg,(lang,width)
+                assert abs(first.bounding_box()["width"]/first.bounding_box()["height"]-1.5)<=.04,(lang,width)
+                assert page.evaluate("document.documentElement.scrollWidth-innerWidth")<=4,(lang,width)
+                if width==1280:
+                    page.emulate_media(media="print")
+                    assert page.locator(".fenek-c2te-print").is_visible(),lang
+                    assert not page.locator(".fenek-product-page").is_visible(),lang
+                    SHOTS.mkdir(parents=True,exist_ok=True)
+                    target=SHOTS/("fenek-bond-c2te-branded-print-"+lang+".pdf")
+                    pdf=page.pdf(path=str(target),print_background=True,prefer_css_page_size=True)
+                    assert pdf.startswith(b"%PDF") and len(pdf)>10000,(lang,"invalid C2TE PDF")
+                    page.emulate_media(media="screen")
+                if lang=="fr" and width==390:
+                    SHOTS.mkdir(parents=True,exist_ok=True)
+                    guide.screenshot(path=str(SHOTS/"lot131-c2te-v3-mobile-fr.png"))
+            finally:
+                page.close()
+
+
 def check_lot130_all_v3(browser, base: str) -> None:
     """Real mobile browser: 50 exact product media, 300 cards, no cross-reference bleed."""
     import json
@@ -199,7 +248,7 @@ def check_lot130_all_v3(browser, base: str) -> None:
             assert response and response.status==200,(code,"missing page")
             # The C1T pilot omits internal editorial status from its public markup.
             # All other references continue to require the existing guarded status.
-            selector=(f'section[data-reference="{code}"][data-application-visual]' if code in ("BOND-C1T","BOND-C1TE","BOND-C2FT")
+            selector=(f'section[data-reference="{code}"][data-application-visual]' if code in ("BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE")
                       else f'section[data-reference="{code}"][data-v3-reviewed="BROUILLON"]')
             guide=page.locator(selector)
             assert guide.count()==1,(code,"missing or mismatched guide")
@@ -214,7 +263,7 @@ def check_lot130_all_v3(browser, base: str) -> None:
                 css=panel.evaluate("(el)=>getComputedStyle(el).backgroundImage")
                 assert ENHANCED_BY_CODE.get(code,sprite) in css,(code,i,"illustration from wrong product")
                 label=panel.get_attribute("aria-label") or ""
-                assert mapping[code]["steps"][i]["title"]["fr"] in label or code in ("BOND-C1T","BOND-C1TE","BOND-C2FT"),(code,i,"wrong legend")
+                assert mapping[code]["steps"][i]["title"]["fr"] in label or code in ("BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE"),(code,i,"wrong legend")
             assert page.evaluate("document.documentElement.scrollWidth-innerWidth")<=4,(code,"mobile overflow")
         finally:
             page.close()
@@ -705,6 +754,7 @@ def check() -> None:
             check_lot127_v3_c1t(browser, base)
             check_lot128_v3_c1te(browser, base)
             check_lot129_v3_c2ft(browser, base)
+            check_lot131_v3_c2te(browser, base)
             check_lot130_all_v3(browser, base)
             check_localized_skip_keyboard(browser, base)
             for lang in ("fr", "ar", "en"):
