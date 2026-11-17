@@ -18,10 +18,10 @@ export const c2teRequirements:ReferenceMetric[]=[
 export const c2teFamilyReferences:ReferenceMetric[]=[
  {key:'consommation-peigne',kind:'famille',label:{fr:'Consommation par surface selon peigne et épaisseur',ar:'استهلاك اللاصق حسب حجم المشط وسماكة الطبقة',en:'Consumption by trowel notch and bed thickness'},value:'≈ 2–5,25 kg/m²'},
  {key:'eau',kind:'famille',label:{fr:'Eau des équivalents (pour 25 kg de poudre)',ar:'ماء الخلط في المنتجات المماثلة (لكل 25 كغ)',en:'Comparable mixing water (per 25 kg of powder)'},value:'≈ 5,5–7,8 L / 25 kg'},
- {key:'temps-ouvert',kind:'famille',label:{fr:'Temps ouvert annoncé pour produits de même classe',ar:'الزمن المفتوح المعلن في منتجات الفئة',en:'Declared open time of comparable adhesives'},value:'≈ 30 min ou plus'},
+ {key:'temps-ouvert',kind:'famille',label:{fr:'Temps ouvert annoncé pour produits de même classe',ar:'الزمن المفتوح المعلن في منتجات الفئة',en:'Declared open time of comparable adhesives'},value:'≥ 30 min'},
  {key:'ajustabilite',kind:'famille',label:{fr:'Temps de repositionnement observé',ar:'مدة تعديل وضعية البلاط في المنتجات المماثلة',en:'Adjustment time among comparables'},value:'≈ 25–45 min'},
  {key:'jointoiement-sol',kind:'famille',label:{fr:'Délai de jointoiement au sol annoncé',ar:'المدة المعلنة قبل ملء فواصل الأرضيات',en:'Declared floor grouting time'},value:'≈ 24–36 h'},
- {key:'vie-en-pot',kind:'famille',label:{fr:'Durée pratique à températures tropicales (deux références)',ar:'مدة استعمال الخليط في مناخ حار (منتجان مماثلان)',en:'Pot life in warm conditions (two comparables)'},value:'≈ 60–180 min'},
+ {key:'vie-en-pot',kind:'famille',label:{fr:'Durée pratique à températures tropicales (deux références)',ar:'مدة استعمال الخليط في مناخ حار (منتجان مماثلان)',en:'Pot life in warm conditions (two comparables)'},value:'≈ 60 min (30 °C) / ≥ 180 min (27 °C)'},
 ];
 
 type Copy={
