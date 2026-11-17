@@ -20,7 +20,7 @@ test('C1TE has its own FR/AR/EN product sheet, no template dilution',()=>{
   assert.match(component,/productWhatsappHref/);
   assert.match(component,/c1teFamilyReferences\.filter/);
   assert.match(component,/data-reference/);
-  assert.doesNotMatch(component,/t\\.important|fenek-document-footer c1te-reference-note/);
+  assert.doesNotMatch(component,/t[.]important|fenek-document-footer c1te-reference-note/);
   assert.doesNotMatch(c1te,/important:'/);
   assert.doesNotMatch(component,/Sika|Mapei|Weber|Bostik|BROUILLON|présentation provisoire/i);
   for(const language of ['fr:','ar:','en:']) assert.ok(c1te.includes(language),language);
