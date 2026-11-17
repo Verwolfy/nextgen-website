@@ -110,6 +110,19 @@ def check_lot128_v3_c1te(browser, base: str) -> None:
                 assert "fenek-bond-c1t-steps.webp" not in image_css, (lang, width)
                 assert image.bounding_box()["width"] >= (240 if width==390 else 150), (lang,width)
                 assert page.evaluate("document.documentElement.scrollWidth - innerWidth") <= 4, (lang,width)
+                if width==1280:
+                    # Generate actual Astro-branded A4 C1TE PDFs as private CI
+                    # artifacts for language and laboratory review, not public FT/FDS.
+                    page.emulate_media(media="print")
+                    assert page.locator(".fenek-c1te-print").is_visible(), lang
+                    assert not page.locator(".fenek-product-page").is_visible(), lang
+                    SHOTS.mkdir(parents=True,exist_ok=True)
+                    target=SHOTS/("fenek-bond-c1te-branded-print-"+lang+".pdf")
+                    pdf=page.pdf(path=str(target),print_background=True,prefer_css_page_size=True)
+                    assert pdf.startswith(b"%PDF") and len(pdf)>10000,(lang,"invalid C1TE PDF")
+                    pdf_pages=len(re.findall(rb"/Type\\s*/Page\\b",pdf))
+                    assert 1 <= pdf_pages <= 4, (lang,pdf_pages)
+                    page.emulate_media(media="screen")
                 if lang=="fr" and width==390:
                     SHOTS.mkdir(parents=True,exist_ok=True)
                     guide.screenshot(path=str(SHOTS/"lot128-c1te-v3-mobile-fr.png"))
