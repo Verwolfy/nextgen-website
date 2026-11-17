@@ -59,7 +59,8 @@ def export_pdfs(dist: Path, output: Path) -> list[Path]:
             if not file.is_file():
                 raise RuntimeError(f"Missing built pilot sheet: {file}")
             markup = file.read_text(encoding="utf-8")
-            if f'data-{suffix}-pilot' not in markup or f'fenek-{suffix}-print' not in markup:
+            marker = "c2tes1" if slug == "fenek-bond-c2te-s1" else suffix
+            if f'data-{marker}-pilot' not in markup or f'fenek-{marker}-print' not in markup:
                 raise RuntimeError(f"Expected {suffix.upper()} presentation structure missing: {lang}")
             target = output / f"{slug}-{lang}.pdf"
             HTML(string=markup, base_url=ORIGIN + "/", url_fetcher=local_fetcher(dist)).write_pdf(target)
