@@ -84,8 +84,16 @@ def check_lot128_v3_c1te(browser, base: str) -> None:
             page = browser.new_page(viewport={"width": width, "height": 850})
             try:
                 page.goto(f"{base}/{lang}/documentation/fenek-bond-c1te/", wait_until="domcontentloaded")
-                guide = page.locator('section[data-reference="BOND-C1TE"][data-v3-reviewed="BROUILLON"]')
+                guide = page.locator('section[data-reference="BOND-C1TE"][data-application-visual]')
                 assert guide.count() == 1, (lang, width, "C1TE review mapping")
+                assert page.locator("[data-c1te-pilot]").count() == 1, (lang, width)
+                assert page.locator(".c1te-table").count() == 4, (lang, width)
+                assert page.locator('[data-c1te-source-type="norme"]').count() == 7, (lang, width)
+                assert page.locator('[data-c1te-source-type="famille"]').count() == 5, (lang, width)
+                assert page.locator(".fenek-doc-accordion").count() == 0, (lang, width)
+                assert page.locator(".fenek-c1te-print").count() == 1, (lang, width)
+                assert page.locator("meta[name='robots']").get_attribute("content") == "noindex,nofollow"
+                assert page.locator("button[data-print-market-sheet]").count() == 1, (lang, width)
                 panels = guide.locator("[data-v3-step]")
                 assert panels.count() == 6
                 assert [panel.get_attribute("data-v3-step") for panel in panels.all()] == [
@@ -160,7 +168,7 @@ def check_lot130_all_v3(browser, base: str) -> None:
             assert response and response.status==200,(code,"missing page")
             # The C1T pilot omits internal editorial status from its public markup.
             # All other references continue to require the existing guarded status.
-            selector=(f'section[data-reference="{code}"][data-application-visual]' if code=="BOND-C1T"
+            selector=(f'section[data-reference="{code}"][data-application-visual]' if code in ("BOND-C1T","BOND-C1TE")
                       else f'section[data-reference="{code}"][data-v3-reviewed="BROUILLON"]')
             guide=page.locator(selector)
             assert guide.count()==1,(code,"missing or mismatched guide")
