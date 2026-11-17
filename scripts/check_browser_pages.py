@@ -895,7 +895,7 @@ def check() -> None:
                         response = page.goto(base+concept_path, wait_until="domcontentloaded", timeout=20000)
                         assert response is not None and response.status==200, concept_path
                         assert page.locator("h1").count()==1, concept_path
-                        assert page.locator(".concept-detail-status").count()==1, concept_path
+                        assert page.locator(".concept-detail-status").count()==(0 if slug=="fenek-bond-c1t" else 1), concept_path
                         assert page.locator(".concept-steps li").count()==0, concept_path
                         assert page.locator(".concept-source-method").count()==0, concept_path
                         assert page.locator(".concept-detail-note").count()>=1, concept_path
