@@ -16,9 +16,10 @@
 | Grupo Puma — Morcemdur FT | OC CSIII W2; rendement 1,6 kg/m² par mm | [Source fabricant](https://www.grupopuma.com/fr-FR/produits/voir/morcemdur-ft-fr-fr) |
 | Grupo Puma — Morcemdur Piedra | OC CSIII W2; finition projetée | [Source fabricant](https://www.grupopuma.com/fr-FR/produits/voir/morcemdur-piedra-oc-csiii-w2-fr-fr) |
 | PRB — TRADICLAIR PR | Type OC3, catégorie CSIII, comparable fonctionnel (distinct) | [Source fabricant](https://www.cmesmat.fr/media/catalog/product/attributes/7/s/7sAl7oLpmh8ON14Ve8pHXybcF32MVFZ5cYrGTn_bTsV8rKYVxVPUO9vqXbzGzSnjaAoQUIhuewTy0Jxns5cZxw%3D%3D.pdf) |
-| Saint-Gobain Weber — enduits minéraux | Comparaison de gamme, sans attribution de CSIII à un produit particulier | [Source fabricant](https://www.fr.weber/enduits-mineraux-epais-pour-le-bati-neuf) |
+| Saint-Gobain Weber — weber.procalit F | Enduit OC de résistance CSIII et absorption W2 | [FT fabricant EN 998-1](https://www.fr.weber/files/fr/2017-06/fiche_imprimable_weber_procalit_F.pdf) |
+| Parexlanko — PAREXI | Enduit monocouche OC CSIII Wc2, fiche fabricant dans le dossier des systèmes façade | [Documentation fabricant](https://www.parexlanko.com/uploads/resources/Wed%20Mar%2005%202025%2013%3A44%3A42%20GMT%2B0100%20%28Central%20European%20Standard%20Time%29-DTG_13fev2023_BD.pdf) |
 
-Certaines références proviennent d'un même fabricant ; il ne faut pas compter artificiellement trois fabricants indépendants.
+La liste comprend désormais trois fabricants indépendants étudiés : Grupo Puma, Saint-Gobain Weber et Parexlanko. Les trois Morcemdur ne représentent qu’un seul fabricant.
 
 Les chiffres provenant de produits concurrents ne sont ni des résultats FENEK, ni des proportions de gâchage à appliquer à FENEK. Les conditions d'utilisation, FT, FDS et dossiers de conformité propres à FENEK restent sous validation du fabricant/laboratoire.
 

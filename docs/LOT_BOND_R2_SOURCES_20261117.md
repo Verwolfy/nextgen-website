@@ -15,10 +15,10 @@
 | Fabricant et référence | Observation documentaire | Source |
 | --- | --- | --- |
 | Sika — MonoTop-2020 | Classe R2 EN 1504-3 | [Source fabricant](https://fra.sika.com/fr/bricolage/famille-produits/betons-mortiers/mortiers-de-reparation/sika-monotop-2020.html) |
-| Mapei — Planitop Rasa & Ripara Zero | Classe R2, thixotrope | [Source fabricant](https://www.mapei.com/it/en/projects/detail/residenza-grand-hotel-rimini-palazzina-milano-5935) |
-| SikaEmaco — N 5200 | Classe R2; deuxième produit du même fabricant actuel | [Source fabricant](https://gbr.sika.com/en/construction/concrete-repair/concrete-repair-mortars/cementitious-repairmortars/sikaemaco-n-5200.html) |
+| Mapei — Planitop Rasa & Ripara Zero | Classe R2, thixotrope | [DoP fabricant EN 1504-3 R2](https://www.mapei.com/docs/librariesprovider2/products-documents/3_ise_ce-dop_1295_en-1504-3_it_0_21a5c01f16a24f6fbc15a56971ae2917.pdf?sfvrsn=e24f5027_0) |
+| Torggler — Restauro R2 | Mortier de réparation R2 selon EN 1504-3, fibré et thixotrope | [Source fabricant](https://www.torggler.com/int/en/products/restauro/) |
 
-Certaines références proviennent d'un même fabricant ; il ne faut pas compter artificiellement trois fabricants indépendants.
+Les trois fabricants étudiés sont distincts : Sika, Mapei et Torggler.
 
 Les chiffres provenant de produits concurrents ne sont ni des résultats FENEK, ni des proportions de gâchage à appliquer à FENEK. Les conditions d'utilisation, FT, FDS et dossiers de conformité propres à FENEK restent sous validation du fabricant/laboratoire.
 
