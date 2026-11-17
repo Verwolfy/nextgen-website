@@ -242,24 +242,30 @@
     "ordre": 6,
     "contenu": {
       "fr": {
-        "accroche": "Joint de carrelage standard",
-        "description": "FENEK-BOND CG1 — Joint de carrelage standard. Gamme : Mortiers, colles et réparation. Domaine : Joints de carrelage.",
+        "accroche": "Mortier de jointoiement cimentaire CG1 pour joints de carrelage",
+        "description": "FENEK-BOND CG1 : référence de mortier de jointoiement cimentaire standard pour remplir les joints entre carreaux céramiques. La classe CG1 renvoie aux exigences fondamentales EN 13888-1:2022 sur abrasion, résistances, retrait et absorption d’eau ; les valeurs chiffrées de classe ne sont pas des essais de la formulation FENEK.",
         "usages": [
-          "Joints de carrelage"
+          "Jointoiement après durcissement suffisant de la colle à carrelage.",
+          "Finitions murales et au sol suivant largeur et exposition des joints.",
+          "Nettoyage contrôlé et préservation des joints de mouvement."
         ]
       },
       "ar": {
-        "accroche": "مونة فواصل بلاط قياسية",
-        "description": "FENEK-BOND CG1 — مونة فواصل بلاط قياسية. الفئة: الملاط والمواد اللاصقة والإصلاح. المجال: مونة فواصل البلاط.",
+        "accroche": "مونة إسمنتية عادية من الفئة CG1 لملء فواصل البلاط",
+        "description": "FENEK-BOND CG1 مرجع لمونة إسمنتية لملء الفواصل بين بلاطات السيراميك. تشير CG1 إلى المتطلبات الأساسية وفق EN 13888-1:2022 مثل مقاومة البري والضغط والانحناء والانكماش وامتصاص الماء؛ ولا تمثل الحدود القياسية نتائج اختبارات خاصة بتركيبة FENEK.",
         "usages": [
-          "مونة فواصل البلاط"
+          "تعبئة الفواصل بعد تصلب لاصق البلاط بالقدر الكافي.",
+          "تشطيب فواصل الجدران والأرضيات حسب عرضها وظروف التعرض.",
+          "تنظيف منضبط مع الحفاظ على فواصل التمدد والحركة."
         ]
       },
       "en": {
-        "accroche": "Standard tile grout",
-        "description": "FENEK-BOND CG1 — Standard tile grout. Range: Mortars, adhesives and repair. Category: Tile grouts.",
+        "accroche": "CG1 standard cementitious grout for ceramic tile joints",
+        "description": "FENEK-BOND CG1 is a reference for normal-setting cementitious grout used to fill ceramic tile joints. CG1 denotes the basic EN 13888-1:2022 performance requirements for abrasion, strength, shrinkage and absorption; classification thresholds do not represent FENEK formulation test results.",
         "usages": [
-          "Tile grouts"
+          "Fill tile joints after adequate setting-adhesive curing.",
+          "Wall and floor finish joints subject to suitable width and exposure.",
+          "Controlled cleaning while preserving movement and expansion joints."
         ]
       }
     },

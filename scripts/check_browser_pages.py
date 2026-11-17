@@ -233,6 +233,28 @@ def check_lot131_v3_c2te(browser, base: str) -> None:
                 page.close()
 
 
+
+def check_lot133_v3_cg1(browser, base: str) -> None:
+    """CG1 must be grout-focused, accessible, printable and localized."""
+    for lang in ("fr", "ar", "en"):
+        with browser.new_page(viewport={"width": 1280, "height": 900}) as page:
+            page.goto(f"{base}/{lang}/documentation/fenek-bond-cg1/", wait_until="domcontentloaded")
+            assert page.locator("[data-cg1-pilot]").count() == 1, lang
+            assert page.locator('[data-cg1-source-type="norme"]').count() == 8, lang
+            assert page.locator('[data-cg1-source-type="famille"]').count() == 6, lang
+            assert page.locator(".cg1-table").count() == 4, lang
+            assert page.locator(".fenek-cg1-print").count() == 1, lang
+            assert page.locator('section[data-reference="BOND-CG1"][data-application-visual]').count() == 1, lang
+            assert "EN 13888-1:2022" in page.locator("[data-cg1-pilot]").inner_text(), lang
+            if lang == "ar":
+                assert page.locator('html').get_attribute("dir") == "rtl"
+            page.emulate_media(media="print")
+            assert page.locator(".fenek-cg1-print").is_visible(), lang
+            target = SHOTS / f"fenek-bond-cg1-branded-print-{lang}.pdf"
+            pdf = page.pdf(path=str(target), print_background=True, prefer_css_page_size=True)
+            assert pdf.startswith(b"%PDF") and len(pdf) > 10000, (lang, "invalid CG1 PDF")
+            assert 1 <= len(re.findall(rb"/Type\\s*/Page\\b", pdf)) <= 5, lang
+
 def check_lot132_v3_c2tes1(browser, base: str) -> None:
     """C2TE-S1 now serves its OWN six complete source illustrations and captions."""
     sprite = "/images/illustrations/application-upgraded/fenek-bond-c2te-s1-steps.webp"
@@ -805,6 +827,7 @@ def check() -> None:
             check_lot129_v3_c2ft(browser, base)
             check_lot131_v3_c2te(browser, base)
             check_lot132_v3_c2tes1(browser, base)
+            check_lot133_v3_cg1(browser, base)
             check_lot130_all_v3(browser, base)
             check_localized_skip_keyboard(browser, base)
             for lang in ("fr", "ar", "en"):

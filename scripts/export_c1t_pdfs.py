@@ -17,7 +17,7 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = "https://nextgen-buildingsolutions.com"
 LANGUAGES = ("fr", "ar", "en")
-PILOT_SLUGS = ("fenek-bond-c1t", "fenek-bond-c1te", "fenek-bond-c2ft", "fenek-bond-c2te", "fenek-bond-c2te-s1")
+PILOT_SLUGS = ("fenek-bond-c1t", "fenek-bond-c1te", "fenek-bond-c2ft", "fenek-bond-c2te", "fenek-bond-c2te-s1", "fenek-bond-cg1")
 
 
 def local_fetcher(dist: Path):
