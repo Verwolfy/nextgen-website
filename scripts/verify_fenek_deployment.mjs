@@ -171,6 +171,7 @@ must(legacyChecked===124,'Expected 124 checked old catalogue product URLs');
 // The no-zoom decision applies to the whole generated website, not just guides.
 const retiredPageTokens=[
   'Ouvrir en haute résolution','Open in high resolution',
+  'Open full-resolution illustration','فتح الرسم بالحجم الكامل',
   'fenek-v3-detail-link','fullSizeC1T','fullResolution',
   '/images/illustrations/application-premium/',
   '/images/illustrations/application/v3/fenek-bond-c1t/',

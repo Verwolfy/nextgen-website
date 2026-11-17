@@ -49,6 +49,7 @@ class IllustrationLayoutTests(unittest.TestCase):
         reviewed=(ROOT/"src/data/fenek-v3-reviewed.ts").read_text("utf-8")
         for source in (guide,reviewed):
             for value in ("fenek-v3-detail-link","fullSizeC1T","fullResolution",
+                          "Open full-resolution illustration","فتح الرسم بالحجم الكامل",
                           "application/v3/fenek-bond-c1t"):
                 self.assertNotIn(value,source)
         for old in ("FenekProofPartialDraft.astro","FenekAcrRfDraftPreview.astro"):
@@ -66,6 +67,53 @@ class IllustrationLayoutTests(unittest.TestCase):
                      "/images/illustrations/application-premium/:splat"):
             self.assertNotIn(dest,redirects)
 
+
+    def test_all_legacy_image_redirects_point_to_real_assets(self):
+        """Validate literal targets and the old URLs for all 50 current products."""
+        redirects=(ROOT/"public/_redirects").read_text(encoding="utf-8")
+        rules=[]
+        seen=set()
+        for line in redirects.splitlines():
+            if not line.strip() or line.lstrip().startswith("#"):
+                continue
+            parts=line.split()
+            self.assertEqual(len(parts),3,line)
+            source,target,status=parts
+            self.assertEqual(status,"301",line)
+            self.assertNotIn(source,seen,source)
+            seen.add(source)
+            if target.endswith("/:splat"):
+                self.assertTrue((ROOT/"public"/target[1:-7]).is_dir(),target)
+            elif target.startswith(("/images/","/videos/")):
+                self.assertTrue((ROOT/"public"/target.lstrip("/")).is_file(),target)
+            rules.append((source,target))
+
+        def redirected(url):
+            for source,target in rules:
+                if url==source:
+                    return target
+                if source.endswith("/*") and url.startswith(source[:-1]):
+                    return target.replace(":splat",url[len(source)-1:])
+            return None
+
+        products=json.loads((ROOT/"src/data/catalogue-projets.json").read_text(encoding="utf-8"))
+        count=0
+        for product in products:
+            base=("fenek-proof-cm-o2p-sac-20kg-v2"
+                  if product["code"]=="PROOF-CM-O2P" else product["slug"])
+            names=[base+".webp"]
+            if product["gamme"]=="flow":
+                names.append(base+"-card.webp")
+            for name in names:
+                for original_folder in ("/images/catalogue-projects/",
+                                        "/images/illustrations/catalogue-projects/"):
+                    source=original_folder+name
+                    destination=redirected(source)
+                    self.assertIsNotNone(destination,source)
+                    self.assertTrue((ROOT/"public"/destination.lstrip("/")).is_file(),
+                                    source+" -> "+destination)
+                    count+=1
+        self.assertEqual(count,124)
 
     def test_retired_v3_redirects_and_site_wide_zoom_are_absent(self):
         redirects=(ROOT/"public/_redirects").read_text(encoding="utf-8")
