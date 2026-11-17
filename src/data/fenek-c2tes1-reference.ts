@@ -58,7 +58,7 @@ export const c2tes1Copy:Record<Lang,Copy>={
   documentsTitle:'Documentation et devis',downloadLabel:'Télécharger la fiche informative PDF',printLabel:'Imprimer / enregistrer en PDF',
   requestLabel:'Demander la fiche technique et la FDS',quoteLabel:'Demander un devis',whatsappLabel:'Contacter par WhatsApp',
   relatedTitle:'Produits associés',comparisonTitle:'Repères de classement dans la gamme BOND',
-  comparisonNote:'C2FT, C2TE et C2TE-S1-S1 combinent des caractéristiques normatives distinctes.',linkLabel:'Consulter la fiche'
+  comparisonNote:'C2FT, C2TE et C2TE-S1 combinent des caractéristiques normatives distinctes.',linkLabel:'Consulter la fiche'
  },
  ar:{
   pageTitle:'FENEK-BOND C2TE-S1 | لاصق بلاط محسن بزمن مفتوح ممتد',
@@ -81,16 +81,16 @@ export const c2tes1Copy:Record<Lang,Copy>={
   documentsTitle:'الوثائق وطلب الأسعار',downloadLabel:'تنزيل بطاقة المنتج PDF',printLabel:'طباعة البطاقة أو حفظها PDF',
   requestLabel:'طلب النشرة الفنية وصحيفة بيانات السلامة',quoteLabel:'طلب عرض سعر',whatsappLabel:'التواصل عبر واتساب',
   relatedTitle:'منتجات مرتبطة',comparisonTitle:'مقارنة رموز فئات لواصق BOND',
-  comparisonNote:'تمثل C2FT وC2TE وC2TE-S1-S1 مجموعات مختلفة من خصائص التصنيف.',linkLabel:'عرض البطاقة'
+  comparisonNote:'تمثل C2FT وC2TE وC2TE-S1 مجموعات مختلفة من خصائص التصنيف.',linkLabel:'عرض البطاقة'
  },
  en:{
-  pageTitle:'FENEK-BOND C2TE-S1 | Improved tile adhesive with extended open time',
-  metaDescription:'FENEK-BOND C2TE-S1: improved cementitious adhesive class with reduced slip and extended open time. EN 12004-1 criteria, substrate preparation, application and documents.',
+  pageTitle:'FENEK-BOND C2TE-S1 | Improved deformable tile adhesive',
+  metaDescription:'FENEK-BOND C2TE-S1: improved cementitious adhesive with reduced slip, extended open time and S1 deformability. EN 12004-1 criteria, substrate preparation, application and documents.',
   sheetTitle:'Product sheet — FENEK-BOND C2TE-S1',
-  lead:'Cementitious tile adhesive designated C2TE-S1, combining improved adhesion class, reduced vertical slip and extended open-time classification for ceramic tiling.',
+  lead:'Cementitious tile adhesive designated C2TE-S1, combining improved adhesion, reduced slip, extended open time and S1 deformability in its class description.',
   nav:['Overview','Product details','Application','Documents'],
   uses:['Ceramic and porcelain tiling on walls and floors subject to compatible installation design.','Jobs requiring an appropriate positioning window for the tile format selected.','Indoor and outdoor or wet-area use only where the specified system is suitable.'],
-  benefits:['C2: improved adhesion class thresholds of 1.0 N/mm².','T: reduced slip under standard test conditions.','E: extended open-time classification test at 30 minutes.'],
+  benefits:['C2: improved adhesion class thresholds of 1.0 N/mm².','T: reduced slip under standard test conditions.','E: extended open-time test at 30 min; S1: transverse deformation from 2.5 up to but below 5 mm.'],
   substrates:['Clean, stable, properly cured concrete with checked flatness.','Sound prepared cement screeds and renders with appropriate moisture levels.','Existing tiles, deformable bases and high-moisture areas call for separate system assessment.'],
   usesTitle:'Potential applications by system',substratesTitle:'Substrates to prepare',identityTitle:'Product identification',
   designationLabel:'Designation',referenceLabel:'Catalogue code',rangeLabel:'Range',formatLabel:'Catalogue packaging',classLabel:'Class appearing in designation',
@@ -104,6 +104,6 @@ export const c2tes1Copy:Record<Lang,Copy>={
   documentsTitle:'Documents and quotations',downloadLabel:'Download informative product PDF',printLabel:'Print / save as PDF',
   requestLabel:'Request technical and safety data sheets',quoteLabel:'Request quotation',whatsappLabel:'Contact via WhatsApp',
   relatedTitle:'Related products',comparisonTitle:'BOND adhesive class comparison',
-  comparisonNote:'C2FT, C2TE-S1 and C2TE-S1-S1 have different combinations of classification properties.',linkLabel:'View sheet'
+  comparisonNote:'C2FT, C2TE and C2TE-S1 have different combinations of classification properties.',linkLabel:'View sheet'
  }
 };
