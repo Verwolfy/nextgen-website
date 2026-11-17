@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export the C1T and C1TE trilingual presentation sheets from the exact built Astro pages.
+"""Export the C1T, C1TE and C2FT trilingual presentation sheets from the exact built Astro pages.
 
 This produces product INFORMATION sheets, not laboratory-approved TDS or SDS.
 Usage:
@@ -17,7 +17,7 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = "https://nextgen-buildingsolutions.com"
 LANGUAGES = ("fr", "ar", "en")
-PILOT_SLUGS = ("fenek-bond-c1t", "fenek-bond-c1te")
+PILOT_SLUGS = ("fenek-bond-c1t", "fenek-bond-c1te", "fenek-bond-c2ft")
 
 
 def local_fetcher(dist: Path):
