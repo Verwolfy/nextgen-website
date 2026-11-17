@@ -195,24 +195,30 @@
     "ordre": 5,
     "contenu": {
       "fr": {
-        "accroche": "Colle carrelage améliorée déformable",
-        "description": "FENEK-BOND C2TE-S1 — Colle carrelage améliorée déformable. Gamme : Mortiers, colles et réparation. Domaine : Colles carrelage.",
+        "accroche": "Mortier-colle C2TE-S1 amélioré, à glissement réduit, temps ouvert prolongé et déformabilité",
+        "description": "FENEK-BOND C2TE-S1 : référence de mortier-colle cimentaire déformable pour la pose de carrelage sur supports préparés. Le classement C2TE-S1 associe les exigences d’adhérence améliorée C2, de glissement réduit T, de temps ouvert prolongé E et de déformation transversale S1.",
         "usages": [
-          "Colles carrelage"
+          "Pose de carreaux céramiques sur murs et sols avec sélection du système adéquat.",
+          "Travaux sur supports présentant des contraintes de mouvements modérées, après étude des joints et du support.",
+          "Mise en œuvre sur fonds cimentaires cohésifs préparés, conformément à la documentation produit."
         ]
       },
       "ar": {
-        "accroche": "لاصق بلاط محسّن قابل للتشوه",
-        "description": "FENEK-BOND C2TE-S1 — لاصق بلاط محسّن قابل للتشوه. الفئة: الملاط والمواد اللاصقة والإصلاح. المجال: لواصق البلاط.",
+        "accroche": "ملاط لاصق محسن C2TE-S1 منخفض الانزلاق وممتد الزمن المفتوح وقابل للتشوه",
+        "description": "FENEK-BOND C2TE-S1 هو ملاط لاصق إسمنتي لتثبيت البلاط على أسطح مهيأة. يجمع رمز C2TE-S1 بين التصاق محسن C2 وانزلاق رأسي منخفض T وزمن مفتوح ممتد E وقابلية التشوه العرضي S1.",
         "usages": [
-          "لواصق البلاط"
+          "تركيب بلاط السيراميك على الجدران والأرضيات بعد اختيار نظام مناسب.",
+          "أعمال تتطلب مراعاة حركة السطح وفواصل التمدد بعد دراسة حالة الموقع.",
+          "التركيب على أسطح إسمنتية متماسكة ونظيفة وفق الوثائق الخاصة بالمنتج."
         ]
       },
       "en": {
-        "accroche": "Improved deformable tile adhesive",
-        "description": "FENEK-BOND C2TE-S1 — Improved deformable tile adhesive. Range: Mortars, adhesives and repair. Category: Tile adhesives.",
+        "accroche": "C2TE-S1 improved deformable tile adhesive, reduced slip and extended open time",
+        "description": "FENEK-BOND C2TE-S1: deformable cementitious tile adhesive reference for fixing tiles onto prepared substrates. C2TE-S1 combines improved adhesion class C2, reduced slip T, extended open time E and S1 transverse-deformation classification criteria.",
         "usages": [
-          "Tile adhesives"
+          "Fixing ceramic tiles to walls and floors after selection of a suitable tiling system.",
+          "Tiling requiring assessment of moderate substrate movement and movement joints.",
+          "Installation on suitably prepared cohesive cementitious substrates in accordance with product documentation."
         ]
       }
     },
