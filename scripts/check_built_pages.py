@@ -317,7 +317,7 @@ def main() -> None:
             detail = (ROOT / lang / "catalogue" / slug / "index.html").read_text(encoding="utf-8")
             assert asset in detail, f"Wrong full-size PAINT concept: {lang}/{slug}"
             assert 'class="paint-concept-art"' not in detail and '/images/illustrations/produits/maquette-19.webp' not in detail, slug
-            assert "concept-detail-note" in detail, slug
+            assert "concept-detail-note" not in detail, f"Legacy conceptual disclaimer on approved editorial template: {slug}"
         assert "PF-001" not in catalog and "PF-006" not in catalog
         assert not (ROOT / lang / "produits").is_dir(), "No real product was approved"
         # Retired visualization routes and packaged models must not enter dist.
