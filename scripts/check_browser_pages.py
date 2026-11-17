@@ -120,7 +120,7 @@ def check_lot128_v3_c1te(browser, base: str) -> None:
                     target=SHOTS/("fenek-bond-c1te-branded-print-"+lang+".pdf")
                     pdf=page.pdf(path=str(target),print_background=True,prefer_css_page_size=True)
                     assert pdf.startswith(b"%PDF") and len(pdf)>10000,(lang,"invalid C1TE PDF")
-                    pdf_pages=len(re.findall(rb"/Type\\s*/Page\\b",pdf))
+                    pdf_pages=len(re.findall(rb"/Type\s*/Page\b", pdf))
                     assert 1 <= pdf_pages <= 4, (lang,pdf_pages)
                     page.emulate_media(media="screen")
                 if lang=="fr" and width==390:
