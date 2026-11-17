@@ -1,6 +1,6 @@
-# Export des fiches PDF du pilote FENEK-BOND C1T
+# Export des fiches PDF des pilotes FENEK-BOND C1T et C1TE
 
-**Portée : pilote C1T uniquement.** Cette opération génère les trois fiches de présentation à partir du HTML **déjà construit** par Astro, pour préserver la cohérence entre la fiche web et le PDF. Elle ne crée **aucune** FT homologuée ni FDS.
+**Portée : pilotes C1T et C1TE uniquement.** Cette opération génère les six fiches de présentation à partir du HTML **déjà construit** par Astro, pour préserver la cohérence entre la fiche web et le PDF. Elle ne crée **aucune** FT homologuée ni FDS.
 
 ## Génération reproductible
 
@@ -13,7 +13,7 @@ npm run build
 python -m unittest discover -s tests -p 'test_c1t_pdf_export.py' -v
 ```
 
-Sorties : `public/docs/fiches/fenek-bond-c1t-{fr,ar,en}.pdf` (les PDF doivent être ajoutés au commit **après** vérification visuelle). Le deuxième build copie les fichiers produits vers `dist/docs/fiches/`. Sur une installation sans fichiers générés, l'interface conserve le bouton d'impression/PDF du navigateur et n'affiche pas de lien cassé.
+Sorties : `public/docs/fiches/fenek-bond-{c1t,c1te}-{fr,ar,en}.pdf` (les PDF doivent être ajoutés au commit **après** vérification visuelle). Le deuxième build copie les fichiers produits vers `dist/docs/fiches/`. Sur une installation sans fichiers générés, l'interface conserve le bouton d'impression/PDF du navigateur et n'affiche pas de lien cassé.
 
 ## Vérification manuelle obligatoire
 
