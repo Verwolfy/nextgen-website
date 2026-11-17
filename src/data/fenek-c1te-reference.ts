@@ -33,7 +33,7 @@ type Copy={
   applicationTitle:string;prepTitle:string;preparation:string[];conditionsTitle:string;conditions:string[];
   consumptionTitle:string;stepsTitle:string;safetyTitle:string;safety:string[];
   documentsTitle:string;downloadLabel:string;printLabel:string;requestLabel:string;quoteLabel:string;whatsappLabel:string;
-  relatedTitle:string;comparisonTitle:string;comparisonNote:string;linkLabel:string;important:string;
+  relatedTitle:string;comparisonTitle:string;comparisonNote:string;linkLabel:string;
 };
 export const c1teCopy:Record<Lang,Copy>={
   fr:{
@@ -55,8 +55,7 @@ export const c1teCopy:Record<Lang,Copy>={
     consumptionTitle:'Consommation et eau de gâchage — comparaison de famille',stepsTitle:'Six étapes illustrées',safetyTitle:'Environnement et sécurité',
     safety:['Porter des gants, des lunettes adaptées et une protection respiratoire contre les poussières lors de la manipulation du mortier sec.','Limiter les poussières de mélange, éviter les projections dans les yeux et se laver les mains après usage.','Conserver les sacs à l’abri de l’humidité et éliminer les déchets selon la réglementation locale, sans rejeter de mortier dans les canalisations.'],
     documentsTitle:'Documents et demande de devis',downloadLabel:'Télécharger la fiche produit (PDF)',printLabel:'Imprimer / enregistrer en PDF',requestLabel:'Demander la fiche technique et la FDS',quoteLabel:'Obtenir un devis',whatsappLabel:'Contacter via WhatsApp',
-    relatedTitle:'Produits associés',comparisonTitle:'Comparer les désignations de la gamme BOND',comparisonNote:'Comparaison de classes figurant dans les noms, et non de performances FENEK attestées.',linkLabel:'Voir la fiche',
-    important:'Informations importantes : les valeurs sont des exigences de classement ou des références de famille, non des résultats mesurés pour FENEK-BOND C1TE. Les performances finales dépendent du support et des conditions de chantier. Consulter la fiche technique applicable avant emploi.'
+    relatedTitle:'Produits associés',comparisonTitle:'Comparer les désignations de la gamme BOND',comparisonNote:'Comparaison de classes figurant dans les noms, et non de performances FENEK attestées.',linkLabel:'Voir la fiche'
   },
   ar:{
     pageTitle:'FENEK-BOND C1TE | لاصق بلاط إسمنتي بفئة C1TE',
@@ -77,8 +76,7 @@ export const c1teCopy:Record<Lang,Copy>={
     consumptionTitle:'الاستهلاك وماء الخلط — قيم مقارنة للفئة',stepsTitle:'ست مراحل تطبيق مصورة',safetyTitle:'البيئة والسلامة',
     safety:['ارتداء قفازات ونظارات واقية ووسيلة مناسبة للوقاية من غبار المسحوق أثناء التعامل مع الملاط الجاف.','الحد من الغبار أثناء الخلط وتجنب وصوله إلى العينين وغسل اليدين بعد الانتهاء.','حفظ الأكياس بعيدًا عن الرطوبة والتخلص من المخلفات وفق الأنظمة المحلية دون صب الملاط في شبكة الصرف.'],
     documentsTitle:'الوثائق وطلب عرض السعر',downloadLabel:'تنزيل بطاقة المنتج (PDF)',printLabel:'طباعة البطاقة أو حفظها PDF',requestLabel:'طلب النشرة الفنية وصحيفة بيانات السلامة',quoteLabel:'طلب عرض سعر',whatsappLabel:'التواصل عبر واتساب',
-    relatedTitle:'منتجات مرتبطة',comparisonTitle:'مقارنة رموز مجموعة BOND',comparisonNote:'هذه مقارنة لرموز الفئات المذكورة في الأسماء وليست مقارنة لأداء منتجات FENEK المقاس.',linkLabel:'عرض البطاقة',
-    important:'معلومات مهمة: القيم المعروضة حدود تصنيف أو مؤشرات لفئة المنتج وليست نتائج قياس خاصة بـ FENEK-BOND C1TE. تعتمد النتيجة النهائية على حالة السطح وظروف الورشة. يجب الرجوع إلى النشرة الفنية الخاصة بالمنتج قبل الاستخدام.'
+    relatedTitle:'منتجات مرتبطة',comparisonTitle:'مقارنة رموز مجموعة BOND',comparisonNote:'هذه مقارنة لرموز الفئات المذكورة في الأسماء وليست مقارنة لأداء منتجات FENEK المقاس.',linkLabel:'عرض البطاقة'
   },
   en:{
     pageTitle:'FENEK-BOND C1TE | C1TE Cementitious Tile Adhesive',
@@ -99,7 +97,6 @@ export const c1teCopy:Record<Lang,Copy>={
     consumptionTitle:'Coverage and mixing water — family comparisons',stepsTitle:'Six illustrated installation stages',safetyTitle:'Environment and safety',
     safety:['Wear gloves, suitable eye protection and respiratory protection against dust when handling the dry mortar.','Reduce mixing dust, prevent eye contact and wash hands after handling.','Keep bags dry and dispose of residues in accordance with local requirements; never discharge mortar into drains.'],
     documentsTitle:'Documents and quotations',downloadLabel:'Download product sheet (PDF)',printLabel:'Print / save as PDF',requestLabel:'Request technical and safety data sheets',quoteLabel:'Request a quote',whatsappLabel:'Contact via WhatsApp',
-    relatedTitle:'Related products',comparisonTitle:'BOND range designation comparison',comparisonNote:'Comparison of classes stated in product names, not verified FENEK performance.',linkLabel:'View sheet',
-    important:'Important information: figures are classification requirements or family benchmarks, not measured FENEK-BOND C1TE values. Final performance depends on substrates and site conditions. Consult the applicable technical data sheet before use.'
+    relatedTitle:'Related products',comparisonTitle:'BOND range designation comparison',comparisonNote:'Comparison of classes stated in product names, not verified FENEK performance.',linkLabel:'View sheet'
   }
 };
