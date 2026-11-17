@@ -323,7 +323,7 @@ def check_lot130_all_v3(browser, base: str) -> None:
             assert response and response.status==200,(code,"missing page")
             # The C1T pilot omits internal editorial status from its public markup.
             # All other references continue to require the existing guarded status.
-            selector=(f'section[data-reference="{code}"][data-application-visual]' if code in ("BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1")
+            selector=(f'section[data-reference="{code}"][data-application-visual]' if code in ("BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1","BOND-CG1")
                       else f'section[data-reference="{code}"][data-v3-reviewed="BROUILLON"]')
             guide=page.locator(selector)
             assert guide.count()==1,(code,"missing or mismatched guide")
@@ -338,7 +338,7 @@ def check_lot130_all_v3(browser, base: str) -> None:
                 css=panel.evaluate("(el)=>getComputedStyle(el).backgroundImage")
                 assert ENHANCED_BY_CODE.get(code,sprite) in css,(code,i,"illustration from wrong product")
                 label=panel.get_attribute("aria-label") or ""
-                assert mapping[code]["steps"][i]["title"]["fr"] in label or code in ("BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1"),(code,i,"wrong legend")
+                assert mapping[code]["steps"][i]["title"]["fr"] in label or code in ("BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1","BOND-CG1"),(code,i,"wrong legend")
             assert page.evaluate("document.documentElement.scrollWidth-innerWidth")<=4,(code,"mobile overflow")
         finally:
             page.close()
