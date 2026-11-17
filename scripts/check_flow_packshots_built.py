@@ -62,7 +62,7 @@ def check() -> None:
             body = detail.read_text(encoding="utf-8")
             full_url = f"/images/illustrations/produits/{slug}.webp"
             assert full_url in body, f"Specific packshot not rendered: {lang}/{slug}"
-            assert "concept-detail-note" in body, f"Missing non-contractual notice: {lang}/{slug}"
+            assert "concept-detail-note" not in body, f"Legacy mockup note on technical product: {lang}/{slug}"
 
     print("PASS: 24/24 verified images and 72/72 localized uses (12 cards × 3 + 12 details × 3)")
 
