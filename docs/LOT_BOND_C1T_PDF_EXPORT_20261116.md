@@ -15,6 +15,8 @@ python -m unittest discover -s tests -p 'test_c1t_pdf_export.py' -v
 
 Sorties : `public/docs/fiches/fenek-bond-{c1t,c1te}-{fr,ar,en}.pdf` (les PDF doivent être ajoutés au commit **après** vérification visuelle). Le deuxième build copie les fichiers produits vers `dist/docs/fiches/`. Sur une installation sans fichiers générés, l'interface conserve le bouton d'impression/PDF du navigateur et n'affiche pas de lien cassé.
 
+Le workflow navigateur `.github/workflows/site-browser-recette.yml` génère aussi les trois PDF **C1TE** directement depuis Chromium/Astro, dans l'artefact GitHub Actions privé `nextgen-lot7-internal-browser-screenshots` (rétention de 7 jours). Ces PDF sont des candidats à relire avant une éventuelle copie dans `public/docs/fiches/`.
+
 ## Vérification manuelle obligatoire
 
 1. Ouvrir chacun des trois PDF et contrôler les tableaux, l'image produit, les sauts de page, l'en-tête de marque et la typographie arabe (sens de lecture RTL).
