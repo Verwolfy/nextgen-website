@@ -12,7 +12,7 @@ export const c2tes1Requirements:ReferenceMetric[]=[
  {key:'c2-gel',kind:'norme',label:{fr:'Adhérence après cycles gel/dégel',ar:'الالتصاق بعد دورات التجمد والذوبان',en:'Adhesion after freeze-thaw cycles'},value:'≥ 1,0 N/mm²'},
  {key:'t-glissement',kind:'norme',label:{fr:'Glissement vertical réduit (T)',ar:'انزلاق رأسي منخفض (T)',en:'Reduced vertical slip (T)'},value:'≤ 0,5 mm'},
  {key:'temps-ouvert-normal',kind:'norme',label:{fr:'Adhérence après temps ouvert normal',ar:'الالتصاق بعد زمن الفتح العادي',en:'Normal open-time adhesion'},value:'≥ 0,5 N/mm² (20 min)'},
- {key:'e-temps-ouvert',kind:'norme',label:{fr:'Adhérence après temps ouvert prolongé (E)',ar:'الالتصاق بعد زمن الفتح الممتد (E)',en:'Extended open-time adhesion (E)'},value:'≥ 0,5 N/mm² (30 min)'},,
+ {key:'e-temps-ouvert',kind:'norme',label:{fr:'Adhérence après temps ouvert prolongé (E)',ar:'الالتصاق بعد زمن الفتح الممتد (E)',en:'Extended open-time adhesion (E)'},value:'≥ 0,5 N/mm² (30 min)'},
  {key:'s1-deformabilite',kind:'norme',label:{fr:'Déformabilité transversale (S1)',ar:'قابلية التشوه العرضي (S1)',en:'Transverse deformation (S1)'},value:'≥ 2,5 mm ; < 5 mm'},
 ];
 
