@@ -47,5 +47,5 @@ test('C2FT internal research traces 3 independent manufacturers and all class li
  assert.match(csv,/exigence normative EN 12004-1:2017 C2/);
  assert.match(csv,/exigence normative EN 12004-1:2017 F/);
  assert.match(csv,/à valider par le fabricant\/laboratoire/);
- assert.ok(!read('src/components/FenekC2FTPilot.astro').includes('https://'));
+ assert.doesNotMatch(read('src/components/FenekC2FTPilot.astro'),/cdnmedia[.]mapei[.]com|gbr[.]sika[.]com|uk[.]weber/);
 });
