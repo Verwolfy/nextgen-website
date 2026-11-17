@@ -14,7 +14,7 @@ test('C1T pilot is isolated from all other FENEK products',()=>{
   assert.match(pilot,/download/);
   assert.match(pilot,/c1tFamilyReferences\.filter/);
   assert.match(pilot,/fenek-application/);
-  assert.doesNotMatch(pilot,/t\\.important|fenek-document-footer c1t-legal/);
+  assert.doesNotMatch(pilot,/t[.]important|fenek-document-footer c1t-legal/);
   assert.doesNotMatch(read('src/data/fenek-c1t-reference.ts'),/important:'/);
   assert.doesNotMatch(pilot,/Sika|Mapei|Bostik|BROUILLON|présentation provisoire/);
 });
