@@ -132,7 +132,7 @@
 
 ## PROOF-EP-SR — EN 1504-2 (revêtement béton) / EN 13813 (si classification chape)
 
-**Référentiel :** [documentation](https://www.iteh.eu/catalog/standards/cen/16790a91-c169-477d-beec-09ff83c9a0a4/en-934-2-2009).
+**Référentiel :** [documentation](https://www.iteh.fr/catalog/standards/sist/1d99554f-dba1-43de-a7ae-575b0131ffd4/sist-en-1504-2-2004).
 
 | Critère technique de référence | Seuil / contrôle |
 | --- | --- |

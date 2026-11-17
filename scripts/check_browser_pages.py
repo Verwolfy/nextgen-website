@@ -234,6 +234,41 @@ def check_lot131_v3_c2te(browser, base: str) -> None:
 
 
 
+def check_lot135_v3_other_ranges(browser, base: str) -> None:
+    """PROOF, FLOW and PAINT: trilingual class checks, RTL, responsive and representative A4 PDFs."""
+    import json
+    products = json.loads((ROOT/"src/data/catalogue-projets.json").read_text(encoding="utf-8"))
+    codes = [p for p in products if p["gamme"] in ("proof", "flow", "paint")]
+    assert len(codes) == 34, "Missing PROOF / FLOW / PAINT references"
+    special = ("PROOF-CM-O2P", "FLOW-SP-HR", "PAINT-INT-WA")
+    for product in codes:
+        code, slug = product["code"], product["slug"]
+        for lang in ("fr", "ar", "en"):
+            page = browser.new_page(viewport={"width":390 if lang == "ar" else 1280, "height":900})
+            try:
+                response = page.goto(f"{base}/{lang}/documentation/{slug}/",wait_until="domcontentloaded")
+                assert response and response.status == 200, (code,lang,"missing")
+                assert page.locator("[data-other-technical-pilot]").count() == 1, (code,lang)
+                assert page.locator('[data-other-source-type="referentiel"]').count() >= 4, (code,lang)
+                assert page.locator('[data-other-source-type="famille"]').count() >= 3, (code,lang)
+                assert page.locator(".other-technical-table").count() == 4, (code,lang)
+                assert page.locator(".fenek-other-technical-print").count() == 1, (code,lang)
+                assert page.locator(f'section[data-reference="{code}"][data-application-visual]').count() == 1, (code,lang)
+                assert page.evaluate("document.documentElement.scrollWidth-innerWidth") <= 4, (code,lang,"overflow")
+                if lang == "ar":
+                    assert page.locator("html").get_attribute("dir") == "rtl", code
+                if lang == "fr" or code in special:
+                    page.emulate_media(media="print")
+                    assert page.locator(".fenek-other-technical-print").is_visible(), (code,lang)
+                    target = SHOTS / f"{slug}-technical-print-{lang}.pdf"
+                    pdf = page.pdf(path=str(target), print_background=True, prefer_css_page_size=True)
+                    assert pdf.startswith(b"%PDF") and len(pdf)>10000, (code,lang)
+                    count = len(re.findall(rb"/Type\\s*/Page\\b", pdf))
+                    assert 1 <= count <= 10, (code,lang,count)
+            finally:
+                page.close()
+
+
 def check_lot134_v3_remaining_bond(browser, base: str) -> None:
     """Ten new technical BOND pages, with 30 localized A4 Chromium PDFs."""
     codes = ["BOND-CG2WA","BOND-CT-C25-F5","BOND-GP-CSII","BOND-GR-HR","BOND-M10","BOND-M5","BOND-OC-CSIII","BOND-R2","BOND-R3","BOND-R4"]
@@ -352,7 +387,7 @@ def check_lot130_all_v3(browser, base: str) -> None:
             assert response and response.status==200,(code,"missing page")
             # The C1T pilot omits internal editorial status from its public markup.
             # All other references continue to require the existing guarded status.
-            selector=(f'section[data-reference="{code}"][data-application-visual]' if code in ("BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1","BOND-CG1","BOND-CG2WA","BOND-CT-C25-F5","BOND-GP-CSII","BOND-GR-HR","BOND-M10","BOND-M5","BOND-OC-CSIII","BOND-R2","BOND-R3","BOND-R4")
+            selector=(f'section[data-reference="{code}"][data-application-visual]' if code in ("BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1","BOND-CG1","BOND-CG2WA","BOND-CT-C25-F5","BOND-GP-CSII","BOND-GR-HR","BOND-M10","BOND-M5","BOND-OC-CSIII","BOND-R2","BOND-R3","BOND-R4","PROOF-ACR-RF","PROOF-CM-O1P","PROOF-CM-O2P","PROOF-EP-ANC","PROOF-EP-INJ","PROOF-EP-PRIM","PROOF-EP-SB","PROOF-EP-SR","PROOF-PU-1K","PROOF-PU-INJ","PROOF-PU-SEAL","FLOW-AC","FLOW-AE","FLOW-CI","FLOW-CURE","FLOW-LAT","FLOW-RT","FLOW-SP-HR","FLOW-SP-PF","FLOW-SP-RT","FLOW-VMA","FLOW-WP","FLOW-WR-N","PAINT-ENT-L","PAINT-FAC-EL","PAINT-FAC-M","PAINT-FAC-SX","PAINT-INT-M","PAINT-INT-S","PAINT-INT-WA","PAINT-PRIM-A","PAINT-PRIM-FX","PAINT-SOL-A","PAINT-TXT-F")
                       else f'section[data-reference="{code}"][data-v3-reviewed="BROUILLON"]')
             guide=page.locator(selector)
             assert guide.count()==1,(code,"missing or mismatched guide")
@@ -367,7 +402,7 @@ def check_lot130_all_v3(browser, base: str) -> None:
                 css=panel.evaluate("(el)=>getComputedStyle(el).backgroundImage")
                 assert ENHANCED_BY_CODE.get(code,sprite) in css,(code,i,"illustration from wrong product")
                 label=panel.get_attribute("aria-label") or ""
-                assert mapping[code]["steps"][i]["title"]["fr"] in label or code in ("BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1","BOND-CG1","BOND-CG2WA","BOND-CT-C25-F5","BOND-GP-CSII","BOND-GR-HR","BOND-M10","BOND-M5","BOND-OC-CSIII","BOND-R2","BOND-R3","BOND-R4"),(code,i,"wrong legend")
+                assert mapping[code]["steps"][i]["title"]["fr"] in label or code in ("BOND-C1T","BOND-C1TE","BOND-C2FT","BOND-C2TE","BOND-C2TE-S1","BOND-CG1","BOND-CG2WA","BOND-CT-C25-F5","BOND-GP-CSII","BOND-GR-HR","BOND-M10","BOND-M5","BOND-OC-CSIII","BOND-R2","BOND-R3","BOND-R4","PROOF-ACR-RF","PROOF-CM-O1P","PROOF-CM-O2P","PROOF-EP-ANC","PROOF-EP-INJ","PROOF-EP-PRIM","PROOF-EP-SB","PROOF-EP-SR","PROOF-PU-1K","PROOF-PU-INJ","PROOF-PU-SEAL","FLOW-AC","FLOW-AE","FLOW-CI","FLOW-CURE","FLOW-LAT","FLOW-RT","FLOW-SP-HR","FLOW-SP-PF","FLOW-SP-RT","FLOW-VMA","FLOW-WP","FLOW-WR-N","PAINT-ENT-L","PAINT-FAC-EL","PAINT-FAC-M","PAINT-FAC-SX","PAINT-INT-M","PAINT-INT-S","PAINT-INT-WA","PAINT-PRIM-A","PAINT-PRIM-FX","PAINT-SOL-A","PAINT-TXT-F"),(code,i,"wrong legend")
             assert page.evaluate("document.documentElement.scrollWidth-innerWidth")<=4,(code,"mobile overflow")
         finally:
             page.close()
@@ -862,6 +897,7 @@ def check() -> None:
             check_lot132_v3_c2tes1(browser, base)
             check_lot133_v3_cg1(browser, base)
             check_lot134_v3_remaining_bond(browser, base)
+            check_lot135_v3_other_ranges(browser, base)
             check_lot130_all_v3(browser, base)
             check_localized_skip_keyboard(browser, base)
             for lang in ("fr", "ar", "en"):
@@ -1255,6 +1291,11 @@ def check() -> None:
                             if slug in ("fenek-bond-gp-csii", "fenek-bond-m5", "fenek-bond-m10", "fenek-bond-oc-csiii"):
                                 assert page.locator("[data-bond-technical-pilot]").count() == 1, (lang, slug)
                                 assert page.locator(".bond-technical-table").count() == 4, (lang, slug)
+                                assert page.locator(".fenek-doc-accordion").count() == 0, (lang, slug)
+                                assert page.locator(".fenek-qualification-panel").count() == 0, (lang, slug)
+                            elif slug.startswith(("fenek-proof-", "fenek-flow-", "fenek-paint-")):
+                                assert page.locator("[data-other-technical-pilot]").count() == 1, (lang, slug)
+                                assert page.locator(".other-technical-table").count() == 4, (lang, slug)
                                 assert page.locator(".fenek-doc-accordion").count() == 0, (lang, slug)
                                 assert page.locator(".fenek-qualification-panel").count() == 0, (lang, slug)
                             else:

@@ -759,24 +759,30 @@
     "ordre": 17,
     "contenu": {
       "fr": {
-        "accroche": "Accélérateur de prise",
-        "description": "FENEK-FLOW AC — Accélérateur de prise. Gamme : Adjuvants béton et mortier. Domaine : Accélérateurs.",
+        "accroche": "Accélérateur de prise pour béton sous contrôle de la compatibilité ciment-température.",
+        "description": "FENEK-FLOW AC : Accélérateur de prise pour béton sous contrôle de la compatibilité ciment-température. Établir les essais de compatibilité avec les ciments, granulats et conditions de production. Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier.",
         "usages": [
-          "Accélérateurs"
+          "Accélérateur de prise pour béton sous contrôle de la compatibilité ciment-température.",
+          "Établir les essais de compatibilité avec les ciments, granulats et conditions de production.",
+          "Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier."
         ]
       },
       "ar": {
-        "accroche": "مسرع لزمن الشك",
-        "description": "FENEK-FLOW AC — مسرع لزمن الشك. الفئة: إضافات الخرسانة والملاط. المجال: مسرعات الشك.",
+        "accroche": "مسرع شك للخرسانة مع فحص توافقه مع الإسمنت والحرارة.",
+        "description": "FENEK-FLOW AC : مسرع شك للخرسانة مع فحص توافقه مع الإسمنت والحرارة. يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية. تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة.",
         "usages": [
-          "مسرعات الشك"
+          "مسرع شك للخرسانة مع فحص توافقه مع الإسمنت والحرارة.",
+          "يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية.",
+          "تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة."
         ]
       },
       "en": {
-        "accroche": "Setting accelerator",
-        "description": "FENEK-FLOW AC — Setting accelerator. Range: Concrete and mortar admixtures. Category: Accelerators.",
+        "accroche": "Set accelerator for concrete requiring cement and temperature trial batches.",
+        "description": "FENEK-FLOW AC : Set accelerator for concrete requiring cement and temperature trial batches. Carry out compatibility trials with the cement, aggregates and production conditions to be used. Qualify dosage and control-mix tests before production or site use.",
         "usages": [
-          "Accelerators"
+          "Set accelerator for concrete requiring cement and temperature trial batches.",
+          "Carry out compatibility trials with the cement, aggregates and production conditions to be used.",
+          "Qualify dosage and control-mix tests before production or site use."
         ]
       }
     },
@@ -815,24 +821,30 @@
     "ordre": 18,
     "contenu": {
       "fr": {
-        "accroche": "Entraîneur d'air",
-        "description": "FENEK-FLOW AE — Entraîneur d'air. Gamme : Adjuvants béton et mortier. Domaine : Entraîneurs d'air.",
+        "accroche": "Entraîneur de microbulles d’air pour bétons exposés aux cycles de gel et dégel.",
+        "description": "FENEK-FLOW AE : Entraîneur de microbulles d’air pour bétons exposés aux cycles de gel et dégel. Établir les essais de compatibilité avec les ciments, granulats et conditions de production. Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier.",
         "usages": [
-          "Entraîneurs d'air"
+          "Entraîneur de microbulles d’air pour bétons exposés aux cycles de gel et dégel.",
+          "Établir les essais de compatibilité avec les ciments, granulats et conditions de production.",
+          "Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier."
         ]
       },
       "ar": {
-        "accroche": "مضاف حابس للهواء",
-        "description": "FENEK-FLOW AE — مضاف حابس للهواء. الفئة: إضافات الخرسانة والملاط. المجال: مواد حبس الهواء.",
+        "accroche": "مادة لحبس فقاعات الهواء الدقيقة لتحسين تحمل الخرسانة لدورات التجمد.",
+        "description": "FENEK-FLOW AE : مادة لحبس فقاعات الهواء الدقيقة لتحسين تحمل الخرسانة لدورات التجمد. يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية. تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة.",
         "usages": [
-          "مواد حبس الهواء"
+          "مادة لحبس فقاعات الهواء الدقيقة لتحسين تحمل الخرسانة لدورات التجمد.",
+          "يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية.",
+          "تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة."
         ]
       },
       "en": {
-        "accroche": "Air-entraining admixture",
-        "description": "FENEK-FLOW AE — Air-entraining admixture. Range: Concrete and mortar admixtures. Category: Air-entraining admixtures.",
+        "accroche": "Air-entraining admixture for freeze-thaw exposure after controlled mixture design.",
+        "description": "FENEK-FLOW AE : Air-entraining admixture for freeze-thaw exposure after controlled mixture design. Carry out compatibility trials with the cement, aggregates and production conditions to be used. Qualify dosage and control-mix tests before production or site use.",
         "usages": [
-          "Air-entraining admixtures"
+          "Air-entraining admixture for freeze-thaw exposure after controlled mixture design.",
+          "Carry out compatibility trials with the cement, aggregates and production conditions to be used.",
+          "Qualify dosage and control-mix tests before production or site use."
         ]
       }
     },
@@ -871,24 +883,30 @@
     "ordre": 19,
     "contenu": {
       "fr": {
-        "accroche": "Inhibiteur de corrosion des armatures",
-        "description": "FENEK-FLOW CI — Inhibiteur de corrosion des armatures. Gamme : Adjuvants béton et mortier. Domaine : Inhibiteurs de corrosion.",
+        "accroche": "Inhibiteur de corrosion pour armatures exposées aux chlorures ou à la carbonatation.",
+        "description": "FENEK-FLOW CI : Inhibiteur de corrosion pour armatures exposées aux chlorures ou à la carbonatation. Établir les essais de compatibilité avec les ciments, granulats et conditions de production. Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier.",
         "usages": [
-          "Inhibiteurs de corrosion"
+          "Inhibiteur de corrosion pour armatures exposées aux chlorures ou à la carbonatation.",
+          "Établir les essais de compatibilité avec les ciments, granulats et conditions de production.",
+          "Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier."
         ]
       },
       "ar": {
-        "accroche": "مضاف مثبط لتآكل حديد التسليح",
-        "description": "FENEK-FLOW CI — مضاف مثبط لتآكل حديد التسليح. الفئة: إضافات الخرسانة والملاط. المجال: مثبطات التآكل.",
+        "accroche": "مثبط تآكل حديد التسليح في الخرسانة المعرضة للكلوريدات والكربنة.",
+        "description": "FENEK-FLOW CI : مثبط تآكل حديد التسليح في الخرسانة المعرضة للكلوريدات والكربنة. يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية. تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة.",
         "usages": [
-          "مثبطات التآكل"
+          "مثبط تآكل حديد التسليح في الخرسانة المعرضة للكلوريدات والكربنة.",
+          "يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية.",
+          "تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة."
         ]
       },
       "en": {
-        "accroche": "Rebar corrosion inhibitor",
-        "description": "FENEK-FLOW CI — Rebar corrosion inhibitor. Range: Concrete and mortar admixtures. Category: Corrosion inhibitors.",
+        "accroche": "Reinforcement corrosion inhibitor for concrete at risk of chlorides and carbonation.",
+        "description": "FENEK-FLOW CI : Reinforcement corrosion inhibitor for concrete at risk of chlorides and carbonation. Carry out compatibility trials with the cement, aggregates and production conditions to be used. Qualify dosage and control-mix tests before production or site use.",
         "usages": [
-          "Corrosion inhibitors"
+          "Reinforcement corrosion inhibitor for concrete at risk of chlorides and carbonation.",
+          "Carry out compatibility trials with the cement, aggregates and production conditions to be used.",
+          "Qualify dosage and control-mix tests before production or site use."
         ]
       }
     },
@@ -927,24 +945,30 @@
     "ordre": 20,
     "contenu": {
       "fr": {
-        "accroche": "Produit de cure du béton",
-        "description": "FENEK-FLOW CURE — Produit de cure du béton. Gamme : Adjuvants béton et mortier. Domaine : Produits de cure.",
+        "accroche": "Produit de cure destiné à limiter l’évaporation d’eau dans le béton jeune.",
+        "description": "FENEK-FLOW CURE : Produit de cure destiné à limiter l’évaporation d’eau dans le béton jeune. Établir les essais de compatibilité avec les ciments, granulats et conditions de production. Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier.",
         "usages": [
-          "Produits de cure"
+          "Produit de cure destiné à limiter l’évaporation d’eau dans le béton jeune.",
+          "Établir les essais de compatibilité avec les ciments, granulats et conditions de production.",
+          "Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier."
         ]
       },
       "ar": {
-        "accroche": "مركب معالجة الخرسانة",
-        "description": "FENEK-FLOW CURE — مركب معالجة الخرسانة. الفئة: إضافات الخرسانة والملاط. المجال: مواد المعالجة.",
+        "accroche": "مادة معالجة تقلل تبخر الماء من الخرسانة الحديثة.",
+        "description": "FENEK-FLOW CURE : مادة معالجة تقلل تبخر الماء من الخرسانة الحديثة. يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية. تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة.",
         "usages": [
-          "مواد المعالجة"
+          "مادة معالجة تقلل تبخر الماء من الخرسانة الحديثة.",
+          "يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية.",
+          "تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة."
         ]
       },
       "en": {
-        "accroche": "Concrete curing compound",
-        "description": "FENEK-FLOW CURE — Concrete curing compound. Range: Concrete and mortar admixtures. Category: Curing compounds.",
+        "accroche": "Curing compound to reduce early-age moisture loss from freshly finished concrete.",
+        "description": "FENEK-FLOW CURE : Curing compound to reduce early-age moisture loss from freshly finished concrete. Carry out compatibility trials with the cement, aggregates and production conditions to be used. Qualify dosage and control-mix tests before production or site use.",
         "usages": [
-          "Curing compounds"
+          "Curing compound to reduce early-age moisture loss from freshly finished concrete.",
+          "Carry out compatibility trials with the cement, aggregates and production conditions to be used.",
+          "Qualify dosage and control-mix tests before production or site use."
         ]
       }
     },
@@ -983,24 +1007,30 @@
     "ordre": 21,
     "contenu": {
       "fr": {
-        "accroche": "Résine d'adhérence et d'amélioration des mortiers",
-        "description": "FENEK-FLOW LAT — Résine d'adhérence et d'amélioration des mortiers. Gamme : Adjuvants béton et mortier. Domaine : Résines d'adhérence.",
+        "accroche": "Dispersion latex pour barbotines d’accrochage et mortiers ciment modifiés.",
+        "description": "FENEK-FLOW LAT : Dispersion latex pour barbotines d’accrochage et mortiers ciment modifiés. Établir les essais de compatibilité avec les ciments, granulats et conditions de production. Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier.",
         "usages": [
-          "Résines d'adhérence"
+          "Dispersion latex pour barbotines d’accrochage et mortiers ciment modifiés.",
+          "Établir les essais de compatibilité avec les ciments, granulats et conditions de production.",
+          "Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier."
         ]
       },
       "ar": {
-        "accroche": "مستحلب راتنجي لتحسين الالتصاق والمونة",
-        "description": "FENEK-FLOW LAT — مستحلب راتنجي لتحسين الالتصاق والمونة. الفئة: إضافات الخرسانة والملاط. المجال: بوليمرات الالتصاق.",
+        "accroche": "مستحلب لاتكس لطبقات الربط ومونة الإسمنت المعدلة.",
+        "description": "FENEK-FLOW LAT : مستحلب لاتكس لطبقات الربط ومونة الإسمنت المعدلة. يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية. تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة.",
         "usages": [
-          "بوليمرات الالتصاق"
+          "مستحلب لاتكس لطبقات الربط ومونة الإسمنت المعدلة.",
+          "يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية.",
+          "تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة."
         ]
       },
       "en": {
-        "accroche": "Bonding and mortar-modifying polymer dispersion",
-        "description": "FENEK-FLOW LAT — Bonding and mortar-modifying polymer dispersion. Range: Concrete and mortar admixtures. Category: Bonding polymers.",
+        "accroche": "Latex bonding additive for cement slurries and polymer-modified mortars.",
+        "description": "FENEK-FLOW LAT : Latex bonding additive for cement slurries and polymer-modified mortars. Carry out compatibility trials with the cement, aggregates and production conditions to be used. Qualify dosage and control-mix tests before production or site use.",
         "usages": [
-          "Bonding polymers"
+          "Latex bonding additive for cement slurries and polymer-modified mortars.",
+          "Carry out compatibility trials with the cement, aggregates and production conditions to be used.",
+          "Qualify dosage and control-mix tests before production or site use."
         ]
       }
     },
@@ -1039,24 +1069,30 @@
     "ordre": 22,
     "contenu": {
       "fr": {
-        "accroche": "Retardateur de prise",
-        "description": "FENEK-FLOW RT — Retardateur de prise. Gamme : Adjuvants béton et mortier. Domaine : Retardateurs.",
+        "accroche": "Retardateur de prise pour faciliter le transport et la mise en place du béton.",
+        "description": "FENEK-FLOW RT : Retardateur de prise pour faciliter le transport et la mise en place du béton. Établir les essais de compatibilité avec les ciments, granulats et conditions de production. Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier.",
         "usages": [
-          "Retardateurs"
+          "Retardateur de prise pour faciliter le transport et la mise en place du béton.",
+          "Établir les essais de compatibilité avec les ciments, granulats et conditions de production.",
+          "Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier."
         ]
       },
       "ar": {
-        "accroche": "مؤخر لزمن الشك",
-        "description": "FENEK-FLOW RT — مؤخر لزمن الشك. الفئة: إضافات الخرسانة والملاط. المجال: مؤخرات الشك.",
+        "accroche": "مؤخر شك لتسهيل نقل الخرسانة وصبها.",
+        "description": "FENEK-FLOW RT : مؤخر شك لتسهيل نقل الخرسانة وصبها. يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية. تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة.",
         "usages": [
-          "مؤخرات الشك"
+          "مؤخر شك لتسهيل نقل الخرسانة وصبها.",
+          "يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية.",
+          "تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة."
         ]
       },
       "en": {
-        "accroche": "Setting retarder",
-        "description": "FENEK-FLOW RT — Setting retarder. Range: Concrete and mortar admixtures. Category: Retarders.",
+        "accroche": "Set-retarding admixture to extend concrete placing time through qualified trials.",
+        "description": "FENEK-FLOW RT : Set-retarding admixture to extend concrete placing time through qualified trials. Carry out compatibility trials with the cement, aggregates and production conditions to be used. Qualify dosage and control-mix tests before production or site use.",
         "usages": [
-          "Retarders"
+          "Set-retarding admixture to extend concrete placing time through qualified trials.",
+          "Carry out compatibility trials with the cement, aggregates and production conditions to be used.",
+          "Qualify dosage and control-mix tests before production or site use."
         ]
       }
     },
@@ -1095,24 +1131,30 @@
     "ordre": 23,
     "contenu": {
       "fr": {
-        "accroche": "Superplastifiant haut réducteur d'eau",
-        "description": "FENEK-FLOW SP-HR — Superplastifiant haut réducteur d'eau. Gamme : Adjuvants béton et mortier. Domaine : Superplastifiants.",
+        "accroche": "Superplastifiant haut réducteur d’eau pour béton fluide à faible rapport eau/ciment.",
+        "description": "FENEK-FLOW SP-HR : Superplastifiant haut réducteur d’eau pour béton fluide à faible rapport eau/ciment. Établir les essais de compatibilité avec les ciments, granulats et conditions de production. Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier.",
         "usages": [
-          "Superplastifiants"
+          "Superplastifiant haut réducteur d’eau pour béton fluide à faible rapport eau/ciment.",
+          "Établir les essais de compatibilité avec les ciments, granulats et conditions de production.",
+          "Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier."
         ]
       },
       "ar": {
-        "accroche": "ملدن فائق عالي خفض الماء",
-        "description": "FENEK-FLOW SP-HR — ملدن فائق عالي خفض الماء. الفئة: إضافات الخرسانة والملاط. المجال: الملدنات الفائقة.",
+        "accroche": "ملدن فائق عالي التخفيض للماء للخرسانة عالية الانسياب.",
+        "description": "FENEK-FLOW SP-HR : ملدن فائق عالي التخفيض للماء للخرسانة عالية الانسياب. يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية. تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة.",
         "usages": [
-          "الملدنات الفائقة"
+          "ملدن فائق عالي التخفيض للماء للخرسانة عالية الانسياب.",
+          "يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية.",
+          "تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة."
         ]
       },
       "en": {
-        "accroche": "High-range water-reducing superplasticizer",
-        "description": "FENEK-FLOW SP-HR — High-range water-reducing superplasticizer. Range: Concrete and mortar admixtures. Category: Superplasticizers.",
+        "accroche": "High-range water-reducing superplasticizer for flowable and low-water concrete.",
+        "description": "FENEK-FLOW SP-HR : High-range water-reducing superplasticizer for flowable and low-water concrete. Carry out compatibility trials with the cement, aggregates and production conditions to be used. Qualify dosage and control-mix tests before production or site use.",
         "usages": [
-          "Superplasticizers"
+          "High-range water-reducing superplasticizer for flowable and low-water concrete.",
+          "Carry out compatibility trials with the cement, aggregates and production conditions to be used.",
+          "Qualify dosage and control-mix tests before production or site use."
         ]
       }
     },
@@ -1151,24 +1193,30 @@
     "ordre": 24,
     "contenu": {
       "fr": {
-        "accroche": "Superplastifiant pour préfabrication, résistances précoces",
-        "description": "FENEK-FLOW SP-PF — Superplastifiant pour préfabrication, résistances précoces. Gamme : Adjuvants béton et mortier. Domaine : Superplastifiants.",
+        "accroche": "Superplastifiant de préfabrication pour réduction d’eau et résistances au jeune âge.",
+        "description": "FENEK-FLOW SP-PF : Superplastifiant de préfabrication pour réduction d’eau et résistances au jeune âge. Établir les essais de compatibilité avec les ciments, granulats et conditions de production. Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier.",
         "usages": [
-          "Superplastifiants"
+          "Superplastifiant de préfabrication pour réduction d’eau et résistances au jeune âge.",
+          "Établir les essais de compatibilité avec les ciments, granulats et conditions de production.",
+          "Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier."
         ]
       },
       "ar": {
-        "accroche": "ملدن فائق للخرسانة مسبقة الصنع والمقاومة المبكرة",
-        "description": "FENEK-FLOW SP-PF — ملدن فائق للخرسانة مسبقة الصنع والمقاومة المبكرة. الفئة: إضافات الخرسانة والملاط. المجال: الملدنات الفائقة.",
+        "accroche": "ملدن فائق للخرسانة مسبقة الصنع ورفع المقاومة المبكرة.",
+        "description": "FENEK-FLOW SP-PF : ملدن فائق للخرسانة مسبقة الصنع ورفع المقاومة المبكرة. يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية. تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة.",
         "usages": [
-          "الملدنات الفائقة"
+          "ملدن فائق للخرسانة مسبقة الصنع ورفع المقاومة المبكرة.",
+          "يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية.",
+          "تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة."
         ]
       },
       "en": {
-        "accroche": "Precast superplasticizer for early strength",
-        "description": "FENEK-FLOW SP-PF — Precast superplasticizer for early strength. Range: Concrete and mortar admixtures. Category: Superplasticizers.",
+        "accroche": "Precast-focused superplasticizer requiring early-age strength and water reduction trials.",
+        "description": "FENEK-FLOW SP-PF : Precast-focused superplasticizer requiring early-age strength and water reduction trials. Carry out compatibility trials with the cement, aggregates and production conditions to be used. Qualify dosage and control-mix tests before production or site use.",
         "usages": [
-          "Superplasticizers"
+          "Precast-focused superplasticizer requiring early-age strength and water reduction trials.",
+          "Carry out compatibility trials with the cement, aggregates and production conditions to be used.",
+          "Qualify dosage and control-mix tests before production or site use."
         ]
       }
     },
@@ -1207,24 +1255,30 @@
     "ordre": 25,
     "contenu": {
       "fr": {
-        "accroche": "Superplastifiant à maintien de rhéologie",
-        "description": "FENEK-FLOW SP-RT — Superplastifiant à maintien de rhéologie. Gamme : Adjuvants béton et mortier. Domaine : Superplastifiants.",
+        "accroche": "Superplastifiant de maintien d’ouvrabilité sans présumer un effet retardateur de prise.",
+        "description": "FENEK-FLOW SP-RT : Superplastifiant de maintien d’ouvrabilité sans présumer un effet retardateur de prise. Établir les essais de compatibilité avec les ciments, granulats et conditions de production. Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier.",
         "usages": [
-          "Superplastifiants"
+          "Superplastifiant de maintien d’ouvrabilité sans présumer un effet retardateur de prise.",
+          "Établir les essais de compatibilité avec les ciments, granulats et conditions de production.",
+          "Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier."
         ]
       },
       "ar": {
-        "accroche": "ملدن فائق يحافظ على قابلية التشغيل",
-        "description": "FENEK-FLOW SP-RT — ملدن فائق يحافظ على قابلية التشغيل. الفئة: إضافات الخرسانة والملاط. المجال: الملدنات الفائقة.",
+        "accroche": "ملدن فائق للحفاظ على التشغيلية دون افتراض أنه مؤخر للشك.",
+        "description": "FENEK-FLOW SP-RT : ملدن فائق للحفاظ على التشغيلية دون افتراض أنه مؤخر للشك. يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية. تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة.",
         "usages": [
-          "الملدنات الفائقة"
+          "ملدن فائق للحفاظ على التشغيلية دون افتراض أنه مؤخر للشك.",
+          "يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية.",
+          "تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة."
         ]
       },
       "en": {
-        "accroche": "Workability-retaining superplasticizer",
-        "description": "FENEK-FLOW SP-RT — Workability-retaining superplasticizer. Range: Concrete and mortar admixtures. Category: Superplasticizers.",
+        "accroche": "Superplasticizer for workability retention, not automatically a set-retarding admixture.",
+        "description": "FENEK-FLOW SP-RT : Superplasticizer for workability retention, not automatically a set-retarding admixture. Carry out compatibility trials with the cement, aggregates and production conditions to be used. Qualify dosage and control-mix tests before production or site use.",
         "usages": [
-          "Superplasticizers"
+          "Superplasticizer for workability retention, not automatically a set-retarding admixture.",
+          "Carry out compatibility trials with the cement, aggregates and production conditions to be used.",
+          "Qualify dosage and control-mix tests before production or site use."
         ]
       }
     },
@@ -1263,24 +1317,30 @@
     "ordre": 26,
     "contenu": {
       "fr": {
-        "accroche": "Agent de viscosité (béton autoplaçant)",
-        "description": "FENEK-FLOW VMA — Agent de viscosité (béton autoplaçant). Gamme : Adjuvants béton et mortier. Domaine : Agents de viscosité.",
+        "accroche": "Modificateur de viscosité pour stabilité de bétons autoplaçants.",
+        "description": "FENEK-FLOW VMA : Modificateur de viscosité pour stabilité de bétons autoplaçants. Établir les essais de compatibilité avec les ciments, granulats et conditions de production. Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier.",
         "usages": [
-          "Agents de viscosité"
+          "Modificateur de viscosité pour stabilité de bétons autoplaçants.",
+          "Établir les essais de compatibilité avec les ciments, granulats et conditions de production.",
+          "Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier."
         ]
       },
       "ar": {
-        "accroche": "مضاف معدل للزوجة الخرسانة ذاتية الدمك",
-        "description": "FENEK-FLOW VMA — مضاف معدل للزوجة الخرسانة ذاتية الدمك. الفئة: إضافات الخرسانة والملاط. المجال: معدلات اللزوجة.",
+        "accroche": "معدل لزوجة لتحقيق ثبات الخرسانة ذاتية الدمك.",
+        "description": "FENEK-FLOW VMA : معدل لزوجة لتحقيق ثبات الخرسانة ذاتية الدمك. يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية. تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة.",
         "usages": [
-          "معدلات اللزوجة"
+          "معدل لزوجة لتحقيق ثبات الخرسانة ذاتية الدمك.",
+          "يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية.",
+          "تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة."
         ]
       },
       "en": {
-        "accroche": "Viscosity-modifying admixture for self-compacting concrete",
-        "description": "FENEK-FLOW VMA — Viscosity-modifying admixture for self-compacting concrete. Range: Concrete and mortar admixtures. Category: Viscosity modifiers.",
+        "accroche": "Viscosity modifying admixture intended for segregation control in self-compacting concrete.",
+        "description": "FENEK-FLOW VMA : Viscosity modifying admixture intended for segregation control in self-compacting concrete. Carry out compatibility trials with the cement, aggregates and production conditions to be used. Qualify dosage and control-mix tests before production or site use.",
         "usages": [
-          "Viscosity modifiers"
+          "Viscosity modifying admixture intended for segregation control in self-compacting concrete.",
+          "Carry out compatibility trials with the cement, aggregates and production conditions to be used.",
+          "Qualify dosage and control-mix tests before production or site use."
         ]
       }
     },
@@ -1319,24 +1379,30 @@
     "ordre": 27,
     "contenu": {
       "fr": {
-        "accroche": "Hydrofuge de masse",
-        "description": "FENEK-FLOW WP — Hydrofuge de masse. Gamme : Adjuvants béton et mortier. Domaine : Hydrofuges de masse.",
+        "accroche": "Hydrofuge de masse pour réduire l’absorption capillaire des bétons et mortiers.",
+        "description": "FENEK-FLOW WP : Hydrofuge de masse pour réduire l’absorption capillaire des bétons et mortiers. Établir les essais de compatibilité avec les ciments, granulats et conditions de production. Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier.",
         "usages": [
-          "Hydrofuges de masse"
+          "Hydrofuge de masse pour réduire l’absorption capillaire des bétons et mortiers.",
+          "Établir les essais de compatibilité avec les ciments, granulats et conditions de production.",
+          "Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier."
         ]
       },
       "ar": {
-        "accroche": "مضاف عزل مائي ضمن الخلطة",
-        "description": "FENEK-FLOW WP — مضاف عزل مائي ضمن الخلطة. الفئة: إضافات الخرسانة والملاط. المجال: مضافات العزل المائي.",
+        "accroche": "مانع امتصاص ماء للخرسانة والمونة من الداخل.",
+        "description": "FENEK-FLOW WP : مانع امتصاص ماء للخرسانة والمونة من الداخل. يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية. تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة.",
         "usages": [
-          "مضافات العزل المائي"
+          "مانع امتصاص ماء للخرسانة والمونة من الداخل.",
+          "يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية.",
+          "تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة."
         ]
       },
       "en": {
-        "accroche": "Integral waterproofing admixture",
-        "description": "FENEK-FLOW WP — Integral waterproofing admixture. Range: Concrete and mortar admixtures. Category: Integral water repellents.",
+        "accroche": "Integral water-resisting admixture for reducing capillary absorption in cementitious mixes.",
+        "description": "FENEK-FLOW WP : Integral water-resisting admixture for reducing capillary absorption in cementitious mixes. Carry out compatibility trials with the cement, aggregates and production conditions to be used. Qualify dosage and control-mix tests before production or site use.",
         "usages": [
-          "Integral water repellents"
+          "Integral water-resisting admixture for reducing capillary absorption in cementitious mixes.",
+          "Carry out compatibility trials with the cement, aggregates and production conditions to be used.",
+          "Qualify dosage and control-mix tests before production or site use."
         ]
       }
     },
@@ -1375,24 +1441,30 @@
     "ordre": 28,
     "contenu": {
       "fr": {
-        "accroche": "Plastifiant réducteur d'eau",
-        "description": "FENEK-FLOW WR-N — Plastifiant réducteur d'eau. Gamme : Adjuvants béton et mortier. Domaine : Plastifiants.",
+        "accroche": "Plastifiant réducteur d’eau classique pour béton à meilleure ouvrabilité.",
+        "description": "FENEK-FLOW WR-N : Plastifiant réducteur d’eau classique pour béton à meilleure ouvrabilité. Établir les essais de compatibilité avec les ciments, granulats et conditions de production. Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier.",
         "usages": [
-          "Plastifiants"
+          "Plastifiant réducteur d’eau classique pour béton à meilleure ouvrabilité.",
+          "Établir les essais de compatibilité avec les ciments, granulats et conditions de production.",
+          "Définir le dosage et les contrôles sur gâchée témoin avant usage en centrale ou sur chantier."
         ]
       },
       "ar": {
-        "accroche": "ملدن مخفض لماء الخلط",
-        "description": "FENEK-FLOW WR-N — ملدن مخفض لماء الخلط. الفئة: إضافات الخرسانة والملاط. المجال: الملدنات.",
+        "accroche": "ملدن مخفض للماء بدرجة عادية لتحسين تشغيلية الخرسانة.",
+        "description": "FENEK-FLOW WR-N : ملدن مخفض للماء بدرجة عادية لتحسين تشغيلية الخرسانة. يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية. تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة.",
         "usages": [
-          "الملدنات"
+          "ملدن مخفض للماء بدرجة عادية لتحسين تشغيلية الخرسانة.",
+          "يجب اختبار التوافق مع الإسمنت والركام وظروف الإنتاج الفعلية.",
+          "تحدد الجرعة والفحوص على خلطة مرجعية قبل الاستخدام في المحطة أو الورشة."
         ]
       },
       "en": {
-        "accroche": "Water-reducing plasticizer",
-        "description": "FENEK-FLOW WR-N — Water-reducing plasticizer. Range: Concrete and mortar admixtures. Category: Plasticizers.",
+        "accroche": "Conventional water-reducing plasticizer for improved concrete workability.",
+        "description": "FENEK-FLOW WR-N : Conventional water-reducing plasticizer for improved concrete workability. Carry out compatibility trials with the cement, aggregates and production conditions to be used. Qualify dosage and control-mix tests before production or site use.",
         "usages": [
-          "Plasticizers"
+          "Conventional water-reducing plasticizer for improved concrete workability.",
+          "Carry out compatibility trials with the cement, aggregates and production conditions to be used.",
+          "Qualify dosage and control-mix tests before production or site use."
         ]
       }
     },
@@ -1431,24 +1503,30 @@
     "ordre": 29,
     "contenu": {
       "fr": {
-        "accroche": "Enduit de lissage en pâte",
-        "description": "FENEK-PAINT ENT-L — Enduit de lissage en pâte. Gamme : Peintures et finitions. Domaine : Enduits de lissage.",
+        "accroche": "Enduit en pâte pour lisser les supports intérieurs avant peinture.",
+        "description": "FENEK-PAINT ENT-L : Enduit en pâte pour lisser les supports intérieurs avant peinture. Contrôler l'état du support, le primaire compatible et les conditions de séchage. Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée.",
         "usages": [
-          "Enduits de lissage"
+          "Enduit en pâte pour lisser les supports intérieurs avant peinture.",
+          "Contrôler l'état du support, le primaire compatible et les conditions de séchage.",
+          "Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée."
         ]
       },
       "ar": {
-        "accroche": "معجون تنعيم جاهز للاستعمال",
-        "description": "FENEK-PAINT ENT-L — معجون تنعيم جاهز للاستعمال. الفئة: الدهانات والتشطيبات. المجال: معاجين التنعيم.",
+        "accroche": "معجون جاهز لتسوية الجدران الداخلية قبل الدهان.",
+        "description": "FENEK-PAINT ENT-L : معجون جاهز لتسوية الجدران الداخلية قبل الدهان. افحص حالة السطح والبرايمر المناسب وظروف الجفاف. اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية.",
         "usages": [
-          "معاجين التنعيم"
+          "معجون جاهز لتسوية الجدران الداخلية قبل الدهان.",
+          "افحص حالة السطح والبرايمر المناسب وظروف الجفاف.",
+          "اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية."
         ]
       },
       "en": {
-        "accroche": "Ready-to-use smoothing filler",
-        "description": "FENEK-PAINT ENT-L — Ready-to-use smoothing filler. Range: Paints and finishes. Category: Smoothing fillers.",
+        "accroche": "Ready-mixed filler for smoothing interior walls before painting.",
+        "description": "FENEK-PAINT ENT-L : Ready-mixed filler for smoothing interior walls before painting. Assess substrate soundness, primer compatibility and drying conditions. Specify coating build to service exposure and verify claims against the approved formulation sheet.",
         "usages": [
-          "Smoothing fillers"
+          "Ready-mixed filler for smoothing interior walls before painting.",
+          "Assess substrate soundness, primer compatibility and drying conditions.",
+          "Specify coating build to service exposure and verify claims against the approved formulation sheet."
         ]
       }
     },
@@ -1482,24 +1560,30 @@
     "ordre": 30,
     "contenu": {
       "fr": {
-        "accroche": "Peinture de façade élastomère (pontage des microfissures)",
-        "description": "FENEK-PAINT FAC-EL — Peinture de façade élastomère (pontage des microfissures). Gamme : Peintures et finitions. Domaine : Peintures de façade.",
+        "accroche": "Peinture élastomère de façade pour microfissures stabilisées, avec pontage à qualifier.",
+        "description": "FENEK-PAINT FAC-EL : Peinture élastomère de façade pour microfissures stabilisées, avec pontage à qualifier. Contrôler l'état du support, le primaire compatible et les conditions de séchage. Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée.",
         "usages": [
-          "Peintures de façade"
+          "Peinture élastomère de façade pour microfissures stabilisées, avec pontage à qualifier.",
+          "Contrôler l'état du support, le primaire compatible et les conditions de séchage.",
+          "Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée."
         ]
       },
       "ar": {
-        "accroche": "دهان واجهات إيلاستوميري للشقوق الدقيقة",
-        "description": "FENEK-PAINT FAC-EL — دهان واجهات إيلاستوميري للشقوق الدقيقة. الفئة: الدهانات والتشطيبات. المجال: دهانات الواجهات.",
+        "accroche": "دهان واجهات مرن للشقوق الشعرية الثابتة مع اختبار جسر التشققات.",
+        "description": "FENEK-PAINT FAC-EL : دهان واجهات مرن للشقوق الشعرية الثابتة مع اختبار جسر التشققات. افحص حالة السطح والبرايمر المناسب وظروف الجفاف. اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية.",
         "usages": [
-          "دهانات الواجهات"
+          "دهان واجهات مرن للشقوق الشعرية الثابتة مع اختبار جسر التشققات.",
+          "افحص حالة السطح والبرايمر المناسب وظروف الجفاف.",
+          "اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية."
         ]
       },
       "en": {
-        "accroche": "Elastomeric façade paint for hairline cracks",
-        "description": "FENEK-PAINT FAC-EL — Elastomeric façade paint for hairline cracks. Range: Paints and finishes. Category: Façade paints.",
+        "accroche": "Elastomeric facade paint for stable hairline cracks, subject to crack-bridging qualification.",
+        "description": "FENEK-PAINT FAC-EL : Elastomeric facade paint for stable hairline cracks, subject to crack-bridging qualification. Assess substrate soundness, primer compatibility and drying conditions. Specify coating build to service exposure and verify claims against the approved formulation sheet.",
         "usages": [
-          "Façade paints"
+          "Elastomeric facade paint for stable hairline cracks, subject to crack-bridging qualification.",
+          "Assess substrate soundness, primer compatibility and drying conditions.",
+          "Specify coating build to service exposure and verify claims against the approved formulation sheet."
         ]
       }
     },
@@ -1533,24 +1617,30 @@
     "ordre": 31,
     "contenu": {
       "fr": {
-        "accroche": "Peinture acrylique de façade, mate",
-        "description": "FENEK-PAINT FAC-M — Peinture acrylique de façade, mate. Gamme : Peintures et finitions. Domaine : Peintures de façade.",
+        "accroche": "Peinture acrylique mate pour protection décorative des façades préparées.",
+        "description": "FENEK-PAINT FAC-M : Peinture acrylique mate pour protection décorative des façades préparées. Contrôler l'état du support, le primaire compatible et les conditions de séchage. Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée.",
         "usages": [
-          "Peintures de façade"
+          "Peinture acrylique mate pour protection décorative des façades préparées.",
+          "Contrôler l'état du support, le primaire compatible et les conditions de séchage.",
+          "Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée."
         ]
       },
       "ar": {
-        "accroche": "دهان أكريليكي مطفي للواجهات",
-        "description": "FENEK-PAINT FAC-M — دهان أكريليكي مطفي للواجهات. الفئة: الدهانات والتشطيبات. المجال: دهانات الواجهات.",
+        "accroche": "دهان أكريليكي مطفي لحماية الواجهات المحضرة وتزيينها.",
+        "description": "FENEK-PAINT FAC-M : دهان أكريليكي مطفي لحماية الواجهات المحضرة وتزيينها. افحص حالة السطح والبرايمر المناسب وظروف الجفاف. اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية.",
         "usages": [
-          "دهانات الواجهات"
+          "دهان أكريليكي مطفي لحماية الواجهات المحضرة وتزيينها.",
+          "افحص حالة السطح والبرايمر المناسب وظروف الجفاف.",
+          "اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية."
         ]
       },
       "en": {
-        "accroche": "Matt acrylic façade paint",
-        "description": "FENEK-PAINT FAC-M — Matt acrylic façade paint. Range: Paints and finishes. Category: Façade paints.",
+        "accroche": "Matt acrylic paint for the decorative protection of prepared façades.",
+        "description": "FENEK-PAINT FAC-M : Matt acrylic paint for the decorative protection of prepared façades. Assess substrate soundness, primer compatibility and drying conditions. Specify coating build to service exposure and verify claims against the approved formulation sheet.",
         "usages": [
-          "Façade paints"
+          "Matt acrylic paint for the decorative protection of prepared façades.",
+          "Assess substrate soundness, primer compatibility and drying conditions.",
+          "Specify coating build to service exposure and verify claims against the approved formulation sheet."
         ]
       }
     },
@@ -1584,24 +1674,30 @@
     "ordre": 32,
     "contenu": {
       "fr": {
-        "accroche": "Peinture de façade siloxane (hydrofuge, respirante)",
-        "description": "FENEK-PAINT FAC-SX — Peinture de façade siloxane (hydrofuge, respirante). Gamme : Peintures et finitions. Domaine : Peintures de façade.",
+        "accroche": "Peinture de façade siloxane conçue pour une faible absorption d’eau et un bon transfert de vapeur.",
+        "description": "FENEK-PAINT FAC-SX : Peinture de façade siloxane conçue pour une faible absorption d’eau et un bon transfert de vapeur. Contrôler l'état du support, le primaire compatible et les conditions de séchage. Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée.",
         "usages": [
-          "Peintures de façade"
+          "Peinture de façade siloxane conçue pour une faible absorption d’eau et un bon transfert de vapeur.",
+          "Contrôler l'état du support, le primaire compatible et les conditions de séchage.",
+          "Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée."
         ]
       },
       "ar": {
-        "accroche": "دهان واجهات سيلوكسان طارد للماء ونفّاذ للبخار",
-        "description": "FENEK-PAINT FAC-SX — دهان واجهات سيلوكسان طارد للماء ونفّاذ للبخار. الفئة: الدهانات والتشطيبات. المجال: دهانات الواجهات.",
+        "accroche": "دهان واجهات سيلوكساني منخفض امتصاص ماء المطر ونفاذ لبخار الماء بعد اختبار.",
+        "description": "FENEK-PAINT FAC-SX : دهان واجهات سيلوكساني منخفض امتصاص ماء المطر ونفاذ لبخار الماء بعد اختبار. افحص حالة السطح والبرايمر المناسب وظروف الجفاف. اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية.",
         "usages": [
-          "دهانات الواجهات"
+          "دهان واجهات سيلوكساني منخفض امتصاص ماء المطر ونفاذ لبخار الماء بعد اختبار.",
+          "افحص حالة السطح والبرايمر المناسب وظروف الجفاف.",
+          "اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية."
         ]
       },
       "en": {
-        "accroche": "Water-repellent breathable siloxane façade paint",
-        "description": "FENEK-PAINT FAC-SX — Water-repellent breathable siloxane façade paint. Range: Paints and finishes. Category: Façade paints.",
+        "accroche": "Siloxane facade coating for reduced rainwater absorption and vapour diffusion after testing.",
+        "description": "FENEK-PAINT FAC-SX : Siloxane facade coating for reduced rainwater absorption and vapour diffusion after testing. Assess substrate soundness, primer compatibility and drying conditions. Specify coating build to service exposure and verify claims against the approved formulation sheet.",
         "usages": [
-          "Façade paints"
+          "Siloxane facade coating for reduced rainwater absorption and vapour diffusion after testing.",
+          "Assess substrate soundness, primer compatibility and drying conditions.",
+          "Specify coating build to service exposure and verify claims against the approved formulation sheet."
         ]
       }
     },
@@ -1635,24 +1731,30 @@
     "ordre": 33,
     "contenu": {
       "fr": {
-        "accroche": "Peinture acrylique intérieure mate",
-        "description": "FENEK-PAINT INT-M — Peinture acrylique intérieure mate. Gamme : Peintures et finitions. Domaine : Peintures intérieures.",
+        "accroche": "Peinture acrylique mate pour murs et plafonds intérieurs propres et préparés.",
+        "description": "FENEK-PAINT INT-M : Peinture acrylique mate pour murs et plafonds intérieurs propres et préparés. Contrôler l'état du support, le primaire compatible et les conditions de séchage. Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée.",
         "usages": [
-          "Peintures intérieures"
+          "Peinture acrylique mate pour murs et plafonds intérieurs propres et préparés.",
+          "Contrôler l'état du support, le primaire compatible et les conditions de séchage.",
+          "Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée."
         ]
       },
       "ar": {
-        "accroche": "دهان أكريليكي داخلي مطفي",
-        "description": "FENEK-PAINT INT-M — دهان أكريليكي داخلي مطفي. الفئة: الدهانات والتشطيبات. المجال: الدهانات الداخلية.",
+        "accroche": "دهان أكريليكي مطفي للجدران والأسقف الداخلية المحضرة.",
+        "description": "FENEK-PAINT INT-M : دهان أكريليكي مطفي للجدران والأسقف الداخلية المحضرة. افحص حالة السطح والبرايمر المناسب وظروف الجفاف. اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية.",
         "usages": [
-          "الدهانات الداخلية"
+          "دهان أكريليكي مطفي للجدران والأسقف الداخلية المحضرة.",
+          "افحص حالة السطح والبرايمر المناسب وظروف الجفاف.",
+          "اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية."
         ]
       },
       "en": {
-        "accroche": "Matt interior acrylic paint",
-        "description": "FENEK-PAINT INT-M — Matt interior acrylic paint. Range: Paints and finishes. Category: Interior paints.",
+        "accroche": "Matt acrylic paint for clean, prepared interior walls and ceilings.",
+        "description": "FENEK-PAINT INT-M : Matt acrylic paint for clean, prepared interior walls and ceilings. Assess substrate soundness, primer compatibility and drying conditions. Specify coating build to service exposure and verify claims against the approved formulation sheet.",
         "usages": [
-          "Interior paints"
+          "Matt acrylic paint for clean, prepared interior walls and ceilings.",
+          "Assess substrate soundness, primer compatibility and drying conditions.",
+          "Specify coating build to service exposure and verify claims against the approved formulation sheet."
         ]
       }
     },
@@ -1686,24 +1788,30 @@
     "ordre": 34,
     "contenu": {
       "fr": {
-        "accroche": "Peinture acrylique intérieure satinée",
-        "description": "FENEK-PAINT INT-S — Peinture acrylique intérieure satinée. Gamme : Peintures et finitions. Domaine : Peintures intérieures.",
+        "accroche": "Peinture acrylique satinée pour murs intérieurs à entretien régulier.",
+        "description": "FENEK-PAINT INT-S : Peinture acrylique satinée pour murs intérieurs à entretien régulier. Contrôler l'état du support, le primaire compatible et les conditions de séchage. Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée.",
         "usages": [
-          "Peintures intérieures"
+          "Peinture acrylique satinée pour murs intérieurs à entretien régulier.",
+          "Contrôler l'état du support, le primaire compatible et les conditions de séchage.",
+          "Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée."
         ]
       },
       "ar": {
-        "accroche": "دهان أكريليكي داخلي ساتان",
-        "description": "FENEK-PAINT INT-S — دهان أكريليكي داخلي ساتان. الفئة: الدهانات والتشطيبات. المجال: الدهانات الداخلية.",
+        "accroche": "دهان أكريليكي ساتان للجدران الداخلية التي تحتاج تنظيفاً دورياً.",
+        "description": "FENEK-PAINT INT-S : دهان أكريليكي ساتان للجدران الداخلية التي تحتاج تنظيفاً دورياً. افحص حالة السطح والبرايمر المناسب وظروف الجفاف. اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية.",
         "usages": [
-          "الدهانات الداخلية"
+          "دهان أكريليكي ساتان للجدران الداخلية التي تحتاج تنظيفاً دورياً.",
+          "افحص حالة السطح والبرايمر المناسب وظروف الجفاف.",
+          "اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية."
         ]
       },
       "en": {
-        "accroche": "Satin interior acrylic paint",
-        "description": "FENEK-PAINT INT-S — Satin interior acrylic paint. Range: Paints and finishes. Category: Interior paints.",
+        "accroche": "Satin acrylic coating for interior walls requiring regular maintenance.",
+        "description": "FENEK-PAINT INT-S : Satin acrylic coating for interior walls requiring regular maintenance. Assess substrate soundness, primer compatibility and drying conditions. Specify coating build to service exposure and verify claims against the approved formulation sheet.",
         "usages": [
-          "Interior paints"
+          "Satin acrylic coating for interior walls requiring regular maintenance.",
+          "Assess substrate soundness, primer compatibility and drying conditions.",
+          "Specify coating build to service exposure and verify claims against the approved formulation sheet."
         ]
       }
     },
@@ -1737,24 +1845,30 @@
     "ordre": 35,
     "contenu": {
       "fr": {
-        "accroche": "Peinture intérieure lessivable haute résistance",
-        "description": "FENEK-PAINT INT-WA — Peinture intérieure lessivable haute résistance. Gamme : Peintures et finitions. Domaine : Peintures intérieures.",
+        "accroche": "Peinture lessivable haute résistance dont la classe d’abrasion humide reste à vérifier.",
+        "description": "FENEK-PAINT INT-WA : Peinture lessivable haute résistance dont la classe d’abrasion humide reste à vérifier. Contrôler l'état du support, le primaire compatible et les conditions de séchage. Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée.",
         "usages": [
-          "Peintures intérieures"
+          "Peinture lessivable haute résistance dont la classe d’abrasion humide reste à vérifier.",
+          "Contrôler l'état du support, le primaire compatible et les conditions de séchage.",
+          "Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée."
         ]
       },
       "ar": {
-        "accroche": "دهان داخلي قابل للغسل عالي التحمل",
-        "description": "FENEK-PAINT INT-WA — دهان داخلي قابل للغسل عالي التحمل. الفئة: الدهانات والتشطيبات. المجال: الدهانات الداخلية.",
+        "accroche": "دهان قابل للغسل عالي التحمل يتطلب إثبات مقاومة الفرك الرطب.",
+        "description": "FENEK-PAINT INT-WA : دهان قابل للغسل عالي التحمل يتطلب إثبات مقاومة الفرك الرطب. افحص حالة السطح والبرايمر المناسب وظروف الجفاف. اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية.",
         "usages": [
-          "الدهانات الداخلية"
+          "دهان قابل للغسل عالي التحمل يتطلب إثبات مقاومة الفرك الرطب.",
+          "افحص حالة السطح والبرايمر المناسب وظروف الجفاف.",
+          "اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية."
         ]
       },
       "en": {
-        "accroche": "High-durability washable interior paint",
-        "description": "FENEK-PAINT INT-WA — High-durability washable interior paint. Range: Paints and finishes. Category: Interior paints.",
+        "accroche": "High-durability washable paint requiring actual wet scrub classification.",
+        "description": "FENEK-PAINT INT-WA : High-durability washable paint requiring actual wet scrub classification. Assess substrate soundness, primer compatibility and drying conditions. Specify coating build to service exposure and verify claims against the approved formulation sheet.",
         "usages": [
-          "Interior paints"
+          "High-durability washable paint requiring actual wet scrub classification.",
+          "Assess substrate soundness, primer compatibility and drying conditions.",
+          "Specify coating build to service exposure and verify claims against the approved formulation sheet."
         ]
       }
     },
@@ -1788,24 +1902,30 @@
     "ordre": 36,
     "contenu": {
       "fr": {
-        "accroche": "Sous-couche d'accrochage acrylique",
-        "description": "FENEK-PAINT PRIM-A — Sous-couche d'accrochage acrylique. Gamme : Peintures et finitions. Domaine : Sous-couches.",
+        "accroche": "Primaire acrylique d’accrochage pour améliorer l’adhésion de la finition.",
+        "description": "FENEK-PAINT PRIM-A : Primaire acrylique d’accrochage pour améliorer l’adhésion de la finition. Contrôler l'état du support, le primaire compatible et les conditions de séchage. Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée.",
         "usages": [
-          "Sous-couches"
+          "Primaire acrylique d’accrochage pour améliorer l’adhésion de la finition.",
+          "Contrôler l'état du support, le primaire compatible et les conditions de séchage.",
+          "Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée."
         ]
       },
       "ar": {
-        "accroche": "طبقة تأسيس أكريليكية للالتصاق",
-        "description": "FENEK-PAINT PRIM-A — طبقة تأسيس أكريليكية للالتصاق. الفئة: الدهانات والتشطيبات. المجال: الطبقات التأسيسية.",
+        "accroche": "أساس أكريليكي لتعزيز التصاق طلاء التشطيب.",
+        "description": "FENEK-PAINT PRIM-A : أساس أكريليكي لتعزيز التصاق طلاء التشطيب. افحص حالة السطح والبرايمر المناسب وظروف الجفاف. اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية.",
         "usages": [
-          "الطبقات التأسيسية"
+          "أساس أكريليكي لتعزيز التصاق طلاء التشطيب.",
+          "افحص حالة السطح والبرايمر المناسب وظروف الجفاف.",
+          "اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية."
         ]
       },
       "en": {
-        "accroche": "Acrylic adhesion primer",
-        "description": "FENEK-PAINT PRIM-A — Acrylic adhesion primer. Range: Paints and finishes. Category: Primers.",
+        "accroche": "Acrylic adhesion primer for improving the bonding of a compatible finish.",
+        "description": "FENEK-PAINT PRIM-A : Acrylic adhesion primer for improving the bonding of a compatible finish. Assess substrate soundness, primer compatibility and drying conditions. Specify coating build to service exposure and verify claims against the approved formulation sheet.",
         "usages": [
-          "Primers"
+          "Acrylic adhesion primer for improving the bonding of a compatible finish.",
+          "Assess substrate soundness, primer compatibility and drying conditions.",
+          "Specify coating build to service exposure and verify claims against the approved formulation sheet."
         ]
       }
     },
@@ -1839,24 +1959,30 @@
     "ordre": 37,
     "contenu": {
       "fr": {
-        "accroche": "Fixateur de fond",
-        "description": "FENEK-PAINT PRIM-FX — Fixateur de fond. Gamme : Peintures et finitions. Domaine : Sous-couches.",
+        "accroche": "Fixateur de fond pour supports minéraux légèrement pulvérulents et absorbants.",
+        "description": "FENEK-PAINT PRIM-FX : Fixateur de fond pour supports minéraux légèrement pulvérulents et absorbants. Contrôler l'état du support, le primaire compatible et les conditions de séchage. Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée.",
         "usages": [
-          "Sous-couches"
+          "Fixateur de fond pour supports minéraux légèrement pulvérulents et absorbants.",
+          "Contrôler l'état du support, le primaire compatible et les conditions de séchage.",
+          "Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée."
         ]
       },
       "ar": {
-        "accroche": "مثبّت للأسطح المسامية",
-        "description": "FENEK-PAINT PRIM-FX — مثبّت للأسطح المسامية. الفئة: الدهانات والتشطيبات. المجال: الطبقات التأسيسية.",
+        "accroche": "مثبت للأسطح المعدنية الماصة والضعيفة نسبياً قبل الطلاء.",
+        "description": "FENEK-PAINT PRIM-FX : مثبت للأسطح المعدنية الماصة والضعيفة نسبياً قبل الطلاء. افحص حالة السطح والبرايمر المناسب وظروف الجفاف. اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية.",
         "usages": [
-          "الطبقات التأسيسية"
+          "مثبت للأسطح المعدنية الماصة والضعيفة نسبياً قبل الطلاء.",
+          "افحص حالة السطح والبرايمر المناسب وظروف الجفاف.",
+          "اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية."
         ]
       },
       "en": {
-        "accroche": "Substrate consolidating primer",
-        "description": "FENEK-PAINT PRIM-FX — Substrate consolidating primer. Range: Paints and finishes. Category: Primers.",
+        "accroche": "Penetrating fixative for mildly friable, absorbent mineral substrates before painting.",
+        "description": "FENEK-PAINT PRIM-FX : Penetrating fixative for mildly friable, absorbent mineral substrates before painting. Assess substrate soundness, primer compatibility and drying conditions. Specify coating build to service exposure and verify claims against the approved formulation sheet.",
         "usages": [
-          "Primers"
+          "Penetrating fixative for mildly friable, absorbent mineral substrates before painting.",
+          "Assess substrate soundness, primer compatibility and drying conditions.",
+          "Specify coating build to service exposure and verify claims against the approved formulation sheet."
         ]
       }
     },
@@ -1890,24 +2016,30 @@
     "ordre": 38,
     "contenu": {
       "fr": {
-        "accroche": "Peinture de sol (parkings, locaux)",
-        "description": "FENEK-PAINT SOL-A — Peinture de sol (parkings, locaux). Gamme : Peintures et finitions. Domaine : Peintures de sol.",
+        "accroche": "Peinture de sol pour locaux à trafic léger, dont l’usure et l’adhérence doivent être testées.",
+        "description": "FENEK-PAINT SOL-A : Peinture de sol pour locaux à trafic léger, dont l’usure et l’adhérence doivent être testées. Contrôler l'état du support, le primaire compatible et les conditions de séchage. Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée.",
         "usages": [
-          "Peintures de sol"
+          "Peinture de sol pour locaux à trafic léger, dont l’usure et l’adhérence doivent être testées.",
+          "Contrôler l'état du support, le primaire compatible et les conditions de séchage.",
+          "Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée."
         ]
       },
       "ar": {
-        "accroche": "دهان أرضيات للمواقف والمرافق",
-        "description": "FENEK-PAINT SOL-A — دهان أرضيات للمواقف والمرافق. الفئة: الدهانات والتشطيبات. المجال: دهانات الأرضيات.",
+        "accroche": "دهان أرضيات للاستعمال الخفيف مع اختبار مقاومة التآكل والالتصاق.",
+        "description": "FENEK-PAINT SOL-A : دهان أرضيات للاستعمال الخفيف مع اختبار مقاومة التآكل والالتصاق. افحص حالة السطح والبرايمر المناسب وظروف الجفاف. اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية.",
         "usages": [
-          "دهانات الأرضيات"
+          "دهان أرضيات للاستعمال الخفيف مع اختبار مقاومة التآكل والالتصاق.",
+          "افحص حالة السطح والبرايمر المناسب وظروف الجفاف.",
+          "اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية."
         ]
       },
       "en": {
-        "accroche": "Floor paint for car parks and premises",
-        "description": "FENEK-PAINT SOL-A — Floor paint for car parks and premises. Range: Paints and finishes. Category: Floor paints.",
+        "accroche": "Floor paint for light-use premises, requiring verified wear and bond performance.",
+        "description": "FENEK-PAINT SOL-A : Floor paint for light-use premises, requiring verified wear and bond performance. Assess substrate soundness, primer compatibility and drying conditions. Specify coating build to service exposure and verify claims against the approved formulation sheet.",
         "usages": [
-          "Floor paints"
+          "Floor paint for light-use premises, requiring verified wear and bond performance.",
+          "Assess substrate soundness, primer compatibility and drying conditions.",
+          "Specify coating build to service exposure and verify claims against the approved formulation sheet."
         ]
       }
     },
@@ -1941,24 +2073,30 @@
     "ordre": 39,
     "contenu": {
       "fr": {
-        "accroche": "Revêtement décoratif texturé fin",
-        "description": "FENEK-PAINT TXT-F — Revêtement décoratif texturé fin. Gamme : Peintures et finitions. Domaine : Revêtements décoratifs.",
+        "accroche": "Revêtement décoratif texturé fin pour support minéral cohésif et correctement préparé.",
+        "description": "FENEK-PAINT TXT-F : Revêtement décoratif texturé fin pour support minéral cohésif et correctement préparé. Contrôler l'état du support, le primaire compatible et les conditions de séchage. Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée.",
         "usages": [
-          "Revêtements décoratifs"
+          "Revêtement décoratif texturé fin pour support minéral cohésif et correctement préparé.",
+          "Contrôler l'état du support, le primaire compatible et les conditions de séchage.",
+          "Adapter le système de couches aux sollicitations, puis confirmer les caractéristiques sur fiche technique approuvée."
         ]
       },
       "ar": {
-        "accroche": "طلاء جدران زخرفي ناعم الملمس",
-        "description": "FENEK-PAINT TXT-F — طلاء جدران زخرفي ناعم الملمس. الفئة: الدهانات والتشطيبات. المجال: الطلاءات الزخرفية.",
+        "accroche": "طلاء زخرفي ناعم الملمس على سطح معدني محضر ومتماسك.",
+        "description": "FENEK-PAINT TXT-F : طلاء زخرفي ناعم الملمس على سطح معدني محضر ومتماسك. افحص حالة السطح والبرايمر المناسب وظروف الجفاف. اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية.",
         "usages": [
-          "الطلاءات الزخرفية"
+          "طلاء زخرفي ناعم الملمس على سطح معدني محضر ومتماسك.",
+          "افحص حالة السطح والبرايمر المناسب وظروف الجفاف.",
+          "اختر نظام الطبقات حسب ظروف الاستخدام ثم اعتمد الخصائص من النشرة الفنية الرسمية."
         ]
       },
       "en": {
-        "accroche": "Fine textured decorative wall coating",
-        "description": "FENEK-PAINT TXT-F — Fine textured decorative wall coating. Range: Paints and finishes. Category: Decorative coatings.",
+        "accroche": "Fine textured decorative coating for sound, properly prepared mineral backgrounds.",
+        "description": "FENEK-PAINT TXT-F : Fine textured decorative coating for sound, properly prepared mineral backgrounds. Assess substrate soundness, primer compatibility and drying conditions. Specify coating build to service exposure and verify claims against the approved formulation sheet.",
         "usages": [
-          "Decorative coatings"
+          "Fine textured decorative coating for sound, properly prepared mineral backgrounds.",
+          "Assess substrate soundness, primer compatibility and drying conditions.",
+          "Specify coating build to service exposure and verify claims against the approved formulation sheet."
         ]
       }
     },
@@ -1992,24 +2130,30 @@
     "ordre": 40,
     "contenu": {
       "fr": {
-        "accroche": "Étanchéité acrylique de toiture",
-        "description": "FENEK-PROOF ACR-RF — Étanchéité acrylique de toiture. Gamme : Étanchéité et protection. Domaine : Étanchéité.",
+        "accroche": "Membrane d’étanchéité acrylique en phase aqueuse pour toitures et terrasses accessibles à l’entretien.",
+        "description": "FENEK-PROOF ACR-RF : Membrane d’étanchéité acrylique en phase aqueuse pour toitures et terrasses accessibles à l’entretien. La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage. Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation.",
         "usages": [
-          "Étanchéité"
+          "Membrane d’étanchéité acrylique en phase aqueuse pour toitures et terrasses accessibles à l’entretien.",
+          "La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage.",
+          "Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation."
         ]
       },
       "ar": {
-        "accroche": "عزل مائي أكريليكي عاكس للأسطح",
-        "description": "FENEK-PROOF ACR-RF — عزل مائي أكريليكي عاكس للأسطح. الفئة: العزل المائي والحماية. المجال: العزل المائي.",
+        "accroche": "غشاء عزل أكريليكي مائي للأسطح مع تفاصيل الوصلات ومناطق الصيانة.",
+        "description": "FENEK-PROOF ACR-RF : غشاء عزل أكريليكي مائي للأسطح مع تفاصيل الوصلات ومناطق الصيانة. يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ. يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة.",
         "usages": [
-          "العزل المائي"
+          "غشاء عزل أكريليكي مائي للأسطح مع تفاصيل الوصلات ومناطق الصيانة.",
+          "يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ.",
+          "يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة."
         ]
       },
       "en": {
-        "accroche": "Reflective acrylic roof waterproofing",
-        "description": "FENEK-PROOF ACR-RF — Reflective acrylic roof waterproofing. Range: Waterproofing and protection. Category: Waterproofing.",
+        "accroche": "Water-based acrylic roof waterproofing membrane for roof surfaces and properly detailed junctions.",
+        "description": "FENEK-PROOF ACR-RF : Water-based acrylic roof waterproofing membrane for roof surfaces and properly detailed junctions. Select the complete system and accessories to suit substrate conditions and project exposure. Confirm installation limits and applicable test evidence against the actual formulation technical sheet.",
         "usages": [
-          "Waterproofing"
+          "Water-based acrylic roof waterproofing membrane for roof surfaces and properly detailed junctions.",
+          "Select the complete system and accessories to suit substrate conditions and project exposure.",
+          "Confirm installation limits and applicable test evidence against the actual formulation technical sheet."
         ]
       }
     },
@@ -2038,24 +2182,30 @@
     "ordre": 41,
     "contenu": {
       "fr": {
-        "accroche": "Étanchéité cimentaire sous carrelage, rigide",
-        "description": "FENEK-PROOF CM-O1P — Étanchéité cimentaire sous carrelage, rigide. Gamme : Étanchéité et protection. Domaine : Étanchéité.",
+        "accroche": "Mortier cimentaire d’étanchéité sous carrelage désigné CM O1P, avec pontage à basse température et exposition à l’eau chlorée à qualifier.",
+        "description": "FENEK-PROOF CM-O1P : Mortier cimentaire d’étanchéité sous carrelage désigné CM O1P, avec pontage à basse température et exposition à l’eau chlorée à qualifier. La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage. Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation.",
         "usages": [
-          "Étanchéité"
+          "Mortier cimentaire d’étanchéité sous carrelage désigné CM O1P, avec pontage à basse température et exposition à l’eau chlorée à qualifier.",
+          "La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage.",
+          "Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation."
         ]
       },
       "ar": {
-        "accroche": "عزل مائي إسمنتي صلب تحت البلاط",
-        "description": "FENEK-PROOF CM-O1P — عزل مائي إسمنتي صلب تحت البلاط. الفئة: العزل المائي والحماية. المجال: العزل المائي.",
+        "accroche": "مونة عزل إسمنتية تحت البلاط برمز CM O1P تتطلب إثبات جسر الشقوق في البرد ومقاومة الماء المعالج بالكلور.",
+        "description": "FENEK-PROOF CM-O1P : مونة عزل إسمنتية تحت البلاط برمز CM O1P تتطلب إثبات جسر الشقوق في البرد ومقاومة الماء المعالج بالكلور. يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ. يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة.",
         "usages": [
-          "العزل المائي"
+          "مونة عزل إسمنتية تحت البلاط برمز CM O1P تتطلب إثبات جسر الشقوق في البرد ومقاومة الماء المعالج بالكلور.",
+          "يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ.",
+          "يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة."
         ]
       },
       "en": {
-        "accroche": "Rigid cementitious waterproofing beneath tiles",
-        "description": "FENEK-PROOF CM-O1P — Rigid cementitious waterproofing beneath tiles. Range: Waterproofing and protection. Category: Waterproofing.",
+        "accroche": "Cementitious under-tile waterproofing designated CM O1P, requiring low-temperature crack-bridging and chlorinated-water qualification.",
+        "description": "FENEK-PROOF CM-O1P : Cementitious under-tile waterproofing designated CM O1P, requiring low-temperature crack-bridging and chlorinated-water qualification. Select the complete system and accessories to suit substrate conditions and project exposure. Confirm installation limits and applicable test evidence against the actual formulation technical sheet.",
         "usages": [
-          "Waterproofing"
+          "Cementitious under-tile waterproofing designated CM O1P, requiring low-temperature crack-bridging and chlorinated-water qualification.",
+          "Select the complete system and accessories to suit substrate conditions and project exposure.",
+          "Confirm installation limits and applicable test evidence against the actual formulation technical sheet."
         ]
       }
     },
@@ -2084,24 +2234,30 @@
     "ordre": 42,
     "contenu": {
       "fr": {
-        "accroche": "Étanchéité cimentaire bi-composant, flexible",
-        "description": "FENEK-PROOF CM-O2P — Étanchéité cimentaire bi-composant, flexible. Gamme : Étanchéité et protection. Domaine : Étanchéité.",
+        "accroche": "Système d’étanchéité cimentaire souple bicomposant sous carrelage, avec classement très basse température O2 et résistance P à documenter.",
+        "description": "FENEK-PROOF CM-O2P : Système d’étanchéité cimentaire souple bicomposant sous carrelage, avec classement très basse température O2 et résistance P à documenter. La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage. Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation.",
         "usages": [
-          "Étanchéité"
+          "Système d’étanchéité cimentaire souple bicomposant sous carrelage, avec classement très basse température O2 et résistance P à documenter.",
+          "La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage.",
+          "Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation."
         ]
       },
       "ar": {
-        "accroche": "عزل مائي إسمنتي مرن ثنائي المكونات",
-        "description": "FENEK-PROOF CM-O2P — عزل مائي إسمنتي مرن ثنائي المكونات. الفئة: العزل المائي والحماية. المجال: العزل المائي.",
+        "accroche": "نظام عزل إسمنتي مرن بمكونين تحت البلاط مع اختبار التشققات O2 في البرودة الشديدة والماء المكلور P.",
+        "description": "FENEK-PROOF CM-O2P : نظام عزل إسمنتي مرن بمكونين تحت البلاط مع اختبار التشققات O2 في البرودة الشديدة والماء المكلور P. يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ. يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة.",
         "usages": [
-          "العزل المائي"
+          "نظام عزل إسمنتي مرن بمكونين تحت البلاط مع اختبار التشققات O2 في البرودة الشديدة والماء المكلور P.",
+          "يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ.",
+          "يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة."
         ]
       },
       "en": {
-        "accroche": "Flexible two-component cementitious waterproofing",
-        "description": "FENEK-PROOF CM-O2P — Flexible two-component cementitious waterproofing. Range: Waterproofing and protection. Category: Waterproofing.",
+        "accroche": "Two-component flexible cementitious under-tile membrane requiring O2 very-low-temperature and P chlorinated-water qualification.",
+        "description": "FENEK-PROOF CM-O2P : Two-component flexible cementitious under-tile membrane requiring O2 very-low-temperature and P chlorinated-water qualification. Select the complete system and accessories to suit substrate conditions and project exposure. Confirm installation limits and applicable test evidence against the actual formulation technical sheet.",
         "usages": [
-          "Waterproofing"
+          "Two-component flexible cementitious under-tile membrane requiring O2 very-low-temperature and P chlorinated-water qualification.",
+          "Select the complete system and accessories to suit substrate conditions and project exposure.",
+          "Confirm installation limits and applicable test evidence against the actual formulation technical sheet."
         ]
       }
     },
@@ -2125,24 +2281,30 @@
     "ordre": 43,
     "contenu": {
       "fr": {
-        "accroche": "Résine d'ancrage et scellement chimique",
-        "description": "FENEK-PROOF EP-ANC — Résine d'ancrage et scellement chimique. Gamme : Étanchéité et protection. Domaine : Résines époxy.",
+        "accroche": "Résine de scellement chimique à base époxy pour tiges d’ancrage, sous dimensionnement et évaluation technique du système.",
+        "description": "FENEK-PROOF EP-ANC : Résine de scellement chimique à base époxy pour tiges d’ancrage, sous dimensionnement et évaluation technique du système. La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage. Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation.",
         "usages": [
-          "Résines époxy"
+          "Résine de scellement chimique à base époxy pour tiges d’ancrage, sous dimensionnement et évaluation technique du système.",
+          "La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage.",
+          "Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation."
         ]
       },
       "ar": {
-        "accroche": "راتنج للتثبيت الكيميائي",
-        "description": "FENEK-PROOF EP-ANC — راتنج للتثبيت الكيميائي. الفئة: العزل المائي والحماية. المجال: راتنجات الإيبوكسي.",
+        "accroche": "راتنج إيبوكسي للتثبيت الكيميائي للقضبان مع تصميم هندسي وتقييم فني للنظام.",
+        "description": "FENEK-PROOF EP-ANC : راتنج إيبوكسي للتثبيت الكيميائي للقضبان مع تصميم هندسي وتقييم فني للنظام. يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ. يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة.",
         "usages": [
-          "راتنجات الإيبوكسي"
+          "راتنج إيبوكسي للتثبيت الكيميائي للقضبان مع تصميم هندسي وتقييم فني للنظام.",
+          "يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ.",
+          "يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة."
         ]
       },
       "en": {
-        "accroche": "Chemical anchoring resin",
-        "description": "FENEK-PROOF EP-ANC — Chemical anchoring resin. Range: Waterproofing and protection. Category: Epoxy resins.",
+        "accroche": "Epoxy chemical anchoring resin for threaded rods and dowels, subject to system ETA and engineered anchorage design.",
+        "description": "FENEK-PROOF EP-ANC : Epoxy chemical anchoring resin for threaded rods and dowels, subject to system ETA and engineered anchorage design. Select the complete system and accessories to suit substrate conditions and project exposure. Confirm installation limits and applicable test evidence against the actual formulation technical sheet.",
         "usages": [
-          "Epoxy resins"
+          "Epoxy chemical anchoring resin for threaded rods and dowels, subject to system ETA and engineered anchorage design.",
+          "Select the complete system and accessories to suit substrate conditions and project exposure.",
+          "Confirm installation limits and applicable test evidence against the actual formulation technical sheet."
         ]
       }
     },
@@ -2166,24 +2328,30 @@
     "ordre": 44,
     "contenu": {
       "fr": {
-        "accroche": "Résine d'injection époxy (fissures)",
-        "description": "FENEK-PROOF EP-INJ — Résine d'injection époxy (fissures). Gamme : Étanchéité et protection. Domaine : Résines époxy.",
+        "accroche": "Résine d’injection époxydique destinée au remplissage de fissures stables du béton, avec objectif de transfert de forces à établir.",
+        "description": "FENEK-PROOF EP-INJ : Résine d’injection époxydique destinée au remplissage de fissures stables du béton, avec objectif de transfert de forces à établir. La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage. Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation.",
         "usages": [
-          "Résines époxy"
+          "Résine d’injection époxydique destinée au remplissage de fissures stables du béton, avec objectif de transfert de forces à établir.",
+          "La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage.",
+          "Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation."
         ]
       },
       "ar": {
-        "accroche": "راتنج إيبوكسي لحقن الشقوق",
-        "description": "FENEK-PROOF EP-INJ — راتنج إيبوكسي لحقن الشقوق. الفئة: العزل المائي والحماية. المجال: راتنجات الإيبوكسي.",
+        "accroche": "راتنج إيبوكسي لحقن الشقوق الخرسانية الثابتة مع تحديد هدف نقل القوى قبل التنفيذ.",
+        "description": "FENEK-PROOF EP-INJ : راتنج إيبوكسي لحقن الشقوق الخرسانية الثابتة مع تحديد هدف نقل القوى قبل التنفيذ. يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ. يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة.",
         "usages": [
-          "راتنجات الإيبوكسي"
+          "راتنج إيبوكسي لحقن الشقوق الخرسانية الثابتة مع تحديد هدف نقل القوى قبل التنفيذ.",
+          "يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ.",
+          "يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة."
         ]
       },
       "en": {
-        "accroche": "Epoxy crack injection resin",
-        "description": "FENEK-PROOF EP-INJ — Epoxy crack injection resin. Range: Waterproofing and protection. Category: Epoxy resins.",
+        "accroche": "Epoxy injection resin for stable concrete cracking, with load-transfer injection purpose to be established by diagnosis.",
+        "description": "FENEK-PROOF EP-INJ : Epoxy injection resin for stable concrete cracking, with load-transfer injection purpose to be established by diagnosis. Select the complete system and accessories to suit substrate conditions and project exposure. Confirm installation limits and applicable test evidence against the actual formulation technical sheet.",
         "usages": [
-          "Epoxy resins"
+          "Epoxy injection resin for stable concrete cracking, with load-transfer injection purpose to be established by diagnosis.",
+          "Select the complete system and accessories to suit substrate conditions and project exposure.",
+          "Confirm installation limits and applicable test evidence against the actual formulation technical sheet."
         ]
       }
     },
@@ -2207,24 +2375,30 @@
     "ordre": 45,
     "contenu": {
       "fr": {
-        "accroche": "Primaire époxy",
-        "description": "FENEK-PROOF EP-PRIM — Primaire époxy. Gamme : Étanchéité et protection. Domaine : Résines époxy.",
+        "accroche": "Primaire époxy bicomposant pour préparation des supports minéraux avant les couches de finition compatibles.",
+        "description": "FENEK-PROOF EP-PRIM : Primaire époxy bicomposant pour préparation des supports minéraux avant les couches de finition compatibles. La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage. Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation.",
         "usages": [
-          "Résines époxy"
+          "Primaire époxy bicomposant pour préparation des supports minéraux avant les couches de finition compatibles.",
+          "La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage.",
+          "Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation."
         ]
       },
       "ar": {
-        "accroche": "طبقة تأسيس إيبوكسية",
-        "description": "FENEK-PROOF EP-PRIM — طبقة تأسيس إيبوكسية. الفئة: العزل المائي والحماية. المجال: راتنجات الإيبوكسي.",
+        "accroche": "برايمر إيبوكسي بمكونين لتحضير الأسطح المعدنية قبل طبقات التشطيب المتوافقة.",
+        "description": "FENEK-PROOF EP-PRIM : برايمر إيبوكسي بمكونين لتحضير الأسطح المعدنية قبل طبقات التشطيب المتوافقة. يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ. يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة.",
         "usages": [
-          "راتنجات الإيبوكسي"
+          "برايمر إيبوكسي بمكونين لتحضير الأسطح المعدنية قبل طبقات التشطيب المتوافقة.",
+          "يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ.",
+          "يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة."
         ]
       },
       "en": {
-        "accroche": "Epoxy primer",
-        "description": "FENEK-PROOF EP-PRIM — Epoxy primer. Range: Waterproofing and protection. Category: Epoxy resins.",
+        "accroche": "Two-component epoxy primer to prepare sound mineral substrates for compatible resin floor or protection systems.",
+        "description": "FENEK-PROOF EP-PRIM : Two-component epoxy primer to prepare sound mineral substrates for compatible resin floor or protection systems. Select the complete system and accessories to suit substrate conditions and project exposure. Confirm installation limits and applicable test evidence against the actual formulation technical sheet.",
         "usages": [
-          "Epoxy resins"
+          "Two-component epoxy primer to prepare sound mineral substrates for compatible resin floor or protection systems.",
+          "Select the complete system and accessories to suit substrate conditions and project exposure.",
+          "Confirm installation limits and applicable test evidence against the actual formulation technical sheet."
         ]
       }
     },
@@ -2248,24 +2422,30 @@
     "ordre": 46,
     "contenu": {
       "fr": {
-        "accroche": "Colle structurelle époxy",
-        "description": "FENEK-PROOF EP-SB — Colle structurelle époxy. Gamme : Étanchéité et protection. Domaine : Résines époxy.",
+        "accroche": "Adhésif structural époxy pour reprise de collage sur béton, dont le caractère structurel doit être démontré pour l’emploi ciblé.",
+        "description": "FENEK-PROOF EP-SB : Adhésif structural époxy pour reprise de collage sur béton, dont le caractère structurel doit être démontré pour l’emploi ciblé. La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage. Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation.",
         "usages": [
-          "Résines époxy"
+          "Adhésif structural époxy pour reprise de collage sur béton, dont le caractère structurel doit être démontré pour l’emploi ciblé.",
+          "La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage.",
+          "Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation."
         ]
       },
       "ar": {
-        "accroche": "لاصق إيبوكسي إنشائي",
-        "description": "FENEK-PROOF EP-SB — لاصق إيبوكسي إنشائي. الفئة: العزل المائي والحماية. المجال: راتنجات الإيبوكسي.",
+        "accroche": "لاصق إيبوكسي إنشائي لأعمال ربط الخرسانة مع التحقق من الأداء بحسب الاستخدام المحدد.",
+        "description": "FENEK-PROOF EP-SB : لاصق إيبوكسي إنشائي لأعمال ربط الخرسانة مع التحقق من الأداء بحسب الاستخدام المحدد. يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ. يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة.",
         "usages": [
-          "راتنجات الإيبوكسي"
+          "لاصق إيبوكسي إنشائي لأعمال ربط الخرسانة مع التحقق من الأداء بحسب الاستخدام المحدد.",
+          "يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ.",
+          "يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة."
         ]
       },
       "en": {
-        "accroche": "Structural epoxy adhesive",
-        "description": "FENEK-PROOF EP-SB — Structural epoxy adhesive. Range: Waterproofing and protection. Category: Epoxy resins.",
+        "accroche": "Structural epoxy adhesive for concrete bonding applications, with suitability and load transfer to be demonstrated for the use.",
+        "description": "FENEK-PROOF EP-SB : Structural epoxy adhesive for concrete bonding applications, with suitability and load transfer to be demonstrated for the use. Select the complete system and accessories to suit substrate conditions and project exposure. Confirm installation limits and applicable test evidence against the actual formulation technical sheet.",
         "usages": [
-          "Epoxy resins"
+          "Structural epoxy adhesive for concrete bonding applications, with suitability and load transfer to be demonstrated for the use.",
+          "Select the complete system and accessories to suit substrate conditions and project exposure.",
+          "Confirm installation limits and applicable test evidence against the actual formulation technical sheet."
         ]
       }
     },
@@ -2289,24 +2469,30 @@
     "ordre": 47,
     "contenu": {
       "fr": {
-        "accroche": "Revêtement de sol époxy autolissant",
-        "description": "FENEK-PROOF EP-SR — Revêtement de sol époxy autolissant. Gamme : Étanchéité et protection. Domaine : Résines époxy.",
+        "accroche": "Système de sol époxy autolissant à deux composants pour supports béton préparés et résistances d’usage à qualifier.",
+        "description": "FENEK-PROOF EP-SR : Système de sol époxy autolissant à deux composants pour supports béton préparés et résistances d’usage à qualifier. La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage. Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation.",
         "usages": [
-          "Résines époxy"
+          "Système de sol époxy autolissant à deux composants pour supports béton préparés et résistances d’usage à qualifier.",
+          "La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage.",
+          "Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation."
         ]
       },
       "ar": {
-        "accroche": "طلاء أرضيات إيبوكسي ذاتي التسوية",
-        "description": "FENEK-PROOF EP-SR — طلاء أرضيات إيبوكسي ذاتي التسوية. الفئة: العزل المائي والحماية. المجال: راتنجات الإيبوكسي.",
+        "accroche": "نظام أرضيات إيبوكسي ذاتي التسوية بمكونين فوق الخرسانة المحضرة مع اختبار مقاومة الاستخدام.",
+        "description": "FENEK-PROOF EP-SR : نظام أرضيات إيبوكسي ذاتي التسوية بمكونين فوق الخرسانة المحضرة مع اختبار مقاومة الاستخدام. يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ. يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة.",
         "usages": [
-          "راتنجات الإيبوكسي"
+          "نظام أرضيات إيبوكسي ذاتي التسوية بمكونين فوق الخرسانة المحضرة مع اختبار مقاومة الاستخدام.",
+          "يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ.",
+          "يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة."
         ]
       },
       "en": {
-        "accroche": "Self-levelling epoxy floor coating",
-        "description": "FENEK-PROOF EP-SR — Self-levelling epoxy floor coating. Range: Waterproofing and protection. Category: Epoxy resins.",
+        "accroche": "Two-component self-smoothing epoxy flooring system for prepared concrete with service performance to be qualified.",
+        "description": "FENEK-PROOF EP-SR : Two-component self-smoothing epoxy flooring system for prepared concrete with service performance to be qualified. Select the complete system and accessories to suit substrate conditions and project exposure. Confirm installation limits and applicable test evidence against the actual formulation technical sheet.",
         "usages": [
-          "Epoxy resins"
+          "Two-component self-smoothing epoxy flooring system for prepared concrete with service performance to be qualified.",
+          "Select the complete system and accessories to suit substrate conditions and project exposure.",
+          "Confirm installation limits and applicable test evidence against the actual formulation technical sheet."
         ]
       }
     },
@@ -2330,24 +2516,30 @@
     "ordre": 48,
     "contenu": {
       "fr": {
-        "accroche": "Membrane liquide polyuréthane mono-composant",
-        "description": "FENEK-PROOF PU-1K — Membrane liquide polyuréthane mono-composant. Gamme : Étanchéité et protection. Domaine : Étanchéité.",
+        "accroche": "Membrane de toiture polyuréthane monocomposante pour étanchéité liquide, avec primaire, renforts et cure définis par le système.",
+        "description": "FENEK-PROOF PU-1K : Membrane de toiture polyuréthane monocomposante pour étanchéité liquide, avec primaire, renforts et cure définis par le système. La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage. Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation.",
         "usages": [
-          "Étanchéité"
+          "Membrane de toiture polyuréthane monocomposante pour étanchéité liquide, avec primaire, renforts et cure définis par le système.",
+          "La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage.",
+          "Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation."
         ]
       },
       "ar": {
-        "accroche": "غشاء سائل من البولي يوريثان أحادي المكون",
-        "description": "FENEK-PROOF PU-1K — غشاء سائل من البولي يوريثان أحادي المكون. الفئة: العزل المائي والحماية. المجال: العزل المائي.",
+        "accroche": "غشاء عزل أسطح من البولي يوريثان بمكون واحد مع أساس وتقويات ومعالجة وفق النظام.",
+        "description": "FENEK-PROOF PU-1K : غشاء عزل أسطح من البولي يوريثان بمكون واحد مع أساس وتقويات ومعالجة وفق النظام. يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ. يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة.",
         "usages": [
-          "العزل المائي"
+          "غشاء عزل أسطح من البولي يوريثان بمكون واحد مع أساس وتقويات ومعالجة وفق النظام.",
+          "يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ.",
+          "يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة."
         ]
       },
       "en": {
-        "accroche": "One-component polyurethane liquid membrane",
-        "description": "FENEK-PROOF PU-1K — One-component polyurethane liquid membrane. Range: Waterproofing and protection. Category: Waterproofing.",
+        "accroche": "Single-component polyurethane liquid roof membrane, with primer, reinforcement and curing defined by the complete system.",
+        "description": "FENEK-PROOF PU-1K : Single-component polyurethane liquid roof membrane, with primer, reinforcement and curing defined by the complete system. Select the complete system and accessories to suit substrate conditions and project exposure. Confirm installation limits and applicable test evidence against the actual formulation technical sheet.",
         "usages": [
-          "Waterproofing"
+          "Single-component polyurethane liquid roof membrane, with primer, reinforcement and curing defined by the complete system.",
+          "Select the complete system and accessories to suit substrate conditions and project exposure.",
+          "Confirm installation limits and applicable test evidence against the actual formulation technical sheet."
         ]
       }
     },
@@ -2376,24 +2568,30 @@
     "ordre": 49,
     "contenu": {
       "fr": {
-        "accroche": "Résine d'injection polyuréthane (venues d'eau)",
-        "description": "FENEK-PROOF PU-INJ — Résine d'injection polyuréthane (venues d'eau). Gamme : Étanchéité et protection. Domaine : Résines polyuréthane.",
+        "accroche": "Résine d’injection polyuréthane pour obturation de venues d’eau dans le béton, dont la réactivité à l’eau et la classification sont à qualifier.",
+        "description": "FENEK-PROOF PU-INJ : Résine d’injection polyuréthane pour obturation de venues d’eau dans le béton, dont la réactivité à l’eau et la classification sont à qualifier. La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage. Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation.",
         "usages": [
-          "Résines polyuréthane"
+          "Résine d’injection polyuréthane pour obturation de venues d’eau dans le béton, dont la réactivité à l’eau et la classification sont à qualifier.",
+          "La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage.",
+          "Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation."
         ]
       },
       "ar": {
-        "accroche": "راتنج بولي يوريثان لحقن تسربات المياه",
-        "description": "FENEK-PROOF PU-INJ — راتنج بولي يوريثان لحقن تسربات المياه. الفئة: العزل المائي والحماية. المجال: راتنجات البولي يوريثان.",
+        "accroche": "راتنج بولي يوريثان لحقن تسربات الماء في الخرسانة مع التحقق من التفاعل بالماء وفئة الحقن.",
+        "description": "FENEK-PROOF PU-INJ : راتنج بولي يوريثان لحقن تسربات الماء في الخرسانة مع التحقق من التفاعل بالماء وفئة الحقن. يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ. يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة.",
         "usages": [
-          "راتنجات البولي يوريثان"
+          "راتنج بولي يوريثان لحقن تسربات الماء في الخرسانة مع التحقق من التفاعل بالماء وفئة الحقن.",
+          "يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ.",
+          "يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة."
         ]
       },
       "en": {
-        "accroche": "Polyurethane injection resin for water ingress",
-        "description": "FENEK-PROOF PU-INJ — Polyurethane injection resin for water ingress. Range: Waterproofing and protection. Category: Polyurethane resins.",
+        "accroche": "Polyurethane injection resin to address water ingress in concrete, subject to classification and water-reactivity assessment.",
+        "description": "FENEK-PROOF PU-INJ : Polyurethane injection resin to address water ingress in concrete, subject to classification and water-reactivity assessment. Select the complete system and accessories to suit substrate conditions and project exposure. Confirm installation limits and applicable test evidence against the actual formulation technical sheet.",
         "usages": [
-          "Polyurethane resins"
+          "Polyurethane injection resin to address water ingress in concrete, subject to classification and water-reactivity assessment.",
+          "Select the complete system and accessories to suit substrate conditions and project exposure.",
+          "Confirm installation limits and applicable test evidence against the actual formulation technical sheet."
         ]
       }
     },
@@ -2417,24 +2615,30 @@
     "ordre": 50,
     "contenu": {
       "fr": {
-        "accroche": "Mastic polyuréthane pour joints",
-        "description": "FENEK-PROOF PU-SEAL — Mastic polyuréthane pour joints. Gamme : Étanchéité et protection. Domaine : Résines polyuréthane.",
+        "accroche": "Mastic d’étanchéité polyuréthane pour joints de mouvement, avec largeur et capacité de déplacement à dimensionner.",
+        "description": "FENEK-PROOF PU-SEAL : Mastic d’étanchéité polyuréthane pour joints de mouvement, avec largeur et capacité de déplacement à dimensionner. La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage. Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation.",
         "usages": [
-          "Résines polyuréthane"
+          "Mastic d’étanchéité polyuréthane pour joints de mouvement, avec largeur et capacité de déplacement à dimensionner.",
+          "La sélection du procédé et de ses accessoires exige l'analyse du support et des sollicitations de l'ouvrage.",
+          "Confirmer les paramètres de pose et les essais applicables dans la fiche technique propre à cette formulation."
         ]
       },
       "ar": {
-        "accroche": "مانع تسرب بولي يوريثان للفواصل",
-        "description": "FENEK-PROOF PU-SEAL — مانع تسرب بولي يوريثان للفواصل. الفئة: العزل المائي والحماية. المجال: راتنجات البولي يوريثان.",
+        "accroche": "مادة سد فواصل من البولي يوريثان للفواصل المتحركة مع تحديد العرض والقدرة على الحركة.",
+        "description": "FENEK-PROOF PU-SEAL : مادة سد فواصل من البولي يوريثان للفواصل المتحركة مع تحديد العرض والقدرة على الحركة. يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ. يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة.",
         "usages": [
-          "راتنجات البولي يوريثان"
+          "مادة سد فواصل من البولي يوريثان للفواصل المتحركة مع تحديد العرض والقدرة على الحركة.",
+          "يعتمد اختيار النظام وملحقاته على حالة السطح وظروف تعرض المنشأ.",
+          "يجب اعتماد شروط التطبيق واختبارات الأداء من النشرة الفنية الخاصة بالتركيبة."
         ]
       },
       "en": {
-        "accroche": "Polyurethane joint sealant",
-        "description": "FENEK-PROOF PU-SEAL — Polyurethane joint sealant. Range: Waterproofing and protection. Category: Polyurethane resins.",
+        "accroche": "Polyurethane joint sealant for movement joints with width, depth and movement accommodation established by design.",
+        "description": "FENEK-PROOF PU-SEAL : Polyurethane joint sealant for movement joints with width, depth and movement accommodation established by design. Select the complete system and accessories to suit substrate conditions and project exposure. Confirm installation limits and applicable test evidence against the actual formulation technical sheet.",
         "usages": [
-          "Polyurethane resins"
+          "Polyurethane joint sealant for movement joints with width, depth and movement accommodation established by design.",
+          "Select the complete system and accessories to suit substrate conditions and project exposure.",
+          "Confirm installation limits and applicable test evidence against the actual formulation technical sheet."
         ]
       }
     },

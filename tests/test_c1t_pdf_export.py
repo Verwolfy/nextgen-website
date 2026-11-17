@@ -12,9 +12,14 @@ SPEC.loader.exec_module(MODULE)
 
 
 class C1TPdfExportTests(unittest.TestCase):
-    def test_scope_is_all_sixteen_bond_references_in_three_locales(self):
+    def test_scope_covers_all_fifty_references_in_three_locales(self):
         self.assertEqual(MODULE.LANGUAGES, ("fr", "ar", "en"))
-        self.assertEqual(MODULE.PILOT_SLUGS, ("fenek-bond-c1t", "fenek-bond-c1te", "fenek-bond-c2ft", "fenek-bond-c2te", "fenek-bond-c2te-s1", "fenek-bond-cg1", "fenek-bond-cg2wa", "fenek-bond-ct-c25-f5", "fenek-bond-gp-csii", "fenek-bond-gr-hr", "fenek-bond-m10", "fenek-bond-m5", "fenek-bond-oc-csiii", "fenek-bond-r2", "fenek-bond-r3", "fenek-bond-r4"))
+        source = json.loads((ROOT / "src/data/catalogue-projets.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(MODULE.BOND_SLUGS), 16)
+        self.assertEqual(len(MODULE.OTHER_SLUGS), 34)
+        self.assertEqual(len(MODULE.PILOT_SLUGS), 50)
+        self.assertEqual(len(set(MODULE.PILOT_SLUGS)), 50)
+        self.assertEqual(set(MODULE.PILOT_SLUGS), {p["slug"] for p in source})
 
     def test_missing_build_refused_without_network(self):
         with tempfile.TemporaryDirectory() as root:

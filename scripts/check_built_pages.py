@@ -225,6 +225,14 @@ def main() -> None:
                 assert ("data-print-market-sheet" in markup or f'/docs/fiches/{entry["slug"]}-{lang}.pdf' in markup), info
                 assert "présentation provisoire" not in markup.lower(), info
                 assert "Les seuils de classe et les plages comparatives" not in markup, info
+            elif entry["gamme"] in ("proof", "flow", "paint"):
+                assert "data-other-technical-pilot" in markup, info
+                assert markup.count('data-other-source-type="referentiel"') >= 4, info
+                assert markup.count('data-other-source-type="famille"') >= 3, info
+                assert "fenek-other-technical-print" in markup, info
+                assert ("data-print-market-sheet" in markup or f'/docs/fiches/{entry["slug"]}-{lang}.pdf' in markup), info
+                assert "présentation provisoire" not in markup.lower(), info
+                assert "Les seuils de classe et les plages comparatives" not in markup, info
             elif entry["code"] == "BOND-CG1":
                 assert "data-cg1-pilot" in markup, info
                 assert markup.count('data-cg1-source-type="norme"') == 8, info
@@ -259,7 +267,7 @@ def main() -> None:
                            'fenek-application', 'fenek-documents'):
                 assert f'id="{anchor}"' in markup, (info, anchor)
                 assert f'href="#{anchor}"' in markup, (info, anchor)
-            if entry["code"] not in ("BOND-C1T", "BOND-C1TE", "BOND-C2FT", "BOND-C2TE", "BOND-C2TE-S1", "BOND-CG1", "BOND-CG2WA", "BOND-CT-C25-F5", "BOND-GP-CSII", "BOND-GR-HR", "BOND-M10", "BOND-M5", "BOND-OC-CSIII", "BOND-R2", "BOND-R3", "BOND-R4"):
+            if entry["gamme"] == "bond" and entry["code"] not in ("BOND-C1T", "BOND-C1TE", "BOND-C2FT", "BOND-C2TE", "BOND-C2TE-S1", "BOND-CG1", "BOND-CG2WA", "BOND-CT-C25-F5", "BOND-GP-CSII", "BOND-GR-HR", "BOND-M10", "BOND-M5", "BOND-OC-CSIII", "BOND-R2", "BOND-R3", "BOND-R4"):
                 assert 'data-print-market-sheet' in markup, info
             assert entry["nom"] in markup, info
             assert "noindex,nofollow" in markup, info
@@ -287,7 +295,7 @@ def main() -> None:
                           "This content can be revised as laboratory",
                           "يمكن تحديث هذا المحتوى لاحقًا"):
                 assert stale not in markup, f"Old revision copy still public: {lang}/{entry['slug']}"
-            if entry["code"] not in ("BOND-C1T", "BOND-C1TE", "BOND-C2FT", "BOND-C2TE", "BOND-C2TE-S1", "BOND-CG1", "BOND-CG2WA", "BOND-CT-C25-F5", "BOND-GP-CSII", "BOND-GR-HR", "BOND-M10", "BOND-M5", "BOND-OC-CSIII", "BOND-R2", "BOND-R3", "BOND-R4"):
+            if entry["gamme"] == "bond" and entry["code"] not in ("BOND-C1T", "BOND-C1TE", "BOND-C2FT", "BOND-C2TE", "BOND-C2TE-S1", "BOND-CG1", "BOND-CG2WA", "BOND-CT-C25-F5", "BOND-GP-CSII", "BOND-GR-HR", "BOND-M10", "BOND-M5", "BOND-OC-CSIII", "BOND-R2", "BOND-R3", "BOND-R4"):
                 assert "concept-detail-note" in markup, f"Missing documentation notice {lang}/{entry['slug']}"
             assert_product_whatsapp(markup, lang, entry["code"])
         # Lot 31: eleven photo-realistic renderings cut from the user-selected
