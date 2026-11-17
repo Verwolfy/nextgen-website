@@ -5,6 +5,7 @@ import FenekApplicationGuide from '../../../components/FenekApplicationGuide.ast
 import FenekC1TPilot from '../../../components/FenekC1TPilot.astro';
 import FenekC1TEPilot from '../../../components/FenekC1TEPilot.astro';
 import FenekC2FTPilot from '../../../components/FenekC2FTPilot.astro';
+import FenekC2TEPilot from '../../../components/FenekC2TEPilot.astro';
 import {brand, languages, rangeName, rangeColor, type Lang} from '../../../data/site';
 import {catalogueProjects, conceptPackshot, packagingLabelFor, type CatalogueProject} from '../../../lib/catalogue-projets';
 import {guideFor} from '../../../data/fenek-guides';
@@ -13,6 +14,7 @@ import {applicationContextFor} from '../../../data/fenek-application-context';
 import {c1tContent} from '../../../data/fenek-c1t-reference';
 import {c1teCopy} from '../../../data/fenek-c1te-reference';
 import {c2ftCopy} from '../../../data/fenek-c2ft-reference';
+import {c2teCopy} from '../../../data/fenek-c2te-reference';
 import {productWhatsappHref} from '../../../data/contact-channels';
 
 export function getStaticPaths() {
@@ -31,6 +33,7 @@ const guide = guideFor(product.code, product.gamme, lang);
 const isC1TPilot=product.code==='BOND-C1T';
 const isC1TEPilot=product.code==='BOND-C1TE';
 const isC2FTPilot=product.code==='BOND-C2FT';
+const isC2TEPilot=product.code==='BOND-C2TE';
 const t = {
   fr:{
     label:'Fiche produit',overview:'Aperçu',details:'Détails produits',application:'Application',documents:'Documents',
@@ -96,8 +99,8 @@ const t = {
 const emailHref = 'mailto:' + brand.email + '?subject=' +
   encodeURIComponent('FENEK technical documentation — ' + product.nom);
 ---
-<Layout lang={lang} title={isC1TPilot ? c1tContent[lang].pageTitle : isC1TEPilot ? c1teCopy[lang].pageTitle : isC2FTPilot ? c2ftCopy[lang].pageTitle : product.nom + ' — ' + t.label} description={isC1TPilot ? c1tContent[lang].metaDescription : isC1TEPilot ? c1teCopy[lang].metaDescription : isC2FTPilot ? c2ftCopy[lang].metaDescription : detail.description} ogImage={isC1TPilot || isC1TEPilot || isC2FTPilot ? conceptPackshot(product,'full') : undefined}>
-  {isC1TPilot ? <FenekC1TPilot lang={lang} product={product} /> : isC1TEPilot ? <FenekC1TEPilot lang={lang} product={product} /> : isC2FTPilot ? <FenekC2FTPilot lang={lang} product={product} /> : <>
+<Layout lang={lang} title={isC1TPilot ? c1tContent[lang].pageTitle : isC1TEPilot ? c1teCopy[lang].pageTitle : isC2FTPilot ? c2ftCopy[lang].pageTitle : isC2TEPilot ? c2teCopy[lang].pageTitle : product.nom + ' — ' + t.label} description={isC1TPilot ? c1tContent[lang].metaDescription : isC1TEPilot ? c1teCopy[lang].metaDescription : isC2FTPilot ? c2ftCopy[lang].metaDescription : isC2TEPilot ? c2teCopy[lang].metaDescription : detail.description} ogImage={isC1TPilot || isC1TEPilot || isC2FTPilot || isC2TEPilot ? conceptPackshot(product,'full') : undefined}>
+  {isC1TPilot ? <FenekC1TPilot lang={lang} product={product} /> : isC1TEPilot ? <FenekC1TEPilot lang={lang} product={product} /> : isC2FTPilot ? <FenekC2FTPilot lang={lang} product={product} /> : isC2TEPilot ? <FenekC2TEPilot lang={lang} product={product} /> : <>
   <div class="page-head fenek-sheet-head" style={'--range-color:' + rangeColor[product.gamme]}>
     <div class="container">
       <a class="concept-back" href={`/${lang}/catalogue/`}>{t.back}</a>
