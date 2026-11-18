@@ -60,3 +60,28 @@ test('pilot routes, 150-PDF generator and internal technical sources remain conn
   }
  }
 });
+
+test('the same two-page product+guide structure covers all 50 FENEK references',()=>{
+ const components=[
+   'FenekC1TEPilot','FenekC2FTPilot','FenekC2TEPilot','FenekC2TES1Pilot',
+   'FenekCG1Pilot','FenekBondTechnicalPilot','FenekOtherTechnicalPilot'
+ ];
+ for(const component of components){
+   const file=read('src/components/'+component+'.astro');
+   assert.match(file,/FenekPrintTechnicalCover/);
+   assert.match(file,/FenekPrintApplicationPage/);
+   assert.match(file,/requirements/);
+ }
+ const guide=read('src/components/FenekPrintApplicationPage.astro');
+ const cover=read('src/components/FenekPrintTechnicalCover.astro');
+ const qr=read('src/lib/qrcodegen.ts');
+ for(const token of ['reviewedV3GuideFor','qrcodegen.QrCode.encodeText','data-fenek-qr-url',
+    'data-fenek-guide-sprite','data-fenek-guide-step','background-size:300% 200%',
+    'page-break-before:always'])assert.ok(guide.includes(token),token);
+ assert.ok(qr.includes('Copyright (c) Project Nayuki. (MIT License)'));
+ assert.ok(cover.includes('data-fenek-print-cover'));
+ assert.ok(cover.includes('data-fenek-print-criteria'));
+ assert.ok(cover.includes('01 / 02'));
+ assert.equal((guide.match(/<div class="fenek-print-masthead">/g)||[]).length,1);
+ assert.doesNotMatch(guide,/6 ÉTAPES|Parcours de mise en œuvre · Illustrations semi-réalistes validées/);
+});

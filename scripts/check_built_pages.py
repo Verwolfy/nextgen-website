@@ -191,6 +191,20 @@ def main() -> None:
             markup = info.read_text(encoding="utf-8")
             assert 'class="fenek-product-intro"' in markup, info
             assert_product_whatsapp(markup, lang, entry["code"])
+            # New print specification: exactly one localized cover + one
+            # six-scene application page. C1T has its previously approved layout.
+            expected_qr=f"https://nextgen-buildingsolutions.com/{lang}/documentation/{entry['slug']}/"
+            if entry["code"] == "BOND-C1T":
+                assert markup.count('data-c1t-application-page') == 1, info
+                assert f'data-c1t-qr-href="{expected_qr}"' in markup, info
+                assert markup.count('data-c1t-guide-step=') == 6, info
+            else:
+                assert markup.count('data-fenek-print-cover') == 1, info
+                assert markup.count('data-fenek-print-application') == 1, info
+                assert f'data-fenek-qr-url="{expected_qr}"' in markup, info
+                assert markup.count('data-fenek-guide-step=') == 6, info
+                assert markup.count('data-fenek-guide-sprite=') == 1, info
+                assert 'class="fpg-qr"' in markup, info
             if entry["code"] == "BOND-C1T":
                 # The first product pilot replaces generic accordions with sourced C1T tables.
                 assert "data-c1t-pilot" in markup, info

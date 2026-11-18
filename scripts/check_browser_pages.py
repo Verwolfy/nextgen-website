@@ -234,6 +234,50 @@ def check_lot131_v3_c2te(browser, base: str) -> None:
 
 
 
+def check_lot136_two_page_fenek_print(browser, base: str) -> None:
+    """Sample all four product families, print FR/AR/EN, QR and precisely two A4 pages."""
+    from io import BytesIO
+    from pypdf import PdfReader
+
+    samples = (
+        "fenek-bond-c1te", "fenek-bond-cg1", "fenek-bond-cg2wa",
+        "fenek-bond-r4", "fenek-proof-pu-1k", "fenek-flow-sp-pf",
+        "fenek-paint-int-m",
+    )
+    for lang in ("fr", "ar", "en"):
+        page = browser.new_page(viewport={"width": 1280, "height": 900})
+        try:
+            for slug in samples:
+                url = f"{base}/{lang}/documentation/{slug}/"
+                page.goto(url, wait_until="domcontentloaded")
+                assert page.locator("[data-fenek-print-cover]").count() == 1, (lang,slug)
+                guide = page.locator("[data-fenek-print-application]")
+                assert guide.count() == 1, (lang,slug)
+                assert page.locator("[data-fenek-guide-step]").count() == 6, (lang,slug)
+                qr = guide.locator("[data-fenek-qr-url]")
+                expected = f"https://nextgen-buildingsolutions.com/{lang}/documentation/{slug}/"
+                assert qr.count() == 1 and qr.get_attribute("href") == expected, (lang,slug)
+                assert len(qr.locator("svg.fpg-qr path").get_attribute("d") or "") > 500, (lang,slug)
+                assert guide.get_attribute("data-fenek-guide-sprite") == (
+                    "/images/illustrations/application-upgraded/"+slug+"-steps.webp"
+                ), (lang,slug,"wrong art")
+                page.emulate_media(media="print")
+                assert page.locator("[data-fenek-print-cover]").is_visible(), (lang,slug)
+                assert guide.is_visible(), (lang,slug)
+                pdf = page.pdf(print_background=True,prefer_css_page_size=True)
+                reader = PdfReader(BytesIO(pdf))
+                assert len(reader.pages) == 2, (lang,slug,"expected exactly two pages",len(reader.pages))
+                for sheet in reader.pages:
+                    assert abs(float(sheet.mediabox.width)-595.28) < 2, (lang,slug,"width")
+                    assert abs(float(sheet.mediabox.height)-841.89) < 2, (lang,slug,"height")
+                if lang == "fr":
+                    SHOTS.mkdir(parents=True,exist_ok=True)
+                    (SHOTS/(slug+"-two-page-fr.pdf")).write_bytes(pdf)
+                page.emulate_media(media="screen")
+        finally:
+            page.close()
+
+
 def check_lot135_v3_other_ranges(browser, base: str) -> None:
     """PROOF, FLOW and PAINT: trilingual class checks, RTL, responsive and representative A4 PDFs."""
     import json
@@ -901,6 +945,7 @@ def check() -> None:
             check_lot133_v3_cg1(browser, base)
             check_lot134_v3_remaining_bond(browser, base)
             check_lot135_v3_other_ranges(browser, base)
+            check_lot136_two_page_fenek_print(browser, base)
             check_lot130_all_v3(browser, base)
             check_localized_skip_keyboard(browser, base)
             for lang in ("fr", "ar", "en"):
