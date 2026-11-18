@@ -6,6 +6,8 @@ import {catalogueProjects,conceptPackshot,packagingLabelFor,type CatalogueProjec
 import {productWhatsappHref} from '../data/contact-channels';
 import {c1teCopy,c1teRequirements,c1teFamilyReferences} from '../data/fenek-c1te-reference';
 import FenekApplicationGuide from './FenekApplicationGuide.astro';
+import FenekPrintTechnicalCover from './FenekPrintTechnicalCover.astro';
+import FenekPrintApplicationPage from './FenekPrintApplicationPage.astro';
 
 interface Props {lang:Lang;product:CatalogueProject;}
 const {lang,product}=Astro.props;
@@ -120,34 +122,11 @@ const comparisonMeaning:Record<string,Record<Lang,string>>={
     </section>
   </div>
 </article>
-<section class="fenek-print-document fenek-c1te-print" lang={lang} dir={lang==='ar'?'rtl':'ltr'}>
-  <div class="fenek-print-masthead">
-    <img class="fenek-print-logo" src="/images/Logo1.jpg" width="170" height="118" alt="NextGen Building Solutions"/>
-    <div class="fenek-print-name">NEXTGEN BUILDING SOLUTIONS</div><div class="fenek-print-slants" aria-hidden="true"></div>
-  </div>
-  <div class="fenek-print-line" aria-hidden="true"></div>
-  <div class="fenek-print-banner"><span>{t.sheetTitle}</span></div>
-  <div class="fenek-print-product-name"><bdi dir="ltr">{product.nom}</bdi></div>
-  <p class="fenek-print-subtitle">{t.lead}</p>
-  <div class="fenek-print-intro">
-    <dl class="fenek-print-metadata">
-      <div><dt>{t.referenceLabel}</dt><dd><bdi dir="ltr">{product.code}</bdi></dd></div>
-      <div><dt>{t.rangeLabel}</dt><dd><bdi dir="ltr">{rangeName[product.gamme]}</bdi></dd></div>
-      <div><dt>{t.classLabel}</dt><dd><bdi dir="ltr">C1TE — EN 12004-1:2017</bdi></dd></div>
-      <div><dt>{t.formatLabel}</dt><dd>{product.conditionnements.map(x=>packagingLabelFor(x.format,lang)).join(' · ')}</dd></div>
-    </dl>
-    <figure class="fenek-print-packshot"><img src={image} width="800" height="800" alt={t.sheetTitle}/></figure>
-  </div>
-  <section class="fenek-print-card"><h2>{t.techTitle}</h2>
-    <table class="c1te-print-table">{c1teRequirements.map(row=><tr><th scope="row">{row.label[lang]}</th><td dir="ltr">{row.value}</td></tr>)}</table>
-  </section>
-  <section class="fenek-print-card"><h2>{t.familyTitle}</h2>
-    <table class="c1te-print-table">{c1teFamilyReferences.map(row=><tr><th scope="row">{row.label[lang]}</th><td dir="ltr">{row.value}</td></tr>)}</table>
-  </section>
-  <section class="fenek-print-card"><h2>{t.prepTitle}</h2><ul>{t.preparation.map(line=><li>{line}</li>)}</ul></section>
-  <section class="fenek-print-card"><h2>{t.safetyTitle}</h2><ul>{t.safety.map(line=><li>{line}</li>)}</ul></section>
-  <div class="fenek-print-footer"><strong>NEXTGEN BUILDING SOLUTIONS</strong><p>{brand.email}</p></div>
-</section>
+
+<FenekPrintTechnicalCover lang={lang} product={product} metrics={c1teRequirements}
+  standard={'EN 12004-1:2017'} printClass="fenek-c1te-print"
+  lead={t.lead} uses={t.uses} preparation={t.preparation} safety={t.safety} />
+<FenekPrintApplicationPage lang={lang} product={product} />
 <style>
   .fenek-c1te-pilot .fenek-document-section h3{font-size:clamp(1.1rem,2vw,1.35rem);margin:20px 0 12px}
   .fenek-c1te-pilot .fenek-document-section ul{padding-inline-start:1.4rem}
