@@ -1,0 +1,123 @@
+---
+import type {Lang} from '../data/site';
+import type {CatalogueProject} from '../lib/catalogue-projets';
+import {reviewedV3GuideFor} from '../data/fenek-v3-reviewed';
+import {qrcodegen} from '../lib/qrcodegen';
+
+interface Props{lang:Lang;product:CatalogueProject}
+const {lang,product}=Astro.props;
+const reviewed=reviewedV3GuideFor(product.code,product.slug);
+if(!reviewed)throw Error('Missing FENEK six-panel approved artwork: '+product.code);
+const url=`https://nextgen-buildingsolutions.com/${lang}/documentation/${product.slug}/`;
+const qr=qrcodegen.QrCode.encodeText(url,qrcodegen.QrCode.Ecc.HIGH);
+const quiet=4;
+const qrPath:string[]=[];
+for(let y=0;y<qr.size;y++){
+ for(let x=0;x<qr.size;){
+  if(!qr.getModule(x,y)){x++;continue;}
+  const start=x;
+  while(x<qr.size&&qr.getModule(x,y))x++;
+  qrPath.push(`M${start+quiet} ${y+quiet}h${x-start}v1h-${x-start}Z`);
+ }
+}
+const qd=qrPath.join(' ');
+const qsize=qr.size+quiet*2;
+const l={
+ fr:{title:'GUIDE D’APPLICATION',view:'Consulter la fiche en ligne'},
+ ar:{title:'دليل التطبيق',view:'عرض بطاقة المنتج على الموقع'},
+ en:{title:'APPLICATION GUIDE',view:'View the product sheet online'}
+}[lang];
+---
+<section class="fenek-print-document fenek-universal-guide" lang={lang} dir={lang==='ar'?'rtl':'ltr'}
+ data-fenek-print-application data-fenek-guide-ref={product.code} data-fenek-guide-sprite={reviewed.sprite}>
+ <div class="fenek-print-masthead">
+   <img class="fenek-print-logo" src="/images/Logo1.jpg" width="170" height="118" alt="NextGen Building Solutions"/>
+   <div class="fenek-print-name">NEXTGEN BUILDING SOLUTIONS</div>
+   <div class="fenek-print-slants" aria-hidden="true"></div>
+ </div>
+ <div class="fenek-print-line" aria-hidden="true"></div>
+ <div class="fenek-print-banner"><span>{l.title}</span></div>
+ <h2 class="fpg-product"><bdi dir="ltr">{product.nom}</bdi></h2>
+ <ol class="fpg-steps">
+   {reviewed.steps.map((step,i)=><li data-fenek-guide-step={i+1}>
+     <h3><bdi dir="ltr">{String(i+1).padStart(2,'0')}</bdi>{step.title[lang]}</h3>
+     <div class="fpg-illustration" role="img" aria-label={step.title[lang]}
+       data-guide-image={step.image}
+       style={`background-image:url('${reviewed.sprite}');background-position:${((step.image-1)%3)*50}% ${Math.floor((step.image-1)/3)*100}%`}></div>
+     <p>{step.description[lang]}</p>
+   </li>)}
+ </ol>
+ <footer class="fpg-footer">
+   <a href={url} data-fenek-qr-url={url} class="fpg-qr-anchor">
+     <svg class="fpg-qr" viewBox={`0 0 ${qsize} ${qsize}`} xmlns="http://www.w3.org/2000/svg"
+        role="img" aria-label={l.view} shape-rendering="crispEdges">
+       <rect width={qsize} height={qsize} fill="#fff"/>
+       <path d={qd} fill="#000"/>
+     </svg>
+     <strong>{l.view}</strong>
+     <span dir="ltr">nextgen-buildingsolutions.com/{lang}</span>
+   </a>
+   <div class="fpg-folio"><bdi dir="ltr">{product.code} · {lang.toUpperCase()} · 02 / 02</bdi></div>
+ </footer>
+</section>
+<style>
+@media print {
+ @page {size:A4 portrait;margin:0;}
+ .fenek-universal-guide{
+   display:flex!important;flex-direction:column;box-sizing:border-box;
+   width:100%;height:296.5mm;max-height:296.5mm;max-width:210mm;
+   padding:8mm 10mm 9mm;margin:0 auto;color:#0d335a;
+   font:8.2pt/1.23 Inter,Arial,"DejaVu Sans",sans-serif;
+   break-before:page;page-break-before:always;overflow:hidden;
+ }
+ .fenek-universal-guide[dir="rtl"]{font-family:"Noto Sans Arabic","DejaVu Sans",Tahoma,sans-serif;line-height:1.34}
+ .fenek-universal-guide .fenek-print-masthead{grid-template-columns:31mm minmax(0,1fr) 15mm;gap:3.6mm;min-height:19mm;margin-bottom:1mm}
+ .fenek-universal-guide .fenek-print-logo{width:31mm;height:19mm;object-fit:contain}
+ .fenek-universal-guide .fenek-print-name{font-size:12.7pt;line-height:1.15;padding-inline-start:3.5mm}
+ .fenek-universal-guide .fenek-print-slants{height:19mm}
+ .fenek-universal-guide .fenek-print-line{height:.8mm;margin-bottom:1mm}
+ .fenek-universal-guide .fenek-print-banner{font-size:10.8pt;line-height:1.1;padding:1.3mm 8mm;margin-bottom:1mm}
+ .fenek-universal-guide .fpg-product{font-size:16pt;line-height:1.1;font-weight:850;margin:0 0 2.5mm;color:#0d335a;text-align:start}
+ .fenek-universal-guide .fpg-steps{
+   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));
+   gap:2.3mm 3mm;flex:1;min-height:0;list-style:none;padding:0;margin:0;
+ }
+ .fenek-universal-guide .fpg-steps>li{
+   display:flex;flex-direction:column;min-width:0;min-height:0;overflow:hidden;
+   border:1px solid #d6e3e8;border-radius:2mm;background:#fff;break-inside:avoid;margin:0;padding:0;
+ }
+ .fenek-universal-guide .fpg-steps h3{
+   display:flex;align-items:center;gap:1.6mm;min-height:7.3mm;
+   background:#0d335a;border-inline-start:2.2mm solid #07965b;color:#fff;
+   font-size:9pt;line-height:1.25;font-weight:800;margin:0;padding:1mm 2mm;overflow-wrap:anywhere;
+ }
+ .fenek-universal-guide .fpg-steps h3 bdi{
+   flex-shrink:0;display:inline-block;min-width:8mm;border-radius:1.5mm;
+   padding:.5mm 1mm;background:#07965b;color:#fff;text-align:center;font-size:9pt;
+ }
+ .fenek-universal-guide .fpg-illustration{
+   display:block;width:75mm;height:50mm;max-height:50mm;
+   flex:0 0 auto;align-self:center;background-repeat:no-repeat;
+   background-size:300% 200%;background-color:#fff;
+   -webkit-print-color-adjust:exact;print-color-adjust:exact;
+ }
+ .fenek-universal-guide .fpg-steps p{
+   font-size:7.8pt;line-height:1.25;margin:0;padding:1mm 2mm 1.1mm;color:#254257;overflow-wrap:break-word;
+ }
+ .fenek-universal-guide .fpg-footer{
+   flex:0 0 38mm;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+   margin:2mm 0 0;padding:0;gap:1mm;break-inside:avoid;
+ }
+ .fenek-universal-guide .fpg-qr-anchor{
+   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.45mm;
+   font-size:8.3pt;font-weight:700;line-height:1.2;color:#0d335a;text-decoration:none;
+ }
+ .fenek-universal-guide .fpg-qr{display:block;width:25mm;height:25mm;overflow:visible;background:#fff}
+ .fenek-universal-guide .fpg-qr-anchor strong{font-size:9pt}
+ .fenek-universal-guide .fpg-qr-anchor span{font-size:7.4pt;color:#42647b;font-weight:520}
+ .fenek-universal-guide .fpg-folio{
+   align-self:stretch;border-top:1pt solid #0d335a;
+   text-align:end;padding-top:1mm;margin-top:1mm;font-size:7.5pt;font-weight:700;
+ }
+}
+</style>
