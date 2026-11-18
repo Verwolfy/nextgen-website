@@ -5,6 +5,7 @@ import {join} from 'node:path';
 import {catalogueProjects, conceptPackshot, packagingLabelFor, type CatalogueProject} from '../lib/catalogue-projets';
 import {productWhatsappHref} from '../data/contact-channels';
 import FenekApplicationGuide from './FenekApplicationGuide.astro';
+import {reviewedV3GuideFor} from '../data/fenek-v3-reviewed';
 import {c1tContent, c1tRequirements, c1tFamilyReferences, c1tComparativeCodes} from '../data/fenek-c1t-reference';
 
 interface Props {lang: Lang; product: CatalogueProject;}
@@ -21,11 +22,35 @@ const emailHref='mailto:'+brand.email+'?subject='+encodeURIComponent(t.documentA
 const image=conceptPackshot(product,'full');
 const pdfHref=`/docs/fiches/fenek-bond-c1t-${lang}.pdf`;
 const hasPublishedPdf=existsSync(join(process.cwd(),'public',pdfHref.slice(1)));
+// Print uses the very same approved-for-editorial-display C1T six-scene
+// WebP as the on-screen guide, not recreated or borrowed illustrations.
+const c1tIllustratedGuide=reviewedV3GuideFor(product.code,product.slug);
+if(!c1tIllustratedGuide)throw Error('Missing reviewed C1T application sequence');
+const onlineHref=`https://nextgen-buildingsolutions.com/${lang}/documentation/${product.slug}/`;
+// Offline-generated QR modules, EC level H, 4-module quiet zone. The link is
+// selectable/clickable in exported PDF as well as scannable on paper.
+const c1tQrRows:Record<Lang,string>={"fr":"1fcf059aaa17f10504946bff411745a326f135d174b647870a5d1746e1fc8b05d10597f47a7c411fd555555557f001c01c5d8c0001ebbffce99621ebc12a6eb6d80a7599446afe8029866bf7301604fc609d899d709325913894ce10d23cc3486f81c30d33093eb00a62b568d7ad3048ac3fcfd0640dc327922c10c0c1665de6bfb4194d3a6d5115f0698950a2befc13f4f4fec15f80f1ce0466fb1f0d518656fff57071df0c51871915fc107d497fe142297575706502ebd8fa771f6080d37adb85cc19743bbbe17100b97123fc29f504fb0e3e8eda6018ddb3ca861815fa882bf97140f02cc3d3fc7509538a785f1860819d6d4d04d208ee3ca3814340e05a8e79d1ce1c4aca7d3b5fa001a9a4523f181fd5e2d73695c10561444d7f15175e19ff731ff17486424aa42d1748c9b189464104934d4536a61fc8b05bdf727","ar":"1fc10a149297f1042e57e5c741174c1a8c5bb5d174c7809b7a5d17556ffc6885d104c2a46f2c411fd555555557f00107046c4b00067eeafdbccd01084f128d38e00d69e883768f40822cc3439abc0ae48330717ef11a1d7295ac2d1a58965912c520db7cf4554f7714c13b5834230119f96a5a85311e443babeb0cb0b0a1499778a80c586f780440a08a07684130c41df8cd7ddd3f40d164ec4c51151b57d7d4c715f171606c5fbf1a1ff7baffe3df405a68b26981a21a4856c2989151d1862f8ed09908f327ca266d70c8b63f8deee9106e5b6bdb8f30f3538b29082013e6f9ece500804a86695956df076b69f7e7fbe10ba58edb3c3108c4960a2be9e0e02b4965a0091c79447dd8df9001fcf4476b1d1fd2fed6f195b104a65c7cb919174b4cfe265fa1750878a92a15175c3846953781043da5ef9c0c1fc78bb5e791f","en":"1fc8dd149297f1042e47e5c741174f188c5bb5d174c7809b7a5d17556ffc6885d104c2a46f2c411fd555555557f00107046c4b00067eeafdbccd01084f128d38e00d69e883768f40832cc04a9abc0ae48312017ef1191d728aac2d1a68966b42c520db7cf4154f7712c13b5834230119f966da85311a443b67eb0cb0b0a1499778a80c586fb80440a08a07684130c40df0857ddd3f405164ac4c5115135eb3d4c715f0710f6c5fbf1a1ff598ffe3df405a7b826901a21a4856c2989151d1862f8ed09908f327ca2e6d70c8b63f8deee9116e5b6bdb8f30e3538b29082012e6f9ece500804a86695d56df076b69f4e7fbe10ba58efb3c3108c49609ebe9e0e02b4965a0091c69447dd8df9001fcf4476b1d1fd2fed6f195b104a65c7cb919174b4cfe265fa175087aa92a15175cf0e6a53781043168ef9c0c1fc8bf15e791f"};
+function qrPathFor(encoded:string):string{
+  if(encoded.length!==49*13)throw Error('Invalid C1T QR module encoding');
+  const segments:string[]=[];
+  for(let row=0;row<49;row++){
+    const mask=parseInt(encoded.slice(row*13,row*13+13),16);
+    for(let col=0;col<49;){
+      const on=Math.floor(mask/2**(48-col))%2===1;
+      if(!on){col++;continue;}
+      const begin=col;
+      while(col<49 && Math.floor(mask/2**(48-col))%2===1)col++;
+      segments.push(`M${begin+4} ${row+4}h${col-begin}v1h-${col-begin}Z`);
+    }
+  }
+  return segments.join(' ');
+}
+const qrPath=qrPathFor(c1tQrRows[lang]);
 const printCopy: Record<Lang,{
   documentType:string;descriptionTitle:string;description:string;overviewTitle:string;applicationsTitle:string;applications:string[];
   preparationTitle:string;preparation:string[];designationTitle:string;designation:{letter:string;meaning:string}[];
   requirementsTitle:string;thresholdTitle:string;tagline:string;methodTitle:string;method:string[];
-  safetyTitle:string;safety:string[];contactTitle:string;classShort:string;packShort:string;edition:string;
+  safetyTitle:string;safety:string[];contactTitle:string;classShort:string;packShort:string;edition:string;guideTitle:string;qrLabel:string;
 }>={
   fr:{
     documentType:'FICHE PRODUIT',descriptionTitle:'Description du produit',
@@ -48,7 +73,7 @@ const printCopy: Record<Lang,{
     safetyTitle:'Sécurité et stockage',
     safety:['Porter gants, lunettes et protection contre les poussières.','Conserver au sec et consulter la FDS avant emploi.'],
     contactTitle:'Contact',classShort:'Classe',packShort:'Conditionnement',
-    edition:'Éd. 18/11/2026'
+    edition:'Éd. 18/11/2026',guideTitle:'GUIDE D’APPLICATION',qrLabel:'Consulter la fiche en ligne'
   },
   ar:{
     documentType:'بطاقة المنتج',descriptionTitle:'وصف المنتج',
@@ -71,7 +96,7 @@ const printCopy: Record<Lang,{
     safetyTitle:'السلامة والتخزين',
     safety:['ارتداء القفازات والنظارات وحماية من الغبار.','الحفظ في مكان جاف ومراجعة صحيفة السلامة.'],
     contactTitle:'التواصل',classShort:'الفئة',packShort:'العبوة',
-    edition:'إصدار 18/11/2026'
+    edition:'إصدار 18/11/2026',guideTitle:'دليل التطبيق',qrLabel:'عرض بطاقة المنتج على الموقع'
   },
   en:{
     documentType:'PRODUCT SHEET',descriptionTitle:'Product description',
@@ -94,7 +119,7 @@ const printCopy: Record<Lang,{
     safetyTitle:'Safety and storage',
     safety:['Wear gloves, goggles and dust protection.','Store dry and consult the SDS before use.'],
     contactTitle:'Contact',classShort:'Class',packShort:'Packaging',
-    edition:'Edition 18/11/2026'
+    edition:'Edition 18/11/2026',guideTitle:'APPLICATION GUIDE',qrLabel:'View the product sheet online'
   }
 };
 const p=printCopy[lang];
@@ -202,7 +227,7 @@ const schema={
     </section>
   </div>
 </article>
-<section class="fenek-print-document fenek-c1t-print" lang={lang} dir={lang==='ar'?'rtl':'ltr'} data-c1t-one-page>
+<section class="fenek-print-document fenek-c1t-print" lang={lang} dir={lang==='ar'?'rtl':'ltr'} data-c1t-technical-cover>
   <div class="fenek-print-masthead">
     <img class="fenek-print-logo" src="/images/Logo1.jpg" width="170" height="118" alt="NextGen Building Solutions" />
     <div class="fenek-print-name">NEXTGEN BUILDING SOLUTIONS</div>
@@ -286,6 +311,44 @@ const schema={
   <div class="fenek-print-footer c1t-print-footer">
     <span>{product.code} · {p.edition} · {lang.toUpperCase()}</span>
   </div>
+
+</section>
+<section class="fenek-print-document fenek-c1t-guide-print" lang={lang}
+  dir={lang==='ar'?'rtl':'ltr'} data-c1t-application-page
+  data-c1t-guide-src={c1tIllustratedGuide.sprite}>
+  <div class="fenek-print-masthead">
+    <img class="fenek-print-logo" src="/images/Logo1.jpg" width="170" height="118" alt="NextGen Building Solutions" />
+    <div class="fenek-print-name">NEXTGEN BUILDING SOLUTIONS</div>
+    <div class="fenek-print-slants" aria-hidden="true"></div>
+  </div>
+  <div class="fenek-print-line" aria-hidden="true"></div>
+  <div class="fenek-print-banner"><span>{p.guideTitle}</span></div>
+  <h2 class="c1t-print-guide-product"><bdi dir="ltr">{product.nom}</bdi></h2>
+
+  <ol class="c1t-print-guide-steps" data-c1t-guide-steps>
+    {c1tIllustratedGuide.steps.map((step,i)=><li class="c1t-print-guide-step" data-c1t-guide-step={i+1}>
+      <h3><bdi dir="ltr">{String(i+1).padStart(2,'0')}</bdi> {step.title[lang]}</h3>
+      <div class="c1t-print-guide-art" role="img"
+        aria-label={step.title[lang]}
+        style={`background-image:url('${c1tIllustratedGuide.sprite}');background-position:${((step.image-1)%3)*50}% ${Math.floor((step.image-1)/3)*100}%`}
+        data-illustration-index={step.image}></div>
+      <p>{step.description[lang]}</p>
+    </li>)}
+  </ol>
+
+  <footer class="c1t-print-guide-footer">
+    <a href={onlineHref} class="c1t-print-guide-qr-link" data-c1t-qr-href={onlineHref}>
+      <svg class="c1t-print-guide-qr" viewBox="0 0 57 57"
+        xmlns="http://www.w3.org/2000/svg" aria-label={p.qrLabel}
+        role="img" shape-rendering="crispEdges">
+        <rect width="57" height="57" fill="#fff" />
+        <path d={qrPath} fill="#000" />
+      </svg>
+      <strong>{p.qrLabel}</strong>
+      <span dir="ltr">nextgen-buildingsolutions.com/{lang}</span>
+    </a>
+    <div class="c1t-print-guide-page"><bdi dir="ltr">{product.code} · {lang.toUpperCase()} · 02 / 02</bdi></div>
+  </footer>
 </section>
 <style>
   .fenek-c1t-pilot .fenek-document-section h3{font-size:clamp(1.15rem,2vw,1.35rem);margin:20px 0 12px}
@@ -456,5 +519,95 @@ const schema={
       font-size:7.8pt;break-inside:avoid;
     }
     .fenek-c1t-print .c1t-print-footer span{text-align:end;overflow-wrap:anywhere}
+
+    /* Second A4 page: actual six-image approved C1T sprite, localized QR. */
+    .fenek-c1t-print{break-after:page;page-break-after:always;}
+    .fenek-c1t-guide-print{
+      display:flex!important;flex-direction:column;
+      width:100%;height:296.5mm;max-height:296.5mm;box-sizing:border-box;
+      padding:8mm 10mm 9mm;margin:0 auto;
+      color:#0d335a;font:8.2pt/1.23 Inter,Arial,"DejaVu Sans",sans-serif;
+      break-before:page;page-break-before:always;overflow:hidden;
+    }
+    .fenek-c1t-guide-print[dir="rtl"]{
+      font-family:"Noto Sans Arabic","DejaVu Sans",Tahoma,sans-serif;
+      line-height:1.35;
+    }
+    .fenek-c1t-guide-print .fenek-print-masthead{
+      grid-template-columns:31mm minmax(0,1fr) 15mm;gap:3.6mm;
+      min-height:19mm;margin-bottom:1mm;
+    }
+    .fenek-c1t-guide-print .fenek-print-logo{width:31mm;height:19mm;object-fit:contain}
+    .fenek-c1t-guide-print .fenek-print-name{font-size:12.7pt;line-height:1.15;padding-inline-start:3.5mm}
+    .fenek-c1t-guide-print .fenek-print-slants{height:19mm}
+    .fenek-c1t-guide-print .fenek-print-line{height:.8mm;margin-bottom:1mm}
+    .fenek-c1t-guide-print .fenek-print-banner{
+      font-size:10.8pt;line-height:1.1;padding:1.3mm 8mm;margin-bottom:1mm;
+    }
+    .fenek-c1t-guide-print .c1t-print-guide-product{
+      text-align:start;font-size:16pt;font-weight:850;line-height:1.14;
+      margin:0 0 2.6mm;padding:0;
+    }
+    .fenek-c1t-guide-print .c1t-print-guide-steps{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+      grid-template-rows:repeat(3,minmax(0,1fr));
+      gap:2.3mm 3mm;flex:1;min-height:0;list-style:none;padding:0;
+      margin:0;counter-reset:none;
+    }
+    .fenek-c1t-guide-print .c1t-print-guide-step{
+      display:flex;flex-direction:column;align-items:stretch;
+      min-width:0;min-height:0;margin:0;padding:0;
+      border:1px solid #d6e3e8;border-radius:2mm;
+      background:#fff;overflow:hidden;break-inside:avoid;
+    }
+    .fenek-c1t-guide-print .c1t-print-guide-step h3{
+      display:flex;align-items:center;gap:1.6mm;
+      color:#fff;background:#0d335a;border-inline-start:2.2mm solid #07965b;
+      font-size:9pt;line-height:1.25;font-weight:800;
+      min-height:7.3mm;margin:0;padding:1mm 2mm;
+      overflow-wrap:anywhere;
+    }
+    .fenek-c1t-guide-print .c1t-print-guide-step h3 bdi{
+      display:inline-block;border-radius:1.5mm;background:#07965b;
+      color:white;text-align:center;min-width:8mm;padding:.5mm 1mm;
+      font-size:9pt;flex-shrink:0;
+    }
+    .fenek-c1t-guide-print .c1t-print-guide-art{
+      display:block;width:75mm;height:50mm;max-height:50mm;
+      flex:0 0 auto;align-self:center;background-repeat:no-repeat;
+      background-size:300% 200%;background-color:#fff;
+      margin:0;print-color-adjust:exact;-webkit-print-color-adjust:exact;
+    }
+    .fenek-c1t-guide-print .c1t-print-guide-step p{
+      margin:0;padding:1mm 2mm 1.1mm;
+      color:#254257;font-size:7.8pt;line-height:1.25;
+      overflow-wrap:break-word;
+    }
+    .fenek-c1t-guide-print .c1t-print-guide-footer{
+      flex:0 0 38mm;display:flex;flex-direction:column;
+      align-items:center;justify-content:flex-end;
+      gap:1mm;margin:2mm 0 0;padding:0;
+      break-inside:avoid;
+    }
+    .fenek-c1t-guide-print .c1t-print-guide-qr-link{
+      display:flex;flex-direction:column;align-items:center;
+      justify-content:center;gap:.45mm;
+      font-size:8.3pt;font-weight:700;line-height:1.2;
+      text-decoration:none;color:#0d335a;
+      break-inside:avoid;
+    }
+    .fenek-c1t-guide-print .c1t-print-guide-qr{
+      display:block;width:25mm;height:25mm;
+      background:white;border:0;overflow:visible;
+    }
+    .fenek-c1t-guide-print .c1t-print-guide-qr-link strong{font-size:9pt}
+    .fenek-c1t-guide-print .c1t-print-guide-qr-link span{
+      font-size:7.4pt;color:#42647b;font-weight:520;
+    }
+    .fenek-c1t-guide-print .c1t-print-guide-page{
+      align-self:stretch;border-top:1pt solid #0d335a;
+      text-align:end;padding-top:1mm;margin-top:1mm;
+      font-size:7.5pt;color:#0d335a;font-weight:700;
+    }
   }
 </style>

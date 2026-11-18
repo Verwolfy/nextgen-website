@@ -47,7 +47,7 @@ test('reviewed C1T A4 V3 keeps original assets and a nonredundant print layout',
   const pilot=read('src/components/FenekC1TPilot.astro');
   const print=pilot.slice(pilot.indexOf('<section class="fenek-print-document fenek-c1t-print"'),pilot.indexOf('<style>'));
   const required=[
-    'data-c1t-one-page','src="/images/Logo1.jpg"','src={image}',
+    'data-c1t-technical-cover','src="/images/Logo1.jpg"','src={image}',
     'data-print-hero','data-print-description','data-print-overview',
     'data-print-designation','data-print-standards','data-print-method',
     'data-print-safety','data-print-contact',
@@ -62,4 +62,19 @@ test('reviewed C1T A4 V3 keeps original assets and a nonredundant print layout',
   assert.equal((print.match(/<section class="fenek-print-card/g)||[]).length,7);
   assert.equal((print.match(/data-print-standards/g)||[]).length,1);
   assert.ok(pilot.includes('grid-template-columns:repeat(3,minmax(0,1fr))'));
+});
+
+test('C1T has a second print page with original six-scene art and true per-locale QR modules',()=>{
+  const s=read('src/components/FenekC1TPilot.astro');
+  assert.match(s,/data-c1t-application-page/);
+  assert.match(s,/data-c1t-guide-steps/);
+  assert.match(s,/c1tIllustratedGuide\.steps\.map/);
+  assert.match(s,/c1tIllustratedGuide\.sprite/);
+  assert.match(s,/fenek-bond-c1t-steps/);
+  assert.match(s,/qrPathFor\(c1tQrRows\[lang\]\)/);
+  assert.match(s,/https:\/\/nextgen-buildingsolutions.com\/\$\{lang\}\/documentation\/\$\{product.slug\}\//);
+  assert.match(s,/background-size:300% 200%/);
+  assert.match(s,/page-break-before:always/);
+  assert.doesNotMatch(s,/Parcours de mise en œuvre · Illustrations semi-réalistes validées|6 ÉTAPES/);
+  assert.equal((s.match(/<section class="fenek-print-document/g)||[]).length,2);
 });

@@ -1242,34 +1242,48 @@ def check() -> None:
                     assert page.locator("meta[name='robots']").get_attribute("content") == "noindex,nofollow", lang
                     assert page.locator("button[data-print-market-sheet]").count() == 1, lang
                     # Lot 49: browser PDF prints a dedicated branded A4 document.
-                    assert page.locator(".fenek-print-document").count() == 1, lang
-                    assert page.locator(".fenek-print-logo").get_attribute("src") == "/images/Logo1.jpg", lang
-                    assert not page.locator(".fenek-print-document").is_visible(), lang
+                    assert page.locator(".fenek-print-document").count() == 2, lang
+                    assert page.locator(".fenek-print-logo").first.get_attribute("src") == "/images/Logo1.jpg", lang
+                    assert not page.locator(".fenek-print-document").first.is_visible(), lang
                     page.emulate_media(media="print")
-                    assert page.locator(".fenek-print-document").is_visible(), lang
+                    assert page.locator(".fenek-print-document").first.is_visible(), lang
                     assert not page.locator(".fenek-product-page").is_visible(), lang
                     assert page.locator(".fenek-print-packshot img").evaluate(
                         "img => img.complete && img.naturalWidth > 0"), lang
+                    # QR must route to the exact localized C1T documentation page.
+                    expected_url = f"https://nextgen-buildingsolutions.com/{lang}/documentation/fenek-bond-c1t/"
+                    qr = page.locator("[data-c1t-application-page] [data-c1t-qr-href]")
+                    assert qr.count() == 1, (lang, "missing printed QR")
+                    assert qr.get_attribute("href") == expected_url, (lang, "wrong localized QR link")
+                    assert qr.locator("svg.c1t-print-guide-qr path").get_attribute("d"), (lang, "empty QR")
+                    assert page.locator("[data-c1t-guide-step]").count() == 6, lang
+                    assert page.locator("[data-c1t-application-page]").get_attribute("data-c1t-guide-src") == (
+                        "/images/illustrations/application-upgraded/fenek-bond-c1t-steps.webp"
+                    ), lang
                     if size == "desktop":
                         pdf_path = SHOTS / ("fenek-bond-c1t-branded-print-" + lang + ".pdf")
                         pdf_bytes = page.pdf(path=str(pdf_path), print_background=True,
                                              prefer_css_page_size=True)
                         assert pdf_bytes.startswith(b"%PDF") and len(pdf_bytes) > 10000, lang
                         # Chromium may compress PDF page dictionaries: use a real parser.
-                        # The approved C1T layout is exactly one A4 page in FR, AR and EN.
+                        # C1T now prints as an A4 cover plus a localized six-scene illustrated guide.
                         from io import BytesIO
                         from pypdf import PdfReader
                         pdf_reader = PdfReader(BytesIO(pdf_bytes))
                         pdf_page_count = len(pdf_reader.pages)
-                        assert pdf_page_count == 1, (lang, pdf_page_count)
+                        assert pdf_page_count == 2, (lang, pdf_page_count)
                         media_box = pdf_reader.pages[0].mediabox
+                        assert all(abs(float(p.mediabox.width) - 595.28) <= 2 and
+                                   abs(float(p.mediabox.height) - 841.89) <= 2 for p in pdf_reader.pages), (
+                            lang, 'not two A4 portrait pages'
+                        )
                         pdf_width, pdf_height = float(media_box.width), float(media_box.height)
                         assert abs(pdf_width - 595.28) <= 2 and abs(pdf_height - 841.89) <= 2, (
                             lang, pdf_width, pdf_height, "not A4 portrait"
                         )
                     page.emulate_media(media="screen")
                     assert page.locator(".fenek-product-page").is_visible(), lang
-                    assert not page.locator(".fenek-print-document").is_visible(), lang
+                    assert not page.locator(".fenek-print-document").first.is_visible(), lang
                     assert page.locator("form").count() == 0, lang
                     # The C1T pilot replaces empty accordions with structured
                     # requirements and family-reference tables.
