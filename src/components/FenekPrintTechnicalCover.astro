@@ -1,0 +1,134 @@
+---
+import type {Lang} from '../data/site';
+import {rangeName} from '../data/site';
+import {conceptPackshot,packagingLabelFor,type CatalogueProject} from '../lib/catalogue-projets';
+
+type Metric={label:Record<Lang,string>;value:string};
+interface Props {
+ lang:Lang;product:CatalogueProject;metrics:Metric[];
+ lead:string;uses:string[];preparation:string[];safety:string[];
+ standard:string;printClass:string;
+}
+const {lang,product,metrics,lead,uses,preparation,safety,standard,printClass}=Astro.props;
+const labels={
+ fr:{doc:'FICHE PRODUIT',description:'Description du produit',overview:'Aperçu',
+ uses:'Utilisations et supports',prep:'Préparation du support',specs:'Caractéristiques techniques',
+ threshold:'Critère de classe / contrôle',name:'Caractéristique',method:'Mise en œuvre',
+ safety:'Sécurité et stockage',contact:'Contact',code:'Code',range:'Gamme',pack:'Conditionnement'},
+ ar:{doc:'بطاقة المنتج',description:'وصف المنتج',overview:'نظرة عامة',uses:'الاستخدامات والأسطح',
+ prep:'تحضير السطح',specs:'الخصائص الفنية',threshold:'معيار الفئة / الفحص',
+ name:'الخاصية',method:'طريقة التطبيق',safety:'السلامة والتخزين',contact:'التواصل',code:'المرجع',range:'المجموعة',pack:'العبوة'},
+ en:{doc:'PRODUCT SHEET',description:'Product description',overview:'Overview',uses:'Applications and substrates',
+ prep:'Substrate preparation',specs:'Technical characteristics',threshold:'Class criterion / check',
+ name:'Characteristic',method:'Application',safety:'Safety and storage',contact:'Contact',code:'Code',range:'Range',pack:'Packaging'}
+}[lang];
+const image=conceptPackshot(product,'full');
+const shownUses=uses.slice(0,3);
+const shownPrep=preparation.slice(0,3);
+const shownSafety=safety.slice(0,3);
+const method=preparation.length>3?preparation.slice(3,5):[];
+---
+<section class={`fenek-print-document fenek-universal-cover ${printClass}`} lang={lang} dir={lang==='ar'?'rtl':'ltr'} data-fenek-print-cover>
+  <div class="fenek-print-masthead">
+    <img class="fenek-print-logo" src="/images/Logo1.jpg" width="170" height="118" alt="NextGen Building Solutions"/>
+    <div class="fenek-print-name">NEXTGEN BUILDING SOLUTIONS</div>
+    <div class="fenek-print-slants" aria-hidden="true"></div>
+  </div>
+  <div class="fenek-print-line" aria-hidden="true"></div>
+  <div class="fenek-print-banner"><span>{labels.doc}</span></div>
+  <header class="fp-cover-hero">
+    <div class="fp-cover-identity">
+      <h1><bdi dir="ltr">{product.nom}</bdi></h1>
+      <p class="fp-cover-norm"><bdi dir="ltr">{standard}</bdi></p>
+      <dl>
+        <div><dt>{labels.code}</dt><dd><bdi dir="ltr">{product.code}</bdi></dd></div>
+        <div><dt>{labels.range}</dt><dd>{rangeName[product.gamme]}</dd></div>
+        <div class="fp-wide"><dt>{labels.pack}</dt><dd>{product.conditionnements.map(c=>packagingLabelFor(c.format,lang)).join(' · ')}</dd></div>
+      </dl>
+    </div>
+    <figure class="fp-cover-pack"><img src={image} width="800" height="800" alt={product.nom}/></figure>
+  </header>
+  <section class="fp-cover-panel">
+    <h2>{labels.description}</h2>
+    <p class="fp-cover-lead">{lead}</p>
+  </section>
+  <section class="fp-cover-panel">
+    <h2>{labels.overview}</h2>
+    <div class="fp-cover-columns">
+      <div><h3>{labels.uses}</h3><ul>{shownUses.map(x=><li>{x}</li>)}</ul></div>
+      <div><h3>{labels.prep}</h3><ul>{shownPrep.map(x=><li>{x}</li>)}</ul></div>
+    </div>
+  </section>
+  <section class="fp-cover-panel fp-cover-metrics" data-fenek-print-criteria>
+    <h2>{labels.specs}</h2>
+    <table>
+      <thead><tr><th scope="col">{labels.name}</th><th scope="col">{labels.threshold}</th></tr></thead>
+      <tbody>{metrics.map(x=><tr><th scope="row">{x.label[lang]}</th><td dir="ltr">{x.value}</td></tr>)}</tbody>
+    </table>
+  </section>
+  <div class="fp-cover-bottom">
+    <section class="fp-cover-panel">
+      <h2>{labels.method}</h2><ul>{(method.length?method:shownPrep.slice(0,2)).map(x=><li>{x}</li>)}</ul>
+    </section>
+    <section class="fp-cover-panel">
+      <h2>{labels.safety}</h2><ul>{shownSafety.map(x=><li>{x}</li>)}</ul>
+    </section>
+    <section class="fp-cover-panel">
+      <h2>{labels.contact}</h2><p><strong>NEXTGEN BUILDING SOLUTIONS</strong></p>
+      <p>contact@nextgen-buildingsolutions.com</p>
+      <p>nextgen-buildingsolutions.com</p>
+    </section>
+  </div>
+  <div class="fp-cover-footer"><span dir="ltr">{product.code} · {lang.toUpperCase()} · 01 / 02</span></div>
+</section>
+<style>
+@media print {
+  @page {size:A4 portrait;margin:0;}
+  .fenek-universal-cover {
+    display:flex!important;flex-direction:column;justify-content:space-between;
+    box-sizing:border-box;width:100%;min-height:296.5mm;max-width:210mm;
+    padding:8mm 10mm 9mm;margin:0 auto;color:#0d335a;
+    font:8.5pt/1.26 Inter,Arial,"DejaVu Sans",sans-serif;
+    break-after:page;page-break-after:always;
+  }
+  .fenek-universal-cover[dir="rtl"]{font-family:"Noto Sans Arabic","DejaVu Sans",Tahoma,sans-serif;line-height:1.34}
+  .fenek-universal-cover .fenek-print-masthead{grid-template-columns:31mm minmax(0,1fr) 15mm;gap:3.6mm;min-height:19mm;margin-bottom:1mm}
+  .fenek-universal-cover .fenek-print-logo{width:31mm;height:19mm;object-fit:contain}
+  .fenek-universal-cover .fenek-print-name{font-size:12.7pt;line-height:1.15;padding-inline-start:3.5mm}
+  .fenek-universal-cover .fenek-print-slants{height:19mm}
+  .fenek-universal-cover .fenek-print-line{height:.8mm;margin-bottom:1mm}
+  .fenek-universal-cover .fenek-print-banner{font-size:10.8pt;line-height:1.1;padding:1.3mm 8mm;margin-bottom:1mm}
+  .fenek-universal-cover .fp-cover-hero{display:grid;grid-template-columns:minmax(0,1fr) 47mm;gap:3mm;align-items:stretch;break-inside:avoid}
+  .fenek-universal-cover .fp-cover-identity h1{font-size:19pt;line-height:1.1;margin:1mm 0;color:#0d335a;overflow-wrap:break-word}
+  .fenek-universal-cover .fp-cover-norm{margin:1mm 0 1.7mm;font-weight:780;font-size:9.5pt;color:#07895e}
+  .fenek-universal-cover .fp-cover-identity dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2mm;margin:0}
+  .fenek-universal-cover .fp-cover-identity dl>div{display:flex;min-width:0;background:#edf2f4;border-radius:1mm;overflow:hidden;min-height:6mm}
+  .fenek-universal-cover .fp-cover-identity dl .fp-wide{grid-column:1/-1}
+  .fenek-universal-cover .fp-cover-identity dt{background:#0d335a;color:#fff;font-weight:750;padding:1mm;flex:0 0 38%;font-size:7.5pt}
+  .fenek-universal-cover .fp-cover-identity dd{margin:0;padding:1mm;color:#173a55;font-weight:650;font-size:7.5pt;overflow-wrap:anywhere}
+  .fenek-universal-cover .fp-cover-pack{display:flex;align-items:center;justify-content:center;margin:0;padding:.6mm;border:1px solid #e0e7eb;border-radius:2mm;background:#fff;min-height:40mm}
+  .fenek-universal-cover .fp-cover-pack img{width:100%;height:42mm;object-fit:contain}
+  .fenek-universal-cover .fp-cover-panel{border:1px solid #dfe9ec;border-radius:2mm;overflow:hidden;background:white;break-inside:avoid}
+  .fenek-universal-cover .fp-cover-panel h2{background:#0d335a;border-inline-start:2.3mm solid #07965b;color:#fff;font-size:10pt;line-height:1.15;padding:1.2mm 2.4mm;margin:0;font-weight:800}
+  .fenek-universal-cover .fp-cover-lead{margin:0;padding:2mm 2.7mm;font-size:8.6pt;line-height:1.28;color:#234359}
+  .fenek-universal-cover .fp-cover-columns{display:grid;grid-template-columns:1fr 1fr;gap:3mm;padding:2mm 2.6mm}
+  .fenek-universal-cover .fp-cover-columns>div+div{border-inline-start:1px solid #cbd9df;padding-inline-start:2.7mm}
+  .fenek-universal-cover .fp-cover-columns h3{margin:0 0 1mm;font-size:8.7pt;font-weight:800;color:#0d335a;line-height:1.2}
+  .fenek-universal-cover .fp-cover-columns ul,.fenek-universal-cover .fp-cover-bottom ul{margin:0;padding-inline-start:4mm;font-size:8pt;line-height:1.32;color:#244154}
+  .fenek-universal-cover .fp-cover-columns li{margin:0 0 .9mm}
+  .fenek-universal-cover .fp-cover-metrics table{border-collapse:collapse;width:100%;font-size:8.2pt;line-height:1.17}
+  .fenek-universal-cover .fp-cover-metrics th,.fenek-universal-cover .fp-cover-metrics td{padding:1.15mm 2mm;border-bottom:1px solid #e0e6e8;text-align:start}
+  .fenek-universal-cover .fp-cover-metrics thead{background:#e8f3ec;color:#0d335a}
+  .fenek-universal-cover .fp-cover-metrics tbody tr:nth-child(even){background:#f6f9fa}
+  .fenek-universal-cover .fp-cover-metrics tbody tr:last-child>*{border-bottom:0}
+  .fenek-universal-cover .fp-cover-metrics td[dir="ltr"]{text-align:end;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .fenek-universal-cover .fp-cover-bottom{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2mm;break-inside:avoid}
+  .fenek-universal-cover .fp-cover-bottom .fp-cover-panel h2{font-size:8.6pt}
+  .fenek-universal-cover .fp-cover-bottom ul{font-size:7.8pt;padding:1.5mm 2mm 1.3mm 5mm}
+  .fenek-universal-cover[dir="rtl"] .fp-cover-bottom ul{padding:1.5mm 5mm 1.3mm 2mm}
+  .fenek-universal-cover .fp-cover-bottom li{margin-bottom:.8mm}
+  .fenek-universal-cover .fp-cover-bottom p{font-size:7.3pt;line-height:1.22;margin:0;padding:.65mm 1.5mm;overflow-wrap:anywhere}
+  .fenek-universal-cover .fp-cover-bottom p:first-of-type{margin-top:1mm}
+  .fenek-universal-cover .fp-cover-footer{border-top:1.2pt solid #0d335a;text-align:end;padding-top:1mm;font-size:7.6pt;font-weight:700}
+}
+</style>
