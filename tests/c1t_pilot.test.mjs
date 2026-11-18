@@ -70,7 +70,7 @@ test('C1T has a second print page with original six-scene art and true per-local
   assert.match(s,/data-c1t-guide-steps/);
   assert.match(s,/c1tIllustratedGuide\.steps\.map/);
   assert.match(s,/c1tIllustratedGuide\.sprite/);
-  assert.match(s,/fenek-bond-c1t-steps/);
+  assert.match(read('src/data/fenek-v3-reviewed.ts'),/application-upgraded\/fenek-bond-c1t-steps\\.webp/);
   assert.match(s,/qrPathFor\(c1tQrRows\[lang\]\)/);
   assert.match(s,/https:\/\/nextgen-buildingsolutions.com\/\$\{lang\}\/documentation\/\$\{product.slug\}\//);
   assert.match(s,/background-size:300% 200%/);
