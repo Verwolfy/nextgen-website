@@ -1,0 +1,60 @@
+/* WeasyPrint 68 compatibility only: keep the existing Chromium A4 design.
+ * On some WeasyPrint grid implementations, flex-column space distribution
+ * stretches the metadata cells and pushes the footer onto page 2. This file
+ * is deliberately passed only by scripts/export_c1t_pdfs.py.
+ * Do not import it into Astro's browser stylesheet. */
+@media print {
+ .fenek-universal-cover,.fenek-c1t-print {
+   display:block !important;
+   min-height:0 !important;
+   height:auto !important;
+   max-height:none !important;
+   break-after:page;
+   page-break-after:always;
+ }
+ .fenek-universal-cover .fp-cover-hero {
+   min-height:0!important;height:auto!important;margin-bottom:3mm!important;
+ }
+ .fenek-universal-cover .fp-cover-pack {
+   height:44mm!important;max-height:44mm!important;
+   min-height:0!important;align-self:start!important;
+ }
+ .fenek-universal-cover .fp-cover-pack img {height:42mm!important;}
+ .fenek-universal-cover > .fp-cover-panel {margin:0 0 3mm!important;}
+ .fenek-universal-cover > .fp-cover-bottom {margin:0 0 2mm!important;}
+ .fenek-universal-cover > .fp-cover-footer {margin-top:2mm!important;}
+ .fenek-c1t-print > .c1t-print-hero {
+   min-height:0!important;height:auto!important;margin-bottom:3mm!important;
+ }
+ .fenek-c1t-print .fenek-print-packshot {
+   height:45mm!important;min-height:0!important;
+   max-height:45mm!important;align-self:start!important;
+ }
+ .fenek-c1t-print .fenek-print-packshot img {height:43mm!important;}
+ .fenek-c1t-print > .fenek-print-card {margin-bottom:3mm!important;}
+ .fenek-c1t-print > .c1t-print-technical-pair {margin:0 0 3mm!important;}
+ .fenek-c1t-print > .c1t-print-bottom {margin:0 0 2mm!important;}
+ .fenek-c1t-print > .fenek-print-footer {margin-top:2mm!important;}
+
+ /* Fix WeasyPrint's auto-height CSS grid expansion in the metadata block. */
+ .fenek-universal-cover .fp-cover-identity dl {
+   display:flex!important;flex-wrap:wrap!important;gap:1.1mm!important;
+   align-items:flex-start!important;align-content:flex-start!important;
+   width:100%!important;height:auto!important;min-height:0!important;
+ }
+ .fenek-universal-cover .fp-cover-identity dl>div {
+   display:flex!important;width:48%!important;max-width:48%!important;
+   height:6.5mm!important;min-height:6.5mm!important;max-height:6.5mm!important;
+   flex:0 0 auto!important;align-self:flex-start!important;overflow:hidden!important;
+ }
+ .fenek-universal-cover .fp-cover-identity dl>.fp-wide {
+   width:98%!important;max-width:98%!important;
+ }
+ .fenek-universal-cover .fp-cover-identity dt,
+ .fenek-universal-cover .fp-cover-identity dd {
+   height:auto!important;min-height:0!important;
+   line-height:1.15!important;align-self:center!important;
+ }
+ .fenek-universal-cover .fp-cover-identity dt {flex:0 0 36%!important;}
+ .fenek-universal-cover .fp-cover-identity dd {flex:1 1 auto!important;}
+}

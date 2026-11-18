@@ -50,7 +50,7 @@ def export_pdfs(dist: Path, output: Path) -> list[Path]:
     if not dist.is_dir():
         raise RuntimeError("Missing dist/: run npm run build first")
     try:
-        from weasyprint import HTML
+        from weasyprint import HTML, CSS
     except ImportError as exc:
         raise RuntimeError("Install requirements-supports.txt before exporting PDFs") from exc
     output.mkdir(parents=True, exist_ok=True)
@@ -66,7 +66,17 @@ def export_pdfs(dist: Path, output: Path) -> list[Path]:
             if f'data-{marker}-pilot' not in markup or f'fenek-{marker}-print' not in markup:
                 raise RuntimeError(f"Expected {suffix.upper()} presentation structure missing: {lang}")
             target = output / f"{slug}-{lang}.pdf"
-            HTML(string=markup, base_url=ORIGIN + "/", url_fetcher=local_fetcher(dist)).write_pdf(target)
+            # WeasyPrint's paginated flex/grid sizing differs from Chromium.
+            # Use the reviewed print-only compatibility stylesheet and reject
+            # any incomplete or three-page output before publishing.
+            document = HTML(
+                string=markup, base_url=ORIGIN + "/", url_fetcher=local_fetcher(dist)
+            ).render(stylesheets=[CSS(filename=ROOT / "scripts" / "weasyprint-fenek-2page.css")])
+            if len(document.pages) != 2:
+                raise RuntimeError(
+                    f"FENEK print should have exactly two A4 pages: {slug}/{lang} -> {len(document.pages)}"
+                )
+            document.write_pdf(target)
             if not target.read_bytes().startswith(b"%PDF-"):
                 raise RuntimeError(f"Invalid generated PDF: {target}")
             generated.append(target)
