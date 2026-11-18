@@ -70,7 +70,7 @@ test('the same two-page product+guide structure covers all 50 FENEK references',
    const file=read('src/components/'+component+'.astro');
    assert.match(file,/FenekPrintTechnicalCover/);
    assert.match(file,/FenekPrintApplicationPage/);
-   assert.match(file,/requirements/);
+   assert.match(file,/(Requirements|requirements)/);
  }
  const guide=read('src/components/FenekPrintApplicationPage.astro');
  const cover=read('src/components/FenekPrintTechnicalCover.astro');
