@@ -6,10 +6,10 @@ import {conceptPackshot,packagingLabelFor,type CatalogueProject} from '../lib/ca
 type Metric={label:Record<Lang,string>;value:string};
 interface Props {
  lang:Lang;product:CatalogueProject;metrics:Metric[];
- lead:string;uses:string[];preparation:string[];safety:string[];
+ lead:string;uses:string[];preparation:string[];application:string[];safety:string[];
  standard:string;printClass:string;
 }
-const {lang,product,metrics,lead,uses,preparation,safety,standard,printClass}=Astro.props;
+const {lang,product,metrics,lead,uses,preparation,application,safety,standard,printClass}=Astro.props;
 const labels={
  fr:{doc:'FICHE PRODUIT',description:'Description du produit',overview:'Aperçu',
  uses:'Utilisations et supports',prep:'Préparation du support',specs:'Caractéristiques techniques',
@@ -26,7 +26,7 @@ const image=conceptPackshot(product,'full');
 const shownUses=uses.slice(0,3);
 const shownPrep=preparation.slice(0,3);
 const shownSafety=safety.slice(0,3);
-const method=preparation.length>3?preparation.slice(3,5):[];
+const method=application.slice(0,2);
 ---
 <section class={`fenek-print-document fenek-universal-cover ${printClass}`} lang={lang} dir={lang==='ar'?'rtl':'ltr'} data-fenek-print-cover>
   <div class="fenek-print-masthead">
@@ -68,7 +68,7 @@ const method=preparation.length>3?preparation.slice(3,5):[];
   </section>
   <div class="fp-cover-bottom">
     <section class="fp-cover-panel">
-      <h2>{labels.method}</h2><ul>{(method.length?method:shownPrep.slice(0,2)).map(x=><li>{x}</li>)}</ul>
+      <h2>{labels.method}</h2><ul>{method.map(x=><li>{x}</li>)}</ul>
     </section>
     <section class="fp-cover-panel">
       <h2>{labels.safety}</h2><ul>{shownSafety.map(x=><li>{x}</li>)}</ul>
