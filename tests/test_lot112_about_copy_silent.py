@@ -30,14 +30,14 @@ class AboutCopyAndAudio(unittest.TestCase):
         self.assertIn("edit.aboutSteps.map",story)
         self.assertIn("edit.aboutNotice",story)
 
-    def test_final_player_autoplay_muted_and_manual_audio(self):
+    def test_final_player_autoplay_and_silent_controls(self):
         video=(ROOT/"src/components/AboutVideo.astro").read_text(encoding="utf-8")
-        for token in ("muted playsinline loop controls", "nextgen-about-v4.mp4",
+        for token in ("muted playsinline loop disablepictureinpicture", "nextgen-about-v4.mp4",
                       "nextgen-about-v4-poster.webp", "nextgen-about-v4.webm", "data-about-video-version=\"v4\"",
                       "connection?.saveData","reduce.matches","video.pause()","video.play()"):
             self.assertIn(token,video,token)
-        self.assertNotIn("volumechange",video)
-        self.assertNotIn("enforceSilence",video)
+        self.assertIn("volumechange",video)
+        self.assertIn("enforceSilence",video)
         self.assertNotIn("video.volume=0",video)
         self.assertIn("check_about_video_first(browser, base)",(ROOT/"scripts/check_browser_pages.py").read_text(encoding="utf-8"))
         self.assertIn("noindex,nofollow",(ROOT/"src/layouts/Layout.astro").read_text(encoding="utf-8"))
