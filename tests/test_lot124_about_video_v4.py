@@ -32,7 +32,7 @@ class AboutVideoV4(unittest.TestCase):
             self.assertIn("nextgen-about-v4"+suffix,source)
             self.assertIn("nextgen-about-v4"+suffix,browser)
         self.assertIn('data-about-video-version="v4"',source)
-        self.assertIn('preload="none" muted playsinline loop controls',source)
+        self.assertIn('preload="none" muted playsinline loop disablepictureinpicture',source)
         self.assertIn("IntersectionObserver",source)
         self.assertIn("prefers-reduced-motion: reduce",source)
         self.assertIn("saveData",source)
