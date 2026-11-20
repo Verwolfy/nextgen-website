@@ -10,24 +10,42 @@ const captions:Record<Lang,string>={
 const webm='/videos/nextgen-about-v4.webm';
 const mp4='/videos/nextgen-about-v4.mp4';
 const poster='/videos/nextgen-about-v4-poster.webp';
+const playbackLabel:Record<Lang,string>={fr:'Lire ou mettre en pause la vidéo',ar:'تشغيل الفيديو أو إيقافه مؤقتًا',en:'Play or pause video'};
 ---
+<div class="about-video-wrap">
 <video class="about-video" data-about-video data-about-video-version="v4"
   poster={poster} width="854" height="480"
-  aria-label={captions[lang]} preload="none" muted playsinline loop controls>
+  aria-label={captions[lang]} preload="none" muted playsinline loop disablepictureinpicture>
   <source src={webm} type="video/webm" />
   <source src={mp4} type="video/mp4" />
 </video>
+<button class="about-video-toggle" type="button" data-about-video-toggle aria-label={playbackLabel[lang]} aria-pressed="false">▶</button>
+</div>
 <script>
   // Play in-view only. Reduced-motion and Data Saver users see the optimized poster
-  // and may deliberately start the native player. No network API or private data.
+  // and may deliberately start playback using the play button. No network API or private data.
   const video=document.querySelector<HTMLVideoElement>('[data-about-video]');
+  const toggle=document.querySelector<HTMLButtonElement>('[data-about-video-toggle]');
+  if(video){
+    // Native audio controls are absent. Keep playback silent even if a script changes it.
+    const enforceSilence=()=>{if(!video.muted)video.muted=true;};
+    video.muted=true;
+    video.addEventListener('volumechange',enforceSilence);
+    const updateToggle=()=>{
+      if(toggle){toggle.textContent=video.paused?'▶':'Ⅱ';toggle.setAttribute('aria-pressed',String(!video.paused));}
+    };
+    video.addEventListener('play',updateToggle);
+    video.addEventListener('pause',updateToggle);
+    toggle?.addEventListener('click',()=>{if(video.paused){void video.play().catch(()=>{});}else{video.pause();}});
+    updateToggle();
+  }
   if(video && 'IntersectionObserver' in window){
     const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
     const save=Boolean((navigator as Navigator & {connection?:{saveData?:boolean}}).connection?.saveData);
     let visible=false;
     const sync=async()=>{
       if(!visible || document.hidden || reduce.matches || save){video.pause();return;}
-      try{await video.play();}catch{/* Native controls remain available */ }
+      try{await video.play();}catch{/* Manual playback remains available */ }
     };
     const observer=new IntersectionObserver(entries=>{
       visible=entries.some(entry=>entry.isIntersecting);void sync();
@@ -36,10 +54,13 @@ const poster='/videos/nextgen-about-v4-poster.webp';
     document.addEventListener('visibilitychange',()=>{void sync();});
     reduce.addEventListener('change',()=>{void sync();});
   }
-  // Playback begins muted for autoplay; visitors can unmute manually via native controls.
+  // Playback is permanently muted in the UI; only play/pause is exposed.
 </script>
 <style>
-  .about-video{display:block;width:min(100%,860px);height:auto;aspect-ratio:16/9;object-fit:contain;margin-inline:auto;border:1px solid #d4e2e7;border-radius:22px;background:#f7faf9;box-shadow:0 16px 40px #09223d22}
+  .about-video-wrap{position:relative;width:min(100%,860px);margin-inline:auto}
+  .about-video-toggle{position:absolute;inset-inline-end:14px;bottom:14px;border:1px solid #d4e2e7;border-radius:999px;background:#09223de0;color:#fff;width:44px;height:44px;cursor:pointer;font-size:1.1rem}
+  .about-video-toggle:focus-visible{outline:3px solid #56c5a5;outline-offset:3px}
+  .about-video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;margin-inline:auto;border:1px solid #d4e2e7;border-radius:22px;background:#f7faf9;box-shadow:0 16px 40px #09223d22}
   .about-video:focus-visible{outline:3px solid #56c5a5;outline-offset:3px}
   @media(prefers-reduced-motion:reduce){.about-video{animation:none;transition:none}}
 </style>
