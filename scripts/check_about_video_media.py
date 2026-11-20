@@ -47,8 +47,9 @@ def main():
         assert data.get("poster")=="/videos/nextgen-about-v4-poster.webp",lang
         assert data.get("data-about-video-version")=="v4",lang
         assert data.get("preload")=="none",lang
-        for flag in ("muted","loop","controls","playsinline"):
+        for flag in ("muted","loop","playsinline","disablepictureinpicture"):
             assert flag in data,(lang,flag)
+        assert "controls" not in data,(lang,"native audio controls must be absent")
         assert data.get("aria-label"),(lang,"missing accessible video label")
     print("PASS: final About v4 video SHA-256, poster and three localized pages")
 
