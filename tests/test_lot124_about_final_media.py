@@ -40,14 +40,14 @@ class FinalAboutVideo(unittest.TestCase):
         route=(ROOT/"src/pages/[lang]/[section].astro").read_text(encoding="utf-8")
         for field in ("nextgen-about-v4.mp4","nextgen-about-v4.webm","nextgen-about-v4-poster.webp",
                       "data-about-video-version=\"v4\"","preload=\"none\"",
-                      "muted playsinline loop controls","IntersectionObserver",
+                      "muted playsinline loop disablepictureinpicture","IntersectionObserver",
                       "reduce.matches","connection?.saveData","fr:","ar:","en:"):
             self.assertIn(field,component,field)
         self.assertIn("public/videos/nextgen-about-v4.mp4",route)
         self.assertNotIn("nextgen-about-v1.mp4",route)
         self.assertNotIn("nextgen-about-v1.mp4",component)
-        self.assertNotIn("volumechange",component)
-        self.assertNotIn("enforceSilence",component)
+        self.assertIn("volumechange",component)
+        self.assertIn("enforceSilence",component)
         self.assertIn('noindex,nofollow',(ROOT/"src/layouts/Layout.astro").read_text(encoding="utf-8"))
         self.assertEqual((ROOT/"public/data/products.json").read_text(encoding="utf-8").strip(),"[]")
 
