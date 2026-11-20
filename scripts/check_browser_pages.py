@@ -742,7 +742,7 @@ def check_v3_reduced_motion_and_data_saver(browser, base: str) -> None:
 
 
 def check_about_video_first(browser, base: str) -> None:
-    """Lot 124: final optimized About film, native audio control, layout and reduced motion."""
+    """Lot 124: silent About film, playback button, layout and reduced motion."""
     for lang in ("fr", "ar", "en"):
         for size,width,height in (("mobile", 320, 720), ("desktop", 1280, 900)):
             page=browser.new_page(viewport={"width":width,"height":height})
@@ -776,7 +776,7 @@ def check_about_video_first(browser, base: str) -> None:
                 assert player.get_attribute("loop") is not None,lang
                 assert player.get_attribute("playsinline") is not None,lang
                 assert player.get_attribute("preload")=="none",lang
-                assert player.get_attribute("controls") is not None,lang
+                assert player.get_attribute("controls") is None,lang
                 title_box=heading.bounding_box()
                 video_box=player.bounding_box()
                 lead_box=lead.bounding_box()
@@ -791,8 +791,7 @@ def check_about_video_first(browser, base: str) -> None:
                 assert player.evaluate("el => el.paused"), (lang,size,"reduced-motion playback")
                 player.evaluate("el => { el.muted=false; el.volume=.7; }")
                 page.wait_for_timeout(180)
-                assert player.evaluate("el => !el.muted && el.volume >= .69"), \
-                    (lang,size,"visitors must be able to enable audio")
+                assert player.evaluate("el => el.muted"), (lang,size,"video must stay silent")
                 assert page.request.get(base + "/videos/nextgen-about-v4.mp4").status == 200, lang
                 assert page.request.get(base + "/videos/nextgen-about-v4.webm").status == 200, lang
                 assert page.request.get(base + "/videos/nextgen-about-v4-poster.webp").status == 200, lang
@@ -860,7 +859,7 @@ def check_localized_news_ticker(browser, base: str) -> None:
 
 
 def check_lot124_about_video_playback(browser, base: str) -> None:
-    """Latest film starts silently in-view, allows native audio, and is decodable."""
+    """Latest film starts silently in-view without user-facing audio controls."""
     page=browser.new_page(viewport={"width":1280,"height":900})
     try:
         page.goto(base + "/fr/a-propos/",wait_until="domcontentloaded")
@@ -874,7 +873,7 @@ def check_lot124_about_video_playback(browser, base: str) -> None:
         assert video.evaluate("el => el.muted"), "autoplay should start muted"
         video.evaluate("el => { el.muted=false; el.volume=.7; }")
         page.wait_for_timeout(180)
-        assert video.evaluate("el => !el.muted && el.volume >= .69"), "new film audio should be available"
+        assert video.evaluate("el => el.muted"), "video must stay silent"
         assert page.evaluate("document.documentElement.scrollWidth-innerWidth") <= 4
     finally:
         page.close()
